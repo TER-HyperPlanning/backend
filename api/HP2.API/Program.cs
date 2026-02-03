@@ -1,0 +1,94 @@
+using System.Reflection;
+using System.Text.Json.Serialization;
+using HP2.Application;
+using HP2.Infrastructure;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
+using MediatR;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        Console.WriteLine($"Connexion String récupérée : {connectionString}");
+
+        // Add services to the container.
+        //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(HP2.Application.Usecases.UpdateSortieCommandHandler).Assembly));
+
+        builder.Services.AddApplicationServices();
+
+        builder.Services.AddInfrastructureServices(builder.Configuration);
+
+        builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+        builder.Services.AddControllers();
+
+        builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.M1i2526DbContext>(options =>
+            options.UseSqlServer(connectionString)
+                   .LogTo(Console.WriteLine, LogLevel.Error));
+
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
+        // Configure JWT authentication
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
+                };
+            });
+
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+            };
+        });
+
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseHttpsRedirection();
+
+        app.UseCors(opt => opt.AllowAnyOrigin()
+                              .AllowAnyMethod()
+                              .AllowAnyHeader());
+
+
+        app.UseAuthorization();
+
+
+        app.MapControllers();
+
+        app.Run();
+    }
+}
