@@ -1,6 +1,26 @@
 # backend
 
-## Steps to start the database
+## ConnectionString for the SQL Server database
+
+Go to the HP2.API directory:
+```
+cd api/HP2.API 
+```
+Then, type these dotnet commands:
+```
+dotnet user-secrets init
+```
+### Edit the credentials
+You need to provide the actual connection string. To find it:
+
+- Go to the Discord server TER-Projet.
+- Look in the equipe-back channel.
+- Check the Pinned Messages for the value of ConnectionStrings:DefaultConnection.
+```
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=SERVER_NAME;Database=DATABASE_NAME;User ID=USER_ID;Password=PASSWORD"
+```
+
+## Steps to start the test database
 
 Type the following commands:
 ```
