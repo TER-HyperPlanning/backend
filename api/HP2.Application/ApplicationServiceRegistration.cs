@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using HP2.Application.Contracts;
+using HP2.Application;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HP2.Application
 {
@@ -6,7 +8,7 @@ namespace HP2.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddScoped<IMatiereTestService, MatiereTestService>();
+            services.AddScoped<IStudentService, StudentService>();
 
             return services;
         }
