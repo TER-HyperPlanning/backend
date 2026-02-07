@@ -1,4 +1,4 @@
-# backend
+# Backend
 
 ## Start the API
 
@@ -30,11 +30,13 @@ localhost:5075/swagger/index.html
 ```
 
 
-## Secret ConnectionString for the SQL Server database
+## Secret ConnectionString:DefaultConnection for the Teacher's SQL Server database
+
+For developement purpose only, you doesn't need to do this steps
 
 Go to the HP2.API directory:
 ```
-cd api/HP2.API 
+cd backend/api/HP2.API 
 ```
 Then, type these dotnet commands:
 ```
