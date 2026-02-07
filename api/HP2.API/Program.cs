@@ -14,8 +14,8 @@ internal class Program
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-        Console.WriteLine($"Connexion String récupérée : {connectionString}");
+        var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
+        Console.WriteLine($"Connexion String rï¿½cupï¿½rï¿½e : {connectionString}");
 
         // Add services to the container.
         //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(HP2.Application.Usecases.UpdateSortieCommandHandler).Assembly));
@@ -28,7 +28,7 @@ internal class Program
 
         builder.Services.AddControllers();
 
-        builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.M1i2526DbContext>(options =>
+        builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)
                    .LogTo(Console.WriteLine, LogLevel.Error));
 
@@ -37,20 +37,20 @@ internal class Program
         builder.Services.AddSwaggerGen();
 
         // Configure JWT authentication
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                    ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
-                };
-            });
+        // builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        //     .AddJwtBearer(options =>
+        //     {
+        //         options.TokenValidationParameters = new TokenValidationParameters
+        //         {
+        //             ValidateIssuer = true,
+        //             ValidateAudience = true,
+        //             ValidateLifetime = true,
+        //             ValidateIssuerSigningKey = true,
+        //             ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        //             ValidAudience = builder.Configuration["Jwt:Audience"],
+        //             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
+        //         };
+        //     });
 
         builder.Services.AddAuthentication(options =>
         {
@@ -77,7 +77,7 @@ internal class Program
             app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
+        // app.UseHttpsRedirection();
 
         app.UseCors(opt => opt.AllowAnyOrigin()
                               .AllowAnyMethod()
