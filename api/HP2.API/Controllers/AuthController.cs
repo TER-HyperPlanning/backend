@@ -23,11 +23,6 @@ namespace HP2.API.Controllers
         {
             try
             {
-                if (request == null)
-                {
-                    return BadRequest(new { message = "Request body is missing." });
-                }
-
                 if (string.IsNullOrWhiteSpace(request.Email))
                 {
                     return BadRequest(new { message = "Email address is required." });
