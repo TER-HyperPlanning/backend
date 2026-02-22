@@ -23,21 +23,36 @@ namespace HP2.API.Controllers
         {
             try
             {
-                if (request == null || string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+                if (request == null)
                 {
-                    return BadRequest(new { message = "Email et mot de passe sont requis." });
+                    return BadRequest(new { message = "Request body is missing." });
+                }
+
+                if (string.IsNullOrWhiteSpace(request.Email))
+                {
+                    return BadRequest(new { message = "Email address is required." });
+                }
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(request.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                {
+                    return BadRequest(new { message = "Email address is not valid." });
+                }
+
+                if (string.IsNullOrWhiteSpace(request.Password))
+                {
+                    return BadRequest(new { message = "Password is required." });
                 }
 
                 var response = await _authService.Login(request);
                 return Ok(response);
             }
-            catch (UnauthorizedAccessException ex)
+            catch (UnauthorizedAccessException)
             {
-                return Unauthorized(new { message = ex.Message });
+                return Unauthorized(new { message = "Invalid email or password." });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Une erreur s'est produite lors de la connexion.", details = ex.Message });
+                return StatusCode(500, new { message = "An internal error occurred. Please try again later." });
             }
         }
 
@@ -52,7 +67,7 @@ namespace HP2.API.Controllers
 
                 if (string.IsNullOrEmpty(userId))
                 {
-                    return Unauthorized(new { message = "Token invalide ou expiré." });
+                    return Unauthorized(new { message = "Invalid or expired token." });
                 }
 
                 var response = await _authService.GetCurrentUser(userId);
@@ -64,7 +79,7 @@ namespace HP2.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Une erreur s'est produite.", details = ex.Message });
+                return StatusCode(500, new { message = "An error occurred.", details = ex.Message });
             }
         }
     }
