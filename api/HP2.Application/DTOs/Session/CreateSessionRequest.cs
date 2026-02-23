@@ -1,11 +1,8 @@
-using HP2.Domain.Common;
+namespace HP2.Application.DTOs.Session;
 using HP2.Domain.Enums;
-namespace HP2.Domain.Models;
-
-public class SessionModel : BaseModel
+public class CreateSessionRequest
 {
     public string Id { get; set; } = string.Empty;
-
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
 
@@ -16,9 +13,4 @@ public class SessionModel : BaseModel
     public string RoomId { get; set; } = string.Empty;
 
     public string? Description { get; set; }
-
-    // ajout pour lecture
-    public string? SessionTypeLabel { get; set; }
-    public string? SessionStatusLabel { get; set; }
-    public string? RoomNumber { get; set; }
 }

@@ -32,7 +32,8 @@ internal class Program
 
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-        builder.Services.AddControllers();
+        builder.Services.AddControllers()
+            .AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
         builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)

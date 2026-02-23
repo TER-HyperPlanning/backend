@@ -11,7 +11,7 @@ namespace HP2.Application
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
-
+            services.AddScoped<ISessionService, SessionService>();
             return services;
         }
 
