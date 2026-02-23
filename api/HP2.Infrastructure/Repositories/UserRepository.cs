@@ -16,6 +16,8 @@ public class UserRepository : RepositoryBase<UserModel>, IUserRepository
     public async Task<UserModel> CreateUserAsync(UserModel user)
     {
         var entity = _mapper.Map<User>(user);
+        entity.CreatedAt = DateTime.UtcNow;
+        entity.UpdatedAt = DateTime.UtcNow;
         _dbContext.Users.Add(entity);
         await _dbContext.SaveChangesAsync();
         return _mapper.Map<UserModel>(entity);
