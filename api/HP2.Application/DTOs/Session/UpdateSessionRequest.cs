@@ -1,11 +1,7 @@
-using HP2.Domain.Common;
+namespace HP2.Application.DTOs.Session;
 
-namespace HP2.Domain.Models;
-
-public class SessionModel : BaseModel
+public class UpdateSessionRequest
 {
-    public string Id { get; set; } = string.Empty;
-
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
 
