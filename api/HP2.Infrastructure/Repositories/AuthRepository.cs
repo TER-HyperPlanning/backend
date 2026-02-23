@@ -52,6 +52,7 @@ public class AuthRepository : IAuthRepository
     {
         var entity = _mapper.Map<User>(userModel);
         entity.CreatedAt = DateTime.UtcNow;
+        entity.UpdatedAt = DateTime.UtcNow;
 
         _dbContext.Users.Add(entity);
         await _dbContext.SaveChangesAsync();

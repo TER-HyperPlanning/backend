@@ -12,8 +12,10 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<User, UserModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId))
                 .ForMember(dest => dest.Role, opt => opt.MapFrom(src => Enum.Parse<HP2.Domain.Enums.UserRole>(src.UserRole.Name, true)))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt))
                 .ReverseMap()
-                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id));
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt));
 
             CreateMap<UserModel, CurrentUserResponse>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
@@ -32,7 +34,8 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User != null ? src.User.FirstName : string.Empty))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User != null ? src.User.LastName : string.Empty))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
-                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow));
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow));
             
             // ===== Teacher Mapping =====
             CreateMap<Teacher, TeacherModel>()
@@ -44,7 +47,8 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
                 .ForMember(dest => dest.Matricule, opt => opt.MapFrom(src => src.RegistrationNumber))
-                .ForMember(dest => dest.TitleId, opt => opt.MapFrom(src => src.TeacherTitleId));
+                .ForMember(dest => dest.TitleId, opt => opt.MapFrom(src => src.TeacherTitleId))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow));
             
             // ===== Student Mapping =====
             CreateMap<Student, StudentModel>()
@@ -55,6 +59,7 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User != null ? src.User.LastName : string.Empty))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow))
                 .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.GroupId));
             
             // ===== Academic Structure =====
