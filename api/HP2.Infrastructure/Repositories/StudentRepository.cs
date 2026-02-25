@@ -43,16 +43,29 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
 
     public override async Task<StudentModel> AddAsync(StudentModel studentModel)
     {
+        // Resolve the UserRole ID from the database
+        var roleName = studentModel.Role.ToString();
+        // Role names in DB: "Student", "Teacher", "Admin" (capitalize first letter)
+        var formattedRoleName = char.ToUpper(roleName[0]) + roleName.Substring(1).ToLower();
+        var userRole = await _dbContext.UserRoles
+            .FirstOrDefaultAsync(r => r.Name == formattedRoleName);
+
+        if (userRole == null)
+            throw new InvalidOperationException($"UserRole '{formattedRoleName}' not found in database.");
+
+        // Hash the password with BCrypt
+        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(studentModel.Password, workFactor: 12);
+
         // Create User entity from StudentModel (which inherits UserModel)
         var user = new Infrastructure.Persistence.Entities.User
         {
             UserId = Guid.NewGuid().ToString(),
             Email = studentModel.Email,
-            Password = studentModel.Password,
+            Password = hashedPassword,
             FirstName = studentModel.FirstName,
             LastName = studentModel.LastName,
             PhoneNumber = studentModel.Phone,
-            UserRoleId = studentModel.Role.ToString(),
+            UserRoleId = userRole.UserRoleId,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow,
         };
