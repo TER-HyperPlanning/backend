@@ -9,7 +9,7 @@ namespace HP2.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBasedotn
+    public class AuthController : ControllerBase
     {
         private readonly IAuthenticationService _authService;
 
