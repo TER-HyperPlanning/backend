@@ -78,11 +78,18 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<Building, BuildingModel>().ReverseMap();
             CreateMap<Room, RoomModel>().ReverseMap();
             CreateMap<RoomType, RoomTypeModel>().ReverseMap();
-            
+
+            // ===== Availability =====
+            CreateMap<Availability, AvailabilityModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AvailabilityId))
+                .ForMember(dest => dest.WeekDayId, opt => opt.MapFrom(src => src.WeekdayId))
+                .ReverseMap()
+                .ForMember(dest => dest.AvailabilityId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.WeekdayId, opt => opt.MapFrom(src => src.WeekDayId));
+      
             // ===== Other =====
             CreateMap<TeacherTitle, TeacherTitleModel>().ReverseMap();
             CreateMap<Assign, AssignModel>().ReverseMap();
-            CreateMap<Availability, AvailabilityModel>().ReverseMap();
             CreateMap<Notification, NotificationModel>().ReverseMap();
             CreateMap<ChangeStatus, ChangeStatusModel>().ReverseMap();
             CreateMap<UnavailableDay, UnavailableDayModel>().ReverseMap();
