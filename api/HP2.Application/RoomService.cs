@@ -14,34 +14,37 @@ namespace HP2.Application.Services
             _roomRepository = roomRepository;
         }
 
-        public async Task<IEnumerable<RoomResponseDto>> GetAllRoomsAsync()
+        public async Task<IEnumerable<RoomModel>> GetAllRoomsAsync()
         {
-            return await _roomRepository.GetAllRoomsAsync();
+            return await _roomRepository.GetAllAsync();
         }
 
-        public async Task<RoomResponseDto> GetRoomByIdAsync(int id)
+        public async Task<RoomModel?> GetRoomByIdAsync(string id)
         {
-            return await _roomRepository.GetRoomByIdAsync(id);
+
+            return await _roomRepository.GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<RoomResponseDto>> GetRoomsByBuildingIdAsync(int buildingId)
+        public async Task<IEnumerable<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId)
         {
-            return await _roomRepository.GetRoomsByBuildingIdAsync(buildingId);
+            return await _roomRepository.GetRoomsByBuildingIdAsync(buildingId) ?? new List<RoomModel>();
+
         }
 
-        public async Task<RoomResponseDto> CreateRoomAsync(RoomRequestDto roomDto)
+        public async Task<RoomModel> CreateRoomAsync(RoomModel roomDto)
         {
-            return await _roomRepository.CreateRoomAsync(roomDto);
+
+            return await _roomRepository.AddAsync(roomDto);
         }
 
-        public async Task<RoomResponseDto> UpdateRoomAsync(int id, RoomRequestDto roomDto)
+        public async Task UpdateRoomAsync(RoomModel roomDto)
         {
-            return await _roomRepository.UpdateRoomAsync(id, roomDto);
+            await _roomRepository.UpdateAsync(roomDto);
         }
 
-        public async Task DeleteRoomAsync(int id)
+        public async Task DeleteRoomAsync(string id)
         {
-            await _roomRepository.DeleteRoomAsync(id);
+            await _roomRepository.DeleteAsync(id);
         }
 
 

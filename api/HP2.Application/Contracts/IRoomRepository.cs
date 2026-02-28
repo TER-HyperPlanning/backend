@@ -4,13 +4,9 @@ using HP2.Application.DTOs.RoomDtos;
 
 namespace HP2.Application.Contracts
 {
-    public interface IRoomRepository
+    public interface IRoomRepository : IAsyncRepository<RoomModel>
     {
-        Task<RoomResponseDto> GetRoomByIdAsync(int id);
-        Task<IEnumerable<RoomResponseDto>> GetAllRoomsAsync();
-        Task<IEnumerable<RoomResponseDto>> GetRoomsByBuildingIdAsync(int buildingId);
-        Task<RoomResponseDto> CreateRoomAsync(RoomRequestDto roomDto);
-        Task<RoomResponseDto> UpdateRoomAsync(int id, RoomRequestDto roomDto);
-        Task DeleteRoomAsync(int id);
+        Task<IEnumerable<RoomModel?>> GetRoomsByBuildingIdAsync(string buildingId);
+
     }
 }

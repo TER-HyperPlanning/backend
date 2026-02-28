@@ -2,7 +2,7 @@ using System;
 
 namespace HP2.Application.DTOs.RoomDtos;
 
-public class RoomRequestDto
+public class RoomResponse
 {
     public string RoomId { get; set; } = null!;
 

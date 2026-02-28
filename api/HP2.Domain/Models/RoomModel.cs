@@ -3,9 +3,7 @@ using HP2.Domain.Common;
 public class RoomModel : BaseModel
 {
 
-    public long Id { get; set; }
-
-    public string RoomNumber { get; set; } = null!;
+    public string RoomId { get; set; } = null!;
 
     public bool? IsAvailable { get; set; } = true;
 
