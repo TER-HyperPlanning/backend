@@ -6,7 +6,7 @@ public class CreateSessionRequest
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
 
-    public string Mode { get; set; } = string.Empty;
+    public SessionMode Mode { get; set; }
     public string SessionTypeId { get; set; } = string.Empty;
     public string CourseId { get; set; } = string.Empty;
     public string SessionStatusId { get; set; } = string.Empty;

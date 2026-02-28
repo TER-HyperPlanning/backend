@@ -18,7 +18,7 @@ public class SessionsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<SessionModel>>> Create([FromBody] CreateSessionRequest request)
+    public async Task<ActionResult<ApiResponse<SessionResponse>>> Create([FromBody] CreateSessionRequest request)
     {
         if (request == null)
             return BadRequest(ApiResponse<SessionModel>.Fail("Session payload is required"));
@@ -45,28 +45,28 @@ public class SessionsController : ControllerBase
         var created = await _sessionService.CreateSessionAsync(model);
 
         return CreatedAtAction(nameof(Get), new { id = created.Id },
-            ApiResponse<SessionModel>.Success(created, "Session created successfully"));
+            ApiResponse<SessionResponse>.Success(created, "Session created successfully"));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ApiResponse<SessionModel>>> Get(string id)
+    public async Task<ActionResult<ApiResponse<SessionResponse>>> Get(string id)
     {
         var session = await _sessionService.GetSessionByIdAsync(id);
         if (session == null)
             return NotFound(ApiResponse<SessionModel>.Fail($"Session with ID {id} not found"));
 
-        return Ok(ApiResponse<SessionModel>.Success(session));
+        return Ok(ApiResponse<SessionResponse>.Success(session));
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<IEnumerable<SessionModel>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<SessionResponse>>>> GetAll()
     {
         var sessions = await _sessionService.GetAllSessionsAsync();
-        return Ok(ApiResponse<IEnumerable<SessionModel>>.Success(sessions));
+        return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(sessions));
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<SessionModel>>> Update(string id, [FromBody] UpdateSessionRequest request)
+    public async Task<ActionResult<ApiResponse<SessionResponse>>> Update(string id, [FromBody] UpdateSessionRequest request)
     {
         if (request == null)
             return BadRequest(ApiResponse<SessionModel>.Fail("Session payload is required"));
@@ -92,7 +92,7 @@ public class SessionsController : ControllerBase
 
         await _sessionService.UpdateSessionAsync(existing);
 
-        return Ok(ApiResponse<SessionModel>.Success(existing, "Session updated successfully"));
+        return Ok(ApiResponse<SessionResponse>.Success(existing, "Session updated successfully"));
     }
 
     [HttpDelete("{id}")]
@@ -104,5 +104,30 @@ public class SessionsController : ControllerBase
 
         await _sessionService.DeleteSessionAsync(id);
         return Ok(ApiResponse<string>.Success(id, "Session deleted successfully"));
+    }
+
+    private static SessionResponse MapToResponse(SessionModel s)
+    {
+        return new SessionResponse
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = s.Mode,
+
+            Type = new ReferenceResponse
+            {
+                Id = s.SessionTypeId,
+                Label = s.SessionType?.Label ?? ""
+            },
+
+            Status = new ReferenceResponse
+            {
+                Id = s.SessionStatusId,
+                Label = s.SessionStatus?.Label ?? ""
+            },
+
+            Room = s.Room?.Number ?? ""
+        };
     }
 }
