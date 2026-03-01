@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using HP2.Application.Contracts;
 using HP2.Infrastructure.Repositories;
 
+
 namespace HP2.Infrastructure
 {
     public static class InfrastructureServiceRegistration
@@ -29,6 +30,8 @@ namespace HP2.Infrastructure
             // services.AddScoped<SeanceTestRepository, SeanceTestRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWeekDayRepository, WeekDayRepository>();
+
             //services.AddScoped<ICategorieRepository, CategorieRepository>();
             //services.AddScoped<ITagRepository, TagRepository>();
             //services.AddScoped<IParticipationRepository, ParticipationRepository>();

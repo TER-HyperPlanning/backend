@@ -1,9 +1,10 @@
-using HP2.Domain.Common;
-
-namespace HP2.Domain.Models;
-
-public class WeekDayModel : BaseModel
+namespace HP2.Domain.Models
 {
-    public string Id { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
+    public class WeekDayModel
+    {
+        public string WeekdayId { get; set; } = null!;
+        public byte OrderIndex { get; set; }
+        public string Name { get; set; } = null!;
+    }
 }
+
