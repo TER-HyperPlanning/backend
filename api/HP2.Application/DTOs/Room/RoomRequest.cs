@@ -8,6 +8,8 @@ public class RoomRequest
 
     public string RoomNumber { get; set; } = null!;
 
+
+
     public bool? IsAvailable { get; set; }
 
     public int Capacity { get; set; }

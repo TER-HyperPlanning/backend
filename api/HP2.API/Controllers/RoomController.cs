@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.RoomDtos;
 using HP2.Application.DTOs.Common;
+using HP2.Domain.Enums;
 
 namespace HP2.API.Controllers
 {
@@ -49,7 +50,7 @@ namespace HP2.API.Controllers
                 IsAvailable = request.IsAvailable,
                 Capacity = request.Capacity,
                 BuildingId = request.BuildingId,
-                RoomTypeId = request.RoomTypeId
+                Type = Enum.Parse<RoomTypeEnum>(request.RoomTypeId)
             };
             var createdRoom = await _roomService.CreateRoomAsync(room);
             return CreatedAtAction(nameof(GetRoom), new { id = createdRoom.RoomId }, createdRoom);
@@ -67,7 +68,7 @@ namespace HP2.API.Controllers
             existingRoom.IsAvailable = roomDto.IsAvailable;
             existingRoom.Capacity = roomDto.Capacity;
             existingRoom.BuildingId = roomDto.BuildingId;
-            existingRoom.RoomTypeId = roomDto.RoomTypeId;
+            existingRoom.Type = Enum.Parse<RoomTypeEnum>(roomDto.RoomTypeId);
 
             await _roomService.UpdateRoomAsync(existingRoom);
 

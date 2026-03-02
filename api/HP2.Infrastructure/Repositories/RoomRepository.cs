@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.RoomDtos;
+using HP2.Domain.Enums;
 using HP2.Infrastructure.Persistence.Entities;
 using HP2.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -34,10 +35,11 @@ namespace HP2.Infrastructure.Persistence.Repositories
             return new RoomModel
             {
                 RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
-                RoomTypeId = room.RoomTypeId
+                Type = Enum.Parse<RoomTypeEnum>(room.RoomTypeId)
             };
         }
 
@@ -57,10 +59,11 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 .Select(r => new RoomModel
                 {
                     RoomId = r.RoomId,
+                    RoomNumber = r.RoomNumber,
                     IsAvailable = r.IsAvailable,
                     Capacity = r.Capacity,
                     BuildingId = r.BuildingId,
-                    RoomTypeId = r.RoomTypeId
+                    Type = Enum.Parse<RoomTypeEnum>(r.RoomTypeId)
                 })
                 .ToListAsync();
         }
@@ -76,7 +79,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
-                RoomTypeId = room.RoomTypeId
+                Type = Enum.Parse<RoomTypeEnum>(room.RoomTypeId)
             };
         }
 
@@ -90,7 +93,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
                     IsAvailable = r.IsAvailable,
                     Capacity = r.Capacity,
                     BuildingId = r.BuildingId,
-                    RoomTypeId = r.RoomTypeId
+                    Type = Enum.Parse<RoomTypeEnum>(r.RoomTypeId)
                 })
                 .ToListAsync();
         }
@@ -120,7 +123,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
-                RoomTypeId = room.RoomTypeId
+                Type = Enum.Parse<RoomTypeEnum>(room.RoomTypeId)
             };
         }
     }
