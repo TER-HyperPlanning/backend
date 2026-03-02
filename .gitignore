@@ -64,6 +64,8 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+api/.config/dotnet-tools.json
+api/global.json
 
 # Tye
 .tye/
