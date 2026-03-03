@@ -1,0 +1,59 @@
+version: "3.8"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: hp2-sqlserver-v1.0
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "BackendConnect2026"
+      MSSQL_PID: Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      - ./script:/script
+    networks:
+      - ter_hyperplanning_network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "/opt/mssql-tools18/bin/sqlcmd",
+          "-S",
+          "localhost",
+          "-U",
+          "sa",
+          "-P",
+          "BackendConnect2026",
+          "-C",
+          "-Q",
+          "SELECT 1",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 40s
+
+  api:
+    image: hp2-api-v1.0
+    build:
+      context: .
+      dockerfile: HP2.API/Dockerfile
+    container_name: hp2-api-v1.0
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__LocalConnection=Server=sqlserver;Database=ter_hyperplanning;User Id=sa;Password=BackendConnect2026;TrustServerCertificate=True;MultipleActiveResultSets=true
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - ter_hyperplanning_network
+
+volumes:
+  sqlserver_data:
+
+networks:
+  ter_hyperplanning_network:
+    driver: bridge
