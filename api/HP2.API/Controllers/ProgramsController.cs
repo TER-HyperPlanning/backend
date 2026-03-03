@@ -1,4 +1,5 @@
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,57 +17,58 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ProgramModel>> Create([FromBody] ProgramModel program)
+    public async Task<ActionResult<ApiResponse<ProgramModel>>> Create([FromBody] ProgramModel program)
     {
         if (program == null)
-            return BadRequest();
+            return BadRequest(ApiResponse<ProgramModel>.Fail("Program payload is required"));
 
         var createdProgram = await _programService.CreateProgramAsync(program);
-        return CreatedAtAction(nameof(Get), new { id = createdProgram.Id }, createdProgram);
+        return CreatedAtAction(nameof(Get), new { id = createdProgram.Id },
+            ApiResponse<ProgramModel>.Success(createdProgram, "Program created successfully"));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ProgramModel>> Get(string id)
+    public async Task<ActionResult<ApiResponse<ProgramModel>>> Get(string id)
     {
         var program = await _programService.GetProgramByIdAsync(id);
         if (program == null)
-            return NotFound();
+            return NotFound(ApiResponse<ProgramModel>.Fail($"Program with ID {id} not found"));
 
-        return Ok(program);
+        return Ok(ApiResponse<ProgramModel>.Success(program));
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ProgramModel>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<ProgramModel>>>> GetAll()
     {
         var programs = await _programService.GetAllProgramsAsync();
-        return Ok(programs);
+        return Ok(ApiResponse<IEnumerable<ProgramModel>>.Success(programs));
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] ProgramModel program)
+    public async Task<ActionResult<ApiResponse<ProgramModel>>> Update(string id, [FromBody] ProgramModel program)
     {
         if (program == null)
-            return BadRequest();
+            return BadRequest(ApiResponse<ProgramModel>.Fail("Program payload is required"));
 
         if (id != program.Id)
-            return BadRequest("ID mismatch");
+            return BadRequest(ApiResponse<ProgramModel>.Fail("ID mismatch"));
 
         var existing = await _programService.GetProgramByIdAsync(id);
         if (existing == null)
-            return NotFound($"Program with ID {id} not found");
+            return NotFound(ApiResponse<ProgramModel>.Fail($"Program with ID {id} not found"));
 
         await _programService.UpdateProgramAsync(program);
-        return NoContent();
+        return Ok(ApiResponse<ProgramModel>.Success(program, "Program updated successfully"));
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
         var existing = await _programService.GetProgramByIdAsync(id);
         if (existing == null)
-            return NotFound($"Program with ID {id} not found");
+            return NotFound(ApiResponse<string>.Fail($"Program with ID {id} not found"));
 
         await _programService.DeleteProgramAsync(id);
-        return NoContent();
+        return Ok(ApiResponse<string>.Success(id, "Program deleted successfully"));
     }
 }
