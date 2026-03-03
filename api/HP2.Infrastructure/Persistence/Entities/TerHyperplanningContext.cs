@@ -977,6 +977,36 @@ public partial class TerHyperplanningContext : DbContext
         modelBuilder.Entity<WeekDay>().HasData(
             new WeekDay { WeekdayId = weekdayId, OrderIndex = 1, Name = "Lundi" }
         );
+        
+        // ============================
+        // AVAILABILITIES (Seed)
+        // ============================
+
+        var avail1 = GetStableId("avail-marie-curie-lundi-matin");
+        var avail2 = GetStableId("avail-marie-curie-lundi-aprem");
+
+        modelBuilder.Entity<Availability>().HasData(
+            new Availability
+            {
+                AvailabilityId = avail1,
+                TeacherId = teacherUserId,   // déjà défini plus haut
+                WeekdayId = weekdayId,       // déjà défini plus haut
+                StartDate = new DateTime(2026, 2, 1),
+                EndDate = new DateTime(2026, 6, 30),
+                StartTime = new TimeSpan(8, 0, 0),
+                EndTime = new TimeSpan(12, 0, 0)
+            },
+            new Availability
+            {
+                AvailabilityId = avail2,
+                TeacherId = teacherUserId,
+                WeekdayId = weekdayId,
+                StartDate = new DateTime(2026, 2, 1),
+                EndDate = new DateTime(2026, 6, 30),
+                StartTime = new TimeSpan(13, 0, 0),
+                EndTime = new TimeSpan(17, 0, 0)
+            }
+        );
 
         // ========================================
         // 2. USERS ET RÔLES SPÉCIFIQUES
