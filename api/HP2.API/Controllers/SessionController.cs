@@ -45,7 +45,7 @@ public class SessionsController : ControllerBase
         var created = await _sessionService.CreateSessionAsync(model);
 
         return CreatedAtAction(nameof(Get), new { id = created.Id },
-            ApiResponse<SessionResponse>.Success(created, "Session created successfully"));
+            ApiResponse<SessionResponse>.Success(MapToResponse(created), "Session created successfully"));
     }
 
     [HttpGet("{id}")]
@@ -55,14 +55,15 @@ public class SessionsController : ControllerBase
         if (session == null)
             return NotFound(ApiResponse<SessionModel>.Fail($"Session with ID {id} not found"));
 
-        return Ok(ApiResponse<SessionResponse>.Success(session));
+        return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(session)));
     }
 
     [HttpGet]
     public async Task<ActionResult<ApiResponse<IEnumerable<SessionResponse>>>> GetAll()
     {
         var sessions = await _sessionService.GetAllSessionsAsync();
-        return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(sessions));
+        var responses = sessions.Select(MapToResponse);
+        return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(responses));
     }
 
     [HttpPut("{id}")]
@@ -92,7 +93,7 @@ public class SessionsController : ControllerBase
 
         await _sessionService.UpdateSessionAsync(existing);
 
-        return Ok(ApiResponse<SessionResponse>.Success(existing, "Session updated successfully"));
+        return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(existing), "Session updated successfully"));
     }
 
     [HttpDelete("{id}")]
@@ -114,20 +115,11 @@ public class SessionsController : ControllerBase
             StartDateTime = s.StartDateTime,
             EndDateTime = s.EndDateTime,
             Mode = s.Mode,
+            Description = s.Description,
 
-            Type = new ReferenceResponse
-            {
-                Id = s.SessionTypeId,
-                Label = s.SessionType?.Label ?? ""
-            },
-
-            Status = new ReferenceResponse
-            {
-                Id = s.SessionStatusId,
-                Label = s.SessionStatus?.Label ?? ""
-            },
-
-            Room = s.Room?.Number ?? ""
-        };
+            Type = new ReferenceResponse { Id = s.SessionTypeId, Label = s.SessionTypeId },     // fallback
+            Status = new ReferenceResponse { Id = s.SessionStatusId, Label = s.SessionStatusId }, // fallback
+            Room = s.RoomId 
+        };  
     }
 }
