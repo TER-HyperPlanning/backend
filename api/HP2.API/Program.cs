@@ -34,6 +34,10 @@ internal class Program
 
         builder.Services.AddControllers();
 
+        builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
+            options.UseSqlServer(connectionString)
+                   .LogTo(Console.WriteLine, LogLevel.Error));
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>
