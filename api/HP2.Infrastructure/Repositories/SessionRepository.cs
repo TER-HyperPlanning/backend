@@ -13,14 +13,52 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
 
     public override async Task<IReadOnlyList<SessionModel>> GetAllAsync()
     {
-        var sessions = await _dbContext.Sessions.ToListAsync();
-        return _mapper.Map<List<SessionModel>>(sessions);
+        return await _dbContext.Sessions
+            .Select(s => new SessionModel
+            {
+                Id = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                Mode = Enum.Parse<SessionMode>(s.Mode, ignoreCase: true),
+
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+
+                SessionTypeLabel = s.SessionType.Label,
+                SessionStatusLabel = s.SessionStatus.Label,
+                RoomNumber = s.Room.RoomNumber,
+
+                Description = null
+            })
+            .ToListAsync();
     }
 
-    public override async Task<SessionModel?> GetByIdAsync(string id)
+    public override async Task<SessionModel?> GetByIdAsync(string id)   
     {
-        var session = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == id);
-        return session != null ? _mapper.Map<SessionModel>(session) : null;
+        return await _dbContext.Sessions
+            .Where(s => s.SessionId == id)
+            .Select(s => new SessionModel
+            {
+                Id = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                Mode = Enum.Parse<SessionMode>(s.Mode, ignoreCase: true),
+
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+
+             
+                SessionTypeLabel = s.SessionType.Label,
+                SessionStatusLabel = s.SessionStatus.Label,
+                RoomNumber = s.Room.RoomNumber,
+
+                Description = null 
+            })
+            .FirstOrDefaultAsync();
     }
 
     public override async Task<SessionModel> AddAsync(SessionModel model)
@@ -34,7 +72,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
         Date = model.StartDateTime.Date,
         StartTime = model.StartDateTime.TimeOfDay,
         EndTime = model.EndDateTime.TimeOfDay,
-        Mode = model.Mode,
+        Mode = model.Mode.ToString(),
         SessionTypeId = model.SessionTypeId,
         CourseId = model.CourseId,
         SessionStatusId = model.SessionStatusId,
@@ -52,11 +90,10 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
         var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == model.Id);
         if (entity == null) return;
 
-        // update champs
         entity.Date = model.StartDateTime.Date;
         entity.StartTime = model.StartDateTime.TimeOfDay;
         entity.EndTime = model.EndDateTime.TimeOfDay;
-        entity.Mode = model.Mode;
+        entity.Mode = model.Mode.ToString();
         entity.SessionTypeId = model.SessionTypeId;
         entity.CourseId = model.CourseId;
         entity.SessionStatusId = model.SessionStatusId;
@@ -72,5 +109,5 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
 
         _dbContext.Sessions.Remove(entity);
         await _dbContext.SaveChangesAsync();
-    }
+    }    
 }

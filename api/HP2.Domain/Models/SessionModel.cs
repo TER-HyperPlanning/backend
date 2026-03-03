@@ -16,4 +16,9 @@ public class SessionModel : BaseModel
     public string RoomId { get; set; } = string.Empty;
 
     public string? Description { get; set; }
+
+    // ajout pour lecture
+    public string? SessionTypeLabel { get; set; }
+    public string? SessionStatusLabel { get; set; }
+    public string? RoomNumber { get; set; }
 }

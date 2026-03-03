@@ -21,13 +21,13 @@ public class SessionsController : ControllerBase
     public async Task<ActionResult<ApiResponse<SessionResponse>>> Create([FromBody] CreateSessionRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<SessionModel>.Fail("Session payload is required"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail("Session payload is required"));
 
         if (request.EndDateTime <= request.StartDateTime)
-            return BadRequest(ApiResponse<SessionModel>.Fail("EndDateTime must be greater than StartDateTime"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail("EndDateTime must be greater than StartDateTime"));
 
         if (request.StartDateTime.Date != request.EndDateTime.Date)
-            return BadRequest(ApiResponse<SessionModel>.Fail("StartDateTime and EndDateTime must be on the same date"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail("StartDateTime and EndDateTime must be on the same date"));
 
         var model = new SessionModel
         {
@@ -43,9 +43,11 @@ public class SessionsController : ControllerBase
         };
 
         var created = await _sessionService.CreateSessionAsync(model);
+        var createdFull = await _sessionService.GetSessionByIdAsync(created.Id);
 
         return CreatedAtAction(nameof(Get), new { id = created.Id },
-            ApiResponse<SessionResponse>.Success(MapToResponse(created), "Session created successfully"));
+            ApiResponse<SessionResponse>.Success(MapToResponse(createdFull!), "Session created successfully"));
+        
     }
 
     [HttpGet("{id}")]
@@ -53,7 +55,7 @@ public class SessionsController : ControllerBase
     {
         var session = await _sessionService.GetSessionByIdAsync(id);
         if (session == null)
-            return NotFound(ApiResponse<SessionModel>.Fail($"Session with ID {id} not found"));
+            return NotFound(ApiResponse<SessionResponse>.Fail($"Session with ID {id} not found"));
 
         return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(session)));
     }
@@ -70,17 +72,17 @@ public class SessionsController : ControllerBase
     public async Task<ActionResult<ApiResponse<SessionResponse>>> Update(string id, [FromBody] UpdateSessionRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<SessionModel>.Fail("Session payload is required"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail("Session payload is required"));
 
         if (request.EndDateTime <= request.StartDateTime)
-            return BadRequest(ApiResponse<SessionModel>.Fail("EndDateTime must be greater than StartDateTime"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail("EndDateTime must be greater than StartDateTime"));
 
         if (request.StartDateTime.Date != request.EndDateTime.Date)
-            return BadRequest(ApiResponse<SessionModel>.Fail("StartDateTime and EndDateTime must be on the same date"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail("StartDateTime and EndDateTime must be on the same date"));
 
         var existing = await _sessionService.GetSessionByIdAsync(id);
         if (existing == null)
-            return NotFound(ApiResponse<SessionModel>.Fail($"Session with ID {id} not found"));
+            return NotFound(ApiResponse<SessionResponse>.Fail($"Session with ID {id} not found"));
 
         existing.StartDateTime = request.StartDateTime;
         existing.EndDateTime = request.EndDateTime;
@@ -92,8 +94,10 @@ public class SessionsController : ControllerBase
         existing.Description = request.Description;
 
         await _sessionService.UpdateSessionAsync(existing);
-
-        return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(existing), "Session updated successfully"));
+        var updatedFull = await _sessionService.GetSessionByIdAsync(id);
+        
+        return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(updatedFull!), "Session updated successfully"));
+        
     }
 
     [HttpDelete("{id}")]
@@ -117,9 +121,9 @@ public class SessionsController : ControllerBase
             Mode = s.Mode,
             Description = s.Description,
 
-            Type = new ReferenceResponse { Id = s.SessionTypeId, Label = s.SessionTypeId },     // fallback
-            Status = new ReferenceResponse { Id = s.SessionStatusId, Label = s.SessionStatusId }, // fallback
-            Room = s.RoomId 
+            Type = s.SessionTypeLabel ?? "",
+            Status = s.SessionStatusLabel ?? "",
+            Room = s.RoomNumber ?? "",
         };  
     }
 }
