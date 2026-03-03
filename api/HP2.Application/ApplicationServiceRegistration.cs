@@ -9,6 +9,7 @@ namespace HP2.Application
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IBuildingService, BuildingService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
 
@@ -24,7 +25,7 @@ namespace HP2.Application
         {
             services.AddScoped<IJWTService>(provider =>
                 new JWTService(issuer, audience, secretKey, expirationMinutes));
-            services.AddScoped<IBuildingService, BuildingService>();
+            
 
             return services;
         }

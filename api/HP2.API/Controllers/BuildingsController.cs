@@ -1,4 +1,5 @@
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,57 +17,58 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<BuildingModel>> Create([FromBody] BuildingModel building)
+    public async Task<ActionResult<ApiResponse<BuildingModel>>> Create([FromBody] BuildingModel building)
     {
         if (building == null)
-            return BadRequest();
+            return BadRequest(ApiResponse<BuildingModel>.Fail("Building payload is required"));
 
         var createdBuilding = await _buildingService.CreateBuildingAsync(building);
-        return CreatedAtAction(nameof(Get), new { id = createdBuilding.Id }, createdBuilding);
+        return CreatedAtAction(nameof(Get), new { id = createdBuilding.Id },
+            ApiResponse<BuildingModel>.Success(createdBuilding, "Building created successfully"));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<BuildingModel>> Get(string id)
+    public async Task<ActionResult<ApiResponse<BuildingModel>>> Get(string id)
     {
         var building = await _buildingService.GetBuildingByIdAsync(id);
         if (building == null)
-            return NotFound();
+            return NotFound(ApiResponse<BuildingModel>.Fail($"Building with ID {id} not found"));
 
-        return Ok(building);
+        return Ok(ApiResponse<BuildingModel>.Success(building));
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<BuildingModel>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<BuildingModel>>>> GetAll()
     {
         var buildings = await _buildingService.GetAllBuildingsAsync();
-        return Ok(buildings);
+        return Ok(ApiResponse<IEnumerable<BuildingModel>>.Success(buildings));
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] BuildingModel building)
+    public async Task<ActionResult<ApiResponse<BuildingModel>>> Update(string id, [FromBody] BuildingModel building)
     {
         if (building == null)
-            return BadRequest();
+            return BadRequest(ApiResponse<BuildingModel>.Fail("Building payload is required"));
 
         if (id != building.Id)
-            return BadRequest("ID mismatch");
+            return BadRequest(ApiResponse<BuildingModel>.Fail("ID mismatch"));
 
         var existing = await _buildingService.GetBuildingByIdAsync(id);
         if (existing == null)
-            return NotFound($"Building with ID {id} not found");
+            return NotFound(ApiResponse<BuildingModel>.Fail($"Building with ID {id} not found"));
 
         await _buildingService.UpdateBuildingAsync(building);
-        return NoContent();
+        return Ok(ApiResponse<BuildingModel>.Success(building, "Building updated successfully"));
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
         var existing = await _buildingService.GetBuildingByIdAsync(id);
         if (existing == null)
-            return NotFound($"Building with ID {id} not found");
+            return NotFound(ApiResponse<string>.Fail($"Building with ID {id} not found"));
 
         await _buildingService.DeleteBuildingAsync(id);
-        return NoContent();
+        return Ok(ApiResponse<string>.Success(id, "Building deleted successfully"));
     }
 }
