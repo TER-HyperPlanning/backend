@@ -10,6 +10,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
+<<<<<<< Updated upstream
+=======
+	<FrameworkReference Include="Microsoft.AspNetCore.App" />
+>>>>>>> Stashed changes
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

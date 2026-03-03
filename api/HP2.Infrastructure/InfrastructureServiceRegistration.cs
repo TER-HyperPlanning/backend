@@ -15,10 +15,17 @@ namespace HP2.Infrastructure
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddDbContext<TerHyperplanningContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("LocalConnection")));
+                options.UseSqlServer(
+                    configuration.GetConnectionString("LocalConnection"),
+                    sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IStudentRepository, StudentRepository>();
+<<<<<<< Updated upstream
+=======
+            services.AddScoped<IProgramRepository, ProgramRepository>();
+            services.AddScoped<IBuildingRepository, BuildingRepository>();
+>>>>>>> Stashed changes
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
 
