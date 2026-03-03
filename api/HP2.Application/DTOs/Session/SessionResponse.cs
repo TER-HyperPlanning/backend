@@ -1,5 +1,5 @@
 using HP2.Domain.Models;
-
+using HP2.Domain.Enums;
 namespace HP2.Application.DTOs.Session;
 
 public class SessionResponse

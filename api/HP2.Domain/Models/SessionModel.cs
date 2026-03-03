@@ -1,5 +1,5 @@
 using HP2.Domain.Common;
-
+using HP2.Domain.Enums;
 namespace HP2.Domain.Models;
 
 public class SessionModel : BaseModel
@@ -9,7 +9,7 @@ public class SessionModel : BaseModel
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
 
-    public SessionMode Mode { get; set; }
+    public string Mode { get; set; }
     public string SessionTypeId { get; set; } = string.Empty;
     public string CourseId { get; set; } = string.Empty;
     public string SessionStatusId { get; set; } = string.Empty;

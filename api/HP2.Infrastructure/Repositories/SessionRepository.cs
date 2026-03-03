@@ -1,6 +1,7 @@
 using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Domain.Models;
+using HP2.Domain.Enums;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 

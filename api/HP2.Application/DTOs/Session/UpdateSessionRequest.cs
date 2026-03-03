@@ -1,5 +1,5 @@
 namespace HP2.Application.DTOs.Session;
-
+using HP2.Domain.Enums;
 public class UpdateSessionRequest
 {
     public DateTime StartDateTime { get; set; }
