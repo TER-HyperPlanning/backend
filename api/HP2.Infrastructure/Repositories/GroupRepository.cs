@@ -15,7 +15,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
     {
     }
 
-        public async Task<IEnumerable<GroupModel>> GetAllAsync()
+        public override async Task<IReadOnlyList<GroupModel>> GetAllAsync()
     {
         var groups = await _dbContext.Groups
             .ToListAsync();
@@ -23,7 +23,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
     }
 
 
-    public async Task<GroupModel> AddAsync(GroupModel groupModel)
+    public override async Task<GroupModel> AddAsync(GroupModel groupModel)
     {
         var group = new Infrastructure.Persistence.Entities.Group
         {
@@ -39,7 +39,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         return groupModel;
     }
 
-    public async Task<GroupModel?> GetByIdAsync(string id)
+    public override async Task<GroupModel?> GetByIdAsync(string id)
     {
         var group = await _dbContext.Groups
             .FirstOrDefaultAsync(s => s.GroupId == id);
@@ -47,7 +47,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         return group != null ? _mapper.Map<GroupModel>(group) : null;
     }
 
-    public async Task UpdateAsync(GroupModel groupModel)
+    public override async Task UpdateAsync(GroupModel groupModel)
     {
         var group = await _dbContext.Groups
             .FirstOrDefaultAsync(s => s.GroupId == groupModel.Id);
@@ -63,7 +63,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(string id)
+    public override async Task DeleteAsync(string id)
     {
         var group = await _dbContext.Groups
             .FirstOrDefaultAsync(s => s.GroupId == id);
