@@ -24,7 +24,6 @@ namespace HP2.Application
         {
             services.AddScoped<IJWTService>(provider =>
                 new JWTService(issuer, audience, secretKey, expirationMinutes));
-            services.AddScoped<IProgramService, ProgramService>();
             services.AddScoped<IBuildingService, BuildingService>();
 
             return services;
