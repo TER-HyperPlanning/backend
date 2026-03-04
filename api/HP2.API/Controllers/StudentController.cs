@@ -3,11 +3,13 @@ using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Student;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class StudentsController : ControllerBase
 {
     private readonly IStudentService _studentService;
