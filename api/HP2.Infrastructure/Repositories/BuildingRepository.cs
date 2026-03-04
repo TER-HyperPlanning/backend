@@ -28,7 +28,11 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
 
     public override async Task<BuildingModel> AddAsync(BuildingModel buildingModel)
     {
-        var entity = _mapper.Map<Building>(buildingModel);
+        var entity = new Building
+        {
+            BuildingId = buildingModel.Id,
+            Name = buildingModel.Name
+        };
 
         if (string.IsNullOrWhiteSpace(entity.BuildingId))
         {
