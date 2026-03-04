@@ -75,7 +75,9 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<SessionChange, SessionChangeModel>().ReverseMap();
             
             // ===== Room =====
-            CreateMap<Building, BuildingModel>().ReverseMap();
+            CreateMap<Building, BuildingModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BuildingId))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
             CreateMap<Room, RoomModel>().ReverseMap();
             CreateMap<RoomType, RoomTypeModel>().ReverseMap();
             

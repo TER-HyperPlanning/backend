@@ -30,14 +30,9 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
     {
         var entity = new Building
         {
-            BuildingId = buildingModel.Id,
+            BuildingId = Guid.NewGuid().ToString(),
             Name = buildingModel.Name
         };
-
-        if (string.IsNullOrWhiteSpace(entity.BuildingId))
-        {
-            entity.BuildingId = Guid.NewGuid().ToString();
-        }
 
         await _dbContext.Buildings.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
