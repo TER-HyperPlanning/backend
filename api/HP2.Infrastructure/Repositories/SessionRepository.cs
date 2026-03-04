@@ -20,7 +20,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 Id = s.SessionId,
                 StartDateTime = s.Date.Date + s.StartTime,
                 EndDateTime = s.Date.Date + s.EndTime,
-                Mode = Enum.Parse<SessionMode>(s.Mode, ignoreCase: true),
+                Mode = Enum.Parse<SessionMode>(s.Mode, true),
 
                 SessionTypeId = s.SessionTypeId,
                 CourseId = s.CourseId,
@@ -31,7 +31,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 SessionStatusLabel = s.SessionStatus.Label,
                 RoomNumber = s.Room.RoomNumber,
 
-                Description = null
+                Description = s.Description
             })
             .ToListAsync();
     }
@@ -45,7 +45,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 Id = s.SessionId,
                 StartDateTime = s.Date.Date + s.StartTime,
                 EndDateTime = s.Date.Date + s.EndTime,
-                Mode = Enum.Parse<SessionMode>(s.Mode, ignoreCase: true),
+                Mode = Enum.Parse<SessionMode>(s.Mode, true),
 
                 SessionTypeId = s.SessionTypeId,
                 CourseId = s.CourseId,
@@ -57,7 +57,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 SessionStatusLabel = s.SessionStatus.Label,
                 RoomNumber = s.Room.RoomNumber,
 
-                Description = null 
+                Description = s.Description 
             })
             .FirstOrDefaultAsync();
     }
@@ -77,7 +77,8 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
         SessionTypeId = model.SessionTypeId,
         CourseId = model.CourseId,
         SessionStatusId = model.SessionStatusId,
-        RoomId = model.RoomId
+        RoomId = model.RoomId,
+        Description = model.Description
     };
 
     await _dbContext.Sessions.AddAsync(entity);
@@ -99,6 +100,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
         entity.CourseId = model.CourseId;
         entity.SessionStatusId = model.SessionStatusId;
         entity.RoomId = model.RoomId;
+        entity.Description = model.Description;
 
         await _dbContext.SaveChangesAsync();
     }
