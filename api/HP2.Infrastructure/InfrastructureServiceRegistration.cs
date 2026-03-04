@@ -5,6 +5,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using System.Reflection;
 using HP2.Application.Contracts;
 using HP2.Infrastructure.Repositories;
+using HP2.Infrastructure.Persistence.Repositories;
 
 namespace HP2.Infrastructure
 {
@@ -19,6 +20,7 @@ namespace HP2.Infrastructure
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
 

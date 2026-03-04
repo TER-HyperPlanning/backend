@@ -1,5 +1,6 @@
 ﻿using HP2.Application.Contracts;
 using HP2.Application.Security;
+using HP2.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HP2.Application
@@ -9,6 +10,7 @@ namespace HP2.Application
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IRoomService, RoomService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
 
