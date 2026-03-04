@@ -124,6 +124,7 @@ public class SessionsController : ControllerBase
             Type = s.SessionTypeLabel ?? "",
             Status = s.SessionStatusLabel ?? "",
             Room = s.RoomNumber ?? "",
+            Course = s.CourseName ?? ""
         };  
     }
 }
