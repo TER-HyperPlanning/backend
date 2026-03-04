@@ -12,4 +12,5 @@ public class SessionResponse
     public string Status { get; set; } = string.Empty;
     public string Room { get; set; } = string.Empty;
     public string? Description { get; set; }
+    public string Course { get; set; } = string.Empty;
 }

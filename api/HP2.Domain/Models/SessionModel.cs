@@ -21,4 +21,5 @@ public class SessionModel : BaseModel
     public string? SessionTypeLabel { get; set; }
     public string? SessionStatusLabel { get; set; }
     public string? RoomNumber { get; set; }
+    public string? CourseName { get; set; }
 }

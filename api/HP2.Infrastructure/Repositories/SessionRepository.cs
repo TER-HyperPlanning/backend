@@ -30,7 +30,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 SessionTypeLabel = s.SessionType.Label,
                 SessionStatusLabel = s.SessionStatus.Label,
                 RoomNumber = s.Room.RoomNumber,
-
+                CourseName = s.Course.Name,
                 Description = s.Description
             })
             .ToListAsync();
@@ -56,7 +56,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 SessionTypeLabel = s.SessionType.Label,
                 SessionStatusLabel = s.SessionStatus.Label,
                 RoomNumber = s.Room.RoomNumber,
-
+                CourseName = s.Course.Name,
                 Description = s.Description 
             })
             .FirstOrDefaultAsync();
