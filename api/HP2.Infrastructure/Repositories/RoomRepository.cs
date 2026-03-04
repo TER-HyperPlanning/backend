@@ -17,16 +17,16 @@ namespace HP2.Infrastructure.Persistence.Repositories
         {
         }
 
-        public async Task<RoomModel> AddAsync(RoomRequest roomDto)
+        public override async Task<RoomModel> AddAsync(RoomModel roomModel)
         {
             var room = new Room
             {
-                RoomId = roomDto.RoomId,
-                RoomNumber = roomDto.RoomNumber,
-                IsAvailable = roomDto.IsAvailable,
-                Capacity = roomDto.Capacity,
-                BuildingId = roomDto.BuildingId,
-                RoomTypeId = roomDto.RoomTypeId
+                RoomId = roomModel.RoomId,
+                RoomNumber = roomModel.RoomNumber,
+                IsAvailable = roomModel.IsAvailable,
+                Capacity = roomModel.Capacity,
+                BuildingId = roomModel.BuildingId,
+                RoomTypeId = roomModel.Type.ToString()
             };
 
             await _dbContext.Rooms.AddAsync(room);
@@ -43,7 +43,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
             };
         }
 
-        public async Task DeleteAsync(int id)
+        public override async Task DeleteAsync(string id)
         {
             var room = await _dbContext.Rooms.FindAsync(id);
             if (room != null)
@@ -53,7 +53,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
             }
         }
 
-        public async Task<IEnumerable<RoomModel>> GetAllAsync()
+        public override async Task<IReadOnlyList<RoomModel>> GetAllAsync()
         {
             return await _dbContext.Rooms
                 .Select(r => new RoomModel
@@ -68,7 +68,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public async Task<RoomModel> GetByIdAsync(int id)
+        public override async Task<RoomModel> GetByIdAsync(string id)
         {
             var room = await _dbContext.Rooms.FindAsync(id);
             if (room == null) return null!;
@@ -83,7 +83,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
             };
         }
 
-        public async Task<IEnumerable<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId)
+        public async Task<IReadOnlyList<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId)
         {
             return await _dbContext.Rooms
                 .Where(r => r.BuildingId == buildingId)
@@ -100,19 +100,20 @@ namespace HP2.Infrastructure.Persistence.Repositories
 
 
 
-        public async Task<RoomModel> UpdateAsync(int id, RoomRequest roomDto)
+        public override async Task<RoomModel> UpdateAsync(RoomModel roomModel)
         {
+            var id = roomModel.RoomId;
             var room = await _dbContext.Rooms.FindAsync(id);
             if (room == null)
             {
                 throw new KeyNotFoundException($"salle  {id} introuvable.");
             }
 
-            room.RoomNumber = roomDto.RoomNumber;
-            room.IsAvailable = roomDto.IsAvailable;
-            room.Capacity = roomDto.Capacity;
-            room.BuildingId = roomDto.BuildingId;
-            room.RoomTypeId = roomDto.RoomTypeId;
+            room.RoomNumber = roomModel.RoomNumber;
+            room.IsAvailable = roomModel.IsAvailable;
+            room.Capacity = roomModel.Capacity;
+            room.BuildingId = roomModel.BuildingId;
+            room.RoomTypeId = roomModel.Type.ToString();
 
             _dbContext.Rooms.Update(room);
             await _dbContext.SaveChangesAsync();

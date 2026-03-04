@@ -6,7 +6,7 @@ namespace HP2.Application.Contracts
 {
     public interface IRoomRepository : IAsyncRepository<RoomModel>
     {
-        Task<IEnumerable<RoomModel?>> GetRoomsByBuildingIdAsync(string buildingId);
+        Task<IReadOnlyList<RoomModel?>> GetRoomsByBuildingIdAsync(string buildingId);
 
     }
 }
