@@ -31,7 +31,6 @@ public class SessionsController : ControllerBase
 
         var model = new SessionModel
         {
-            Id = request.Id,
             StartDateTime = request.StartDateTime,
             EndDateTime = request.EndDateTime,
             Mode = request.Mode,

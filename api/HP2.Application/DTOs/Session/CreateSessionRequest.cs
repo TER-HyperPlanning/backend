@@ -2,7 +2,6 @@ namespace HP2.Application.DTOs.Session;
 using HP2.Domain.Enums;
 public class CreateSessionRequest
 {
-    public string Id { get; set; } = string.Empty;
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
 

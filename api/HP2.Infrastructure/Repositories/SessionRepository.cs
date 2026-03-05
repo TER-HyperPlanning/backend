@@ -69,7 +69,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
 
     var entity = new HP2.Infrastructure.Persistence.Entities.Session
     {
-        SessionId = model.Id,
+        SessionId = Guid.NewGuid().ToString(),
         Date = model.StartDateTime.Date,
         StartTime = model.StartDateTime.TimeOfDay,
         EndTime = model.EndDateTime.TimeOfDay,
@@ -83,7 +83,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
 
     await _dbContext.Sessions.AddAsync(entity);
     await _dbContext.SaveChangesAsync();
-
+    model.Id = entity.SessionId;
     return model;
 }
 
