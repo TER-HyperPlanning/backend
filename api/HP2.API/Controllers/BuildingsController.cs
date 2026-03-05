@@ -1,4 +1,5 @@
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Building;
 using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +18,15 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<BuildingModel>>> Create([FromBody] BuildingModel building)
+    public async Task<ActionResult<ApiResponse<BuildingModel>>> Create([FromBody] CreateBuildingRequest request)
     {
-        if (building == null)
+        if (request == null)
             return BadRequest(ApiResponse<BuildingModel>.Fail("Building payload is required"));
+
+        var building = new BuildingModel
+        {
+            Name = request.Name
+        };
 
         var createdBuilding = await _buildingService.CreateBuildingAsync(building);
         return CreatedAtAction(nameof(Get), new { id = createdBuilding.Id },
