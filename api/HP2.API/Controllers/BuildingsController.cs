@@ -51,20 +51,19 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<BuildingModel>>> Update(string id, [FromBody] BuildingModel building)
+    public async Task<ActionResult<ApiResponse<BuildingModel>>> Update(string id, [FromBody] UpdateBuildingRequest request)
     {
-        if (building == null)
+        if (request == null)
             return BadRequest(ApiResponse<BuildingModel>.Fail("Building payload is required"));
-
-        if (id != building.Id)
-            return BadRequest(ApiResponse<BuildingModel>.Fail("ID mismatch"));
 
         var existing = await _buildingService.GetBuildingByIdAsync(id);
         if (existing == null)
             return NotFound(ApiResponse<BuildingModel>.Fail($"Building with ID {id} not found"));
 
-        await _buildingService.UpdateBuildingAsync(building);
-        return Ok(ApiResponse<BuildingModel>.Success(building, "Building updated successfully"));
+        existing.Name = request.Name;
+
+        await _buildingService.UpdateBuildingAsync(existing);
+        return Ok(ApiResponse<BuildingModel>.Success(existing, "Building updated successfully"));
     }
 
     [HttpDelete("{id}")]
