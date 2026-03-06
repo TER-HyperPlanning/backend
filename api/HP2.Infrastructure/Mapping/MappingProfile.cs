@@ -45,6 +45,7 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User != null ? src.User.FirstName : string.Empty))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User != null ? src.User.LastName : string.Empty))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.User != null ? Enum.Parse<HP2.Domain.Enums.UserRole>(src.User.UserRole.Name, true) : HP2.Domain.Enums.UserRole.TEACHER))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
                 .ForMember(dest => dest.Matricule, opt => opt.MapFrom(src => src.RegistrationNumber))
                 .ForMember(dest => dest.TitleId, opt => opt.MapFrom(src => src.TeacherTitleId))

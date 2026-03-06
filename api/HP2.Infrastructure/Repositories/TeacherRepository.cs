@@ -18,6 +18,7 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
     {
         var teachers = await _dbContext.Teachers
             .Include(t => t.User)
+            .ThenInclude(u => u.UserRole)
             .Include(t => t.TeacherTitle)
             .ToListAsync();
         
@@ -57,9 +58,9 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
         return teacher != null ? _mapper.Map<TeacherModel>(teacher) : null;
     }
 
-    public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
+public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
 {
-    // Get the TEACHER role ID from database
+    // Get the TEACHER role from database
     var teacherRole = await _dbContext.UserRoles
         .FirstOrDefaultAsync(r => r.Name == "TEACHER");
     
@@ -86,7 +87,7 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
         FirstName = teacherModel.FirstName,
         LastName = teacherModel.LastName,
         PhoneNumber = teacherModel.Phone ?? string.Empty,
-        UserRoleId = teacherRole.UserRoleId,  
+        UserRoleId = teacherRole.UserRoleId,  // Use the actual UUID from the database
         CreatedAt = DateTime.UtcNow,
         UpdatedAt = DateTime.UtcNow,
     };
@@ -154,7 +155,7 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
         .Include(t => t.Tracks)
             .ThenInclude(tr => tr.Assigns)
         .Include(t => t.Tracks)
-            .ThenInclude(tr => tr.Groups) // ← add this
+            .ThenInclude(tr => tr.Groups) 
         .FirstOrDefaultAsync(t => t.UserId == id);
 
     if (teacher != null)
