@@ -29,6 +29,7 @@ namespace HP2.Infrastructure
             // services.AddScoped<SeanceTestRepository, SeanceTestRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
             //services.AddScoped<ICategorieRepository, CategorieRepository>();
             //services.AddScoped<ITagRepository, TagRepository>();
             //services.AddScoped<IParticipationRepository, ParticipationRepository>();
