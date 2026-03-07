@@ -22,7 +22,8 @@ namespace HP2.Infrastructure
             services.AddScoped<IBuildingRepository, BuildingRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
-
+            services.AddScoped<ISessionRepository, SessionRepository>();
+            
             return services;
         }
     }

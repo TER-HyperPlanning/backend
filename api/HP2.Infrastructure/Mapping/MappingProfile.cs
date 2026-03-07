@@ -68,8 +68,35 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<Course, CourseModel>().ReverseMap();
             CreateMap<Group, GroupModel>().ReverseMap();
             
-            // ===== Session =====
-            CreateMap<Session, SessionModel>().ReverseMap();
+            // ===== Session Mapping =====
+            CreateMap<Session, SessionModel>()
+                .ForMember(dest => dest.Id,opt => opt.MapFrom(src => src.SessionId))
+                .ForMember(dest => dest.StartDateTime, opt => opt.MapFrom(src => src.Date.Date + src.StartTime))
+                .ForMember(dest => dest.EndDateTime,opt => opt.MapFrom(src => src.Date.Date + src.EndTime))
+                .ForMember(dest => dest.Mode,opt => opt.MapFrom(src => src.Mode))
+                .ForMember(dest => dest.SessionTypeId,opt => opt.MapFrom(src => src.SessionTypeId))
+                .ForMember(dest => dest.CourseId,opt => opt.MapFrom(src => src.CourseId))
+                .ForMember(dest => dest.SessionStatusId,opt => opt.MapFrom(src => src.SessionStatusId))
+                .ForMember(dest => dest.RoomId,opt => opt.MapFrom(src => src.RoomId))
+                .ForMember(dest => dest.Description,opt => opt.Ignore())
+                .ReverseMap()
+                .ForMember(dest => dest.SessionId,opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Date,opt => opt.MapFrom(src => src.StartDateTime.Date))
+                .ForMember(dest => dest.StartTime,opt => opt.MapFrom(src => src.StartDateTime.TimeOfDay))
+                .ForMember(dest => dest.EndTime,opt => opt.MapFrom(src => src.EndDateTime.TimeOfDay))
+                .ForMember(dest => dest.Mode,opt => opt.MapFrom(src => src.Mode))
+                .ForMember(dest => dest.SessionTypeId,opt => opt.MapFrom(src => src.SessionTypeId))
+                .ForMember(dest => dest.CourseId,opt => opt.MapFrom(src => src.CourseId))
+                .ForMember(dest => dest.SessionStatusId,opt => opt.MapFrom(src => src.SessionStatusId))
+                .ForMember(dest => dest.RoomId,opt => opt.MapFrom(src => src.RoomId))
+                .ForMember(dest => dest.Course,opt => opt.Ignore())
+                .ForMember(dest => dest.Room,opt => opt.Ignore())
+                .ForMember(dest => dest.SessionStatus,opt => opt.Ignore())
+                .ForMember(dest => dest.SessionType,opt => opt.Ignore())
+                .ForMember(dest => dest.SessionChanges,opt => opt.Ignore())
+                .ForMember(dest => dest.Groups,opt => opt.Ignore())
+                .ForMember(dest => dest.Teachers,opt => opt.Ignore());
+
             CreateMap<SessionType, SessionTypeModel>().ReverseMap();
             CreateMap<SessionStatus, SessionStatusModel>().ReverseMap();
             CreateMap<SessionChange, SessionChangeModel>().ReverseMap();
