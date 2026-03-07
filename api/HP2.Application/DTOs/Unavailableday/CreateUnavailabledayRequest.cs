@@ -1,10 +1,7 @@
-using HP2.Domain.Common;
+namespace HP2.Application.DTOs.Unavailableday;
 
-namespace HP2.Domain.Models;
-
-public class UnavailableDayModel : BaseModel
+public class CreateUnavailabledayRequest
 {
-    public string Id { get; set; } = string.Empty;
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public TimeSpan StartTime { get; set; }
