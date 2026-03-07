@@ -23,7 +23,7 @@ public class StudentsController : ControllerBase
     public async Task<ActionResult<ApiResponse<StudentResponse>>> Create([FromBody] CreateStudentRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required", 400));
+            return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required"));
 
         var student = new StudentModel
         {
@@ -37,7 +37,7 @@ public class StudentsController : ControllerBase
 
         var createdStudent = await _studentService.CreateStudentAsync(student);
         return CreatedAtAction(nameof(Get), new { id = createdStudent.Id },
-            ApiResponse<StudentResponse>.Success(MapToResponse(createdStudent), "Student created successfully", 201));
+            ApiResponse<StudentResponse>.Success(MapToResponse(createdStudent), "Student created successfully"));
     }
 
     [HttpGet("{id}")]
@@ -45,7 +45,7 @@ public class StudentsController : ControllerBase
     {
         var student = await _studentService.GetStudentByIdAsync(id);
         if (student == null)
-            return NotFound(ApiResponse<StudentResponse>.Fail($"Student with ID {id} not found", 404));
+            return NotFound(ApiResponse<StudentResponse>.Fail($"Student with ID {id} not found"));
 
         return Ok(ApiResponse<StudentResponse>.Success(MapToResponse(student)));
     }
@@ -62,11 +62,11 @@ public class StudentsController : ControllerBase
     public async Task<ActionResult<ApiResponse<StudentResponse>>> Update(string id, [FromBody] UpdateStudentRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required", 400));
+            return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required"));
 
         var existing = await _studentService.GetStudentByIdAsync(id);
         if (existing == null)
-            return NotFound(ApiResponse<StudentResponse>.Fail($"Student with ID {id} not found", 404));
+            return NotFound(ApiResponse<StudentResponse>.Fail($"Student with ID {id} not found"));
 
         existing.Email = request.Email;
         existing.FirstName = request.FirstName;
@@ -83,7 +83,7 @@ public class StudentsController : ControllerBase
     {
         var existing = await _studentService.GetStudentByIdAsync(id);
         if (existing == null)
-            return NotFound(ApiResponse<string>.Fail($"Student with ID {id} not found", 404));
+            return NotFound(ApiResponse<string>.Fail($"Student with ID {id} not found"));
 
         await _studentService.DeleteStudentAsync(id);
         return Ok(ApiResponse<string>.Success(id, "Student deleted successfully"));

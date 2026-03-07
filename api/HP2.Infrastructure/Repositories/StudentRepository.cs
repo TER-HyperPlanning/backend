@@ -10,8 +10,11 @@ namespace HP2.Infrastructure.Repositories;
 
 public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepository
 {
-    public StudentRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper)
+    private readonly IBCryptService _bcryptService;
+
+    public StudentRepository(TerHyperplanningContext dbContext, IMapper mapper, IBCryptService bcryptService) : base(dbContext, mapper)
     {
+        _bcryptService = bcryptService;
     }
 
     public override async Task<IReadOnlyList<StudentModel>> GetAllAsync()
@@ -54,7 +57,7 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
             throw new InvalidOperationException($"UserRole '{formattedRoleName}' not found in database.");
 
         // Hash the password with BCrypt
-        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(studentModel.Password, workFactor: 12);
+        var hashedPassword = _bcryptService.HashPassword(studentModel.Password);
 
         // Create User entity from StudentModel (which inherits UserModel)
         var user = new Infrastructure.Persistence.Entities.User
