@@ -1,0 +1,12 @@
+using HP2.Domain.Models;
+
+namespace HP2.Application.Contracts;
+
+public interface IBuildingService
+{
+    Task<BuildingModel> CreateBuildingAsync(BuildingModel building);
+    Task<IEnumerable<BuildingModel>> GetAllBuildingsAsync();
+    Task<BuildingModel?> GetBuildingByIdAsync(string id);
+    Task UpdateBuildingAsync(BuildingModel building);
+    Task DeleteBuildingAsync(string id);
+}
