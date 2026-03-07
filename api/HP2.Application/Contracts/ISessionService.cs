@@ -9,4 +9,5 @@ public interface ISessionService
     Task<IEnumerable<SessionModel>> GetAllSessionsAsync();
     Task UpdateSessionAsync(SessionModel session);
     Task DeleteSessionAsync(string id);
+
 }

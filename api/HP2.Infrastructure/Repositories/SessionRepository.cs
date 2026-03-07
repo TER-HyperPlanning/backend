@@ -63,29 +63,27 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
     }
 
     public override async Task<SessionModel> AddAsync(SessionModel model)
-{
-    if (string.IsNullOrWhiteSpace(model.Id))
-        model.Id = Guid.NewGuid().ToString();
-
-    var entity = new HP2.Infrastructure.Persistence.Entities.Session
     {
-        SessionId = Guid.NewGuid().ToString(),
-        Date = model.StartDateTime.Date,
-        StartTime = model.StartDateTime.TimeOfDay,
-        EndTime = model.EndDateTime.TimeOfDay,
-        Mode = model.Mode.ToString(),
-        SessionTypeId = model.SessionTypeId,
-        CourseId = model.CourseId,
-        SessionStatusId = model.SessionStatusId,
-        RoomId = model.RoomId,
-        Description = model.Description
-    };
+        var entity = new HP2.Infrastructure.Persistence.Entities.Session
+        {
+            SessionId = Guid.NewGuid().ToString(),
+            Date = model.StartDateTime.Date,
+            StartTime = model.StartDateTime.TimeOfDay,
+            EndTime = model.EndDateTime.TimeOfDay,
+            Mode = model.Mode.ToString(),
+            SessionTypeId = model.SessionTypeId,
+            CourseId = model.CourseId,
+            SessionStatusId = model.SessionStatusId,
+            RoomId = model.RoomId,
+            Description = model.Description
+        };
 
-    await _dbContext.Sessions.AddAsync(entity);
-    await _dbContext.SaveChangesAsync();
-    model.Id = entity.SessionId;
-    return model;
-}
+        await _dbContext.Sessions.AddAsync(entity);
+        await _dbContext.SaveChangesAsync();
+
+        model.Id = entity.SessionId;
+        return model;
+    }
 
     public override async Task UpdateAsync(SessionModel model)
     {
@@ -113,4 +111,44 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
         _dbContext.Sessions.Remove(entity);
         await _dbContext.SaveChangesAsync();
     }    
+
+        private static string MapSessionTypeEnumToLabel(SessionTypeEnum sessionType) => sessionType switch
+    {
+        SessionTypeEnum.COURS_MAGISTRAL => "Cours Magistral",
+        SessionTypeEnum.TD => "TD",
+        SessionTypeEnum.TP => "TP",
+        _ => throw new ArgumentOutOfRangeException(nameof(sessionType), sessionType, null)
+    };
+
+    private static string MapSessionStatusEnumToLabel(SessionStatusEnum sessionStatus) => sessionStatus switch
+    {
+        SessionStatusEnum.PROGRAMME => "Programmé",
+        _ => throw new ArgumentOutOfRangeException(nameof(sessionStatus), sessionStatus, null)
+    };
+
+    public async Task<string> GetSessionTypeIdByEnumAsync(SessionTypeEnum sessionType)
+    {
+        var label = MapSessionTypeEnumToLabel(sessionType);
+
+        var entity = await _dbContext.SessionTypes
+            .FirstOrDefaultAsync(x => x.Label == label);
+
+        if (entity == null)
+            throw new InvalidOperationException($"SessionType with label '{label}' not found.");
+
+        return entity.SessionTypeId;
+    }
+
+    public async Task<string> GetSessionStatusIdByEnumAsync(SessionStatusEnum sessionStatus)
+    {
+        var label = MapSessionStatusEnumToLabel(sessionStatus);
+
+        var entity = await _dbContext.SessionStatuses
+            .FirstOrDefaultAsync(x => x.Label == label);
+
+        if (entity == null)
+            throw new InvalidOperationException($"SessionStatus with label '{label}' not found.");
+
+        return entity.SessionStatusId;
+    }
 }
