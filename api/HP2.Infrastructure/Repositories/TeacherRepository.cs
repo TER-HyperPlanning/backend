@@ -68,15 +68,20 @@ public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
         throw new InvalidOperationException("TEACHER role not found in database");
 
     // If TitleId is not provided, get a default one from database
-    string teacherTitleId = teacherModel.TitleId ?? string.Empty;
-    if (string.IsNullOrEmpty(teacherTitleId))
-    {
-        var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
-        if (defaultTitle != null)
-            teacherTitleId = defaultTitle.TeacherTitleId;
-        else
-            throw new InvalidOperationException("No TeacherTitle found in database. Please create one first.");
-    }
+    string teacherTitleId;
+if (teacherModel.Title.HasValue)
+{
+    var titleName = teacherModel.Title.Value.ToString(); // e.g. "PROFESSEUR"
+    var titleEntity = await _dbContext.TeacherTitles.FirstOrDefaultAsync(t => t.Name == titleName);
+    teacherTitleId = titleEntity?.TeacherTitleId 
+        ?? throw new InvalidOperationException($"TeacherTitle '{titleName}' not found in database.");
+}
+else
+{
+    var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
+    teacherTitleId = defaultTitle?.TeacherTitleId 
+        ?? throw new InvalidOperationException("No TeacherTitle found in database.");
+}
 
     // Create User entity from TeacherModel
     var user = new Infrastructure.Persistence.Entities.User
@@ -132,17 +137,19 @@ public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
     teacher.RegistrationNumber = teacherModel.Matricule;
     
     // Handle TitleId - only update if provided
-    if (!string.IsNullOrEmpty(teacherModel.TitleId))
-    {
-        teacher.TeacherTitleId = teacherModel.TitleId;
-    }
-    else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
-    {
-        // If TitleId is null and teacher doesn't have one, get default
-        var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
-        if (defaultTitle != null)
-            teacher.TeacherTitleId = defaultTitle.TeacherTitleId;
-    }
+    if (teacherModel.Title.HasValue)
+{
+    var titleName = teacherModel.Title.Value.ToString();
+    var titleEntity = await _dbContext.TeacherTitles.FirstOrDefaultAsync(t => t.Name == titleName);
+    if (titleEntity != null)
+        teacher.TeacherTitleId = titleEntity.TeacherTitleId;
+}
+else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
+{
+    var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
+    if (defaultTitle != null)
+        teacher.TeacherTitleId = defaultTitle.TeacherTitleId;
+}
     // else: keep the existing TitleId if it's already set and new one is null
 
     await _dbContext.SaveChangesAsync();

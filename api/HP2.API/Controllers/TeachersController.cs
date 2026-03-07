@@ -31,7 +31,7 @@ public class TeachersController : ControllerBase
             LastName = request.LastName,
             Phone = request.Phone,
             Matricule = request.Matricule,
-            TitleId = request.TitleId,
+            Title = request.Title,
         };
 
         var createdTeacher = await _teacherService.CreateTeacherAsync(teacher);
@@ -71,7 +71,7 @@ public class TeachersController : ControllerBase
         existing.LastName = request.LastName;
         existing.Phone = request.Phone;
         existing.Matricule = request.Matricule;
-        existing.TitleId = request.TitleId;
+        existing.Title = request.Title;
 
         await _teacherService.UpdateTeacherAsync(existing);
         return Ok(ApiResponse<TeacherModel>.Success(existing, "Teacher updated successfully"));
