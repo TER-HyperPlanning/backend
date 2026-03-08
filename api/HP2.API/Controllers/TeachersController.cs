@@ -18,10 +18,10 @@ public class TeachersController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<TeacherModel>>> Create([FromBody] CreateTeacherRequest request)
+    public async Task<ActionResult<ApiResponse<TeacherResponse>>> Create([FromBody] CreateTeacherRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<TeacherModel>.Fail("Teacher payload is required"));
+            return BadRequest(ApiResponse<TeacherResponse>.Fail("Teacher payload is required"));
 
         var teacher = new TeacherModel
         {
@@ -34,37 +34,38 @@ public class TeachersController : ControllerBase
             Title = request.Title,
         };
 
-        var createdTeacher = await _teacherService.CreateTeacherAsync(teacher);
-        return CreatedAtAction(nameof(Get), new { id = createdTeacher.Id },
-            ApiResponse<TeacherModel>.Success(createdTeacher, "Teacher created successfully"));
+        var created = await _teacherService.CreateTeacherAsync(teacher);
+        var response = ToResponse(created);
+        return CreatedAtAction(nameof(Get), new { id = response.Id },
+            ApiResponse<TeacherResponse>.Success(response, "Teacher created successfully"));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ApiResponse<TeacherModel>>> Get(string id)
+    public async Task<ActionResult<ApiResponse<TeacherResponse>>> Get(string id)
     {
         var teacher = await _teacherService.GetTeacherByIdAsync(id);
         if (teacher == null)
-            return NotFound(ApiResponse<TeacherModel>.Fail($"Teacher with ID {id} not found"));
+            return NotFound(ApiResponse<TeacherResponse>.Fail($"Teacher with ID {id} not found"));
 
-        return Ok(ApiResponse<TeacherModel>.Success(teacher));
+        return Ok(ApiResponse<TeacherResponse>.Success(ToResponse(teacher)));
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<IEnumerable<TeacherModel>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<TeacherResponse>>>> GetAll()
     {
         var teachers = await _teacherService.GetAllTeachersAsync();
-        return Ok(ApiResponse<IEnumerable<TeacherModel>>.Success(teachers));
+        return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<TeacherModel>>> Update(string id, [FromBody] UpdateTeacherRequest request)
+    public async Task<ActionResult<ApiResponse<TeacherResponse>>> Update(string id, [FromBody] UpdateTeacherRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<TeacherModel>.Fail("Teacher payload is required"));
+            return BadRequest(ApiResponse<TeacherResponse>.Fail("Teacher payload is required"));
 
         var existing = await _teacherService.GetTeacherByIdAsync(id);
         if (existing == null)
-            return NotFound(ApiResponse<TeacherModel>.Fail($"Teacher with ID {id} not found"));
+            return NotFound(ApiResponse<TeacherResponse>.Fail($"Teacher with ID {id} not found"));
 
         existing.Email = request.Email;
         existing.FirstName = request.FirstName;
@@ -74,7 +75,7 @@ public class TeachersController : ControllerBase
         existing.Title = request.Title;
 
         await _teacherService.UpdateTeacherAsync(existing);
-        return Ok(ApiResponse<TeacherModel>.Success(existing, "Teacher updated successfully"));
+        return Ok(ApiResponse<TeacherResponse>.Success(ToResponse(existing), "Teacher updated successfully"));
     }
 
     [HttpDelete("{id}")]
@@ -87,4 +88,18 @@ public class TeachersController : ControllerBase
         await _teacherService.DeleteTeacherAsync(id);
         return Ok(ApiResponse<string>.Success(id, "Teacher deleted successfully"));
     }
+
+    private static TeacherResponse ToResponse(TeacherModel m) => new()
+    {
+        Id = m.Id,
+        Email = m.Email,
+        FirstName = m.FirstName,
+        LastName = m.LastName,
+        Phone = m.Phone,
+        Matricule = m.Matricule,
+        Title = m.Title,
+        Role = m.Role,
+        CreatedAt = m.CreatedAt,
+        UpdatedAt = m.UpdatedAt,
+    };
 }
