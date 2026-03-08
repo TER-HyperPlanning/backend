@@ -10,8 +10,11 @@ namespace HP2.Infrastructure.Repositories;
 
 public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepository
 {
-    public StudentRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper)
+    private readonly IBCryptService _bcryptService;
+
+    public StudentRepository(TerHyperplanningContext dbContext, IMapper mapper, IBCryptService bcryptService) : base(dbContext, mapper)
     {
+        _bcryptService = bcryptService;
     }
 
     public override async Task<IReadOnlyList<StudentModel>> GetAllAsync()
@@ -43,16 +46,29 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
 
     public override async Task<StudentModel> AddAsync(StudentModel studentModel)
     {
+        // Resolve the UserRole ID from the database
+        var roleName = studentModel.Role.ToString();
+        // Role names in DB: "Student", "Teacher", "Admin" (capitalize first letter)
+        var formattedRoleName = char.ToUpper(roleName[0]) + roleName.Substring(1).ToLower();
+        var userRole = await _dbContext.UserRoles
+            .FirstOrDefaultAsync(r => r.Name == formattedRoleName);
+
+        if (userRole == null)
+            throw new InvalidOperationException($"UserRole '{formattedRoleName}' not found in database.");
+
+        // Hash the password with BCrypt
+        var hashedPassword = _bcryptService.HashPassword(studentModel.Password);
+
         // Create User entity from StudentModel (which inherits UserModel)
         var user = new Infrastructure.Persistence.Entities.User
         {
             UserId = Guid.NewGuid().ToString(),
             Email = studentModel.Email,
-            Password = studentModel.Password,
+            Password = hashedPassword,
             FirstName = studentModel.FirstName,
             LastName = studentModel.LastName,
             PhoneNumber = studentModel.Phone,
-            UserRoleId = studentModel.Role.ToString(),
+            UserRoleId = userRole.UserRoleId,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow,
         };
