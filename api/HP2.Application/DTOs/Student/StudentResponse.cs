@@ -1,3 +1,6 @@
+using System.Text.Json.Serialization;
+using HP2.Domain.Enums;
+
 namespace HP2.Application.DTOs.Student;
 
 public class StudentResponse
@@ -8,7 +11,8 @@ public class StudentResponse
     public string LastName { get; set; } = string.Empty;
     public string? Phone { get; set; }
     public string? GroupId { get; set; }
-    public string Role { get; set; } = string.Empty;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public UserRole Role { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 }

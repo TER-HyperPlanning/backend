@@ -99,7 +99,7 @@ public class StudentsController : ControllerBase
             LastName = student.LastName,
             Phone = student.Phone,
             GroupId = student.GroupId,
-            Role = student.Role.ToString().ToLower(),
+            Role = student.Role,
             CreatedAt = student.CreatedAt,
             UpdatedAt = student.UpdatedAt,
         };
