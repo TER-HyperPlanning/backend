@@ -1,5 +1,34 @@
 # Backend
 
+## Need to install
+
+### For Visual Studio Code Users
+Install SDK .NET 6
+
+For Linux:
+```
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-6.0
+```
+
+For macOS:
+```
+brew install --cask dotnet-sdk6-0-400
+```
+
+For Windows:
+```
+winget install Microsoft.DotNet.SDK.6
+```
+
+
+Install dotnet-ef tool
+
+Linux/Window/macOS
+```
+dotnet tool install --global dotnet-ef --version 6.*
+```
+
 ## Start the API
 
 Launch the database

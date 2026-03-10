@@ -990,7 +990,7 @@ public partial class TerHyperplanningContext : DbContext
                 FirstName = "System",
                 LastName = "Admin",
                 Email = "admin@univ.fr",
-                Password = "admin123",
+                Password = HashPassword("admin123"),
                 PhoneNumber = "0000000000",
                 UserRoleId = roleAdminId,
                 CreatedAt = DateTime.UtcNow
@@ -1009,7 +1009,7 @@ public partial class TerHyperplanningContext : DbContext
                 FirstName = "Marie",
                 LastName = "Curie",
                 Email = "marie.curie@univ.fr",
-                Password = "pass123",
+                Password = HashPassword("pass123"),
                 PhoneNumber = "0123456789",
                 UserRoleId = roleTeacherId,
                 CreatedAt = DateTime.UtcNow
@@ -1135,7 +1135,7 @@ public partial class TerHyperplanningContext : DbContext
                 FirstName = "Jean",
                 LastName = "Dupont",
                 Email = "jean.dupont@etud.fr",
-                Password = "pass_jean",
+                Password = HashPassword("pass_jean"),
                 PhoneNumber = "0987654321",
                 UserRoleId = roleStudentId,
                 CreatedAt = DateTime.UtcNow
@@ -1177,5 +1177,11 @@ public partial class TerHyperplanningContext : DbContext
             var hash = md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
             return new Guid(hash).ToString();
         }
+    }
+
+    private string HashPassword(string password)
+    {
+        const int workFactor = 12;
+        return BCrypt.Net.BCrypt.HashPassword(password, workFactor: workFactor);
     }
 }
