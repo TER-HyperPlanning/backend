@@ -9,4 +9,5 @@ public interface ITeacherService
     Task<TeacherModel?> GetTeacherByIdAsync(string id);
     Task UpdateTeacherAsync(TeacherModel teacher);
     Task DeleteTeacherAsync(string id);
+    Task<bool> HasAvailabilitiesAsync(string id);
 }

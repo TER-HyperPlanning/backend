@@ -79,15 +79,19 @@ public class TeachersController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
-    {
-        var existing = await _teacherService.GetTeacherByIdAsync(id);
-        if (existing == null)
-            return NotFound(ApiResponse<string>.Fail($"Teacher with ID {id} not found"));
+public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
+{
+    var existing = await _teacherService.GetTeacherByIdAsync(id);
+    if (existing == null)
+        return NotFound(ApiResponse<string>.Fail($"Teacher with ID {id} not found"));
 
-        await _teacherService.DeleteTeacherAsync(id);
-        return Ok(ApiResponse<string>.Success(id, "Teacher deleted successfully"));
-    }
+    var hasAvailabilities = await _teacherService.HasAvailabilitiesAsync(id);
+    if (hasAvailabilities)
+        return BadRequest(ApiResponse<string>.Fail("Cannot delete a teacher who has availabilities assigned"));
+
+    await _teacherService.DeleteTeacherAsync(id);
+    return Ok(ApiResponse<string>.Success(id, "Teacher deleted successfully"));
+}
 
     private static TeacherResponse ToResponse(TeacherModel m) => new()
     {

@@ -186,4 +186,9 @@ else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
         await _dbContext.SaveChangesAsync();
     }
 }
+
+public async Task<bool> HasAvailabilitiesAsync(string id)
+{
+    return await _dbContext.Availabilities.AnyAsync(a => a.TeacherId == id);
+}
 }
