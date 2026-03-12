@@ -46,4 +46,9 @@ public class TeacherService : ITeacherService
     {
         await _teacherRepository.DeleteAsync(id);
     }
+
+    public async Task<bool> HasAvailabilitiesAsync(string id)
+{
+    return await _teacherRepository.HasAvailabilitiesAsync(id);
+}
 }
