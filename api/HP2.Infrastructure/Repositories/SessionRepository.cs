@@ -1,14 +1,13 @@
 using AutoMapper;
 using HP2.Application.Contracts;
-using HP2.Domain.Models;
 using HP2.Domain.Enums;
+using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace HP2.Infrastructure.Repositories;
 
-public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.Contracts.ISessionRepository
+public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepository
 {
     public SessionRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
@@ -36,7 +35,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
             .ToListAsync();
     }
 
-    public override async Task<SessionModel?> GetByIdAsync(string id)   
+    public override async Task<SessionModel?> GetByIdAsync(string id)
     {
         return await _dbContext.Sessions
             .Where(s => s.SessionId == id)
@@ -52,19 +51,18 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
                 SessionStatusId = s.SessionStatusId,
                 RoomId = s.RoomId,
 
-             
                 SessionTypeLabel = s.SessionType.Label,
                 SessionStatusLabel = s.SessionStatus.Label,
                 RoomNumber = s.Room.RoomNumber,
                 CourseName = s.Course.Name,
-                Description = s.Description 
+                Description = s.Description
             })
             .FirstOrDefaultAsync();
     }
 
     public override async Task<SessionModel> AddAsync(SessionModel model)
     {
-        var entity = new HP2.Infrastructure.Persistence.Entities.Session
+        var entity = new Session
         {
             SessionId = Guid.NewGuid().ToString(),
             Date = model.StartDateTime.Date,
@@ -110,45 +108,21 @@ public class SessionRepository : RepositoryBase<SessionModel>, HP2.Application.C
 
         _dbContext.Sessions.Remove(entity);
         await _dbContext.SaveChangesAsync();
-    }    
-
-        private static string MapSessionTypeEnumToLabel(SessionTypeEnum sessionType) => sessionType switch
-    {
-        SessionTypeEnum.COURS_MAGISTRAL => "Cours Magistral",
-        SessionTypeEnum.TD => "TD",
-        SessionTypeEnum.TP => "TP",
-        _ => throw new ArgumentOutOfRangeException(nameof(sessionType), sessionType, null)
-    };
-
-    private static string MapSessionStatusEnumToLabel(SessionStatusEnum sessionStatus) => sessionStatus switch
-    {
-        SessionStatusEnum.PROGRAMME => "Programmé",
-        _ => throw new ArgumentOutOfRangeException(nameof(sessionStatus), sessionStatus, null)
-    };
-
-    public async Task<string> GetSessionTypeIdByEnumAsync(SessionTypeEnum sessionType)
-    {
-        var label = MapSessionTypeEnumToLabel(sessionType);
-
-        var entity = await _dbContext.SessionTypes
-            .FirstOrDefaultAsync(x => x.Label == label);
-
-        if (entity == null)
-            throw new InvalidOperationException($"SessionType with label '{label}' not found.");
-
-        return entity.SessionTypeId;
     }
 
-    public async Task<string> GetSessionStatusIdByEnumAsync(SessionStatusEnum sessionStatus)
+    public async Task<string?> GetSessionTypeIdByLabelAsync(string label)
     {
-        var label = MapSessionStatusEnumToLabel(sessionStatus);
+        return await _dbContext.SessionTypes
+            .Where(x => x.Label == label)
+            .Select(x => x.SessionTypeId)
+            .FirstOrDefaultAsync();
+    }
 
-        var entity = await _dbContext.SessionStatuses
-            .FirstOrDefaultAsync(x => x.Label == label);
-
-        if (entity == null)
-            throw new InvalidOperationException($"SessionStatus with label '{label}' not found.");
-
-        return entity.SessionStatusId;
+    public async Task<string?> GetSessionStatusIdByLabelAsync(string label)
+    {
+        return await _dbContext.SessionStatuses
+            .Where(x => x.Label == label)
+            .Select(x => x.SessionStatusId)
+            .FirstOrDefaultAsync();
     }
 }

@@ -26,4 +26,10 @@ public class SessionService : ISessionService
 
     public Task DeleteSessionAsync(string id)
         => _sessionRepository.DeleteAsync(id);
+
+    public Task<string?> GetSessionTypeIdAsync(string label)
+        => _sessionRepository.GetSessionTypeIdByLabelAsync(label);
+
+    public Task<string?> GetSessionStatusIdAsync(string label)
+        => _sessionRepository.GetSessionStatusIdByLabelAsync(label);
 }

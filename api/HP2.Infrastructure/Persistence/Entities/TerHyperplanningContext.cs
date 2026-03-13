@@ -892,7 +892,10 @@ public partial class TerHyperplanningContext : DbContext
         var roomId = GetStableId("room-a102");
 
         var sessionTypeId = GetStableId("st-cm");
+        var sessionTypeTdId = GetStableId("st-td");
+        var sessionTypeTpId = GetStableId("st-tp");
         var sessionStatusId = GetStableId("ss-scheduled");
+
         var teacherTitleId = GetStableId("tt-prof");
         var sessionId = GetStableId("session-001");
 
@@ -960,7 +963,9 @@ public partial class TerHyperplanningContext : DbContext
 
         // SessionTypes (requis par Session)
         modelBuilder.Entity<SessionType>().HasData(
-            new SessionType { SessionTypeId = sessionTypeId, Label = "Cours Magistral" }
+            new SessionType { SessionTypeId = sessionTypeId, Label = "CM" },
+            new SessionType { SessionTypeId = sessionTypeTdId, Label = "TD" },
+            new SessionType { SessionTypeId = sessionTypeTpId, Label = "TP" }
         );
 
         // SessionStatus (requis par Session)

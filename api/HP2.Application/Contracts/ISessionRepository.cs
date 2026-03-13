@@ -4,4 +4,6 @@ namespace HP2.Application.Contracts;
 
 public interface ISessionRepository : IAsyncRepository<SessionModel>
 {
+    Task<string?> GetSessionTypeIdByLabelAsync(string label);
+    Task<string?> GetSessionStatusIdByLabelAsync(string label);
 }

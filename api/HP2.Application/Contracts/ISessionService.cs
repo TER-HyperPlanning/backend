@@ -10,4 +10,6 @@ public interface ISessionService
     Task UpdateSessionAsync(SessionModel session);
     Task DeleteSessionAsync(string id);
 
+    Task<string?> GetSessionTypeIdAsync(string label);
+    Task<string?> GetSessionStatusIdAsync(string label);
 }

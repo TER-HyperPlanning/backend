@@ -1,11 +1,9 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Session;
-using HP2.Domain.Enums;
+using HP2.Application.Helpers;
 using HP2.Domain.Models;
-using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace HP2.API.Controllers;
 
@@ -14,12 +12,10 @@ namespace HP2.API.Controllers;
 public class SessionsController : ControllerBase
 {
     private readonly ISessionService _sessionService;
-    private readonly TerHyperplanningContext _dbContext;
 
-    public SessionsController(ISessionService sessionService, TerHyperplanningContext dbContext)
+    public SessionsController(ISessionService sessionService)
     {
         _sessionService = sessionService;
-        _dbContext = dbContext;
     }
 
     [HttpPost]
@@ -34,30 +30,16 @@ public class SessionsController : ControllerBase
         if (request.StartDateTime.Date != request.EndDateTime.Date)
             return BadRequest(ApiResponse<SessionResponse>.Fail("StartDateTime and EndDateTime must be on the same date"));
 
-        var sessionTypeLabel = request.SessionType switch
-        {
-            SessionTypeEnum.COURS_MAGISTRAL => "Cours Magistral",
-            SessionTypeEnum.TD => "TD",
-            SessionTypeEnum.TP => "TP",
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var sessionTypeLabel = SessionReferenceMapper.ToLabel(request.SessionType);
+        var sessionStatusLabel = SessionReferenceMapper.ToLabel(request.SessionStatus);
 
-        var sessionStatusLabel = request.SessionStatus switch
-        {
-            SessionStatusEnum.PROGRAMME => "Programmé",
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var sessionTypeId = await _sessionService.GetSessionTypeIdAsync(sessionTypeLabel);
+        var sessionStatusId = await _sessionService.GetSessionStatusIdAsync(sessionStatusLabel);
 
-        var sessionType = await _dbContext.SessionTypes
-            .FirstOrDefaultAsync(x => x.Label == sessionTypeLabel);
-
-        var sessionStatus = await _dbContext.SessionStatuses
-            .FirstOrDefaultAsync(x => x.Label == sessionStatusLabel);
-
-        if (sessionType == null)
+        if (sessionTypeId == null)
             return BadRequest(ApiResponse<SessionResponse>.Fail($"SessionType '{sessionTypeLabel}' not found"));
 
-        if (sessionStatus == null)
+        if (sessionStatusId == null)
             return BadRequest(ApiResponse<SessionResponse>.Fail($"SessionStatus '{sessionStatusLabel}' not found"));
 
         var model = new SessionModel
@@ -65,9 +47,9 @@ public class SessionsController : ControllerBase
             StartDateTime = request.StartDateTime,
             EndDateTime = request.EndDateTime,
             Mode = request.Mode,
-            SessionTypeId = sessionType.SessionTypeId,
+            SessionTypeId = sessionTypeId,
             CourseId = request.CourseId,
-            SessionStatusId = sessionStatus.SessionStatusId,
+            SessionStatusId = sessionStatusId,
             RoomId = request.RoomId,
             Description = request.Description
         };
@@ -113,38 +95,24 @@ public class SessionsController : ControllerBase
         if (existing == null)
             return NotFound(ApiResponse<SessionResponse>.Fail($"Session with ID {id} not found"));
 
-        var sessionTypeLabel = request.SessionType switch
-        {
-            SessionTypeEnum.COURS_MAGISTRAL => "Cours Magistral",
-            SessionTypeEnum.TD => "TD",
-            SessionTypeEnum.TP => "TP",
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var sessionTypeLabel = SessionReferenceMapper.ToLabel(request.SessionType);
+        var sessionStatusLabel = SessionReferenceMapper.ToLabel(request.SessionStatus);
 
-        var sessionStatusLabel = request.SessionStatus switch
-        {
-            SessionStatusEnum.PROGRAMME => "Programmé",
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var sessionTypeId = await _sessionService.GetSessionTypeIdAsync(sessionTypeLabel);
+        var sessionStatusId = await _sessionService.GetSessionStatusIdAsync(sessionStatusLabel);
 
-        var sessionType = await _dbContext.SessionTypes
-            .FirstOrDefaultAsync(x => x.Label == sessionTypeLabel);
-
-        var sessionStatus = await _dbContext.SessionStatuses
-            .FirstOrDefaultAsync(x => x.Label == sessionStatusLabel);
-
-        if (sessionType == null)
+        if (sessionTypeId == null)
             return BadRequest(ApiResponse<SessionResponse>.Fail($"SessionType '{sessionTypeLabel}' not found"));
 
-        if (sessionStatus == null)
+        if (sessionStatusId == null)
             return BadRequest(ApiResponse<SessionResponse>.Fail($"SessionStatus '{sessionStatusLabel}' not found"));
 
         existing.StartDateTime = request.StartDateTime;
         existing.EndDateTime = request.EndDateTime;
         existing.Mode = request.Mode;
-        existing.SessionTypeId = sessionType.SessionTypeId;
+        existing.SessionTypeId = sessionTypeId;
         existing.CourseId = request.CourseId;
-        existing.SessionStatusId = sessionStatus.SessionStatusId;
+        existing.SessionStatusId = sessionStatusId;
         existing.RoomId = request.RoomId;
         existing.Description = request.Description;
 
