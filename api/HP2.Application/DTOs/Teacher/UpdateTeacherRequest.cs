@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using HP2.Domain.Enums;
 
 namespace HP2.Application.DTOs.Teacher;
