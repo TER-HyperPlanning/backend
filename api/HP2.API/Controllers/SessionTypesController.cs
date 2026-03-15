@@ -52,7 +52,11 @@ public class SessionTypesController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-        await _sessionTypeService.DeleteSessionTypeAsync(id);
-        return NoContent();
+        try
+        {
+            await _sessionTypeService.DeleteSessionTypeAsync(id);
+            return NoContent();
+        }
+        catch (InvalidOperationException ex) { return Conflict(new { message = ex.Message }); }
     }
 }

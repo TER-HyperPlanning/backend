@@ -58,8 +58,16 @@ public class SessionTypeRepository : RepositoryBase<SessionTypeModel>, ISessionT
 
     public async Task DeleteAsync(string id)
     {
-        var sessionType = await _dbContext.SessionTypes.FirstOrDefaultAsync(s => s.SessionTypeId == id);
+        var sessionType = await _dbContext.SessionTypes
+            .FirstOrDefaultAsync(s => s.SessionTypeId == id);
         if (sessionType == null) return;
+
+        // Vérification intégrité référentielle
+        var hasSessions = await _dbContext.Sessions
+            .AnyAsync(s => s.SessionTypeId == id);
+
+        if (hasSessions)
+            throw new InvalidOperationException("Impossible de supprimer ce type de session car des sessions y sont rattachées.");
 
         _dbContext.SessionTypes.Remove(sessionType);
         await _dbContext.SaveChangesAsync();
