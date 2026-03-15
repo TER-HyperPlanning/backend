@@ -155,14 +155,15 @@ else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
     await _dbContext.SaveChangesAsync();
 }
 
-    public override async Task DeleteAsync(string id)
+public override async Task DeleteAsync(string id)
 {
     var teacher = await _dbContext.Teachers
         .Include(t => t.User)
         .Include(t => t.Tracks)
             .ThenInclude(tr => tr.Assigns)
         .Include(t => t.Tracks)
-            .ThenInclude(tr => tr.Groups) 
+            .ThenInclude(tr => tr.Groups)
+                .ThenInclude(g => g.Students) 
         .FirstOrDefaultAsync(t => t.UserId == id);
 
     if (teacher != null)
@@ -171,9 +172,15 @@ else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
         {
             if (track.Assigns.Any())
                 _dbContext.Assigns.RemoveRange(track.Assigns);
-            
+
+            foreach (var group in track.Groups)
+            {
+                if (group.Students.Any())
+                    _dbContext.Students.RemoveRange(group.Students); 
+            }
+
             if (track.Groups.Any())
-                _dbContext.Groups.RemoveRange(track.Groups); 
+                _dbContext.Groups.RemoveRange(track.Groups);
         }
 
         if (teacher.Tracks.Any())

@@ -20,8 +20,8 @@ public class TeachersController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ApiResponse<TeacherResponse>>> Create([FromBody] CreateTeacherRequest request)
     {
-        if (request == null)
-            return BadRequest(ApiResponse<TeacherResponse>.Fail("Teacher payload is required"));
+        if (!ModelState.IsValid)
+            return BadRequest(ApiResponse<TeacherResponse>.Fail("All fields are required"));
 
         var teacher = new TeacherModel
         {
@@ -60,8 +60,8 @@ public class TeachersController : ControllerBase
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<TeacherResponse>>> Update(string id, [FromBody] UpdateTeacherRequest request)
     {
-        if (request == null)
-            return BadRequest(ApiResponse<TeacherResponse>.Fail("Teacher payload is required"));
+        if (!ModelState.IsValid)
+            return BadRequest(ApiResponse<TeacherResponse>.Fail("All fields are required"));
 
         var existing = await _teacherService.GetTeacherByIdAsync(id);
         if (existing == null)
