@@ -45,6 +45,9 @@ namespace HP2.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateCourseRequest request)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ApiResponse<string>.Fail("Invalid data"));
+
             var model = _mapper.Map<CourseModel>(request);
 
             var course = await _service.AddAsync(model);
@@ -55,15 +58,19 @@ namespace HP2.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] CourseModel model)
+        public async Task<IActionResult> Update(string id, [FromBody] UpdateCourseRequest request)
         {
-            model.Id = id;
-
-            var updated = await _service.UpdateAsync(model);
-
-            if (updated == null)
+            if (!ModelState.IsValid)
+                return BadRequest(ApiResponse<string>.Fail("Invalid data"));
+            
+            var existing = await _service.GetByIdAsync(id);
+            if (existing == null)
                 return NotFound(ApiResponse<string>.Fail("Course not found"));
+            
+            existing.Name = request.Name;
+            existing.Code = request.Code;
 
+            var updated = await _service.UpdateAsync(existing);
             var response = _mapper.Map<CourseResponse>(updated);
 
             return Ok(ApiResponse<CourseResponse>.Success(response, "Course updated"));
