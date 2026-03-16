@@ -6,14 +6,23 @@ namespace HP2.Application;
 public class GroupService : IGroupService
 {
     private readonly IGroupRepository _groupRepository;
+    private readonly ITrackRepository _trackRepository; // Add track repository
 
-    public GroupService(IGroupRepository groupRepository)
+    public GroupService(IGroupRepository groupRepository, ITrackRepository trackRepository)
     {
         _groupRepository = groupRepository;
+        _trackRepository = trackRepository;
     }
 
     public async Task<GroupModel> CreateGroupAsync(GroupModel group)
     {
+        // Validate if trackId exists
+        var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
+        if (!trackExists)
+        {
+            throw new ArgumentException($"Track with ID {group.TrackId} does not exist.");
+        }
+
         return await _groupRepository.AddAsync(group);
     }
 
@@ -29,6 +38,13 @@ public class GroupService : IGroupService
 
     public async Task UpdateGroupAsync(GroupModel group)
     {
+        // Validate if trackId exists before updating
+        var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
+        if (!trackExists)
+        {
+            throw new ArgumentException($"Track with ID {group.TrackId} does not exist.");
+        }
+
         await _groupRepository.UpdateAsync(group);
     }
 

@@ -28,15 +28,17 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         var group = new Infrastructure.Persistence.Entities.Group
         {
             GroupId = Guid.NewGuid().ToString(),
-            Name = groupModel.Name
+            Name = groupModel.Name,
+            AcademicYear = groupModel.AcademicYear,
+            TrackId = groupModel.TrackId
         };
         
         // Add both entities
         await _dbContext.Groups.AddAsync(group);
         await _dbContext.SaveChangesAsync();
         
-        // Map back to Model
-        return groupModel;
+        // Map back to Model with the generated ID
+        return _mapper.Map<GroupModel>(group);
     }
 
     public override async Task<GroupModel?> GetByIdAsync(string id)
@@ -56,8 +58,10 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
 
         if (group != null)
         {
-            group.GroupId = groupModel.Id;
+            // update properties
             group.Name = groupModel.Name;
+            group.AcademicYear = groupModel.AcademicYear;
+            group.TrackId = groupModel.TrackId;
         }
 
         await _dbContext.SaveChangesAsync();

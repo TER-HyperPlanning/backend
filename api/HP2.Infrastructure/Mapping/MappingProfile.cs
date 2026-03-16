@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HP2.Application.DTOs.Auth;
+using HP2.Application.DTOs.Group;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 
@@ -66,7 +67,20 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<Program, ProgramModel>().ReverseMap();
             CreateMap<Track, TrackModel>().ReverseMap();
             CreateMap<Course, CourseModel>().ReverseMap();
-            CreateMap<Group, GroupModel>().ReverseMap();
+            CreateMap<Group, GroupModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.GroupId))
+                .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId))
+                .ReverseMap()
+                .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId));
+            CreateMap<CreateGroupRequest, GroupModel>()
+                .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId));
+            CreateMap<UpdateGroupRequest, GroupModel>()
+                .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId));
             
             // ===== Session =====
             CreateMap<Session, SessionModel>().ReverseMap();
