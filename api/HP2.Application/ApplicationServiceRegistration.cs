@@ -10,8 +10,10 @@ namespace HP2.Application
         {
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IBuildingService, BuildingService>();
+            services.AddScoped<IGroupService, GroupService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
+            services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<ITrackService, TrackService>();
 
             return services;

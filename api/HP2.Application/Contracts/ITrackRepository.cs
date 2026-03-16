@@ -11,5 +11,6 @@ namespace HP2.Application.Contracts
         Task<TrackModel> AddAsync(TrackModel model);
         Task<TrackModel> UpdateAsync(TrackModel model);
         Task<bool> DeleteAsync(string id);
+        Task<bool> ExistsAsync(string id);
     }
 }

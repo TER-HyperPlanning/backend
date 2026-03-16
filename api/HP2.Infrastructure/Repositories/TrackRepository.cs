@@ -41,6 +41,21 @@ namespace HP2.Infrastructure.Repositories
 
         public async Task<TrackModel> AddAsync(TrackModel model)
         {
+            // Validate foreign keys before inserting to provide clear errors
+            if (!string.IsNullOrWhiteSpace(model.ProgramId))
+            {
+                var programExists = await _context.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
+                if (!programExists)
+                    throw new ArgumentException($"Program with ID {model.ProgramId} does not exist.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.TeacherId))
+            {
+                var teacherExists = await _context.Teachers.AnyAsync(t => t.UserId == model.TeacherId);
+                if (!teacherExists)
+                    throw new ArgumentException($"Teacher with ID {model.TeacherId} does not exist.");
+            }
+
             var entity = new Track
             {
                 TrackId = model.Id ?? Guid.NewGuid().ToString(),
@@ -58,6 +73,20 @@ namespace HP2.Infrastructure.Repositories
         {
             var entity = await _context.Tracks.FindAsync(model.Id);
             if (entity == null) return null;
+            // Validate foreign keys before updating
+            if (!string.IsNullOrWhiteSpace(model.ProgramId))
+            {
+                var programExists = await _context.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
+                if (!programExists)
+                    throw new ArgumentException($"Program with ID {model.ProgramId} does not exist.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.TeacherId))
+            {
+                var teacherExists = await _context.Teachers.AnyAsync(t => t.UserId == model.TeacherId);
+                if (!teacherExists)
+                    throw new ArgumentException($"Teacher with ID {model.TeacherId} does not exist.");
+            }
 
             entity.Name = model.Name;
             entity.TeacherId = model.TeacherId;
@@ -75,6 +104,11 @@ namespace HP2.Infrastructure.Repositories
             _context.Tracks.Remove(entity);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<bool> ExistsAsync(string id)
+        {
+            return await _context.Tracks.AnyAsync(t => t.TrackId == id);
         }
     }
 }
