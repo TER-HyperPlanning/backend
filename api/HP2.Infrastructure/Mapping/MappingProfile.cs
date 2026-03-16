@@ -45,9 +45,13 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User != null ? src.User.FirstName : string.Empty))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User != null ? src.User.LastName : string.Empty))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.User != null ? Enum.Parse<HP2.Domain.Enums.UserRole>(src.User.UserRole.Name, true) : HP2.Domain.Enums.UserRole.TEACHER))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
                 .ForMember(dest => dest.Matricule, opt => opt.MapFrom(src => src.RegistrationNumber))
-                .ForMember(dest => dest.TitleId, opt => opt.MapFrom(src => src.TeacherTitleId))
+                .ForMember(dest => dest.Title, opt => opt.MapFrom(src => 
+                    src.TeacherTitle != null 
+                    ? (HP2.Domain.Enums.TeacherTitle?)Enum.Parse<HP2.Domain.Enums.TeacherTitle>(src.TeacherTitle.Name.ToUpper()) 
+                    : null))                
                 .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow));
             
             // ===== Student Mapping =====
@@ -75,7 +79,9 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<SessionChange, SessionChangeModel>().ReverseMap();
             
             // ===== Room =====
-            CreateMap<Building, BuildingModel>().ReverseMap();
+            CreateMap<Building, BuildingModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BuildingId))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
             CreateMap<Room, RoomModel>().ReverseMap();
             CreateMap<RoomType, RoomTypeModel>().ReverseMap();
             

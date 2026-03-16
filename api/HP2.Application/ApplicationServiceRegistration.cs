@@ -11,8 +11,10 @@ namespace HP2.Application
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IWeekDayService, WeekDayService>();
 
+            services.AddScoped<IBuildingService, BuildingService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
+            services.AddScoped<ITeacherService, TeacherService>();
 
             return services;
         }
@@ -26,6 +28,7 @@ namespace HP2.Application
         {
             services.AddScoped<IJWTService>(provider =>
                 new JWTService(issuer, audience, secretKey, expirationMinutes));
+            
 
             return services;
         }

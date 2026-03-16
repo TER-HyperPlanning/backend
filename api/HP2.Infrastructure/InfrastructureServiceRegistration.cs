@@ -20,6 +20,7 @@ namespace HP2.Infrastructure
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IBuildingRepository, BuildingRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IWeekDayRepository, WeekDayRepository>();
 
@@ -32,6 +33,7 @@ namespace HP2.Infrastructure
             //services.AddScoped<INoterSortieRepository, NoterSortieRepository>();
             //services.AddScoped<ISignalementCommentaireRepository, SignalementCommentaireRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
 
             return services;
         }
