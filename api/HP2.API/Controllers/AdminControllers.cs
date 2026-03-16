@@ -18,13 +18,20 @@ public class AdminsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<AdminResponse>>> Create([FromBody] AdminModel admin)
+    public async Task<ActionResult<ApiResponse<AdminResponse>>> Create([FromBody] CreateAdminRequest request)
     {
-        if (admin == null)
-            return BadRequest();
-
-        var createdAdmin = await _adminService.CreateAdminAsync(admin);
-
+        if (request == null) return BadRequest();
+        
+        var adminModel = new AdminModel
+        {
+            Email = request.Email,
+            Password = request.Password,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            Phone = request.Phone
+        };
+        var createdAdmin = await _adminService.CreateAdminAsync(adminModel);
+        
         var response = new AdminResponse
         {
             Id = createdAdmin.Id,
@@ -36,13 +43,8 @@ public class AdminsController : ControllerBase
             CreatedAt = createdAdmin.CreatedAt,
             UpdatedAt = createdAdmin.UpdatedAt
         };
-
-        return Ok(new ApiResponse<AdminResponse>
-        {
-            Status = "success",
-            Message = "Admin created",
-            Result = response
-        });
+        
+        return Ok(ApiResponse<AdminResponse>.Success(response, "Admin created"));
     }
 
     [HttpGet("{id}")]
@@ -68,7 +70,7 @@ public class AdminsController : ControllerBase
         return Ok(new ApiResponse<AdminResponse>
         {
             Status = "success",
-            Message = "",
+            Message = "Admin retrieved",
             Result = response
         });
     }
@@ -93,33 +95,36 @@ public class AdminsController : ControllerBase
         return Ok(new ApiResponse<List<AdminResponse>>
         {
             Status = "success",
-            Message = "",
+            Message = "Admins retrieved",
             Result = response
         });
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] AdminModel admin)
+    public async Task<IActionResult> Update(string id, [FromBody] UpdateAdminRequest request)
     {
-        if (admin == null)
-            return BadRequest();
-
-        if (id != admin.Id)
-            return BadRequest("ID mismatch");
-
+        if (request == null) return BadRequest();
         var existing = await _adminService.GetAdminByIdAsync(id);
+        if (existing == null) return NotFound($"Admin with ID {id} not found");
+        existing.Email = request.Email;
+        existing.FirstName = request.FirstName;
+        existing.LastName = request.LastName;
+        existing.Phone = request.Phone;
+        await _adminService.UpdateAdminAsync(existing);
 
-        if (existing == null)
-            return NotFound($"Admin with ID {id} not found");
-
-        await _adminService.UpdateAdminAsync(admin);
-
-        return Ok(new ApiResponse<string>
-        {
-            Status = "success",
-            Message = "Admin updated",
-            Result = id
-        });
+        var response = new AdminResponse
+    {
+        Id = existing.Id,
+        Email = existing.Email,
+        FirstName = existing.FirstName,
+        LastName = existing.LastName,
+        Phone = existing.Phone,
+        Role = existing.Role,
+        CreatedAt = existing.CreatedAt,
+        UpdatedAt = existing.UpdatedAt
+    };
+        
+        return Ok(ApiResponse<AdminResponse>.Success(response, "Admin updated"));
     }
 
     [HttpDelete("{id}")]
