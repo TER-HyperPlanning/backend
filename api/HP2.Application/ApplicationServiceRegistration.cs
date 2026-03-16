@@ -12,6 +12,7 @@ namespace HP2.Application
             services.AddScoped<IBuildingService, BuildingService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
+            services.AddScoped<ITrackService, TrackService>();
 
             return services;
         }
