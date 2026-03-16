@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HP2.Application.DTOs.Auth;
+using HP2.Application.DTOs.Course;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 
@@ -65,7 +66,13 @@ namespace HP2.Infrastructure.Mapping
             // ===== Academic Structure =====
             CreateMap<Program, ProgramModel>().ReverseMap();
             CreateMap<Track, TrackModel>().ReverseMap();
-            CreateMap<Course, CourseModel>().ReverseMap();
+            CreateMap<Course, CourseModel>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.CourseId))
+            .ReverseMap()
+            .ForMember(dest => dest.CourseId, opt => opt.MapFrom(src => src.Id));
+            CreateMap<CourseModel, CourseResponse>();
+            CreateMap<CreateCourseRequest, CourseModel>();
+            CreateMap<UpdateCourseRequest, CourseModel>();
             CreateMap<Group, GroupModel>().ReverseMap();
             
             // ===== Session =====
