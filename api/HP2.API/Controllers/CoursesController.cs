@@ -21,7 +21,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<ApiResponse<List<CourseResponse>>>> GetAll()
         {
             var courses = await _service.GetAllAsync();
             var response = _mapper.Map<List<CourseResponse>>(courses);
@@ -30,7 +30,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(string id)
+        public async Task<ActionResult<ApiResponse<CourseResponse>>> GetById(string id)
         {
             var course = await _service.GetByIdAsync(id);
 
@@ -43,10 +43,15 @@ namespace HP2.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateCourseRequest request)
+        public async Task<ActionResult<ApiResponse<CourseResponse>>> Create([FromBody] CreateCourseRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(ApiResponse<string>.Fail("Invalid data"));
+            {
+                var missing = ModelState.Where(kv => kv.Value.Errors.Count > 0)
+                    .Select(kv => kv.Key.Split('.').Last())
+                    .ToList();
+                return BadRequest(ApiResponse<string>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+            }
 
             var model = _mapper.Map<CourseModel>(request);
 
@@ -58,15 +63,20 @@ namespace HP2.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] UpdateCourseRequest request)
+        public async Task<ActionResult<ApiResponse<CourseResponse>>> Update(string id, [FromBody] UpdateCourseRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(ApiResponse<string>.Fail("Invalid data"));
-            
+            {
+                var missing = ModelState.Where(kv => kv.Value.Errors.Count > 0)
+                    .Select(kv => kv.Key.Split('.').Last())
+                    .ToList();
+                return BadRequest(ApiResponse<string>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+            }
+
             var existing = await _service.GetByIdAsync(id);
             if (existing == null)
                 return NotFound(ApiResponse<string>.Fail("Course not found"));
-            
+
             existing.Name = request.Name;
             existing.Code = request.Code;
 
@@ -77,7 +87,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id)
+        public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         {
             var deleted = await _service.DeleteAsync(id);
 
