@@ -1,82 +1,105 @@
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HP2.API.Controllers
+namespace HP2.API.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class WeekDayController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class WeekDayController : ControllerBase
+    private readonly IWeekDayService _weekDayService;
+
+    public WeekDayController(IWeekDayService weekDayService)
     {
-        private readonly IWeekDayService _weekDayService;
+        _weekDayService = weekDayService;
+    }
 
-        public WeekDayController(IWeekDayService weekDayService)
-        {
-            _weekDayService = weekDayService;
-        }
+    public class CreateWeekDayRequest
+    {
+        public string WeekdayId { get; set; } = null!;
+        public byte OrderIndex { get; set; }
+        public string Name { get; set; } = null!;
+    }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var items = await _weekDayService.GetAllAsync();
-            return Ok(items);
-        }
+    public class UpdateWeekDayRequest
+    {
+        public string WeekdayId { get; set; } = null!;
+        public byte OrderIndex { get; set; }
+        public string Name { get; set; } = null!;
+    }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(string id)
-        {
-            var item = await _weekDayService.GetByIdAsync(id);
-            if (item == null) return NotFound($"WeekDay with id '{id}' not found");
-            return Ok(item);
-        }
+    [HttpPost]
+    public async Task<ActionResult<ApiResponse<WeekDayModel>>> Create([FromBody] CreateWeekDayRequest request)
+    {
+        if (request == null)
+            return BadRequest(ApiResponse<WeekDayModel>.Fail("WeekDay payload is required"));
 
-        public class CreateWeekDayRequest
+        try
         {
-            public string WeekdayId { get; set; } = null!;
-            public byte OrderIndex { get; set; }
-            public string Name { get; set; } = null!;
-        }
-
-        public class UpdateWeekDayRequest
-        {
-            public byte OrderIndex { get; set; }
-            public string Name { get; set; } = null!;
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateWeekDayRequest req)
-        {
-            try
+            var created = await _weekDayService.CreateAsync(new WeekDayModel
             {
-                var created = await _weekDayService.CreateAsync(new WeekDayModel
-                {
-                    WeekdayId = req.WeekdayId,
-                    OrderIndex = req.OrderIndex,
-                    Name = req.Name
-                });
+                WeekdayId = request.WeekdayId,
+                OrderIndex = request.OrderIndex,
+                Name = request.Name
+            });
 
-                return CreatedAtAction(nameof(GetById), new { id = created.WeekdayId }, created);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return Conflict(ex.Message);
-            }
+            return Ok(ApiResponse<WeekDayModel>.Success(created, "WeekDay created successfully"));
         }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] UpdateWeekDayRequest req)
+        catch (InvalidOperationException ex)
         {
-            var updated = await _weekDayService.UpdateAsync(id, req.OrderIndex, req.Name);
-            if (!updated) return NotFound($"WeekDay with id '{id}' not found");
-            return NoContent();
+            return BadRequest(ApiResponse<WeekDayModel>.Fail(ex.Message));
         }
+    }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id)
-        {
-            var deleted = await _weekDayService.DeleteAsync(id);
-            if (!deleted) return NotFound($"WeekDay with id '{id}' not found");
-            return NoContent();
-        }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<ApiResponse<WeekDayModel>>> Get(string id)
+    {
+        var item = await _weekDayService.GetByIdAsync(id);
+        if (item == null)
+            return NotFound(ApiResponse<WeekDayModel>.Fail($"WeekDay with ID {id} not found"));
+
+        return Ok(ApiResponse<WeekDayModel>.Success(item));
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<ApiResponse<IEnumerable<WeekDayModel>>>> GetAll()
+    {
+        var items = await _weekDayService.GetAllAsync();
+        return Ok(ApiResponse<IEnumerable<WeekDayModel>>.Success(items));
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<ApiResponse<WeekDayModel>>> Update(string id, [FromBody] UpdateWeekDayRequest request)
+    {
+        if (request == null)
+            return BadRequest(ApiResponse<WeekDayModel>.Fail("WeekDay payload is required"));
+
+        if (id != request.WeekdayId)
+            return BadRequest(ApiResponse<WeekDayModel>.Fail("ID mismatch"));
+
+        var existing = await _weekDayService.GetByIdAsync(id);
+        if (existing == null)
+            return NotFound(ApiResponse<WeekDayModel>.Fail($"WeekDay with ID {id} not found"));
+
+        await _weekDayService.UpdateAsync(id, request.OrderIndex, request.Name);
+
+        // Optionnel: renvoyer l'objet mis à jour comme StudentController
+        existing.OrderIndex = request.OrderIndex;
+        existing.Name = request.Name;
+
+        return Ok(ApiResponse<WeekDayModel>.Success(existing, "WeekDay updated successfully"));
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
+    {
+        var existing = await _weekDayService.GetByIdAsync(id);
+        if (existing == null)
+            return NotFound(ApiResponse<string>.Fail($"WeekDay with ID {id} not found"));
+
+        await _weekDayService.DeleteAsync(id);
+        return Ok(ApiResponse<string>.Success(id, "WeekDay deleted successfully"));
     }
 }
