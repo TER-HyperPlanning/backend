@@ -42,6 +42,12 @@ internal class Program
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
 
+        // Disable automatic 400 response so controllers can return ApiResponse wrapper
+        builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
+        {
+            options.SuppressModelStateInvalidFilter = true;
+        });
+
         builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)
                    .LogTo(Console.WriteLine, LogLevel.Error));

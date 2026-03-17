@@ -89,6 +89,14 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<UpdateGroupRequest, GroupModel>()
                 .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
                 .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId));
+            CreateMap<Course, CourseModel>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.CourseId))
+            .ReverseMap()
+            .ForMember(dest => dest.CourseId, opt => opt.MapFrom(src => src.Id));
+            CreateMap<CourseModel, CourseResponse>();
+            CreateMap<CreateCourseRequest, CourseModel>();
+            CreateMap<UpdateCourseRequest, CourseModel>();
+            CreateMap<Group, GroupModel>().ReverseMap();
             
             // ===== Session =====
             CreateMap<Session, SessionModel>().ReverseMap();
