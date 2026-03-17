@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HP2.API.Controllers;
 
-[ApiController]
 [Route("api/[controller]")]
 public class AdminsController : ControllerBase
 {
@@ -20,128 +19,166 @@ public class AdminsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ApiResponse<AdminResponse>>> Create([FromBody] CreateAdminRequest request)
     {
-        if (request == null) return BadRequest();
-        
-        var adminModel = new AdminModel
+        if (!ModelState.IsValid)
         {
-            Email = request.Email,
-            Password = request.Password,
-            FirstName = request.FirstName,
-            LastName = request.LastName,
-            Phone = request.Phone
-        };
-        var createdAdmin = await _adminService.CreateAdminAsync(adminModel);
-        
-        var response = new AdminResponse
+            var errors = string.Join("; ", ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage));
+
+            return BadRequest(ApiResponse<AdminResponse>.Fail(errors));
+        }
+
+        try
         {
-            Id = createdAdmin.Id,
-            Email = createdAdmin.Email,
-            FirstName = createdAdmin.FirstName,
-            LastName = createdAdmin.LastName,
-            Phone = createdAdmin.Phone,
-            Role = createdAdmin.Role,
-            CreatedAt = createdAdmin.CreatedAt,
-            UpdatedAt = createdAdmin.UpdatedAt
-        };
-        
-        return Ok(ApiResponse<AdminResponse>.Success(response, "Admin created"));
+            var adminModel = new AdminModel
+            {
+                Email = request.Email,
+                Password = request.Password,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Phone = request.Phone
+            };
+
+            var createdAdmin = await _adminService.CreateAdminAsync(adminModel);
+
+            var response = new AdminResponse
+            {
+                Id = createdAdmin.Id,
+                Email = createdAdmin.Email,
+                FirstName = createdAdmin.FirstName,
+                LastName = createdAdmin.LastName,
+                Phone = createdAdmin.Phone,
+                Role = createdAdmin.Role,
+                CreatedAt = createdAdmin.CreatedAt,
+                UpdatedAt = createdAdmin.UpdatedAt
+            };
+
+            return Ok(ApiResponse<AdminResponse>.Success(response, "Admin created"));
+        }
+        catch
+        {
+            return BadRequest(ApiResponse<AdminResponse>.Fail("Email already exists or an error occurred while creating the admin"));
+        }
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<ApiResponse<AdminResponse>>> Get(string id)
     {
-        var admin = await _adminService.GetAdminByIdAsync(id);
-
-        if (admin == null)
-            return NotFound();
-
-        var response = new AdminResponse
+        try
         {
-            Id = admin.Id,
-            Email = admin.Email,
-            FirstName = admin.FirstName,
-            LastName = admin.LastName,
-            Phone = admin.Phone,
-            Role = admin.Role,
-            CreatedAt = admin.CreatedAt,
-            UpdatedAt = admin.UpdatedAt
-        };
+            var admin = await _adminService.GetAdminByIdAsync(id);
 
-        return Ok(new ApiResponse<AdminResponse>
+            if (admin == null)
+                return NotFound(ApiResponse<AdminResponse>.Fail($"Admin with ID {id} not found"));
+
+            var response = new AdminResponse
+            {
+                Id = admin.Id,
+                Email = admin.Email,
+                FirstName = admin.FirstName,
+                LastName = admin.LastName,
+                Phone = admin.Phone,
+                Role = admin.Role,
+                CreatedAt = admin.CreatedAt,
+                UpdatedAt = admin.UpdatedAt
+            };
+
+            return Ok(ApiResponse<AdminResponse>.Success(response, "Admin retrieved"));
+        }
+        catch
         {
-            Status = "success",
-            Message = "Admin retrieved",
-            Result = response
-        });
+            return BadRequest(ApiResponse<AdminResponse>.Fail("An error occurred while retrieving the admin"));
+        }
     }
 
     [HttpGet]
     public async Task<ActionResult<ApiResponse<List<AdminResponse>>>> GetAll()
     {
-        var admins = await _adminService.GetAllAdminsAsync();
-
-        var response = admins.Select(a => new AdminResponse
+        try
         {
-            Id = a.Id,
-            Email = a.Email,
-            FirstName = a.FirstName,
-            LastName = a.LastName,
-            Phone = a.Phone,
-            Role = a.Role,
-            CreatedAt = a.CreatedAt,
-            UpdatedAt = a.UpdatedAt
-        }).ToList();
+            var admins = await _adminService.GetAllAdminsAsync();
 
-        return Ok(new ApiResponse<List<AdminResponse>>
+            var response = admins.Select(a => new AdminResponse
+            {
+                Id = a.Id,
+                Email = a.Email,
+                FirstName = a.FirstName,
+                LastName = a.LastName,
+                Phone = a.Phone,
+                Role = a.Role,
+                CreatedAt = a.CreatedAt,
+                UpdatedAt = a.UpdatedAt
+            }).ToList();
+
+            return Ok(ApiResponse<List<AdminResponse>>.Success(response, "Admins retrieved"));
+        }
+        catch
         {
-            Status = "success",
-            Message = "Admins retrieved",
-            Result = response
-        });
+            return BadRequest(ApiResponse<List<AdminResponse>>.Fail("An error occurred while retrieving admins"));
+        }
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] UpdateAdminRequest request)
+    public async Task<ActionResult<ApiResponse<AdminResponse>>> Update(string id, [FromBody] UpdateAdminRequest request)
     {
-        if (request == null) return BadRequest();
-        var existing = await _adminService.GetAdminByIdAsync(id);
-        if (existing == null) return NotFound($"Admin with ID {id} not found");
-        existing.Email = request.Email;
-        existing.FirstName = request.FirstName;
-        existing.LastName = request.LastName;
-        existing.Phone = request.Phone;
-        await _adminService.UpdateAdminAsync(existing);
+        if (!ModelState.IsValid)
+        {
+            var errors = string.Join("; ", ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage));
 
-        var response = new AdminResponse
-    {
-        Id = existing.Id,
-        Email = existing.Email,
-        FirstName = existing.FirstName,
-        LastName = existing.LastName,
-        Phone = existing.Phone,
-        Role = existing.Role,
-        CreatedAt = existing.CreatedAt,
-        UpdatedAt = existing.UpdatedAt
-    };
-        
-        return Ok(ApiResponse<AdminResponse>.Success(response, "Admin updated"));
+            return BadRequest(ApiResponse<AdminResponse>.Fail(errors));
+        }
+
+        try
+        {
+            var existing = await _adminService.GetAdminByIdAsync(id);
+            if (existing == null)
+                return NotFound(ApiResponse<AdminResponse>.Fail($"Admin with ID {id} not found"));
+
+            existing.Email = request.Email;
+            existing.FirstName = request.FirstName;
+            existing.LastName = request.LastName;
+            existing.Phone = request.Phone;
+
+            await _adminService.UpdateAdminAsync(existing);
+
+            var response = new AdminResponse
+            {
+                Id = existing.Id,
+                Email = existing.Email,
+                FirstName = existing.FirstName,
+                LastName = existing.LastName,
+                Phone = existing.Phone,
+                Role = existing.Role,
+                CreatedAt = existing.CreatedAt,
+                UpdatedAt = existing.UpdatedAt
+            };
+
+            return Ok(ApiResponse<AdminResponse>.Success(response, "Admin updated"));
+        }
+        catch
+        {
+            return BadRequest(ApiResponse<AdminResponse>.Fail("Email already exists or an error occurred while updating the admin"));
+        }
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
-        var existing = await _adminService.GetAdminByIdAsync(id);
-
-        if (existing == null)
-            return NotFound($"Admin with ID {id} not found");
-
-        await _adminService.DeleteAdminAsync(id);
-
-        return Ok(new ApiResponse<string>
+        try
         {
-            Status = "success",
-            Message = "Admin deleted",
-            Result = id
-        });
+            var existing = await _adminService.GetAdminByIdAsync(id);
+            if (existing == null)
+                return NotFound(ApiResponse<string>.Fail($"Admin with ID {id} not found"));
+
+            await _adminService.DeleteAdminAsync(id);
+
+            return Ok(ApiResponse<string>.Success(id, "Admin deleted"));
+        }
+        catch
+        {
+            return BadRequest(ApiResponse<string>.Fail("An error occurred while deleting the admin"));
+        }
     }
 }
