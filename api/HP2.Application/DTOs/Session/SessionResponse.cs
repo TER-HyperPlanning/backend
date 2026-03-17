@@ -1,10 +1,9 @@
-using HP2.Domain.Common;
 using HP2.Domain.Enums;
 using System;
 
-namespace HP2.Domain.Models;
+namespace HP2.Application.DTOs.Session;
 
-public class SessionModel : BaseModel
+public class SessionResponse
 {
     public string Id { get; set; } = string.Empty;
     public DateTime Date { get; set; }

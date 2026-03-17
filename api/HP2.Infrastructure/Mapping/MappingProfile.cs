@@ -5,6 +5,7 @@ using HP2.Application.DTOs.Track;
 using HP2.Application.DTOs.Course;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
+using HP2.Application.DTOs.Session;
 
 namespace HP2.Infrastructure.Mapping
 {
@@ -94,13 +95,18 @@ namespace HP2.Infrastructure.Mapping
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.CourseId))
             .ReverseMap()
             .ForMember(dest => dest.CourseId, opt => opt.MapFrom(src => src.Id));
-            CreateMap<CourseModel, CourseResponse>();
-            CreateMap<CreateCourseRequest, CourseModel>();
-            CreateMap<UpdateCourseRequest, CourseModel>();
+            CreateMap<SessionModel, SessionResponse>();
+            CreateMap<CreateSessionRequest, SessionModel>();
+            CreateMap<UpdateSessionRequest, SessionModel>();
             CreateMap<Group, GroupModel>().ReverseMap();
             
             // ===== Session =====
-            CreateMap<Session, SessionModel>().ReverseMap();
+            CreateMap<Session, SessionModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.SessionId))
+                .ForMember(dest => dest.Mode, opt => opt.MapFrom(src => Enum.Parse<HP2.Domain.Enums.SessionMode>(src.Mode, true)))
+                .ReverseMap()
+                .ForMember(dest => dest.SessionId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Mode, opt => opt.MapFrom(src => src.Mode.ToString()));
             CreateMap<SessionType, SessionTypeModel>().ReverseMap();
             CreateMap<SessionStatus, SessionStatusModel>().ReverseMap();
             CreateMap<SessionChange, SessionChangeModel>().ReverseMap();
