@@ -142,8 +142,8 @@ public class SessionsController : ControllerBase
             EndDateTime = s.EndDateTime,
             Mode = s.Mode,
             Description = s.Description,
-            Type = s.SessionTypeLabel ?? "",
-            Status = s.SessionStatusLabel ?? "",
+            Type = SessionReferenceMapper.ToSessionTypeEnum(s.SessionTypeLabel ?? ""),
+            Status = SessionReferenceMapper.ToSessionStatusEnum(s.SessionStatusLabel ?? ""),
             Room = s.RoomNumber ?? "",
             Course = s.CourseName ?? ""
         };

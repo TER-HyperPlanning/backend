@@ -8,8 +8,8 @@ public class SessionResponse
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
     public SessionMode Mode { get; set; }
-    public string Type { get; set; } = string.Empty;
-    public string Status { get; set; } = string.Empty;
+    public SessionTypeEnum Type { get; set; }
+    public SessionStatusEnum Status { get; set; }
     public string Room { get; set; } = string.Empty;
     public string? Description { get; set; }
     public string Course { get; set; } = string.Empty;
