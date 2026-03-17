@@ -2,6 +2,7 @@
 using HP2.Application.DTOs.Auth;
 using HP2.Application.DTOs.Group;
 using HP2.Application.DTOs.Track;
+using HP2.Application.DTOs.Course;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 

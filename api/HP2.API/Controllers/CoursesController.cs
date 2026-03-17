@@ -4,6 +4,7 @@ using HP2.Domain.Models;
 using HP2.Application.DTOs.Course;
 using HP2.Application.DTOs.Common;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HP2.API.Controllers
 {
@@ -55,11 +56,24 @@ namespace HP2.API.Controllers
 
             var model = _mapper.Map<CourseModel>(request);
 
-            var course = await _service.AddAsync(model);
+            try
+            {
+                var course = await _service.AddAsync(model);
+                var response = _mapper.Map<CourseResponse>(course);
+                return Ok(ApiResponse<CourseResponse>.Success(response, "Course created successfully."));
+            }
+            catch (DbUpdateException dbEx)
+            {
+                var inner = dbEx.InnerException?.Message ?? dbEx.Message;
+                if (inner.Contains("duplicate key", StringComparison.OrdinalIgnoreCase) || inner.Contains("unique", StringComparison.OrdinalIgnoreCase))
+                    return BadRequest(ApiResponse<string>.Fail("A course with the same code or unique field already exists."));
 
-            var response = _mapper.Map<CourseResponse>(course);
-
-            return Ok(ApiResponse<CourseResponse>.Success(response, "Course created successfully."));
+                return StatusCode(500, ApiResponse<string>.Fail("Database update error."));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ApiResponse<string>.Fail("Internal server error."));
+            }
         }
 
         [HttpPut("{id}")]
@@ -80,10 +94,24 @@ namespace HP2.API.Controllers
             existing.Name = request.Name;
             existing.Code = request.Code;
 
-            var updated = await _service.UpdateAsync(existing);
-            var response = _mapper.Map<CourseResponse>(updated);
+            try
+            {
+                var updated = await _service.UpdateAsync(existing);
+                var response = _mapper.Map<CourseResponse>(updated);
+                return Ok(ApiResponse<CourseResponse>.Success(response, "Course updated"));
+            }
+            catch (DbUpdateException dbEx)
+            {
+                var inner = dbEx.InnerException?.Message ?? dbEx.Message;
+                if (inner.Contains("duplicate key", StringComparison.OrdinalIgnoreCase) || inner.Contains("unique", StringComparison.OrdinalIgnoreCase))
+                    return BadRequest(ApiResponse<string>.Fail("A course with the same code or unique field already exists."));
 
-            return Ok(ApiResponse<CourseResponse>.Success(response, "Course updated"));
+                return StatusCode(500, ApiResponse<string>.Fail("Database update error."));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ApiResponse<string>.Fail("Internal server error."));
+            }
         }
 
         [HttpDelete("{id}")]
