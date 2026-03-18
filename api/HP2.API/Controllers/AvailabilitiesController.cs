@@ -1,4 +1,6 @@
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Availability;
+using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,30 +18,44 @@ public class AvailabilitiesController : ControllerBase
     }
 
     [HttpGet("teacher/{teacherId}")]
-    public async Task<IActionResult> GetByTeacher(string teacherId)
+    public async Task<ActionResult<ApiResponse<IEnumerable<AvailabilityResponse>>>> GetByTeacher(string teacherId)
     {
         var data = await _service.GetByTeacherAsync(teacherId);
-        return Ok(data);
+        return Ok(ApiResponse<IEnumerable<AvailabilityResponse>>.Success(data));
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] AvailabilityModel model)
+    public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Create([FromBody] AvailabilityModel model)
     {
-        var result = await _service.CreateAsync(model);
-        return Ok(result);
+        try
+        {
+            var result = await _service.CreateAsync(model);
+            return Ok(ApiResponse<AvailabilityResponse>.Success(result, "Availability created successfully"));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<AvailabilityResponse>.Fail(ex.Message));
+        }
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] AvailabilityModel model)
+    public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Update(string id, [FromBody] AvailabilityModel model)
     {
-        await _service.UpdateAsync(id, model);
-        return Ok();
+        try
+        {
+            var result = await _service.UpdateAsync(id, model);
+            return Ok(ApiResponse<AvailabilityResponse>.Success(result, "Availability updated successfully"));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<AvailabilityResponse>.Fail(ex.Message));
+        }
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
         await _service.DeleteAsync(id);
-        return Ok();
+        return Ok(ApiResponse<string>.Success(id, "Availability deleted successfully"));
     }
 }

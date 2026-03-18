@@ -1,12 +1,13 @@
 using AutoMapper;
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Availability;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace HP2.Infrastructure.Repositories;
 
-public class AvailabilityRepository 
+public class AvailabilityRepository
     : RepositoryBase<AvailabilityModel>, IAvailabilityRepository
 {
     public AvailabilityRepository(TerHyperplanningContext dbContext, IMapper mapper)
@@ -28,13 +29,24 @@ public class AvailabilityRepository
         return entity == null ? null : _mapper.Map<AvailabilityModel>(entity);
     }
 
-    public async Task<IReadOnlyList<AvailabilityModel>> GetByTeacherAsync(string teacherId)
+    public async Task<AvailabilityResponse?> GetResponseByIdAsync(string id)
+    {
+        var entity = await _dbContext.Availabilities
+            .Include(a => a.Weekday)
+            .FirstOrDefaultAsync(a => a.AvailabilityId == id);
+
+        return entity == null ? null : _mapper.Map<AvailabilityResponse>(entity);
+    }
+
+    public async Task<IReadOnlyList<AvailabilityResponse>> GetByTeacherAsync(string teacherId)
     {
         var entities = await _dbContext.Availabilities
+            .Include(a => a.Weekday)
             .Where(a => a.TeacherId == teacherId)
+            .OrderBy(a => a.StartTime)
             .ToListAsync();
 
-        return _mapper.Map<IReadOnlyList<AvailabilityModel>>(entities);
+        return _mapper.Map<IReadOnlyList<AvailabilityResponse>>(entities);
     }
 
     public override async Task<AvailabilityModel> AddAsync(AvailabilityModel model)
@@ -56,7 +68,6 @@ public class AvailabilityRepository
         if (entity == null) return;
 
         _mapper.Map(model, entity);
-
         await _dbContext.SaveChangesAsync();
     }
 
@@ -71,7 +82,6 @@ public class AvailabilityRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    //  Détection de conflit intelligente
     public async Task<bool> HasConflictAsync(
         string teacherId,
         string weekDayId,
@@ -82,8 +92,7 @@ public class AvailabilityRepository
         string? excludeId = null)
     {
         var query = _dbContext.Availabilities
-            .Where(a => a.TeacherId == teacherId &&
-                        a.WeekdayId == weekDayId);
+            .Where(a => a.TeacherId == teacherId && a.WeekdayId == weekDayId);
 
         if (!string.IsNullOrWhiteSpace(excludeId))
             query = query.Where(a => a.AvailabilityId != excludeId);

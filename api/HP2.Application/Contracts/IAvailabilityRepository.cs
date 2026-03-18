@@ -1,10 +1,12 @@
+using HP2.Application.DTOs.Availability;
 using HP2.Domain.Models;
 
 namespace HP2.Application.Contracts;
 
 public interface IAvailabilityRepository : IAsyncRepository<AvailabilityModel>
 {
-    Task<IReadOnlyList<AvailabilityModel>> GetByTeacherAsync(string teacherId);
+    Task<IReadOnlyList<AvailabilityResponse>> GetByTeacherAsync(string teacherId);
+    Task<AvailabilityResponse?> GetResponseByIdAsync(string id);
 
     Task<bool> HasConflictAsync(
         string teacherId,

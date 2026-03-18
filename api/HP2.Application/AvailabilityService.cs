@@ -1,4 +1,5 @@
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Availability;
 using HP2.Domain.Models;
 
 namespace HP2.Application;
@@ -12,7 +13,7 @@ public class AvailabilityService : IAvailabilityService
         _repository = repository;
     }
 
-    public async Task<AvailabilityModel> CreateAsync(AvailabilityModel model)
+    public async Task<AvailabilityResponse> CreateAsync(AvailabilityModel model)
     {
         Validate(model);
 
@@ -27,10 +28,16 @@ public class AvailabilityService : IAvailabilityService
         if (conflict)
             throw new InvalidOperationException("Conflict detected with existing availability.");
 
-        return await _repository.AddAsync(model);
+        var created = await _repository.AddAsync(model);
+        var response = await _repository.GetResponseByIdAsync(created.Id);
+
+        if (response == null)
+            throw new InvalidOperationException("Availability created but could not be retrieved.");
+
+        return response;
     }
 
-    public async Task UpdateAsync(string id, AvailabilityModel model)
+    public async Task<AvailabilityResponse> UpdateAsync(string id, AvailabilityModel model)
     {
         Validate(model);
 
@@ -48,6 +55,13 @@ public class AvailabilityService : IAvailabilityService
 
         model.Id = id;
         await _repository.UpdateAsync(model);
+
+        var response = await _repository.GetResponseByIdAsync(id);
+
+        if (response == null)
+            throw new InvalidOperationException("Availability updated but could not be retrieved.");
+
+        return response;
     }
 
     public async Task DeleteAsync(string id)
@@ -55,12 +69,12 @@ public class AvailabilityService : IAvailabilityService
         await _repository.DeleteAsync(id);
     }
 
-    public async Task<IReadOnlyList<AvailabilityModel>> GetByTeacherAsync(string teacherId)
+    public async Task<IReadOnlyList<AvailabilityResponse>> GetByTeacherAsync(string teacherId)
     {
         return await _repository.GetByTeacherAsync(teacherId);
     }
 
-    private void Validate(AvailabilityModel model)
+    private static void Validate(AvailabilityModel model)
     {
         if (model.StartDate == null || model.EndDate == null)
             throw new InvalidOperationException("StartDate and EndDate are required.");

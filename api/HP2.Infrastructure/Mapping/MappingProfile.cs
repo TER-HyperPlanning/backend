@@ -86,6 +86,16 @@ namespace HP2.Infrastructure.Mapping
                 .ReverseMap()
                 .ForMember(dest => dest.AvailabilityId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.WeekdayId, opt => opt.MapFrom(src => src.WeekDayId));
+
+            CreateMap<Availability, HP2.Application.DTOs.Availability.AvailabilityResponse>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AvailabilityId))
+                .ForMember(dest => dest.WeekDay, opt => opt.MapFrom(src =>
+                    src.Weekday != null ? src.Weekday.Name.ToUpper() : string.Empty))
+                .ForMember(dest => dest.TeacherId, opt => opt.MapFrom(src => src.TeacherId))
+                .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime))
+                .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime))
+                .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
+                .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate));
       
             // ===== Other =====
             CreateMap<TeacherTitle, TeacherTitleModel>().ReverseMap();
