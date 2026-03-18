@@ -49,6 +49,7 @@ namespace HP2.API.Controllers
             {
                 IsAvailable = request.IsAvailable,
                 Capacity = request.Capacity,
+                RoomNumber = request.RoomNumber,
                 BuildingId = request.BuildingId,
                 Type = Enum.Parse<RoomTypeEnum>(request.RoomTypeId)
             };
