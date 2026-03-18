@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260317144124_SeedAllWeekDays")]
+    partial class SeedAllWeekDays
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -783,9 +786,6 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("date")
                         .HasColumnName("date");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<TimeSpan>("EndTime")
                         .HasColumnType("time")
                         .HasColumnName("end_time");
@@ -840,7 +840,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            Date = new DateTime(2026, 3, 2, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -977,17 +977,7 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
-                            Label = "CM"
-                        },
-                        new
-                        {
-                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
-                            Label = "TD"
-                        },
-                        new
-                        {
-                            SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
-                            Label = "TP"
+                            Label = "Cours Magistral"
                         });
                 });
 
@@ -1364,11 +1354,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-                            CreatedAt = new DateTime(2026, 2, 23, 13, 14, 57, 76, DateTimeKind.Utc).AddTicks(6986),
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 22, 790, DateTimeKind.Utc).AddTicks(1650),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             LastName = "Admin",
-                            Password = "$2b$12$RnmWIN1BGxHRaUGOy1nE3eFDeIcxygIgm.eQwy2Fwq54HKtSeK0zS",
+                            Password = "$2b$12$sp9hThU4xbUCDU5RZVIpPeWOEhGGlyyLh7WHGlXXE2lqkEkm5fIi.",
                             PhoneNumber = "0000000000",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -1376,11 +1366,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            CreatedAt = new DateTime(2026, 2, 23, 13, 14, 57, 374, DateTimeKind.Utc).AddTicks(4987),
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 288, DateTimeKind.Utc).AddTicks(2975),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             LastName = "Curie",
-                            Password = "$2b$12$CQ4XOgBc7EolHGCDXBUsEeKoWcIrIYy8Ha1nw9KEZgUZGoSnre17m",
+                            Password = "$2b$12$Su0VDQMZ6dZTI6VBUdMw1OHR8AYXfOeg8TuHznyEXaV7nmqTgwLr6",
                             PhoneNumber = "0123456789",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1388,11 +1378,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-                            CreatedAt = new DateTime(2026, 2, 23, 13, 14, 57, 669, DateTimeKind.Utc).AddTicks(6272),
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 797, DateTimeKind.Utc).AddTicks(955),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             LastName = "Dupont",
-                            Password = "$2b$12$q4xHD3m9.kzlCSkueUnpeuzsODntgdhlteX5NxJ4ZZl9hzjchL/yC",
+                            Password = "$2b$12$YFbmIMr9kImvZIFT3jQP8.Lw6b.m/zJXprnQWBWjCoJwGXo20Gz6q",
                             PhoneNumber = "0987654321",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"

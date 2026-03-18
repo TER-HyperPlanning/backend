@@ -33,7 +33,20 @@ internal class Program
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
         builder.Services.AddControllers()
-            .AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+            .ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
+
+        // Disable automatic 400 response so controllers can return ApiResponse wrapper
+        builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
+        {
+            options.SuppressModelStateInvalidFilter = true;
+        });
 
         builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)

@@ -6,6 +6,7 @@ using System.Reflection;
 using HP2.Application.Contracts;
 using HP2.Infrastructure.Repositories;
 
+
 namespace HP2.Infrastructure
 {
     public static class InfrastructureServiceRegistration
@@ -19,10 +20,26 @@ namespace HP2.Infrastructure
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IBuildingRepository, BuildingRepository>();
+            services.AddScoped<IGroupRepository, GroupRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWeekDayRepository, WeekDayRepository>();
+
+            //services.AddScoped<ICategorieRepository, CategorieRepository>();
+            //services.AddScoped<ITagRepository, TagRepository>();
+            //services.AddScoped<IParticipationRepository, ParticipationRepository>();
+            //services.AddScoped<ISortieFavoriteRepository, SortieFavoriteRepository>();
+            //services.AddScoped<ISignalementSortieRepository, SignalementSortieRepository>();
+            //services.AddScoped<ICommentaireRepository, CommentaireRepository>();
+            //services.AddScoped<INoterSortieRepository, NoterSortieRepository>();
+            //services.AddScoped<ISignalementCommentaireRepository, SignalementCommentaireRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ISessionRepository, SessionRepository>();
             
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<ITrackRepository, TrackRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+
             return services;
         }
     }
