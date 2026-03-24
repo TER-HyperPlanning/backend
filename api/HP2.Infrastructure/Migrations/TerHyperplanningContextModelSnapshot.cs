@@ -837,7 +837,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            Date = new DateTime(2026, 2, 14, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -1327,6 +1327,9 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("phone_number");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("UserRoleId")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -1348,34 +1351,37 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-                            CreatedAt = new DateTime(2026, 2, 7, 13, 20, 14, 189, DateTimeKind.Utc).AddTicks(2589),
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 22, 790, DateTimeKind.Utc).AddTicks(1650),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             LastName = "Admin",
-                            Password = "admin123",
+                            Password = "$2b$12$sp9hThU4xbUCDU5RZVIpPeWOEhGGlyyLh7WHGlXXE2lqkEkm5fIi.",
                             PhoneNumber = "0000000000",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
                         },
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            CreatedAt = new DateTime(2026, 2, 7, 13, 20, 14, 189, DateTimeKind.Utc).AddTicks(2629),
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 288, DateTimeKind.Utc).AddTicks(2975),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             LastName = "Curie",
-                            Password = "pass123",
+                            Password = "$2b$12$Su0VDQMZ6dZTI6VBUdMw1OHR8AYXfOeg8TuHznyEXaV7nmqTgwLr6",
                             PhoneNumber = "0123456789",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
                         },
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-                            CreatedAt = new DateTime(2026, 2, 7, 13, 20, 14, 189, DateTimeKind.Utc).AddTicks(2931),
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 797, DateTimeKind.Utc).AddTicks(955),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             LastName = "Dupont",
-                            Password = "pass_jean",
+                            Password = "$2b$12$YFbmIMr9kImvZIFT3jQP8.Lw6b.m/zJXprnQWBWjCoJwGXo20Gz6q",
                             PhoneNumber = "0987654321",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
                         });
                 });
@@ -1461,6 +1467,42 @@ namespace HP2.Infrastructure.Migrations
                             WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1",
                             Name = "Lundi",
                             OrderIndex = (byte)1
+                        },
+                        new
+                        {
+                            WeekdayId = "41005c9e-5360-bb11-50eb-28be4d5446a8",
+                            Name = "Mardi",
+                            OrderIndex = (byte)2
+                        },
+                        new
+                        {
+                            WeekdayId = "cbfef8cb-fcc1-8dff-8dec-6c7d0485236e",
+                            Name = "Mercredi",
+                            OrderIndex = (byte)3
+                        },
+                        new
+                        {
+                            WeekdayId = "eeb11a2e-98d0-2688-f2bb-e3ef7a7b021b",
+                            Name = "Jeudi",
+                            OrderIndex = (byte)4
+                        },
+                        new
+                        {
+                            WeekdayId = "9cf80bf4-1ccf-677a-2b2c-988fa321d2a5",
+                            Name = "Vendredi",
+                            OrderIndex = (byte)5
+                        },
+                        new
+                        {
+                            WeekdayId = "8d4e36a1-7dc6-f59d-464c-ab18a938a58e",
+                            Name = "Samedi",
+                            OrderIndex = (byte)6
+                        },
+                        new
+                        {
+                            WeekdayId = "d0f05ca8-6b62-5d90-1d6a-f680ddd4b45a",
+                            Name = "Dimanche",
+                            OrderIndex = (byte)7
                         });
                 });
 

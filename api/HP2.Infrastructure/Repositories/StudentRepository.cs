@@ -54,6 +54,7 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
             PhoneNumber = studentModel.Phone,
             UserRoleId = studentModel.Role.ToString(),
             CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         // Create Student entity with the same ID as User
@@ -89,6 +90,7 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
             student.User.FirstName = studentModel.FirstName;
             student.User.LastName = studentModel.LastName;
             student.User.PhoneNumber = studentModel.Phone;
+            student.User.UpdatedAt = DateTime.UtcNow;
         }
 
         // Update Student properties

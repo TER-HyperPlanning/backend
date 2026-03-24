@@ -896,7 +896,13 @@ public partial class TerHyperplanningContext : DbContext
         var teacherTitleId = GetStableId("tt-prof");
         var sessionId = GetStableId("session-001");
 
-        var weekdayId = GetStableId("wd-monday");
+        var wdMondayId = GetStableId("wd-monday");
+        var wdTuesdayId = GetStableId("wd-tuesday");
+        var wdWednesdayId = GetStableId("wd-wednesday");
+        var wdThursdayId = GetStableId("wd-thursday");
+        var wdFridayId = GetStableId("wd-friday");
+        var wdSaturdayId = GetStableId("wd-saturday");
+        var wdSundayId = GetStableId("wd-sunday");
 
         // User Role IDs
         var roleAdminId = GetStableId("role-admin");
@@ -975,9 +981,14 @@ public partial class TerHyperplanningContext : DbContext
 
         // WeekDays (requis par Availability)
         modelBuilder.Entity<WeekDay>().HasData(
-            new WeekDay { WeekdayId = weekdayId, OrderIndex = 1, Name = "Lundi" }
-        );
-
+           new WeekDay { WeekdayId = wdMondayId,    OrderIndex = 1, Name = "Lundi" },
+           new WeekDay { WeekdayId = wdTuesdayId,   OrderIndex = 2, Name = "Mardi" },
+           new WeekDay { WeekdayId = wdWednesdayId, OrderIndex = 3, Name = "Mercredi" },
+           new WeekDay { WeekdayId = wdThursdayId,  OrderIndex = 4, Name = "Jeudi" },
+           new WeekDay { WeekdayId = wdFridayId,    OrderIndex = 5, Name = "Vendredi" },
+           new WeekDay { WeekdayId = wdSaturdayId,  OrderIndex = 6, Name = "Samedi" },
+           new WeekDay { WeekdayId = wdSundayId,    OrderIndex = 7, Name = "Dimanche" }
+       );
         // ========================================
         // 2. USERS ET RÔLES SPÉCIFIQUES
         // ========================================
@@ -990,7 +1001,7 @@ public partial class TerHyperplanningContext : DbContext
                 FirstName = "System",
                 LastName = "Admin",
                 Email = "admin@univ.fr",
-                Password = "admin123",
+                Password = HashPassword("admin123"),
                 PhoneNumber = "0000000000",
                 UserRoleId = roleAdminId,
                 CreatedAt = DateTime.UtcNow
@@ -1009,7 +1020,7 @@ public partial class TerHyperplanningContext : DbContext
                 FirstName = "Marie",
                 LastName = "Curie",
                 Email = "marie.curie@univ.fr",
-                Password = "pass123",
+                Password = HashPassword("pass123"),
                 PhoneNumber = "0123456789",
                 UserRoleId = roleTeacherId,
                 CreatedAt = DateTime.UtcNow
@@ -1135,7 +1146,7 @@ public partial class TerHyperplanningContext : DbContext
                 FirstName = "Jean",
                 LastName = "Dupont",
                 Email = "jean.dupont@etud.fr",
-                Password = "pass_jean",
+                Password = HashPassword("pass_jean"),
                 PhoneNumber = "0987654321",
                 UserRoleId = roleStudentId,
                 CreatedAt = DateTime.UtcNow
@@ -1177,5 +1188,11 @@ public partial class TerHyperplanningContext : DbContext
             var hash = md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
             return new Guid(hash).ToString();
         }
+    }
+
+    private string HashPassword(string password)
+    {
+        const int workFactor = 12;
+        return BCrypt.Net.BCrypt.HashPassword(password, workFactor: workFactor);
     }
 }
