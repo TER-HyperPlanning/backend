@@ -31,6 +31,7 @@ namespace HP2.Infrastructure
             //services.AddScoped<INoterSortieRepository, NoterSortieRepository>();
             //services.AddScoped<ISignalementCommentaireRepository, SignalementCommentaireRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
 
             return services;
         }
