@@ -1,5 +1,6 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
+using HP2.Application.DTOs.Program;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,10 +18,16 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<ProgramModel>>> Create([FromBody] ProgramModel program)
+    public async Task<ActionResult<ApiResponse<ProgramModel>>> Create([FromBody] CreateProgramRequest request)
     {
-        if (program == null)
+        if (request == null)
             return BadRequest(ApiResponse<ProgramModel>.Fail("Program payload is required"));
+
+        var program = new ProgramModel
+        {
+            Name = request.Name,
+            Field = request.Field
+        };
 
         var createdProgram = await _programService.CreateProgramAsync(program);
         return CreatedAtAction(nameof(Get), new { id = createdProgram.Id },
@@ -45,20 +52,20 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<ProgramModel>>> Update(string id, [FromBody] ProgramModel program)
+    public async Task<ActionResult<ApiResponse<ProgramModel>>> Update(string id, [FromBody] UpdateProgramRequest request)
     {
-        if (program == null)
+        if (request == null)
             return BadRequest(ApiResponse<ProgramModel>.Fail("Program payload is required"));
-
-        if (id != program.Id)
-            return BadRequest(ApiResponse<ProgramModel>.Fail("ID mismatch"));
 
         var existing = await _programService.GetProgramByIdAsync(id);
         if (existing == null)
             return NotFound(ApiResponse<ProgramModel>.Fail($"Program with ID {id} not found"));
 
-        await _programService.UpdateProgramAsync(program);
-        return Ok(ApiResponse<ProgramModel>.Success(program, "Program updated successfully"));
+        existing.Name = request.Name;
+        existing.Field = request.Field;
+
+        await _programService.UpdateProgramAsync(existing);
+        return Ok(ApiResponse<ProgramModel>.Success(existing, "Program updated successfully"));
     }
 
     [HttpDelete("{id}")]
