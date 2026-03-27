@@ -896,7 +896,13 @@ public partial class TerHyperplanningContext : DbContext
         var teacherTitleId = GetStableId("tt-prof");
         var sessionId = GetStableId("session-001");
 
-        var weekdayId = GetStableId("wd-monday");
+        var wdMondayId = GetStableId("wd-monday");
+        var wdTuesdayId = GetStableId("wd-tuesday");
+        var wdWednesdayId = GetStableId("wd-wednesday");
+        var wdThursdayId = GetStableId("wd-thursday");
+        var wdFridayId = GetStableId("wd-friday");
+        var wdSaturdayId = GetStableId("wd-saturday");
+        var wdSundayId = GetStableId("wd-sunday");
 
         // User Role IDs
         var roleAdminId = GetStableId("role-admin");
@@ -973,11 +979,17 @@ public partial class TerHyperplanningContext : DbContext
             new TeacherTitle { TeacherTitleId = teacherTitleId, Name = "Professeur" }
         );
 
-        // WeekDays (requis par Availability)
+                // WeekDays (requis par Availability)
         modelBuilder.Entity<WeekDay>().HasData(
-            new WeekDay { WeekdayId = weekdayId, OrderIndex = 1, Name = "Lundi" }
+        new WeekDay { WeekdayId = wdMondayId,    OrderIndex = 1, Name = "Lundi" },
+        new WeekDay { WeekdayId = wdTuesdayId,   OrderIndex = 2, Name = "Mardi" },
+        new WeekDay { WeekdayId = wdWednesdayId, OrderIndex = 3, Name = "Mercredi" },
+        new WeekDay { WeekdayId = wdThursdayId,  OrderIndex = 4, Name = "Jeudi" },
+        new WeekDay { WeekdayId = wdFridayId,    OrderIndex = 5, Name = "Vendredi" },
+        new WeekDay { WeekdayId = wdSaturdayId,  OrderIndex = 6, Name = "Samedi" },
+        new WeekDay { WeekdayId = wdSundayId,    OrderIndex = 7, Name = "Dimanche" }
         );
-        
+
         // ============================
         // AVAILABILITIES (Seed)
         // ============================
@@ -989,8 +1001,8 @@ public partial class TerHyperplanningContext : DbContext
             new Availability
             {
                 AvailabilityId = avail1,
-                TeacherId = teacherUserId,   // déjà défini plus haut
-                WeekdayId = weekdayId,       // déjà défini plus haut
+                TeacherId = teacherUserId,
+                WeekdayId = wdMondayId,
                 StartDate = new DateTime(2026, 2, 1),
                 EndDate = new DateTime(2026, 6, 30),
                 StartTime = new TimeSpan(8, 0, 0),
@@ -1000,14 +1012,13 @@ public partial class TerHyperplanningContext : DbContext
             {
                 AvailabilityId = avail2,
                 TeacherId = teacherUserId,
-                WeekdayId = weekdayId,
+                WeekdayId = wdMondayId,
                 StartDate = new DateTime(2026, 2, 1),
                 EndDate = new DateTime(2026, 6, 30),
                 StartTime = new TimeSpan(13, 0, 0),
                 EndTime = new TimeSpan(17, 0, 0)
             }
         );
-
         // ========================================
         // 2. USERS ET RÔLES SPÉCIFIQUES
         // ========================================
