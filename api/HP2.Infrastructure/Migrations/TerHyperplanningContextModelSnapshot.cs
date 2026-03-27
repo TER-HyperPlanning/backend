@@ -859,11 +859,9 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-<<<<<<< HEAD
-                            Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Utc),
-=======
+
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Utc),
->>>>>>> origin/develop
+
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -1377,19 +1375,13 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-<<<<<<< HEAD
-                            CreatedAt = new DateTime(2026, 3, 3, 12, 30, 49, 468, DateTimeKind.Utc).AddTicks(872),
-                            Email = "admin@univ.fr",
-                            FirstName = "System",
-                            LastName = "Admin",
-                            Password = "$2b$12$bUnbFmZ3jZgFKWCuIHssfetCLDhnw.v6usZjuac4rM/14VsAwnlSO",
-=======
+
                             CreatedAt = new DateTime(2026, 3, 17, 14, 41, 22, 790, DateTimeKind.Utc).AddTicks(1650),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             LastName = "Admin",
                             Password = "$2b$12$sp9hThU4xbUCDU5RZVIpPeWOEhGGlyyLh7WHGlXXE2lqkEkm5fIi.",
->>>>>>> origin/develop
+
                             PhoneNumber = "0000000000",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -1397,19 +1389,13 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-<<<<<<< HEAD
-                            CreatedAt = new DateTime(2026, 3, 3, 12, 30, 49, 810, DateTimeKind.Utc).AddTicks(8047),
-                            Email = "marie.curie@univ.fr",
-                            FirstName = "Marie",
-                            LastName = "Curie",
-                            Password = "$2b$12$nIdI1JwPDIasoiryCE0D9.1Mu3GvGAQOwhLxVHNpGhxIlsV/i41He",
-=======
+
                             CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 288, DateTimeKind.Utc).AddTicks(2975),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             LastName = "Curie",
                             Password = "$2b$12$Su0VDQMZ6dZTI6VBUdMw1OHR8AYXfOeg8TuHznyEXaV7nmqTgwLr6",
->>>>>>> origin/develop
+
                             PhoneNumber = "0123456789",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1417,19 +1403,13 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-<<<<<<< HEAD
-                            CreatedAt = new DateTime(2026, 3, 3, 12, 30, 50, 155, DateTimeKind.Utc).AddTicks(3438),
-                            Email = "jean.dupont@etud.fr",
-                            FirstName = "Jean",
-                            LastName = "Dupont",
-                            Password = "$2b$12$igp5fVxswDuwL/.4b0mNuOKuKX2zT3/L.KtNOXgHERL22MoxpNAH6",
-=======
+
                             CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 797, DateTimeKind.Utc).AddTicks(955),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             LastName = "Dupont",
                             Password = "$2b$12$YFbmIMr9kImvZIFT3jQP8.Lw6b.m/zJXprnQWBWjCoJwGXo20Gz6q",
->>>>>>> origin/develop
+
                             PhoneNumber = "0987654321",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
