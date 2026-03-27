@@ -9,6 +9,8 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
 using Microsoft.OpenApi.Models;
+using HP2.Application.DTOs.Common;
+using Microsoft.AspNetCore.Mvc;
 
 internal class Program
 {
@@ -33,6 +35,24 @@ internal class Program
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
         builder.Services.AddControllers();
+
+        builder.Services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+                    var errors = context.ModelState
+                        .Where(x => x.Value != null && x.Value.Errors.Count > 0)
+                        .SelectMany(x => x.Value!.Errors)
+                        .Select(e => string.IsNullOrWhiteSpace(e.ErrorMessage) ? "Invalid request payload." : e.ErrorMessage)
+                        .ToList();
+
+                    var message = errors.Any()
+                        ? string.Join(" | ", errors)
+                        : "Invalid request payload.";
+
+                    return new BadRequestObjectResult(ApiResponse<object>.Fail(message));
+                };
+            });
 
         builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)

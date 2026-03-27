@@ -25,10 +25,20 @@ public class AvailabilitiesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Create([FromBody] AvailabilityModel model)
+    public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Create([FromBody] CreateAvailabilityRequest request)
     {
         try
         {
+            var model = new AvailabilityModel
+            {
+                WeekDayId = request.WeekDayId,
+                StartTime = request.StartTime,
+                EndTime = request.EndTime,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                TeacherId = request.TeacherId
+            };
+
             var result = await _service.CreateAsync(model);
             return Ok(ApiResponse<AvailabilityResponse>.Success(result, "Availability created successfully"));
         }
@@ -39,10 +49,21 @@ public class AvailabilitiesController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Update(string id, [FromBody] AvailabilityModel model)
+    public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Update(string id, [FromBody] UpdateAvailabilityRequest request)
     {
         try
         {
+            var model = new AvailabilityModel
+            {
+                Id = id,
+                WeekDayId = request.WeekDayId,
+                StartTime = request.StartTime,
+                EndTime = request.EndTime,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                TeacherId = request.TeacherId
+            };
+
             var result = await _service.UpdateAsync(id, model);
             return Ok(ApiResponse<AvailabilityResponse>.Success(result, "Availability updated successfully"));
         }
