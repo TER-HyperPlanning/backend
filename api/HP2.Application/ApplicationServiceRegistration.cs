@@ -33,8 +33,6 @@ namespace HP2.Application
             services.AddScoped<IJWTService>(provider =>
                 new JWTService(issuer, audience, secretKey, expirationMinutes));
             
->>>>>>> origin/main
-
             return services;
         }
     }
