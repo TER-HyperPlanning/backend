@@ -40,11 +40,7 @@ public class AssignController : ControllerBase
     [HttpPut("{trackId}/{courseId}")]
     public async Task<ActionResult<ApiResponse<bool>>> Update(string trackId,string courseId,[FromBody] UpdateAssignRequest request)
     {
-        request.TrackId = trackId;
-        request.CourseId = courseId;
-        
-        var response = await _service.UpdateAsync(request);
-        
+        var response = await _service.UpdateAsync(trackId, courseId, request);
         return Ok(response);
     }
 

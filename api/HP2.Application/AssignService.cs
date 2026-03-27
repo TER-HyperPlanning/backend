@@ -15,75 +15,122 @@ public class AssignService : IAssignService
 
     public async Task<ApiResponse<List<AssignResponse>>> GetAllAsync()
     {
-        var result = await _repository.GetAllAsync();
-        return ApiResponse<List<AssignResponse>>.Success(result);
+        try
+        {
+            var result = await _repository.GetAllAsync();
+            return ApiResponse<List<AssignResponse>>.Success(result, "Assigns récupérés avec succès");
+        }
+        catch (Exception ex)
+        {
+            return ApiResponse<List<AssignResponse>>.Fail(ex.Message);
+        }
     }
 
     public async Task<ApiResponse<AssignResponse>> GetByIdsAsync(string trackId, string courseId)
     {
-        if (string.IsNullOrWhiteSpace(trackId) || string.IsNullOrWhiteSpace(courseId))
-            return ApiResponse<AssignResponse>.Fail("track_id et course_id sont obligatoires");
+        try
+        {
+            if (string.IsNullOrWhiteSpace(trackId) || string.IsNullOrWhiteSpace(courseId))
+                return ApiResponse<AssignResponse>.Fail("trackId et courseId sont obligatoires");
 
-        var assign = await _repository.GetByIdsAsync(trackId, courseId);
+            var assign = await _repository.GetByIdsAsync(trackId, courseId);
 
-        if (assign == null)
-            return ApiResponse<AssignResponse>.Fail("Assign non trouvé");
+            if (assign == null)
+                return ApiResponse<AssignResponse>.Fail("Assign non trouvé");
 
-        return ApiResponse<AssignResponse>.Success(assign);
+            return ApiResponse<AssignResponse>.Success(assign, "Assign récupéré avec succès");
+        }
+        catch (Exception ex)
+        {
+            return ApiResponse<AssignResponse>.Fail(ex.Message);
+        }
     }
 
     public async Task<ApiResponse<bool>> CreateAsync(CreateAssignRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.TrackId) ||
-            string.IsNullOrWhiteSpace(request.CourseId) ||
-            request.HourlyVolume <= 0)
+        try
         {
-            return ApiResponse<bool>.Fail("Tous les champs sont obligatoires");
+            if (string.IsNullOrWhiteSpace(request.TrackId) ||
+                string.IsNullOrWhiteSpace(request.CourseId))
+            {
+                return ApiResponse<bool>.Fail("trackId et courseId sont obligatoires");
+            }
+
+            if (request.HourlyVolume < 0)
+            {
+                return ApiResponse<bool>.Fail("hourlyVolume invalide");
+            }
+
+            var result = await _repository.CreateAsync(
+                request.TrackId,
+                request.CourseId,
+                request.HourlyVolume
+            );
+
+            if (!result)
+                return ApiResponse<bool>.Fail("Erreur lors de la création");
+
+            return ApiResponse<bool>.Success(true, "Assign créé avec succès");
         }
-
-        var result = await _repository.CreateAsync(
-            request.TrackId,
-            request.CourseId,
-            request.HourlyVolume
-        );
-
-        if (!result)
-            return ApiResponse<bool>.Fail("Erreur lors de la création");
-
-        return ApiResponse<bool>.Success(true, "Assign créé avec succès");
+        catch (Exception ex)
+        {
+            return ApiResponse<bool>.Fail(ex.Message);
+        }
     }
 
-    public async Task<ApiResponse<bool>> UpdateAsync(UpdateAssignRequest request)
+    public async Task<ApiResponse<bool>> UpdateAsync(string trackId, string courseId, UpdateAssignRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.TrackId) ||
-            string.IsNullOrWhiteSpace(request.CourseId) ||
-            request.HourlyVolume <= 0)
+        try
         {
-            return ApiResponse<bool>.Fail("Tous les champs sont obligatoires");
+            if (string.IsNullOrWhiteSpace(trackId) || string.IsNullOrWhiteSpace(courseId))
+            {
+                return ApiResponse<bool>.Fail("trackId et courseId sont obligatoires");
+            }
+
+            if (request == null)
+            {
+                return ApiResponse<bool>.Fail("Le body est obligatoire");
+            }
+
+            if (request.HourlyVolume < 0)
+            {
+                return ApiResponse<bool>.Fail("hourlyVolume invalide");
+            }
+
+            var result = await _repository.UpdateAsync(
+                trackId,
+                courseId,
+                request.HourlyVolume
+            );
+
+            if (!result)
+                return ApiResponse<bool>.Fail("Erreur lors de la mise à jour");
+
+            return ApiResponse<bool>.Success(true, "Assign mis à jour");
         }
-
-        var result = await _repository.UpdateAsync(
-            request.TrackId,
-            request.CourseId,
-            request.HourlyVolume
-        );
-
-        if (!result)
-            return ApiResponse<bool>.Fail("Erreur lors de la mise à jour");
-
-        return ApiResponse<bool>.Success(true, "Assign mis à jour");
+        catch (Exception ex)
+        {
+            return ApiResponse<bool>.Fail(ex.Message);
+        }
     }
 
     public async Task<ApiResponse<bool>> DeleteAsync(string trackId, string courseId)
     {
-        if (string.IsNullOrWhiteSpace(trackId) || string.IsNullOrWhiteSpace(courseId))
-            return ApiResponse<bool>.Fail("track_id et course_id sont obligatoires");
+        try
+        {
+            if (string.IsNullOrWhiteSpace(trackId) || string.IsNullOrWhiteSpace(courseId))
+                return ApiResponse<bool>.Fail("trackId et courseId sont obligatoires");
 
-        var result = await _repository.DeleteAsync(trackId, courseId);
+            var result = await _repository.DeleteAsync(trackId, courseId);
 
-        if (!result)
-            return ApiResponse<bool>.Fail("Erreur lors de la suppression");
+            if (!result)
+                return ApiResponse<bool>.Fail("Erreur lors de la suppression");
 
-        return ApiResponse<bool>.Success(true, "Assign supprimé");
+            return ApiResponse<bool>.Success(true, "Assign supprimé");
+        }
+        catch (Exception ex)
+        {
+            return ApiResponse<bool>.Fail(ex.Message);
+        }
     }
 }
