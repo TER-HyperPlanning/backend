@@ -23,10 +23,18 @@ public class ProgramsController : ControllerBase
         if (request == null)
             return BadRequest(ApiResponse<ProgramModel>.Fail("Program payload is required"));
 
+        if (!ModelState.IsValid)
+        {
+            var missing = ModelState.Where(kv => kv.Value?.Errors.Count > 0)
+                .Select(kv => kv.Key.Split('.').Last())
+                .ToList();
+            return BadRequest(ApiResponse<string>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+        }
+
         var program = new ProgramModel
         {
-            Name = request.Name,
-            Field = request.Field
+            Name = request.Name!,
+            Field = request.Field!
         };
 
         var createdProgram = await _programService.CreateProgramAsync(program);
@@ -57,12 +65,20 @@ public class ProgramsController : ControllerBase
         if (request == null)
             return BadRequest(ApiResponse<ProgramModel>.Fail("Program payload is required"));
 
+        if (!ModelState.IsValid)
+        {
+            var missing = ModelState.Where(kv => kv.Value?.Errors.Count > 0)
+                .Select(kv => kv.Key.Split('.').Last())
+                .ToList();
+            return BadRequest(ApiResponse<string>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+        }
+
         var existing = await _programService.GetProgramByIdAsync(id);
         if (existing == null)
             return NotFound(ApiResponse<ProgramModel>.Fail($"Program with ID {id} not found"));
 
-        existing.Name = request.Name;
-        existing.Field = request.Field;
+        existing.Name = request.Name!;
+        existing.Field = request.Field!;
 
         await _programService.UpdateProgramAsync(existing);
         return Ok(ApiResponse<ProgramModel>.Success(existing, "Program updated successfully"));
