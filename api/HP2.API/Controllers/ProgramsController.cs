@@ -31,10 +31,25 @@ public class ProgramsController : ControllerBase
             return BadRequest(ApiResponse<string>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
         }
 
+        var normalizedName = request.Name!.Trim();
+        var normalizedField = request.Field!.Trim();
+        var existingPrograms = await _programService.GetAllProgramsAsync();
+
+        if (existingPrograms.Any(p => p.Name.Equals(normalizedName, StringComparison.OrdinalIgnoreCase)))
+            return Conflict(ApiResponse<string>.Fail("A program with the same name already exists"));
+
+        if (existingPrograms.Any(p => p.Field.Equals(normalizedField, StringComparison.OrdinalIgnoreCase)))
+            return Conflict(ApiResponse<string>.Fail("A program with the same field already exists"));
+
+        if (existingPrograms.Any(p =>
+                p.Name.Equals(normalizedName, StringComparison.OrdinalIgnoreCase) &&
+                p.Field.Equals(normalizedField, StringComparison.OrdinalIgnoreCase)))
+            return Conflict(ApiResponse<string>.Fail("A program with the same name and field already exists"));
+
         var program = new ProgramModel
         {
-            Name = request.Name!,
-            Field = request.Field!
+            Name = normalizedName,
+            Field = normalizedField
         };
 
         var createdProgram = await _programService.CreateProgramAsync(program);
@@ -73,12 +88,28 @@ public class ProgramsController : ControllerBase
             return BadRequest(ApiResponse<string>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
         }
 
+        var normalizedName = request.Name!.Trim();
+        var normalizedField = request.Field!.Trim();
+        var existingPrograms = await _programService.GetAllProgramsAsync();
+
+        if (existingPrograms.Any(p => p.Id != id && p.Name.Equals(normalizedName, StringComparison.OrdinalIgnoreCase)))
+            return Conflict(ApiResponse<string>.Fail("A program with the same name already exists"));
+
+        if (existingPrograms.Any(p => p.Id != id && p.Field.Equals(normalizedField, StringComparison.OrdinalIgnoreCase)))
+            return Conflict(ApiResponse<string>.Fail("A program with the same field already exists"));
+
+        if (existingPrograms.Any(p =>
+                p.Id != id &&
+                p.Name.Equals(normalizedName, StringComparison.OrdinalIgnoreCase) &&
+                p.Field.Equals(normalizedField, StringComparison.OrdinalIgnoreCase)))
+            return Conflict(ApiResponse<string>.Fail("A program with the same name and field already exists"));
+
         var existing = await _programService.GetProgramByIdAsync(id);
         if (existing == null)
             return NotFound(ApiResponse<ProgramModel>.Fail($"Program with ID {id} not found"));
 
-        existing.Name = request.Name!;
-        existing.Field = request.Field!;
+        existing.Name = normalizedName;
+        existing.Field = normalizedField;
 
         await _programService.UpdateProgramAsync(existing);
         return Ok(ApiResponse<ProgramModel>.Success(existing, "Program updated successfully"));
