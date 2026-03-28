@@ -70,7 +70,10 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.GroupId));
             
             // ===== Academic Structure =====
-            CreateMap<Program, ProgramModel>().ReverseMap();
+            CreateMap<Program, ProgramModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProgramId))
+                .ReverseMap()
+                .ForMember(dest => dest.ProgramId, opt => opt.MapFrom(src => src.Id));
             CreateMap<Track, TrackModel>().ReverseMap();
             CreateMap<TrackModel,TrackResponse>().ReverseMap();
             CreateMap<CreateTrackRequest, TrackModel>().ReverseMap();
@@ -97,7 +100,6 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<CourseModel, CourseResponse>();
             CreateMap<CreateCourseRequest, CourseModel>();
             CreateMap<UpdateCourseRequest, CourseModel>();
-            CreateMap<Group, GroupModel>().ReverseMap();
             
             // ===== Session =====
             CreateMap<Session, SessionModel>().ReverseMap();
