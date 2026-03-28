@@ -100,7 +100,6 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<CourseModel, CourseResponse>();
             CreateMap<CreateCourseRequest, CourseModel>();
             CreateMap<UpdateCourseRequest, CourseModel>();
-            CreateMap<Group, GroupModel>().ReverseMap();
             
             // ===== Session =====
             CreateMap<Session, SessionModel>().ReverseMap();
