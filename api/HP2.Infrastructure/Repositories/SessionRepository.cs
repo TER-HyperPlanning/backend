@@ -125,4 +125,14 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
             .Select(x => x.SessionStatusId)
             .FirstOrDefaultAsync();
     }
+
+    public Task<bool> CourseExistsAsync(string courseId)
+    {
+        return _dbContext.Courses.AnyAsync(x => x.CourseId == courseId);
+    }
+
+    public Task<bool> RoomExistsAsync(string roomId)
+    {
+        return _dbContext.Rooms.AnyAsync(x => x.RoomId == roomId);
+    }
 }

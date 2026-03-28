@@ -32,4 +32,10 @@ public class SessionService : ISessionService
 
     public Task<string?> GetSessionStatusIdAsync(string label)
         => _sessionRepository.GetSessionStatusIdByLabelAsync(label);
+
+    public Task<bool> CourseExistsAsync(string courseId)
+        => _sessionRepository.CourseExistsAsync(courseId);
+
+    public Task<bool> RoomExistsAsync(string roomId)
+        => _sessionRepository.RoomExistsAsync(roomId);
 }

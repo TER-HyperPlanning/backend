@@ -6,4 +6,6 @@ public interface ISessionRepository : IAsyncRepository<SessionModel>
 {
     Task<string?> GetSessionTypeIdByLabelAsync(string label);
     Task<string?> GetSessionStatusIdByLabelAsync(string label);
+    Task<bool> CourseExistsAsync(string courseId);
+    Task<bool> RoomExistsAsync(string roomId);
 }

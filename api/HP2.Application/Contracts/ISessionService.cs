@@ -12,4 +12,6 @@ public interface ISessionService
 
     Task<string?> GetSessionTypeIdAsync(string label);
     Task<string?> GetSessionStatusIdAsync(string label);
+    Task<bool> CourseExistsAsync(string courseId);
+    Task<bool> RoomExistsAsync(string roomId);
 }
