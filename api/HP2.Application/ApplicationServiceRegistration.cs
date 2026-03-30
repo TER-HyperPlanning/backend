@@ -17,6 +17,7 @@ namespace HP2.Application
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
             services.AddScoped<ISessionService, SessionService>();
+            services.AddScoped<IAttendService, AttendService>();
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ITrackService, TrackService>();
