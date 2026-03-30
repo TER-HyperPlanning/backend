@@ -20,8 +20,19 @@ public class AvailabilitiesController : ControllerBase
     [HttpGet("teacher/{teacherId}")]
     public async Task<ActionResult<ApiResponse<IEnumerable<AvailabilityResponse>>>> GetByTeacher(string teacherId)
     {
-        var data = await _service.GetByTeacherAsync(teacherId);
-        return Ok(ApiResponse<IEnumerable<AvailabilityResponse>>.Success(data));
+        try
+        {
+            var data = await _service.GetByTeacherAsync(teacherId);
+            return Ok(ApiResponse<IEnumerable<AvailabilityResponse>>.Success(data));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<IEnumerable<AvailabilityResponse>>.Fail(ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<IEnumerable<AvailabilityResponse>>.Fail($"Internal server error: {ex.Message}"));
+        }
     }
 
     [HttpPost]
@@ -29,6 +40,16 @@ public class AvailabilitiesController : ControllerBase
     {
         try
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => string.IsNullOrWhiteSpace(e.ErrorMessage) ? "Invalid request payload." : e.ErrorMessage)
+                    .ToList();
+
+                return BadRequest(ApiResponse<AvailabilityResponse>.Fail(string.Join(" | ", errors)));
+            }
+
             var model = new AvailabilityModel
             {
                 WeekDayId = request.WeekDayId,
@@ -46,6 +67,10 @@ public class AvailabilitiesController : ControllerBase
         {
             return BadRequest(ApiResponse<AvailabilityResponse>.Fail(ex.Message));
         }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<AvailabilityResponse>.Fail($"Internal server error: {ex.Message}"));
+        }
     }
 
     [HttpPut("{id}")]
@@ -53,6 +78,16 @@ public class AvailabilitiesController : ControllerBase
     {
         try
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => string.IsNullOrWhiteSpace(e.ErrorMessage) ? "Invalid request payload." : e.ErrorMessage)
+                    .ToList();
+
+                return BadRequest(ApiResponse<AvailabilityResponse>.Fail(string.Join(" | ", errors)));
+            }
+
             var model = new AvailabilityModel
             {
                 Id = id,
@@ -71,12 +106,27 @@ public class AvailabilitiesController : ControllerBase
         {
             return BadRequest(ApiResponse<AvailabilityResponse>.Fail(ex.Message));
         }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<AvailabilityResponse>.Fail($"Internal server error: {ex.Message}"));
+        }
     }
 
     [HttpDelete("{id}")]
     public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
-        await _service.DeleteAsync(id);
-        return Ok(ApiResponse<string>.Success(id, "Availability deleted successfully"));
+        try
+        {
+            await _service.DeleteAsync(id);
+            return Ok(ApiResponse<string>.Success(id, "Availability deleted successfully"));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<string>.Fail(ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<string>.Fail($"Internal server error: {ex.Message}"));
+        }
     }
 }
