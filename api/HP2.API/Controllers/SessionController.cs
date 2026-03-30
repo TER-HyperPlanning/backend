@@ -37,7 +37,7 @@ public class SessionsController : ControllerBase
                     .ToList();
 
                 if (invalidFields.Any())
-                    return BadRequest(ApiResponse<SessionResponse>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatInvalidField))}"));
+                    return BadRequest(ApiResponse<SessionResponse>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
             }
 
             return BadRequest(ApiResponse<SessionResponse>.Fail("Session payload is required"));
@@ -53,7 +53,7 @@ public class SessionsController : ControllerBase
         if (string.IsNullOrWhiteSpace(request.RoomId)) missing.Add("roomId");
 
         if (missing.Any())
-            return BadRequest(ApiResponse<SessionResponse>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail($"Missing required fields: {string.Join(", ", missing.Select(FormatFieldWithAllowedValues))}"));
 
         if (!await _sessionService.CourseExistsAsync(request.CourseId))
             return BadRequest(ApiResponse<SessionResponse>.Fail($"Course with ID '{request.CourseId}' not found"));
@@ -133,7 +133,7 @@ public class SessionsController : ControllerBase
                     .ToList();
 
                 if (invalidFields.Any())
-                    return BadRequest(ApiResponse<SessionResponse>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatInvalidField))}"));
+                    return BadRequest(ApiResponse<SessionResponse>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
             }
 
             return BadRequest(ApiResponse<SessionResponse>.Fail("Session payload is required"));
@@ -149,7 +149,7 @@ public class SessionsController : ControllerBase
         if (string.IsNullOrWhiteSpace(request.RoomId)) missing.Add("roomId");
 
         if (missing.Any())
-            return BadRequest(ApiResponse<SessionResponse>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+            return BadRequest(ApiResponse<SessionResponse>.Fail($"Missing required fields: {string.Join(", ", missing.Select(FormatFieldWithAllowedValues))}"));
 
         if (!await _sessionService.CourseExistsAsync(request.CourseId))
             return BadRequest(ApiResponse<SessionResponse>.Fail($"Course with ID '{request.CourseId}' not found"));
@@ -228,10 +228,10 @@ public class SessionsController : ControllerBase
         ["sessionStatus"] = string.Join(", ", Enum.GetNames<HP2.Domain.Enums.SessionStatusEnum>())
     };
 
-    private static string FormatInvalidField(string field)
+    private static string FormatFieldWithAllowedValues(string field)
     {
         return EnumAllowedValues.TryGetValue(field, out var allowedValues)
-            ? $"{field}({allowedValues})"
+            ? $"{field}( {allowedValues} )"
             : field;
     }
 
