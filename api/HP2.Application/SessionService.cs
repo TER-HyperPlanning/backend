@@ -18,6 +18,7 @@ public class SessionService : ISessionService
     public Task<SessionModel?> GetSessionByIdAsync(string id)
         => _sessionRepository.GetByIdAsync(id);
 
+    // Cette méthode appellera le Repository qui, lui, devra faire les JOIN SQL
     public async Task<IEnumerable<SessionModel>> GetAllSessionsAsync()
         => await _sessionRepository.GetAllAsync();
 

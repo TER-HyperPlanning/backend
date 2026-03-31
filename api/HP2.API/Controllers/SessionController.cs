@@ -235,4 +235,49 @@ public class SessionsController : ControllerBase
             : field;
     }
 
+   
+  [HttpGet("filter")]
+public async Task<ActionResult<ApiResponse<IEnumerable<SessionResponse>>>> GetPlanning(
+    [FromQuery] string? trackId,    
+    [FromQuery] string? programId,  
+    [FromQuery] string? niveau,     
+    [FromQuery] DateTime? startDate,
+    [FromQuery] DateTime? endDate)
+{
+    // On récupère les sessions (qui doivent avoir été chargées avec les JOINs ci-dessus)
+    var sessions = await _sessionService.GetAllSessionsAsync();
+    var query = sessions.AsQueryable();
+
+    // FILTRE FORMATION (Program)
+    if (!string.IsNullOrEmpty(programId))
+    {
+        // On vérifie si la session appartient au programme
+        query = query.Where(s => s.ProgramId == programId);
+    }
+
+    // FILTRE FILIÈRE (Track)
+    if (!string.IsNullOrEmpty(trackId))
+    {
+        query = query.Where(s => s.TrackId == trackId);
+    }
+
+    // FILTRE NIVEAU (M1/M2)
+    if (!string.IsNullOrEmpty(niveau))
+    {
+        // On cherche "M1" ou "M2" dans le nom du Track (ex: "M1 Ingénierie...")
+        query = query.Where(s => s.TrackName != null && s.TrackName.Contains(niveau));
+    }
+
+    // DATES
+    if (startDate.HasValue)
+        query = query.Where(s => s.StartDateTime.Date >= startDate.Value.Date);
+    if (endDate.HasValue)
+        query = query.Where(s => s.EndDateTime.Date <= endDate.Value.Date);
+
+    var response = query.Select(MapToResponse).ToList();
+    
+    return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(response, $"Trouvé : {response.Count} sessions."));
+}
+
+
 }
