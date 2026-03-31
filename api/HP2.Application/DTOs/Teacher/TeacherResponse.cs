@@ -10,7 +10,10 @@ public class TeacherResponse
     public string LastName { get; set; } = string.Empty;
     public string? Phone { get; set; }
     public string Matricule { get; set; } = string.Empty;
+
+    /// <summary>Statut affiché dans le tableau (US11 — colonne Statut).</summary>
     public TeacherTitle? Title { get; set; }
+
     public UserRole Role { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }

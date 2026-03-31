@@ -14,14 +14,16 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
     {
     }
 
+    // ─── Lecture ─────────────────────────────────────────────────────────────
+
     public override async Task<IReadOnlyList<TeacherModel>> GetAllAsync()
     {
         var teachers = await _dbContext.Teachers
             .Include(t => t.User)
-            .ThenInclude(u => u.UserRole)
+                .ThenInclude(u => u.UserRole)
             .Include(t => t.TeacherTitle)
             .ToListAsync();
-        
+
         return _mapper.Map<List<TeacherModel>>(teachers);
     }
 
@@ -29,10 +31,10 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
     {
         var teacher = await _dbContext.Teachers
             .Include(t => t.User)
-            .ThenInclude(u => u.UserRole)  
+                .ThenInclude(u => u.UserRole)
             .Include(t => t.TeacherTitle)
             .FirstOrDefaultAsync(t => t.UserId == id);
-        
+
         return teacher != null ? _mapper.Map<TeacherModel>(teacher) : null;
     }
 
@@ -40,10 +42,10 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
     {
         var teacher = await _dbContext.Teachers
             .Include(t => t.User)
-            .ThenInclude(u => u.UserRole)  
+                .ThenInclude(u => u.UserRole)
             .Include(t => t.TeacherTitle)
             .FirstOrDefaultAsync(t => t.User != null && t.User.Email == email);
-        
+
         return teacher != null ? _mapper.Map<TeacherModel>(teacher) : null;
     }
 
@@ -51,123 +53,161 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
     {
         var teacher = await _dbContext.Teachers
             .Include(t => t.User)
-            .ThenInclude(u => u.UserRole)  
+                .ThenInclude(u => u.UserRole)
             .Include(t => t.TeacherTitle)
             .FirstOrDefaultAsync(t => t.RegistrationNumber == matricule);
-        
+
         return teacher != null ? _mapper.Map<TeacherModel>(teacher) : null;
     }
 
-public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
-{
-    // Get the TEACHER role from database
-    var teacherRole = await _dbContext.UserRoles
-        .FirstOrDefaultAsync(r => r.Name == "TEACHER");
-    
-    if (teacherRole == null)
-        throw new InvalidOperationException("TEACHER role not found in database");
+    // ─── US11 : Recherche + filtre statut ────────────────────────────────────
 
-    // If TitleId is not provided, get a default one from database
-    string teacherTitleId;
-if (teacherModel.Title.HasValue)
-{
-    var titleName = teacherModel.Title.Value.ToString(); // e.g. "PROFESSEUR"
-    var titleEntity = await _dbContext.TeacherTitles.FirstOrDefaultAsync(t => t.Name == titleName);
-    teacherTitleId = titleEntity?.TeacherTitleId 
-        ?? throw new InvalidOperationException($"TeacherTitle '{titleName}' not found in database.");
-}
-else
-{
-    var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
-    teacherTitleId = defaultTitle?.TeacherTitleId 
-        ?? throw new InvalidOperationException("No TeacherTitle found in database.");
-}
-
-    // Create User entity from TeacherModel
-    var user = new Infrastructure.Persistence.Entities.User
+    /// <summary>
+    /// Filtre par nom/prénom/email (search) et/ou par statut (titleFilter = "TITULAIRE" | "CONTRACTUEL").
+    /// </summary>
+    public async Task<IReadOnlyList<TeacherModel>> GetFilteredAsync(string? search, string? titleFilter)
     {
-        UserId = Guid.NewGuid().ToString(),
-        Email = teacherModel.Email,
-        Password = teacherModel.Password,
-        FirstName = teacherModel.FirstName,
-        LastName = teacherModel.LastName,
-        PhoneNumber = teacherModel.Phone ?? string.Empty,
-        UserRoleId = teacherRole.UserRoleId,  // Use the actual UUID from the database
-        CreatedAt = DateTime.UtcNow,
-        UpdatedAt = DateTime.UtcNow,
-    };
+        var query = _dbContext.Teachers
+            .Include(t => t.User)
+                .ThenInclude(u => u.UserRole)
+            .Include(t => t.TeacherTitle)
+            .AsQueryable();
 
-    // Create Teacher entity
-    var teacher = new Infrastructure.Persistence.Entities.Teacher
-    {
-        UserId = user.UserId,
-        RegistrationNumber = teacherModel.Matricule,
-        TeacherTitleId = teacherTitleId,  
-        User = user
-    };
-    
-    await _dbContext.Users.AddAsync(user);
-    await _dbContext.Teachers.AddAsync(teacher);
-    await _dbContext.SaveChangesAsync();
-    
-    teacherModel.Id = user.UserId;
-    return teacherModel;
-}
+        // Filtre texte : nom, prénom ou email
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            var term = search.Trim().ToLower();
+            query = query.Where(t =>
+                t.User != null && (
+                    t.User.LastName.ToLower().Contains(term) ||
+                    t.User.FirstName.ToLower().Contains(term) ||
+                    t.User.Email.ToLower().Contains(term)
+                ));
+        }
 
-    public override async Task UpdateAsync(TeacherModel teacherModel)
-{
-    var teacher = await _dbContext.Teachers
-        .Include(t => t.User)
-        .ThenInclude(u => u.UserRole)  
-        .FirstOrDefaultAsync(t => t.UserId == teacherModel.Id);
+        // Filtre statut : TITULAIRE / CONTRACTUEL
+        if (!string.IsNullOrWhiteSpace(titleFilter))
+        {
+            var titleNorm = titleFilter.Trim().ToUpper();
+            query = query.Where(t =>
+                t.TeacherTitle != null &&
+                t.TeacherTitle.Name.ToUpper() == titleNorm);
+        }
 
-    if (teacher == null) return;
-
-    // Update User properties
-    if (teacher.User != null)
-    {
-        teacher.User.Email = teacherModel.Email;
-        teacher.User.FirstName = teacherModel.FirstName;
-        teacher.User.LastName = teacherModel.LastName;
-        teacher.User.PhoneNumber = teacherModel.Phone ?? string.Empty;
-        teacher.User.UpdatedAt = DateTime.UtcNow;
+        var teachers = await query.ToListAsync();
+        return _mapper.Map<List<TeacherModel>>(teachers);
     }
 
-    // Update Teacher properties
-    teacher.RegistrationNumber = teacherModel.Matricule;
-    
-    // Handle TitleId - only update if provided
-    if (teacherModel.Title.HasValue)
-{
-    var titleName = teacherModel.Title.Value.ToString();
-    var titleEntity = await _dbContext.TeacherTitles.FirstOrDefaultAsync(t => t.Name == titleName);
-    if (titleEntity != null)
-        teacher.TeacherTitleId = titleEntity.TeacherTitleId;
-}
-else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
-{
-    var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
-    if (defaultTitle != null)
-        teacher.TeacherTitleId = defaultTitle.TeacherTitleId;
-}
-    // else: keep the existing TitleId if it's already set and new one is null
+    // ─── US12 : Création ─────────────────────────────────────────────────────
 
-    await _dbContext.SaveChangesAsync();
-}
-
-public override async Task DeleteAsync(string id)
-{
-    var teacher = await _dbContext.Teachers
-        .Include(t => t.User)
-        .Include(t => t.Tracks)
-            .ThenInclude(tr => tr.Assigns)
-        .Include(t => t.Tracks)
-            .ThenInclude(tr => tr.Groups)
-                .ThenInclude(g => g.Students) 
-        .FirstOrDefaultAsync(t => t.UserId == id);
-
-    if (teacher != null)
+    public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
     {
+        var teacherRole = await _dbContext.UserRoles
+            .FirstOrDefaultAsync(r => r.Name == "TEACHER");
+
+        if (teacherRole == null)
+            throw new InvalidOperationException("Le rôle TEACHER est introuvable en base.");
+
+        string teacherTitleId;
+        if (teacherModel.Title.HasValue)
+        {
+            var titleName = teacherModel.Title.Value.ToString();
+            var titleEntity = await _dbContext.TeacherTitles
+                .FirstOrDefaultAsync(t => t.Name == titleName);
+            teacherTitleId = titleEntity?.TeacherTitleId
+                ?? throw new InvalidOperationException($"Le titre '{titleName}' est introuvable en base.");
+        }
+        else
+        {
+            var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
+            teacherTitleId = defaultTitle?.TeacherTitleId
+                ?? throw new InvalidOperationException("Aucun titre enseignant disponible en base.");
+        }
+
+        var user = new User
+        {
+            UserId = Guid.NewGuid().ToString(),
+            Email = teacherModel.Email,
+            Password = teacherModel.Password,
+            FirstName = teacherModel.FirstName,
+            LastName = teacherModel.LastName,
+            PhoneNumber = teacherModel.Phone ?? string.Empty,
+            UserRoleId = teacherRole.UserRoleId,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
+        };
+
+        var teacher = new Teacher
+        {
+            UserId = user.UserId,
+            RegistrationNumber = teacherModel.Matricule,
+            TeacherTitleId = teacherTitleId,
+            User = user
+        };
+
+        await _dbContext.Users.AddAsync(user);
+        await _dbContext.Teachers.AddAsync(teacher);
+        await _dbContext.SaveChangesAsync();
+
+        teacherModel.Id = user.UserId;
+        return teacherModel;
+    }
+
+    // ─── US14 : Mise à jour ───────────────────────────────────────────────────
+
+    public override async Task UpdateAsync(TeacherModel teacherModel)
+    {
+        var teacher = await _dbContext.Teachers
+            .Include(t => t.User)
+                .ThenInclude(u => u.UserRole)
+            .FirstOrDefaultAsync(t => t.UserId == teacherModel.Id);
+
+        if (teacher == null) return;
+
+        if (teacher.User != null)
+        {
+            teacher.User.Email = teacherModel.Email;
+            teacher.User.FirstName = teacherModel.FirstName;
+            teacher.User.LastName = teacherModel.LastName;
+            teacher.User.PhoneNumber = teacherModel.Phone ?? string.Empty;
+            teacher.User.UpdatedAt = DateTime.UtcNow;
+        }
+
+        teacher.RegistrationNumber = teacherModel.Matricule;
+
+        if (teacherModel.Title.HasValue)
+        {
+            var titleName = teacherModel.Title.Value.ToString();
+            var titleEntity = await _dbContext.TeacherTitles
+                .FirstOrDefaultAsync(t => t.Name == titleName);
+            if (titleEntity != null)
+                teacher.TeacherTitleId = titleEntity.TeacherTitleId;
+        }
+        else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
+        {
+            var defaultTitle = await _dbContext.TeacherTitles.FirstOrDefaultAsync();
+            if (defaultTitle != null)
+                teacher.TeacherTitleId = defaultTitle.TeacherTitleId;
+        }
+
+        await _dbContext.SaveChangesAsync();
+    }
+
+    // ─── US15 : Suppression ───────────────────────────────────────────────────
+
+    public override async Task DeleteAsync(string id)
+    {
+        var teacher = await _dbContext.Teachers
+            .Include(t => t.User)
+            .Include(t => t.Tracks)
+                .ThenInclude(tr => tr.Assigns)
+            .Include(t => t.Tracks)
+                .ThenInclude(tr => tr.Groups)
+                    .ThenInclude(g => g.Students)
+            .FirstOrDefaultAsync(t => t.UserId == id);
+
+        if (teacher == null) return;
+
         foreach (var track in teacher.Tracks)
         {
             if (track.Assigns.Any())
@@ -176,7 +216,7 @@ public override async Task DeleteAsync(string id)
             foreach (var group in track.Groups)
             {
                 if (group.Students.Any())
-                    _dbContext.Students.RemoveRange(group.Students); 
+                    _dbContext.Students.RemoveRange(group.Students);
             }
 
             if (track.Groups.Any())
@@ -187,15 +227,36 @@ public override async Task DeleteAsync(string id)
             _dbContext.Tracks.RemoveRange(teacher.Tracks);
 
         _dbContext.Teachers.Remove(teacher);
+
         if (teacher.User != null)
             _dbContext.Users.Remove(teacher.User);
 
         await _dbContext.SaveChangesAsync();
     }
-}
 
-public async Task<bool> HasAvailabilitiesAsync(string id)
-{
-    return await _dbContext.Availabilities.AnyAsync(a => a.TeacherId == id);
-}
+    // ─── Vérifications métier ─────────────────────────────────────────────────
+
+    /// <summary>
+    /// US15 — Vérifie si l'enseignant a des disponibilités.
+    /// Availability.TeacherId est une FK directe vers Teacher.UserId.
+    /// </summary>
+    public async Task<bool> HasAvailabilitiesAsync(string id)
+    {
+        return await _dbContext.Availabilities.AnyAsync(a => a.TeacherId == id);
+    }
+
+    /// <summary>
+    /// US15 — Bloque la suppression si l'enseignant est affecté à une session future.
+    /// Session ↔ Teacher est une relation many-to-many via Session.Teachers.
+    /// La date de la session est portée par Session.Date + Session.StartTime.
+    /// </summary>
+    public async Task<bool> HasFutureSessionsAsync(string id)
+    {
+        var today = DateTime.UtcNow.Date;
+
+        return await _dbContext.Sessions
+            .AnyAsync(s =>
+                s.Date > today &&
+                s.Teachers.Any(t => t.UserId == id));
+    }
 }
