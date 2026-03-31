@@ -934,6 +934,11 @@ public partial class TerHyperplanningContext : DbContext
 
         var teacherTitleId = GetStableId("tt-prof");
         var sessionId = GetStableId("session-001");
+        var sessionId2 = GetStableId("session-002");
+        var sessionId3 = GetStableId("session-003");
+        var sessionId4 = GetStableId("session-004");
+        var sessionId5 = GetStableId("session-005");
+        var sessionId6 = GetStableId("session-006");
 
         var wdMondayId = GetStableId("wd-monday");
         var wdTuesdayId = GetStableId("wd-tuesday");
@@ -1370,6 +1375,69 @@ public partial class TerHyperplanningContext : DbContext
                 Mode = "PRESENTIAL",
                 CourseId = c_sad,
                 SessionTypeId = sessionTypeId,
+                SessionStatusId = sessionStatusId,
+                RoomId = roomId
+            }
+        );
+
+        modelBuilder.Entity<Session>().HasData(
+            new Session
+            {
+                SessionId = sessionId2,
+                Date = DateTime.UtcNow.Date.AddDays(8),
+                StartTime = new TimeSpan(10, 0, 0),
+                EndTime = new TimeSpan(12, 0, 0),
+                Mode = "PRESENTIAL",
+                CourseId = c_coo,
+                SessionTypeId = sessionTypeTdId,
+                SessionStatusId = sessionStatusId,
+                RoomId = roomId
+            },
+            new Session
+            {
+                SessionId = sessionId3,
+                Date = DateTime.UtcNow.Date.AddDays(9),
+                StartTime = new TimeSpan(14, 0, 0),
+                EndTime = new TimeSpan(16, 0, 0),
+                Mode = "PRESENTIAL",
+                CourseId = c_icl,
+                SessionTypeId = sessionTypeTpId,
+                SessionStatusId = sessionStatusId,
+                RoomId = roomId
+            },
+            new Session
+            {
+                SessionId = sessionId4,
+                Date = DateTime.UtcNow.Date.AddDays(10),
+                StartTime = new TimeSpan(8, 0, 0),
+                EndTime = new TimeSpan(10, 0, 0),
+                Mode = "PRESENTIAL",
+                CourseId = c_tech,
+                SessionTypeId = sessionTypeId,
+                SessionStatusId = sessionStatusId,
+                RoomId = roomId
+            },
+            new Session
+            {
+                SessionId = sessionId5,
+                Date = DateTime.UtcNow.Date.AddDays(11),
+                StartTime = new TimeSpan(10, 0, 0),
+                EndTime = new TimeSpan(12, 0, 0),
+                Mode = "PRESENTIAL",
+                CourseId = c_ro,
+                SessionTypeId = sessionTypeTdId,
+                SessionStatusId = sessionStatusId,
+                RoomId = roomId
+            },
+            new Session
+            {
+                SessionId = sessionId6,
+                Date = DateTime.UtcNow.Date.AddDays(12),
+                StartTime = new TimeSpan(14, 0, 0),
+                EndTime = new TimeSpan(16, 0, 0),
+                Mode = "PRESENTIAL",
+                CourseId = c_data,
+                SessionTypeId = sessionTypeTpId,
                 SessionStatusId = sessionStatusId,
                 RoomId = roomId
             }
