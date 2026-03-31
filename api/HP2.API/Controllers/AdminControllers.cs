@@ -55,9 +55,9 @@ public class AdminsController : ControllerBase
 
             return Ok(ApiResponse<AdminResponse>.Success(response, "Admin created"));
         }
-        catch
+        catch (Exception ex)
         {
-            return BadRequest(ApiResponse<AdminResponse>.Fail("Email already exists or an error occurred while creating the admin"));
+            return BadRequest(ApiResponse<AdminResponse>.Fail(ex.Message));
         }
     }
 
@@ -85,9 +85,9 @@ public class AdminsController : ControllerBase
 
             return Ok(ApiResponse<AdminResponse>.Success(response, "Admin retrieved"));
         }
-        catch
+        catch (Exception ex)
         {
-            return BadRequest(ApiResponse<AdminResponse>.Fail("An error occurred while retrieving the admin"));
+            return BadRequest(ApiResponse<AdminResponse>.Fail(ex.Message));
         }
     }
 
@@ -112,9 +112,9 @@ public class AdminsController : ControllerBase
 
             return Ok(ApiResponse<List<AdminResponse>>.Success(response, "Admins retrieved"));
         }
-        catch
+        catch (Exception ex)
         {
-            return BadRequest(ApiResponse<List<AdminResponse>>.Fail("An error occurred while retrieving admins"));
+            return BadRequest(ApiResponse<List<AdminResponse>>.Fail(ex.Message));
         }
     }
 
@@ -157,9 +157,9 @@ public class AdminsController : ControllerBase
 
             return Ok(ApiResponse<AdminResponse>.Success(response, "Admin updated"));
         }
-        catch
+        catch (Exception ex)
         {
-            return BadRequest(ApiResponse<AdminResponse>.Fail("Email already exists or an error occurred while updating the admin"));
+            return BadRequest(ApiResponse<AdminResponse>.Fail(ex.Message));
         }
     }
 
@@ -176,9 +176,9 @@ public class AdminsController : ControllerBase
 
             return Ok(ApiResponse<string>.Success(id, "Admin deleted"));
         }
-        catch
+        catch (Exception ex)
         {
-            return BadRequest(ApiResponse<string>.Fail("An error occurred while deleting the admin"));
+            return BadRequest(ApiResponse<string>.Fail(ex.Message));
         }
     }
 }

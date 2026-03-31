@@ -16,9 +16,9 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
     public override async Task<IReadOnlyList<AdminModel>> GetAllAsync()
     {
         var admins = await _dbContext.Admins
-        .Include(a => a.User)
-        .ThenInclude(u => u.UserRole)
-        .ToListAsync();
+            .Include(a => a.User)
+            .ThenInclude(u => u.UserRole)
+            .ToListAsync();
 
         return _mapper.Map<List<AdminModel>>(admins);
     }
@@ -34,19 +34,28 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
     }
 
     public async Task<AdminModel?> GetByEmailAsync(string email)
-{
-    var admin = await _dbContext.Admins
-        .Include(a => a.User)
-        .ThenInclude(u => u.UserRole)
-        .FirstOrDefaultAsync(a => a.User != null && a.User.Email == email);
+    {
+        var admin = await _dbContext.Admins
+            .Include(a => a.User)
+            .ThenInclude(u => u.UserRole)
+            .FirstOrDefaultAsync(a => a.User != null && a.User.Email == email);
 
-    return admin != null ? _mapper.Map<AdminModel>(admin) : null;
-}
+        return admin != null ? _mapper.Map<AdminModel>(admin) : null;
+    }
 
     public override async Task<AdminModel> AddAsync(AdminModel adminModel)
     {
+        var emailExists = await _dbContext.Users
+            .AnyAsync(u => u.Email == adminModel.Email);
+        
+        if (emailExists)
+            throw new Exception("Email already exists");
+
         var adminRole = await _dbContext.UserRoles.FirstOrDefaultAsync(r => r.Name == "ADMIN");
-        var user = new Infrastructure.Persistence.Entities.User
+        if (adminRole == null)
+            throw new Exception("Admin role not found");
+
+        var user = new User
         {
             UserId = Guid.NewGuid().ToString(),
             Email = adminModel.Email,
@@ -54,11 +63,11 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
             FirstName = adminModel.FirstName,
             LastName = adminModel.LastName,
             PhoneNumber = adminModel.Phone,
-            UserRoleId = adminRole?.UserRoleId ?? throw new Exception("Rôle ADMIN introuvable"),
+            UserRoleId = adminRole.UserRoleId,
             CreatedAt = DateTime.UtcNow
         };
 
-        var admin = new Infrastructure.Persistence.Entities.Admin
+        var admin = new Admin
         {
             UserId = user.UserId,
             User = user
@@ -71,6 +80,7 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
 
         adminModel.Id = user.UserId;
         adminModel.Role = DomainUserRole.ADMIN;
+
         return adminModel;
     }
 
@@ -80,7 +90,14 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
             .Include(a => a.User)
             .FirstOrDefaultAsync(a => a.UserId == adminModel.Id);
 
-        if (admin == null) return;
+        if (admin == null)
+            return;
+
+        var emailExists = await _dbContext.Users
+            .AnyAsync(u => u.Email == adminModel.Email && u.UserId != adminModel.Id);
+
+        if (emailExists)
+            throw new Exception("Email already exists");
 
         if (admin.User != null)
         {
