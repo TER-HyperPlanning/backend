@@ -45,6 +45,22 @@ public class RoomRepository : IRoomRepository
             .FirstOrDefaultAsync();
     }
 
+    public async Task<RoomModel?> GetByRoomNumberAsync(string roomNumber)
+    {
+        return await _context.Rooms
+            .Where(r => r.RoomNumber == roomNumber)
+            .Select(r => new RoomModel
+            {
+                RoomId = r.RoomId,
+                RoomNumber = r.RoomNumber,
+                IsAvailable = r.IsAvailable ?? true,
+                Capacity = r.Capacity,
+                BuildingId = r.BuildingId,
+                RoomTypeId = r.RoomTypeId
+            })
+            .FirstOrDefaultAsync();
+    }
+
     public async Task AddAsync(RoomModel room)
     {
         var entity = new Room

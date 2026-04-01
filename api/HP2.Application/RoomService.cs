@@ -18,6 +18,9 @@ public class RoomService : IRoomService
     public Task<RoomModel?> GetByIdAsync(string id)
         => _roomRepository.GetByIdAsync(id);
 
+    public Task<RoomModel?> GetByRoomNumberAsync(string roomNumber)
+        => _roomRepository.GetByRoomNumberAsync(roomNumber);
+
     public Task CreateAsync(RoomModel room)
         => _roomRepository.AddAsync(room);
 

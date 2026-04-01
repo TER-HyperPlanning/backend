@@ -6,6 +6,7 @@ public interface IRoomRepository
 {
     Task<List<RoomModel>> GetAllAsync();
     Task<RoomModel?> GetByIdAsync(string id);
+    Task<RoomModel?> GetByRoomNumberAsync(string roomNumber);
     Task AddAsync(RoomModel room);
     Task UpdateAsync(RoomModel room);
     Task DeleteAsync(string roomId);
