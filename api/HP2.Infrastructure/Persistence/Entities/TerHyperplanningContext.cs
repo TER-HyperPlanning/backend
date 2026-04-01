@@ -742,6 +742,41 @@ public partial class TerHyperplanningContext : DbContext
                 .HasColumnName("name");
         });
 
+        // seed unavailable day types and unavailable days for testing
+        modelBuilder.Entity<UnavailableDayType>().HasData(
+        new UnavailableDayType
+        {
+            UnavailableDayTypeId = "TYPE1",
+            Name = "Congé"
+        },
+        new UnavailableDayType
+        {
+            UnavailableDayTypeId = "TYPE2",
+            Name = "Maladie"
+        }
+    );
+
+        modelBuilder.Entity<UnavailableDay>().HasData(
+            new UnavailableDay
+            {
+                UnavailableDayId = "UD1",
+                StartDate = new DateTime(2026, 4, 1),
+                EndDate = new DateTime(2026, 4, 1),
+                StartTime = new TimeSpan(9, 0, 0),
+                EndTime = new TimeSpan(17, 0, 0),
+                UnavailableDayTypeId = "TYPE1"
+            },
+            new UnavailableDay
+            {
+                UnavailableDayId = "UD2",
+                StartDate = new DateTime(2026, 4, 2),
+                EndDate = new DateTime(2026, 4, 2),
+                StartTime = new TimeSpan(14, 0, 0),
+                EndTime = new TimeSpan(18, 0, 0),
+                UnavailableDayTypeId = "TYPE2"
+            }
+    );
+
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__User__B9BE370F14AAA68A");
