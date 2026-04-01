@@ -76,4 +76,14 @@ public class AssignRepository : IAssignRepository
         _context.Assigns.Remove(assign);
         return await _context.SaveChangesAsync() > 0;
     }
+
+    public async Task<bool> TrackExistsAsync(string trackId)
+    {
+        return await _context.Tracks.AnyAsync(t => t.TrackId == trackId);
+    }
+    
+    public async Task<bool> CourseExistsAsync(string courseId)
+    {
+        return await _context.Courses.AnyAsync(c => c.CourseId == courseId);
+    }
 }

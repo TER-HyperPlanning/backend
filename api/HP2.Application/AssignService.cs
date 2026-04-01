@@ -1,6 +1,7 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Assign;
 using HP2.Application.DTOs.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace HP2.Application;
 
@@ -51,7 +52,7 @@ public class AssignService : IAssignService
         try
         {
             if (string.IsNullOrWhiteSpace(request.TrackId) ||
-                string.IsNullOrWhiteSpace(request.CourseId))
+            string.IsNullOrWhiteSpace(request.CourseId))
             {
                 return ApiResponse<bool>.Fail("trackId et courseId sont obligatoires");
             }
@@ -60,21 +61,34 @@ public class AssignService : IAssignService
             {
                 return ApiResponse<bool>.Fail("hourlyVolume invalide");
             }
-
+            var trackValid = await _repository.TrackExistsAsync(request.TrackId);
+            var courseValid = await _repository.CourseExistsAsync(request.CourseId);
+            
+            if (!trackValid && !courseValid)
+            {
+                return ApiResponse<bool>.Fail("Le courseId et le trackId ne correspondent à aucune entité existante.");
+            }
+            if (!courseValid)
+            {
+                return ApiResponse<bool>.Fail("Le courseId ne correspond à aucun cours existant.");
+            }
+            if (!trackValid)
+            {
+                return ApiResponse<bool>.Fail("Le trackId ne correspond à aucun track existant.");
+            }
             var result = await _repository.CreateAsync(
                 request.TrackId,
                 request.CourseId,
                 request.HourlyVolume
             );
-
+            
             if (!result)
-                return ApiResponse<bool>.Fail("Erreur lors de la création");
-
+            return ApiResponse<bool>.Fail("Erreur lors de la création");
             return ApiResponse<bool>.Success(true, "Assign créé avec succès");
         }
-        catch (Exception ex)
+        catch
         {
-            return ApiResponse<bool>.Fail(ex.Message);
+            return ApiResponse<bool>.Fail("Une erreur interne est survenue.");
         }
     }
 
