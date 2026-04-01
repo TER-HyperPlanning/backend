@@ -1,13 +1,12 @@
-using HP2.Application.DTOs.Room;
+using HP2.Domain.Models;
 
-namespace HP2.Application.Contracts
+namespace HP2.Application.Contracts;
+
+public interface IRoomService
 {
-    public interface IRoomService
-    {
-        Task<List<RoomResponse>> GetAllAsync();
-        Task<RoomResponse?> GetByIdAsync(string id);
-        Task<RoomResponse> CreateAsync(CreateRoomRequest request);
-        Task<bool> UpdateAsync(string id, UpdateRoomRequest request);
-        Task<bool> DeleteAsync(string id);
-    }
+    Task<List<RoomModel>> GetAllAsync();
+    Task<RoomModel?> GetByIdAsync(string id);
+    Task CreateAsync(RoomModel room);
+    Task UpdateAsync(RoomModel room);
+    Task DeleteAsync(string roomId);
 }

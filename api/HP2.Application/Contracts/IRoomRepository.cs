@@ -8,5 +8,5 @@ public interface IRoomRepository
     Task<RoomModel?> GetByIdAsync(string id);
     Task AddAsync(RoomModel room);
     Task UpdateAsync(RoomModel room);
-    Task DeleteAsync(string id);
+    Task DeleteAsync(string roomId);
 }
