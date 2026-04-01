@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260331233334_SeedPlanningSession")]
+    partial class SeedPlanningSession
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,33 +45,6 @@ namespace HP2.Infrastructure.Migrations
                     b.HasIndex("SessionId");
 
                     b.ToTable("Attend", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "e823715d-0a77-1379-9289-b44b55c10267"
-                        },
-                        new
-                        {
-                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "3701bc4e-401e-f4f3-00aa-b37659789636"
-                        },
-                        new
-                        {
-                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "a5129120-7dfa-797c-3e24-99056723ec39"
-                        },
-                        new
-                        {
-                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "885f671e-9801-9aec-86eb-3fe1cb1db365"
-                        },
-                        new
-                        {
-                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "54166d2e-0d4d-7e23-3a55-ecde2614bcfa"
-                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Admin", b =>
@@ -359,28 +335,6 @@ namespace HP2.Infrastructure.Migrations
                     b.HasIndex("WeekdayId");
 
                     b.ToTable("Availability", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            AvailabilityId = "44f1596b-900a-6743-2e95-a4e877064b0c",
-                            EndDate = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            StartDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
-                        },
-                        new
-                        {
-                            AvailabilityId = "165a619b-6704-9577-6d05-311a0aed3321",
-                            EndDate = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
-                            StartDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
-                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Building", b =>
@@ -889,7 +843,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -901,7 +855,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "e823715d-0a77-1379-9289-b44b55c10267",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -913,7 +867,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "3701bc4e-401e-f4f3-00aa-b37659789636",
                             CourseId = "93b97065-831b-a4dc-8179-be986f0772b8",
-                            Date = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 16, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -925,7 +879,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "a5129120-7dfa-797c-3e24-99056723ec39",
                             CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
-                            Date = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -937,7 +891,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "885f671e-9801-9aec-86eb-3fe1cb1db365",
                             CourseId = "3b835d91-4f08-07ef-d4d5-575947097601",
-                            Date = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -949,7 +903,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "54166d2e-0d4d-7e23-3a55-ecde2614bcfa",
                             CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
-                            Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 16, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -1653,13 +1607,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-
-                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 22, 790, DateTimeKind.Utc).AddTicks(1650),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 22, 279, DateTimeKind.Utc).AddTicks(5786),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             LastName = "Admin",
-                            Password = "$2b$12$sp9hThU4xbUCDU5RZVIpPeWOEhGGlyyLh7WHGlXXE2lqkEkm5fIi.",
-
+                            Password = "$2b$12$XCQL2wishrcBsLfQhZpvzuuXHfae.U4Qid5yeIb9TyLtVo3wEm5Ee",
                             PhoneNumber = "0000000000",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -1667,13 +1619,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-
-                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 288, DateTimeKind.Utc).AddTicks(2975),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 22, 609, DateTimeKind.Utc).AddTicks(9243),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             LastName = "Curie",
-                            Password = "$2b$12$Su0VDQMZ6dZTI6VBUdMw1OHR8AYXfOeg8TuHznyEXaV7nmqTgwLr6",
-
+                            Password = "$2b$12$azGWhNvVELzq2AOJlglktO3c4VWSVhxiPrUhOHlYNI1LmasUFaYXC",
                             PhoneNumber = "0123456789",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1681,11 +1631,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 7, 602, DateTimeKind.Utc).AddTicks(6741),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 22, 934, DateTimeKind.Utc).AddTicks(5621),
                             Email = "alain.durand@univ.fr",
                             FirstName = "Alain",
                             LastName = "Durand",
-                            Password = "$2b$12$dfRprIwX4btYEBviX/Fn9ute4qf2hfTRC5hxkA8/rHpWEmsNlUb2W",
+                            Password = "$2b$12$hrwXepyw0lO4IO9IcytelOAytIjdI8jPlKvpnpMdPA4ox2EyjMNdi",
                             PhoneNumber = "0134567890",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1693,11 +1643,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 7, 899, DateTimeKind.Utc).AddTicks(7796),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 23, 256, DateTimeKind.Utc).AddTicks(6823),
                             Email = "sophie.lambert@univ.fr",
                             FirstName = "Sophie",
                             LastName = "Lambert",
-                            Password = "$2b$12$pYoDVv0lqYzAmFTHRmjQsOEygnxLtKyA7NnXDmCxAEpa8w3q.gj.K",
+                            Password = "$2b$12$Ucex2ZCKrR1R3EGJJ/Jfkef8/5MEXz2mf6XnWb34LxX2Nb9SklILe",
                             PhoneNumber = "0134567891",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1705,11 +1655,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "14185a87-c07d-c0db-e37b-536e871528f2",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 8, 207, DateTimeKind.Utc).AddTicks(8322),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 23, 575, DateTimeKind.Utc).AddTicks(3499),
                             Email = "karim.benali@univ.fr",
                             FirstName = "Karim",
                             LastName = "Benali",
-                            Password = "$2b$12$ZGx/5Y0/SWSNXDwAi/akWuupSm5M3Dk0pF8WMKXxT/d6LFkeMt/gG",
+                            Password = "$2b$12$hlM4iB0F5HQQ.9tJ0yZUxueXyGAnbftOEYBQUgpn4V/./xsQDzH4K",
                             PhoneNumber = "0134567892",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1717,11 +1667,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 8, 508, DateTimeKind.Utc).AddTicks(11),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 23, 879, DateTimeKind.Utc).AddTicks(2863),
                             Email = "claire.morel@univ.fr",
                             FirstName = "Claire",
                             LastName = "Morel",
-                            Password = "$2b$12$TdRxzZkdvA6zyZXP/XmZdORMXsO7JYOPSLNp.5VpYDZFcJsoDgFGq",
+                            Password = "$2b$12$fmwh262dfTgqQY/mUM3Dju12lhA7SyY2rALRJLucEKMN/07IgDZK.",
                             PhoneNumber = "0134567893",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1729,11 +1679,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 8, 802, DateTimeKind.Utc).AddTicks(3434),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 24, 182, DateTimeKind.Utc).AddTicks(2439),
                             Email = "thomas.renault@univ.fr",
                             FirstName = "Thomas",
                             LastName = "Renault",
-                            Password = "$2b$12$dMkllJIGmXj1ywBqs8KwUedj4.r32z34UGE3XtNPQlXWQFyKTQeKW",
+                            Password = "$2b$12$1TbANmYB3.y.DqSfy95rvuhTffFSQTG7V9nhzhidfobphLwcyuxNe",
                             PhoneNumber = "0134567894",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1741,13 +1691,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-
-                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 797, DateTimeKind.Utc).AddTicks(955),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 24, 503, DateTimeKind.Utc).AddTicks(6150),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             LastName = "Dupont",
-                            Password = "$2b$12$YFbmIMr9kImvZIFT3jQP8.Lw6b.m/zJXprnQWBWjCoJwGXo20Gz6q",
-
+                            Password = "$2b$12$AFJrA4ZKnAw6oxIhTRrlwepOkjmO6H5yWJ2MAgxJ57mU0fm8KTFRS",
                             PhoneNumber = "0987654321",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1755,11 +1703,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "fd2b34ab-7283-eff1-ce41-b75fe87946b9",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 9, 392, DateTimeKind.Utc).AddTicks(5098),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 24, 806, DateTimeKind.Utc).AddTicks(5542),
                             Email = "lucas.martin01@etud.fr",
                             FirstName = "Lucas",
                             LastName = "Martin",
-                            Password = "$2b$12$sHBnAy332RAYgQv2nN2rlOOwp1n/wXl5hIembP/vOSNOhWa4krSOC",
+                            Password = "$2b$12$wbVjM0AtTRamMS7HQnltyOAZ3Cf31Cpa.8l16kcNvO6EeFZJpXvz2",
                             PhoneNumber = "0610000001",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1767,11 +1715,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ee7ac72a-3cf6-b7b0-9861-2f86c95f6f85",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 9, 692, DateTimeKind.Utc).AddTicks(4583),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 25, 111, DateTimeKind.Utc).AddTicks(9100),
                             Email = "emma.bernard02@etud.fr",
                             FirstName = "Emma",
                             LastName = "Bernard",
-                            Password = "$2b$12$Ht3iKANl7OlBUn5ePwlIW.K4xphZnI5CpJ01gC4WJJFsVh.j96mv2",
+                            Password = "$2b$12$NcgWvwTHaGnPKPGKzNrlbuqn/LQctqwfKdP758XmO/EHdiGCxYqfu",
                             PhoneNumber = "0610000002",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1779,11 +1727,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "c67f2f50-8142-b095-ad35-e91badccbc00",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 9, 987, DateTimeKind.Utc).AddTicks(9119),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 25, 426, DateTimeKind.Utc).AddTicks(1065),
                             Email = "hugo.petit03@etud.fr",
                             FirstName = "Hugo",
                             LastName = "Petit",
-                            Password = "$2b$12$D1SBZmfD6nZO/cH03qH15OG71KhRclsdVWqWdrjfjWleNUAalDQC6",
+                            Password = "$2b$12$6rZwErVntLFi.fDJUpfbhOtKE5hRJUjQQyuTf8EcwIPO0YhWI6tYe",
                             PhoneNumber = "0610000003",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1791,11 +1739,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3fca4239-b5f4-f163-c65c-8d835f1a0154",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 10, 281, DateTimeKind.Utc).AddTicks(9116),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 25, 727, DateTimeKind.Utc).AddTicks(9478),
                             Email = "chloe.robert04@etud.fr",
                             FirstName = "Chloe",
                             LastName = "Robert",
-                            Password = "$2b$12$2oQf7B7MzA2lUxQ2aXdcC.xranT55hC69K7E12K.FoKWl3f.kKo12",
+                            Password = "$2b$12$9Mg3r.R2MqyORMACIQUzAe9JM6iywUvom4uAe1REbsVXz1d/VDTSC",
                             PhoneNumber = "0610000004",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1803,11 +1751,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "15f55f4b-c16e-2fc7-26dc-5d0d607d1778",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 10, 576, DateTimeKind.Utc).AddTicks(6767),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 26, 35, DateTimeKind.Utc).AddTicks(1038),
                             Email = "nathan.richard05@etud.fr",
                             FirstName = "Nathan",
                             LastName = "Richard",
-                            Password = "$2b$12$/2LAKphSSiwwjsVc/39/LekxsHZNHk4eORxy9ScMOplBwXeK9DurG",
+                            Password = "$2b$12$A.zjQi/SftvKkZRyoJWHtOgN2qA7iW4vllgseNnqZ85hLnef9fEGW",
                             PhoneNumber = "0610000005",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1815,11 +1763,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "bf1e4d8c-7dfa-12e7-fb4d-7fc307df9aa3",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 10, 870, DateTimeKind.Utc).AddTicks(9774),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 26, 357, DateTimeKind.Utc).AddTicks(7073),
                             Email = "lea.durand06@etud.fr",
                             FirstName = "Lea",
                             LastName = "Durand",
-                            Password = "$2b$12$sfx.ytqirYki.QbnQvl7sOOu5pd3X40IkYy9FJLLUfSFgjmEs5L2q",
+                            Password = "$2b$12$ekqRnC33D4l8.ewF40q43udQ.JmR4W2qsUUn4YVHNp4xyVc/T.Y6u",
                             PhoneNumber = "0610000006",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1827,11 +1775,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b11e5b82-12d0-5a31-1105-780499cbfc20",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 11, 165, DateTimeKind.Utc).AddTicks(5835),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 26, 660, DateTimeKind.Utc).AddTicks(7218),
                             Email = "arthur.dubois07@etud.fr",
                             FirstName = "Arthur",
                             LastName = "Dubois",
-                            Password = "$2b$12$bZeYbjv3OqgcestJTu1IQe8ilMIDUhMoW7mtRBJtrS/Ov9qFcQW6u",
+                            Password = "$2b$12$0bs5ow/yazyK2mZEEsyMvOzHB.Pt4mQXQ4zKCznbq9P91AIKF6WBO",
                             PhoneNumber = "0610000007",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1839,11 +1787,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "6a10f91d-0aed-5fa7-4002-3bd76f3e6d11",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 11, 460, DateTimeKind.Utc).AddTicks(898),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 26, 966, DateTimeKind.Utc).AddTicks(2899),
                             Email = "ines.moreau08@etud.fr",
                             FirstName = "Ines",
                             LastName = "Moreau",
-                            Password = "$2b$12$jGE4lu4IauRVADwdnE73uuhWNylUDXOcJSq7Fl0Q6nrK.zCna1MPe",
+                            Password = "$2b$12$3aIQOnXP6quXyIZZ9Sb0HuNcJY.mp7WrhLmfr8l2WgPbmOWY6wdlq",
                             PhoneNumber = "0610000008",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1851,11 +1799,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "09095bf3-fa8c-0e49-eecb-f4bf320842ea",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 11, 754, DateTimeKind.Utc).AddTicks(5227),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 27, 271, DateTimeKind.Utc).AddTicks(1406),
                             Email = "jules.laurent09@etud.fr",
                             FirstName = "Jules",
                             LastName = "Laurent",
-                            Password = "$2b$12$LVogedNYVz8.DCYN5Q2sLOSrkfv.MqJi1Fuh.BEWBZVs7WZzdGHKG",
+                            Password = "$2b$12$XM1aqkI753a4EVdMl4aaPuONcYMYyKaq9uQ/gvKAF1D3QZrUHRnD.",
                             PhoneNumber = "0610000009",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1863,11 +1811,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d8ba01ab-6a2c-951c-02c4-d6a0150808a3",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 49, DateTimeKind.Utc).AddTicks(5868),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 27, 576, DateTimeKind.Utc).AddTicks(4760),
                             Email = "sarah.simon10@etud.fr",
                             FirstName = "Sarah",
                             LastName = "Simon",
-                            Password = "$2b$12$RJbtq3isA5YYfhqIm7WxjOTs2IW1ZM0dFRG17BhNAlkg7UE8UUxCm",
+                            Password = "$2b$12$3dfROGYBPBvTPSV29wDDWO4cTpEEfclSZ5Wft5crvQNBsM3fwA9RW",
                             PhoneNumber = "0610000010",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1875,11 +1823,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e9e3bb79-3eab-df5e-de27-f8914cef210a",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 343, DateTimeKind.Utc).AddTicks(7521),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 27, 885, DateTimeKind.Utc).AddTicks(7431),
                             Email = "louis.michel11@etud.fr",
                             FirstName = "Louis",
                             LastName = "Michel",
-                            Password = "$2b$12$v/qrjybsClCeEJiq12cZFe6nMQNl4mHsE1CEi8zzXWCMQwJuD7/Ke",
+                            Password = "$2b$12$Azigr2Ft0g6/JQJtL1QM7.RTVHT/Cxz7Y8j.BqXa2OIpUO5mosiE6",
                             PhoneNumber = "0610000011",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1887,11 +1835,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9f33ca92-97a2-351d-cf5a-e9841c28e7f7",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 638, DateTimeKind.Utc).AddTicks(545),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 28, 191, DateTimeKind.Utc).AddTicks(2989),
                             Email = "manon.garcia12@etud.fr",
                             FirstName = "Manon",
                             LastName = "Garcia",
-                            Password = "$2b$12$ovdt5bql1h9jvKP7kQFX0.k/DFNY29VImLlY3ZjsKqZVJbS/7bjIe",
+                            Password = "$2b$12$iOIZeE7W3US/w1530yN69.C4XcGYFkDZTE1pReuQ788G2TqF43sku",
                             PhoneNumber = "0610000012",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1899,11 +1847,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a4583bc8-b1cd-5994-bf7f-6ba5ed4d059f",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 932, DateTimeKind.Utc).AddTicks(9874),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 28, 523, DateTimeKind.Utc).AddTicks(5982),
                             Email = "gabriel.leroy13@etud.fr",
                             FirstName = "Gabriel",
                             LastName = "Leroy",
-                            Password = "$2b$12$JbMvwaeN5.dbxskAzUWgVOY8nFYU8IhSvfQRa/4xW5opahTfMWV8K",
+                            Password = "$2b$12$zIZPrehdeENjkfrpUH0Gt.DxMALgQZ1kL.iYOBq6yI1/GdEd6i9iy",
                             PhoneNumber = "0610000013",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1911,11 +1859,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "dd0b032a-0b32-dfa0-1dbe-c55b3db45489",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 13, 227, DateTimeKind.Utc).AddTicks(6262),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 28, 826, DateTimeKind.Utc).AddTicks(6513),
                             Email = "camille.roux14@etud.fr",
                             FirstName = "Camille",
                             LastName = "Roux",
-                            Password = "$2b$12$V52jVr9IVZn2LHhaoU1qQupD4WAvg/WPUBL5bmy1mLySop8WKA8Xm",
+                            Password = "$2b$12$APduH7BgAkGyY5zoBhGu/.gqEd2MxdXkVEX2IlKyustB4G.LA/HzK",
                             PhoneNumber = "0610000014",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1923,11 +1871,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8d936d9f-0ae5-8334-3197-ce641e6873bb",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 13, 521, DateTimeKind.Utc).AddTicks(9792),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 29, 131, DateTimeKind.Utc).AddTicks(4869),
                             Email = "adam.david15@etud.fr",
                             FirstName = "Adam",
                             LastName = "David",
-                            Password = "$2b$12$hUWhhzSLMTkyLNqEzbcyzueAFo.LrRXethsWUWFTO0Le8b4AuF69W",
+                            Password = "$2b$12$KITW8DPFAkGdejYTCW3oyOAx48FVwchFveQeRtRDAT93MAJI1bPde",
                             PhoneNumber = "0610000015",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1935,11 +1883,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9e35ec2e-6454-dbbf-a24a-c1fbe7ba6787",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 13, 816, DateTimeKind.Utc).AddTicks(7307),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 29, 436, DateTimeKind.Utc).AddTicks(5133),
                             Email = "zoe.bertrand16@etud.fr",
                             FirstName = "Zoe",
                             LastName = "Bertrand",
-                            Password = "$2b$12$87MdRL2rr4GrbmRx5EIsQ.PBZh61nRvin88JEhoc18AO357g9z6v2",
+                            Password = "$2b$12$NwXVyrgGai46tqss4pkXduAoPikO6WZl4bjTmluui4FAKOWOnPp.O",
                             PhoneNumber = "0610000016",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1947,11 +1895,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "985474c8-8b56-e296-730f-d011dd6d63ad",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 14, 114, DateTimeKind.Utc).AddTicks(6817),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 29, 741, DateTimeKind.Utc).AddTicks(3363),
                             Email = "noe.thomas17@etud.fr",
                             FirstName = "Noe",
                             LastName = "Thomas",
-                            Password = "$2b$12$WUQXHNqAJvdHs341NQVU4OmUl187MHx7yUYKMitz962MRRCyyHOEO",
+                            Password = "$2b$12$YpofuZYhemeuTq9XUMIEDuDETgo3brYYDVcWBp/2xMkoo..CXC2JS",
                             PhoneNumber = "0610000017",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1959,11 +1907,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e894b918-a541-2628-3bcd-376cf02e4986",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 14, 410, DateTimeKind.Utc).AddTicks(4422),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 30, 75, DateTimeKind.Utc).AddTicks(6410),
                             Email = "lina.bonnet18@etud.fr",
                             FirstName = "Lina",
                             LastName = "Bonnet",
-                            Password = "$2b$12$7jPkUegqDvqSXYT4EAPBgu2RlGuHxjK223d9N2Dfv4n30p08T3ugS",
+                            Password = "$2b$12$ke3BHAVuqBIzA8phMHzXdOc6W6SAEkAKAZeteYJkZlYGksrIy0SOq",
                             PhoneNumber = "0610000018",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1971,11 +1919,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "11819a20-b220-4acf-fee3-7294e4971100",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 14, 714, DateTimeKind.Utc).AddTicks(7901),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 30, 395, DateTimeKind.Utc).AddTicks(7835),
                             Email = "raphael.francois19@etud.fr",
                             FirstName = "Raphael",
                             LastName = "Francois",
-                            Password = "$2b$12$.s9HmLuPcI6J3WDuGOupEuX2hJLmo6TN5xDAQFaofG3OnY2uWzuvu",
+                            Password = "$2b$12$eftIR/DK8UvRPeOWv7LJZ.fPak3CKKZuuGRFBbYpFdMETVZEEQt/C",
                             PhoneNumber = "0610000019",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1983,11 +1931,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a5e38765-a824-e761-1cfd-a76a2136091c",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 14, DateTimeKind.Utc).AddTicks(2039),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 30, 703, DateTimeKind.Utc).AddTicks(1063),
                             Email = "yasmine.faure20@etud.fr",
                             FirstName = "Yasmine",
                             LastName = "Faure",
-                            Password = "$2b$12$laPG/86PCTB8APKHGotc.uyoTdfPABdSFuLFdKxW2vn1GyVWjBLUy",
+                            Password = "$2b$12$63v8fW4DTYl7x/5OV/Bf8Or05G8pCF3Uq.oYHL0X7zV.gykSEMX5W",
                             PhoneNumber = "0610000020",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1995,11 +1943,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e115db87-7553-5590-e81c-cf366ee4dc30",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 310, DateTimeKind.Utc).AddTicks(7354),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 31, 39, DateTimeKind.Utc).AddTicks(8812),
                             Email = "theo.andre21@etud.fr",
                             FirstName = "Theo",
                             LastName = "Andre",
-                            Password = "$2b$12$WwsT49VCxe/J8iv6pwLlT.vCGlO71GfZDvJJtZ2eQeQeRbWanpKLq",
+                            Password = "$2b$12$77wWZLINJgI3c6b0xQQ.qunurDOrYo.UEi673zq64MkFohR21XMQi",
                             PhoneNumber = "0610000021",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2007,11 +1955,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e1c033a0-e584-8bcb-b745-6a93d3fc2cf7",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 631, DateTimeKind.Utc).AddTicks(3300),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 31, 341, DateTimeKind.Utc).AddTicks(1934),
                             Email = "jade.noel22@etud.fr",
                             FirstName = "Jade",
                             LastName = "Noel",
-                            Password = "$2b$12$DPfVO5ZRCHsei/EpLpFR0e1FMK8iNMQpRJcYAU2fOfGuMmNL/PjIu",
+                            Password = "$2b$12$1IlHsR.UT/iJkZOa5vHbieA3PgSgbdtumZu3YYNC1v29fUHU7gSDm",
                             PhoneNumber = "0610000022",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2019,11 +1967,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "6a5c6b51-5c13-fc1f-5a81-bd99f87a71a7",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 930, DateTimeKind.Utc).AddTicks(9194),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 31, 637, DateTimeKind.Utc).AddTicks(8433),
                             Email = "sami.perez23@etud.fr",
                             FirstName = "Sami",
                             LastName = "Perez",
-                            Password = "$2b$12$NcHFRIPTTp5zcM6RASET8.F4SU9Q9w2LMJ8AXawMuFXp6yN8Reuna",
+                            Password = "$2b$12$cdHI3r1TqN8PzZqZ.0iw9eLpcunLC8yJLGhRRYN26hn7zvRn5ZJJu",
                             PhoneNumber = "0610000023",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2031,11 +1979,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a1e5a516-c159-675d-0f0d-96289cd47e35",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 16, 225, DateTimeKind.Utc).AddTicks(4940),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 31, 938, DateTimeKind.Utc).AddTicks(2580),
                             Email = "clara.denis24@etud.fr",
                             FirstName = "Clara",
                             LastName = "Denis",
-                            Password = "$2b$12$7SK7Gg3kdtqWyevHHvWY3up1dbYk8vkK2ggoePlXkJ91ZFdTqxZCm",
+                            Password = "$2b$12$hH8b9bA1ScrkhBiK0FU2Qey7T6tE3U34rvYMBaIM2YG/8FX1/6nVW",
                             PhoneNumber = "0610000024",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2043,11 +1991,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b008fcd4-f3ad-f24d-91a7-c16be33fe62b",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 16, 521, DateTimeKind.Utc).AddTicks(2258),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 32, 245, DateTimeKind.Utc).AddTicks(6089),
                             Email = "yanis.colin25@etud.fr",
                             FirstName = "Yanis",
                             LastName = "Colin",
-                            Password = "$2b$12$/ijZEQcPOYyyM1LJ2TE5nOZxMgcP3q1ExtrTRWGVh4D7d/YsOGomu",
+                            Password = "$2b$12$DwblZ3.eW//N90cy0VBX/.IBorNPWveSDbN0msfBO9nKb9NLZ/rIW",
                             PhoneNumber = "0610000025",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2055,11 +2003,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8c6614ce-430a-30a5-a877-fc157f5b7ad7",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 16, 815, DateTimeKind.Utc).AddTicks(3532),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 32, 548, DateTimeKind.Utc).AddTicks(2307),
                             Email = "laura.renault26@etud.fr",
                             FirstName = "Laura",
                             LastName = "Renault",
-                            Password = "$2b$12$/e99.0AErEjbaScm6BRqZefV5HQju2w9GVnYoSM5B8/w7u8E.GSyS",
+                            Password = "$2b$12$QTNcILyAAmSoUMIUBLTLU.ip.bsAABiSvceKL05CT/zKZuXfzZdpC",
                             PhoneNumber = "0610000026",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2067,11 +2015,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "32573a03-d414-5891-15fe-b991e1f6d0a7",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 109, DateTimeKind.Utc).AddTicks(8462),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 32, 853, DateTimeKind.Utc).AddTicks(9958),
                             Email = "rayan.gautier27@etud.fr",
                             FirstName = "Rayan",
                             LastName = "Gautier",
-                            Password = "$2b$12$vxLoru85W8Syvx0k4jq6Ie4GsKHp9.fBJpE9v4nRJ3KV0eVbmhQ3G",
+                            Password = "$2b$12$NlN/54Y1SICuprbafn9jt.j.jHEX2Abj/cIHpOidIXriruElzgmDS",
                             PhoneNumber = "0610000027",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2079,11 +2027,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "cafb714b-44d5-a183-e909-da93f4a926c8",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 406, DateTimeKind.Utc).AddTicks(1069),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 33, 159, DateTimeKind.Utc).AddTicks(8286),
                             Email = "nina.blanchard28@etud.fr",
                             FirstName = "Nina",
                             LastName = "Blanchard",
-                            Password = "$2b$12$f5A9jpjFDyW5Vf2zMFVx.ed1F8KqL9/99XNCCr5BEMomy/Flo6VZi",
+                            Password = "$2b$12$j.3HHqZwYaNcxTFSdSy4f.6Bc0geWl9c5y9tuTj5H5DjOPN9T4Tqm",
                             PhoneNumber = "0610000028",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2091,11 +2039,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "77eb8c7e-d27b-ca0d-7b40-66def436466b",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 701, DateTimeKind.Utc).AddTicks(1591),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 33, 493, DateTimeKind.Utc).AddTicks(1617),
                             Email = "elias.giraud29@etud.fr",
                             FirstName = "Elias",
                             LastName = "Giraud",
-                            Password = "$2b$12$QavDYYx3M8M0f8cvx.uuxelluB6.Q/dQ/KJwv8w3bWW0UPtNvXw36",
+                            Password = "$2b$12$FFTJ89BGpEJabwFbx2AwNuhkJ0rz/BbyuAm/fX/XXPRV3NMcHqvH2",
                             PhoneNumber = "0610000029",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -2103,11 +2051,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "13aacf42-836e-5f88-2ccd-f93c81b68f7d",
-                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 996, DateTimeKind.Utc).AddTicks(6694),
+                            CreatedAt = new DateTime(2026, 3, 31, 23, 33, 33, 799, DateTimeKind.Utc).AddTicks(3834),
                             Email = "alice.perrot30@etud.fr",
                             FirstName = "Alice",
                             LastName = "Perrot",
-                            Password = "$2b$12$YcBJ409PAiMT2OtuQbuk1uZhpJQp7j0//L87Cvlf1fV0DOOKco5ki",
+                            Password = "$2b$12$bOeUKRa5Q.mFtFSE9wmS4ubKgTP7iEZTrtxL2RaJqIBKRLMmGGlh.",
                             PhoneNumber = "0610000030",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"

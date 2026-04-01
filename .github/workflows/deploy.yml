@@ -16,6 +16,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             git config --global --add safe.directory /home/mohamed/backend
+            ls
             cd /home/mohamed/backend/api
             git pull origin main
             cd api
