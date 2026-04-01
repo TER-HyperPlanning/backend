@@ -22,6 +22,7 @@ namespace HP2.Application
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ITrackService, TrackService>();
+            services.AddScoped<IAvailabilityService, AvailabilityService>();
 
             return services;
         }
