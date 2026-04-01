@@ -892,7 +892,10 @@ public partial class TerHyperplanningContext : DbContext
         var roomId = GetStableId("room-a102");
 
         var sessionTypeId = GetStableId("st-cm");
+        var sessionTypeTdId = GetStableId("st-td");
+        var sessionTypeTpId = GetStableId("st-tp");
         var sessionStatusId = GetStableId("ss-scheduled");
+
         var teacherTitleId = GetStableId("tt-prof");
         var sessionId = GetStableId("session-001");
 
@@ -966,7 +969,9 @@ public partial class TerHyperplanningContext : DbContext
 
         // SessionTypes (requis par Session)
         modelBuilder.Entity<SessionType>().HasData(
-            new SessionType { SessionTypeId = sessionTypeId, Label = "Cours Magistral" }
+            new SessionType { SessionTypeId = sessionTypeId, Label = "CM" },
+            new SessionType { SessionTypeId = sessionTypeTdId, Label = "TD" },
+            new SessionType { SessionTypeId = sessionTypeTpId, Label = "TP" }
         );
 
         // SessionStatus (requis par Session)
@@ -979,16 +984,46 @@ public partial class TerHyperplanningContext : DbContext
             new TeacherTitle { TeacherTitleId = teacherTitleId, Name = "Professeur" }
         );
 
-        // WeekDays (requis par Availability)
+                // WeekDays (requis par Availability)
         modelBuilder.Entity<WeekDay>().HasData(
-           new WeekDay { WeekdayId = wdMondayId,    OrderIndex = 1, Name = "Lundi" },
-           new WeekDay { WeekdayId = wdTuesdayId,   OrderIndex = 2, Name = "Mardi" },
-           new WeekDay { WeekdayId = wdWednesdayId, OrderIndex = 3, Name = "Mercredi" },
-           new WeekDay { WeekdayId = wdThursdayId,  OrderIndex = 4, Name = "Jeudi" },
-           new WeekDay { WeekdayId = wdFridayId,    OrderIndex = 5, Name = "Vendredi" },
-           new WeekDay { WeekdayId = wdSaturdayId,  OrderIndex = 6, Name = "Samedi" },
-           new WeekDay { WeekdayId = wdSundayId,    OrderIndex = 7, Name = "Dimanche" }
-       );
+        new WeekDay { WeekdayId = wdMondayId,    OrderIndex = 1, Name = "Lundi" },
+        new WeekDay { WeekdayId = wdTuesdayId,   OrderIndex = 2, Name = "Mardi" },
+        new WeekDay { WeekdayId = wdWednesdayId, OrderIndex = 3, Name = "Mercredi" },
+        new WeekDay { WeekdayId = wdThursdayId,  OrderIndex = 4, Name = "Jeudi" },
+        new WeekDay { WeekdayId = wdFridayId,    OrderIndex = 5, Name = "Vendredi" },
+        new WeekDay { WeekdayId = wdSaturdayId,  OrderIndex = 6, Name = "Samedi" },
+        new WeekDay { WeekdayId = wdSundayId,    OrderIndex = 7, Name = "Dimanche" }
+        );
+
+        // ============================
+        // AVAILABILITIES (Seed)
+        // ============================
+
+        var avail1 = GetStableId("avail-marie-curie-lundi-matin");
+        var avail2 = GetStableId("avail-marie-curie-lundi-aprem");
+
+        modelBuilder.Entity<Availability>().HasData(
+            new Availability
+            {
+                AvailabilityId = avail1,
+                TeacherId = teacherUserId,
+                WeekdayId = wdMondayId,
+                StartDate = new DateTime(2026, 2, 1),
+                EndDate = new DateTime(2026, 6, 30),
+                StartTime = new TimeSpan(8, 0, 0),
+                EndTime = new TimeSpan(12, 0, 0)
+            },
+            new Availability
+            {
+                AvailabilityId = avail2,
+                TeacherId = teacherUserId,
+                WeekdayId = wdMondayId,
+                StartDate = new DateTime(2026, 2, 1),
+                EndDate = new DateTime(2026, 6, 30),
+                StartTime = new TimeSpan(13, 0, 0),
+                EndTime = new TimeSpan(17, 0, 0)
+            }
+        );
         // ========================================
         // 2. USERS ET RÔLES SPÉCIFIQUES
         // ========================================
