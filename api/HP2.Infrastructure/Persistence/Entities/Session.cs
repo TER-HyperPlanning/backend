@@ -23,6 +23,8 @@ public partial class Session
 
     public string RoomId { get; set; } = null!;
 
+    public string? Description { get; set; }
+
     public virtual Course Course { get; set; } = null!;
 
     public virtual Room Room { get; set; } = null!;

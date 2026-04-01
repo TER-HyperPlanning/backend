@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260315231506_UpdateSessionTypeLabels")]
+    partial class UpdateSessionTypeLabels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -332,28 +335,6 @@ namespace HP2.Infrastructure.Migrations
                     b.HasIndex("WeekdayId");
 
                     b.ToTable("Availability", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            AvailabilityId = "44f1596b-900a-6743-2e95-a4e877064b0c",
-                            EndDate = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            StartDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
-                        },
-                        new
-                        {
-                            AvailabilityId = "165a619b-6704-9577-6d05-311a0aed3321",
-                            EndDate = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
-                            StartDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
-                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Building", b =>
@@ -862,7 +843,7 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            Date = new DateTime(2026, 3, 2, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 3, 22, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
@@ -1386,13 +1367,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-
-                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 22, 790, DateTimeKind.Utc).AddTicks(1650),
+                            CreatedAt = new DateTime(2026, 3, 15, 23, 15, 2, 853, DateTimeKind.Utc).AddTicks(8149),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             LastName = "Admin",
-                            Password = "$2b$12$sp9hThU4xbUCDU5RZVIpPeWOEhGGlyyLh7WHGlXXE2lqkEkm5fIi.",
-
+                            Password = "$2b$12$WonlV0DB87DiYHoJi/5uGO7a8/FNeDhd1VCOkHgdFTaSAb.UM488y",
                             PhoneNumber = "0000000000",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -1400,13 +1379,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-
-                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 288, DateTimeKind.Utc).AddTicks(2975),
+                            CreatedAt = new DateTime(2026, 3, 15, 23, 15, 3, 885, DateTimeKind.Utc).AddTicks(5689),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             LastName = "Curie",
-                            Password = "$2b$12$Su0VDQMZ6dZTI6VBUdMw1OHR8AYXfOeg8TuHznyEXaV7nmqTgwLr6",
-
+                            Password = "$2b$12$pQSdwxHj4CaqjcVgCKKVN.sRhihwDKBNDIZoMa2hjEgqoAONF5xHy",
                             PhoneNumber = "0123456789",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -1414,13 +1391,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-
-                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 797, DateTimeKind.Utc).AddTicks(955),
+                            CreatedAt = new DateTime(2026, 3, 15, 23, 15, 4, 829, DateTimeKind.Utc).AddTicks(7873),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             LastName = "Dupont",
-                            Password = "$2b$12$YFbmIMr9kImvZIFT3jQP8.Lw6b.m/zJXprnQWBWjCoJwGXo20Gz6q",
-
+                            Password = "$2b$12$IaeqIzJsuj.YM/SBZCur7.HbOO.vI7../xVwmjSfsl7DYZF2EyMry",
                             PhoneNumber = "0987654321",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -1508,42 +1483,6 @@ namespace HP2.Infrastructure.Migrations
                             WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1",
                             Name = "Lundi",
                             OrderIndex = (byte)1
-                        },
-                        new
-                        {
-                            WeekdayId = "41005c9e-5360-bb11-50eb-28be4d5446a8",
-                            Name = "Mardi",
-                            OrderIndex = (byte)2
-                        },
-                        new
-                        {
-                            WeekdayId = "cbfef8cb-fcc1-8dff-8dec-6c7d0485236e",
-                            Name = "Mercredi",
-                            OrderIndex = (byte)3
-                        },
-                        new
-                        {
-                            WeekdayId = "eeb11a2e-98d0-2688-f2bb-e3ef7a7b021b",
-                            Name = "Jeudi",
-                            OrderIndex = (byte)4
-                        },
-                        new
-                        {
-                            WeekdayId = "9cf80bf4-1ccf-677a-2b2c-988fa321d2a5",
-                            Name = "Vendredi",
-                            OrderIndex = (byte)5
-                        },
-                        new
-                        {
-                            WeekdayId = "8d4e36a1-7dc6-f59d-464c-ab18a938a58e",
-                            Name = "Samedi",
-                            OrderIndex = (byte)6
-                        },
-                        new
-                        {
-                            WeekdayId = "d0f05ca8-6b62-5d90-1d6a-f680ddd4b45a",
-                            Name = "Dimanche",
-                            OrderIndex = (byte)7
                         });
                 });
 
