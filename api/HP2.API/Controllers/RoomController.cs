@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HP2.Application.Contracts;
@@ -17,6 +18,48 @@ namespace HP2.API.Controllers
         public RoomController(IRoomService roomService)
         {
             _roomService = roomService;
+        }
+
+        private static readonly Dictionary<string, string> EnumAllowedValues = new(StringComparer.OrdinalIgnoreCase)
+        {
+            ["roomTypeId"] = string.Join(", ", "SalleTD", "SalleCOURS", "AMPHITHEATRE", "Salle de TD", "Salle de Cours", "Amphitheatre")
+        };
+
+        private static string FormatFieldWithAllowedValues(string field)
+        {
+            return EnumAllowedValues.TryGetValue(field, out var allowedValues)
+                ? $"{field}( {allowedValues} )"
+                : field;
+        }
+
+        private static bool TryParseRoomType(string input, out RoomTypeEnum roomType)
+        {
+            roomType = default;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+
+            var normalized = input.Trim();
+
+            if (Enum.TryParse<RoomTypeEnum>(normalized, true, out roomType))
+            {
+                return true;
+            }
+
+            return normalized.ToLowerInvariant() switch
+            {
+                "salle de td" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
+                "salle td" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
+                "salletd" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
+                "salle de cours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
+                "salle cours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
+                "sallecours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
+                "amphitheatre" => (roomType = RoomTypeEnum.AMPHITHEATRE) == RoomTypeEnum.AMPHITHEATRE,
+                "amphitheater" => (roomType = RoomTypeEnum.AMPHITHEATRE) == RoomTypeEnum.AMPHITHEATRE,
+                _ => false
+            };
         }
 
         // GET: api/Room
@@ -45,16 +88,39 @@ namespace HP2.API.Controllers
             if (request == null)
                 return BadRequest(ApiResponse<RoomModel>.Fail("Room payload is required"));
 
+            if (!ModelState.IsValid)
+            {
+                var invalidFields = ModelState
+                    .Where(x => x.Value != null && x.Value.Errors.Count > 0)
+                    .Select(x => x.Key.Split('.').Last())
+                    .Where(x => !string.IsNullOrWhiteSpace(x)
+                                && !x.Equals("request", StringComparison.OrdinalIgnoreCase)
+                                && x != "$")
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
+                if (invalidFields.Any())
+                    return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
+            }
+
+            var invalidRoomTypeFields = new List<string>();
+            if (!TryParseRoomType(request.RoomTypeId, out var parsedRoomType))
+            {
+                invalidRoomTypeFields.Add("roomTypeId");
+                return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidRoomTypeFields.Select(FormatFieldWithAllowedValues))}"));
+            }
+
             var room = new RoomModel
             {
                 IsAvailable = request.IsAvailable,
                 Capacity = request.Capacity,
                 RoomNumber = request.RoomNumber,
                 BuildingId = request.BuildingId,
-                Type = Enum.Parse<RoomTypeEnum>(request.RoomTypeId)
+                Type = parsedRoomType
             };
             var createdRoom = await _roomService.CreateRoomAsync(room);
-            return CreatedAtAction(nameof(GetRoom), new { id = createdRoom.RoomId }, createdRoom);
+            return CreatedAtAction(nameof(GetRoom), new { id = createdRoom.RoomId },
+                ApiResponse<RoomModel>.Success(createdRoom, "Room created successfully"));
         }
 
         // PUT: api/Room/5
@@ -63,13 +129,37 @@ namespace HP2.API.Controllers
         {
             if (roomDto == null)
                 return BadRequest(ApiResponse<RoomModel>.Fail("Room payload is required"));
+
+            if (!ModelState.IsValid)
+            {
+                var invalidFields = ModelState
+                    .Where(x => x.Value != null && x.Value.Errors.Count > 0)
+                    .Select(x => x.Key.Split('.').Last())
+                    .Where(x => !string.IsNullOrWhiteSpace(x)
+                                && !x.Equals("roomDto", StringComparison.OrdinalIgnoreCase)
+                                && x != "$")
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
+                if (invalidFields.Any())
+                    return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
+            }
+
+            var invalidRoomTypeFields = new List<string>();
+            if (!TryParseRoomType(roomDto.RoomTypeId, out var parsedRoomType))
+            {
+                invalidRoomTypeFields.Add("roomTypeId");
+                return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidRoomTypeFields.Select(FormatFieldWithAllowedValues))}"));
+            }
+
             var existingRoom = await _roomService.GetRoomByIdAsync(id);
             if (existingRoom == null)
                 return NotFound(ApiResponse<RoomModel>.Fail($"Room with ID {id} not found"));
             existingRoom.IsAvailable = roomDto.IsAvailable;
             existingRoom.Capacity = roomDto.Capacity;
             existingRoom.BuildingId = roomDto.BuildingId;
-            existingRoom.Type = Enum.Parse<RoomTypeEnum>(roomDto.RoomTypeId);
+            existingRoom.RoomNumber = roomDto.RoomNumber;
+            existingRoom.Type = parsedRoomType;
 
             await _roomService.UpdateRoomAsync(existingRoom);
 
