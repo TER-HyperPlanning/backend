@@ -111,14 +111,18 @@ public class AssignService : IAssignService
                 return ApiResponse<bool>.Fail("hourlyVolume invalide");
             }
 
+            var existingAssign = await _repository.GetByIdsAsync(trackId, courseId);
+
+            if (existingAssign == null)
+            {
+                return ApiResponse<bool>.Fail("Assign non trouvé");
+            }
+
             var result = await _repository.UpdateAsync(
                 trackId,
                 courseId,
                 request.HourlyVolume
             );
-
-            if (!result)
-                return ApiResponse<bool>.Fail("Erreur lors de la mise à jour");
 
             return ApiResponse<bool>.Success(true, "Assign mis à jour");
         }
@@ -135,10 +139,14 @@ public class AssignService : IAssignService
             if (string.IsNullOrWhiteSpace(trackId) || string.IsNullOrWhiteSpace(courseId))
                 return ApiResponse<bool>.Fail("trackId et courseId sont obligatoires");
 
-            var result = await _repository.DeleteAsync(trackId, courseId);
+            var existingAssign = await _repository.GetByIdsAsync(trackId, courseId);
 
-            if (!result)
-                return ApiResponse<bool>.Fail("Erreur lors de la suppression");
+            if (existingAssign == null)
+            {
+                return ApiResponse<bool>.Fail("Assign non trouvé");
+            }
+
+            var result = await _repository.DeleteAsync(trackId, courseId);
 
             return ApiResponse<bool>.Success(true, "Assign supprimé");
         }
