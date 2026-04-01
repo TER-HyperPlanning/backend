@@ -1442,6 +1442,18 @@ public partial class TerHyperplanningContext : DbContext
                 RoomId = roomId
             }
         );
+
+        // ========================================
+        // 7. ATTEND (Group <-> Session)
+        // ========================================
+
+        modelBuilder.Entity("Attend").HasData(
+            new { GroupId = groupId_M1_ILSD, SessionId = sessionId2 },
+            new { GroupId = groupId_M1_ILSD, SessionId = sessionId3 },
+            new { GroupId = groupId_M1_ILSD, SessionId = sessionId4 },
+            new { GroupId = groupId_M1_ILSD, SessionId = sessionId5 },
+            new { GroupId = groupId_M1_ILSD, SessionId = sessionId6 }
+        );
     }
 
     private string GetStableId(string input)
