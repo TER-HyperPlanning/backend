@@ -45,6 +45,7 @@ namespace HP2.Infrastructure
             services.AddScoped<ITrackRepository, TrackRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IAvailabilityRepository, AvailabilityRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
 
             return services;
         }
