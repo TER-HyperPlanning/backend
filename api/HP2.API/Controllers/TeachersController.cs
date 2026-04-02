@@ -3,6 +3,7 @@ using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Teacher;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using HP2.Domain.Enums;
 
 namespace HP2.API.Controllers;
 
