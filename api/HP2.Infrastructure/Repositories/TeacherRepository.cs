@@ -216,7 +216,7 @@ public async Task<IEnumerable<TeacherModel>> SearchAsync(string query)
     return _mapper.Map<List<TeacherModel>>(teachers);
 }
 
-public async Task<IEnumerable<TeacherModel>> FilterByTitleAsync(TeacherTitle title)
+public async Task<IEnumerable<TeacherModel>> FilterByTitleAsync(HP2.Domain.Enums.TeacherTitle title)
 {
     var titleName = title.ToString();
     var teachers = await _dbContext.Teachers
