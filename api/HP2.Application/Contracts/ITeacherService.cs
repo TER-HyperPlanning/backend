@@ -10,4 +10,6 @@ public interface ITeacherService
     Task UpdateTeacherAsync(TeacherModel teacher);
     Task DeleteTeacherAsync(string id);
     Task<bool> HasAvailabilitiesAsync(string id);
+    Task<IEnumerable<TeacherModel>> SearchAsync(string query);
+    Task<IEnumerable<TeacherModel>> FilterByTitleAsync(TeacherTitle title);
 }
