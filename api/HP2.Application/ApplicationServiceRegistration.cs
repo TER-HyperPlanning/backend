@@ -1,4 +1,4 @@
-﻿using HP2.Application.Contracts;
+using HP2.Application.Contracts;
 using HP2.Application.Security;
 using HP2.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +27,7 @@ namespace HP2.Application
             services.AddScoped<IAssignService, AssignService>();
             services.AddScoped<IAvailabilityService, AvailabilityService>();
             services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IPlanningService, PlanningService>();
 
             return services;
         }

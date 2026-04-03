@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260403151957_FixSeedPlanningSessionDate")]
+    partial class FixSeedPlanningSessionDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1379,18 +1382,8 @@ namespace HP2.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            TeacherTitleId = "85279958-5b39-6e84-7c57-09f2a0174fa9",
-                            Name = "PERMANENT"
-                        },
-                        new
-                        {
-                            TeacherTitleId = "f81d6bbe-c55b-51fa-106e-6a162212cafb",
-                            Name = "VACATAIRE"
-                        },
-                        new
-                        {
-                            TeacherTitleId = "58860466-08f2-cdc5-1f1f-bda9b990b0fb",
-                            Name = "ASSOCIE"
+                            TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d",
+                            Name = "Professeur"
                         });
                 });
 
