@@ -10,15 +10,52 @@ namespace HP2.Application;
 public class PlanningService : IPlanningService
 {
     private readonly IPlanningRepository _planningRepository;
+    private readonly IGroupRepository _groupRepository;
+    private readonly ITrackRepository _trackRepository;
+    private readonly IProgramRepository _programRepository;
 
-    public PlanningService(IPlanningRepository planningRepository)
+    public PlanningService(
+        IPlanningRepository planningRepository,
+        IGroupRepository groupRepository,
+        ITrackRepository trackRepository,
+        IProgramRepository programRepository)
     {
         _planningRepository = planningRepository;
+        _groupRepository = groupRepository;
+        _trackRepository = trackRepository;
+        _programRepository = programRepository;
     }
 
     public async Task<IEnumerable<PlanningWeekDto>> GetPlanningAsync(PlanningRequest request, string? currentUserId, string? currentUserRole)
     {
-        var sessions = await _planningRepository.GetPlanningSessionsAsync(request, null, null); // Ignore user role completely for now
+        if (!string.IsNullOrWhiteSpace(request.GroupId))
+        {
+            var groupExists = await _groupRepository.GetByIdAsync(request.GroupId);
+            if (groupExists == null)
+            {
+                throw new ArgumentException($"Group with ID {request.GroupId} does not exist.");
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(request.TrackId))
+        {
+            var trackExists = await _trackRepository.ExistsAsync(request.TrackId);
+            if (!trackExists)
+            {
+                throw new ArgumentException($"Track with ID {request.TrackId} does not exist.");
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(request.ProgramId))
+        {
+            var programExists = await _programRepository.GetByIdAsync(request.ProgramId);
+            if (programExists == null)
+            {
+                throw new ArgumentException($"Program with ID {request.ProgramId} does not exist.");
+            }
+        }
+
+        var sessions = await _planningRepository.GetPlanningSessionsAsync(request, currentUserId, currentUserRole);
 
         if (!sessions.Any())
             return new List<PlanningWeekDto>();

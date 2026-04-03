@@ -1399,7 +1399,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId,
-                Date = DateTime.UtcNow.Date.AddDays(7),
+                Date = new DateTime(2026, 3, 30),
                 StartTime = new TimeSpan(8, 0, 0),
                 EndTime = new TimeSpan(10, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1414,7 +1414,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId2,
-                Date = DateTime.UtcNow.Date.AddDays(8),
+                Date = new DateTime(2026, 3, 31),
                 StartTime = new TimeSpan(10, 0, 0),
                 EndTime = new TimeSpan(12, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1426,7 +1426,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId3,
-                Date = DateTime.UtcNow.Date.AddDays(9),
+                Date = new DateTime(2026, 4, 1),
                 StartTime = new TimeSpan(14, 0, 0),
                 EndTime = new TimeSpan(16, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1438,7 +1438,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId4,
-                Date = DateTime.UtcNow.Date.AddDays(10),
+                Date = new DateTime(2026, 4, 2),
                 StartTime = new TimeSpan(8, 0, 0),
                 EndTime = new TimeSpan(10, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1450,7 +1450,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId5,
-                Date = DateTime.UtcNow.Date.AddDays(11),
+                Date = new DateTime(2026, 4, 3),
                 StartTime = new TimeSpan(10, 0, 0),
                 EndTime = new TimeSpan(12, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1462,7 +1462,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId6,
-                Date = DateTime.UtcNow.Date.AddDays(12),
+                Date = new DateTime(2026, 4, 6),
                 StartTime = new TimeSpan(14, 0, 0),
                 EndTime = new TimeSpan(16, 0, 0),
                 Mode = "PRESENTIAL",
