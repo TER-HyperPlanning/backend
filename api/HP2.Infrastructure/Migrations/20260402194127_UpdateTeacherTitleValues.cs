@@ -75,15 +75,6 @@ namespace HP2.Infrastructure.Migrations
                 column: "date",
                 value: new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Utc));
 
-            migrationBuilder.InsertData(
-                table: "TeacherTitle",
-                columns: new[] { "teacher_title_id", "name" },
-                values: new object[,]
-                {
-                    { "58860466-08f2-cdc5-1f1f-bda9b990b0fb", "ASSOCIE" },
-                    { "85279958-5b39-6e84-7c57-09f2a0174fa9", "PERMANENT" },
-                    { "f81d6bbe-c55b-51fa-106e-6a162212cafb", "VACATAIRE" }
-                });
 
             migrationBuilder.UpdateData(
                 table: "User",
