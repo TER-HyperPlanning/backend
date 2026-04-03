@@ -1022,7 +1022,9 @@ public partial class TerHyperplanningContext : DbContext
 
         // TeacherTitles (requis par Teacher)
         modelBuilder.Entity<TeacherTitle>().HasData(
-            new TeacherTitle { TeacherTitleId = teacherTitleId, Name = "Professeur" }
+            new TeacherTitle { TeacherTitleId = GetStableId("tt-permanent"), Name = "PERMANENT" },
+            new TeacherTitle { TeacherTitleId = GetStableId("tt-vacataire"), Name = "VACATAIRE" },
+            new TeacherTitle { TeacherTitleId = GetStableId("tt-associe"), Name = "ASSOCIE" }
         );
 
                 // WeekDays (requis par Availability)

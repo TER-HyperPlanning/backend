@@ -3,6 +3,7 @@ using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Teacher;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using HP2.Domain.Enums;
 
 namespace HP2.API.Controllers;
 
@@ -106,4 +107,21 @@ public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         CreatedAt = m.CreatedAt,
         UpdatedAt = m.UpdatedAt,
     };
+
+    [HttpGet("search")]
+public async Task<ActionResult<ApiResponse<IEnumerable<TeacherResponse>>>> Search([FromQuery] string query)
+{
+    if (string.IsNullOrWhiteSpace(query))
+        return BadRequest(ApiResponse<IEnumerable<TeacherResponse>>.Fail("Query parameter is required"));
+
+    var teachers = await _teacherService.SearchAsync(query);
+    return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
+}
+
+[HttpGet("filter")]
+public async Task<ActionResult<ApiResponse<IEnumerable<TeacherResponse>>>> Filter([FromQuery] TeacherTitle title)
+{
+    var teachers = await _teacherService.FilterByTitleAsync(title);
+    return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
+}
 }

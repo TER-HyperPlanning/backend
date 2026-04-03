@@ -198,4 +198,34 @@ public async Task<bool> HasAvailabilitiesAsync(string id)
 {
     return await _dbContext.Availabilities.AnyAsync(a => a.TeacherId == id);
 }
+
+public async Task<IEnumerable<TeacherModel>> SearchAsync(string query)
+{
+    var lower = query.ToLower();
+    var teachers = await _dbContext.Teachers
+        .Include(t => t.User)
+        .ThenInclude(u => u.UserRole)
+        .Include(t => t.TeacherTitle)
+        .Where(t => t.User != null && (
+            t.User.FirstName.ToLower().Contains(lower) ||
+            t.User.LastName.ToLower().Contains(lower) ||
+            t.User.Email.ToLower().Contains(lower)
+        ))
+        .ToListAsync();
+
+    return _mapper.Map<List<TeacherModel>>(teachers);
+}
+
+public async Task<IEnumerable<TeacherModel>> FilterByTitleAsync(HP2.Domain.Enums.TeacherTitle title)
+{
+    var titleName = title.ToString();
+    var teachers = await _dbContext.Teachers
+        .Include(t => t.User)
+        .ThenInclude(u => u.UserRole)
+        .Include(t => t.TeacherTitle)
+        .Where(t => t.TeacherTitle != null && t.TeacherTitle.Name == titleName)
+        .ToListAsync();
+
+    return _mapper.Map<List<TeacherModel>>(teachers);
+}
 }
