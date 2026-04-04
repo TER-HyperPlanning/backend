@@ -34,7 +34,7 @@ internal class Program
 
         builder.Services.AddControllers();
 
-        builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
+        builder.Services.AddDbContext<HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)
                    .LogTo(Console.WriteLine, LogLevel.Error));
 
@@ -87,6 +87,13 @@ internal class Program
                 ClockSkew = TimeSpan.Zero // Par défaut EF6 ajoute 5min de tolerance
             };
         });
+
+        // 🔹 Configure JSON pour utiliser les noms d'enum
+        builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
 
         var app = builder.Build();
 

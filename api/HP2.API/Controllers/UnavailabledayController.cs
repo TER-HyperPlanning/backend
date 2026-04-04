@@ -29,7 +29,7 @@ namespace HP2.API.Controllers
                 EndDate = request.EndDate,
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
-                UnavailableDayTypeId = request.UnavailableDayTypeId,
+                Type = request.Type
             };
 
             var createdUnavailableDay = await _unavailabledayService.CreateUnavailabledayAsync(unavailableDay);
@@ -68,7 +68,7 @@ namespace HP2.API.Controllers
             existing.EndDate = request.EndDate;
             existing.StartTime = request.StartTime;
             existing.EndTime = request.EndTime;
-            existing.UnavailableDayTypeId = request.UnavailableDayTypeId;
+            existing.Type = request.Type;
 
             await _unavailabledayService.UpdateUnavailabledayAsync(existing);
             return Ok(ApiResponse<UnavailableDayModel>.Success(existing, "UnavailableDay updated successfully"));

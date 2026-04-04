@@ -702,7 +702,7 @@ public partial class TerHyperplanningContext : DbContext
             entity.Property(e => e.UnavailableDayId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasDefaultValueSql("(newid())")
+                // .HasDefaultValueSql("(newid())")
                 .HasColumnName("unavailable_day_id");
             entity.Property(e => e.EndDate)
                 .HasColumnType("date")
@@ -744,38 +744,38 @@ public partial class TerHyperplanningContext : DbContext
 
         // seed unavailable day types and unavailable days for testing
         modelBuilder.Entity<UnavailableDayType>().HasData(
-        new UnavailableDayType
-        {
-            UnavailableDayTypeId = "TYPE1",
-            Name = "Congé"
-        },
-        new UnavailableDayType
-        {
-            UnavailableDayTypeId = "TYPE2",
-            Name = "Maladie"
-        }
-    );
+            new UnavailableDayType
+            {
+                UnavailableDayTypeId = "TYPE1",
+                Name = "VACANCES"
+            },
+            new UnavailableDayType
+            {
+                UnavailableDayTypeId = "TYPE2",
+                Name = "FERIES"
+            }
+        );
 
         modelBuilder.Entity<UnavailableDay>().HasData(
             new UnavailableDay
             {
                 UnavailableDayId = "UD1",
-                StartDate = new DateTime(2026, 4, 1),
-                EndDate = new DateTime(2026, 4, 1),
-                StartTime = new TimeSpan(9, 0, 0),
-                EndTime = new TimeSpan(17, 0, 0),
-                UnavailableDayTypeId = "TYPE1"
+                StartDate = new DateTime(2026, 8, 1),
+                EndDate = new DateTime(2026, 8, 15),
+                StartTime = new TimeSpan(0, 0, 0),
+                EndTime = new TimeSpan(23, 59, 59),
+                UnavailableDayTypeId = "TYPE1" // VACANCES
             },
             new UnavailableDay
             {
                 UnavailableDayId = "UD2",
-                StartDate = new DateTime(2026, 4, 2),
-                EndDate = new DateTime(2026, 4, 2),
-                StartTime = new TimeSpan(14, 0, 0),
-                EndTime = new TimeSpan(18, 0, 0),
-                UnavailableDayTypeId = "TYPE2"
+                StartDate = new DateTime(2026, 4, 6), // lundi de Pâques
+                EndDate = new DateTime(2026, 4, 6),
+                StartTime = new TimeSpan(0, 0, 0),
+                EndTime = new TimeSpan(23, 59, 59),
+                UnavailableDayTypeId = "TYPE2" // FERIES
             }
-    );
+);
 
         modelBuilder.Entity<User>(entity =>
         {
