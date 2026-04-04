@@ -9,4 +9,5 @@ public interface IStudentService
     Task<StudentModel?> GetStudentByIdAsync(string id);
     Task UpdateStudentAsync(StudentModel student);
     Task DeleteStudentAsync(string id);
+    Task<bool> GroupExistsAsync(string groupId);
 }

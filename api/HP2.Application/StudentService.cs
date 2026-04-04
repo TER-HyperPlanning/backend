@@ -42,8 +42,11 @@ public class StudentService : IStudentService
         await _studentRepository.UpdateAsync(student);
     }
 
-    public async Task DeleteStudentAsync(string id)
+    public Task DeleteStudentAsync(string id)
     {
-        await _studentRepository.DeleteAsync(id);
+        return _studentRepository.DeleteAsync(id);
     }
+
+    public Task<bool> GroupExistsAsync(string groupId)
+        => _studentRepository.GroupExistsAsync(groupId);
 }

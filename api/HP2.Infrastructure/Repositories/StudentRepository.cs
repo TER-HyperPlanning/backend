@@ -131,4 +131,7 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
             await _dbContext.SaveChangesAsync();
         }
     }
+
+    public Task<bool> GroupExistsAsync(string groupId)
+        => _dbContext.Groups.AnyAsync(g => g.GroupId == groupId);
 }

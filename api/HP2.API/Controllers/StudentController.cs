@@ -25,6 +25,19 @@ public class StudentsController : ControllerBase
         if (request == null)
             return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required"));
 
+        var missing = new List<string>();
+        if (string.IsNullOrWhiteSpace(request.Email)) missing.Add("email");
+        if (string.IsNullOrWhiteSpace(request.Password)) missing.Add("password");
+        if (string.IsNullOrWhiteSpace(request.FirstName)) missing.Add("firstName");
+        if (string.IsNullOrWhiteSpace(request.LastName)) missing.Add("lastName");
+        if (string.IsNullOrWhiteSpace(request.GroupId)) missing.Add("groupId");
+
+        if (missing.Any())
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+
+        if (!await _studentService.GroupExistsAsync(request.GroupId!))
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Group with ID '{request.GroupId}' not found"));
+
         var student = new StudentModel
         {
             Email = request.Email,
@@ -63,6 +76,18 @@ public class StudentsController : ControllerBase
     {
         if (request == null)
             return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required"));
+
+        var missing = new List<string>();
+        if (string.IsNullOrWhiteSpace(request.Email)) missing.Add("email");
+        if (string.IsNullOrWhiteSpace(request.FirstName)) missing.Add("firstName");
+        if (string.IsNullOrWhiteSpace(request.LastName)) missing.Add("lastName");
+        if (string.IsNullOrWhiteSpace(request.GroupId)) missing.Add("groupId");
+
+        if (missing.Any())
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+
+        if (!await _studentService.GroupExistsAsync(request.GroupId!))
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Group with ID {request.GroupId} not found"));
 
         var existing = await _studentService.GetStudentByIdAsync(id);
         if (existing == null)
