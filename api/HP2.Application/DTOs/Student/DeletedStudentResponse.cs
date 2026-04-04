@@ -1,19 +1,20 @@
-using HP2.Domain.Common;
+using System.Text.Json.Serialization;
 using HP2.Domain.Enums;
 
-namespace HP2.Domain.Models;
+namespace HP2.Application.DTOs.Student;
 
-public class UserModel : BaseModel, ISoftDeletable
+public class DeletedStudentResponse
 {
     public string Id { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string? Phone { get; set; }
+    public string? GroupId { get; set; }
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public UserRole Role { get; set; }
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
     public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
 }

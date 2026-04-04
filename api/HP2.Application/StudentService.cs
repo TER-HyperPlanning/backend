@@ -36,14 +36,22 @@ public class StudentService : IStudentService
         return await _studentRepository.GetAllAsync();
     }
 
+    public async Task<IEnumerable<StudentModel>> GetDeletedStudentsAsync()
+    {
+        return await _studentRepository.GetDeletedAsync();
+    }
+
     public async Task UpdateStudentAsync(StudentModel student)
     {
         student.UpdatedAt = DateTime.UtcNow;
         await _studentRepository.UpdateAsync(student);
     }
 
-    public async Task DeleteStudentAsync(string id)
+    public Task DeleteStudentAsync(string id)
     {
-        await _studentRepository.DeleteAsync(id);
+        return _studentRepository.DeleteAsync(id);
     }
+
+    public Task<bool> GroupExistsAsync(string groupId)
+        => _studentRepository.GroupExistsAsync(groupId);
 }

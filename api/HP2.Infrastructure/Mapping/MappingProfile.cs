@@ -17,9 +17,13 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId))
                 .ForMember(dest => dest.Role, opt => opt.MapFrom(src => Enum.Parse<HP2.Domain.Enums.UserRole>(src.UserRole.Name, true)))
                 .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.DeletedAt))
                 .ReverseMap()
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt));
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.DeletedAt));
 
             CreateMap<UserModel, CurrentUserResponse>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
@@ -39,6 +43,8 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User != null ? src.User.LastName : string.Empty))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.User != null && src.User.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.User != null ? src.User.DeletedAt : null))
                 .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow));
 
             // ===== Teacher Mapping =====
@@ -54,6 +60,8 @@ namespace HP2.Infrastructure.Mapping
                         ? Enum.Parse<HP2.Domain.Enums.UserRole>(src.User.UserRole.Name, true)
                         : HP2.Domain.Enums.UserRole.TEACHER))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.User != null && src.User.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.User != null ? src.User.DeletedAt : null))
                 .ForMember(dest => dest.Matricule, opt => opt.MapFrom(src => src.RegistrationNumber))
                 .ForMember(dest => dest.Title, opt => opt.MapFrom(src =>
                     src.TeacherTitle != null
@@ -71,6 +79,8 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : null))
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
                 .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.User != null && src.User.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.User != null ? src.User.DeletedAt : null))
                 .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.GroupId));
 
             // ===== Academic Structure =====
