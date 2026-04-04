@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -1022,7 +1022,9 @@ public partial class TerHyperplanningContext : DbContext
 
         // TeacherTitles (requis par Teacher)
         modelBuilder.Entity<TeacherTitle>().HasData(
-            new TeacherTitle { TeacherTitleId = teacherTitleId, Name = "Professeur" }
+            new TeacherTitle { TeacherTitleId = GetStableId("tt-permanent"), Name = "PERMANENT" },
+            new TeacherTitle { TeacherTitleId = GetStableId("tt-vacataire"), Name = "VACATAIRE" },
+            new TeacherTitle { TeacherTitleId = GetStableId("tt-associe"), Name = "ASSOCIE" }
         );
 
                 // WeekDays (requis par Availability)
@@ -1399,7 +1401,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId,
-                Date = DateTime.UtcNow.Date.AddDays(7),
+                Date = new DateTime(2026, 3, 30),
                 StartTime = new TimeSpan(8, 0, 0),
                 EndTime = new TimeSpan(10, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1414,7 +1416,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId2,
-                Date = DateTime.UtcNow.Date.AddDays(8),
+                Date = new DateTime(2026, 3, 31),
                 StartTime = new TimeSpan(10, 0, 0),
                 EndTime = new TimeSpan(12, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1426,7 +1428,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId3,
-                Date = DateTime.UtcNow.Date.AddDays(9),
+                Date = new DateTime(2026, 4, 1),
                 StartTime = new TimeSpan(14, 0, 0),
                 EndTime = new TimeSpan(16, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1438,7 +1440,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId4,
-                Date = DateTime.UtcNow.Date.AddDays(10),
+                Date = new DateTime(2026, 4, 2),
                 StartTime = new TimeSpan(8, 0, 0),
                 EndTime = new TimeSpan(10, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1450,7 +1452,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId5,
-                Date = DateTime.UtcNow.Date.AddDays(11),
+                Date = new DateTime(2026, 4, 3),
                 StartTime = new TimeSpan(10, 0, 0),
                 EndTime = new TimeSpan(12, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1462,7 +1464,7 @@ public partial class TerHyperplanningContext : DbContext
             new Session
             {
                 SessionId = sessionId6,
-                Date = DateTime.UtcNow.Date.AddDays(12),
+                Date = new DateTime(2026, 4, 6),
                 StartTime = new TimeSpan(14, 0, 0),
                 EndTime = new TimeSpan(16, 0, 0),
                 Mode = "PRESENTIAL",
@@ -1483,6 +1485,19 @@ public partial class TerHyperplanningContext : DbContext
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId4 },
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId5 },
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId6 }
+        );
+
+        // ========================================
+        // 8. TEACH (Teacher <-> Session)
+        // ========================================
+
+        modelBuilder.Entity("Teach").HasData(
+            new { TeacherId = teacherUserId, SessionId = sessionId },
+            new { TeacherId = teacherUserId2, SessionId = sessionId2 },
+            new { TeacherId = teacherUserId3, SessionId = sessionId3 },
+            new { TeacherId = teacherUserId4, SessionId = sessionId4 },
+            new { TeacherId = teacherUserId5, SessionId = sessionId5 },
+            new { TeacherId = teacherUserId6, SessionId = sessionId6 }
         );
     }
 

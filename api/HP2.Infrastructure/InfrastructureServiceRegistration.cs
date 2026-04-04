@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HP2.Infrastructure.Persistence.Entities;
@@ -47,6 +47,7 @@ namespace HP2.Infrastructure
             services.AddScoped<IAssignRepository, AssignRepository>();
             services.AddScoped<IAvailabilityRepository, AvailabilityRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IPlanningRepository, PlanningRepository>();
 
             return services;
         }
