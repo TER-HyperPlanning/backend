@@ -57,6 +57,18 @@ public class PlanningService : IPlanningService
 
         var sessions = await _planningRepository.GetPlanningSessionsAsync(request, currentUserId, currentUserRole);
 
+        return FormatSessionsToWeekDto(sessions);
+    }
+
+    public async Task<IEnumerable<PlanningWeekDto>> GetMyPlanningAsync(PlanningRequest request, string currentUserId, string currentUserRole)
+    {
+        var sessions = await _planningRepository.GetMyPlanningSessionsAsync(request, currentUserId, currentUserRole);
+
+        return FormatSessionsToWeekDto(sessions);
+    }
+
+    private IEnumerable<PlanningWeekDto> FormatSessionsToWeekDto(IEnumerable<SessionModel> sessions)
+    {
         if (!sessions.Any())
             return new List<PlanningWeekDto>();
 

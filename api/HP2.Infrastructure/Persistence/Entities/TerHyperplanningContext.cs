@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -1485,6 +1485,19 @@ public partial class TerHyperplanningContext : DbContext
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId4 },
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId5 },
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId6 }
+        );
+
+        // ========================================
+        // 8. TEACH (Teacher <-> Session)
+        // ========================================
+
+        modelBuilder.Entity("Teach").HasData(
+            new { TeacherId = teacherUserId, SessionId = sessionId },
+            new { TeacherId = teacherUserId2, SessionId = sessionId2 },
+            new { TeacherId = teacherUserId3, SessionId = sessionId3 },
+            new { TeacherId = teacherUserId4, SessionId = sessionId4 },
+            new { TeacherId = teacherUserId5, SessionId = sessionId5 },
+            new { TeacherId = teacherUserId6, SessionId = sessionId6 }
         );
     }
 
