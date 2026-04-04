@@ -44,6 +44,17 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
         return student != null ? _mapper.Map<StudentModel>(student) : null;
     }
 
+    public async Task<IReadOnlyList<StudentModel>> GetDeletedAsync()
+    {
+        var deletedStudents = await _dbContext.Students
+            .IgnoreQueryFilters()
+            .Include(s => s.User)
+            .Where(s => s.User != null && s.User.IsDeleted)
+            .ToListAsync();
+
+        return _mapper.Map<List<StudentModel>>(deletedStudents);
+    }
+
     public override async Task<StudentModel> AddAsync(StudentModel studentModel)
     {
         // Resolve the UserRole ID from the database
@@ -71,6 +82,8 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
             UserRoleId = userRole.UserRoleId,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow,
+            IsDeleted = false,
+            DeletedAt = null,
         };
 
         // Create Student entity with the same ID as User
@@ -107,6 +120,8 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
             student.User.LastName = studentModel.LastName;
             student.User.PhoneNumber = studentModel.Phone;
             student.User.UpdatedAt = DateTime.UtcNow;
+            student.User.IsDeleted = studentModel.IsDeleted;
+            student.User.DeletedAt = studentModel.DeletedAt;
         }
 
         // Update Student properties
@@ -117,19 +132,7 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
 
     public override async Task DeleteAsync(string id)
     {
-        var student = await _dbContext.Students
-            .Include(s => s.User)
-            .FirstOrDefaultAsync(s => s.UserId == id);
-
-        if (student != null)
-        {
-            _dbContext.Students.Remove(student);
-            if (student.User != null)
-            {
-                _dbContext.Users.Remove(student.User);
-            }
-            await _dbContext.SaveChangesAsync();
-        }
+        await base.DeleteAsync(id);
     }
 
     public Task<bool> GroupExistsAsync(string groupId)

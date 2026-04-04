@@ -71,6 +71,14 @@ public class StudentsController : ControllerBase
         return Ok(ApiResponse<IEnumerable<StudentResponse>>.Success(response));
     }
 
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedStudentResponse>>>> GetDeleted()
+    {
+        var students = await _studentService.GetDeletedStudentsAsync();
+        var response = students.Select(MapToDeletedResponse);
+        return Ok(ApiResponse<IEnumerable<DeletedStudentResponse>>.Success(response));
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<StudentResponse>>> Update(string id, [FromBody] UpdateStudentRequest request)
     {
@@ -127,6 +135,24 @@ public class StudentsController : ControllerBase
             Role = student.Role,
             CreatedAt = student.CreatedAt,
             UpdatedAt = student.UpdatedAt,
+        };
+    }
+
+    private static DeletedStudentResponse MapToDeletedResponse(StudentModel student)
+    {
+        return new DeletedStudentResponse
+        {
+            Id = student.Id,
+            Email = student.Email,
+            FirstName = student.FirstName,
+            LastName = student.LastName,
+            Phone = student.Phone,
+            GroupId = student.GroupId,
+            Role = student.Role,
+            CreatedAt = student.CreatedAt,
+            UpdatedAt = student.UpdatedAt,
+            IsDeleted = student.IsDeleted,
+            DeletedAt = student.DeletedAt,
         };
     }
 }

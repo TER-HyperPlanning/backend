@@ -36,6 +36,11 @@ public class StudentService : IStudentService
         return await _studentRepository.GetAllAsync();
     }
 
+    public async Task<IEnumerable<StudentModel>> GetDeletedStudentsAsync()
+    {
+        return await _studentRepository.GetDeletedAsync();
+    }
+
     public async Task UpdateStudentAsync(StudentModel student)
     {
         student.UpdatedAt = DateTime.UtcNow;

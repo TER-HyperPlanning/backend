@@ -49,6 +49,25 @@ namespace HP2.Infrastructure.Repositories
 
         public virtual Task DeleteAsync(string id)
         {
+            return DeleteWithSoftDeleteFallbackAsync(id);
+        }
+
+        protected virtual async Task DeleteWithSoftDeleteFallbackAsync(string id)
+        {
+            var entity = await GetByIdAsync(id);
+            if (entity == null)
+            {
+                return;
+            }
+
+            if (entity is ISoftDeletable softDeletable)
+            {
+                softDeletable.IsDeleted = true;
+                softDeletable.DeletedAt = DateTime.UtcNow;
+                await UpdateAsync(entity);
+                return;
+            }
+
             throw new NotImplementedException("Override in specific repository");
         }
     }

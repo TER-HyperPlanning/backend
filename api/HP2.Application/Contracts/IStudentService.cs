@@ -6,6 +6,7 @@ public interface IStudentService
 {
     Task<StudentModel> CreateStudentAsync(StudentModel student);
     Task<IEnumerable<StudentModel>> GetAllStudentsAsync();
+    Task<IEnumerable<StudentModel>> GetDeletedStudentsAsync();
     Task<StudentModel?> GetStudentByIdAsync(string id);
     Task UpdateStudentAsync(StudentModel student);
     Task DeleteStudentAsync(string id);
