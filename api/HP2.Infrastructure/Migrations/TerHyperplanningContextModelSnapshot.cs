@@ -42,6 +42,33 @@ namespace HP2.Infrastructure.Migrations
                     b.HasIndex("SessionId");
 
                     b.ToTable("Attend", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "e823715d-0a77-1379-9289-b44b55c10267"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "3701bc4e-401e-f4f3-00aa-b37659789636"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "a5129120-7dfa-797c-3e24-99056723ec39"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "885f671e-9801-9aec-86eb-3fe1cb1db365"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "54166d2e-0d4d-7e23-3a55-ecde2614bcfa"
+                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Admin", b =>
@@ -332,6 +359,28 @@ namespace HP2.Infrastructure.Migrations
                     b.HasIndex("WeekdayId");
 
                     b.ToTable("Availability", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            AvailabilityId = "44f1596b-900a-6743-2e95-a4e877064b0c",
+                            EndDate = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            StartDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
+                        },
+                        new
+                        {
+                            AvailabilityId = "165a619b-6704-9577-6d05-311a0aed3321",
+                            EndDate = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            StartDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
+                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Building", b =>
@@ -783,6 +832,9 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("date")
                         .HasColumnName("date");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<TimeSpan>("EndTime")
                         .HasColumnType("time")
                         .HasColumnName("end_time");
@@ -837,13 +889,73 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            Date = new DateTime(2026, 3, 2, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Utc),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
                             RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 0, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "e823715d-0a77-1379-9289-b44b55c10267",
+                            CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
+                            Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Utc),
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Mode = "PRESENTIAL",
+                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "3701bc4e-401e-f4f3-00aa-b37659789636",
+                            CourseId = "93b97065-831b-a4dc-8179-be986f0772b8",
+                            Date = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Utc),
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Mode = "PRESENTIAL",
+                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "a5129120-7dfa-797c-3e24-99056723ec39",
+                            CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
+                            Date = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Utc),
+                            EndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Mode = "PRESENTIAL",
+                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "885f671e-9801-9aec-86eb-3fe1cb1db365",
+                            CourseId = "3b835d91-4f08-07ef-d4d5-575947097601",
+                            Date = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Utc),
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Mode = "PRESENTIAL",
+                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "54166d2e-0d4d-7e23-3a55-ecde2614bcfa",
+                            CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
+                            Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Utc),
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Mode = "PRESENTIAL",
+                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0)
                         });
                 });
 
@@ -974,7 +1086,17 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
-                            Label = "Cours Magistral"
+                            Label = "CM"
+                        },
+                        new
+                        {
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            Label = "TD"
+                        },
+                        new
+                        {
+                            SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
+                            Label = "TP"
                         });
                 });
 
@@ -1004,6 +1126,156 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "fd2b34ab-7283-eff1-ce41-b75fe87946b9",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "ee7ac72a-3cf6-b7b0-9861-2f86c95f6f85",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "c67f2f50-8142-b095-ad35-e91badccbc00",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "3fca4239-b5f4-f163-c65c-8d835f1a0154",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "15f55f4b-c16e-2fc7-26dc-5d0d607d1778",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "bf1e4d8c-7dfa-12e7-fb4d-7fc307df9aa3",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "b11e5b82-12d0-5a31-1105-780499cbfc20",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "6a10f91d-0aed-5fa7-4002-3bd76f3e6d11",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "09095bf3-fa8c-0e49-eecb-f4bf320842ea",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "d8ba01ab-6a2c-951c-02c4-d6a0150808a3",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "e9e3bb79-3eab-df5e-de27-f8914cef210a",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "9f33ca92-97a2-351d-cf5a-e9841c28e7f7",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "a4583bc8-b1cd-5994-bf7f-6ba5ed4d059f",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "dd0b032a-0b32-dfa0-1dbe-c55b3db45489",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "8d936d9f-0ae5-8334-3197-ce641e6873bb",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "9e35ec2e-6454-dbbf-a24a-c1fbe7ba6787",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "985474c8-8b56-e296-730f-d011dd6d63ad",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "e894b918-a541-2628-3bcd-376cf02e4986",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "11819a20-b220-4acf-fee3-7294e4971100",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "a5e38765-a824-e761-1cfd-a76a2136091c",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "e115db87-7553-5590-e81c-cf366ee4dc30",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "e1c033a0-e584-8bcb-b745-6a93d3fc2cf7",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "6a5c6b51-5c13-fc1f-5a81-bd99f87a71a7",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "a1e5a516-c159-675d-0f0d-96289cd47e35",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "b008fcd4-f3ad-f24d-91a7-c16be33fe62b",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "8c6614ce-430a-30a5-a877-fc157f5b7ad7",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "32573a03-d414-5891-15fe-b991e1f6d0a7",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "cafb714b-44d5-a183-e909-da93f4a926c8",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "77eb8c7e-d27b-ca0d-7b40-66def436466b",
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
+                        },
+                        new
+                        {
+                            UserId = "13aacf42-836e-5f88-2ccd-f93c81b68f7d",
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8"
                         });
                 });
@@ -1045,6 +1317,36 @@ namespace HP2.Infrastructure.Migrations
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
                             RegistrationNumber = "REG_001",
+                            TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d"
+                        },
+                        new
+                        {
+                            UserId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            RegistrationNumber = "REG_002",
+                            TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d"
+                        },
+                        new
+                        {
+                            UserId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            RegistrationNumber = "REG_003",
+                            TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d"
+                        },
+                        new
+                        {
+                            UserId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            RegistrationNumber = "REG_004",
+                            TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d"
+                        },
+                        new
+                        {
+                            UserId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            RegistrationNumber = "REG_005",
+                            TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d"
+                        },
+                        new
+                        {
+                            UserId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            RegistrationNumber = "REG_006",
                             TeacherTitleId = "025afe74-4e45-ca60-93e0-035aa84f648d"
                         });
                 });
@@ -1351,11 +1653,13 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-                            CreatedAt = new DateTime(2026, 2, 23, 13, 14, 57, 76, DateTimeKind.Utc).AddTicks(6986),
+
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 22, 790, DateTimeKind.Utc).AddTicks(1650),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             LastName = "Admin",
-                            Password = "$2b$12$RnmWIN1BGxHRaUGOy1nE3eFDeIcxygIgm.eQwy2Fwq54HKtSeK0zS",
+                            Password = "$2b$12$sp9hThU4xbUCDU5RZVIpPeWOEhGGlyyLh7WHGlXXE2lqkEkm5fIi.",
+
                             PhoneNumber = "0000000000",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -1363,24 +1667,448 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            CreatedAt = new DateTime(2026, 2, 23, 13, 14, 57, 374, DateTimeKind.Utc).AddTicks(4987),
+
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 288, DateTimeKind.Utc).AddTicks(2975),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             LastName = "Curie",
-                            Password = "$2b$12$CQ4XOgBc7EolHGCDXBUsEeKoWcIrIYy8Ha1nw9KEZgUZGoSnre17m",
+                            Password = "$2b$12$Su0VDQMZ6dZTI6VBUdMw1OHR8AYXfOeg8TuHznyEXaV7nmqTgwLr6",
+
                             PhoneNumber = "0123456789",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
                         },
                         new
                         {
+                            UserId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 7, 602, DateTimeKind.Utc).AddTicks(6741),
+                            Email = "alain.durand@univ.fr",
+                            FirstName = "Alain",
+                            LastName = "Durand",
+                            Password = "$2b$12$dfRprIwX4btYEBviX/Fn9ute4qf2hfTRC5hxkA8/rHpWEmsNlUb2W",
+                            PhoneNumber = "0134567890",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
+                        },
+                        new
+                        {
+                            UserId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 7, 899, DateTimeKind.Utc).AddTicks(7796),
+                            Email = "sophie.lambert@univ.fr",
+                            FirstName = "Sophie",
+                            LastName = "Lambert",
+                            Password = "$2b$12$pYoDVv0lqYzAmFTHRmjQsOEygnxLtKyA7NnXDmCxAEpa8w3q.gj.K",
+                            PhoneNumber = "0134567891",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
+                        },
+                        new
+                        {
+                            UserId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 8, 207, DateTimeKind.Utc).AddTicks(8322),
+                            Email = "karim.benali@univ.fr",
+                            FirstName = "Karim",
+                            LastName = "Benali",
+                            Password = "$2b$12$ZGx/5Y0/SWSNXDwAi/akWuupSm5M3Dk0pF8WMKXxT/d6LFkeMt/gG",
+                            PhoneNumber = "0134567892",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
+                        },
+                        new
+                        {
+                            UserId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 8, 508, DateTimeKind.Utc).AddTicks(11),
+                            Email = "claire.morel@univ.fr",
+                            FirstName = "Claire",
+                            LastName = "Morel",
+                            Password = "$2b$12$TdRxzZkdvA6zyZXP/XmZdORMXsO7JYOPSLNp.5VpYDZFcJsoDgFGq",
+                            PhoneNumber = "0134567893",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
+                        },
+                        new
+                        {
+                            UserId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 8, 802, DateTimeKind.Utc).AddTicks(3434),
+                            Email = "thomas.renault@univ.fr",
+                            FirstName = "Thomas",
+                            LastName = "Renault",
+                            Password = "$2b$12$dMkllJIGmXj1ywBqs8KwUedj4.r32z34UGE3XtNPQlXWQFyKTQeKW",
+                            PhoneNumber = "0134567894",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
+                        },
+                        new
+                        {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-                            CreatedAt = new DateTime(2026, 2, 23, 13, 14, 57, 669, DateTimeKind.Utc).AddTicks(6272),
+
+                            CreatedAt = new DateTime(2026, 3, 17, 14, 41, 23, 797, DateTimeKind.Utc).AddTicks(955),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             LastName = "Dupont",
-                            Password = "$2b$12$q4xHD3m9.kzlCSkueUnpeuzsODntgdhlteX5NxJ4ZZl9hzjchL/yC",
+                            Password = "$2b$12$YFbmIMr9kImvZIFT3jQP8.Lw6b.m/zJXprnQWBWjCoJwGXo20Gz6q",
+
                             PhoneNumber = "0987654321",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "fd2b34ab-7283-eff1-ce41-b75fe87946b9",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 9, 392, DateTimeKind.Utc).AddTicks(5098),
+                            Email = "lucas.martin01@etud.fr",
+                            FirstName = "Lucas",
+                            LastName = "Martin",
+                            Password = "$2b$12$sHBnAy332RAYgQv2nN2rlOOwp1n/wXl5hIembP/vOSNOhWa4krSOC",
+                            PhoneNumber = "0610000001",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "ee7ac72a-3cf6-b7b0-9861-2f86c95f6f85",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 9, 692, DateTimeKind.Utc).AddTicks(4583),
+                            Email = "emma.bernard02@etud.fr",
+                            FirstName = "Emma",
+                            LastName = "Bernard",
+                            Password = "$2b$12$Ht3iKANl7OlBUn5ePwlIW.K4xphZnI5CpJ01gC4WJJFsVh.j96mv2",
+                            PhoneNumber = "0610000002",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "c67f2f50-8142-b095-ad35-e91badccbc00",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 9, 987, DateTimeKind.Utc).AddTicks(9119),
+                            Email = "hugo.petit03@etud.fr",
+                            FirstName = "Hugo",
+                            LastName = "Petit",
+                            Password = "$2b$12$D1SBZmfD6nZO/cH03qH15OG71KhRclsdVWqWdrjfjWleNUAalDQC6",
+                            PhoneNumber = "0610000003",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "3fca4239-b5f4-f163-c65c-8d835f1a0154",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 10, 281, DateTimeKind.Utc).AddTicks(9116),
+                            Email = "chloe.robert04@etud.fr",
+                            FirstName = "Chloe",
+                            LastName = "Robert",
+                            Password = "$2b$12$2oQf7B7MzA2lUxQ2aXdcC.xranT55hC69K7E12K.FoKWl3f.kKo12",
+                            PhoneNumber = "0610000004",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "15f55f4b-c16e-2fc7-26dc-5d0d607d1778",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 10, 576, DateTimeKind.Utc).AddTicks(6767),
+                            Email = "nathan.richard05@etud.fr",
+                            FirstName = "Nathan",
+                            LastName = "Richard",
+                            Password = "$2b$12$/2LAKphSSiwwjsVc/39/LekxsHZNHk4eORxy9ScMOplBwXeK9DurG",
+                            PhoneNumber = "0610000005",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "bf1e4d8c-7dfa-12e7-fb4d-7fc307df9aa3",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 10, 870, DateTimeKind.Utc).AddTicks(9774),
+                            Email = "lea.durand06@etud.fr",
+                            FirstName = "Lea",
+                            LastName = "Durand",
+                            Password = "$2b$12$sfx.ytqirYki.QbnQvl7sOOu5pd3X40IkYy9FJLLUfSFgjmEs5L2q",
+                            PhoneNumber = "0610000006",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "b11e5b82-12d0-5a31-1105-780499cbfc20",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 11, 165, DateTimeKind.Utc).AddTicks(5835),
+                            Email = "arthur.dubois07@etud.fr",
+                            FirstName = "Arthur",
+                            LastName = "Dubois",
+                            Password = "$2b$12$bZeYbjv3OqgcestJTu1IQe8ilMIDUhMoW7mtRBJtrS/Ov9qFcQW6u",
+                            PhoneNumber = "0610000007",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "6a10f91d-0aed-5fa7-4002-3bd76f3e6d11",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 11, 460, DateTimeKind.Utc).AddTicks(898),
+                            Email = "ines.moreau08@etud.fr",
+                            FirstName = "Ines",
+                            LastName = "Moreau",
+                            Password = "$2b$12$jGE4lu4IauRVADwdnE73uuhWNylUDXOcJSq7Fl0Q6nrK.zCna1MPe",
+                            PhoneNumber = "0610000008",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "09095bf3-fa8c-0e49-eecb-f4bf320842ea",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 11, 754, DateTimeKind.Utc).AddTicks(5227),
+                            Email = "jules.laurent09@etud.fr",
+                            FirstName = "Jules",
+                            LastName = "Laurent",
+                            Password = "$2b$12$LVogedNYVz8.DCYN5Q2sLOSrkfv.MqJi1Fuh.BEWBZVs7WZzdGHKG",
+                            PhoneNumber = "0610000009",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "d8ba01ab-6a2c-951c-02c4-d6a0150808a3",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 49, DateTimeKind.Utc).AddTicks(5868),
+                            Email = "sarah.simon10@etud.fr",
+                            FirstName = "Sarah",
+                            LastName = "Simon",
+                            Password = "$2b$12$RJbtq3isA5YYfhqIm7WxjOTs2IW1ZM0dFRG17BhNAlkg7UE8UUxCm",
+                            PhoneNumber = "0610000010",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "e9e3bb79-3eab-df5e-de27-f8914cef210a",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 343, DateTimeKind.Utc).AddTicks(7521),
+                            Email = "louis.michel11@etud.fr",
+                            FirstName = "Louis",
+                            LastName = "Michel",
+                            Password = "$2b$12$v/qrjybsClCeEJiq12cZFe6nMQNl4mHsE1CEi8zzXWCMQwJuD7/Ke",
+                            PhoneNumber = "0610000011",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "9f33ca92-97a2-351d-cf5a-e9841c28e7f7",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 638, DateTimeKind.Utc).AddTicks(545),
+                            Email = "manon.garcia12@etud.fr",
+                            FirstName = "Manon",
+                            LastName = "Garcia",
+                            Password = "$2b$12$ovdt5bql1h9jvKP7kQFX0.k/DFNY29VImLlY3ZjsKqZVJbS/7bjIe",
+                            PhoneNumber = "0610000012",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "a4583bc8-b1cd-5994-bf7f-6ba5ed4d059f",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 12, 932, DateTimeKind.Utc).AddTicks(9874),
+                            Email = "gabriel.leroy13@etud.fr",
+                            FirstName = "Gabriel",
+                            LastName = "Leroy",
+                            Password = "$2b$12$JbMvwaeN5.dbxskAzUWgVOY8nFYU8IhSvfQRa/4xW5opahTfMWV8K",
+                            PhoneNumber = "0610000013",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "dd0b032a-0b32-dfa0-1dbe-c55b3db45489",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 13, 227, DateTimeKind.Utc).AddTicks(6262),
+                            Email = "camille.roux14@etud.fr",
+                            FirstName = "Camille",
+                            LastName = "Roux",
+                            Password = "$2b$12$V52jVr9IVZn2LHhaoU1qQupD4WAvg/WPUBL5bmy1mLySop8WKA8Xm",
+                            PhoneNumber = "0610000014",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "8d936d9f-0ae5-8334-3197-ce641e6873bb",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 13, 521, DateTimeKind.Utc).AddTicks(9792),
+                            Email = "adam.david15@etud.fr",
+                            FirstName = "Adam",
+                            LastName = "David",
+                            Password = "$2b$12$hUWhhzSLMTkyLNqEzbcyzueAFo.LrRXethsWUWFTO0Le8b4AuF69W",
+                            PhoneNumber = "0610000015",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "9e35ec2e-6454-dbbf-a24a-c1fbe7ba6787",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 13, 816, DateTimeKind.Utc).AddTicks(7307),
+                            Email = "zoe.bertrand16@etud.fr",
+                            FirstName = "Zoe",
+                            LastName = "Bertrand",
+                            Password = "$2b$12$87MdRL2rr4GrbmRx5EIsQ.PBZh61nRvin88JEhoc18AO357g9z6v2",
+                            PhoneNumber = "0610000016",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "985474c8-8b56-e296-730f-d011dd6d63ad",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 14, 114, DateTimeKind.Utc).AddTicks(6817),
+                            Email = "noe.thomas17@etud.fr",
+                            FirstName = "Noe",
+                            LastName = "Thomas",
+                            Password = "$2b$12$WUQXHNqAJvdHs341NQVU4OmUl187MHx7yUYKMitz962MRRCyyHOEO",
+                            PhoneNumber = "0610000017",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "e894b918-a541-2628-3bcd-376cf02e4986",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 14, 410, DateTimeKind.Utc).AddTicks(4422),
+                            Email = "lina.bonnet18@etud.fr",
+                            FirstName = "Lina",
+                            LastName = "Bonnet",
+                            Password = "$2b$12$7jPkUegqDvqSXYT4EAPBgu2RlGuHxjK223d9N2Dfv4n30p08T3ugS",
+                            PhoneNumber = "0610000018",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "11819a20-b220-4acf-fee3-7294e4971100",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 14, 714, DateTimeKind.Utc).AddTicks(7901),
+                            Email = "raphael.francois19@etud.fr",
+                            FirstName = "Raphael",
+                            LastName = "Francois",
+                            Password = "$2b$12$.s9HmLuPcI6J3WDuGOupEuX2hJLmo6TN5xDAQFaofG3OnY2uWzuvu",
+                            PhoneNumber = "0610000019",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "a5e38765-a824-e761-1cfd-a76a2136091c",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 14, DateTimeKind.Utc).AddTicks(2039),
+                            Email = "yasmine.faure20@etud.fr",
+                            FirstName = "Yasmine",
+                            LastName = "Faure",
+                            Password = "$2b$12$laPG/86PCTB8APKHGotc.uyoTdfPABdSFuLFdKxW2vn1GyVWjBLUy",
+                            PhoneNumber = "0610000020",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "e115db87-7553-5590-e81c-cf366ee4dc30",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 310, DateTimeKind.Utc).AddTicks(7354),
+                            Email = "theo.andre21@etud.fr",
+                            FirstName = "Theo",
+                            LastName = "Andre",
+                            Password = "$2b$12$WwsT49VCxe/J8iv6pwLlT.vCGlO71GfZDvJJtZ2eQeQeRbWanpKLq",
+                            PhoneNumber = "0610000021",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "e1c033a0-e584-8bcb-b745-6a93d3fc2cf7",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 631, DateTimeKind.Utc).AddTicks(3300),
+                            Email = "jade.noel22@etud.fr",
+                            FirstName = "Jade",
+                            LastName = "Noel",
+                            Password = "$2b$12$DPfVO5ZRCHsei/EpLpFR0e1FMK8iNMQpRJcYAU2fOfGuMmNL/PjIu",
+                            PhoneNumber = "0610000022",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "6a5c6b51-5c13-fc1f-5a81-bd99f87a71a7",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 15, 930, DateTimeKind.Utc).AddTicks(9194),
+                            Email = "sami.perez23@etud.fr",
+                            FirstName = "Sami",
+                            LastName = "Perez",
+                            Password = "$2b$12$NcHFRIPTTp5zcM6RASET8.F4SU9Q9w2LMJ8AXawMuFXp6yN8Reuna",
+                            PhoneNumber = "0610000023",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "a1e5a516-c159-675d-0f0d-96289cd47e35",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 16, 225, DateTimeKind.Utc).AddTicks(4940),
+                            Email = "clara.denis24@etud.fr",
+                            FirstName = "Clara",
+                            LastName = "Denis",
+                            Password = "$2b$12$7SK7Gg3kdtqWyevHHvWY3up1dbYk8vkK2ggoePlXkJ91ZFdTqxZCm",
+                            PhoneNumber = "0610000024",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "b008fcd4-f3ad-f24d-91a7-c16be33fe62b",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 16, 521, DateTimeKind.Utc).AddTicks(2258),
+                            Email = "yanis.colin25@etud.fr",
+                            FirstName = "Yanis",
+                            LastName = "Colin",
+                            Password = "$2b$12$/ijZEQcPOYyyM1LJ2TE5nOZxMgcP3q1ExtrTRWGVh4D7d/YsOGomu",
+                            PhoneNumber = "0610000025",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "8c6614ce-430a-30a5-a877-fc157f5b7ad7",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 16, 815, DateTimeKind.Utc).AddTicks(3532),
+                            Email = "laura.renault26@etud.fr",
+                            FirstName = "Laura",
+                            LastName = "Renault",
+                            Password = "$2b$12$/e99.0AErEjbaScm6BRqZefV5HQju2w9GVnYoSM5B8/w7u8E.GSyS",
+                            PhoneNumber = "0610000026",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "32573a03-d414-5891-15fe-b991e1f6d0a7",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 109, DateTimeKind.Utc).AddTicks(8462),
+                            Email = "rayan.gautier27@etud.fr",
+                            FirstName = "Rayan",
+                            LastName = "Gautier",
+                            Password = "$2b$12$vxLoru85W8Syvx0k4jq6Ie4GsKHp9.fBJpE9v4nRJ3KV0eVbmhQ3G",
+                            PhoneNumber = "0610000027",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "cafb714b-44d5-a183-e909-da93f4a926c8",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 406, DateTimeKind.Utc).AddTicks(1069),
+                            Email = "nina.blanchard28@etud.fr",
+                            FirstName = "Nina",
+                            LastName = "Blanchard",
+                            Password = "$2b$12$f5A9jpjFDyW5Vf2zMFVx.ed1F8KqL9/99XNCCr5BEMomy/Flo6VZi",
+                            PhoneNumber = "0610000028",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "77eb8c7e-d27b-ca0d-7b40-66def436466b",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 701, DateTimeKind.Utc).AddTicks(1591),
+                            Email = "elias.giraud29@etud.fr",
+                            FirstName = "Elias",
+                            LastName = "Giraud",
+                            Password = "$2b$12$QavDYYx3M8M0f8cvx.uuxelluB6.Q/dQ/KJwv8w3bWW0UPtNvXw36",
+                            PhoneNumber = "0610000029",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
+                        },
+                        new
+                        {
+                            UserId = "13aacf42-836e-5f88-2ccd-f93c81b68f7d",
+                            CreatedAt = new DateTime(2026, 4, 1, 0, 24, 17, 996, DateTimeKind.Utc).AddTicks(6694),
+                            Email = "alice.perrot30@etud.fr",
+                            FirstName = "Alice",
+                            LastName = "Perrot",
+                            Password = "$2b$12$YcBJ409PAiMT2OtuQbuk1uZhpJQp7j0//L87Cvlf1fV0DOOKco5ki",
+                            PhoneNumber = "0610000030",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
                         });
@@ -1467,6 +2195,42 @@ namespace HP2.Infrastructure.Migrations
                             WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1",
                             Name = "Lundi",
                             OrderIndex = (byte)1
+                        },
+                        new
+                        {
+                            WeekdayId = "41005c9e-5360-bb11-50eb-28be4d5446a8",
+                            Name = "Mardi",
+                            OrderIndex = (byte)2
+                        },
+                        new
+                        {
+                            WeekdayId = "cbfef8cb-fcc1-8dff-8dec-6c7d0485236e",
+                            Name = "Mercredi",
+                            OrderIndex = (byte)3
+                        },
+                        new
+                        {
+                            WeekdayId = "eeb11a2e-98d0-2688-f2bb-e3ef7a7b021b",
+                            Name = "Jeudi",
+                            OrderIndex = (byte)4
+                        },
+                        new
+                        {
+                            WeekdayId = "9cf80bf4-1ccf-677a-2b2c-988fa321d2a5",
+                            Name = "Vendredi",
+                            OrderIndex = (byte)5
+                        },
+                        new
+                        {
+                            WeekdayId = "8d4e36a1-7dc6-f59d-464c-ab18a938a58e",
+                            Name = "Samedi",
+                            OrderIndex = (byte)6
+                        },
+                        new
+                        {
+                            WeekdayId = "d0f05ca8-6b62-5d90-1d6a-f680ddd4b45a",
+                            Name = "Dimanche",
+                            OrderIndex = (byte)7
                         });
                 });
 
