@@ -497,30 +497,81 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("session_change_id");
+
             entity.Property(e => e.AdminId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("admin_id");
+
             entity.Property(e => e.ChangeDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("change_date");
+
             entity.Property(e => e.ChangeStatusId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("change_status_id");
+
             entity.Property(e => e.Reason)
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("reason");
+
             entity.Property(e => e.SessionId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("session_id");
+
             entity.Property(e => e.TeacherId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("teacher_id");
+
+            entity.Property(e => e.ChangeType)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("change_type");
+
+            entity.Property(e => e.ApprovedRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("approved_room_id");
+
+            entity.Property(e => e.ProposedDate)
+                .HasColumnType("date")
+                .HasColumnName("proposed_date");
+
+            entity.Property(e => e.ProposedStartTime)
+                .HasColumnName("proposed_start_time");
+
+            entity.Property(e => e.ProposedEndTime)
+                .HasColumnName("proposed_end_time");
+
+            entity.Property(e => e.ProposedRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("proposed_room_id");
+
+            entity.Property(e => e.CounterProposalDate)
+                .HasColumnType("date")
+                .HasColumnName("counter_proposal_date");
+
+            entity.Property(e => e.CounterProposalStartTime)
+                .HasColumnName("counter_proposal_start_time");
+
+            entity.Property(e => e.CounterProposalEndTime)
+                .HasColumnName("counter_proposal_end_time");
+
+            entity.Property(e => e.CounterProposalRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("counter_proposal_room_id");
+
+            entity.Property(e => e.RejectionReason)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("rejection_reason");
 
             entity.HasOne(d => d.Admin).WithMany(p => p.SessionChanges)
                 .HasForeignKey(d => d.AdminId)
@@ -541,8 +592,22 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Change_Teacher");
-        });
 
+            entity.HasOne(d => d.ApprovedRoom)
+                .WithMany()
+                .HasForeignKey(d => d.ApprovedRoomId)
+                .HasConstraintName("FK_SessionChange_ApprovedRoom");
+
+            entity.HasOne(d => d.ProposedRoom)
+                .WithMany()
+                .HasForeignKey(d => d.ProposedRoomId)
+                .HasConstraintName("FK_SessionChange_ProposedRoom");
+
+            entity.HasOne(d => d.CounterProposalRoom)
+                .WithMany()
+                .HasForeignKey(d => d.CounterProposalRoomId)
+                .HasConstraintName("FK_SessionChange_CounterProposalRoom");
+        });
         modelBuilder.Entity<SessionStatus>(entity =>
         {
             entity.HasKey(e => e.SessionStatusId).HasName("PK__SessionS__2155C5FD91FDE861");
@@ -960,6 +1025,14 @@ public partial class TerHyperplanningContext : DbContext
         var roleAdminId = GetStableId("role-admin");
         var roleTeacherId = GetStableId("role-teacher");
         var roleStudentId = GetStableId("role-student");
+
+        var changeStatusPendingId = GetStableId("change-status-pending");
+        var changeStatusApprovedId = GetStableId("change-status-approved");
+        var changeStatusRejectedId = GetStableId("change-status-rejected");
+
+        var sessionChangeId1 = GetStableId("session-change-001");
+        var sessionChangeId2 = GetStableId("session-change-002");
+        var sessionChangeId3 = GetStableId("session-change-003");
 
         // ========================================
         // 1. TABLES DE RÉFÉRENCE (sans dépendances)
@@ -1506,6 +1579,90 @@ public partial class TerHyperplanningContext : DbContext
             new { TeacherId = teacherUserId4, SessionId = sessionId4 },
             new { TeacherId = teacherUserId5, SessionId = sessionId5 },
             new { TeacherId = teacherUserId6, SessionId = sessionId6 }
+        );
+
+        modelBuilder.Entity<ChangeStatus>().HasData(
+            new ChangeStatus
+            {
+                ChangeStatusId = changeStatusPendingId,
+                Label = "En attente"
+            },
+            new ChangeStatus
+            {
+                ChangeStatusId = changeStatusApprovedId,
+                Label = "Approuvé"
+            },
+            new ChangeStatus
+            {
+                ChangeStatusId = changeStatusRejectedId,
+                Label = "Refusé"
+            }
+        );
+
+        modelBuilder.Entity<SessionChange>().HasData(
+            new SessionChange
+            {
+                SessionChangeId = sessionChangeId1,
+                ChangeDate = new DateTime(2026, 4, 5),
+                Reason = "La salle actuelle est trop petite pour accueillir tous les étudiants.",
+                TeacherId = teacherUserId,
+                AdminId = adminUserId,
+                SessionId = sessionId,
+                ChangeStatusId = changeStatusPendingId,
+                ChangeType = "RoomChange",
+                ApprovedRoomId = null,
+                ProposedDate = null,
+                ProposedStartTime = null,
+                ProposedEndTime = null,
+                ProposedRoomId = null,
+                CounterProposalDate = null,
+                CounterProposalStartTime = null,
+                CounterProposalEndTime = null,
+                CounterProposalRoomId = null,
+                RejectionReason = null
+            },
+            new SessionChange
+            {
+                SessionChangeId = sessionChangeId2,
+                ChangeDate = new DateTime(2026, 4, 5),
+                Reason = "Le cours annulé doit être reprogrammé.",
+                TeacherId = teacherUserId2,
+                AdminId = adminUserId,
+                SessionId = sessionId2,
+                ChangeStatusId = changeStatusPendingId,
+                ChangeType = "SessionRecovery",
+                ApprovedRoomId = null,
+                ProposedDate = new DateTime(2026, 4, 8),
+                ProposedStartTime = new TimeSpan(14, 0, 0),
+                ProposedEndTime = new TimeSpan(16, 0, 0),
+                ProposedRoomId = roomId,
+                CounterProposalDate = null,
+                CounterProposalStartTime = null,
+                CounterProposalEndTime = null,
+                CounterProposalRoomId = null,
+                RejectionReason = null
+            },
+            new SessionChange
+            {
+                SessionChangeId = sessionChangeId3,
+                ChangeDate = new DateTime(2026, 4, 5),
+                Reason = "Demande de changement de salle pour équipement non disponible.",
+                TeacherId = teacherUserId3,
+                AdminId = adminUserId,
+                SessionId = sessionId3,
+                ChangeStatusId = changeStatusRejectedId,
+                ChangeType = "RoomChange",
+                ApprovedRoomId = null,
+                ProposedDate = null,
+                ProposedStartTime = null,
+                ProposedEndTime = null,
+                ProposedRoomId = null,
+                CounterProposalDate = null,
+                CounterProposalStartTime = null,
+                CounterProposalEndTime = null,
+                CounterProposalRoomId = null,
+                RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau."
+            }
         );
     }
 

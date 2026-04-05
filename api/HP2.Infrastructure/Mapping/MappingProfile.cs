@@ -157,7 +157,43 @@ namespace HP2.Infrastructure.Mapping
 
             CreateMap<SessionType, SessionTypeModel>().ReverseMap();
             CreateMap<SessionStatus, SessionStatusModel>().ReverseMap();
-            CreateMap<SessionChange, SessionChangeModel>().ReverseMap();
+
+            CreateMap<SessionChange, SessionChangeModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.SessionChangeId))
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.ChangeDate))
+                .ForMember(dest => dest.ChangeType, opt => opt.MapFrom(src => Enum.Parse<HP2.Domain.Enums.SessionChangeType>(src.ChangeType, true)))
+                .ForMember(dest => dest.ApprovedRoomId, opt => opt.MapFrom(src => src.ApprovedRoomId))
+                .ForMember(dest => dest.ProposedDate, opt => opt.MapFrom(src => src.ProposedDate))
+                .ForMember(dest => dest.ProposedStartTime, opt => opt.MapFrom(src => src.ProposedStartTime))
+                .ForMember(dest => dest.ProposedEndTime, opt => opt.MapFrom(src => src.ProposedEndTime))
+                .ForMember(dest => dest.ProposedRoomId, opt => opt.MapFrom(src => src.ProposedRoomId))
+                .ForMember(dest => dest.CounterProposalDate, opt => opt.MapFrom(src => src.CounterProposalDate))
+                .ForMember(dest => dest.CounterProposalStartTime, opt => opt.MapFrom(src => src.CounterProposalStartTime))
+                .ForMember(dest => dest.CounterProposalEndTime, opt => opt.MapFrom(src => src.CounterProposalEndTime))
+                .ForMember(dest => dest.CounterProposalRoomId, opt => opt.MapFrom(src => src.CounterProposalRoomId))
+                .ForMember(dest => dest.RejectionReason, opt => opt.MapFrom(src => src.RejectionReason));
+
+            CreateMap<SessionChangeModel, SessionChange>()
+                .ForMember(dest => dest.SessionChangeId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.ChangeDate, opt => opt.MapFrom(src => src.Date))
+                .ForMember(dest => dest.ChangeType, opt => opt.MapFrom(src => src.ChangeType.ToString()))
+                .ForMember(dest => dest.ApprovedRoomId, opt => opt.MapFrom(src => src.ApprovedRoomId))
+                .ForMember(dest => dest.ProposedDate, opt => opt.MapFrom(src => src.ProposedDate))
+                .ForMember(dest => dest.ProposedStartTime, opt => opt.MapFrom(src => src.ProposedStartTime))
+                .ForMember(dest => dest.ProposedEndTime, opt => opt.MapFrom(src => src.ProposedEndTime))
+                .ForMember(dest => dest.ProposedRoomId, opt => opt.MapFrom(src => src.ProposedRoomId))
+                .ForMember(dest => dest.CounterProposalDate, opt => opt.MapFrom(src => src.CounterProposalDate))
+                .ForMember(dest => dest.CounterProposalStartTime, opt => opt.MapFrom(src => src.CounterProposalStartTime))
+                .ForMember(dest => dest.CounterProposalEndTime, opt => opt.MapFrom(src => src.CounterProposalEndTime))
+                .ForMember(dest => dest.CounterProposalRoomId, opt => opt.MapFrom(src => src.CounterProposalRoomId))
+                .ForMember(dest => dest.RejectionReason, opt => opt.MapFrom(src => src.RejectionReason))
+                .ForMember(dest => dest.Admin, opt => opt.Ignore())
+                .ForMember(dest => dest.ChangeStatus, opt => opt.Ignore())
+                .ForMember(dest => dest.Session, opt => opt.Ignore())
+                .ForMember(dest => dest.Teacher, opt => opt.Ignore())
+                .ForMember(dest => dest.ApprovedRoom, opt => opt.Ignore())
+                .ForMember(dest => dest.ProposedRoom, opt => opt.Ignore())
+                .ForMember(dest => dest.CounterProposalRoom, opt => opt.Ignore());
 
             // ===== Room =====
             CreateMap<Building, BuildingModel>()
