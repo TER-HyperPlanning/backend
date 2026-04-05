@@ -779,10 +779,18 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("phone_number");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("is_deleted");
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("deleted_at");
             entity.Property(e => e.UserRoleId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("user_role_id");
+
+            entity.HasQueryFilter(u => !u.IsDeleted);
 
             entity.HasOne(d => d.UserRole).WithMany(p => p.Users)
                 .HasForeignKey(d => d.UserRoleId)
@@ -1485,6 +1493,19 @@ public partial class TerHyperplanningContext : DbContext
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId4 },
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId5 },
             new { GroupId = groupId_M1_ILSD, SessionId = sessionId6 }
+        );
+
+        // ========================================
+        // 8. TEACH (Teacher <-> Session)
+        // ========================================
+
+        modelBuilder.Entity("Teach").HasData(
+            new { TeacherId = teacherUserId, SessionId = sessionId },
+            new { TeacherId = teacherUserId2, SessionId = sessionId2 },
+            new { TeacherId = teacherUserId3, SessionId = sessionId3 },
+            new { TeacherId = teacherUserId4, SessionId = sessionId4 },
+            new { TeacherId = teacherUserId5, SessionId = sessionId5 },
+            new { TeacherId = teacherUserId6, SessionId = sessionId6 }
         );
     }
 

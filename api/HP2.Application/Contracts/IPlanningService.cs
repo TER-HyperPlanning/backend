@@ -8,4 +8,5 @@ namespace HP2.Application.Contracts;
 public interface IPlanningService
 {
     Task<IEnumerable<PlanningWeekDto>> GetPlanningAsync(PlanningRequest request, string? currentUserId, string? currentUserRole);
+    Task<IEnumerable<PlanningWeekDto>> GetMyPlanningAsync(PlanningRequest request, string currentUserId, string currentUserRole);
 }

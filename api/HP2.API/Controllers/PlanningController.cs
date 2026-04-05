@@ -21,8 +21,8 @@ public class PlanningController : ControllerBase
         _planningService = planningService;
     }
 
-    [HttpGet("get-planning")]
-    [Authorize]
+    [HttpGet]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<IEnumerable<PlanningWeekDto>>>> GetPlanning([FromQuery] PlanningRequest request)
     {
         var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -31,6 +31,39 @@ public class PlanningController : ControllerBase
         try
         {
             var planning = await _planningService.GetPlanningAsync(request, currentUserId, currentUserRole);
+
+            if (!planning.Any())
+            {
+                return NotFound(ApiResponse<IEnumerable<PlanningWeekDto>>.Fail(BuildNoPlanningMessage(request)));
+            }
+
+            return Ok(ApiResponse<IEnumerable<PlanningWeekDto>>.Success(planning));
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ApiResponse<IEnumerable<PlanningWeekDto>>.Fail(ex.Message));
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, ApiResponse<IEnumerable<PlanningWeekDto>>.Fail("Internal server error"));
+        }
+    }
+
+    [HttpGet("me")]
+    [Authorize]
+    public async Task<ActionResult<ApiResponse<IEnumerable<PlanningWeekDto>>>> GetMyPlanning([FromQuery] PlanningRequest request)
+    {
+        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var currentUserRole = User.FindFirst(ClaimTypes.Role)?.Value;
+
+        if (string.IsNullOrEmpty(currentUserId) || string.IsNullOrEmpty(currentUserRole))
+        {
+            return Unauthorized(ApiResponse<IEnumerable<PlanningWeekDto>>.Fail("User is not authenticated."));
+        }
+
+        try
+        {
+            var planning = await _planningService.GetMyPlanningAsync(request, currentUserId, currentUserRole);
 
             if (!planning.Any())
             {

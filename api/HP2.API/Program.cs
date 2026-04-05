@@ -109,6 +109,33 @@ internal class Program
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
                 ClockSkew = TimeSpan.Zero
             };
+
+            options.Events = new JwtBearerEvents
+            {
+                OnChallenge = context =>
+                {
+                    context.HandleResponse();
+                    context.Response.StatusCode = 401;
+                    context.Response.ContentType = "application/json";
+                    var jsonOptions = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase
+                    };
+                    var result = System.Text.Json.JsonSerializer.Serialize(ApiResponse<object>.Fail("You are not authenticated to access this resource. (Missing or invalid token)"), jsonOptions);
+                    return context.Response.WriteAsync(result);
+                },
+                OnForbidden = context =>
+                {
+                    context.Response.StatusCode = 403;
+                    context.Response.ContentType = "application/json";
+                    var jsonOptions = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase
+                    };
+                    var result = System.Text.Json.JsonSerializer.Serialize(ApiResponse<object>.Fail("Access denied. You do not have the required permissions to access this resource."), jsonOptions);
+                    return context.Response.WriteAsync(result);
+                }
+            };
         });
 
         var app = builder.Build();

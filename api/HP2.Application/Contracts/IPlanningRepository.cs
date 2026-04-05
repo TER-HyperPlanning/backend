@@ -8,4 +8,5 @@ namespace HP2.Application.Contracts;
 public interface IPlanningRepository
 {
     Task<IEnumerable<SessionModel>> GetPlanningSessionsAsync(PlanningRequest request, string? currentUserId, string? currentUserRole);
+    Task<IEnumerable<SessionModel>> GetMyPlanningSessionsAsync(PlanningRequest request, string currentUserId, string currentUserRole);
 }
