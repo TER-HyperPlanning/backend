@@ -905,6 +905,36 @@ public partial class TerHyperplanningContext : DbContext
         var studentUserId28 = GetStableId("user-student-28");
         var studentUserId29 = GetStableId("user-student-29");
         var studentUserId30 = GetStableId("user-student-30");
+        var studentUserIdB01 = GetStableId("user-student-b-01");
+        var studentUserIdB02 = GetStableId("user-student-b-02");
+        var studentUserIdB03 = GetStableId("user-student-b-03");
+        var studentUserIdB04 = GetStableId("user-student-b-04");
+        var studentUserIdB05 = GetStableId("user-student-b-05");
+        var studentUserIdB06 = GetStableId("user-student-b-06");
+        var studentUserIdB07 = GetStableId("user-student-b-07");
+        var studentUserIdB08 = GetStableId("user-student-b-08");
+        var studentUserIdB09 = GetStableId("user-student-b-09");
+        var studentUserIdB10 = GetStableId("user-student-b-10");
+        var studentUserIdB11 = GetStableId("user-student-b-11");
+        var studentUserIdB12 = GetStableId("user-student-b-12");
+        var studentUserIdB13 = GetStableId("user-student-b-13");
+        var studentUserIdB14 = GetStableId("user-student-b-14");
+        var studentUserIdB15 = GetStableId("user-student-b-15");
+        var studentUserIdB16 = GetStableId("user-student-b-16");
+        var studentUserIdB17 = GetStableId("user-student-b-17");
+        var studentUserIdB18 = GetStableId("user-student-b-18");
+        var studentUserIdB19 = GetStableId("user-student-b-19");
+        var studentUserIdB20 = GetStableId("user-student-b-20");
+        var studentUserIdB21 = GetStableId("user-student-b-21");
+        var studentUserIdB22 = GetStableId("user-student-b-22");
+        var studentUserIdB23 = GetStableId("user-student-b-23");
+        var studentUserIdB24 = GetStableId("user-student-b-24");
+        var studentUserIdB25 = GetStableId("user-student-b-25");
+        var studentUserIdB26 = GetStableId("user-student-b-26");
+        var studentUserIdB27 = GetStableId("user-student-b-27");
+        var studentUserIdB28 = GetStableId("user-student-b-28");
+        var studentUserIdB29 = GetStableId("user-student-b-29");
+        var studentUserIdB30 = GetStableId("user-student-b-30");
 
         var programId = GetStableId("prog-cs");
         var trackM1_ID_App = GetStableId("track-m1-id-app");
@@ -916,6 +946,7 @@ public partial class TerHyperplanningContext : DbContext
         var trackM2_ILSD_Init = GetStableId("track-m2-ilsd-init");
 
         var groupId_M1_ILSD = GetStableId("group-m1-ilsd-init-a");
+        var groupId_M1_ILSD_B = GetStableId("group-m1-ilsd-init-b");
 
         // --- NOUVEAU PROGRAMME : MASTER INFORMATIQUE ---
         var programInfoId = GetStableId("prog-informatique");
@@ -1561,6 +1592,13 @@ public partial class TerHyperplanningContext : DbContext
                 Name = "Groupe A - M1 ILSD",
                 AcademicYear = "2025-2026",
                 TrackId = trackM1_ILSD_Init
+            },
+            new Group
+            {
+                GroupId = groupId_M1_ILSD_B,
+                Name = "Groupe B - M1 ILSD",
+                AcademicYear = "2025-2026",
+                TrackId = trackM1_ILSD_Init
             }
         );
 
@@ -1612,6 +1650,39 @@ public partial class TerHyperplanningContext : DbContext
             new User { UserId = studentUserId30, FirstName = "Alice", LastName = "Perrot", Email = "alice.perrot30@etud.fr", Password = HashPassword("pass_student_30"), PhoneNumber = "0610000030", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow }
         );
 
+        modelBuilder.Entity<User>().HasData(
+            new User { UserId = studentUserIdB01, FirstName = "Lina", LastName = "Ait", Email = "studentb01@etud.fr", Password = HashPassword("pass_student_b_01"), PhoneNumber = "0620000001", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB02, FirstName = "Nassim", LastName = "Belkacem", Email = "studentb02@etud.fr", Password = HashPassword("pass_student_b_02"), PhoneNumber = "0620000002", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB03, FirstName = "Salma", LastName = "Chebli", Email = "studentb03@etud.fr", Password = HashPassword("pass_student_b_03"), PhoneNumber = "0620000003", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB04, FirstName = "Idriss", LastName = "Dahmani", Email = "studentb04@etud.fr", Password = HashPassword("pass_student_b_04"), PhoneNumber = "0620000004", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB05, FirstName = "Maya", LastName = "Elouafi", Email = "studentb05@etud.fr", Password = HashPassword("pass_student_b_05"), PhoneNumber = "0620000005", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB06, FirstName = "Youssef", LastName = "Farah", Email = "studentb06@etud.fr", Password = HashPassword("pass_student_b_06"), PhoneNumber = "0620000006", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB07, FirstName = "Nour", LastName = "Ghali", Email = "studentb07@etud.fr", Password = HashPassword("pass_student_b_07"), PhoneNumber = "0620000007", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB08, FirstName = "Riad", LastName = "Hamidi", Email = "studentb08@etud.fr", Password = HashPassword("pass_student_b_08"), PhoneNumber = "0620000008", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB09, FirstName = "Sana", LastName = "Ibrahimi", Email = "studentb09@etud.fr", Password = HashPassword("pass_student_b_09"), PhoneNumber = "0620000009", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB10, FirstName = "Adel", LastName = "Jabri", Email = "studentb10@etud.fr", Password = HashPassword("pass_student_b_10"), PhoneNumber = "0620000010", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB11, FirstName = "Ilona", LastName = "Kadi", Email = "studentb11@etud.fr", Password = HashPassword("pass_student_b_11"), PhoneNumber = "0620000011", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB12, FirstName = "Karim", LastName = "Lahlou", Email = "studentb12@etud.fr", Password = HashPassword("pass_student_b_12"), PhoneNumber = "0620000012", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB13, FirstName = "Siham", LastName = "Mansouri", Email = "studentb13@etud.fr", Password = HashPassword("pass_student_b_13"), PhoneNumber = "0620000013", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB14, FirstName = "Tarik", LastName = "Naji", Email = "studentb14@etud.fr", Password = HashPassword("pass_student_b_14"), PhoneNumber = "0620000014", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB15, FirstName = "Imane", LastName = "Ouali", Email = "studentb15@etud.fr", Password = HashPassword("pass_student_b_15"), PhoneNumber = "0620000015", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB16, FirstName = "Anis", LastName = "Perrin", Email = "studentb16@etud.fr", Password = HashPassword("pass_student_b_16"), PhoneNumber = "0620000016", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB17, FirstName = "Leila", LastName = "Qadri", Email = "studentb17@etud.fr", Password = HashPassword("pass_student_b_17"), PhoneNumber = "0620000017", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB18, FirstName = "Romy", LastName = "Rami", Email = "studentb18@etud.fr", Password = HashPassword("pass_student_b_18"), PhoneNumber = "0620000018", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB19, FirstName = "Samy", LastName = "Safi", Email = "studentb19@etud.fr", Password = HashPassword("pass_student_b_19"), PhoneNumber = "0620000019", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB20, FirstName = "Nadia", LastName = "Tazi", Email = "studentb20@etud.fr", Password = HashPassword("pass_student_b_20"), PhoneNumber = "0620000020", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB21, FirstName = "Omar", LastName = "Uzan", Email = "studentb21@etud.fr", Password = HashPassword("pass_student_b_21"), PhoneNumber = "0620000021", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB22, FirstName = "Meriem", LastName = "Vallet", Email = "studentb22@etud.fr", Password = HashPassword("pass_student_b_22"), PhoneNumber = "0620000022", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB23, FirstName = "Bilal", LastName = "Wahbi", Email = "studentb23@etud.fr", Password = HashPassword("pass_student_b_23"), PhoneNumber = "0620000023", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB24, FirstName = "Loubna", LastName = "Xerri", Email = "studentb24@etud.fr", Password = HashPassword("pass_student_b_24"), PhoneNumber = "0620000024", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB25, FirstName = "Yanis", LastName = "Yassine", Email = "studentb25@etud.fr", Password = HashPassword("pass_student_b_25"), PhoneNumber = "0620000025", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB26, FirstName = "Sara", LastName = "Ziani", Email = "studentb26@etud.fr", Password = HashPassword("pass_student_b_26"), PhoneNumber = "0620000026", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB27, FirstName = "Adam", LastName = "Arif", Email = "studentb27@etud.fr", Password = HashPassword("pass_student_b_27"), PhoneNumber = "0620000027", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB28, FirstName = "Hana", LastName = "Bouzid", Email = "studentb28@etud.fr", Password = HashPassword("pass_student_b_28"), PhoneNumber = "0620000028", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB29, FirstName = "Ilyes", LastName = "Cherkaoui", Email = "studentb29@etud.fr", Password = HashPassword("pass_student_b_29"), PhoneNumber = "0620000029", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdB30, FirstName = "Nora", LastName = "Drissi", Email = "studentb30@etud.fr", Password = HashPassword("pass_student_b_30"), PhoneNumber = "0620000030", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow }
+        );
+
         modelBuilder.Entity<Student>().HasData(
             new Student
             {
@@ -1651,6 +1722,39 @@ public partial class TerHyperplanningContext : DbContext
             new Student { UserId = studentUserId28, GroupId = groupId_M1_ILSD },
             new Student { UserId = studentUserId29, GroupId = groupId_M1_ILSD },
             new Student { UserId = studentUserId30, GroupId = groupId_M1_ILSD }
+        );
+
+        modelBuilder.Entity<Student>().HasData(
+            new Student { UserId = studentUserIdB01, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB02, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB03, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB04, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB05, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB06, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB07, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB08, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB09, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB10, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB11, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB12, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB13, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB14, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB15, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB16, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB17, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB18, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB19, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB20, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB21, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB22, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB23, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB24, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB25, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB26, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB27, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB28, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB29, GroupId = groupId_M1_ILSD_B },
+            new Student { UserId = studentUserIdB30, GroupId = groupId_M1_ILSD_B }
         );
 
         // ========================================
