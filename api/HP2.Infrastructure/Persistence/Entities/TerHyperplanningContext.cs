@@ -945,6 +945,7 @@ public partial class TerHyperplanningContext : DbContext
         var c_ter = GetStableId("c-ter"); // TER
         var c_data = GetStableId("c-data"); // Analyse de données
         var c_innov = GetStableId("c-innov"); // Projet Innovation
+        var c_presence = GetStableId("c-presence-universitaire"); // Présence Universitaire
 
         var buildingId = GetStableId("bld-A");
         var roomTypeId = GetStableId("rt-td");
@@ -959,12 +960,6 @@ public partial class TerHyperplanningContext : DbContext
         var sessionStatusId = GetStableId("ss-scheduled");
 
         var teacherTitleId = GetStableId("tt-permanent");
-        var sessionId = GetStableId("session-001");
-        var sessionId2 = GetStableId("session-002");
-        var sessionId3 = GetStableId("session-003");
-        var sessionId4 = GetStableId("session-004");
-        var sessionId5 = GetStableId("session-005");
-        var sessionId6 = GetStableId("session-006");
 
         var wdMondayId = GetStableId("wd-monday");
         var wdTuesdayId = GetStableId("wd-tuesday");
@@ -1031,7 +1026,8 @@ public partial class TerHyperplanningContext : DbContext
             new Course { CourseId = c_stats, Name = "Statistiques Appliquées aux Données", Code = "DATA_STATS" },
             new Course { CourseId = c_ter, Name = "Travaux d'étude et de recherche (TER)", Code = "DATA_TER" },
             new Course { CourseId = c_data, Name = "Analyse de Données", Code = "DATA_ANALYSE" },
-            new Course { CourseId = c_innov, Name = "Implémentation du Projet Innovation", Code = "DATA_INNOV" }
+            new Course { CourseId = c_innov, Name = "Implémentation du Projet Innovation", Code = "DATA_INNOV" },
+            new Course { CourseId = c_presence, Name = "PRESENCE UNIVERSITAIRE", Code = "UNIV_PRESENCE" }
         );
 
         // SessionTypes (requis par Session)
@@ -1658,111 +1654,293 @@ public partial class TerHyperplanningContext : DbContext
         );
 
         // ========================================
-        // 6. SESSION EXAMPLE
+        // 6. SESSIONS 2025-2026 (Groupe A - M1 ILSD)
         // ========================================
 
-        modelBuilder.Entity<Session>().HasData(
-            new Session
+        var sessions = new List<Session>();
+        var attendSeed = new List<object>();
+        var teachSeed = new List<object>();
+
+        var teacherIds = new List<string>
+        {
+            teacherUserId,
+            teacherUserId2,
+            teacherUserId3,
+            teacherUserId4,
+            teacherUserId5,
+            teacherUserId6,
+            teacherUserId7,
+            teacherUserId8,
+            teacherUserId9,
+            teacherUserId10,
+            teacherUserId11,
+            teacherUserId12,
+            teacherUserId13,
+            teacherUserId14,
+            teacherUserId15,
+            teacherUserId16,
+            teacherUserId17
+        };
+
+        // Cours du track M1 ILSD initiale, hors Stage M1 (0h) qui est traité via l'évènement final.
+        var regularCourseIds = new List<string>
+        {
+            c_sad,
+            c_coo,
+            c_icl,
+            c_tech,
+            c_ro,
+            c_fin,
+            c_droit,
+            c_dev,
+            c_ang,
+            c_crypto,
+            c_bdd,
+            c_stats,
+            c_ter,
+            c_data,
+            c_innov
+        };
+
+        var holidayRanges = new List<(DateTime Start, DateTime End)>
+        {
+            (new DateTime(2025, 10, 27), new DateTime(2025, 10, 31)),
+            (new DateTime(2025, 12, 22), new DateTime(2026, 1, 2)),
+            (new DateTime(2026, 3, 2), new DateTime(2026, 3, 6)),
+            (new DateTime(2026, 4, 27), new DateTime(2026, 5, 1))
+        };
+
+        bool IsWeekday(DateTime date) => date.DayOfWeek >= DayOfWeek.Monday && date.DayOfWeek <= DayOfWeek.Friday;
+
+        bool IsInHolidays(DateTime date)
+        {
+            foreach (var holiday in holidayRanges)
+            {
+                if (date >= holiday.Start && date <= holiday.End)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        bool IsInExamWeek1(DateTime date) => date >= new DateTime(2026, 1, 5) && date <= new DateTime(2026, 1, 9);
+        bool IsInExamWeek2(DateTime date) => date >= new DateTime(2026, 5, 4) && date <= new DateTime(2026, 5, 7);
+
+        bool IsSpecialEventDate(DateTime date)
+        {
+            return date == new DateTime(2025, 12, 5) || date == new DateTime(2026, 5, 11);
+        }
+
+        bool IsRegularTeachingDay(DateTime date)
+        {
+            return IsWeekday(date)
+                && !IsInHolidays(date)
+                && !IsInExamWeek1(date)
+                && !IsInExamWeek2(date)
+                && !IsSpecialEventDate(date);
+        }
+
+        var teacherCursor = 0;
+
+        void AddSession(DateTime date, TimeSpan startTime, TimeSpan endTime, string courseId, string sessionType, string mode)
+        {
+            var sessionId = GetStableId($"session-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
+
+            sessions.Add(new Session
             {
                 SessionId = sessionId,
-                Date = new DateTime(2026, 3, 30),
-                StartTime = new TimeSpan(8, 0, 0),
-                EndTime = new TimeSpan(10, 0, 0),
-                Mode = "PRESENTIAL",
-                CourseId = c_sad,
-                SessionTypeId = sessionTypeId,
+                Date = date,
+                StartTime = startTime,
+                EndTime = endTime,
+                Mode = mode,
+                CourseId = courseId,
+                SessionTypeId = sessionType,
                 SessionStatusId = sessionStatusId,
                 RoomId = roomId
+            });
+
+            attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = sessionId });
+
+            var assignedTeacherId = teacherIds[teacherCursor % teacherIds.Count];
+            teachSeed.Add(new { TeacherId = assignedTeacherId, SessionId = sessionId });
+            teacherCursor++;
+        }
+
+        var schoolStart = new DateTime(2025, 9, 8);
+        var schoolEnd = new DateTime(2026, 5, 11);
+
+        var tpMonthKeys = new HashSet<int>();
+        var rareLateMonthKeys = new HashSet<int>();
+        var isCmWeek = true;
+
+        for (var weekStart = schoolStart; weekStart <= schoolEnd; weekStart = weekStart.AddDays(7))
+        {
+            var regularWeekDays = new List<DateTime>();
+
+            for (var dayOffset = 0; dayOffset < 5; dayOffset++)
+            {
+                var date = weekStart.AddDays(dayOffset);
+                if (date > schoolEnd)
+                {
+                    break;
+                }
+
+                if (IsRegularTeachingDay(date))
+                {
+                    regularWeekDays.Add(date);
+                }
             }
-        );
 
-        modelBuilder.Entity<Session>().HasData(
-            new Session
+            if (regularWeekDays.Count == 0)
             {
-                SessionId = sessionId2,
-                Date = new DateTime(2026, 3, 31),
-                StartTime = new TimeSpan(10, 0, 0),
-                EndTime = new TimeSpan(12, 0, 0),
-                Mode = "PRESENTIAL",
-                CourseId = c_coo,
-                SessionTypeId = sessionTypeTdId,
-                SessionStatusId = sessionStatusId,
-                RoomId = roomId
-            },
-            new Session
-            {
-                SessionId = sessionId3,
-                Date = new DateTime(2026, 4, 1),
-                StartTime = new TimeSpan(14, 0, 0),
-                EndTime = new TimeSpan(16, 0, 0),
-                Mode = "PRESENTIAL",
-                CourseId = c_icl,
-                SessionTypeId = sessionTypeTpId,
-                SessionStatusId = sessionStatusId,
-                RoomId = roomId
-            },
-            new Session
-            {
-                SessionId = sessionId4,
-                Date = new DateTime(2026, 4, 2),
-                StartTime = new TimeSpan(8, 0, 0),
-                EndTime = new TimeSpan(10, 0, 0),
-                Mode = "PRESENTIAL",
-                CourseId = c_tech,
-                SessionTypeId = sessionTypeId,
-                SessionStatusId = sessionStatusId,
-                RoomId = roomId
-            },
-            new Session
-            {
-                SessionId = sessionId5,
-                Date = new DateTime(2026, 4, 3),
-                StartTime = new TimeSpan(10, 0, 0),
-                EndTime = new TimeSpan(12, 0, 0),
-                Mode = "PRESENTIAL",
-                CourseId = c_ro,
-                SessionTypeId = sessionTypeTdId,
-                SessionStatusId = sessionStatusId,
-                RoomId = roomId
-            },
-            new Session
-            {
-                SessionId = sessionId6,
-                Date = new DateTime(2026, 4, 6),
-                StartTime = new TimeSpan(14, 0, 0),
-                EndTime = new TimeSpan(16, 0, 0),
-                Mode = "PRESENTIAL",
-                CourseId = c_data,
-                SessionTypeId = sessionTypeTpId,
-                SessionStatusId = sessionStatusId,
-                RoomId = roomId
+                continue;
             }
-        );
+
+            var monthKey = (regularWeekDays[0].Year * 100) + regularWeekDays[0].Month;
+
+            // Une semaine TP par mois, sinon alternance CM/TD semaine sur deux.
+            var isTpWeek = !tpMonthKeys.Contains(monthKey);
+            if (isTpWeek)
+            {
+                tpMonthKeys.Add(monthKey);
+            }
+
+            var weekSessionTypeId = isTpWeek
+                ? sessionTypeTpId
+                : (isCmWeek ? sessionTypeId : sessionTypeTdId);
+
+            if (!isTpWeek)
+            {
+                isCmWeek = !isCmWeek;
+            }
+
+            DateTime? rareLateDay = null;
+            if (!rareLateMonthKeys.Contains(monthKey))
+            {
+                foreach (var day in regularWeekDays)
+                {
+                    if (day.DayOfWeek == DayOfWeek.Thursday)
+                    {
+                        rareLateDay = day;
+                        rareLateMonthKeys.Add(monthKey);
+                        break;
+                    }
+                }
+            }
+
+            var courseQueue = new Queue<string>(regularCourseIds);
+
+            foreach (var day in regularWeekDays)
+            {
+                var slots = new List<(TimeSpan Start, TimeSpan End)>
+                {
+                    (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                    (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                    (new TimeSpan(13, 0, 0), new TimeSpan(14, 30, 0)),
+                    (new TimeSpan(14, 45, 0), new TimeSpan(16, 15, 0))
+                };
+
+                if (rareLateDay.HasValue && day == rareLateDay.Value)
+                {
+                    // Rare: une fois par mois, plages décalées en après-midi.
+                    slots = day.Month % 2 == 0
+                        ? new List<(TimeSpan Start, TimeSpan End)>
+                        {
+                            (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                            (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                            (new TimeSpan(13, 30, 0), new TimeSpan(15, 0, 0)),
+                            (new TimeSpan(15, 15, 0), new TimeSpan(16, 45, 0))
+                        }
+                        : new List<(TimeSpan Start, TimeSpan End)>
+                        {
+                            (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                            (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                            (new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)),
+                            (new TimeSpan(15, 45, 0), new TimeSpan(17, 15, 0))
+                        };
+                }
+
+                foreach (var slot in slots)
+                {
+                    if (courseQueue.Count == 0)
+                    {
+                        break;
+                    }
+
+                    AddSession(day, slot.Start, slot.End, courseQueue.Dequeue(), weekSessionTypeId, "PRESENTIAL");
+                }
+            }
+        }
 
         // ========================================
-        // 7. ATTEND (Group <-> Session)
+        // 7. ÉVÈNEMENTS SPÉCIAUX
         // ========================================
 
-        modelBuilder.Entity("Attend").HasData(
-            new { GroupId = groupId_M1_ILSD, SessionId = sessionId2 },
-            new { GroupId = groupId_M1_ILSD, SessionId = sessionId3 },
-            new { GroupId = groupId_M1_ILSD, SessionId = sessionId4 },
-            new { GroupId = groupId_M1_ILSD, SessionId = sessionId5 },
-            new { GroupId = groupId_M1_ILSD, SessionId = sessionId6 }
-        );
+        AddSession(
+            new DateTime(2025, 12, 5),
+            new TimeSpan(8, 30, 0),
+            new TimeSpan(15, 0, 0),
+            c_presence,
+            sessionTypeEvenementId,
+            "EVENEMENT");
+
+        AddSession(
+            new DateTime(2026, 5, 11),
+            new TimeSpan(8, 30, 0),
+            new TimeSpan(18, 0, 0),
+            c_stage,
+            sessionTypeEvenementId,
+            "EVENEMENT");
 
         // ========================================
-        // 8. TEACH (Teacher <-> Session)
+        // 8. EXAMENS / SOUTENANCE
         // ========================================
 
-        modelBuilder.Entity("Teach").HasData(
-            new { TeacherId = teacherUserId, SessionId = sessionId },
-            new { TeacherId = teacherUserId2, SessionId = sessionId2 },
-            new { TeacherId = teacherUserId3, SessionId = sessionId3 },
-            new { TeacherId = teacherUserId4, SessionId = sessionId4 },
-            new { TeacherId = teacherUserId5, SessionId = sessionId5 },
-            new { TeacherId = teacherUserId6, SessionId = sessionId6 }
-        );
+        // Semaine du 05/01/2026 au 09/01/2026:
+        // - 1 jour vide (07/01)
+        // - 1 jour avec un seul EXAMEN (06/01)
+        // - au moins 1 SOUTENANCE de 2h
+        AddSession(new DateTime(2026, 1, 5), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_sad, sessionTypeExamenId, "EXAMEN");
+        AddSession(new DateTime(2026, 1, 5), new TimeSpan(13, 30, 0), new TimeSpan(17, 30, 0), c_coo, sessionTypeExamenId, "EXAMEN");
+
+        AddSession(new DateTime(2026, 1, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 0, 0), c_icl, sessionTypeExamenId, "EXAMEN");
+        AddSession(new DateTime(2026, 1, 6), new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0), c_ter, sessionTypeSoutenanceId, "SOUTENANCE");
+
+        AddSession(new DateTime(2026, 1, 8), new TimeSpan(9, 0, 0), new TimeSpan(12, 0, 0), c_tech, sessionTypeExamenId, "EXAMEN");
+        AddSession(new DateTime(2026, 1, 8), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_ro, sessionTypeExamenId, "EXAMEN");
+
+        AddSession(new DateTime(2026, 1, 9), new TimeSpan(8, 30, 0), new TimeSpan(12, 30, 0), c_fin, sessionTypeExamenId, "EXAMEN");
+        AddSession(new DateTime(2026, 1, 9), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_droit, sessionTypeExamenId, "EXAMEN");
+
+        // Semaine du 04/05/2026 au 07/05/2026:
+        // - pas de SOUTENANCE
+        // - aucun jour vide
+        // - 2 jours avec un seul EXAMEN
+        AddSession(new DateTime(2026, 5, 4), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_crypto, sessionTypeExamenId, "EXAMEN");
+        AddSession(new DateTime(2026, 5, 4), new TimeSpan(13, 30, 0), new TimeSpan(17, 30, 0), c_bdd, sessionTypeExamenId, "EXAMEN");
+
+        AddSession(new DateTime(2026, 5, 5), new TimeSpan(9, 0, 0), new TimeSpan(13, 0, 0), c_stats, sessionTypeExamenId, "EXAMEN");
+
+        AddSession(new DateTime(2026, 5, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 0, 0), c_data, sessionTypeExamenId, "EXAMEN");
+        AddSession(new DateTime(2026, 5, 6), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_innov, sessionTypeExamenId, "EXAMEN");
+
+        AddSession(new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ang, sessionTypeExamenId, "EXAMEN");
+
+        modelBuilder.Entity<Session>().HasData(sessions.ToArray());
+
+        // ========================================
+        // 9. ATTEND (Group <-> Session)
+        // ========================================
+
+        modelBuilder.Entity("Attend").HasData(attendSeed.ToArray());
+
+        // ========================================
+        // 10. TEACH (Teacher <-> Session)
+        // ========================================
+
+        modelBuilder.Entity("Teach").HasData(teachSeed.ToArray());
     }
 
     private string GetStableId(string input)
