@@ -852,6 +852,10 @@ public partial class TerHyperplanningContext : DbContext
     {
         // Fixed IDs for referential integrity
         var adminUserId = GetStableId("user-admin");
+        var adminUserId2 = GetStableId("user-admin-claire-bernard");
+        var adminUserId3 = GetStableId("user-admin-julien-moreau");
+        var adminUserId4 = GetStableId("user-admin-fatima-zahra");
+        var adminUserId5 = GetStableId("user-admin-pierre-louis");
         var teacherUserId = GetStableId("user-marie-curie");
         var studentUserId = GetStableId("user-jean-dupont");
         var teacherUserId2 = GetStableId("user-alain-durand");
@@ -1091,11 +1095,59 @@ public partial class TerHyperplanningContext : DbContext
                 PhoneNumber = "0000000000",
                 UserRoleId = roleAdminId,
                 CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = adminUserId2,
+                FirstName = "Claire",
+                LastName = "Bernard",
+                Email = "claire.bernard@univ.fr",
+                Password = HashPassword("admin123"),
+                PhoneNumber = "0102030401",
+                UserRoleId = roleAdminId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = adminUserId3,
+                FirstName = "Julien",
+                LastName = "Moreau",
+                Email = "julien.moreau@univ.fr",
+                Password = HashPassword("admin123"),
+                PhoneNumber = "0102030402",
+                UserRoleId = roleAdminId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = adminUserId4,
+                FirstName = "Fatima",
+                LastName = "Zahra",
+                Email = "fatima.zahra@univ.fr",
+                Password = HashPassword("admin123"),
+                PhoneNumber = "0102030403",
+                UserRoleId = roleAdminId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = adminUserId5,
+                FirstName = "Pierre",
+                LastName = "Louis",
+                Email = "pierre.louis@univ.fr",
+                Password = HashPassword("admin123"),
+                PhoneNumber = "0102030404",
+                UserRoleId = roleAdminId,
+                CreatedAt = DateTime.UtcNow
             }
         );
 
         modelBuilder.Entity<Admin>().HasData(
-            new Admin { UserId = adminUserId }
+            new Admin { UserId = adminUserId },
+            new Admin { UserId = adminUserId2 },
+            new Admin { UserId = adminUserId3 },
+            new Admin { UserId = adminUserId4 },
+            new Admin { UserId = adminUserId5 }
         );
 
         // Teacher User
