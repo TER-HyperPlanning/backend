@@ -17,6 +17,10 @@ jobs:
           script: |
             git config --global --add safe.directory /home/mohamed/backend
             cd /home/mohamed/backend/api
-            git pull origin main
-            cd api
-            docker-compose up --build -d
+            git fetch origin main
+            git reset --hard origin/main
+            
+            docker-compose down
+            docker-compose build --no-cache api
+            docker-compose up -d
+            docker image prune -f
