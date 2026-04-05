@@ -942,6 +942,9 @@ public partial class TerHyperplanningContext : DbContext
         var sessionTypeId = GetStableId("st-cm");
         var sessionTypeTdId = GetStableId("st-td");
         var sessionTypeTpId = GetStableId("st-tp");
+        var sessionTypeExamenId = GetStableId("st-examen");
+        var sessionTypeSoutenanceId = GetStableId("st-soutenance");
+        var sessionTypeEvenementId = GetStableId("st-evenement");
         var sessionStatusId = GetStableId("ss-scheduled");
 
         var teacherTitleId = GetStableId("tt-prof");
@@ -1024,7 +1027,10 @@ public partial class TerHyperplanningContext : DbContext
         modelBuilder.Entity<SessionType>().HasData(
             new SessionType { SessionTypeId = sessionTypeId, Label = "CM" },
             new SessionType { SessionTypeId = sessionTypeTdId, Label = "TD" },
-            new SessionType { SessionTypeId = sessionTypeTpId, Label = "TP" }
+            new SessionType { SessionTypeId = sessionTypeTpId, Label = "TP" },
+            new SessionType { SessionTypeId = sessionTypeExamenId, Label = "EXAMEN" },
+            new SessionType { SessionTypeId = sessionTypeSoutenanceId, Label = "SOUTENANCE" },
+            new SessionType { SessionTypeId = sessionTypeEvenementId, Label = "EVENEMENT" }
         );
 
         // SessionStatus (requis par Session)

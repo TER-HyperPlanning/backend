@@ -9,6 +9,9 @@ public static class SessionReferenceMapper
         SessionTypeEnum.CM => "CM",
         SessionTypeEnum.TD => "TD",
         SessionTypeEnum.TP => "TP",
+        SessionTypeEnum.EXAMEN => "EXAMEN",
+        SessionTypeEnum.SOUTENANCE => "SOUTENANCE",
+        SessionTypeEnum.EVENEMENT => "EVENEMENT",
         _ => throw new ArgumentOutOfRangeException(nameof(sessionType), sessionType, null)
     };
 
@@ -22,6 +25,9 @@ public static class SessionReferenceMapper
         "CM" => SessionTypeEnum.CM,
         "TD" => SessionTypeEnum.TD,
         "TP" => SessionTypeEnum.TP,
+        "EXAMEN" => SessionTypeEnum.EXAMEN,
+        "SOUTENANCE" => SessionTypeEnum.SOUTENANCE,
+        "EVENEMENT" => SessionTypeEnum.EVENEMENT,
         _ => throw new ArgumentOutOfRangeException(nameof(label), label, null)
     };
 
