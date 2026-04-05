@@ -863,6 +863,17 @@ public partial class TerHyperplanningContext : DbContext
         var teacherUserId4 = GetStableId("user-karim-benali");
         var teacherUserId5 = GetStableId("user-claire-morel");
         var teacherUserId6 = GetStableId("user-thomas-renault");
+        var teacherUserId7 = GetStableId("user-celine-robert");
+        var teacherUserId8 = GetStableId("user-maxime-legrand");
+        var teacherUserId9 = GetStableId("user-amina-cherif");
+        var teacherUserId10 = GetStableId("user-nicolas-fabre");
+        var teacherUserId11 = GetStableId("user-elodie-guerin");
+        var teacherUserId12 = GetStableId("user-mehdi-kaci");
+        var teacherUserId13 = GetStableId("user-julie-paul");
+        var teacherUserId14 = GetStableId("user-adrien-morin");
+        var teacherUserId15 = GetStableId("user-samira-bensalem");
+        var teacherUserId16 = GetStableId("user-antoine-mercier");
+        var teacherUserId17 = GetStableId("user-nawal-haddad");
 
         var studentUserId01 = GetStableId("user-student-01");
         var studentUserId02 = GetStableId("user-student-02");
@@ -947,7 +958,7 @@ public partial class TerHyperplanningContext : DbContext
         var sessionTypeEvenementId = GetStableId("st-evenement");
         var sessionStatusId = GetStableId("ss-scheduled");
 
-        var teacherTitleId = GetStableId("tt-prof");
+        var teacherTitleId = GetStableId("tt-permanent");
         var sessionId = GetStableId("session-001");
         var sessionId2 = GetStableId("session-002");
         var sessionId3 = GetStableId("session-003");
@@ -1040,7 +1051,7 @@ public partial class TerHyperplanningContext : DbContext
 
         // TeacherTitles (requis par Teacher)
         modelBuilder.Entity<TeacherTitle>().HasData(
-            new TeacherTitle { TeacherTitleId = GetStableId("tt-permanent"), Name = "PERMANENT" },
+            new TeacherTitle { TeacherTitleId = teacherTitleId, Name = "PERMANENT" },
             new TeacherTitle { TeacherTitleId = GetStableId("tt-vacataire"), Name = "VACATAIRE" },
             new TeacherTitle { TeacherTitleId = GetStableId("tt-associe"), Name = "ASSOCIE" }
         );
@@ -1226,6 +1237,127 @@ public partial class TerHyperplanningContext : DbContext
                 PhoneNumber = "0134567894",
                 UserRoleId = roleTeacherId,
                 CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId7,
+                FirstName = "Celine",
+                LastName = "Robert",
+                Email = "celine.robert@univ.fr",
+                Password = HashPassword("pass123_celine"),
+                PhoneNumber = "0134567895",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId8,
+                FirstName = "Maxime",
+                LastName = "Legrand",
+                Email = "maxime.legrand@univ.fr",
+                Password = HashPassword("pass123_maxime"),
+                PhoneNumber = "0134567896",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId9,
+                FirstName = "Amina",
+                LastName = "Cherif",
+                Email = "amina.cherif@univ.fr",
+                Password = HashPassword("pass123_amina"),
+                PhoneNumber = "0134567897",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId10,
+                FirstName = "Nicolas",
+                LastName = "Fabre",
+                Email = "nicolas.fabre@univ.fr",
+                Password = HashPassword("pass123_nicolas"),
+                PhoneNumber = "0134567898",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId11,
+                FirstName = "Elodie",
+                LastName = "Guerin",
+                Email = "elodie.guerin@univ.fr",
+                Password = HashPassword("pass123_elodie"),
+                PhoneNumber = "0134567899",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId12,
+                FirstName = "Mehdi",
+                LastName = "Kaci",
+                Email = "mehdi.kaci@univ.fr",
+                Password = HashPassword("pass123_mehdi"),
+                PhoneNumber = "0134567800",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId13,
+                FirstName = "Julie",
+                LastName = "Paul",
+                Email = "julie.paul@univ.fr",
+                Password = HashPassword("pass123_julie"),
+                PhoneNumber = "0134567801",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId14,
+                FirstName = "Adrien",
+                LastName = "Morin",
+                Email = "adrien.morin@univ.fr",
+                Password = HashPassword("pass123_adrien"),
+                PhoneNumber = "0134567802",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId15,
+                FirstName = "Samira",
+                LastName = "Bensalem",
+                Email = "samira.bensalem@univ.fr",
+                Password = HashPassword("pass123_samira"),
+                PhoneNumber = "0134567803",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId16,
+                FirstName = "Antoine",
+                LastName = "Mercier",
+                Email = "antoine.mercier@univ.fr",
+                Password = HashPassword("pass123_antoine"),
+                PhoneNumber = "0134567804",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId17,
+                FirstName = "Nawal",
+                LastName = "Haddad",
+                Email = "nawal.haddad@univ.fr",
+                Password = HashPassword("pass123_nawal"),
+                PhoneNumber = "0134567805",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
             }
         );
 
@@ -1264,6 +1396,72 @@ public partial class TerHyperplanningContext : DbContext
             {
                 UserId = teacherUserId6,
                 RegistrationNumber = "REG_006",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId7,
+                RegistrationNumber = "REG_007",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId8,
+                RegistrationNumber = "REG_008",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId9,
+                RegistrationNumber = "REG_009",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId10,
+                RegistrationNumber = "REG_010",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId11,
+                RegistrationNumber = "REG_011",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId12,
+                RegistrationNumber = "REG_012",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId13,
+                RegistrationNumber = "REG_013",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId14,
+                RegistrationNumber = "REG_014",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId15,
+                RegistrationNumber = "REG_015",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId16,
+                RegistrationNumber = "REG_016",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId17,
+                RegistrationNumber = "REG_017",
                 TeacherTitleId = teacherTitleId
             }
         );
