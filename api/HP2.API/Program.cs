@@ -2,13 +2,13 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using HP2.Application;
 using HP2.Infrastructure;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
-using MediatR;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
+using HP2.Application.DTOs.Common;
+using Microsoft.AspNetCore.Mvc;
 
 internal class Program
 {
@@ -27,18 +27,41 @@ internal class Program
         // ===== Add Services =====
         builder.Services.AddApplicationServices();
         builder.Services.AddJwtService(issuer, audience, secretKey);
-
         builder.Services.AddInfrastructureServices(builder.Configuration);
-
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-        builder.Services.AddControllers();
+        builder.Services.AddControllers()
+            .ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
 
-        builder.Services.AddDbContext <HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
+        builder.Services.Configure<ApiBehaviorOptions>(options =>
+        {
+            options.InvalidModelStateResponseFactory = context =>
+            {
+                var errors = context.ModelState
+                    .Where(x => x.Value != null && x.Value.Errors.Count > 0)
+                    .SelectMany(x => x.Value!.Errors)
+                    .Select(e => string.IsNullOrWhiteSpace(e.ErrorMessage) ? "Invalid request payload." : e.ErrorMessage)
+                    .ToList();
+
+                var message = errors.Any()
+                    ? string.Join(" | ", errors)
+                    : "Invalid request payload.";
+
+                return new BadRequestObjectResult(ApiResponse<object>.Fail(message));
+            };
+        });
+
+        builder.Services.AddDbContext<HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>(options =>
             options.UseSqlServer(connectionString)
                    .LogTo(Console.WriteLine, LogLevel.Error));
 
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>
         {
@@ -63,7 +86,7 @@ internal class Program
                             Id = "Bearer"
                         }
                     },
-                    new string[] {}
+                    Array.Empty<string>()
                 }
             });
         });
@@ -84,7 +107,34 @@ internal class Program
                 ValidIssuer = issuer,
                 ValidAudience = audience,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
-                ClockSkew = TimeSpan.Zero // Par défaut EF6 ajoute 5min de tolerance
+                ClockSkew = TimeSpan.Zero
+            };
+
+            options.Events = new JwtBearerEvents
+            {
+                OnChallenge = context =>
+                {
+                    context.HandleResponse();
+                    context.Response.StatusCode = 401;
+                    context.Response.ContentType = "application/json";
+                    var jsonOptions = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase
+                    };
+                    var result = System.Text.Json.JsonSerializer.Serialize(ApiResponse<object>.Fail("You are not authenticated to access this resource. (Missing or invalid token)"), jsonOptions);
+                    return context.Response.WriteAsync(result);
+                },
+                OnForbidden = context =>
+                {
+                    context.Response.StatusCode = 403;
+                    context.Response.ContentType = "application/json";
+                    var jsonOptions = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase
+                    };
+                    var result = System.Text.Json.JsonSerializer.Serialize(ApiResponse<object>.Fail("Access denied. You do not have the required permissions to access this resource."), jsonOptions);
+                    return context.Response.WriteAsync(result);
+                }
             };
         });
 
@@ -96,14 +146,11 @@ internal class Program
             db.Database.Migrate();
         }
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-
-        // app.UseHttpsRedirection();
 
         app.UseCors(opt => opt.AllowAnyOrigin()
                               .AllowAnyMethod()
@@ -111,7 +158,6 @@ internal class Program
 
         app.UseAuthentication();
         app.UseAuthorization();
-
 
         app.MapControllers();
 
