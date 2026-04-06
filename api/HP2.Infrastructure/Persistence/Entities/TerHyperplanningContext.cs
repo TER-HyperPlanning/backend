@@ -1073,7 +1073,7 @@ public partial class TerHyperplanningContext : DbContext
 
         // SessionStatus (requis par Session)
         modelBuilder.Entity<SessionStatus>().HasData(
-            new SessionStatus { SessionStatusId = sessionStatusId, Label = "Programmé" }
+            new SessionStatus { SessionStatusId = sessionStatusId, Label = "PROGRAMME" }
         );
 
         // TeacherTitles (requis par Teacher)
@@ -1758,7 +1758,7 @@ public partial class TerHyperplanningContext : DbContext
         );
 
         // ========================================
-        // 6. SESSIONS 2025-2026 (Groupe A - M1 ILSD)
+        // 6. SESSIONS 2025-2026 (Groupes A et B - M1 ILSD)
         // ========================================
 
         var sessions = new List<Session>();
@@ -1786,7 +1786,7 @@ public partial class TerHyperplanningContext : DbContext
             teacherUserId17
         };
 
-        // Cours du track M1 ILSD initiale, hors Stage M1 (0h) qui est traité via l'évènement final.
+        // Cours du track M1 ILSD initiale, hors Stage M1 (0h) traité via l'évènement final.
         var regularCourseIds = new List<string>
         {
             c_sad,
@@ -1815,6 +1815,8 @@ public partial class TerHyperplanningContext : DbContext
         };
 
         bool IsWeekday(DateTime date) => date.DayOfWeek >= DayOfWeek.Monday && date.DayOfWeek <= DayOfWeek.Friday;
+        bool IsInExamWeek1(DateTime date) => date >= new DateTime(2026, 1, 5) && date <= new DateTime(2026, 1, 9);
+        bool IsInExamWeek2(DateTime date) => date >= new DateTime(2026, 5, 4) && date <= new DateTime(2026, 5, 7);
 
         bool IsInHolidays(DateTime date)
         {
@@ -1828,9 +1830,6 @@ public partial class TerHyperplanningContext : DbContext
 
             return false;
         }
-
-        bool IsInExamWeek1(DateTime date) => date >= new DateTime(2026, 1, 5) && date <= new DateTime(2026, 1, 9);
-        bool IsInExamWeek2(DateTime date) => date >= new DateTime(2026, 5, 4) && date <= new DateTime(2026, 5, 7);
 
         bool IsSpecialEventDate(DateTime date)
         {
@@ -1846,11 +1845,76 @@ public partial class TerHyperplanningContext : DbContext
                 && !IsSpecialEventDate(date);
         }
 
+        // Garde en mémoire les créneaux déjà attribués à un enseignant.
+        var teacherAssignments = new Dictionary<string, List<(DateTime Date, TimeSpan Start, TimeSpan End)>>();
         var teacherCursor = 0;
 
-        void AddSession(DateTime date, TimeSpan startTime, TimeSpan endTime, string courseId, string sessionType, string mode)
+        bool Overlaps(TimeSpan aStart, TimeSpan aEnd, TimeSpan bStart, TimeSpan bEnd)
         {
-            var sessionId = GetStableId($"session-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
+            return aStart < bEnd && bStart < aEnd;
+        }
+
+        bool HasTeacherConflict(string teacherId, DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            if (!teacherAssignments.TryGetValue(teacherId, out var slots))
+            {
+                return false;
+            }
+
+            foreach (var slot in slots)
+            {
+                if (slot.Date == date && Overlaps(startTime, endTime, slot.Start, slot.End))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        string PickAvailableTeacher(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            for (var offset = 0; offset < teacherIds.Count; offset++)
+            {
+                var index = (teacherCursor + offset) % teacherIds.Count;
+                var candidate = teacherIds[index];
+
+                if (!HasTeacherConflict(candidate, date, startTime, endTime))
+                {
+                    teacherCursor = (index + 1) % teacherIds.Count;
+                    return candidate;
+                }
+            }
+
+            throw new InvalidOperationException(
+                $"Aucun enseignant disponible le {date:yyyy-MM-dd} entre {startTime:hh\\:mm} et {endTime:hh\\:mm}.");
+        }
+
+        void RegisterTeacherAssignment(string teacherId, DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            if (!teacherAssignments.TryGetValue(teacherId, out var slots))
+            {
+                slots = new List<(DateTime Date, TimeSpan Start, TimeSpan End)>();
+                teacherAssignments[teacherId] = slots;
+            }
+
+            slots.Add((date, startTime, endTime));
+        }
+
+        void AddSessionForGroup(
+            string groupId,
+            string groupKey,
+            DateTime date,
+            TimeSpan startTime,
+            TimeSpan endTime,
+            string courseId,
+            string sessionType,
+            string mode)
+        {
+            var sessionId = GetStableId($"session-{groupKey}-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
+            var teacherId = PickAvailableTeacher(date, startTime, endTime);
+
+            RegisterTeacherAssignment(teacherId, date, startTime, endTime);
 
             sessions.Add(new Session
             {
@@ -1865,172 +1929,181 @@ public partial class TerHyperplanningContext : DbContext
                 RoomId = roomId
             });
 
-            attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = sessionId });
-
-            var assignedTeacherId = teacherIds[teacherCursor % teacherIds.Count];
-            teachSeed.Add(new { TeacherId = assignedTeacherId, SessionId = sessionId });
-            teacherCursor++;
+            attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
         }
 
-        var schoolStart = new DateTime(2025, 9, 8);
-        var schoolEnd = new DateTime(2026, 5, 11);
-
-        var tpMonthKeys = new HashSet<int>();
-        var rareLateMonthKeys = new HashSet<int>();
-        var isCmWeek = true;
-
-        for (var weekStart = schoolStart; weekStart <= schoolEnd; weekStart = weekStart.AddDays(7))
+        void GenerateRegularScheduleForGroup(string groupId, string groupKey)
         {
-            var regularWeekDays = new List<DateTime>();
+            var schoolStart = new DateTime(2025, 9, 8);
+            var schoolEnd = new DateTime(2026, 5, 11);
 
-            for (var dayOffset = 0; dayOffset < 5; dayOffset++)
+            var tpMonthKeys = new HashSet<int>();
+            var rareLateMonthKeys = new HashSet<int>();
+            var isCmWeek = true;
+
+            for (var weekStart = schoolStart; weekStart <= schoolEnd; weekStart = weekStart.AddDays(7))
             {
-                var date = weekStart.AddDays(dayOffset);
-                if (date > schoolEnd)
+                var regularWeekDays = new List<DateTime>();
+
+                for (var dayOffset = 0; dayOffset < 5; dayOffset++)
                 {
-                    break;
+                    var date = weekStart.AddDays(dayOffset);
+                    if (date > schoolEnd)
+                    {
+                        break;
+                    }
+
+                    if (IsRegularTeachingDay(date))
+                    {
+                        regularWeekDays.Add(date);
+                    }
                 }
 
-                if (IsRegularTeachingDay(date))
+                if (regularWeekDays.Count == 0)
                 {
-                    regularWeekDays.Add(date);
+                    continue;
                 }
-            }
 
-            if (regularWeekDays.Count == 0)
-            {
-                continue;
-            }
+                var monthKey = (regularWeekDays[0].Year * 100) + regularWeekDays[0].Month;
 
-            var monthKey = (regularWeekDays[0].Year * 100) + regularWeekDays[0].Month;
+                var isTpWeek = !tpMonthKeys.Contains(monthKey);
+                if (isTpWeek)
+                {
+                    tpMonthKeys.Add(monthKey);
+                }
 
-            // Une semaine TP par mois, sinon alternance CM/TD semaine sur deux.
-            var isTpWeek = !tpMonthKeys.Contains(monthKey);
-            if (isTpWeek)
-            {
-                tpMonthKeys.Add(monthKey);
-            }
+                var weekSessionTypeId = isTpWeek
+                    ? sessionTypeTpId
+                    : (isCmWeek ? sessionTypeId : sessionTypeTdId);
 
-            var weekSessionTypeId = isTpWeek
-                ? sessionTypeTpId
-                : (isCmWeek ? sessionTypeId : sessionTypeTdId);
+                if (!isTpWeek)
+                {
+                    isCmWeek = !isCmWeek;
+                }
 
-            if (!isTpWeek)
-            {
-                isCmWeek = !isCmWeek;
-            }
+                DateTime? rareLateDay = null;
+                if (!rareLateMonthKeys.Contains(monthKey))
+                {
+                    foreach (var day in regularWeekDays)
+                    {
+                        if (day.DayOfWeek == DayOfWeek.Thursday)
+                        {
+                            rareLateDay = day;
+                            rareLateMonthKeys.Add(monthKey);
+                            break;
+                        }
+                    }
+                }
 
-            DateTime? rareLateDay = null;
-            if (!rareLateMonthKeys.Contains(monthKey))
-            {
+                var courseQueue = new Queue<string>(regularCourseIds);
+
                 foreach (var day in regularWeekDays)
                 {
-                    if (day.DayOfWeek == DayOfWeek.Thursday)
+                    var slots = new List<(TimeSpan Start, TimeSpan End)>
                     {
-                        rareLateDay = day;
-                        rareLateMonthKeys.Add(monthKey);
-                        break;
+                        (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                        (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                        (new TimeSpan(13, 0, 0), new TimeSpan(14, 30, 0)),
+                        (new TimeSpan(14, 45, 0), new TimeSpan(16, 15, 0))
+                    };
+
+                    if (rareLateDay.HasValue && day == rareLateDay.Value)
+                    {
+                        slots = day.Month % 2 == 0
+                            ? new List<(TimeSpan Start, TimeSpan End)>
+                            {
+                                (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                                (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                                (new TimeSpan(13, 30, 0), new TimeSpan(15, 0, 0)),
+                                (new TimeSpan(15, 15, 0), new TimeSpan(16, 45, 0))
+                            }
+                            : new List<(TimeSpan Start, TimeSpan End)>
+                            {
+                                (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                                (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                                (new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)),
+                                (new TimeSpan(15, 45, 0), new TimeSpan(17, 15, 0))
+                            };
                     }
-                }
-            }
 
-            var courseQueue = new Queue<string>(regularCourseIds);
-
-            foreach (var day in regularWeekDays)
-            {
-                var slots = new List<(TimeSpan Start, TimeSpan End)>
-                {
-                    (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
-                    (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
-                    (new TimeSpan(13, 0, 0), new TimeSpan(14, 30, 0)),
-                    (new TimeSpan(14, 45, 0), new TimeSpan(16, 15, 0))
-                };
-
-                if (rareLateDay.HasValue && day == rareLateDay.Value)
-                {
-                    // Rare: une fois par mois, plages décalées en après-midi.
-                    slots = day.Month % 2 == 0
-                        ? new List<(TimeSpan Start, TimeSpan End)>
+                    foreach (var slot in slots)
+                    {
+                        if (courseQueue.Count == 0)
                         {
-                            (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
-                            (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
-                            (new TimeSpan(13, 30, 0), new TimeSpan(15, 0, 0)),
-                            (new TimeSpan(15, 15, 0), new TimeSpan(16, 45, 0))
+                            break;
                         }
-                        : new List<(TimeSpan Start, TimeSpan End)>
-                        {
-                            (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
-                            (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
-                            (new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)),
-                            (new TimeSpan(15, 45, 0), new TimeSpan(17, 15, 0))
-                        };
-                }
 
-                foreach (var slot in slots)
-                {
-                    if (courseQueue.Count == 0)
-                    {
-                        break;
+                        AddSessionForGroup(
+                            groupId,
+                            groupKey,
+                            day,
+                            slot.Start,
+                            slot.End,
+                            courseQueue.Dequeue(),
+                            weekSessionTypeId,
+                            "PRESENTIAL");
                     }
-
-                    AddSession(day, slot.Start, slot.End, courseQueue.Dequeue(), weekSessionTypeId, "PRESENTIAL");
                 }
             }
         }
 
-        // ========================================
-        // 7. ÉVÈNEMENTS SPÉCIAUX
-        // ========================================
+        void GenerateSpecialSessionsForGroup(string groupId, string groupKey)
+        {
+            AddSessionForGroup(
+                groupId,
+                groupKey,
+                new DateTime(2025, 12, 5),
+                new TimeSpan(8, 30, 0),
+                new TimeSpan(15, 0, 0),
+                c_presence,
+                sessionTypeEvenementId,
+                "PRESENTIAL");
 
-        AddSession(
-            new DateTime(2025, 12, 5),
-            new TimeSpan(8, 30, 0),
-            new TimeSpan(15, 0, 0),
-            c_presence,
-            sessionTypeEvenementId,
-            "EVENEMENT");
+            // Semaine du 05/01/2026 au 09/01/2026
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 5), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_sad, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 5), new TimeSpan(13, 30, 0), new TimeSpan(17, 30, 0), c_coo, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 0, 0), c_icl, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 6), new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0), c_ter, sessionTypeSoutenanceId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 8), new TimeSpan(9, 0, 0), new TimeSpan(12, 0, 0), c_tech, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 8), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_ro, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 9), new TimeSpan(8, 30, 0), new TimeSpan(12, 30, 0), c_fin, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 1, 9), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_droit, sessionTypeExamenId, "PRESENTIAL");
 
-        AddSession(
-            new DateTime(2026, 5, 11),
-            new TimeSpan(8, 30, 0),
-            new TimeSpan(18, 0, 0),
-            c_stage,
-            sessionTypeEvenementId,
-            "EVENEMENT");
+            // Semaine du 04/05/2026 au 07/05/2026
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 4), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_crypto, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 4), new TimeSpan(13, 30, 0), new TimeSpan(17, 30, 0), c_bdd, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 5), new TimeSpan(9, 0, 0), new TimeSpan(13, 0, 0), c_stats, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 0, 0), c_data, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 6), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_innov, sessionTypeExamenId, "PRESENTIAL");
+            AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ang, sessionTypeExamenId, "PRESENTIAL");
+        }
 
-        // ========================================
-        // 8. EXAMENS / SOUTENANCE
-        // ========================================
+        // 1) Génération du planning Groupe A
+        GenerateRegularScheduleForGroup(groupId_M1_ILSD, "group-a");
+        GenerateSpecialSessionsForGroup(groupId_M1_ILSD, "group-a");
 
-        // Semaine du 05/01/2026 au 09/01/2026:
-        // - 1 jour vide (07/01)
-        // - 1 jour avec un seul EXAMEN (06/01)
-        // - au moins 1 SOUTENANCE de 2h
-        AddSession(new DateTime(2026, 1, 5), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_sad, sessionTypeExamenId, "EXAMEN");
-        AddSession(new DateTime(2026, 1, 5), new TimeSpan(13, 30, 0), new TimeSpan(17, 30, 0), c_coo, sessionTypeExamenId, "EXAMEN");
+        // 2) Génération du planning Groupe B avec garde anti-conflit prof déjà en cours
+        GenerateRegularScheduleForGroup(groupId_M1_ILSD_B, "group-b");
+        GenerateSpecialSessionsForGroup(groupId_M1_ILSD_B, "group-b");
 
-        AddSession(new DateTime(2026, 1, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 0, 0), c_icl, sessionTypeExamenId, "EXAMEN");
-        AddSession(new DateTime(2026, 1, 6), new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0), c_ter, sessionTypeSoutenanceId, "SOUTENANCE");
+        // Evenement final commun aux deux groupes (sans enseignant affecte).
+        var sharedFinalEventSessionId = GetStableId("session-shared-m1-ilsd-final-event-20260511");
+        sessions.Add(new Session
+        {
+            SessionId = sharedFinalEventSessionId,
+            Date = new DateTime(2026, 5, 11),
+            StartTime = new TimeSpan(8, 30, 0),
+            EndTime = new TimeSpan(18, 0, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_stage,
+            SessionTypeId = sessionTypeEvenementId,
+            SessionStatusId = sessionStatusId,
+            RoomId = roomId
+        });
 
-        AddSession(new DateTime(2026, 1, 8), new TimeSpan(9, 0, 0), new TimeSpan(12, 0, 0), c_tech, sessionTypeExamenId, "EXAMEN");
-        AddSession(new DateTime(2026, 1, 8), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_ro, sessionTypeExamenId, "EXAMEN");
-
-        AddSession(new DateTime(2026, 1, 9), new TimeSpan(8, 30, 0), new TimeSpan(12, 30, 0), c_fin, sessionTypeExamenId, "EXAMEN");
-        AddSession(new DateTime(2026, 1, 9), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_droit, sessionTypeExamenId, "EXAMEN");
-
-        // Semaine du 04/05/2026 au 07/05/2026:
-        // - pas de SOUTENANCE
-        // - aucun jour vide
-        // - 2 jours avec un seul EXAMEN
-        AddSession(new DateTime(2026, 5, 4), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_crypto, sessionTypeExamenId, "EXAMEN");
-        AddSession(new DateTime(2026, 5, 4), new TimeSpan(13, 30, 0), new TimeSpan(17, 30, 0), c_bdd, sessionTypeExamenId, "EXAMEN");
-
-        AddSession(new DateTime(2026, 5, 5), new TimeSpan(9, 0, 0), new TimeSpan(13, 0, 0), c_stats, sessionTypeExamenId, "EXAMEN");
-
-        AddSession(new DateTime(2026, 5, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 0, 0), c_data, sessionTypeExamenId, "EXAMEN");
-        AddSession(new DateTime(2026, 5, 6), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_innov, sessionTypeExamenId, "EXAMEN");
-
-        AddSession(new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ang, sessionTypeExamenId, "EXAMEN");
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = sharedFinalEventSessionId });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD_B, SessionId = sharedFinalEventSessionId });
 
         modelBuilder.Entity<Session>().HasData(sessions.ToArray());
 

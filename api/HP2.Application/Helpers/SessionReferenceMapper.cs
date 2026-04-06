@@ -17,7 +17,7 @@ public static class SessionReferenceMapper
 
     public static string ToLabel(SessionStatusEnum sessionStatus) => sessionStatus switch
     {
-        SessionStatusEnum.PROGRAMME => "Programmé",
+        SessionStatusEnum.PROGRAMME => "PROGRAMME",
         _ => throw new ArgumentOutOfRangeException(nameof(sessionStatus), sessionStatus, null)
     };
     public static SessionTypeEnum ToSessionTypeEnum(string label) => label switch
@@ -33,7 +33,7 @@ public static class SessionReferenceMapper
 
     public static SessionStatusEnum ToSessionStatusEnum(string label) => label switch
     {
-        "Programmé" => SessionStatusEnum.PROGRAMME,
+        "PROGRAMME" => SessionStatusEnum.PROGRAMME,
         _ => throw new ArgumentOutOfRangeException(nameof(label), label, null)
     };
 }

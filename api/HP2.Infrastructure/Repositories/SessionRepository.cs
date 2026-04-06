@@ -13,13 +13,13 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
     public override async Task<IReadOnlyList<SessionModel>> GetAllAsync()
     {
-        return await _dbContext.Sessions
-            .Select(s => new SessionModel
+        var rows = await _dbContext.Sessions
+            .Select(s => new
             {
                 Id = s.SessionId,
                 StartDateTime = s.Date.Date + s.StartTime,
                 EndDateTime = s.Date.Date + s.EndTime,
-                Mode = Enum.Parse<SessionMode>(s.Mode, true),
+                Mode = s.Mode,
 
                 SessionTypeId = s.SessionTypeId,
                 CourseId = s.CourseId,
@@ -33,18 +33,37 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
                 Description = s.Description
             })
             .ToListAsync();
+
+        return rows
+            .Select(s => new SessionModel
+            {
+                Id = s.Id,
+                StartDateTime = s.StartDateTime,
+                EndDateTime = s.EndDateTime,
+                Mode = ParseSessionModeOrDefault(s.Mode),
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+                SessionTypeLabel = s.SessionTypeLabel,
+                SessionStatusLabel = s.SessionStatusLabel,
+                RoomNumber = s.RoomNumber,
+                CourseName = s.CourseName,
+                Description = s.Description
+            })
+            .ToList();
     }
 
     public override async Task<SessionModel?> GetByIdAsync(string id)
     {
-        return await _dbContext.Sessions
+        var row = await _dbContext.Sessions
             .Where(s => s.SessionId == id)
-            .Select(s => new SessionModel
+            .Select(s => new
             {
                 Id = s.SessionId,
                 StartDateTime = s.Date.Date + s.StartTime,
                 EndDateTime = s.Date.Date + s.EndTime,
-                Mode = Enum.Parse<SessionMode>(s.Mode, true),
+                Mode = s.Mode,
 
                 SessionTypeId = s.SessionTypeId,
                 CourseId = s.CourseId,
@@ -58,6 +77,28 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
                 Description = s.Description
             })
             .FirstOrDefaultAsync();
+
+        if (row == null)
+        {
+            return null;
+        }
+
+        return new SessionModel
+        {
+            Id = row.Id,
+            StartDateTime = row.StartDateTime,
+            EndDateTime = row.EndDateTime,
+            Mode = ParseSessionModeOrDefault(row.Mode),
+            SessionTypeId = row.SessionTypeId,
+            CourseId = row.CourseId,
+            SessionStatusId = row.SessionStatusId,
+            RoomId = row.RoomId,
+            SessionTypeLabel = row.SessionTypeLabel,
+            SessionStatusLabel = row.SessionStatusLabel,
+            RoomNumber = row.RoomNumber,
+            CourseName = row.CourseName,
+            Description = row.Description
+        };
     }
 
     public override async Task<SessionModel> AddAsync(SessionModel model)
@@ -134,5 +175,12 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
     public Task<bool> RoomExistsAsync(string roomId)
     {
         return _dbContext.Rooms.AnyAsync(x => x.RoomId == roomId);
+    }
+
+    private static SessionMode ParseSessionModeOrDefault(string? mode)
+    {
+        return Enum.TryParse<SessionMode>(mode, true, out var parsed)
+            ? parsed
+            : SessionMode.PRESENTIAL;
     }
 }
