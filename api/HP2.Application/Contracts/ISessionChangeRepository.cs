@@ -8,6 +8,7 @@ public interface ISessionChangeRepository : IAsyncRepository<SessionChangeModel>
     Task<SessionChangeModel?> GetDetailedByIdAsync(string id);
 
     Task<string?> GetChangeStatusIdByLabelAsync(string label);
+    Task<bool> RoomExistsAsync(string roomId);
 
     Task ApproveRoomChangeAsync(string sessionChangeId, string roomId, string approvedStatusId);
 

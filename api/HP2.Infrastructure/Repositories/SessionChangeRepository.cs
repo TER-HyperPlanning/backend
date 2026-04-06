@@ -307,4 +307,8 @@ public class SessionChangeRepository : RepositoryBase<SessionChangeModel>, ISess
 
         await _dbContext.SaveChangesAsync();
     }
+    public async Task<bool> RoomExistsAsync(string roomId)
+{
+    return await _dbContext.Rooms.AnyAsync(r => r.RoomId == roomId);
+}
 }
