@@ -22,7 +22,7 @@ namespace HP2.API.Controllers
 
         private static readonly Dictionary<string, string> EnumAllowedValues = new(StringComparer.OrdinalIgnoreCase)
         {
-            ["roomTypeId"] = string.Join(", ", "SalleTD", "SalleCOURS", "AMPHITHEATRE", "Salle de TD", "Salle de Cours", "Amphitheatre")
+            ["roomTypeId"] = string.Join(", ", "TD", "COURS", "INFO", "AMPHITHEATRE")
         };
 
         private static string FormatFieldWithAllowedValues(string field)
@@ -50,12 +50,13 @@ namespace HP2.API.Controllers
 
             return normalized.ToLowerInvariant() switch
             {
-                "salle de td" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
-                "salle td" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
-                "salletd" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
-                "salle de cours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
-                "salle cours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
-                "sallecours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
+                "salle de td" => (roomType = RoomTypeEnum.TD) == RoomTypeEnum.TD,
+                "salle td" => (roomType = RoomTypeEnum.TD) == RoomTypeEnum.TD,
+                "salletd" => (roomType = RoomTypeEnum.TD) == RoomTypeEnum.TD,
+                "salle de cours" => (roomType = RoomTypeEnum.COURS) == RoomTypeEnum.COURS,
+                "salle cours" => (roomType = RoomTypeEnum.COURS) == RoomTypeEnum.COURS,
+                "sallecours" => (roomType = RoomTypeEnum.COURS) == RoomTypeEnum.COURS,
+                "salle info" => (roomType = RoomTypeEnum.INFO) == RoomTypeEnum.INFO,
                 "amphitheatre" => (roomType = RoomTypeEnum.AMPHITHEATRE) == RoomTypeEnum.AMPHITHEATRE,
                 "amphitheater" => (roomType = RoomTypeEnum.AMPHITHEATRE) == RoomTypeEnum.AMPHITHEATRE,
                 _ => false

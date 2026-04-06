@@ -4,5 +4,8 @@ public enum SessionTypeEnum
 {
     CM,
     TD,
-    TP
+    TP,
+    EXAMEN,
+    SOUTENANCE,
+    EVENEMENT
 }
