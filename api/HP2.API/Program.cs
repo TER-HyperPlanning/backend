@@ -1,3 +1,4 @@
+using HP2.Application.Services.PublicHolidays;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using HP2.Application;
@@ -138,6 +139,11 @@ internal class Program
             };
         });
 
+        builder.Services.AddMemoryCache();
+        builder.Services.AddHttpClient<IPublicHolidayService, PublicHolidayService>(client =>
+        {
+            client.Timeout = TimeSpan.FromSeconds(5);
+        });
         var app = builder.Build();
 
         using (var scope = app.Services.CreateScope())
