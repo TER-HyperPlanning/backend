@@ -874,6 +874,13 @@ public partial class TerHyperplanningContext : DbContext
         var teacherUserId15 = GetStableId("user-samira-bensalem");
         var teacherUserId16 = GetStableId("user-antoine-mercier");
         var teacherUserId17 = GetStableId("user-nawal-haddad");
+        var teacherUserId18 = GetStableId("user-ikram-bouziane");
+        var teacherUserId19 = GetStableId("user-yassine-hamzaoui");
+        var teacherUserId20 = GetStableId("user-asmaa-fellah");
+        var teacherUserId21 = GetStableId("user-amin-kerroum");
+        var teacherUserId22 = GetStableId("user-siham-lakhdar");
+        var teacherUserId23 = GetStableId("user-riad-mokhtar");
+        var teacherUserId24 = GetStableId("user-nour-rahmani");
 
         var studentUserId01 = GetStableId("user-student-01");
         var studentUserId02 = GetStableId("user-student-02");
@@ -935,6 +942,36 @@ public partial class TerHyperplanningContext : DbContext
         var studentUserIdB28 = GetStableId("user-student-b-28");
         var studentUserIdB29 = GetStableId("user-student-b-29");
         var studentUserIdB30 = GetStableId("user-student-b-30");
+        var studentUserIdC01 = GetStableId("user-student-c-01");
+        var studentUserIdC02 = GetStableId("user-student-c-02");
+        var studentUserIdC03 = GetStableId("user-student-c-03");
+        var studentUserIdC04 = GetStableId("user-student-c-04");
+        var studentUserIdC05 = GetStableId("user-student-c-05");
+        var studentUserIdC06 = GetStableId("user-student-c-06");
+        var studentUserIdC07 = GetStableId("user-student-c-07");
+        var studentUserIdC08 = GetStableId("user-student-c-08");
+        var studentUserIdC09 = GetStableId("user-student-c-09");
+        var studentUserIdC10 = GetStableId("user-student-c-10");
+        var studentUserIdC11 = GetStableId("user-student-c-11");
+        var studentUserIdC12 = GetStableId("user-student-c-12");
+        var studentUserIdC13 = GetStableId("user-student-c-13");
+        var studentUserIdC14 = GetStableId("user-student-c-14");
+        var studentUserIdC15 = GetStableId("user-student-c-15");
+        var studentUserIdC16 = GetStableId("user-student-c-16");
+        var studentUserIdC17 = GetStableId("user-student-c-17");
+        var studentUserIdC18 = GetStableId("user-student-c-18");
+        var studentUserIdC19 = GetStableId("user-student-c-19");
+        var studentUserIdC20 = GetStableId("user-student-c-20");
+        var studentUserIdC21 = GetStableId("user-student-c-21");
+        var studentUserIdC22 = GetStableId("user-student-c-22");
+        var studentUserIdC23 = GetStableId("user-student-c-23");
+        var studentUserIdC24 = GetStableId("user-student-c-24");
+        var studentUserIdC25 = GetStableId("user-student-c-25");
+        var studentUserIdC26 = GetStableId("user-student-c-26");
+        var studentUserIdC27 = GetStableId("user-student-c-27");
+        var studentUserIdC28 = GetStableId("user-student-c-28");
+        var studentUserIdC29 = GetStableId("user-student-c-29");
+        var studentUserIdC30 = GetStableId("user-student-c-30");
 
         var programId = GetStableId("prog-cs");
         var trackM1_ID_App = GetStableId("track-m1-id-app");
@@ -947,6 +984,7 @@ public partial class TerHyperplanningContext : DbContext
 
         var groupId_M1_ILSD = GetStableId("group-m1-ilsd-init-a");
         var groupId_M1_ILSD_B = GetStableId("group-m1-ilsd-init-b");
+        var groupId_M1_CNS = GetStableId("group-m1-cns-init-a");
 
         // --- NOUVEAU PROGRAMME : MASTER INFORMATIQUE ---
         var programInfoId = GetStableId("prog-informatique");
@@ -977,6 +1015,13 @@ public partial class TerHyperplanningContext : DbContext
         var c_data = GetStableId("c-data"); // Analyse de données
         var c_innov = GetStableId("c-innov"); // Projet Innovation
         var c_presence = GetStableId("c-presence-universitaire"); // Présence Universitaire
+        var c_msed = GetStableId("c-msed"); // Modélisation des systèmes à événements discrets
+        var c_infocom = GetStableId("c-infocom"); // Information et communication
+        var c_algoav = GetStableId("c-algo-av"); // Algorithmique avancée
+        var c_hpc = GetStableId("c-hpc-intro"); // Introduction à l'informatique haute performance
+        var c_multiagents = GetStableId("c-multi-agents"); // Modèles et méthodes pour les systèmes multi-agents
+        var c_specverif = GetStableId("c-spec-verif"); // Spécification et vérification formelles
+        var c_ml = GetStableId("c-machine-learning"); // Machine Learning
 
         var buildingId = GetStableId("bld-A");
         var roomTypeId = GetStableId("rt-td");
@@ -1058,7 +1103,14 @@ public partial class TerHyperplanningContext : DbContext
             new Course { CourseId = c_ter, Name = "Travaux d'étude et de recherche (TER)", Code = "DATA_TER" },
             new Course { CourseId = c_data, Name = "Analyse de Données", Code = "DATA_ANALYSE" },
             new Course { CourseId = c_innov, Name = "Implémentation du Projet Innovation", Code = "DATA_INNOV" },
-            new Course { CourseId = c_presence, Name = "PRESENCE UNIVERSITAIRE", Code = "UNIV_PRESENCE" }
+            new Course { CourseId = c_presence, Name = "PRESENCE UNIVERSITAIRE", Code = "UNIV_PRESENCE" },
+            new Course { CourseId = c_msed, Name = "Modélisation des systèmes à événements discrets", Code = "CNS_MSED" },
+            new Course { CourseId = c_infocom, Name = "Information et communication", Code = "CNS_INFOCOM" },
+            new Course { CourseId = c_algoav, Name = "Algorithmique avancée", Code = "CNS_ALGO_ADV" },
+            new Course { CourseId = c_hpc, Name = "Introduction à l'informatique haute performance", Code = "CNS_HPC_INTRO" },
+            new Course { CourseId = c_multiagents, Name = "Modèles et méthodes pour les systèmes multi-agents", Code = "CNS_MULTI_AGENTS" },
+            new Course { CourseId = c_specverif, Name = "Spécification et vérification formelles", Code = "CNS_SPEC_VERIF" },
+            new Course { CourseId = c_ml, Name = "Machine Learning", Code = "CNS_ML" }
         );
 
         // SessionTypes (requis par Session)
@@ -1385,6 +1437,83 @@ public partial class TerHyperplanningContext : DbContext
                 PhoneNumber = "0134567805",
                 UserRoleId = roleTeacherId,
                 CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId18,
+                FirstName = "Ikram",
+                LastName = "Bouziane",
+                Email = "ikram.bouziane@univ.fr",
+                Password = HashPassword("pass123_ikram"),
+                PhoneNumber = "0134567806",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId19,
+                FirstName = "Yassine",
+                LastName = "Hamzaoui",
+                Email = "yassine.hamzaoui@univ.fr",
+                Password = HashPassword("pass123_yassine"),
+                PhoneNumber = "0134567807",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId20,
+                FirstName = "Asmaa",
+                LastName = "Fellah",
+                Email = "asmaa.fellah@univ.fr",
+                Password = HashPassword("pass123_asmaa"),
+                PhoneNumber = "0134567808",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId21,
+                FirstName = "Amin",
+                LastName = "Kerroum",
+                Email = "amin.kerroum@univ.fr",
+                Password = HashPassword("pass123_amin"),
+                PhoneNumber = "0134567809",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId22,
+                FirstName = "Siham",
+                LastName = "Lakhdar",
+                Email = "siham.lakhdar@univ.fr",
+                Password = HashPassword("pass123_siham"),
+                PhoneNumber = "0134567810",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId23,
+                FirstName = "Riad",
+                LastName = "Mokhtar",
+                Email = "riad.mokhtar@univ.fr",
+                Password = HashPassword("pass123_riad"),
+                PhoneNumber = "0134567811",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
+            },
+            new User
+            {
+                UserId = teacherUserId24,
+                FirstName = "Nour",
+                LastName = "Rahmani",
+                Email = "nour.rahmani@univ.fr",
+                Password = HashPassword("pass123_nour"),
+                PhoneNumber = "0134567812",
+                UserRoleId = roleTeacherId,
+                CreatedAt = DateTime.UtcNow
             }
         );
 
@@ -1490,6 +1619,48 @@ public partial class TerHyperplanningContext : DbContext
                 UserId = teacherUserId17,
                 RegistrationNumber = "REG_017",
                 TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId18,
+                RegistrationNumber = "REG_018",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId19,
+                RegistrationNumber = "REG_019",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId20,
+                RegistrationNumber = "REG_020",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId21,
+                RegistrationNumber = "REG_021",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId22,
+                RegistrationNumber = "REG_022",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId23,
+                RegistrationNumber = "REG_023",
+                TeacherTitleId = teacherTitleId
+            },
+            new Teacher
+            {
+                UserId = teacherUserId24,
+                RegistrationNumber = "REG_024",
+                TeacherTitleId = teacherTitleId
             }
         );
 
@@ -1580,6 +1751,27 @@ public partial class TerHyperplanningContext : DbContext
             new Assign { TrackId = trackM1_ILSD_App, CourseId = c_innov, HourlyVolume = 18 }
         );
 
+        // --- CURSUS M1 CNS ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM1_CNS, CourseId = c_ang, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_dev, HourlyVolume = 20 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_sad, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_data, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_ro, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_coo, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_msed, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_infocom, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_algoav, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_hpc, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_crypto, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_bdd, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_tech, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_ter, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_multiagents, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_specverif, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_CNS, CourseId = c_ml, HourlyVolume = 36 }
+        );
+
         // ========================================
         // 5. GROUPS ET STUDENTS
         // ========================================
@@ -1599,6 +1791,13 @@ public partial class TerHyperplanningContext : DbContext
                 Name = "Groupe B - M1 ILSD",
                 AcademicYear = "2025-2026",
                 TrackId = trackM1_ILSD_Init
+            },
+            new Group
+            {
+                GroupId = groupId_M1_CNS,
+                Name = "Groupe A - M1 CNS",
+                AcademicYear = "2025-2026",
+                TrackId = trackM1_CNS
             }
         );
 
@@ -1683,6 +1882,39 @@ public partial class TerHyperplanningContext : DbContext
             new User { UserId = studentUserIdB30, FirstName = "Nora", LastName = "Drissi", Email = "studentb30@etud.fr", Password = HashPassword("pass_student_b_30"), PhoneNumber = "0620000030", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow }
         );
 
+        modelBuilder.Entity<User>().HasData(
+            new User { UserId = studentUserIdC01, FirstName = "Amine", LastName = "Belaid", Email = "studentc01@etud.fr", Password = HashPassword("pass_student_c_01"), PhoneNumber = "0630000001", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC02, FirstName = "Yara", LastName = "Cohen", Email = "studentc02@etud.fr", Password = HashPassword("pass_student_c_02"), PhoneNumber = "0630000002", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC03, FirstName = "Nadir", LastName = "Daoud", Email = "studentc03@etud.fr", Password = HashPassword("pass_student_c_03"), PhoneNumber = "0630000003", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC04, FirstName = "Mila", LastName = "Elmi", Email = "studentc04@etud.fr", Password = HashPassword("pass_student_c_04"), PhoneNumber = "0630000004", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC05, FirstName = "Ilyan", LastName = "Fares", Email = "studentc05@etud.fr", Password = HashPassword("pass_student_c_05"), PhoneNumber = "0630000005", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC06, FirstName = "Sofia", LastName = "Ghali", Email = "studentc06@etud.fr", Password = HashPassword("pass_student_c_06"), PhoneNumber = "0630000006", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC07, FirstName = "Rayan", LastName = "Haddou", Email = "studentc07@etud.fr", Password = HashPassword("pass_student_c_07"), PhoneNumber = "0630000007", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC08, FirstName = "Ines", LastName = "Ibnou", Email = "studentc08@etud.fr", Password = HashPassword("pass_student_c_08"), PhoneNumber = "0630000008", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC09, FirstName = "Walid", LastName = "Jaziri", Email = "studentc09@etud.fr", Password = HashPassword("pass_student_c_09"), PhoneNumber = "0630000009", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC10, FirstName = "Nora", LastName = "Kassem", Email = "studentc10@etud.fr", Password = HashPassword("pass_student_c_10"), PhoneNumber = "0630000010", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC11, FirstName = "Youssef", LastName = "Lahmar", Email = "studentc11@etud.fr", Password = HashPassword("pass_student_c_11"), PhoneNumber = "0630000011", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC12, FirstName = "Meriem", LastName = "Mabrouk", Email = "studentc12@etud.fr", Password = HashPassword("pass_student_c_12"), PhoneNumber = "0630000012", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC13, FirstName = "Karim", LastName = "Naceur", Email = "studentc13@etud.fr", Password = HashPassword("pass_student_c_13"), PhoneNumber = "0630000013", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC14, FirstName = "Lina", LastName = "Ouali", Email = "studentc14@etud.fr", Password = HashPassword("pass_student_c_14"), PhoneNumber = "0630000014", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC15, FirstName = "Samy", LastName = "Perron", Email = "studentc15@etud.fr", Password = HashPassword("pass_student_c_15"), PhoneNumber = "0630000015", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC16, FirstName = "Aya", LastName = "Quinet", Email = "studentc16@etud.fr", Password = HashPassword("pass_student_c_16"), PhoneNumber = "0630000016", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC17, FirstName = "Hicham", LastName = "Rami", Email = "studentc17@etud.fr", Password = HashPassword("pass_student_c_17"), PhoneNumber = "0630000017", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC18, FirstName = "Leila", LastName = "Saber", Email = "studentc18@etud.fr", Password = HashPassword("pass_student_c_18"), PhoneNumber = "0630000018", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC19, FirstName = "Adel", LastName = "Tahar", Email = "studentc19@etud.fr", Password = HashPassword("pass_student_c_19"), PhoneNumber = "0630000019", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC20, FirstName = "Maya", LastName = "Ury", Email = "studentc20@etud.fr", Password = HashPassword("pass_student_c_20"), PhoneNumber = "0630000020", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC21, FirstName = "Bilal", LastName = "Varet", Email = "studentc21@etud.fr", Password = HashPassword("pass_student_c_21"), PhoneNumber = "0630000021", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC22, FirstName = "Salma", LastName = "Wahbi", Email = "studentc22@etud.fr", Password = HashPassword("pass_student_c_22"), PhoneNumber = "0630000022", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC23, FirstName = "Anis", LastName = "Xavier", Email = "studentc23@etud.fr", Password = HashPassword("pass_student_c_23"), PhoneNumber = "0630000023", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC24, FirstName = "Nesrine", LastName = "Yala", Email = "studentc24@etud.fr", Password = HashPassword("pass_student_c_24"), PhoneNumber = "0630000024", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC25, FirstName = "Imad", LastName = "Zeroual", Email = "studentc25@etud.fr", Password = HashPassword("pass_student_c_25"), PhoneNumber = "0630000025", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC26, FirstName = "Sara", LastName = "Amrani", Email = "studentc26@etud.fr", Password = HashPassword("pass_student_c_26"), PhoneNumber = "0630000026", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC27, FirstName = "Tarek", LastName = "Bouzidi", Email = "studentc27@etud.fr", Password = HashPassword("pass_student_c_27"), PhoneNumber = "0630000027", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC28, FirstName = "Nour", LastName = "Chami", Email = "studentc28@etud.fr", Password = HashPassword("pass_student_c_28"), PhoneNumber = "0630000028", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC29, FirstName = "Ilias", LastName = "Djebar", Email = "studentc29@etud.fr", Password = HashPassword("pass_student_c_29"), PhoneNumber = "0630000029", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = studentUserIdC30, FirstName = "Rim", LastName = "Essafi", Email = "studentc30@etud.fr", Password = HashPassword("pass_student_c_30"), PhoneNumber = "0630000030", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow }
+        );
+
         modelBuilder.Entity<Student>().HasData(
             new Student
             {
@@ -1755,6 +1987,39 @@ public partial class TerHyperplanningContext : DbContext
             new Student { UserId = studentUserIdB28, GroupId = groupId_M1_ILSD_B },
             new Student { UserId = studentUserIdB29, GroupId = groupId_M1_ILSD_B },
             new Student { UserId = studentUserIdB30, GroupId = groupId_M1_ILSD_B }
+        );
+
+        modelBuilder.Entity<Student>().HasData(
+            new Student { UserId = studentUserIdC01, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC02, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC03, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC04, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC05, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC06, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC07, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC08, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC09, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC10, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC11, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC12, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC13, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC14, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC15, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC16, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC17, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC18, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC19, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC20, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC21, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC22, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC23, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC24, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC25, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC26, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC27, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC28, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC29, GroupId = groupId_M1_CNS },
+            new Student { UserId = studentUserIdC30, GroupId = groupId_M1_CNS }
         );
 
         // ========================================
