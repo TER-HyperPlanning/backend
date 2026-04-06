@@ -1024,7 +1024,11 @@ public partial class TerHyperplanningContext : DbContext
         var c_ml = GetStableId("c-machine-learning"); // Machine Learning
 
         var buildingId = GetStableId("bld-A");
-        var roomTypeId = GetStableId("rt-td");
+        var buildingIdIbgbi = GetStableId("bld-ibgbi");
+        var roomTypeTdId = GetStableId("rt-td");
+        var roomTypeCoursId = GetStableId("rt-cours");
+        var roomTypeInfoId = GetStableId("rt-info");
+        var roomTypeAmphiId = GetStableId("rt-amphitheatre");
         var roomId = GetStableId("room-a102");
 
         var sessionTypeId = GetStableId("st-cm");
@@ -1063,12 +1067,16 @@ public partial class TerHyperplanningContext : DbContext
 
         // Buildings (requis par Room)
         modelBuilder.Entity<Building>().HasData(
-            new Building { BuildingId = buildingId, Name = "Bâtiment A" }
+            new Building { BuildingId = buildingId, Name = "Bâtiment A" },
+            new Building { BuildingId = buildingIdIbgbi, Name = "IBGBI" }
         );
 
         // RoomTypes (requis par Room)
         modelBuilder.Entity<RoomType>().HasData(
-            new RoomType { RoomTypeId = roomTypeId, Name = "Salle de TD" }
+            new RoomType { RoomTypeId = roomTypeTdId, Name = "TD" },
+            new RoomType { RoomTypeId = roomTypeCoursId, Name = "COURS" },
+            new RoomType { RoomTypeId = roomTypeInfoId, Name = "INFO" },
+            new RoomType { RoomTypeId = roomTypeAmphiId, Name = "AMPHITHEATRE" }
         );
 
         // Rooms (requis par Session)
@@ -1080,8 +1088,18 @@ public partial class TerHyperplanningContext : DbContext
                 Capacity = 40,
                 IsAvailable = true,
                 BuildingId = buildingId,
-                RoomTypeId = roomTypeId
-            }
+                RoomTypeId = roomTypeTdId
+            },
+            new Room { RoomId = GetStableId("room-ibgbi-1"), RoomNumber = "IBGBI-1", Capacity = 36, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeTdId },
+            new Room { RoomId = GetStableId("room-ibgbi-2"), RoomNumber = "IBGBI-2", Capacity = 36, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeTdId },
+            new Room { RoomId = GetStableId("room-ibgbi-3"), RoomNumber = "IBGBI-3", Capacity = 36, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeTdId },
+            new Room { RoomId = GetStableId("room-ibgbi-4"), RoomNumber = "IBGBI-4", Capacity = 36, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeTdId },
+            new Room { RoomId = GetStableId("room-ibgbi-5"), RoomNumber = "IBGBI-5", Capacity = 36, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeTdId },
+            new Room { RoomId = GetStableId("room-ibgbi-6"), RoomNumber = "IBGBI-6", Capacity = 50, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeCoursId },
+            new Room { RoomId = GetStableId("room-ibgbi-7"), RoomNumber = "IBGBI-7", Capacity = 50, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeCoursId },
+            new Room { RoomId = GetStableId("room-ibgbi-8"), RoomNumber = "IBGBI-8", Capacity = 50, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeCoursId },
+            new Room { RoomId = GetStableId("room-ibgbi-9"), RoomNumber = "IBGBI-9", Capacity = 50, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeCoursId },
+            new Room { RoomId = GetStableId("room-ibgbi-10"), RoomNumber = "IBGBI-10", Capacity = 50, IsAvailable = true, BuildingId = buildingIdIbgbi, RoomTypeId = roomTypeCoursId }
         );
 
         // Courses (requis par Session et Assign)
@@ -2071,6 +2089,60 @@ public partial class TerHyperplanningContext : DbContext
             c_innov
         };
 
+        // Cours M1 CNS demandés (S1/S2 uniquement).
+        var cnsSemester1CourseIds = new List<string>
+        {
+            c_ang,
+            c_dev,
+            c_sad,
+            c_data,
+            c_ro,
+            c_coo,
+            c_msed,
+            c_infocom
+        };
+
+        var cnsSemester2CourseIds = new List<string>
+        {
+            c_algoav,
+            c_hpc,
+            c_crypto,
+            c_bdd,
+            c_tech,
+            c_ter,
+            c_multiagents,
+            c_specverif,
+            c_ml
+        };
+
+        var teacherIdsCns = new List<string>
+        {
+            teacherUserId,
+            teacherUserId2,
+            teacherUserId3,
+            teacherUserId4,
+            teacherUserId5,
+            teacherUserId6,
+            teacherUserId7,
+            teacherUserId8,
+            teacherUserId9,
+            teacherUserId10,
+            teacherUserId11,
+            teacherUserId12,
+            teacherUserId13,
+            teacherUserId14,
+            teacherUserId15,
+            teacherUserId16,
+            teacherUserId17,
+            teacherUserId18,
+            teacherUserId19,
+            teacherUserId20,
+            teacherUserId21,
+            teacherUserId22,
+            teacherUserId23,
+            teacherUserId24
+        };
+
         var holidayRanges = new List<(DateTime Start, DateTime End)>
         {
             (new DateTime(2025, 10, 27), new DateTime(2025, 10, 31)),
@@ -2113,6 +2185,25 @@ public partial class TerHyperplanningContext : DbContext
         // Garde en mémoire les créneaux déjà attribués à un enseignant.
         var teacherAssignments = new Dictionary<string, List<(DateTime Date, TimeSpan Start, TimeSpan End)>>();
         var teacherCursor = 0;
+        var teacherCursorCns = 0;
+
+        var ibgbiRoomIds = new List<string>
+        {
+            GetStableId("room-ibgbi-1"),
+            GetStableId("room-ibgbi-2"),
+            GetStableId("room-ibgbi-3"),
+            GetStableId("room-ibgbi-4"),
+            GetStableId("room-ibgbi-5"),
+            GetStableId("room-ibgbi-6"),
+            GetStableId("room-ibgbi-7"),
+            GetStableId("room-ibgbi-8"),
+            GetStableId("room-ibgbi-9"),
+            GetStableId("room-ibgbi-10")
+        };
+
+        var roomAssignments = new Dictionary<string, List<(DateTime Date, TimeSpan Start, TimeSpan End)>>();
+        var roomDailyByGroup = new Dictionary<string, string>();
+        var roomCursor = 0;
 
         bool Overlaps(TimeSpan aStart, TimeSpan aEnd, TimeSpan bStart, TimeSpan bEnd)
         {
@@ -2122,6 +2213,24 @@ public partial class TerHyperplanningContext : DbContext
         bool HasTeacherConflict(string teacherId, DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
             if (!teacherAssignments.TryGetValue(teacherId, out var slots))
+            {
+                return false;
+            }
+
+            foreach (var slot in slots)
+            {
+                if (slot.Date == date && Overlaps(startTime, endTime, slot.Start, slot.End))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        bool HasRoomConflict(string roomIdValue, DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            if (!roomAssignments.TryGetValue(roomIdValue, out var slots))
             {
                 return false;
             }
@@ -2155,12 +2264,73 @@ public partial class TerHyperplanningContext : DbContext
                 $"Aucun enseignant disponible le {date:yyyy-MM-dd} entre {startTime:hh\\:mm} et {endTime:hh\\:mm}.");
         }
 
+        string PickAvailableTeacherFromPool(List<string> teacherPool, ref int teacherPoolCursor, DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            for (var offset = 0; offset < teacherPool.Count; offset++)
+            {
+                var index = (teacherPoolCursor + offset) % teacherPool.Count;
+                var candidate = teacherPool[index];
+
+                if (!HasTeacherConflict(candidate, date, startTime, endTime))
+                {
+                    teacherPoolCursor = (index + 1) % teacherPool.Count;
+                    return candidate;
+                }
+            }
+
+            throw new InvalidOperationException(
+                $"Aucun enseignant disponible le {date:yyyy-MM-dd} entre {startTime:hh\\:mm} et {endTime:hh\\:mm}.");
+        }
+
         void RegisterTeacherAssignment(string teacherId, DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
             if (!teacherAssignments.TryGetValue(teacherId, out var slots))
             {
                 slots = new List<(DateTime Date, TimeSpan Start, TimeSpan End)>();
                 teacherAssignments[teacherId] = slots;
+            }
+
+            slots.Add((date, startTime, endTime));
+        }
+
+        string BuildGroupDateRoomKey(string groupIdValue, DateTime date)
+        {
+            return $"{groupIdValue}:{date:yyyyMMdd}";
+        }
+
+        string PickAvailableRoom(string groupIdValue, DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            var groupDateKey = BuildGroupDateRoomKey(groupIdValue, date);
+
+            if (roomDailyByGroup.TryGetValue(groupDateKey, out var preferredRoomId)
+                && !HasRoomConflict(preferredRoomId, date, startTime, endTime))
+            {
+                return preferredRoomId;
+            }
+
+            for (var offset = 0; offset < ibgbiRoomIds.Count; offset++)
+            {
+                var index = (roomCursor + offset) % ibgbiRoomIds.Count;
+                var candidateRoomId = ibgbiRoomIds[index];
+
+                if (!HasRoomConflict(candidateRoomId, date, startTime, endTime))
+                {
+                    roomCursor = (index + 1) % ibgbiRoomIds.Count;
+                    roomDailyByGroup[groupDateKey] = candidateRoomId;
+                    return candidateRoomId;
+                }
+            }
+
+            throw new InvalidOperationException(
+                $"Aucune salle IBGBI disponible le {date:yyyy-MM-dd} entre {startTime:hh\\:mm} et {endTime:hh\\:mm}.");
+        }
+
+        void RegisterRoomAssignment(string roomIdValue, DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            if (!roomAssignments.TryGetValue(roomIdValue, out var slots))
+            {
+                slots = new List<(DateTime Date, TimeSpan Start, TimeSpan End)>();
+                roomAssignments[roomIdValue] = slots;
             }
 
             slots.Add((date, startTime, endTime));
@@ -2178,8 +2348,10 @@ public partial class TerHyperplanningContext : DbContext
         {
             var sessionId = GetStableId($"session-{groupKey}-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
             var teacherId = PickAvailableTeacher(date, startTime, endTime);
+            var assignedRoomId = PickAvailableRoom(groupId, date, startTime, endTime);
 
             RegisterTeacherAssignment(teacherId, date, startTime, endTime);
+            RegisterRoomAssignment(assignedRoomId, date, startTime, endTime);
 
             sessions.Add(new Session
             {
@@ -2191,7 +2363,43 @@ public partial class TerHyperplanningContext : DbContext
                 CourseId = courseId,
                 SessionTypeId = sessionType,
                 SessionStatusId = sessionStatusId,
-                RoomId = roomId
+                RoomId = assignedRoomId
+            });
+
+            attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
+        }
+
+        void AddSessionForGroupWithTeacherPool(
+            string groupId,
+            string groupKey,
+            DateTime date,
+            TimeSpan startTime,
+            TimeSpan endTime,
+            string courseId,
+            string sessionType,
+            string mode,
+            List<string> teacherPool,
+            ref int teacherPoolCursor)
+        {
+            var sessionId = GetStableId($"session-{groupKey}-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
+            var teacherId = PickAvailableTeacherFromPool(teacherPool, ref teacherPoolCursor, date, startTime, endTime);
+            var assignedRoomId = PickAvailableRoom(groupId, date, startTime, endTime);
+
+            RegisterTeacherAssignment(teacherId, date, startTime, endTime);
+            RegisterRoomAssignment(assignedRoomId, date, startTime, endTime);
+
+            sessions.Add(new Session
+            {
+                SessionId = sessionId,
+                Date = date,
+                StartTime = startTime,
+                EndTime = endTime,
+                Mode = mode,
+                CourseId = courseId,
+                SessionTypeId = sessionType,
+                SessionStatusId = sessionStatusId,
+                RoomId = assignedRoomId
             });
 
             attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
@@ -2344,6 +2552,151 @@ public partial class TerHyperplanningContext : DbContext
             AddSessionForGroup(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ang, sessionTypeExamenId, "PRESENTIAL");
         }
 
+        void GenerateRegularScheduleForGroupCustomCourses(
+            string groupId,
+            string groupKey,
+            DateTime schoolStart,
+            DateTime schoolEnd,
+            IReadOnlyList<string> courseIds,
+            List<string> teacherPool,
+            ref int teacherPoolCursor)
+        {
+            var tpMonthKeys = new HashSet<int>();
+            var rareLateMonthKeys = new HashSet<int>();
+            var isCmWeek = true;
+
+            for (var weekStart = schoolStart; weekStart <= schoolEnd; weekStart = weekStart.AddDays(7))
+            {
+                var regularWeekDays = new List<DateTime>();
+
+                for (var dayOffset = 0; dayOffset < 5; dayOffset++)
+                {
+                    var date = weekStart.AddDays(dayOffset);
+                    if (date > schoolEnd)
+                    {
+                        break;
+                    }
+
+                    if (IsRegularTeachingDay(date))
+                    {
+                        regularWeekDays.Add(date);
+                    }
+                }
+
+                if (regularWeekDays.Count == 0)
+                {
+                    continue;
+                }
+
+                var monthKey = (regularWeekDays[0].Year * 100) + regularWeekDays[0].Month;
+
+                var isTpWeek = !tpMonthKeys.Contains(monthKey);
+                if (isTpWeek)
+                {
+                    tpMonthKeys.Add(monthKey);
+                }
+
+                var weekSessionTypeId = isTpWeek
+                    ? sessionTypeTpId
+                    : (isCmWeek ? sessionTypeId : sessionTypeTdId);
+
+                if (!isTpWeek)
+                {
+                    isCmWeek = !isCmWeek;
+                }
+
+                DateTime? rareLateDay = null;
+                if (!rareLateMonthKeys.Contains(monthKey))
+                {
+                    foreach (var day in regularWeekDays)
+                    {
+                        if (day.DayOfWeek == DayOfWeek.Thursday)
+                        {
+                            rareLateDay = day;
+                            rareLateMonthKeys.Add(monthKey);
+                            break;
+                        }
+                    }
+                }
+
+                var courseQueue = new Queue<string>(courseIds);
+
+                foreach (var day in regularWeekDays)
+                {
+                    var slots = new List<(TimeSpan Start, TimeSpan End)>
+                    {
+                        (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                        (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                        (new TimeSpan(13, 0, 0), new TimeSpan(14, 30, 0)),
+                        (new TimeSpan(14, 45, 0), new TimeSpan(16, 15, 0))
+                    };
+
+                    if (rareLateDay.HasValue && day == rareLateDay.Value)
+                    {
+                        slots = day.Month % 2 == 0
+                            ? new List<(TimeSpan Start, TimeSpan End)>
+                            {
+                                (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                                (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                                (new TimeSpan(13, 30, 0), new TimeSpan(15, 0, 0)),
+                                (new TimeSpan(15, 15, 0), new TimeSpan(16, 45, 0))
+                            }
+                            : new List<(TimeSpan Start, TimeSpan End)>
+                            {
+                                (new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)),
+                                (new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0)),
+                                (new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)),
+                                (new TimeSpan(15, 45, 0), new TimeSpan(17, 15, 0))
+                            };
+                    }
+
+                    foreach (var slot in slots)
+                    {
+                        if (courseQueue.Count == 0)
+                        {
+                            break;
+                        }
+
+                        AddSessionForGroupWithTeacherPool(
+                            groupId,
+                            groupKey,
+                            day,
+                            slot.Start,
+                            slot.End,
+                            courseQueue.Dequeue(),
+                            weekSessionTypeId,
+                            "PRESENTIAL",
+                            teacherPool,
+                            ref teacherPoolCursor);
+                    }
+                }
+            }
+        }
+
+        void GenerateSpecialSessionsForCnsGroup(string groupId, string groupKey, List<string> teacherPool, ref int teacherPoolCursor)
+        {
+            // Semaine du 05/01/2026 au 09/01/2026 - examens S1
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 5), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_sad, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 5), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_coo, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_ro, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 6), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_data, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 7), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_dev, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 7), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_ang, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 8), new TimeSpan(9, 0, 0), new TimeSpan(12, 0, 0), c_msed, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 1, 9), new TimeSpan(9, 0, 0), new TimeSpan(12, 0, 0), c_infocom, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+
+            // Semaine du 04/05/2026 au 07/05/2026 - examens S2
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 4), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_algoav, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 4), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_hpc, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 5), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_crypto, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 5), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_bdd, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 6), new TimeSpan(8, 30, 0), new TimeSpan(11, 30, 0), c_tech, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 6), new TimeSpan(13, 30, 0), new TimeSpan(16, 30, 0), c_ter, sessionTypeSoutenanceId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(8, 0, 0), new TimeSpan(10, 0, 0), c_multiagents, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(10, 30, 0), new TimeSpan(12, 30, 0), c_specverif, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+            AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ml, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
+        }
+
         // 1) Génération du planning Groupe A
         GenerateRegularScheduleForGroup(groupId_M1_ILSD, "group-a");
         GenerateSpecialSessionsForGroup(groupId_M1_ILSD, "group-a");
@@ -2352,8 +2705,31 @@ public partial class TerHyperplanningContext : DbContext
         GenerateRegularScheduleForGroup(groupId_M1_ILSD_B, "group-b");
         GenerateSpecialSessionsForGroup(groupId_M1_ILSD_B, "group-b");
 
+        // 3) Génération du planning Groupe A - M1 CNS (sans évènement final de stage)
+        GenerateRegularScheduleForGroupCustomCourses(
+            groupId_M1_CNS,
+            "group-cns-s1",
+            new DateTime(2025, 9, 8),
+            new DateTime(2025, 12, 19),
+            cnsSemester1CourseIds,
+            teacherIdsCns,
+            ref teacherCursorCns);
+
+        GenerateRegularScheduleForGroupCustomCourses(
+            groupId_M1_CNS,
+            "group-cns-s2",
+            new DateTime(2026, 1, 12),
+            new DateTime(2026, 5, 11),
+            cnsSemester2CourseIds,
+            teacherIdsCns,
+            ref teacherCursorCns);
+
+        GenerateSpecialSessionsForCnsGroup(groupId_M1_CNS, "group-cns", teacherIdsCns, ref teacherCursorCns);
+
         // Evenement final commun aux deux groupes (sans enseignant affecte).
         var sharedFinalEventSessionId = GetStableId("session-shared-m1-ilsd-final-event-20260511");
+        var sharedFinalEventRoomId = PickAvailableRoom(groupId_M1_ILSD, new DateTime(2026, 5, 11), new TimeSpan(8, 30, 0), new TimeSpan(18, 0, 0));
+        RegisterRoomAssignment(sharedFinalEventRoomId, new DateTime(2026, 5, 11), new TimeSpan(8, 30, 0), new TimeSpan(18, 0, 0));
         sessions.Add(new Session
         {
             SessionId = sharedFinalEventSessionId,
@@ -2364,7 +2740,7 @@ public partial class TerHyperplanningContext : DbContext
             CourseId = c_stage,
             SessionTypeId = sessionTypeEvenementId,
             SessionStatusId = sessionStatusId,
-            RoomId = roomId
+            RoomId = sharedFinalEventRoomId
         });
 
         attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = sharedFinalEventSessionId });
