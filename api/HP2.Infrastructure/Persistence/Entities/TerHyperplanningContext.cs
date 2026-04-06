@@ -1199,61 +1199,11 @@ public partial class TerHyperplanningContext : DbContext
 
         // Admin User
         modelBuilder.Entity<User>().HasData(
-            new User
-            {
-                UserId = adminUserId,
-                FirstName = "System",
-                LastName = "Admin",
-                Email = "admin@univ.fr",
-                Password = HashPassword("admin123"),
-                PhoneNumber = "0000000000",
-                UserRoleId = roleAdminId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = adminUserId2,
-                FirstName = "Claire",
-                LastName = "Bernard",
-                Email = "claire.bernard@univ.fr",
-                Password = HashPassword("admin123"),
-                PhoneNumber = "0102030401",
-                UserRoleId = roleAdminId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = adminUserId3,
-                FirstName = "Julien",
-                LastName = "Moreau",
-                Email = "julien.moreau@univ.fr",
-                Password = HashPassword("admin123"),
-                PhoneNumber = "0102030402",
-                UserRoleId = roleAdminId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = adminUserId4,
-                FirstName = "Fatima",
-                LastName = "Zahra",
-                Email = "fatima.zahra@univ.fr",
-                Password = HashPassword("admin123"),
-                PhoneNumber = "0102030403",
-                UserRoleId = roleAdminId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = adminUserId5,
-                FirstName = "Pierre",
-                LastName = "Louis",
-                Email = "pierre.louis@univ.fr",
-                Password = HashPassword("admin123"),
-                PhoneNumber = "0102030404",
-                UserRoleId = roleAdminId,
-                CreatedAt = DateTime.UtcNow
-            }
+            new User { UserId = adminUserId, FirstName = "System", LastName = "Admin", Email = "admin@univ.fr", Password = HashPassword("admin123"), PhoneNumber = "0000000000", UserRoleId = roleAdminId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = adminUserId2, FirstName = "Claire", LastName = "Bernard", Email = "claire.bernard@univ.fr", Password = HashPassword("admin123"), PhoneNumber = "0102030401", UserRoleId = roleAdminId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = adminUserId3, FirstName = "Julien", LastName = "Moreau", Email = "julien.moreau@univ.fr", Password = HashPassword("admin123"), PhoneNumber = "0102030402", UserRoleId = roleAdminId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = adminUserId4, FirstName = "Fatima", LastName = "Zahra", Email = "fatima.zahra@univ.fr", Password = HashPassword("admin123"), PhoneNumber = "0102030403", UserRoleId = roleAdminId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = adminUserId5, FirstName = "Pierre", LastName = "Louis", Email = "pierre.louis@univ.fr", Password = HashPassword("admin123"), PhoneNumber = "0102030404", UserRoleId = roleAdminId, CreatedAt = DateTime.UtcNow }
         );
 
         modelBuilder.Entity<Admin>().HasData(
@@ -1266,420 +1216,57 @@ public partial class TerHyperplanningContext : DbContext
 
         // Teacher User
         modelBuilder.Entity<User>().HasData(
-            new User
-            {
-                UserId = teacherUserId,
-                FirstName = "Marie",
-                LastName = "Curie",
-                Email = "marie.curie@univ.fr",
-                Password = HashPassword("pass123"),
-                PhoneNumber = "0123456789",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            }
-        );
-
-        modelBuilder.Entity<User>().HasData(
-            new User
-            {
-                UserId = teacherUserId2,
-                FirstName = "Alain",
-                LastName = "Durand",
-                Email = "alain.durand@univ.fr",
-                Password = HashPassword("pass123_alain"),
-                PhoneNumber = "0134567890",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId3,
-                FirstName = "Sophie",
-                LastName = "Lambert",
-                Email = "sophie.lambert@univ.fr",
-                Password = HashPassword("pass123_sophie"),
-                PhoneNumber = "0134567891",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId4,
-                FirstName = "Karim",
-                LastName = "Benali",
-                Email = "karim.benali@univ.fr",
-                Password = HashPassword("pass123_karim"),
-                PhoneNumber = "0134567892",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId5,
-                FirstName = "Claire",
-                LastName = "Morel",
-                Email = "claire.morel@univ.fr",
-                Password = HashPassword("pass123_claire"),
-                PhoneNumber = "0134567893",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId6,
-                FirstName = "Thomas",
-                LastName = "Renault",
-                Email = "thomas.renault@univ.fr",
-                Password = HashPassword("pass123_thomas"),
-                PhoneNumber = "0134567894",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId7,
-                FirstName = "Celine",
-                LastName = "Robert",
-                Email = "celine.robert@univ.fr",
-                Password = HashPassword("pass123_celine"),
-                PhoneNumber = "0134567895",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId8,
-                FirstName = "Maxime",
-                LastName = "Legrand",
-                Email = "maxime.legrand@univ.fr",
-                Password = HashPassword("pass123_maxime"),
-                PhoneNumber = "0134567896",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId9,
-                FirstName = "Amina",
-                LastName = "Cherif",
-                Email = "amina.cherif@univ.fr",
-                Password = HashPassword("pass123_amina"),
-                PhoneNumber = "0134567897",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId10,
-                FirstName = "Nicolas",
-                LastName = "Fabre",
-                Email = "nicolas.fabre@univ.fr",
-                Password = HashPassword("pass123_nicolas"),
-                PhoneNumber = "0134567898",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId11,
-                FirstName = "Elodie",
-                LastName = "Guerin",
-                Email = "elodie.guerin@univ.fr",
-                Password = HashPassword("pass123_elodie"),
-                PhoneNumber = "0134567899",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId12,
-                FirstName = "Mehdi",
-                LastName = "Kaci",
-                Email = "mehdi.kaci@univ.fr",
-                Password = HashPassword("pass123_mehdi"),
-                PhoneNumber = "0134567800",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId13,
-                FirstName = "Julie",
-                LastName = "Paul",
-                Email = "julie.paul@univ.fr",
-                Password = HashPassword("pass123_julie"),
-                PhoneNumber = "0134567801",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId14,
-                FirstName = "Adrien",
-                LastName = "Morin",
-                Email = "adrien.morin@univ.fr",
-                Password = HashPassword("pass123_adrien"),
-                PhoneNumber = "0134567802",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId15,
-                FirstName = "Samira",
-                LastName = "Bensalem",
-                Email = "samira.bensalem@univ.fr",
-                Password = HashPassword("pass123_samira"),
-                PhoneNumber = "0134567803",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId16,
-                FirstName = "Antoine",
-                LastName = "Mercier",
-                Email = "antoine.mercier@univ.fr",
-                Password = HashPassword("pass123_antoine"),
-                PhoneNumber = "0134567804",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId17,
-                FirstName = "Nawal",
-                LastName = "Haddad",
-                Email = "nawal.haddad@univ.fr",
-                Password = HashPassword("pass123_nawal"),
-                PhoneNumber = "0134567805",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId18,
-                FirstName = "Ikram",
-                LastName = "Bouziane",
-                Email = "ikram.bouziane@univ.fr",
-                Password = HashPassword("pass123_ikram"),
-                PhoneNumber = "0134567806",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId19,
-                FirstName = "Yassine",
-                LastName = "Hamzaoui",
-                Email = "yassine.hamzaoui@univ.fr",
-                Password = HashPassword("pass123_yassine"),
-                PhoneNumber = "0134567807",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId20,
-                FirstName = "Asmaa",
-                LastName = "Fellah",
-                Email = "asmaa.fellah@univ.fr",
-                Password = HashPassword("pass123_asmaa"),
-                PhoneNumber = "0134567808",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId21,
-                FirstName = "Amin",
-                LastName = "Kerroum",
-                Email = "amin.kerroum@univ.fr",
-                Password = HashPassword("pass123_amin"),
-                PhoneNumber = "0134567809",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId22,
-                FirstName = "Siham",
-                LastName = "Lakhdar",
-                Email = "siham.lakhdar@univ.fr",
-                Password = HashPassword("pass123_siham"),
-                PhoneNumber = "0134567810",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId23,
-                FirstName = "Riad",
-                LastName = "Mokhtar",
-                Email = "riad.mokhtar@univ.fr",
-                Password = HashPassword("pass123_riad"),
-                PhoneNumber = "0134567811",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            },
-            new User
-            {
-                UserId = teacherUserId24,
-                FirstName = "Nour",
-                LastName = "Rahmani",
-                Email = "nour.rahmani@univ.fr",
-                Password = HashPassword("pass123_nour"),
-                PhoneNumber = "0134567812",
-                UserRoleId = roleTeacherId,
-                CreatedAt = DateTime.UtcNow
-            }
+            new User { UserId = teacherUserId, FirstName = "Marie", LastName = "Curie", Email = "marie.curie@univ.fr", Password = HashPassword("pass123"), PhoneNumber = "0123456789", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId2, FirstName = "Alain", LastName = "Durand", Email = "alain.durand@univ.fr", Password = HashPassword("pass123_alain"), PhoneNumber = "0134567890", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId3, FirstName = "Sophie", LastName = "Lambert", Email = "sophie.lambert@univ.fr", Password = HashPassword("pass123_sophie"), PhoneNumber = "0134567891", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId4, FirstName = "Karim", LastName = "Benali", Email = "karim.benali@univ.fr", Password = HashPassword("pass123_karim"), PhoneNumber = "0134567892", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId5, FirstName = "Claire", LastName = "Morel", Email = "claire.morel@univ.fr", Password = HashPassword("pass123_claire"), PhoneNumber = "0134567893", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId6, FirstName = "Thomas", LastName = "Renault", Email = "thomas.renault@univ.fr", Password = HashPassword("pass123_thomas"), PhoneNumber = "0134567894", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId7, FirstName = "Celine", LastName = "Robert", Email = "celine.robert@univ.fr", Password = HashPassword("pass123_celine"), PhoneNumber = "0134567895", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId8, FirstName = "Maxime", LastName = "Legrand", Email = "maxime.legrand@univ.fr", Password = HashPassword("pass123_maxime"), PhoneNumber = "0134567896", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId9, FirstName = "Amina", LastName = "Cherif", Email = "amina.cherif@univ.fr", Password = HashPassword("pass123_amina"), PhoneNumber = "0134567897", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId10, FirstName = "Nicolas", LastName = "Fabre", Email = "nicolas.fabre@univ.fr", Password = HashPassword("pass123_nicolas"), PhoneNumber = "0134567898", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId11, FirstName = "Elodie", LastName = "Guerin", Email = "elodie.guerin@univ.fr", Password = HashPassword("pass123_elodie"), PhoneNumber = "0134567899", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId12, FirstName = "Mehdi", LastName = "Kaci", Email = "mehdi.kaci@univ.fr", Password = HashPassword("pass123_mehdi"), PhoneNumber = "0134567800", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId13, FirstName = "Julie", LastName = "Paul", Email = "julie.paul@univ.fr", Password = HashPassword("pass123_julie"), PhoneNumber = "0134567801", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId14, FirstName = "Adrien", LastName = "Morin", Email = "adrien.morin@univ.fr", Password = HashPassword("pass123_adrien"), PhoneNumber = "0134567802", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId15, FirstName = "Samira", LastName = "Bensalem", Email = "samira.bensalem@univ.fr", Password = HashPassword("pass123_samira"), PhoneNumber = "0134567803", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId16, FirstName = "Antoine", LastName = "Mercier", Email = "antoine.mercier@univ.fr", Password = HashPassword("pass123_antoine"), PhoneNumber = "0134567804", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId17, FirstName = "Nawal", LastName = "Haddad", Email = "nawal.haddad@univ.fr", Password = HashPassword("pass123_nawal"), PhoneNumber = "0134567805", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId18, FirstName = "Ikram", LastName = "Bouziane", Email = "ikram.bouziane@univ.fr", Password = HashPassword("pass123_ikram"), PhoneNumber = "0134567806", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId19, FirstName = "Yassine", LastName = "Hamzaoui", Email = "yassine.hamzaoui@univ.fr", Password = HashPassword("pass123_yassine"), PhoneNumber = "0134567807", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId20, FirstName = "Asmaa", LastName = "Fellah", Email = "asmaa.fellah@univ.fr", Password = HashPassword("pass123_asmaa"), PhoneNumber = "0134567808", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId21, FirstName = "Amin", LastName = "Kerroum", Email = "amin.kerroum@univ.fr", Password = HashPassword("pass123_amin"), PhoneNumber = "0134567809", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId22, FirstName = "Siham", LastName = "Lakhdar", Email = "siham.lakhdar@univ.fr", Password = HashPassword("pass123_siham"), PhoneNumber = "0134567810", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId23, FirstName = "Riad", LastName = "Mokhtar", Email = "riad.mokhtar@univ.fr", Password = HashPassword("pass123_riad"), PhoneNumber = "0134567811", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow },
+            new User { UserId = teacherUserId24, FirstName = "Nour", LastName = "Rahmani", Email = "nour.rahmani@univ.fr", Password = HashPassword("pass123_nour"), PhoneNumber = "0134567812", UserRoleId = roleTeacherId, CreatedAt = DateTime.UtcNow }
         );
 
         modelBuilder.Entity<Teacher>().HasData(
-            new Teacher
-            {
-                UserId = teacherUserId,
-                RegistrationNumber = "REG_001",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId2,
-                RegistrationNumber = "REG_002",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId3,
-                RegistrationNumber = "REG_003",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId4,
-                RegistrationNumber = "REG_004",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId5,
-                RegistrationNumber = "REG_005",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId6,
-                RegistrationNumber = "REG_006",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId7,
-                RegistrationNumber = "REG_007",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId8,
-                RegistrationNumber = "REG_008",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId9,
-                RegistrationNumber = "REG_009",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId10,
-                RegistrationNumber = "REG_010",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId11,
-                RegistrationNumber = "REG_011",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId12,
-                RegistrationNumber = "REG_012",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId13,
-                RegistrationNumber = "REG_013",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId14,
-                RegistrationNumber = "REG_014",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId15,
-                RegistrationNumber = "REG_015",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId16,
-                RegistrationNumber = "REG_016",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId17,
-                RegistrationNumber = "REG_017",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId18,
-                RegistrationNumber = "REG_018",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId19,
-                RegistrationNumber = "REG_019",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId20,
-                RegistrationNumber = "REG_020",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId21,
-                RegistrationNumber = "REG_021",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId22,
-                RegistrationNumber = "REG_022",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId23,
-                RegistrationNumber = "REG_023",
-                TeacherTitleId = teacherTitleId
-            },
-            new Teacher
-            {
-                UserId = teacherUserId24,
-                RegistrationNumber = "REG_024",
-                TeacherTitleId = teacherTitleId
-            }
+            new Teacher { UserId = teacherUserId, RegistrationNumber = "REG_001", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId2, RegistrationNumber = "REG_002", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId3, RegistrationNumber = "REG_003", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId4, RegistrationNumber = "REG_004", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId5, RegistrationNumber = "REG_005", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId6, RegistrationNumber = "REG_006", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId7, RegistrationNumber = "REG_007", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId8, RegistrationNumber = "REG_008", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId9, RegistrationNumber = "REG_009", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId10, RegistrationNumber = "REG_010", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId11, RegistrationNumber = "REG_011", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId12, RegistrationNumber = "REG_012", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId13, RegistrationNumber = "REG_013", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId14, RegistrationNumber = "REG_014", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId15, RegistrationNumber = "REG_015", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId16, RegistrationNumber = "REG_016", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId17, RegistrationNumber = "REG_017", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId18, RegistrationNumber = "REG_018", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId19, RegistrationNumber = "REG_019", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId20, RegistrationNumber = "REG_020", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId21, RegistrationNumber = "REG_021", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId22, RegistrationNumber = "REG_022", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId23, RegistrationNumber = "REG_023", TeacherTitleId = teacherTitleId },
+            new Teacher { UserId = teacherUserId24, RegistrationNumber = "REG_024", TeacherTitleId = teacherTitleId }
         );
 
         // ========================================
@@ -1821,20 +1408,7 @@ public partial class TerHyperplanningContext : DbContext
 
         // Student User
         modelBuilder.Entity<User>().HasData(
-            new User
-            {
-                UserId = studentUserId,
-                FirstName = "Jean",
-                LastName = "Dupont",
-                Email = "jean.dupont@etud.fr",
-                Password = HashPassword("pass_jean"),
-                PhoneNumber = "0987654321",
-                UserRoleId = roleStudentId,
-                CreatedAt = DateTime.UtcNow
-            }
-        );
-
-        modelBuilder.Entity<User>().HasData(
+            new User { UserId = studentUserId, FirstName = "Jean", LastName = "Dupont", Email = "jean.dupont@etud.fr", Password = HashPassword("pass_jean"), PhoneNumber = "0987654321", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
             new User { UserId = studentUserId01, FirstName = "Lucas", LastName = "Martin", Email = "lucas.martin01@etud.fr", Password = HashPassword("pass_student_01"), PhoneNumber = "0610000001", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
             new User { UserId = studentUserId02, FirstName = "Emma", LastName = "Bernard", Email = "emma.bernard02@etud.fr", Password = HashPassword("pass_student_02"), PhoneNumber = "0610000002", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
             new User { UserId = studentUserId03, FirstName = "Hugo", LastName = "Petit", Email = "hugo.petit03@etud.fr", Password = HashPassword("pass_student_03"), PhoneNumber = "0610000003", UserRoleId = roleStudentId, CreatedAt = DateTime.UtcNow },
@@ -1934,14 +1508,7 @@ public partial class TerHyperplanningContext : DbContext
         );
 
         modelBuilder.Entity<Student>().HasData(
-            new Student
-            {
-                UserId = studentUserId,
-                GroupId = groupId_M1_ILSD
-            }
-        );
-
-        modelBuilder.Entity<Student>().HasData(
+            new Student { UserId = studentUserId, GroupId = groupId_M1_ILSD },
             new Student { UserId = studentUserId01, GroupId = groupId_M1_ILSD },
             new Student { UserId = studentUserId02, GroupId = groupId_M1_ILSD },
             new Student { UserId = studentUserId03, GroupId = groupId_M1_ILSD },
