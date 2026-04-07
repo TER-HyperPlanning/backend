@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    [Migration("20260406133919_NormalizeRoomTypeName")]
-    partial class NormalizeRoomTypeName
+    [Migration("20260407195010_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -6636,15 +6636,6 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            RoomId = "bc224e06-c4ec-98e8-c492-0a528471d3eb",
-                            BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
-                            Capacity = 36,
-                            IsAvailable = true,
-                            RoomNumber = "IBGBI-0",
-                            RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
-                        },
-                        new
-                        {
                             RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
@@ -6683,10 +6674,10 @@ namespace HP2.Infrastructure.Migrations
                         {
                             RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
-                            Capacity = 50,
+                            Capacity = 36,
                             IsAvailable = true,
                             RoomNumber = "IBGBI-5",
-                            RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
+                            RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
                         new
                         {
@@ -6722,6 +6713,15 @@ namespace HP2.Infrastructure.Migrations
                             Capacity = 50,
                             IsAvailable = true,
                             RoomNumber = "IBGBI-9",
+                            RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
+                        },
+                        new
+                        {
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
+                            Capacity = 50,
+                            IsAvailable = true,
+                            RoomNumber = "IBGBI-10",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         });
                 });
@@ -6855,7 +6855,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -6867,7 +6867,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -6879,7 +6879,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -6891,7 +6891,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -6903,7 +6903,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -6915,7 +6915,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -6927,7 +6927,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -6939,7 +6939,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -6951,7 +6951,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -6963,7 +6963,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -6975,7 +6975,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -6987,7 +6987,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -6999,7 +6999,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7011,7 +7011,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7023,7 +7023,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -7035,7 +7035,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7047,7 +7047,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7059,7 +7059,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7071,7 +7071,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7083,7 +7083,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7095,7 +7095,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7107,7 +7107,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7119,7 +7119,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7131,7 +7131,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7143,7 +7143,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7155,7 +7155,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7167,7 +7167,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7179,7 +7179,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7191,7 +7191,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7203,7 +7203,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7215,7 +7215,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7227,7 +7227,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7239,7 +7239,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7251,7 +7251,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7263,7 +7263,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7275,7 +7275,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7287,7 +7287,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7299,7 +7299,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7311,7 +7311,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7323,7 +7323,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7335,7 +7335,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7347,7 +7347,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7359,7 +7359,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7371,7 +7371,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7383,7 +7383,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7395,7 +7395,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7407,7 +7407,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7419,7 +7419,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7431,7 +7431,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7443,7 +7443,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7455,7 +7455,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7467,7 +7467,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7479,7 +7479,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7491,7 +7491,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7503,7 +7503,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7515,7 +7515,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7527,7 +7527,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7539,7 +7539,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7551,7 +7551,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7563,7 +7563,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7575,7 +7575,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7587,7 +7587,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7599,7 +7599,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7611,7 +7611,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7623,7 +7623,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7635,7 +7635,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7647,7 +7647,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7659,7 +7659,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7671,7 +7671,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7683,7 +7683,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7695,7 +7695,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7707,7 +7707,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7719,7 +7719,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7731,7 +7731,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7743,7 +7743,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -7755,7 +7755,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7767,7 +7767,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7779,7 +7779,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7791,7 +7791,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7803,7 +7803,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7815,7 +7815,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7827,7 +7827,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7839,7 +7839,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7851,7 +7851,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7863,7 +7863,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7875,7 +7875,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7887,7 +7887,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7899,7 +7899,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7911,7 +7911,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7923,7 +7923,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7935,7 +7935,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7947,7 +7947,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -7959,7 +7959,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -7971,7 +7971,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -7983,7 +7983,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -7995,7 +7995,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8007,7 +8007,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8019,7 +8019,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8031,7 +8031,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8043,7 +8043,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8055,7 +8055,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8067,7 +8067,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8079,7 +8079,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8091,7 +8091,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8103,7 +8103,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8115,7 +8115,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8127,7 +8127,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8139,7 +8139,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8151,7 +8151,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8163,7 +8163,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8175,7 +8175,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8187,7 +8187,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8199,7 +8199,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8211,7 +8211,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8223,7 +8223,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8235,7 +8235,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8247,7 +8247,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8259,7 +8259,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8271,7 +8271,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8283,7 +8283,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -8295,7 +8295,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8307,7 +8307,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8319,7 +8319,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8331,7 +8331,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8343,7 +8343,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8355,7 +8355,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8367,7 +8367,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8379,7 +8379,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8391,7 +8391,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8403,7 +8403,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8415,7 +8415,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8427,7 +8427,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8439,7 +8439,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8451,7 +8451,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8463,7 +8463,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8475,7 +8475,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8487,7 +8487,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8499,7 +8499,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8511,7 +8511,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8523,7 +8523,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8535,7 +8535,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8547,7 +8547,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8559,7 +8559,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8571,7 +8571,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8583,7 +8583,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8595,7 +8595,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8607,7 +8607,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8619,7 +8619,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8631,7 +8631,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8643,7 +8643,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8655,7 +8655,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8667,7 +8667,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8679,7 +8679,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8691,7 +8691,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8703,7 +8703,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8715,7 +8715,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8727,7 +8727,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8739,7 +8739,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8751,7 +8751,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8763,7 +8763,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8775,7 +8775,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8787,7 +8787,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8799,7 +8799,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8811,7 +8811,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8823,7 +8823,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8835,7 +8835,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8847,7 +8847,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8859,7 +8859,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8871,7 +8871,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8883,7 +8883,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8895,7 +8895,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8907,7 +8907,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8919,7 +8919,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8931,7 +8931,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8943,7 +8943,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -8955,7 +8955,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -8967,7 +8967,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -8979,7 +8979,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -8991,7 +8991,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9003,7 +9003,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -9015,7 +9015,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9027,7 +9027,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9039,7 +9039,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9051,7 +9051,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9063,7 +9063,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9075,7 +9075,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9087,7 +9087,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9099,7 +9099,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9111,7 +9111,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9123,7 +9123,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9135,7 +9135,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9147,7 +9147,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9159,7 +9159,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9171,7 +9171,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9183,7 +9183,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9195,7 +9195,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9207,7 +9207,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9219,7 +9219,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9231,7 +9231,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9243,7 +9243,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9255,7 +9255,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9267,7 +9267,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9279,7 +9279,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9291,7 +9291,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9303,7 +9303,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9315,7 +9315,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9327,7 +9327,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9339,7 +9339,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9351,7 +9351,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9363,7 +9363,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9375,7 +9375,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9387,7 +9387,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9399,7 +9399,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9411,7 +9411,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9423,7 +9423,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9435,7 +9435,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9447,7 +9447,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9459,7 +9459,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9471,7 +9471,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9483,7 +9483,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9495,7 +9495,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9507,7 +9507,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9519,7 +9519,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9531,7 +9531,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9543,7 +9543,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -9555,7 +9555,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9567,7 +9567,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9579,7 +9579,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9591,7 +9591,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9603,7 +9603,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9615,7 +9615,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9627,7 +9627,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9639,7 +9639,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9651,7 +9651,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9663,7 +9663,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9675,7 +9675,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9687,7 +9687,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9699,7 +9699,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9711,7 +9711,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9723,7 +9723,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9735,7 +9735,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9747,7 +9747,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9759,7 +9759,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9771,7 +9771,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9783,7 +9783,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9795,7 +9795,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9807,7 +9807,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9819,7 +9819,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9831,7 +9831,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9843,7 +9843,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9855,7 +9855,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9867,7 +9867,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9879,7 +9879,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9891,7 +9891,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9903,7 +9903,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9915,7 +9915,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9927,7 +9927,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9939,7 +9939,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9951,7 +9951,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -9963,7 +9963,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -9975,7 +9975,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -9987,7 +9987,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -9999,7 +9999,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10011,7 +10011,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10023,7 +10023,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10035,7 +10035,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10047,7 +10047,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10059,7 +10059,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10071,7 +10071,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10083,7 +10083,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -10095,7 +10095,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10107,7 +10107,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10119,7 +10119,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10131,7 +10131,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10143,7 +10143,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10155,7 +10155,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10167,7 +10167,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10179,7 +10179,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10191,7 +10191,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10203,7 +10203,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10215,7 +10215,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10227,7 +10227,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10239,7 +10239,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10251,7 +10251,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10263,7 +10263,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10275,7 +10275,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10287,7 +10287,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10299,7 +10299,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10311,7 +10311,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10323,7 +10323,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10335,7 +10335,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10347,7 +10347,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10359,7 +10359,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10371,7 +10371,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10383,7 +10383,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10395,7 +10395,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10407,7 +10407,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10419,7 +10419,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10431,7 +10431,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10443,7 +10443,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10455,7 +10455,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10467,7 +10467,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10479,7 +10479,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10491,7 +10491,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10503,7 +10503,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10515,7 +10515,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10527,7 +10527,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10539,7 +10539,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10551,7 +10551,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10563,7 +10563,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10575,7 +10575,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10587,7 +10587,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10599,7 +10599,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10611,7 +10611,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10623,7 +10623,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10635,7 +10635,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10647,7 +10647,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10659,7 +10659,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10671,7 +10671,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10683,7 +10683,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10695,7 +10695,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10707,7 +10707,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10719,7 +10719,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10731,7 +10731,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10743,7 +10743,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10755,7 +10755,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10767,7 +10767,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10779,7 +10779,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10791,7 +10791,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10803,7 +10803,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -10815,7 +10815,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10827,7 +10827,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10839,7 +10839,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10851,7 +10851,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10863,7 +10863,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10875,7 +10875,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10887,7 +10887,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10899,7 +10899,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10911,7 +10911,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10923,7 +10923,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10935,7 +10935,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10947,7 +10947,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -10959,7 +10959,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -10971,7 +10971,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -10983,7 +10983,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -10995,7 +10995,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11007,7 +11007,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11019,7 +11019,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11031,7 +11031,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11043,7 +11043,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11055,7 +11055,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11067,7 +11067,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11079,7 +11079,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11091,7 +11091,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11103,7 +11103,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11115,7 +11115,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11127,7 +11127,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11139,7 +11139,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11151,7 +11151,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11163,7 +11163,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11175,7 +11175,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11187,7 +11187,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11199,7 +11199,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11211,7 +11211,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11223,7 +11223,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11235,7 +11235,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11247,7 +11247,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11259,7 +11259,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11271,7 +11271,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11283,7 +11283,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11295,7 +11295,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11307,7 +11307,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11319,7 +11319,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11331,7 +11331,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11343,7 +11343,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11355,7 +11355,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11367,7 +11367,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11379,7 +11379,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11391,7 +11391,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11403,7 +11403,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11415,7 +11415,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11427,7 +11427,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11439,7 +11439,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11451,7 +11451,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11463,7 +11463,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11475,7 +11475,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11487,7 +11487,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11499,7 +11499,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11511,7 +11511,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11523,7 +11523,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -11535,7 +11535,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11547,7 +11547,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11559,7 +11559,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11571,7 +11571,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11583,7 +11583,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11595,7 +11595,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11607,7 +11607,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11619,7 +11619,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11631,7 +11631,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11643,7 +11643,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11655,7 +11655,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11667,7 +11667,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11679,7 +11679,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11691,7 +11691,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11703,7 +11703,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11715,7 +11715,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11727,7 +11727,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11739,7 +11739,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11751,7 +11751,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11763,7 +11763,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11775,7 +11775,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11787,7 +11787,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11799,7 +11799,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11811,7 +11811,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11823,7 +11823,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11835,7 +11835,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11847,7 +11847,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11859,7 +11859,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11871,7 +11871,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11883,7 +11883,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11895,7 +11895,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11907,7 +11907,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -11919,7 +11919,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -11931,7 +11931,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -11943,7 +11943,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7d12ed93-7363-9686-49c3-77ad3ccb2da0",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11955,7 +11955,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11967,7 +11967,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -11979,7 +11979,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -11991,7 +11991,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "0fc6aed4-11a4-4bca-c1f3-c7060734aa3c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -12003,7 +12003,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -12015,7 +12015,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -12027,7 +12027,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12039,7 +12039,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -12051,7 +12051,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12063,7 +12063,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -12075,7 +12075,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 13, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -12087,7 +12087,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12099,7 +12099,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -12111,7 +12111,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -12123,7 +12123,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12135,7 +12135,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12147,7 +12147,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12159,7 +12159,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12171,7 +12171,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12183,7 +12183,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12195,7 +12195,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12207,7 +12207,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12219,7 +12219,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12231,7 +12231,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12243,7 +12243,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12255,7 +12255,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12267,7 +12267,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12279,7 +12279,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12291,7 +12291,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -12303,7 +12303,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12315,7 +12315,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12327,7 +12327,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12339,7 +12339,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12351,7 +12351,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12363,7 +12363,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12375,7 +12375,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12387,7 +12387,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12399,7 +12399,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12411,7 +12411,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12423,7 +12423,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12435,7 +12435,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12447,7 +12447,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12459,7 +12459,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12471,7 +12471,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12483,7 +12483,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12495,7 +12495,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12507,7 +12507,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12519,7 +12519,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12531,7 +12531,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12543,7 +12543,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12555,7 +12555,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12567,7 +12567,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12579,7 +12579,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12591,7 +12591,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12603,7 +12603,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12615,7 +12615,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12627,7 +12627,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12639,7 +12639,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12651,7 +12651,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12663,7 +12663,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12675,7 +12675,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12687,7 +12687,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12699,7 +12699,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12711,7 +12711,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12723,7 +12723,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12735,7 +12735,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12747,7 +12747,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12759,7 +12759,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12771,7 +12771,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12783,7 +12783,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12795,7 +12795,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12807,7 +12807,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12819,7 +12819,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12831,7 +12831,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12843,7 +12843,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12855,7 +12855,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12867,7 +12867,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12879,7 +12879,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12891,7 +12891,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12903,7 +12903,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12915,7 +12915,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12927,7 +12927,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12939,7 +12939,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12951,7 +12951,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -12963,7 +12963,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -12975,7 +12975,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -12987,7 +12987,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -12999,7 +12999,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13011,7 +13011,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -13023,7 +13023,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13035,7 +13035,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13047,7 +13047,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13059,7 +13059,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13071,7 +13071,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13083,7 +13083,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13095,7 +13095,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13107,7 +13107,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13119,7 +13119,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13131,7 +13131,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13143,7 +13143,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13155,7 +13155,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13167,7 +13167,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13179,7 +13179,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13191,7 +13191,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13203,7 +13203,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13215,7 +13215,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13227,7 +13227,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13239,7 +13239,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13251,7 +13251,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13263,7 +13263,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13275,7 +13275,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13287,7 +13287,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13299,7 +13299,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13311,7 +13311,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13323,7 +13323,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13335,7 +13335,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13347,7 +13347,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13359,7 +13359,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13371,7 +13371,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13383,7 +13383,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13395,7 +13395,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13407,7 +13407,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13419,7 +13419,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13431,7 +13431,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13443,7 +13443,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13455,7 +13455,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13467,7 +13467,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13479,7 +13479,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13491,7 +13491,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13503,7 +13503,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13515,7 +13515,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13527,7 +13527,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13539,7 +13539,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13551,7 +13551,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -13563,7 +13563,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13575,7 +13575,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13587,7 +13587,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13599,7 +13599,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13611,7 +13611,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13623,7 +13623,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13635,7 +13635,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13647,7 +13647,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13659,7 +13659,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13671,7 +13671,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13683,7 +13683,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13695,7 +13695,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13707,7 +13707,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13719,7 +13719,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13731,7 +13731,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13743,7 +13743,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13755,7 +13755,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13767,7 +13767,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13779,7 +13779,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13791,7 +13791,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13803,7 +13803,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13815,7 +13815,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13827,7 +13827,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13839,7 +13839,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13851,7 +13851,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13863,7 +13863,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13875,7 +13875,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13887,7 +13887,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13899,7 +13899,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13911,7 +13911,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13923,7 +13923,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13935,7 +13935,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13947,7 +13947,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -13959,7 +13959,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -13971,7 +13971,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -13983,7 +13983,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -13995,7 +13995,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14007,7 +14007,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14019,7 +14019,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14031,7 +14031,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14043,7 +14043,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14055,7 +14055,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14067,7 +14067,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14079,7 +14079,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14091,7 +14091,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14103,7 +14103,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14115,7 +14115,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14127,7 +14127,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14139,7 +14139,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14151,7 +14151,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14163,7 +14163,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14175,7 +14175,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14187,7 +14187,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14199,7 +14199,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14211,7 +14211,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14223,7 +14223,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14235,7 +14235,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14247,7 +14247,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14259,7 +14259,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14271,7 +14271,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -14283,7 +14283,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14295,7 +14295,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14307,7 +14307,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14319,7 +14319,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14331,7 +14331,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14343,7 +14343,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14355,7 +14355,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14367,7 +14367,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14379,7 +14379,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14391,7 +14391,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14403,7 +14403,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14415,7 +14415,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14427,7 +14427,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14439,7 +14439,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14451,7 +14451,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14463,7 +14463,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14475,7 +14475,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14487,7 +14487,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14499,7 +14499,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14511,7 +14511,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14523,7 +14523,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14535,7 +14535,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14547,7 +14547,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14559,7 +14559,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14571,7 +14571,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14583,7 +14583,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14595,7 +14595,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14607,7 +14607,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14619,7 +14619,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14631,7 +14631,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14643,7 +14643,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14655,7 +14655,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14667,7 +14667,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14679,7 +14679,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14691,7 +14691,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14703,7 +14703,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14715,7 +14715,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14727,7 +14727,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14739,7 +14739,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14751,7 +14751,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14763,7 +14763,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14775,7 +14775,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14787,7 +14787,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14799,7 +14799,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14811,7 +14811,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -14823,7 +14823,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14835,7 +14835,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14847,7 +14847,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14859,7 +14859,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14871,7 +14871,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14883,7 +14883,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14895,7 +14895,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14907,7 +14907,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14919,7 +14919,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14931,7 +14931,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14943,7 +14943,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14955,7 +14955,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14967,7 +14967,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14979,7 +14979,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14991,7 +14991,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15003,7 +15003,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15015,7 +15015,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15027,7 +15027,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15039,7 +15039,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15051,7 +15051,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15063,7 +15063,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15075,7 +15075,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15087,7 +15087,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15099,7 +15099,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15111,7 +15111,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15123,7 +15123,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15135,7 +15135,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15147,7 +15147,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15159,7 +15159,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15171,7 +15171,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15183,7 +15183,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15195,7 +15195,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15207,7 +15207,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15219,7 +15219,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15231,7 +15231,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15243,7 +15243,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15255,7 +15255,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15267,7 +15267,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15279,7 +15279,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15291,7 +15291,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15303,7 +15303,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15315,7 +15315,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15327,7 +15327,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15339,7 +15339,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15351,7 +15351,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -15363,7 +15363,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15375,7 +15375,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15387,7 +15387,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15399,7 +15399,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15411,7 +15411,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15423,7 +15423,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15435,7 +15435,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15447,7 +15447,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15459,7 +15459,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15471,7 +15471,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15483,7 +15483,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15495,7 +15495,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15507,7 +15507,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15519,7 +15519,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15531,7 +15531,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15543,7 +15543,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15555,7 +15555,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15567,7 +15567,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15579,7 +15579,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15591,7 +15591,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15603,7 +15603,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15615,7 +15615,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15627,7 +15627,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15639,7 +15639,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15651,7 +15651,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15663,7 +15663,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15675,7 +15675,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15687,7 +15687,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15699,7 +15699,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15711,7 +15711,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15723,7 +15723,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15735,7 +15735,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15747,7 +15747,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15759,7 +15759,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15771,7 +15771,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15783,7 +15783,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15795,7 +15795,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15807,7 +15807,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15819,7 +15819,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15831,7 +15831,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15843,7 +15843,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15855,7 +15855,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15867,7 +15867,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15879,7 +15879,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15891,7 +15891,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15903,7 +15903,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15915,7 +15915,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15927,7 +15927,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15939,7 +15939,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15951,7 +15951,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15963,7 +15963,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15975,7 +15975,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15987,7 +15987,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15999,7 +15999,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16011,7 +16011,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16023,7 +16023,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16035,7 +16035,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16047,7 +16047,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16059,7 +16059,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16071,7 +16071,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -16083,7 +16083,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16095,7 +16095,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16107,7 +16107,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16119,7 +16119,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16131,7 +16131,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16143,7 +16143,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16155,7 +16155,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16167,7 +16167,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16179,7 +16179,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16191,7 +16191,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16203,7 +16203,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16215,7 +16215,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16227,7 +16227,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16239,7 +16239,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16251,7 +16251,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16263,7 +16263,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16275,7 +16275,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16287,7 +16287,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16299,7 +16299,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16311,7 +16311,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16323,7 +16323,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16335,7 +16335,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16347,7 +16347,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16359,7 +16359,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16371,7 +16371,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16383,7 +16383,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16395,7 +16395,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16407,7 +16407,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16419,7 +16419,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16431,7 +16431,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16443,7 +16443,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16455,7 +16455,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16467,7 +16467,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16479,7 +16479,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16491,7 +16491,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16503,7 +16503,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16515,7 +16515,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16527,7 +16527,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16539,7 +16539,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16551,7 +16551,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16563,7 +16563,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16575,7 +16575,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16587,7 +16587,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16599,7 +16599,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16611,7 +16611,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16623,7 +16623,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16635,7 +16635,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16647,7 +16647,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16659,7 +16659,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16671,7 +16671,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16683,7 +16683,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16695,7 +16695,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16707,7 +16707,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16719,7 +16719,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16731,7 +16731,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16743,7 +16743,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16755,7 +16755,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16767,7 +16767,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16779,7 +16779,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16791,7 +16791,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -16803,7 +16803,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16815,7 +16815,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16827,7 +16827,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16839,7 +16839,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16851,7 +16851,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16863,7 +16863,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16875,7 +16875,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16887,7 +16887,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16899,7 +16899,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16911,7 +16911,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16923,7 +16923,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16935,7 +16935,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16947,7 +16947,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16959,7 +16959,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16971,7 +16971,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16983,7 +16983,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16995,7 +16995,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17007,7 +17007,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17019,7 +17019,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17031,7 +17031,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17043,7 +17043,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17055,7 +17055,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17067,7 +17067,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17079,7 +17079,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17091,7 +17091,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17103,7 +17103,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17115,7 +17115,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17127,7 +17127,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17139,7 +17139,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17151,7 +17151,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17163,7 +17163,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17175,7 +17175,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17187,7 +17187,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17199,7 +17199,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17211,7 +17211,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7d12ed93-7363-9686-49c3-77ad3ccb2da0",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17223,7 +17223,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17235,7 +17235,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -17247,7 +17247,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17259,7 +17259,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "0fc6aed4-11a4-4bca-c1f3-c7060734aa3c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -17271,7 +17271,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -17283,7 +17283,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -17295,7 +17295,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17307,7 +17307,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -17319,7 +17319,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17331,7 +17331,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -17343,7 +17343,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 13, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -17355,7 +17355,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17367,7 +17367,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -17379,7 +17379,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -17391,7 +17391,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17403,7 +17403,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17415,7 +17415,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17427,7 +17427,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17439,7 +17439,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17451,7 +17451,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17463,7 +17463,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17475,7 +17475,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17487,7 +17487,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17499,7 +17499,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17511,7 +17511,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17523,7 +17523,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17535,7 +17535,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17547,7 +17547,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17559,7 +17559,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17571,7 +17571,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17583,7 +17583,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17595,7 +17595,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17607,7 +17607,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17619,7 +17619,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17631,7 +17631,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17643,7 +17643,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17655,7 +17655,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17667,7 +17667,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17679,7 +17679,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17691,7 +17691,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17703,7 +17703,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17715,7 +17715,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17727,7 +17727,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17739,7 +17739,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17751,7 +17751,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17763,7 +17763,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17775,7 +17775,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17787,7 +17787,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17799,7 +17799,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17811,7 +17811,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17823,7 +17823,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17835,7 +17835,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17847,7 +17847,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17859,7 +17859,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17871,7 +17871,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17883,7 +17883,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17895,7 +17895,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17907,7 +17907,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17919,7 +17919,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17931,7 +17931,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17943,7 +17943,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17955,7 +17955,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17967,7 +17967,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17979,7 +17979,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17991,7 +17991,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18003,7 +18003,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18015,7 +18015,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18027,7 +18027,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18039,7 +18039,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18051,7 +18051,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18063,7 +18063,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18075,7 +18075,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18087,7 +18087,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18099,7 +18099,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18111,7 +18111,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18123,7 +18123,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18135,7 +18135,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18147,7 +18147,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18159,7 +18159,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18171,7 +18171,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18183,7 +18183,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18195,7 +18195,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18207,7 +18207,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18219,7 +18219,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18231,7 +18231,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18243,7 +18243,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18255,7 +18255,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18267,7 +18267,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18279,7 +18279,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18291,7 +18291,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18303,7 +18303,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18315,7 +18315,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18327,7 +18327,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18339,7 +18339,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18351,7 +18351,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18363,7 +18363,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18375,7 +18375,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18387,7 +18387,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18399,7 +18399,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18411,7 +18411,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18423,7 +18423,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18435,7 +18435,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18447,7 +18447,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18459,7 +18459,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18471,7 +18471,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18483,7 +18483,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18495,7 +18495,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18507,7 +18507,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18519,7 +18519,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18531,7 +18531,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18543,7 +18543,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18555,7 +18555,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18567,7 +18567,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18579,7 +18579,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18591,7 +18591,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18603,7 +18603,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18615,7 +18615,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18627,7 +18627,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18639,7 +18639,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18651,7 +18651,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18663,7 +18663,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18675,7 +18675,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18687,7 +18687,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18699,7 +18699,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18711,7 +18711,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18723,7 +18723,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18735,7 +18735,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18747,7 +18747,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18759,7 +18759,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18771,7 +18771,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18783,7 +18783,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18795,7 +18795,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18807,7 +18807,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18819,7 +18819,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18831,7 +18831,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18843,7 +18843,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18855,7 +18855,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18867,7 +18867,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18879,7 +18879,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18891,7 +18891,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18903,7 +18903,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18915,7 +18915,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18927,7 +18927,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18939,7 +18939,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18951,7 +18951,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18963,7 +18963,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18975,7 +18975,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18987,7 +18987,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18999,7 +18999,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19011,7 +19011,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19023,7 +19023,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19035,7 +19035,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19047,7 +19047,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19059,7 +19059,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19071,7 +19071,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19083,7 +19083,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19095,7 +19095,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19107,7 +19107,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19119,7 +19119,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19131,7 +19131,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19143,7 +19143,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19155,7 +19155,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19167,7 +19167,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19179,7 +19179,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19191,7 +19191,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19203,7 +19203,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19215,7 +19215,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19227,7 +19227,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19239,7 +19239,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19251,7 +19251,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19263,7 +19263,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19275,7 +19275,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19287,7 +19287,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19299,7 +19299,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19311,7 +19311,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19323,7 +19323,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19335,7 +19335,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19347,7 +19347,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19359,7 +19359,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19371,7 +19371,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19383,7 +19383,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19395,7 +19395,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19407,7 +19407,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19419,7 +19419,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19431,7 +19431,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19443,7 +19443,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19455,7 +19455,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19467,7 +19467,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19479,7 +19479,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19491,7 +19491,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19503,7 +19503,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19515,7 +19515,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19527,7 +19527,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19539,7 +19539,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19551,7 +19551,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19563,7 +19563,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19575,7 +19575,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19587,7 +19587,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19599,7 +19599,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19611,7 +19611,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19623,7 +19623,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19635,7 +19635,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19647,7 +19647,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19659,7 +19659,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19671,7 +19671,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19683,7 +19683,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19695,7 +19695,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19707,7 +19707,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19719,7 +19719,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19731,7 +19731,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19743,7 +19743,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19755,7 +19755,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19767,7 +19767,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19779,7 +19779,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19791,7 +19791,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19803,7 +19803,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19815,7 +19815,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19827,7 +19827,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19839,7 +19839,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19851,7 +19851,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19863,7 +19863,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19875,7 +19875,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19887,7 +19887,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19899,7 +19899,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19911,7 +19911,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19923,7 +19923,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19935,7 +19935,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19947,7 +19947,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19959,7 +19959,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19971,7 +19971,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19983,7 +19983,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19995,7 +19995,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20007,7 +20007,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20019,7 +20019,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20031,7 +20031,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20043,7 +20043,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20055,7 +20055,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20067,7 +20067,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20079,7 +20079,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20091,7 +20091,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20103,7 +20103,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20115,7 +20115,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20127,7 +20127,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20139,7 +20139,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20151,7 +20151,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20163,7 +20163,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20175,7 +20175,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20187,7 +20187,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20199,7 +20199,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20211,7 +20211,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20223,7 +20223,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20235,7 +20235,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20247,7 +20247,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20259,7 +20259,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20271,7 +20271,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20283,7 +20283,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20295,7 +20295,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20307,7 +20307,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -20319,7 +20319,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20331,7 +20331,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -20343,7 +20343,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20355,7 +20355,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -20367,7 +20367,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -20379,7 +20379,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -20391,7 +20391,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20403,7 +20403,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -20415,7 +20415,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20427,7 +20427,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -20439,7 +20439,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20451,7 +20451,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "0fc6aed4-11a4-4bca-c1f3-c7060734aa3c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -20463,7 +20463,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 0, 0, 0)
@@ -20475,7 +20475,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 12, 30, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 10, 30, 0, 0)
@@ -20487,7 +20487,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -20499,7 +20499,7 @@ namespace HP2.Infrastructure.Migrations
                             Date = new DateTime(2026, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 18, 0, 0, 0),
                             Mode = "PRESENTIAL",
-                            RoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7d12ed93-7363-9686-49c3-77ad3ccb2da0",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21643,12 +21643,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3c22107c-0651-f328-9d16-c4eb18aed5c3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 36, 764, DateTimeKind.Utc).AddTicks(6875),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "admin@univ.fr",
                             FirstName = "System",
                             IsDeleted = false,
                             LastName = "Admin",
-                            Password = "$2b$12$Lxng1TOQvIWIbf2pgp4v.e.d9xAKfZsdHYqIYasWyc/GZd2u8O7Cy",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.76fyIFRf6vi7KlHFeFC4lEy5bQf0oau",
                             PhoneNumber = "0000000000",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -21656,12 +21656,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b23b2edd-8498-994b-f92d-1033b02c5cee",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 37, 163, DateTimeKind.Utc).AddTicks(9391),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "claire.bernard@univ.fr",
                             FirstName = "Claire",
                             IsDeleted = false,
                             LastName = "Bernard",
-                            Password = "$2b$12$mv8u/5TGK5AbU9u7V9gVluYRRC46wbDfa1rZf1yH4yPYYZrd96ngC",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.76fyIFRf6vi7KlHFeFC4lEy5bQf0oau",
                             PhoneNumber = "0102030401",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -21669,12 +21669,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "dbb59997-e2c2-22b4-f6bb-6f45eb8d46c3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 37, 613, DateTimeKind.Utc).AddTicks(4615),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "julien.moreau@univ.fr",
                             FirstName = "Julien",
                             IsDeleted = false,
                             LastName = "Moreau",
-                            Password = "$2b$12$1npmEXJNkZXgVxWTj6h0w.VHHkBWFKYc6e2o3ESMlBRbSNW7J8Vnu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.76fyIFRf6vi7KlHFeFC4lEy5bQf0oau",
                             PhoneNumber = "0102030402",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -21682,12 +21682,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "0b2b1684-7b29-7ac4-d601-be906e631ebb",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 37, 977, DateTimeKind.Utc).AddTicks(8597),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "fatima.zahra@univ.fr",
                             FirstName = "Fatima",
                             IsDeleted = false,
                             LastName = "Zahra",
-                            Password = "$2b$12$oafla47Al9U8gYLM6BCtH.wX9sfjCUocs6eYWOFjMxarZq7g5dWSG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.76fyIFRf6vi7KlHFeFC4lEy5bQf0oau",
                             PhoneNumber = "0102030403",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -21695,12 +21695,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "4ab584a9-078d-55db-c5b4-e647a99a1187",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 38, 342, DateTimeKind.Utc).AddTicks(724),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "pierre.louis@univ.fr",
                             FirstName = "Pierre",
                             IsDeleted = false,
                             LastName = "Louis",
-                            Password = "$2b$12$gsn2Ii.zmnwO1gNEAMi9gOjPy1xWwoAK8XYQTX9IOPVN1lY5vlKr.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.76fyIFRf6vi7KlHFeFC4lEy5bQf0oau",
                             PhoneNumber = "0102030404",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "0a5d76e1-f1e4-946f-9f3c-d757a576d60e"
@@ -21708,12 +21708,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "455c6918-8f55-8171-e3b6-573e17977cfc",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 38, 694, DateTimeKind.Utc).AddTicks(1289),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "marie.curie@univ.fr",
                             FirstName = "Marie",
                             IsDeleted = false,
                             LastName = "Curie",
-                            Password = "$2b$12$6kImQpC3/FQIt1EVq34Dp.fG2C6uolFwigyNOScXQ.0dVyPwxxQnO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.4s7OzjwXGQeZLFDJ1mcDeJeXhckVqVG",
                             PhoneNumber = "0123456789",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21721,12 +21721,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 39, 73, DateTimeKind.Utc).AddTicks(9918),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "alain.durand@univ.fr",
                             FirstName = "Alain",
                             IsDeleted = false,
                             LastName = "Durand",
-                            Password = "$2b$12$WGSvkvE0ZEKUd0X71J1ROeYsMDKlGArAEEJhGj/48dP8ioj6LFCDe",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.LXaiJVETu9KWh8cvzrR5nJ/q4pe7Pei",
                             PhoneNumber = "0134567890",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21734,12 +21734,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 39, 447, DateTimeKind.Utc).AddTicks(4611),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "sophie.lambert@univ.fr",
                             FirstName = "Sophie",
                             IsDeleted = false,
                             LastName = "Lambert",
-                            Password = "$2b$12$U9DewoeuLNmjq9ly9jALN.vpPv477Xl5Hu9uxAJeFrl0VxqGkUJDS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.RruywxWp.ohH8PcmTv9O3ee7i8MWjPu",
                             PhoneNumber = "0134567891",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21747,12 +21747,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "14185a87-c07d-c0db-e37b-536e871528f2",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 39, 818, DateTimeKind.Utc).AddTicks(5804),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "karim.benali@univ.fr",
                             FirstName = "Karim",
                             IsDeleted = false,
                             LastName = "Benali",
-                            Password = "$2b$12$PX.AOrsIiMLUJ8S2Y2RZ.e2Auyx.trXtqV88ByZPtpbdk1z0K5iK2",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.V1EhkRpTzwsH.UMlGn5lW.0/tHblNRS",
                             PhoneNumber = "0134567892",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21760,12 +21760,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 40, 191, DateTimeKind.Utc).AddTicks(4433),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "claire.morel@univ.fr",
                             FirstName = "Claire",
                             IsDeleted = false,
                             LastName = "Morel",
-                            Password = "$2b$12$40Bbs/Qn9gNY/odSuYqaJ.SSeKhZLACTeEQNcQZgG.hJt7p28rCsO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.sPpvUbZYY6vhIKU0Kmf5YWQ11KIWSrq",
                             PhoneNumber = "0134567893",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21773,12 +21773,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 40, 570, DateTimeKind.Utc).AddTicks(5051),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "thomas.renault@univ.fr",
                             FirstName = "Thomas",
                             IsDeleted = false,
                             LastName = "Renault",
-                            Password = "$2b$12$IWdmBrbeiDm7dMkmsJHAmekNPCIS56Z70Ywbo6OGjFNZGOKpM6vWK",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.pYnhRZ2U9pces/miybLKkpCNCEf6RsO",
                             PhoneNumber = "0134567894",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21786,12 +21786,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 40, 940, DateTimeKind.Utc).AddTicks(8394),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "celine.robert@univ.fr",
                             FirstName = "Celine",
                             IsDeleted = false,
                             LastName = "Robert",
-                            Password = "$2b$12$y7.uKxXWF6iIbdtEvbxxzu5duBkzgI3JhVoEzh.gzOoE/92snhLMe",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.osf8s/ldk/kPy/YR8H2Tu7oGug.IpsG",
                             PhoneNumber = "0134567895",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21799,12 +21799,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 41, 302, DateTimeKind.Utc).AddTicks(9534),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "maxime.legrand@univ.fr",
                             FirstName = "Maxime",
                             IsDeleted = false,
                             LastName = "Legrand",
-                            Password = "$2b$12$b1ovxdcDvfwRxjJxqnKW8OvzViledHAusb6VCB7dIEYgi6Kj9UgQS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.iMhzoxPSdCcC2UbrFyvnkVcrTMqxUeC",
                             PhoneNumber = "0134567896",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21812,12 +21812,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "26d3840f-0826-0efe-7045-e23034efc8cd",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 41, 650, DateTimeKind.Utc).AddTicks(2370),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "amina.cherif@univ.fr",
                             FirstName = "Amina",
                             IsDeleted = false,
                             LastName = "Cherif",
-                            Password = "$2b$12$bryiHQYJqbQW2vssl1Fwwed.YF9NJuxRt18TfkZYBqV9hpYBqLulu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.GJ.AD9RGA2fvLvkoYQLusfXhwDj6neC",
                             PhoneNumber = "0134567897",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21825,12 +21825,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 41, 975, DateTimeKind.Utc).AddTicks(6175),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "nicolas.fabre@univ.fr",
                             FirstName = "Nicolas",
                             IsDeleted = false,
                             LastName = "Fabre",
-                            Password = "$2b$12$NS1XAQq29ShRuEuYdNRTUupasFSesbA1.dYyIJxcm9HZHfHHSi0li",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.AL2mQ7m2DTV5d0NYVWj/OHwg/8jtEEW",
                             PhoneNumber = "0134567898",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21838,12 +21838,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 42, 348, DateTimeKind.Utc).AddTicks(1242),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "elodie.guerin@univ.fr",
                             FirstName = "Elodie",
                             IsDeleted = false,
                             LastName = "Guerin",
-                            Password = "$2b$12$B3xY2GQ25XGd32WxipBr6eabdRbMWjy31M9knbz1dOI.BvqkRVtbS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.8Z6sK745nHNT2unPS4CnJcO0zmCpY26",
                             PhoneNumber = "0134567899",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21851,12 +21851,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 42, 653, DateTimeKind.Utc).AddTicks(4760),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "mehdi.kaci@univ.fr",
                             FirstName = "Mehdi",
                             IsDeleted = false,
                             LastName = "Kaci",
-                            Password = "$2b$12$kmhXRNZnG.uFHNnl9WmkyOtlXw/gu3vcsyoY8jBf6D6RzorZYekcu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.OIxz9yHFX71h1gIMzsKxGBGHPRuYHdG",
                             PhoneNumber = "0134567800",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21864,12 +21864,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "041d01e0-b34f-4331-85d9-9453132f67b6",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 42, 985, DateTimeKind.Utc).AddTicks(9392),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "julie.paul@univ.fr",
                             FirstName = "Julie",
                             IsDeleted = false,
                             LastName = "Paul",
-                            Password = "$2b$12$mBpRxZMD6v6mvLCjTVx73OviVGtRLdjpfPJtmoEhbl9ATKXxY3SM6",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.gnGPZtMK5.S4tNkqFPawe4en2lqZQ9m",
                             PhoneNumber = "0134567801",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21877,12 +21877,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 43, 366, DateTimeKind.Utc).AddTicks(5229),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "adrien.morin@univ.fr",
                             FirstName = "Adrien",
                             IsDeleted = false,
                             LastName = "Morin",
-                            Password = "$2b$12$HeTTmrx1vWinjTlbPoQGfuTSFp281BGSfw7bCC/8J1UX.1HGrrgLG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.K7Tuv6Ehmy9JuVqHGhu1VhMpxG7cKUC",
                             PhoneNumber = "0134567802",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21890,12 +21890,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "f8360932-cad7-22ba-add7-d31883af9229",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 43, 707, DateTimeKind.Utc).AddTicks(2626),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "samira.bensalem@univ.fr",
                             FirstName = "Samira",
                             IsDeleted = false,
                             LastName = "Bensalem",
-                            Password = "$2b$12$zmcwzfNlMgdblze0./0wp.qKHdMDX6zfdk78XcBoeuhOAL8bVJjSS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.J447xETGNOUgWxwsY94YFZyxzyg05f2",
                             PhoneNumber = "0134567803",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21903,12 +21903,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "606137a2-9de4-e505-00ba-117bc0f24b82",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 44, 68, DateTimeKind.Utc).AddTicks(9660),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "antoine.mercier@univ.fr",
                             FirstName = "Antoine",
                             IsDeleted = false,
                             LastName = "Mercier",
-                            Password = "$2b$12$sKP.HVCOUsRnnKFLblNHLeWCMcczTTa9yUrqERKDKxnsKgpCj/E6m",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.rWPvSaQGPrN0YupOyM6MDIG3TsQ5EgW",
                             PhoneNumber = "0134567804",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21916,12 +21916,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 44, 412, DateTimeKind.Utc).AddTicks(7945),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "nawal.haddad@univ.fr",
                             FirstName = "Nawal",
                             IsDeleted = false,
                             LastName = "Haddad",
-                            Password = "$2b$12$qCRm6lh.x.vAhW9rIGwMfe5jZaa8e0FonmFVY9ankiLgbx2Lw8NDO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.uL8mUQsNwCiyC.aG6d1EF9.yu7LhHGm",
                             PhoneNumber = "0134567805",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21929,12 +21929,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 44, 795, DateTimeKind.Utc).AddTicks(3589),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "ikram.bouziane@univ.fr",
                             FirstName = "Ikram",
                             IsDeleted = false,
                             LastName = "Bouziane",
-                            Password = "$2b$12$sp.KtH79ucbk2TZ6cZM63etlJkEL6/CsoJZDfSd.X.9vnYKc6tcf6",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe./GEUNi/RBHMTTvcP1wWH723Cu/ceQm2",
                             PhoneNumber = "0134567806",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21942,12 +21942,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 45, 160, DateTimeKind.Utc).AddTicks(9000),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "yassine.hamzaoui@univ.fr",
                             FirstName = "Yassine",
                             IsDeleted = false,
                             LastName = "Hamzaoui",
-                            Password = "$2b$12$0u0woLz8oae8YSk75HaN9.Z.y4XqtX3nUISFmokIPlytPMZldJvOq",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.mDOJcVt9jdlRVni95h0Q0H/8CrTCI.6",
                             PhoneNumber = "0134567807",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21955,12 +21955,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 45, 533, DateTimeKind.Utc).AddTicks(9294),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "asmaa.fellah@univ.fr",
                             FirstName = "Asmaa",
                             IsDeleted = false,
                             LastName = "Fellah",
-                            Password = "$2b$12$Axmuk88GG.GjA2/Sd9rHNuqva/svNd2E.rn8yyqFOBxCW9fDaHiVy",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.utHCFeIpGVbOwGveVHrzF1E3ibx0x1G",
                             PhoneNumber = "0134567808",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21968,12 +21968,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 45, 902, DateTimeKind.Utc).AddTicks(67),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "amin.kerroum@univ.fr",
                             FirstName = "Amin",
                             IsDeleted = false,
                             LastName = "Kerroum",
-                            Password = "$2b$12$g3zEwJzcVYsWWX/QazQ20uZQG/TaxCcW3gcMuD4IMcU61EBHa2qm6",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.s2eaf2BmNgDfX1mnfj7D5qpJdJs4l7u",
                             PhoneNumber = "0134567809",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21981,12 +21981,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 46, 262, DateTimeKind.Utc).AddTicks(2877),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "siham.lakhdar@univ.fr",
                             FirstName = "Siham",
                             IsDeleted = false,
                             LastName = "Lakhdar",
-                            Password = "$2b$12$ERMkZH71SKCFX/N3/YH2M.awVskqLDIQd4hmd2TkC6ksdwBMZklmC",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.2QD8em65TK55FK2TXnqwaA6rp5mwsaK",
                             PhoneNumber = "0134567810",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -21994,12 +21994,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8e1a2182-9af2-5229-2104-66051e4b6220",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 46, 593, DateTimeKind.Utc).AddTicks(8075),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "riad.mokhtar@univ.fr",
                             FirstName = "Riad",
                             IsDeleted = false,
                             LastName = "Mokhtar",
-                            Password = "$2b$12$6oOjSpBin8i.zq026B4g2uglxDU.vxsIrf83sQT36UGm.3225.H3K",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.WvmejAdPReboHL58CLdVMnB9pv1doMq",
                             PhoneNumber = "0134567811",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -22007,12 +22007,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 46, 946, DateTimeKind.Utc).AddTicks(8997),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "nour.rahmani@univ.fr",
                             FirstName = "Nour",
                             IsDeleted = false,
                             LastName = "Rahmani",
-                            Password = "$2b$12$vw0Q6OpLTwdFlM6qR52pcO8iTUkw8zbuYa7xsdiLrVtT.XDi5b/OS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.dLlAQyqMJgAADd0GCNyb0YXTjNggr12",
                             PhoneNumber = "0134567812",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "4c92966c-ae01-8e31-eb08-fa56e3a54d2a"
@@ -22020,12 +22020,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b49e8575-9a94-b93d-703c-1fc9cf200f96",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 47, 315, DateTimeKind.Utc).AddTicks(2432),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "jean.dupont@etud.fr",
                             FirstName = "Jean",
                             IsDeleted = false,
                             LastName = "Dupont",
-                            Password = "$2b$12$bQXpNEqcGj76z7wzNV.DMevh/uRBWJkAcA3wM8NVJPwZpjIKMIUzu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.yqykbOCrueoPzHLRu5pPEhS1pD2BvSy",
                             PhoneNumber = "0987654321",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22033,12 +22033,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "fd2b34ab-7283-eff1-ce41-b75fe87946b9",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 47, 652, DateTimeKind.Utc).AddTicks(7195),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "lucas.martin01@etud.fr",
                             FirstName = "Lucas",
                             IsDeleted = false,
                             LastName = "Martin",
-                            Password = "$2b$12$36jYT4JSdqFygiuFdFa.J.1CkyKXCJmoy/n5O6mDUOqunF5h9af2S",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.aWP3ssnt4kSlDaCxYG4NlkLFDHgor9C",
                             PhoneNumber = "0610000001",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22046,12 +22046,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ee7ac72a-3cf6-b7b0-9861-2f86c95f6f85",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 47, 957, DateTimeKind.Utc).AddTicks(6159),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "emma.bernard02@etud.fr",
                             FirstName = "Emma",
                             IsDeleted = false,
                             LastName = "Bernard",
-                            Password = "$2b$12$w/ndP1Qt0CIliSbrFWqRO.s5tnDqpGgLIP4TtB2SiMAxS64NHLNAG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.5hWtPP7pm2YSdZsPYeTeLKPE7wy28WO",
                             PhoneNumber = "0610000002",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22059,12 +22059,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "c67f2f50-8142-b095-ad35-e91badccbc00",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 48, 311, DateTimeKind.Utc).AddTicks(5127),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "hugo.petit03@etud.fr",
                             FirstName = "Hugo",
                             IsDeleted = false,
                             LastName = "Petit",
-                            Password = "$2b$12$bkJ27Jz5gCMH3gLc3jGQPOnYSvylNxntVYMhvrXgeazd47xPdTiAO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.DHIxrPIfuYcgLuir/aJ8IhRLa1MO462",
                             PhoneNumber = "0610000003",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22072,12 +22072,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3fca4239-b5f4-f163-c65c-8d835f1a0154",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 48, 644, DateTimeKind.Utc).AddTicks(6941),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "chloe.robert04@etud.fr",
                             FirstName = "Chloe",
                             IsDeleted = false,
                             LastName = "Robert",
-                            Password = "$2b$12$7wzZlPDsv6sF7fcLVRu12OPiEXkFYyAZ4vyc5s0sbnutdArla1KSu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.aiU6B5hBR88wqnlgiuqLxgH6F/gS7Ci",
                             PhoneNumber = "0610000004",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22085,12 +22085,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "15f55f4b-c16e-2fc7-26dc-5d0d607d1778",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 49, 4, DateTimeKind.Utc).AddTicks(3635),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "nathan.richard05@etud.fr",
                             FirstName = "Nathan",
                             IsDeleted = false,
                             LastName = "Richard",
-                            Password = "$2b$12$2XS2.CN/Yd0UBFpHtPWys.vv.OcGSrsX5IqbhgYtJAwnDKg5laxxW",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.1kHEeb/ys6S.c6o4dvFcIfNjRWuJulO",
                             PhoneNumber = "0610000005",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22098,12 +22098,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "bf1e4d8c-7dfa-12e7-fb4d-7fc307df9aa3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 49, 345, DateTimeKind.Utc).AddTicks(3208),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "lea.durand06@etud.fr",
                             FirstName = "Lea",
                             IsDeleted = false,
                             LastName = "Durand",
-                            Password = "$2b$12$xEXu3we9TDoQ4sIzRvRA4uXGpvk4OhJULU.JsvHzDjy8VFDmNmRWS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.CwYGdBoOrct3SJgxx2M4Vs7a7OLrtaW",
                             PhoneNumber = "0610000006",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22111,12 +22111,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b11e5b82-12d0-5a31-1105-780499cbfc20",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 49, 708, DateTimeKind.Utc).AddTicks(9852),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "arthur.dubois07@etud.fr",
                             FirstName = "Arthur",
                             IsDeleted = false,
                             LastName = "Dubois",
-                            Password = "$2b$12$RdLcr1TM.iDTiCo8DUgvCeGysUGI1LLKwmT/JujvjuJWJxs6.OSM.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.ltd23plNhgLemdHYNUjsjQHvYzi5NXW",
                             PhoneNumber = "0610000007",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22124,12 +22124,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "6a10f91d-0aed-5fa7-4002-3bd76f3e6d11",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 50, 81, DateTimeKind.Utc).AddTicks(625),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "ines.moreau08@etud.fr",
                             FirstName = "Ines",
                             IsDeleted = false,
                             LastName = "Moreau",
-                            Password = "$2b$12$KmHLZYduWQ/davpHPfj.J.0UAsl6wlB1HtoJqGsEhxTVNXmywhuaW",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Q0O0ncEEWtWdvTI.PhHak7Vn1hl9NN2",
                             PhoneNumber = "0610000008",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22137,12 +22137,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "09095bf3-fa8c-0e49-eecb-f4bf320842ea",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 50, 426, DateTimeKind.Utc).AddTicks(1008),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "jules.laurent09@etud.fr",
                             FirstName = "Jules",
                             IsDeleted = false,
                             LastName = "Laurent",
-                            Password = "$2b$12$Ryv8HemTV4xZ0Hspdip7fum9Drm9Ahk.ykVssCpAIV6p7hoG8j.1q",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.4nuo5LfPARfB6p/QVmYwdudxaovc57S",
                             PhoneNumber = "0610000009",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22150,12 +22150,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d8ba01ab-6a2c-951c-02c4-d6a0150808a3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 50, 774, DateTimeKind.Utc).AddTicks(3580),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "sarah.simon10@etud.fr",
                             FirstName = "Sarah",
                             IsDeleted = false,
                             LastName = "Simon",
-                            Password = "$2b$12$Sz2iSwZifNZn5Bqaee2g8uwoXE6DOoC63byKGtpFyC6U8TqcnXM.q",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.PBT3ztX.qOolIXYcmKuQRp92FoEi57e",
                             PhoneNumber = "0610000010",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22163,12 +22163,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e9e3bb79-3eab-df5e-de27-f8914cef210a",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 51, 143, DateTimeKind.Utc).AddTicks(32),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "louis.michel11@etud.fr",
                             FirstName = "Louis",
                             IsDeleted = false,
                             LastName = "Michel",
-                            Password = "$2b$12$b9yth3L8ooMtBN6tzkvEXe.vKpt0.GhWYKC8al2GIpxFJbQ.q6ZlC",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.l7fBATnSdV/hKtW623MlcyWMRemDtbO",
                             PhoneNumber = "0610000011",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22176,12 +22176,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9f33ca92-97a2-351d-cf5a-e9841c28e7f7",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 51, 456, DateTimeKind.Utc).AddTicks(6065),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "manon.garcia12@etud.fr",
                             FirstName = "Manon",
                             IsDeleted = false,
                             LastName = "Garcia",
-                            Password = "$2b$12$4rKAEBsFfv5b0rJ1MtgnrOFTF3uSV4G.n12ddMyjm9qpE006irngm",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.7W6PsZ1Kf.5DNXiWmfgrs.hZGAMQpym",
                             PhoneNumber = "0610000012",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22189,12 +22189,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a4583bc8-b1cd-5994-bf7f-6ba5ed4d059f",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 51, 764, DateTimeKind.Utc).AddTicks(4093),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "gabriel.leroy13@etud.fr",
                             FirstName = "Gabriel",
                             IsDeleted = false,
                             LastName = "Leroy",
-                            Password = "$2b$12$OM.wn8GRA/4M2mImSSl.U.mW0A8eZ3dqDtlw9u9es/OKI5qIRBpge",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.VkPVuAzSs8CA1jnSfy.0dh8AO.sc976",
                             PhoneNumber = "0610000013",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22202,12 +22202,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "dd0b032a-0b32-dfa0-1dbe-c55b3db45489",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 52, 77, DateTimeKind.Utc).AddTicks(7830),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "camille.roux14@etud.fr",
                             FirstName = "Camille",
                             IsDeleted = false,
                             LastName = "Roux",
-                            Password = "$2b$12$fxyxnJ66.rFK8GEMFlGT6evMhOhwZhfmXI1nS5oGLHGgDuLTSCQSG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.67HbUzpvUCHUrpFfhATnw4EACflnKnm",
                             PhoneNumber = "0610000014",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22215,12 +22215,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8d936d9f-0ae5-8334-3197-ce641e6873bb",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 52, 393, DateTimeKind.Utc).AddTicks(8896),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "adam.david15@etud.fr",
                             FirstName = "Adam",
                             IsDeleted = false,
                             LastName = "David",
-                            Password = "$2b$12$F16muJSXoTamEDffW.UVJOXobG8eJUVVg.DolHTFvx8crCEuL5nWa",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.bcYFXkQmiiBi6lBSbrlOCMJgXL1yccW",
                             PhoneNumber = "0610000015",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22228,12 +22228,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9e35ec2e-6454-dbbf-a24a-c1fbe7ba6787",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 52, 757, DateTimeKind.Utc).AddTicks(618),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "zoe.bertrand16@etud.fr",
                             FirstName = "Zoe",
                             IsDeleted = false,
                             LastName = "Bertrand",
-                            Password = "$2b$12$u4Ig1jbzs0pO6/1A22ycTuj4w.R/eg1WR.w5oRkNTqkmNCuDRyd/2",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.OQ0BwKT6HwdSxPzED2EbqtzDi8tNrfu",
                             PhoneNumber = "0610000016",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22241,12 +22241,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "985474c8-8b56-e296-730f-d011dd6d63ad",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 53, 112, DateTimeKind.Utc).AddTicks(1203),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "noe.thomas17@etud.fr",
                             FirstName = "Noe",
                             IsDeleted = false,
                             LastName = "Thomas",
-                            Password = "$2b$12$fLkRoWIbQ/SfgHsdEhh4.OdBGtSub/77DhWfLQ6VKKRaUdGeNUNca",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe./1n4n6mjF04ugKJ5TXqxrjGWRhXO9Gu",
                             PhoneNumber = "0610000017",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22254,12 +22254,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e894b918-a541-2628-3bcd-376cf02e4986",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 53, 471, DateTimeKind.Utc).AddTicks(7387),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "lina.bonnet18@etud.fr",
                             FirstName = "Lina",
                             IsDeleted = false,
                             LastName = "Bonnet",
-                            Password = "$2b$12$sbLV.9tu5DLfPz6Wzpoh9eKdxkCBzy00wiC9vgd82UGiRFeBsHNNu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe..ZT6nyqJCeDBjcw0Hbk/.R9PCOOfy1y",
                             PhoneNumber = "0610000018",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22267,12 +22267,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "11819a20-b220-4acf-fee3-7294e4971100",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 53, 779, DateTimeKind.Utc).AddTicks(4294),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "raphael.francois19@etud.fr",
                             FirstName = "Raphael",
                             IsDeleted = false,
                             LastName = "Francois",
-                            Password = "$2b$12$h1hcwQ8.baw56HFXrU8BVOESsrc5X/.4cFShZrWeWbtwQCQXgWQCa",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.25ih.UwJC9oNQAj8VL/87OYhJlME5w.",
                             PhoneNumber = "0610000019",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22280,12 +22280,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a5e38765-a824-e761-1cfd-a76a2136091c",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 54, 134, DateTimeKind.Utc).AddTicks(2897),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "yasmine.faure20@etud.fr",
                             FirstName = "Yasmine",
                             IsDeleted = false,
                             LastName = "Faure",
-                            Password = "$2b$12$vX3eMscWS9Flio9AGi5aO.uubLBfdxUCp2uHmO78YDlmHPaCkjudG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.cZb3UYxK9qRumx6qWB56HaTucQ1HYqm",
                             PhoneNumber = "0610000020",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22293,12 +22293,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e115db87-7553-5590-e81c-cf366ee4dc30",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 54, 445, DateTimeKind.Utc).AddTicks(5986),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "theo.andre21@etud.fr",
                             FirstName = "Theo",
                             IsDeleted = false,
                             LastName = "Andre",
-                            Password = "$2b$12$RdOB7lngzLDgNnGIna72deaK/wBv1kq7CHI61P5XlZjow945dmSAO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.A2imakJWd/sde0b/NUS1l4IppOQc9vy",
                             PhoneNumber = "0610000021",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22306,12 +22306,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e1c033a0-e584-8bcb-b745-6a93d3fc2cf7",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 54, 782, DateTimeKind.Utc).AddTicks(590),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "jade.noel22@etud.fr",
                             FirstName = "Jade",
                             IsDeleted = false,
                             LastName = "Noel",
-                            Password = "$2b$12$0Cm24pLhZCWdqJ4CzGkWnO9nkyDfWdsDua3UP1H22eshXlp7qs/1y",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.8Li24O/hLYZs1/6Eqn0AGiOofABmoBq",
                             PhoneNumber = "0610000022",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22319,12 +22319,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "6a5c6b51-5c13-fc1f-5a81-bd99f87a71a7",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 55, 151, DateTimeKind.Utc).AddTicks(7801),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "sami.perez23@etud.fr",
                             FirstName = "Sami",
                             IsDeleted = false,
                             LastName = "Perez",
-                            Password = "$2b$12$sXN7UEU3CutZ8CzIsTpzXuYeSlZHLlhoPGTytLasPTUwkFTWd3gc2",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Of0FmRNHEV174KJRaYaKMoiWevJcvj.",
                             PhoneNumber = "0610000023",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22332,12 +22332,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a1e5a516-c159-675d-0f0d-96289cd47e35",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 55, 534, DateTimeKind.Utc).AddTicks(5824),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "clara.denis24@etud.fr",
                             FirstName = "Clara",
                             IsDeleted = false,
                             LastName = "Denis",
-                            Password = "$2b$12$bfbYfG5IosC4ad6Pim8I5ufpvki.nfzff/e.kig6qb9n5ZVdfyC3C",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.XjRoh9NOzxPAeASkFS2AhzBuw7itxbm",
                             PhoneNumber = "0610000024",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22345,12 +22345,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b008fcd4-f3ad-f24d-91a7-c16be33fe62b",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 55, 843, DateTimeKind.Utc).AddTicks(3303),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "yanis.colin25@etud.fr",
                             FirstName = "Yanis",
                             IsDeleted = false,
                             LastName = "Colin",
-                            Password = "$2b$12$xtLIX9264Epp7mx8hFjmheiB2roUQhnVyEzgRGZb0g4UiUqdx0QjG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.eb.prevggCRBImpxDPXJzN5K98JybtS",
                             PhoneNumber = "0610000025",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22358,12 +22358,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8c6614ce-430a-30a5-a877-fc157f5b7ad7",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 56, 184, DateTimeKind.Utc).AddTicks(7518),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "laura.renault26@etud.fr",
                             FirstName = "Laura",
                             IsDeleted = false,
                             LastName = "Renault",
-                            Password = "$2b$12$m6oouoBtl2xS5bOzvbW0t.Uumbq49HojfWFQa.4wiLvdJUotm2md.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.xM8hhMXM.r91565Zh97H.EJU.HLP8gO",
                             PhoneNumber = "0610000026",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22371,12 +22371,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "32573a03-d414-5891-15fe-b991e1f6d0a7",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 56, 541, DateTimeKind.Utc).AddTicks(8208),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "rayan.gautier27@etud.fr",
                             FirstName = "Rayan",
                             IsDeleted = false,
                             LastName = "Gautier",
-                            Password = "$2b$12$ZP.vZrVWrYeOSm0LyJG.3O8lNASRJx5LpygF77vJUdXqFjofyG6fi",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.BWTAXVqt3T4DFTudoT3NdC8Z/AYAhhK",
                             PhoneNumber = "0610000027",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22384,12 +22384,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "cafb714b-44d5-a183-e909-da93f4a926c8",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 56, 917, DateTimeKind.Utc).AddTicks(3594),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "nina.blanchard28@etud.fr",
                             FirstName = "Nina",
                             IsDeleted = false,
                             LastName = "Blanchard",
-                            Password = "$2b$12$/LanjQLXD0zD6..wzE8xTuQWY5BIRRpF4odplkpzIS6O7wIf93txm",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.WeyY4poQoKikkpN62p8P7j9Eu.Az5uO",
                             PhoneNumber = "0610000028",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22397,12 +22397,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "77eb8c7e-d27b-ca0d-7b40-66def436466b",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 57, 269, DateTimeKind.Utc).AddTicks(9520),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "elias.giraud29@etud.fr",
                             FirstName = "Elias",
                             IsDeleted = false,
                             LastName = "Giraud",
-                            Password = "$2b$12$wbdY4CajK8nypmeFze.Qb.XFkzCfBQTGRn6cVW9qllTkzPQ2998jS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.05XF69YtGAXGZjO2Z9bYA97/NZ8Vup6",
                             PhoneNumber = "0610000029",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22410,12 +22410,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "13aacf42-836e-5f88-2ccd-f93c81b68f7d",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 57, 640, DateTimeKind.Utc).AddTicks(2661),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "alice.perrot30@etud.fr",
                             FirstName = "Alice",
                             IsDeleted = false,
                             LastName = "Perrot",
-                            Password = "$2b$12$Z9XFwT.i6xGiWSQs17ospeBi/0OR02dAt5t6Mm5SAygELGGdkt9DS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.nE24F.COfxdZASr3jALOaXmkMKLqMRq",
                             PhoneNumber = "0610000030",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22423,12 +22423,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "57f13355-ddb7-5d3c-b09a-ff2c56e22753",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 57, 969, DateTimeKind.Utc).AddTicks(6368),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb01@etud.fr",
                             FirstName = "Lina",
                             IsDeleted = false,
                             LastName = "Ait",
-                            Password = "$2b$12$90Yk4O9aeUfbpwO5l92PAuwxWVJiJWMyKKd7XibFnb.XLmjOTNn3S",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.JWf5htITFntQkMmkCo53B2vpk/scgHa",
                             PhoneNumber = "0620000001",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22436,12 +22436,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "af142cbb-a95e-ab3e-f00a-a39f87004ec3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 58, 303, DateTimeKind.Utc).AddTicks(8760),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb02@etud.fr",
                             FirstName = "Nassim",
                             IsDeleted = false,
                             LastName = "Belkacem",
-                            Password = "$2b$12$P.0WV1SXtaFjmUPByMDvQ.K/61aYJrNoFkyRJqZC7xJbFBV8DlHb.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Yx0xNPvmiVsMJpSG9tC2i9VmoODo66u",
                             PhoneNumber = "0620000002",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22449,12 +22449,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "d8924a08-9bc1-e88e-8396-1a1e86e2276b",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 58, 617, DateTimeKind.Utc).AddTicks(5745),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb03@etud.fr",
                             FirstName = "Salma",
                             IsDeleted = false,
                             LastName = "Chebli",
-                            Password = "$2b$12$.tiNMDMG8DXjdP45hZw2w.mwktFyasimN3imq3f2dMH41unloGItK",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.HQfluLi.iprTv8qI.ttAnWcc1gQs10S",
                             PhoneNumber = "0620000003",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22462,12 +22462,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "557dd714-15d7-6df3-3ed1-22a2eec63c59",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 58, 929, DateTimeKind.Utc).AddTicks(803),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb04@etud.fr",
                             FirstName = "Idriss",
                             IsDeleted = false,
                             LastName = "Dahmani",
-                            Password = "$2b$12$51qPNe3kqJ3JDxBin2Ev3OObmnzxQtQ6GLy4WkSr6229ExkMrFy4K",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.WsDIAiCsadKmNLp4aIfXCVrkrSg02Uq",
                             PhoneNumber = "0620000004",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22475,12 +22475,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8ee02cf3-bf69-3090-c8a3-acd718cd445f",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 59, 259, DateTimeKind.Utc).AddTicks(3164),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb05@etud.fr",
                             FirstName = "Maya",
                             IsDeleted = false,
                             LastName = "Elouafi",
-                            Password = "$2b$12$LTCyY5V3TpgN3HDmZFDplesAdGIqW3WsxeIi7Ay7Cegzj6bCy16Pu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.xY03XHbKmLSoxmXfxNoATlyWw3QtcYO",
                             PhoneNumber = "0620000005",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22488,12 +22488,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "70d4b385-0cd3-abfa-86b0-75c1ef2a9c1e",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 59, 567, DateTimeKind.Utc).AddTicks(4139),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb06@etud.fr",
                             FirstName = "Youssef",
                             IsDeleted = false,
                             LastName = "Farah",
-                            Password = "$2b$12$Ms1TsjiuQbxV6HXUkVkYCurDe8o/XTyu4fq3WxUwdVNzOb55xiiQO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Q75R5qSAGiePjPFnm8Aze7u8Kkue36y",
                             PhoneNumber = "0620000006",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22501,12 +22501,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ccd1db56-b977-3035-ca07-0d16377dbbe1",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 38, 59, 891, DateTimeKind.Utc).AddTicks(6059),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb07@etud.fr",
                             FirstName = "Nour",
                             IsDeleted = false,
                             LastName = "Ghali",
-                            Password = "$2b$12$jlxMyoZkBhSCLTnTNJo6H.tkPZaK8foz/Z1eK5FfzmJB7aSM4.dee",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.FslCfwG6lMwcsYgHgQar1jcYLRn9e/W",
                             PhoneNumber = "0620000007",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22514,12 +22514,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "52fb0554-7e57-01bb-5949-987520c91eb5",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 0, 210, DateTimeKind.Utc).AddTicks(6048),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb08@etud.fr",
                             FirstName = "Riad",
                             IsDeleted = false,
                             LastName = "Hamidi",
-                            Password = "$2b$12$5ud1uiUK2f6B192ZSTMyFOopdjMjCeva/Feto1b6bVsnWSRdtjnD2",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.yoPP383z5NK6U42m/gtfiM1nYF4PDkq",
                             PhoneNumber = "0620000008",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22527,12 +22527,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8e85356b-dff7-0fe0-9e0a-ac24101ff81c",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 0, 517, DateTimeKind.Utc).AddTicks(8358),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb09@etud.fr",
                             FirstName = "Sana",
                             IsDeleted = false,
                             LastName = "Ibrahimi",
-                            Password = "$2b$12$WMi44tAhVo0bJQTk3jIEX.SpIbJ55nIINpWMcZH8DXCwIGo1zmh3O",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.wEyUYt2tL8ySxupkZ4yteDRT/XtIy6u",
                             PhoneNumber = "0620000009",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22540,12 +22540,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "91f97c43-df32-927a-bb77-3f050c28c5d1",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 0, 846, DateTimeKind.Utc).AddTicks(2502),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb10@etud.fr",
                             FirstName = "Adel",
                             IsDeleted = false,
                             LastName = "Jabri",
-                            Password = "$2b$12$.fFVvReHfaqll8lqguroQ.pLjSB49IIdpbOz6/aiorL3xcJjw/VSe",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.an0ox8o7h5pERBtaO.OMVNQqinS1ctC",
                             PhoneNumber = "0620000010",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22553,12 +22553,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "4d41b3e5-536d-0aa0-a3e3-024218ac6267",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 1, 233, DateTimeKind.Utc).AddTicks(3415),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb11@etud.fr",
                             FirstName = "Ilona",
                             IsDeleted = false,
                             LastName = "Kadi",
-                            Password = "$2b$12$lsJ6M7GFNUxwJtwH0eDFee.EyM358Hq9Wws442ZfKcf29DhidIrJy",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.KgbZ6QINq64d7YzrmgxVOZ9aoho3Jey",
                             PhoneNumber = "0620000011",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22566,12 +22566,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "c1fcc118-bca7-c1b7-02d1-7557b18c7ad5",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 1, 596, DateTimeKind.Utc).AddTicks(1376),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb12@etud.fr",
                             FirstName = "Karim",
                             IsDeleted = false,
                             LastName = "Lahlou",
-                            Password = "$2b$12$QVc0jrAMurLKOcuMvjdbUOTN1TeolrHvCGYtSi0ZDloK8EUH/YYfi",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.n.g8QZ9aLi3iSTQoxEy6.4zZk97JpKO",
                             PhoneNumber = "0620000012",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22579,12 +22579,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "617cb820-a96f-5ce4-513e-f9de2ec06556",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 1, 965, DateTimeKind.Utc).AddTicks(8700),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb13@etud.fr",
                             FirstName = "Siham",
                             IsDeleted = false,
                             LastName = "Mansouri",
-                            Password = "$2b$12$WAZ64Go3aSteX0/7HsatheLrEBiKluJVtxV6khLYglQkyV0SPlsHK",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.B/eEKGBi2Ys2.AYeqaQhK1/ADxkbgv6",
                             PhoneNumber = "0620000013",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22592,12 +22592,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "15918ed1-cfaf-95a1-a2f9-24bfb81eacfb",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 2, 348, DateTimeKind.Utc).AddTicks(6671),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb14@etud.fr",
                             FirstName = "Tarik",
                             IsDeleted = false,
                             LastName = "Naji",
-                            Password = "$2b$12$3cqVW5gJ5hEQd00qOy0UaO/OQN0UGG8rZqJ6q.lVVYrxpKoVO1IuW",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.7BvMf8/SScQ/HuXYRFSS6xYT0ohRDkO",
                             PhoneNumber = "0620000014",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22605,12 +22605,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "51432fb0-cda4-87aa-a2d2-e36c25823a2b",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 2, 726, DateTimeKind.Utc).AddTicks(3170),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb15@etud.fr",
                             FirstName = "Imane",
                             IsDeleted = false,
                             LastName = "Ouali",
-                            Password = "$2b$12$Jrot.2qA.jRYed20.2jRmOgnH31wRqctrIdzJn7T/wrpND/u6q8Km",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.UGez/5FSjoyxlnrgWkuzB3.7BHsQHi.",
                             PhoneNumber = "0620000015",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22618,12 +22618,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "c668490c-dda2-f1b1-d170-72005fc34624",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 3, 109, DateTimeKind.Utc).AddTicks(6750),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb16@etud.fr",
                             FirstName = "Anis",
                             IsDeleted = false,
                             LastName = "Perrin",
-                            Password = "$2b$12$iNPAKYnrZkOJhpXmpq.9UOS7F7fSsqSpyCIpFT4zdjRweC8lCDGYC",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.G5wGjPZC2QrsUU.FhgQtaJsoFmsvpI.",
                             PhoneNumber = "0620000016",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22631,12 +22631,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "95755e71-293b-5fbe-2e06-ff9c6d90e96f",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 3, 445, DateTimeKind.Utc).AddTicks(345),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb17@etud.fr",
                             FirstName = "Leila",
                             IsDeleted = false,
                             LastName = "Qadri",
-                            Password = "$2b$12$xzYQ.38XntQf2D4/B5CTFOldbNqtYyir9hSc.Nzu/88lBTXORyt3y",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.H9d6tv/7Zbd//i8YTqZiOPjeO/pOlz.",
                             PhoneNumber = "0620000017",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22644,12 +22644,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a3c3207a-f43c-47cf-bf43-b5aa0d1ca402",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 3, 783, DateTimeKind.Utc).AddTicks(4935),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb18@etud.fr",
                             FirstName = "Romy",
                             IsDeleted = false,
                             LastName = "Rami",
-                            Password = "$2b$12$YRbCKpbwzznVByFKvwofX.u4pxvVmil64mstAvACKmcAlyM7Bk5be",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.dAcJ8LyNEkO6Tu/BkY/GucK/Cxj/NfC",
                             PhoneNumber = "0620000018",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22657,12 +22657,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "aeba3eba-9c59-d115-5781-476232f36f4c",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 4, 95, DateTimeKind.Utc).AddTicks(1787),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb19@etud.fr",
                             FirstName = "Samy",
                             IsDeleted = false,
                             LastName = "Safi",
-                            Password = "$2b$12$6pvxgHVPhFqQXfV0/U.MAOpkuoDyUXpkMq/Xup16Sj2vsRJignA1i",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.16m32h8O0jhoEyv8S1obo/0J2/qdnFG",
                             PhoneNumber = "0620000019",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22670,12 +22670,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8bb5c451-bf2f-2f66-1ce3-d3b8fd0503e5",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 4, 420, DateTimeKind.Utc).AddTicks(3194),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb20@etud.fr",
                             FirstName = "Nadia",
                             IsDeleted = false,
                             LastName = "Tazi",
-                            Password = "$2b$12$dWjJW635L8.PyLnPR8daJ.VW963oL1Jfy6HhrcshUcLAnd4dXJZfS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.U5QheZM6n6EVytPKQPpZicg6OZze2Jy",
                             PhoneNumber = "0620000020",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22683,12 +22683,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "03428ee8-3d9a-de72-c98b-dbc65724b005",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 4, 727, DateTimeKind.Utc).AddTicks(2340),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb21@etud.fr",
                             FirstName = "Omar",
                             IsDeleted = false,
                             LastName = "Uzan",
-                            Password = "$2b$12$A4D21iMDzT0iClwYPY664uBeOi08dpVjmcZyPdoCxoFa18fGjYMte",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.MGkt4//g1rakR1bnma4hnow0mCdHibe",
                             PhoneNumber = "0620000021",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22696,12 +22696,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "68fbd87f-0c94-976f-40de-323667ff06bf",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 5, 32, DateTimeKind.Utc).AddTicks(8789),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb22@etud.fr",
                             FirstName = "Meriem",
                             IsDeleted = false,
                             LastName = "Vallet",
-                            Password = "$2b$12$VXjOQFZCJY3oo0lHz8G9neByyuwQAzlN5b0bxvnWdCqRsArsgLYoC",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.GfrHkdKTCJzEgfOEmxWDvGg4Lol9EjW",
                             PhoneNumber = "0620000022",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22709,12 +22709,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "c8936e2c-61ab-766a-1161-ed4577bda964",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 5, 369, DateTimeKind.Utc).AddTicks(6219),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb23@etud.fr",
                             FirstName = "Bilal",
                             IsDeleted = false,
                             LastName = "Wahbi",
-                            Password = "$2b$12$qmVMaUtW7oPZe7gBiE.mH.2knw1zVryaVxVENSGlUjlXc/dFWzls6",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.z68YBAveOwaiJyHq50bQ/sLVIhv5eue",
                             PhoneNumber = "0620000023",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22722,12 +22722,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "b5f9f83d-f5bb-7af0-2344-5ff6a7fba816",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 5, 733, DateTimeKind.Utc).AddTicks(1355),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb24@etud.fr",
                             FirstName = "Loubna",
                             IsDeleted = false,
                             LastName = "Xerri",
-                            Password = "$2b$12$KLdoa0K1aAtox8JZMpNLgeOZh1No37OimsxCa8iETlKndZQ4yQEO.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.B5Kx.vOZ.TebjtgiTJN1tvVF.5a18zu",
                             PhoneNumber = "0620000024",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22735,12 +22735,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8112e653-13fd-c47d-0fc5-7b36eda72bf0",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 6, 116, DateTimeKind.Utc).AddTicks(4802),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb25@etud.fr",
                             FirstName = "Yanis",
                             IsDeleted = false,
                             LastName = "Yassine",
-                            Password = "$2b$12$num0Iitcv2OWAxY5IvIaO.2j/opIXnEmOCvXIpjA2lTFns5siJ9ae",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.m.lUplgZqE2PhrMu0i2FQJaUQWpdmcS",
                             PhoneNumber = "0620000025",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22748,12 +22748,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "96cb69c8-c721-11de-8075-582c3bb936c3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 6, 503, DateTimeKind.Utc).AddTicks(6521),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb26@etud.fr",
                             FirstName = "Sara",
                             IsDeleted = false,
                             LastName = "Ziani",
-                            Password = "$2b$12$Bz6E0WjceKzoEVkyCEguWeBw5aB5.o6WtQxw5jMtuD.VncrtSZuQG",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.scoexWKdTmt2BhdKjRxn91L4DMun/0u",
                             PhoneNumber = "0620000026",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22761,12 +22761,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "c2dd0d11-f58f-2546-c1ca-10b453a7bc96",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 6, 893, DateTimeKind.Utc).AddTicks(9332),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb27@etud.fr",
                             FirstName = "Adam",
                             IsDeleted = false,
                             LastName = "Arif",
-                            Password = "$2b$12$zDuPAIiF38SVal3XE3LM2eaOc85U3pi4XlRb5ebaiQ0c12Z4I8JxK",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.mlvjIXQr0PO/mcQZwPf6Q7vx2fcj46S",
                             PhoneNumber = "0620000027",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22774,12 +22774,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "18241d26-a012-b189-957c-b5573ecb15d1",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 7, 245, DateTimeKind.Utc).AddTicks(8128),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb28@etud.fr",
                             FirstName = "Hana",
                             IsDeleted = false,
                             LastName = "Bouzid",
-                            Password = "$2b$12$b9ziRPr4Pybc6BKC.BOJnOfpaQFMdoZXsOas4D.SZckEgM0JOVj7G",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe./.AbBLyn5WGVbbN0veML5eTQ4qu/eIO",
                             PhoneNumber = "0620000028",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22787,12 +22787,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "954d4710-fb9b-9bc8-33d6-1a00378fef99",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 7, 639, DateTimeKind.Utc).AddTicks(6832),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb29@etud.fr",
                             FirstName = "Ilyes",
                             IsDeleted = false,
                             LastName = "Cherkaoui",
-                            Password = "$2b$12$hOsKgNu2t7jZNojpqepFweMS9EBiz6Zpp8Vgwje8M3JsS/aV1jNEe",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.kDySQGhZF7plC85rah6WERWWqfGi9Ma",
                             PhoneNumber = "0620000029",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22800,12 +22800,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3830d83f-4097-76e0-a9e0-b90ef45d1c79",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 7, 991, DateTimeKind.Utc).AddTicks(1286),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentb30@etud.fr",
                             FirstName = "Nora",
                             IsDeleted = false,
                             LastName = "Drissi",
-                            Password = "$2b$12$4.clcUHdu8EDMeFXlxOL4erkDNcZsWrswEGxTAhCCdbACb0CXksZu",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.OW4rpX4tgMpJY/hwZFLI9NMOA5ozBTC",
                             PhoneNumber = "0620000030",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22813,12 +22813,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "6e5a0735-7928-5aca-b192-5e455fca402a",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 8, 333, DateTimeKind.Utc).AddTicks(1481),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc01@etud.fr",
                             FirstName = "Amine",
                             IsDeleted = false,
                             LastName = "Belaid",
-                            Password = "$2b$12$HvowmTuXbTY.FlZpSalzqukElxHpMbDxI351Hv1kIDMZPFEom84ZO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Ifr5jHJElWe37wjs1isL.0xnlDqd8hy",
                             PhoneNumber = "0630000001",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22826,12 +22826,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "dd288475-9710-eabb-7cca-449e335c3070",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 8, 708, DateTimeKind.Utc).AddTicks(5364),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc02@etud.fr",
                             FirstName = "Yara",
                             IsDeleted = false,
                             LastName = "Cohen",
-                            Password = "$2b$12$gOZA2VSjOANgwrEx9.dvCOFlqSvZgFXWhR5rmNnSXzT4yyhU1RdsK",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.WpSW5wjH.ZT249kfK6n9bhi5nYaztI6",
                             PhoneNumber = "0630000002",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22839,12 +22839,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "2b5c3a92-dc35-b1bd-16c3-b0f8a21f29f6",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 9, 54, DateTimeKind.Utc).AddTicks(9778),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc03@etud.fr",
                             FirstName = "Nadir",
                             IsDeleted = false,
                             LastName = "Daoud",
-                            Password = "$2b$12$eNKa8rP3vNnx7lknYoYb5OibfwlbzivoRmqM5afZoxWURqeTBw9Pa",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.AXG64doFs5UTheqPGf/iad62Q1.Pzei",
                             PhoneNumber = "0630000003",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22852,12 +22852,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ada69e11-1e1e-3387-80da-a6afa8505ba2",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 9, 422, DateTimeKind.Utc).AddTicks(5089),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc04@etud.fr",
                             FirstName = "Mila",
                             IsDeleted = false,
                             LastName = "Elmi",
-                            Password = "$2b$12$.luKQWUlRT30vhUt8.kwIuK/BdyvBUduRfq47qCgVXyh9I0E6dWhe",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.22bFZ3P.Mf5H4wvTdqA1ujntXJtgp52",
                             PhoneNumber = "0630000004",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22865,12 +22865,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "f828e1ce-18e1-0c76-9535-92a277f7875a",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 9, 752, DateTimeKind.Utc).AddTicks(2452),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc05@etud.fr",
                             FirstName = "Ilyan",
                             IsDeleted = false,
                             LastName = "Fares",
-                            Password = "$2b$12$MOg78XCkkDOugLMSADX4oezY5ZfoiQf0PcIboZ6oCSBpzeWddErEe",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.FifH0V7CQdjQ2ww4S7HHcGo9AGC.H6G",
                             PhoneNumber = "0630000005",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22878,12 +22878,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "3769412b-799f-6b72-f74f-9b9b735058c2",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 10, 92, DateTimeKind.Utc).AddTicks(2980),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc06@etud.fr",
                             FirstName = "Sofia",
                             IsDeleted = false,
                             LastName = "Ghali",
-                            Password = "$2b$12$ZIUQyxsqg2tc8TY359ZBgueiZDp3s2VHY1jeR3ijCJevoYukuzO5e",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.y0g12rrn3qiS2IxTAVAHRkJLaV1gnZe",
                             PhoneNumber = "0630000006",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22891,12 +22891,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "953715b4-1d71-3023-7048-42579385f359",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 10, 442, DateTimeKind.Utc).AddTicks(9698),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc07@etud.fr",
                             FirstName = "Rayan",
                             IsDeleted = false,
                             LastName = "Haddou",
-                            Password = "$2b$12$81cLA5qiIR/NROz6yO4fhOMY.JrltG27I.BkbLd.m0xxGyQMwlvy2",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.pdaq1MJafbv0XcTHu9j1W/weDvsksbq",
                             PhoneNumber = "0630000007",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22904,12 +22904,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a894def6-b00b-6103-0ac7-92aa2bf2a079",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 10, 796, DateTimeKind.Utc).AddTicks(2908),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc08@etud.fr",
                             FirstName = "Ines",
                             IsDeleted = false,
                             LastName = "Ibnou",
-                            Password = "$2b$12$SxRk5tBssxJ4IrhE/N4RXu//6N3yQFtdUa2mNy/3wQNBmJCl./Mhy",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.oe3ai.PTH0KYnJwWzE9FyKhqoiQe7Ce",
                             PhoneNumber = "0630000008",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22917,12 +22917,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "ecd9a403-0fa0-120e-0580-76ac458c1397",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 11, 159, DateTimeKind.Utc).AddTicks(326),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc09@etud.fr",
                             FirstName = "Walid",
                             IsDeleted = false,
                             LastName = "Jaziri",
-                            Password = "$2b$12$mBQOc7HYUj9oWmrp8G.PY..2Y0l4YI76u9XnHf/jt.C1PXWysVac.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.UreFRAyarfgIFzLgZ9xTYPXOPx1QXu2",
                             PhoneNumber = "0630000009",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22930,12 +22930,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "288bdacf-8acb-a8d1-59f9-94f0cccb2086",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 11, 511, DateTimeKind.Utc).AddTicks(8408),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc10@etud.fr",
                             FirstName = "Nora",
                             IsDeleted = false,
                             LastName = "Kassem",
-                            Password = "$2b$12$XtlXgnZKy8U79DCyMwmTteIoeUaS/nFQOvVLmWT4A0OpV6WaSz6XO",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.YRKn2Hz6.rfYaierdVvd7SKuyG7F3na",
                             PhoneNumber = "0630000010",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22943,12 +22943,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9f3e92f6-ee55-979e-23b7-f713245738cd",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 11, 881, DateTimeKind.Utc).AddTicks(4956),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc11@etud.fr",
                             FirstName = "Youssef",
                             IsDeleted = false,
                             LastName = "Lahmar",
-                            Password = "$2b$12$2KTK/JAS3TwG9CSivpxS3eBjAOkzhZeqWs.zi2XNZgosUMeJzYvYK",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Du.28h5Yp8WApOsQ4wKOm7zKjshQkfi",
                             PhoneNumber = "0630000011",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22956,12 +22956,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "9dd3d6be-aadd-a804-775f-b0817d3508fc",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 12, 233, DateTimeKind.Utc).AddTicks(8309),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc12@etud.fr",
                             FirstName = "Meriem",
                             IsDeleted = false,
                             LastName = "Mabrouk",
-                            Password = "$2b$12$HoTe5ng.XwBmLuo0f2tw4OQiGGBj1wz5Rp7Y9TWAm5aXcl3y71mzm",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.oCCOqgJjyYAIGEFg8U3c6llF3Y8RdPa",
                             PhoneNumber = "0630000012",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22969,12 +22969,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a81af79f-d5c1-b515-0d1e-fe2dbabc780d",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 12, 551, DateTimeKind.Utc).AddTicks(339),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc13@etud.fr",
                             FirstName = "Karim",
                             IsDeleted = false,
                             LastName = "Naceur",
-                            Password = "$2b$12$QYppc4mXixn8gqCunvesG.kMA0TvLmaBGtv35mCuF3QHd16tT4VFa",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Po6YJxyxFy6ER/18MaBnKVQS.xAYnS.",
                             PhoneNumber = "0630000013",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22982,12 +22982,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "539ead07-d571-367b-79f7-68b21513886b",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 12, 873, DateTimeKind.Utc).AddTicks(966),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc14@etud.fr",
                             FirstName = "Lina",
                             IsDeleted = false,
                             LastName = "Ouali",
-                            Password = "$2b$12$mMDklhnhkpiDBk/YPSIml.JbMP3CsXijJweIPsqZPPpO0k83m9sxm",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.h.lPI7ufbDikPBRhYqobg4P6mNUBvdG",
                             PhoneNumber = "0630000014",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -22995,12 +22995,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "0b48ba68-2d76-43aa-8392-7b40b1aa1e19",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 13, 235, DateTimeKind.Utc).AddTicks(2590),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc15@etud.fr",
                             FirstName = "Samy",
                             IsDeleted = false,
                             LastName = "Perron",
-                            Password = "$2b$12$ld6V.Og/iN3.QM6Y/0w4P.4q1lHoMAOyxxFTzidekUsYJysFxabC6",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe..JAhKFYYwLwADqCGvLp6zgoMi3eqFZC",
                             PhoneNumber = "0630000015",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23008,12 +23008,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8b8636d1-c1b0-1104-ebb5-a8e7e20d35ae",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 13, 580, DateTimeKind.Utc).AddTicks(1489),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc16@etud.fr",
                             FirstName = "Aya",
                             IsDeleted = false,
                             LastName = "Quinet",
-                            Password = "$2b$12$hr5HUf3gXs7focwqY0/l9OVK80sNPaXyJhKRfqYgy/ek6e9K3X43K",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.uHrfHEiCIQsa1qT5aOq6QViYIyBdXZq",
                             PhoneNumber = "0630000016",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23021,12 +23021,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "2fa22e35-4eb2-7351-ee0e-a523ac305c44",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 13, 887, DateTimeKind.Utc).AddTicks(8502),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc17@etud.fr",
                             FirstName = "Hicham",
                             IsDeleted = false,
                             LastName = "Rami",
-                            Password = "$2b$12$b/V.WSBTsLTakhg0/U3ZUuQHw/ZZDHIepzOTMPV0oC6BZ6Dk0cS7W",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.4z2leVMA3U8Rp.Z0ceGoVtkkuU3Ag3q",
                             PhoneNumber = "0630000017",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23034,12 +23034,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "62f48843-9c38-a162-72b9-af6d09b80de3",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 14, 212, DateTimeKind.Utc).AddTicks(656),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc18@etud.fr",
                             FirstName = "Leila",
                             IsDeleted = false,
                             LastName = "Saber",
-                            Password = "$2b$12$ITh5SfCzMr2370yh3ysEfeYVYAAx4WDc36EiKEHN5YPFspYGYA0ua",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.bdaIgL78faBf.PY.8LNu5uUeFLyiD2W",
                             PhoneNumber = "0630000018",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23047,12 +23047,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "476292a1-d3ae-cacd-a58c-2d14790da8eb",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 14, 566, DateTimeKind.Utc).AddTicks(4388),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc19@etud.fr",
                             FirstName = "Adel",
                             IsDeleted = false,
                             LastName = "Tahar",
-                            Password = "$2b$12$W/nBvH/vCCQXufanBfqpWuA.2bC7d4.hiUVTnhHgBNvG94CuAHXu6",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.QXrGHNnCXhXBXGzXSlURWrJ0iI80vyu",
                             PhoneNumber = "0630000019",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23060,12 +23060,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "f0af01b8-a5e4-18f8-889c-4863d1166ca9",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 14, 904, DateTimeKind.Utc).AddTicks(3523),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc20@etud.fr",
                             FirstName = "Maya",
                             IsDeleted = false,
                             LastName = "Ury",
-                            Password = "$2b$12$KRtpBkZu41K7MjOsmvjvtugOt/98jfmZh/GW1AVGAaTUvgiZGil7i",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.LXtRJZlkPa3/xAmABMTrrJ1FFuQZt2G",
                             PhoneNumber = "0630000020",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23073,12 +23073,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "011f7dd9-fd3a-3d41-6190-1f4489c299e9",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 15, 209, DateTimeKind.Utc).AddTicks(137),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc21@etud.fr",
                             FirstName = "Bilal",
                             IsDeleted = false,
                             LastName = "Varet",
-                            Password = "$2b$12$K9wvCrdpSeJY5z0Dm0oUEepcxfTpvvqi7/tbwtkk0VE9VMQvMNoga",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.e4b4lZsJ.xg9PFSPilNrQspMXd5MU3q",
                             PhoneNumber = "0630000021",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23086,12 +23086,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "a70a25e3-1d3d-3e25-2f6d-c728283dce2c",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 15, 566, DateTimeKind.Utc).AddTicks(7735),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc22@etud.fr",
                             FirstName = "Salma",
                             IsDeleted = false,
                             LastName = "Wahbi",
-                            Password = "$2b$12$CCb2ZvkGaY9ZUqUkd2dOnOQmf5E7BviUxiukvoSXn3js8cw8DfzeW",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.4THJkNYCGhGFMibfRPjh1zcRbzQxPwW",
                             PhoneNumber = "0630000022",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23099,12 +23099,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "65aa7c04-2529-20cc-46f7-47c22df3e1d0",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 15, 938, DateTimeKind.Utc).AddTicks(7510),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc23@etud.fr",
                             FirstName = "Anis",
                             IsDeleted = false,
                             LastName = "Xavier",
-                            Password = "$2b$12$DWWgZ43iVyvnppAidoAk2.uVL820HcjnWJEzIVs9hZsF2jhrV3NAa",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.ZcJWggmCwwf00I9o3gKQ/JlRhZHhi36",
                             PhoneNumber = "0630000023",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23112,12 +23112,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "afa4fe08-4af6-cc2b-778f-115de345ebba",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 16, 259, DateTimeKind.Utc).AddTicks(7829),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc24@etud.fr",
                             FirstName = "Nesrine",
                             IsDeleted = false,
                             LastName = "Yala",
-                            Password = "$2b$12$nPIRJnVswC5foDpdh49m5OooIPI9AIo6QmWKc9afNTpesutUQzyHy",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.EpJaus.NUE2zBkW6WHyKMiVVy4JK9Pq",
                             PhoneNumber = "0630000024",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23125,12 +23125,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "e48c4173-bb79-99df-4cdb-550c4acb9bfb",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 16, 611, DateTimeKind.Utc).AddTicks(6710),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc25@etud.fr",
                             FirstName = "Imad",
                             IsDeleted = false,
                             LastName = "Zeroual",
-                            Password = "$2b$12$T05iY6xu/WRpwf3Tgci.jO4OR7ByjfhVeczGG9gItfZe.2r4XN20.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.zw8MoUDQslUmoCasJIvJCsCPdyaX8x2",
                             PhoneNumber = "0630000025",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23138,12 +23138,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "0a3f73e7-67a8-750c-576a-49c22125bac7",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 16, 983, DateTimeKind.Utc).AddTicks(5341),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc26@etud.fr",
                             FirstName = "Sara",
                             IsDeleted = false,
                             LastName = "Amrani",
-                            Password = "$2b$12$Xbxa8B80hZP4yKBJ0iAK2uzXbVqa.ia2CU8/s5dQEiIuaGTfElmPm",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.3K4ozq.JIH42o3hlm4hsBjz91rqQq5O",
                             PhoneNumber = "0630000026",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23151,12 +23151,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "6dcd090f-508b-7888-b458-17aeea49123a",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 17, 349, DateTimeKind.Utc).AddTicks(3700),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc27@etud.fr",
                             FirstName = "Tarek",
                             IsDeleted = false,
                             LastName = "Bouzidi",
-                            Password = "$2b$12$8yBU7WqpBlL/ZRIAjSCdTOBfHsy.6XsPMHlEcr9kNMUIJW085vL/.",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.aGzkmsRXnsuS8UYkkQ.z9x1OxwM1W/e",
                             PhoneNumber = "0630000027",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23164,12 +23164,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "373399d1-2bd2-aee5-629b-43f96da8f03e",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 17, 756, DateTimeKind.Utc).AddTicks(784),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc28@etud.fr",
                             FirstName = "Nour",
                             IsDeleted = false,
                             LastName = "Chami",
-                            Password = "$2b$12$v85.endPno3OySdYW4dB..c5OcEP7k9AwHPlmtcOZid5C2Ervyhfa",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.PNpRiXwK00UvaFudac7hH6oTNJZBrAy",
                             PhoneNumber = "0630000028",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23177,12 +23177,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "129452cc-6c9b-3726-5c96-54b67ac3b884",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 18, 124, DateTimeKind.Utc).AddTicks(3076),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc29@etud.fr",
                             FirstName = "Ilias",
                             IsDeleted = false,
                             LastName = "Djebar",
-                            Password = "$2b$12$eE2wSoNsafAHxO3OAAZcCuLGowwsrt363XAt4890.CiKBhODtrFGS",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.Un.DlQpn5kRVmi5R5XNV01kSROPSSRy",
                             PhoneNumber = "0630000029",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
@@ -23190,12 +23190,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             UserId = "8976fc22-4f3c-f5a6-a6d7-81058525ac85",
-                            CreatedAt = new DateTime(2026, 4, 6, 13, 39, 18, 482, DateTimeKind.Utc).AddTicks(8952),
+                            CreatedAt = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "studentc30@etud.fr",
                             FirstName = "Rim",
                             IsDeleted = false,
                             LastName = "Essafi",
-                            Password = "$2b$12$c2lHE9y7Qo71APdOtvXXIuDeOsd5lnCqo5leL7FrNA6ZDu88ldZg2",
+                            Password = "$2a$12$C6UzMDM.H6dfI/f/IKcEe.zcMo2Qy4JynCbMSKh5LgRVn1NsDfNWG",
                             PhoneNumber = "0630000030",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserRoleId = "3eca46e4-1e66-8343-3f88-c667fd48550e"
