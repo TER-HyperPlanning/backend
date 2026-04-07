@@ -14,6 +14,25 @@ public class PlanningRepository : IPlanningRepository
 {
     private readonly TerHyperplanningContext _dbContext;
 
+    // Lightweight SQL projection used to avoid expensive includes on collection navigations.
+    private sealed class PlanningSessionProjection
+    {
+        public string SessionId { get; set; } = string.Empty;
+        public DateTime Date { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
+        public string? Mode { get; set; }
+        public string SessionTypeId { get; set; } = string.Empty;
+        public string CourseId { get; set; } = string.Empty;
+        public string SessionStatusId { get; set; } = string.Empty;
+        public string RoomId { get; set; } = string.Empty;
+        public string? SessionTypeLabel { get; set; }
+        public string? SessionStatusLabel { get; set; }
+        public string? RoomNumber { get; set; }
+        public string? CourseName { get; set; }
+        public string? Description { get; set; }
+    }
+
     public PlanningRepository(TerHyperplanningContext dbContext)
     {
         _dbContext = dbContext;
@@ -22,12 +41,6 @@ public class PlanningRepository : IPlanningRepository
     public async Task<IEnumerable<SessionModel>> GetPlanningSessionsAsync(PlanningRequest request, string? currentUserId, string? currentUserRole)
     {
         var query = _dbContext.Sessions
-            .Include(s => s.Course)
-            .Include(s => s.Room)
-            .Include(s => s.SessionType)
-            .Include(s => s.SessionStatus)
-            .Include(s => s.Groups)
-            .Include(s => s.Teachers)
             .AsNoTracking()
             .AsQueryable();
 
@@ -58,7 +71,27 @@ public class PlanningRepository : IPlanningRepository
             query = query.Where(s => s.Groups.Any(g => g.Track.ProgramId == request.ProgramId));
         }
 
-        var sessions = await query.OrderBy(s => s.Date).ThenBy(s => s.StartTime).ToListAsync();
+        var sessions = await query
+            .OrderBy(s => s.Date)
+            .ThenBy(s => s.StartTime)
+            .Select(s => new PlanningSessionProjection
+            {
+                SessionId = s.SessionId,
+                Date = s.Date,
+                StartTime = s.StartTime,
+                EndTime = s.EndTime,
+                Mode = s.Mode,
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+                SessionTypeLabel = s.SessionType != null ? s.SessionType.Label : null,
+                SessionStatusLabel = s.SessionStatus != null ? s.SessionStatus.Label : null,
+                RoomNumber = s.Room != null ? s.Room.RoomNumber : null,
+                CourseName = s.Course != null ? s.Course.Name : null,
+                Description = s.Description
+            })
+            .ToListAsync();
 
         // Map to standard SessionModel as expected by the application layer
         // Ideally we map directly to dto, but to respect the existing DDD architecture flow, 
@@ -73,10 +106,10 @@ public class PlanningRepository : IPlanningRepository
             CourseId = s.CourseId,
             SessionStatusId = s.SessionStatusId,
             RoomId = s.RoomId,
-            SessionTypeLabel = s.SessionType?.Label,
-            SessionStatusLabel = s.SessionStatus?.Label,
-            RoomNumber = s.Room?.RoomNumber,
-            CourseName = s.Course?.Name,
+            SessionTypeLabel = s.SessionTypeLabel,
+            SessionStatusLabel = s.SessionStatusLabel,
+            RoomNumber = s.RoomNumber,
+            CourseName = s.CourseName,
             Description = s.Description
         }).ToList();
     }
@@ -84,12 +117,6 @@ public class PlanningRepository : IPlanningRepository
     public async Task<IEnumerable<SessionModel>> GetMyPlanningSessionsAsync(PlanningRequest request, string currentUserId, string currentUserRole)
     {
         var query = _dbContext.Sessions
-            .Include(s => s.Course)
-            .Include(s => s.Room)
-            .Include(s => s.SessionType)
-            .Include(s => s.SessionStatus)
-            .Include(s => s.Groups)
-            .Include(s => s.Teachers)
             .AsNoTracking()
             .AsQueryable();
 
@@ -136,7 +163,27 @@ public class PlanningRepository : IPlanningRepository
             }
         }
 
-        var sessions = await query.OrderBy(s => s.Date).ThenBy(s => s.StartTime).ToListAsync();
+        var sessions = await query
+            .OrderBy(s => s.Date)
+            .ThenBy(s => s.StartTime)
+            .Select(s => new PlanningSessionProjection
+            {
+                SessionId = s.SessionId,
+                Date = s.Date,
+                StartTime = s.StartTime,
+                EndTime = s.EndTime,
+                Mode = s.Mode,
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+                SessionTypeLabel = s.SessionType != null ? s.SessionType.Label : null,
+                SessionStatusLabel = s.SessionStatus != null ? s.SessionStatus.Label : null,
+                RoomNumber = s.Room != null ? s.Room.RoomNumber : null,
+                CourseName = s.Course != null ? s.Course.Name : null,
+                Description = s.Description
+            })
+            .ToListAsync();
 
         return sessions.Select(s => new SessionModel
         {
@@ -148,10 +195,10 @@ public class PlanningRepository : IPlanningRepository
             CourseId = s.CourseId,
             SessionStatusId = s.SessionStatusId,
             RoomId = s.RoomId,
-            SessionTypeLabel = s.SessionType?.Label,
-            SessionStatusLabel = s.SessionStatus?.Label,
-            RoomNumber = s.Room?.RoomNumber,
-            CourseName = s.Course?.Name,
+            SessionTypeLabel = s.SessionTypeLabel,
+            SessionStatusLabel = s.SessionStatusLabel,
+            RoomNumber = s.RoomNumber,
+            CourseName = s.CourseName,
             Description = s.Description
         }).ToList();
     }

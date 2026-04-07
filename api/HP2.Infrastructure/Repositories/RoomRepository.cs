@@ -13,9 +13,10 @@ namespace HP2.Infrastructure.Persistence.Repositories
 {
     public class RoomRepository : RepositoryBase<RoomModel>, IRoomRepository
     {
-        private const string SalleTdName = "Salle de TD";
-        private const string SalleCoursName = "Salle de Cours";
-        private const string AmphitheatreName = "Amphitheatre";
+        private const string TdName = "TD";
+        private const string CoursName = "COURS";
+        private const string InfoName = "INFO";
+        private const string AmphitheatreName = "AMPHITHEATRE";
 
         public RoomRepository(TerHyperplanningContext _dbContext, IMapper mapper) : base(_dbContext, mapper)
         {
@@ -23,18 +24,19 @@ namespace HP2.Infrastructure.Persistence.Repositories
 
         private static RoomTypeEnum MapRoomTypeNameToEnum(string roomTypeName)
         {
-            var normalized = roomTypeName.Trim();
+            var normalized = roomTypeName.Trim().ToUpperInvariant();
 
-            return normalized.ToLowerInvariant() switch
+            return normalized switch
             {
-                "salle de td" => RoomTypeEnum.SalleTD,
-                "salle td" => RoomTypeEnum.SalleTD,
-                "salletd" => RoomTypeEnum.SalleTD,
-                "salle de cours" => RoomTypeEnum.SalleCOURS,
-                "salle cours" => RoomTypeEnum.SalleCOURS,
-                "sallecours" => RoomTypeEnum.SalleCOURS,
-                "amphitheatre" => RoomTypeEnum.AMPHITHEATRE,
-                "amphitheater" => RoomTypeEnum.AMPHITHEATRE,
+                "TD" => RoomTypeEnum.TD,
+                "COURS" => RoomTypeEnum.COURS,
+                "INFO" => RoomTypeEnum.INFO,
+                "AMPHITHEATRE" => RoomTypeEnum.AMPHITHEATRE,
+                "AMPHITHEATER" => RoomTypeEnum.AMPHITHEATRE,
+                "SALLE DE TD" => RoomTypeEnum.TD,
+                "SALLE TD" => RoomTypeEnum.TD,
+                "SALLE DE COURS" => RoomTypeEnum.COURS,
+                "SALLE COURS" => RoomTypeEnum.COURS,
                 _ => throw new KeyNotFoundException($"Type de salle inconnu: '{roomTypeName}'.")
             };
         }
@@ -43,8 +45,9 @@ namespace HP2.Infrastructure.Persistence.Repositories
         {
             return roomType switch
             {
-                RoomTypeEnum.SalleTD => SalleTdName,
-                RoomTypeEnum.SalleCOURS => SalleCoursName,
+                RoomTypeEnum.TD => TdName,
+                RoomTypeEnum.COURS => CoursName,
+                RoomTypeEnum.INFO => InfoName,
                 RoomTypeEnum.AMPHITHEATRE => AmphitheatreName,
                 _ => throw new KeyNotFoundException($"Enum de type de salle inconnu: {roomType}.")
             };
