@@ -1,4 +1,5 @@
 using HP2.Domain.Models;
+using HP2.Domain.Enums;
 
 namespace HP2.Application.Contracts;
 
@@ -10,4 +11,6 @@ public interface ITeacherService
     Task UpdateTeacherAsync(TeacherModel teacher);
     Task DeleteTeacherAsync(string id);
     Task<bool> HasAvailabilitiesAsync(string id);
+    Task<IEnumerable<TeacherModel>> SearchAsync(string query);
+    Task<IEnumerable<TeacherModel>> FilterByTitleAsync(TeacherTitle title);
 }

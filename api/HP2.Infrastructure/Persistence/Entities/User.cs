@@ -21,6 +21,10 @@ public partial class User
 
     public DateTime UpdatedAt { get; set; }
 
+    public bool IsDeleted { get; set; }
+
+    public DateTime? DeletedAt { get; set; }
+
     public string UserRoleId { get; set; } = null!;
 
     public virtual Admin? Admin { get; set; }
