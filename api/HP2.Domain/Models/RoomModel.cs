@@ -1,7 +1,7 @@
 using HP2.Domain.Common;
 using HP2.Domain.Enums;
 
-public class RoomModel : BaseModel
+public class RoomModel : BaseModel, ISoftDeletable
 {
 
     public string RoomId { get; set; } = null!;
@@ -15,6 +15,9 @@ public class RoomModel : BaseModel
 
     // public string RoomTypeId { get; set; } = null!;
     public RoomTypeEnum Type { get; set; }
+
+    public bool IsDeleted { get; set; }
+    public DateTime? DeletedAt { get; set; }
 
 
 }

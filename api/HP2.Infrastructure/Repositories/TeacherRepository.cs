@@ -58,6 +58,19 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
         return teacher != null ? _mapper.Map<TeacherModel>(teacher) : null;
     }
 
+    public async Task<IReadOnlyList<TeacherModel>> GetDeletedAsync()
+    {
+        var deletedTeachers = await _dbContext.Teachers
+            .IgnoreQueryFilters()
+            .Include(t => t.User)
+            .ThenInclude(u => u.UserRole)
+            .Include(t => t.TeacherTitle)
+            .Where(t => t.User != null && t.User.IsDeleted)
+            .ToListAsync();
+
+        return _mapper.Map<List<TeacherModel>>(deletedTeachers);
+    }
+
 public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
 {
     // Get the TEACHER role from database
@@ -131,6 +144,8 @@ else
         teacher.User.LastName = teacherModel.LastName;
         teacher.User.PhoneNumber = teacherModel.Phone ?? string.Empty;
         teacher.User.UpdatedAt = DateTime.UtcNow;
+        teacher.User.IsDeleted = teacherModel.IsDeleted;
+        teacher.User.DeletedAt = teacherModel.DeletedAt;
     }
 
     // Update Teacher properties
@@ -157,41 +172,7 @@ else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
 
 public override async Task DeleteAsync(string id)
 {
-    var teacher = await _dbContext.Teachers
-        .Include(t => t.User)
-        .Include(t => t.Tracks)
-            .ThenInclude(tr => tr.Assigns)
-        .Include(t => t.Tracks)
-            .ThenInclude(tr => tr.Groups)
-                .ThenInclude(g => g.Students) 
-        .FirstOrDefaultAsync(t => t.UserId == id);
-
-    if (teacher != null)
-    {
-        foreach (var track in teacher.Tracks)
-        {
-            if (track.Assigns.Any())
-                _dbContext.Assigns.RemoveRange(track.Assigns);
-
-            foreach (var group in track.Groups)
-            {
-                if (group.Students.Any())
-                    _dbContext.Students.RemoveRange(group.Students); 
-            }
-
-            if (track.Groups.Any())
-                _dbContext.Groups.RemoveRange(track.Groups);
-        }
-
-        if (teacher.Tracks.Any())
-            _dbContext.Tracks.RemoveRange(teacher.Tracks);
-
-        _dbContext.Teachers.Remove(teacher);
-        if (teacher.User != null)
-            _dbContext.Users.Remove(teacher.User);
-
-        await _dbContext.SaveChangesAsync();
-    }
+    await base.DeleteAsync(id);
 }
 
 public async Task<bool> HasAvailabilitiesAsync(string id)

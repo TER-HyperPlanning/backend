@@ -176,6 +176,14 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("is_deleted");
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("deleted_at");
+
+            entity.HasQueryFilter(b => !b.IsDeleted);
         });
 
         modelBuilder.Entity<ChangeStatus>(entity =>
@@ -375,6 +383,14 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("room_type_id");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("is_deleted");
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("deleted_at");
+
+            entity.HasQueryFilter(r => !r.IsDeleted);
 
             entity.HasOne(d => d.Building).WithMany(p => p.Rooms)
                 .HasForeignKey(d => d.BuildingId)
