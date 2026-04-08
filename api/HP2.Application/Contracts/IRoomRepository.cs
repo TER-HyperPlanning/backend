@@ -8,7 +8,7 @@ namespace HP2.Application.Contracts
 {
     public interface IRoomRepository : IAsyncRepository<RoomModel>
     {
-        Task<IReadOnlyList<RoomModel?>> GetRoomsByBuildingIdAsync(string buildingId);
+        Task<IReadOnlyList<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId);
         Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionAsync(string roomId, DateTime referenceDateTime);
         Task<IReadOnlyList<RoomModel>> GetDeletedAsync();
 

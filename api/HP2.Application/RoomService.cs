@@ -33,7 +33,7 @@ namespace HP2.Application.Services
 
         public async Task<IEnumerable<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId)
         {
-            return await _roomRepository.GetRoomsByBuildingIdAsync(buildingId) ?? new List<RoomModel>();
+            return await _roomRepository.GetRoomsByBuildingIdAsync(buildingId);
 
         }
 

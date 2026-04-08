@@ -8,7 +8,7 @@ namespace HP2.Application.Contracts
     {
         Task<IEnumerable<RoomModel>> GetAllRoomsAsync();
         Task<IEnumerable<RoomModel>> GetDeletedRoomsAsync();
-        Task<RoomModel> GetRoomByIdAsync(string id);
+        Task<RoomModel?> GetRoomByIdAsync(string id);
         Task<IEnumerable<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId);
         Task<RoomModel> CreateRoomAsync(RoomModel roomDto);
         Task UpdateRoomAsync(RoomModel roomDto);
