@@ -209,7 +209,6 @@ public class AdminsController : ControllerBase
             Role = admin.Role,
             CreatedAt = admin.CreatedAt,
             UpdatedAt = admin.UpdatedAt,
-            IsDeleted = admin.IsDeleted,
             DeletedAt = admin.DeletedAt
         };
     }

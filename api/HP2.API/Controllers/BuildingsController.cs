@@ -152,7 +152,6 @@ public class BuildingsController : ControllerBase
         {
             Id = building.Id,
             Name = building.Name,
-            IsDeleted = building.IsDeleted,
             DeletedAt = building.DeletedAt
         };
     }

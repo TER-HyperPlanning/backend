@@ -173,13 +173,13 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 .ToList();
         }
 
-        public override async Task<RoomModel> GetByIdAsync(string id)
+        public override async Task<RoomModel?> GetByIdAsync(string id)
         {
             var room = await _dbContext.Rooms
                 .Include(r => r.RoomType)
                 .FirstOrDefaultAsync(r => r.RoomId == id);
 
-            if (room == null) return null!;
+            if (room == null) return null;
 
             return new RoomModel
             {

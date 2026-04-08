@@ -14,4 +14,5 @@ public interface ISessionService
     Task<string?> GetSessionStatusIdAsync(string label);
     Task<bool> CourseExistsAsync(string courseId);
     Task<bool> RoomExistsAsync(string roomId);
+    Task<IEnumerable<SessionModel>> GetDeletedSessionsAsync();
 }

@@ -2,10 +2,8 @@ using HP2.Domain.Common;
 
 namespace HP2.Domain.Models;
 
-public class BuildingModel : BaseModel, ISoftDeletable
+public class BuildingModel : SoftDeletableModel
 {
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-    public bool IsDeleted { get; set; }
-    public DateTime? DeletedAt { get; set; }
 }
