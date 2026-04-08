@@ -2,7 +2,7 @@ using HP2.Domain.Common;
 using HP2.Domain.Enums;
 namespace HP2.Domain.Models;
 
-public class SessionModel : BaseModel
+public class SessionModel : SoftDeletableModel
 {
     public string Id { get; set; } = string.Empty;
 
@@ -19,6 +19,4 @@ public class SessionModel : BaseModel
     public string? SessionStatusLabel { get; set; }
     public string? RoomNumber { get; set; }
     public string? CourseName { get; set; }
-    public bool IsDeleted { get; set; }
-    public DateTime? DeletedAt { get; set; }
 }

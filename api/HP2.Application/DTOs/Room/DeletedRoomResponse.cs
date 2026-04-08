@@ -10,6 +10,5 @@ public class DeletedRoomResponse
     public int Capacity { get; set; }
     public string BuildingId { get; set; } = string.Empty;
     public RoomTypeEnum Type { get; set; }
-    public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
 }

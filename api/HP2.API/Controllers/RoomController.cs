@@ -207,7 +207,6 @@ namespace HP2.API.Controllers
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
                 Type = room.Type,
-                IsDeleted = room.IsDeleted,
                 DeletedAt = room.DeletedAt
             };
         }

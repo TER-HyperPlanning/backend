@@ -127,7 +127,6 @@ public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         Role = m.Role,
         CreatedAt = m.CreatedAt,
         UpdatedAt = m.UpdatedAt,
-        IsDeleted = m.IsDeleted,
         DeletedAt = m.DeletedAt,
     };
 

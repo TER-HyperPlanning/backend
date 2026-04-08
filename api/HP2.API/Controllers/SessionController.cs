@@ -254,7 +254,6 @@ public class SessionsController : ControllerBase
             CourseId = s.CourseId,
             SessionStatusId = s.SessionStatusId,
             RoomId = s.RoomId,
-            IsDeleted = s.IsDeleted,
             DeletedAt = s.DeletedAt
         };
     }

@@ -20,6 +20,5 @@ public class DeletedSessionResponse
 
     public string? Description { get; set; }
 
-    public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
 }
