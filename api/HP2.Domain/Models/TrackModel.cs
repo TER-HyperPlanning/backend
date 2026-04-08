@@ -8,4 +8,6 @@ public class TrackModel : BaseModel
     public string Name { get; set; } = string.Empty;
     public string TeacherId { get; set; } = string.Empty;
     public string ProgramId { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public string? Lieu { get; set; }
 }

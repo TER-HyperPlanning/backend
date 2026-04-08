@@ -20,4 +20,8 @@ public partial class Track
     public virtual Program Program { get; set; } = null!;
 
     public virtual Teacher Teacher { get; set; } = null!;
+
+    public string? Description { get; set; }
+
+    public string? Lieu { get; set; }
 }

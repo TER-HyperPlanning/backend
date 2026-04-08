@@ -21371,6 +21371,12 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("track_id")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lieu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)

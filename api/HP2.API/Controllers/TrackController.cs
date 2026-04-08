@@ -87,6 +87,8 @@ public class TracksController : ControllerBase
         existing.Name = request.Name;
         existing.TeacherId = request.TeacherId;
         existing.ProgramId = request.ProgramId;
+        existing.Description = request.Description;
+        existing.Lieu = request.Lieu;
         try
         {
             var updated = await _trackService.UpdateAsync(existing);
