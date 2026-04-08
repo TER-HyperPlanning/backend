@@ -22,7 +22,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = "ADMIN,TEACHER")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<TrackResponse>>> Create([FromBody] CreateTrackRequest request)
     {
         if (request == null) return BadRequest();
@@ -75,7 +75,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "ADMIN,TEACHER")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateTrackRequest request)
     {
         if (request == null) return BadRequest();
