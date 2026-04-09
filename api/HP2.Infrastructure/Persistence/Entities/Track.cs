@@ -7,6 +7,10 @@ public partial class Track
 {
     public string TrackId { get; set; } = null!;
 
+    public DateTime? DeletedAt { get; set; }
+
+    public bool IsDeleted { get; set; }
+
     public string Name { get; set; } = null!;
 
     public string TeacherId { get; set; } = null!;
@@ -20,4 +24,8 @@ public partial class Track
     public virtual Program Program { get; set; } = null!;
 
     public virtual Teacher Teacher { get; set; } = null!;
+
+    public string? Description { get; set; }
+
+    public string? Lieu { get; set; }
 }

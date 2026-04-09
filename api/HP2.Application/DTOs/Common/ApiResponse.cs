@@ -11,4 +11,7 @@ public class ApiResponse<T>
 
     public static ApiResponse<T> Fail(string message)
         => new() { Status = "failed", Message = message, Result = default };
+
+    public static ApiResponse<T> Fail(string message, T? result)
+        => new() { Status = "failed", Message = message, Result = result };
 }

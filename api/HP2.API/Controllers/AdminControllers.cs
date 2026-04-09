@@ -118,6 +118,21 @@ public class AdminsController : ControllerBase
         }
     }
 
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<List<DeletedAdminResponse>>>> GetDeleted()
+    {
+        try
+        {
+            var admins = await _adminService.GetDeletedAdminsAsync();
+            var response = admins.Select(MapToDeletedResponse).ToList();
+            return Ok(ApiResponse<List<DeletedAdminResponse>>.Success(response));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ApiResponse<List<DeletedAdminResponse>>.Fail(ex.Message));
+        }
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<AdminResponse>>> Update(string id, [FromBody] UpdateAdminRequest request)
     {
@@ -180,5 +195,21 @@ public class AdminsController : ControllerBase
         {
             return BadRequest(ApiResponse<string>.Fail(ex.Message));
         }
+    }
+
+    private static DeletedAdminResponse MapToDeletedResponse(AdminModel admin)
+    {
+        return new DeletedAdminResponse
+        {
+            Id = admin.Id,
+            Email = admin.Email,
+            FirstName = admin.FirstName,
+            LastName = admin.LastName,
+            Phone = admin.Phone,
+            Role = admin.Role,
+            CreatedAt = admin.CreatedAt,
+            UpdatedAt = admin.UpdatedAt,
+            DeletedAt = admin.DeletedAt
+        };
     }
 }

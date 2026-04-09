@@ -36,6 +36,11 @@ public class TeacherService : ITeacherService
         return await _teacherRepository.GetAllAsync();
     }
 
+    public async Task<IEnumerable<TeacherModel>> GetDeletedTeachersAsync()
+    {
+        return await _teacherRepository.GetDeletedAsync();
+    }
+
     public async Task UpdateTeacherAsync(TeacherModel teacher)
     {
         teacher.UpdatedAt = DateTime.UtcNow;

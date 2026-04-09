@@ -122,6 +122,13 @@ public class SessionsController : ControllerBase
         var responses = sessions.Select(MapToResponse);
         return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(responses));
     }
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedSessionResponse>>>> GetDeleted()
+    {
+        var sessions = await _sessionService.GetDeletedSessionsAsync();
+        var response = sessions.Select(MapToDeletedResponse);
+        return Ok(ApiResponse<IEnumerable<DeletedSessionResponse>>.Success(response));
+    }
 
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<SessionResponse>>> Update(string id, [FromBody] UpdateSessionRequest request)
@@ -232,6 +239,22 @@ public class SessionsController : ControllerBase
             Status = SessionReferenceMapper.ToSessionStatusEnum(s.SessionStatusLabel ?? ""),
             Room = s.RoomNumber ?? "",
             Course = s.CourseName ?? ""
+        };
+    }
+    private static DeletedSessionResponse MapToDeletedResponse(SessionModel s)
+    {
+        return new DeletedSessionResponse
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = s.Mode,
+            Description = s.Description,
+            SessionTypeId = s.SessionTypeId,
+            CourseId = s.CourseId,
+            SessionStatusId = s.SessionStatusId,
+            RoomId = s.RoomId,
+            DeletedAt = s.DeletedAt
         };
     }
 

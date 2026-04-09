@@ -42,7 +42,9 @@ public partial class TerHyperplanningContext : DbContext
 
     public virtual DbSet<Session> Sessions { get; set; }
 
-    public virtual DbSet<SessionChange> SessionChanges { get; set; }
+    public virtual DbSet<SessionRoomChange> SessionRoomChanges { get; set; }
+
+    public virtual DbSet<SessionRecoveryChange> SessionRecoveryChanges { get; set; }
 
     public virtual DbSet<SessionStatus> SessionStatuses { get; set; }
 
@@ -176,6 +178,14 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("is_deleted");
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("deleted_at");
+
+            entity.HasQueryFilter(b => !b.IsDeleted);
         });
 
         modelBuilder.Entity<ChangeStatus>(entity =>
@@ -375,6 +385,14 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("room_type_id");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("is_deleted");
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("deleted_at");
+
+            entity.HasQueryFilter(r => !r.IsDeleted);
 
             entity.HasOne(d => d.Building).WithMany(p => p.Rooms)
                 .HasForeignKey(d => d.BuildingId)
@@ -489,63 +507,171 @@ public partial class TerHyperplanningContext : DbContext
                     });
         });
 
-        modelBuilder.Entity<SessionChange>(entity =>
+        modelBuilder.Entity<SessionRoomChange>(entity =>
         {
-            entity.HasKey(e => e.SessionChangeId).HasName("PK__SessionC__D5E31D8F21E5A4A9");
+            entity.HasKey(e => e.SessionRoomChangeId).HasName("PK__SessionR__RoomChange");
 
-            entity.ToTable("SessionChange");
+            entity.ToTable("SessionRoomChange");
 
-            entity.Property(e => e.SessionChangeId)
+            entity.Property(e => e.SessionRoomChangeId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasDefaultValueSql("(newid())")
-                .HasColumnName("session_change_id");
-            entity.Property(e => e.AdminId)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("admin_id");
+                .HasColumnName("session_room_change_id");
+
             entity.Property(e => e.ChangeDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("change_date");
+
             entity.Property(e => e.ChangeStatusId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("change_status_id");
+
             entity.Property(e => e.Reason)
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("reason");
+
             entity.Property(e => e.SessionId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("session_id");
+
             entity.Property(e => e.TeacherId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("teacher_id");
 
-            entity.HasOne(d => d.Admin).WithMany(p => p.SessionChanges)
-                .HasForeignKey(d => d.AdminId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Change_Admin");
+            entity.Property(e => e.ApprovedRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("approved_room_id");
 
-            entity.HasOne(d => d.ChangeStatus).WithMany(p => p.SessionChanges)
+            entity.Property(e => e.RejectionReason)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("rejection_reason");
+
+            entity.HasOne(d => d.ChangeStatus).WithMany(p => p.SessionRoomChanges)
                 .HasForeignKey(d => d.ChangeStatusId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Change_Status");
+                .HasConstraintName("FK_RoomChange_Status");
 
-            entity.HasOne(d => d.Session).WithMany(p => p.SessionChanges)
+            entity.HasOne(d => d.Session).WithMany(p => p.SessionRoomChanges)
                 .HasForeignKey(d => d.SessionId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Change_Session");
+                .HasConstraintName("FK_RoomChange_Session");
 
-            entity.HasOne(d => d.Teacher).WithMany(p => p.SessionChanges)
+            entity.HasOne(d => d.Teacher).WithMany(p => p.SessionRoomChanges)
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Change_Teacher");
+                .HasConstraintName("FK_RoomChange_Teacher");
+
+            entity.HasOne(d => d.ApprovedRoom)
+                .WithMany()
+                .HasForeignKey(d => d.ApprovedRoomId)
+                .HasConstraintName("FK_RoomChange_ApprovedRoom");
         });
 
+        modelBuilder.Entity<SessionRecoveryChange>(entity =>
+        {
+            entity.HasKey(e => e.SessionRecoveryChangeId).HasName("PK__SessionR__RecoveryChange");
+
+            entity.ToTable("SessionRecoveryChange");
+
+            entity.Property(e => e.SessionRecoveryChangeId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(newid())")
+                .HasColumnName("session_recovery_change_id");
+
+            entity.Property(e => e.ChangeDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("change_date");
+
+            entity.Property(e => e.ChangeStatusId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("change_status_id");
+
+            entity.Property(e => e.Reason)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("reason");
+
+            entity.Property(e => e.SessionId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("session_id");
+
+            entity.Property(e => e.TeacherId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("teacher_id");
+
+            entity.Property(e => e.ProposedDate)
+                .HasColumnType("date")
+                .HasColumnName("proposed_date");
+
+            entity.Property(e => e.ProposedStartTime)
+                .HasColumnName("proposed_start_time");
+
+            entity.Property(e => e.ProposedEndTime)
+                .HasColumnName("proposed_end_time");
+
+            entity.Property(e => e.ProposedRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("proposed_room_id");
+
+            entity.Property(e => e.CounterProposalDate)
+                .HasColumnType("date")
+                .HasColumnName("counter_proposal_date");
+
+            entity.Property(e => e.CounterProposalStartTime)
+                .HasColumnName("counter_proposal_start_time");
+
+            entity.Property(e => e.CounterProposalEndTime)
+                .HasColumnName("counter_proposal_end_time");
+
+            entity.Property(e => e.CounterProposalRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("counter_proposal_room_id");
+
+            entity.Property(e => e.RejectionReason)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("rejection_reason");
+
+            entity.HasOne(d => d.ChangeStatus).WithMany(p => p.SessionRecoveryChanges)
+                .HasForeignKey(d => d.ChangeStatusId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RecoveryChange_Status");
+
+            entity.HasOne(d => d.Session).WithMany(p => p.SessionRecoveryChanges)
+                .HasForeignKey(d => d.SessionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RecoveryChange_Session");
+
+            entity.HasOne(d => d.Teacher).WithMany(p => p.SessionRecoveryChanges)
+                .HasForeignKey(d => d.TeacherId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RecoveryChange_Teacher");
+
+            entity.HasOne(d => d.ProposedRoom)
+                .WithMany()
+                .HasForeignKey(d => d.ProposedRoomId)
+                .HasConstraintName("FK_RecoveryChange_ProposedRoom");
+
+            entity.HasOne(d => d.CounterProposalRoom)
+                .WithMany()
+                .HasForeignKey(d => d.CounterProposalRoomId)
+                .HasConstraintName("FK_RecoveryChange_CounterProposalRoom");
+        });
         modelBuilder.Entity<SessionStatus>(entity =>
         {
             entity.HasKey(e => e.SessionStatusId).HasName("PK__SessionS__2155C5FD91FDE861");
@@ -672,6 +798,13 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("track_id");
+
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime2");
+
+            entity.Property(e => e.IsDeleted)
+                .HasColumnType("bit");
+
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -694,6 +827,8 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Track_Teacher");
+
+            entity.HasQueryFilter(t => !t.IsDeleted);
         });
 
         modelBuilder.Entity<UnavailableDay>(entity =>
@@ -1044,6 +1179,13 @@ public partial class TerHyperplanningContext : DbContext
 
         var teacherTitleId = GetStableId("tt-permanent");
 
+        var sessionId = GetStableId("session-001");
+        var sessionId2 = GetStableId("session-002");
+        var sessionId3 = GetStableId("session-003");
+        var sessionId4 = GetStableId("session-004");
+        var sessionId5 = GetStableId("session-005");
+        var sessionId6 = GetStableId("session-006");
+
         var wdMondayId = GetStableId("wd-monday");
         var wdTuesdayId = GetStableId("wd-tuesday");
         var wdWednesdayId = GetStableId("wd-wednesday");
@@ -1056,6 +1198,14 @@ public partial class TerHyperplanningContext : DbContext
         var roleAdminId = GetStableId("role-admin");
         var roleTeacherId = GetStableId("role-teacher");
         var roleStudentId = GetStableId("role-student");
+
+        var changeStatusPendingId = GetStableId("change-status-pending");
+        var changeStatusApprovedId = GetStableId("change-status-approved");
+        var changeStatusRejectedId = GetStableId("change-status-rejected");
+
+        var sessionChangeId1 = GetStableId("session-change-001");
+        var sessionChangeId2 = GetStableId("session-change-002");
+        var sessionChangeId3 = GetStableId("session-change-003");
 
         // ========================================
         // 1. TABLES DE RÉFÉRENCE (sans dépendances)
@@ -2316,6 +2466,66 @@ public partial class TerHyperplanningContext : DbContext
         attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = sharedFinalEventSessionId });
         attendSeed.Add(new { GroupId = groupId_M1_ILSD_B, SessionId = sharedFinalEventSessionId });
 
+        // Sessions de reference stables pour les changements de seance/salle.
+        var seedSessionId1 = GetStableId("seed-session-room-change-001");
+        var seedSessionId2 = GetStableId("seed-session-room-change-002");
+        var seedSessionId3 = GetStableId("seed-session-recovery-change-001");
+
+        var seedSessionDate1 = new DateTime(2026, 4, 7);
+        var seedSessionDate2 = new DateTime(2026, 4, 8);
+        var seedSessionDate3 = new DateTime(2026, 4, 9);
+
+        var seedSessionRoom1 = PickAvailableRoom(groupId_M1_ILSD, seedSessionDate1, new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0));
+        RegisterRoomAssignment(seedSessionRoom1, seedSessionDate1, new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0));
+        sessions.Add(new Session
+        {
+            SessionId = seedSessionId1,
+            Date = seedSessionDate1,
+            StartTime = new TimeSpan(8, 30, 0),
+            EndTime = new TimeSpan(10, 0, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_sad,
+            SessionTypeId = sessionTypeTdId,
+            SessionStatusId = sessionStatusId,
+            RoomId = seedSessionRoom1
+        });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = seedSessionId1 });
+        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId1 });
+
+        var seedSessionRoom2 = PickAvailableRoom(groupId_M1_ILSD_B, seedSessionDate2, new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0));
+        RegisterRoomAssignment(seedSessionRoom2, seedSessionDate2, new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0));
+        sessions.Add(new Session
+        {
+            SessionId = seedSessionId2,
+            Date = seedSessionDate2,
+            StartTime = new TimeSpan(10, 15, 0),
+            EndTime = new TimeSpan(11, 45, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_coo,
+            SessionTypeId = sessionTypeTdId,
+            SessionStatusId = sessionStatusId,
+            RoomId = seedSessionRoom2
+        });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD_B, SessionId = seedSessionId2 });
+        teachSeed.Add(new { TeacherId = teacherUserId2, SessionId = seedSessionId2 });
+
+        var seedSessionRoom3 = PickAvailableRoom(groupId_M1_ILSD, seedSessionDate3, new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0));
+        RegisterRoomAssignment(seedSessionRoom3, seedSessionDate3, new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0));
+        sessions.Add(new Session
+        {
+            SessionId = seedSessionId3,
+            Date = seedSessionDate3,
+            StartTime = new TimeSpan(14, 0, 0),
+            EndTime = new TimeSpan(16, 0, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_data,
+            SessionTypeId = sessionTypeTdId,
+            SessionStatusId = sessionStatusId,
+            RoomId = seedSessionRoom3
+        });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = seedSessionId3 });
+        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId3 });
+
         modelBuilder.Entity<Session>().HasData(sessions.ToArray());
 
         // ========================================
@@ -2328,7 +2538,72 @@ public partial class TerHyperplanningContext : DbContext
         // 10. TEACH (Teacher <-> Session)
         // ========================================
 
-        modelBuilder.Entity("Teach").HasData(teachSeed.ToArray());
+    modelBuilder.Entity("Teach").HasData(teachSeed.ToArray());
+
+    modelBuilder.Entity<ChangeStatus>().HasData(
+    new ChangeStatus
+    {
+        ChangeStatusId = changeStatusPendingId,
+        Label = "En attente"
+    },
+    new ChangeStatus
+    {
+        ChangeStatusId = changeStatusApprovedId,
+        Label = "Approuvé"
+    },
+    new ChangeStatus
+    {
+        ChangeStatusId = changeStatusRejectedId,
+        Label = "Refusé"
+    }
+);
+
+    modelBuilder.Entity<SessionRoomChange>().HasData(
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-001"),
+            ChangeDate = new DateTime(2026, 4, 5),
+            Reason = "La salle actuelle est trop petite pour accueillir tous les étudiants.",
+            TeacherId = teacherUserId,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-002"),
+            ChangeDate = new DateTime(2026, 4, 5),
+            Reason = "Équipement audiovisuel non disponible dans la salle actuelle.",
+            TeacherId = teacherUserId2,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusRejectedId,
+            ApprovedRoomId = null,
+            RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau."
+        }
+    );
+
+    modelBuilder.Entity<SessionRecoveryChange>().HasData(
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-001"),
+            ChangeDate = new DateTime(2026, 4, 5),
+            Reason = "Le cours a été annulé, il faut le rattraper.",
+            TeacherId = teacherUserId,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 20),
+            ProposedStartTime = new TimeSpan(14, 0, 0),
+            ProposedEndTime = new TimeSpan(16, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        }
+    );
+
     }
 
     private string GetStableId(string input)

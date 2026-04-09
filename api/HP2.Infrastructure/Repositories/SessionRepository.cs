@@ -137,6 +137,21 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
     public override async Task UpdateAsync(SessionModel model)
     {
+        var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == model.Id);
+        if (entity == null)
+        {
+            return;
+        }
+
+        // Soft-delete updates should not trigger schedule conflict validation.
+        if (model.IsDeleted)
+        {
+            entity.IsDeleted = model.IsDeleted;
+            entity.DeletedAt = model.DeletedAt;
+            await _dbContext.SaveChangesAsync();
+            return;
+        }
+
         await using var transaction = await _dbContext.Database.BeginTransactionAsync(IsolationLevel.Serializable);
         await AcquireRoomDateLockAsync(model.RoomId, model.StartDateTime.Date);
         await EnsureRoomHasNoScheduleConflictAsync(
@@ -145,12 +160,6 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
             model.EndDateTime.TimeOfDay,
             model.RoomId,
             model.Id);
-
-        var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == model.Id);
-        if (entity == null)
-        {
-            return;
-        }
 
         entity.Date = model.StartDateTime.Date;
         entity.StartTime = model.StartDateTime.TimeOfDay;
@@ -161,6 +170,8 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
         entity.SessionStatusId = model.SessionStatusId;
         entity.RoomId = model.RoomId;
         entity.Description = model.Description;
+        entity.IsDeleted = model.IsDeleted;
+        entity.DeletedAt = model.DeletedAt;
 
         await _dbContext.SaveChangesAsync();
         await transaction.CommitAsync();
@@ -168,11 +179,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
     public override async Task DeleteAsync(string id)
     {
-        var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == id);
-        if (entity == null) return;
-
-        _dbContext.Sessions.Remove(entity);
-        await _dbContext.SaveChangesAsync();
+        await base.DeleteAsync(id);
     }
 
     public async Task<string?> GetSessionTypeIdByLabelAsync(string label)
@@ -278,5 +285,42 @@ SELECT @result;";
             throw new InvalidOperationException(
                 $"Unable to lock room '{roomId}' on {date:yyyy-MM-dd} to validate schedule conflict (sp_getapplock result: {lockResult}).");
         }
+    }
+
+    public async Task<IReadOnlyList<SessionModel>> GetDeletedAsync()
+    {
+        var rows = await _dbContext.Sessions
+            .IgnoreQueryFilters()
+            .Where(s => s.IsDeleted)
+            .Select(s => new
+            {
+                Id = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                Mode = s.Mode,
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+                Description = s.Description,
+                IsDeleted = s.IsDeleted,
+                DeletedAt = s.DeletedAt
+            })
+            .ToListAsync();
+
+        return rows.Select(s => new SessionModel
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = ParseSessionModeOrDefault(s.Mode),
+            SessionTypeId = s.SessionTypeId,
+            CourseId = s.CourseId,
+            SessionStatusId = s.SessionStatusId,
+            RoomId = s.RoomId,
+            Description = s.Description,
+            IsDeleted = s.IsDeleted,
+            DeletedAt = s.DeletedAt
+        }).ToList();
     }
 }
