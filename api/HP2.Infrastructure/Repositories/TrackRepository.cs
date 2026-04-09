@@ -21,7 +21,9 @@ namespace HP2.Infrastructure.Repositories
                     Id = t.TrackId,
                     Name = t.Name,
                     TeacherId = t.TeacherId,
-                    ProgramId = t.ProgramId
+                    ProgramId = t.ProgramId,
+                    Description = t.Description,   // ✅ FIX
+                    Lieu = t.Lieu                  // ✅ FIX
                 })
                 .ToListAsync();
         }
@@ -35,13 +37,14 @@ namespace HP2.Infrastructure.Repositories
                 Id = t.TrackId,
                 Name = t.Name,
                 TeacherId = t.TeacherId,
-                ProgramId = t.ProgramId
+                ProgramId = t.ProgramId,
+                Description = t.Description,   // ✅ FIX
+                Lieu = t.Lieu                  // ✅ FIX
             };
         }
 
         public async Task<TrackModel> AddAsync(TrackModel model)
         {
-            // Validate foreign keys before inserting to provide clear errors
             if (!string.IsNullOrWhiteSpace(model.ProgramId))
             {
                 var programExists = await _context.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
@@ -61,10 +64,16 @@ namespace HP2.Infrastructure.Repositories
                 TrackId = model.Id ?? Guid.NewGuid().ToString(),
                 Name = model.Name,
                 TeacherId = model.TeacherId,
-                ProgramId = model.ProgramId
+                ProgramId = model.ProgramId,
+
+                // 🔥 FIX CRITIQUE
+                Description = model.Description,
+                Lieu = model.Lieu
             };
+
             _context.Tracks.Add(entity);
             await _context.SaveChangesAsync();
+
             model.Id = entity.TrackId;
             return model;
         }
@@ -73,7 +82,7 @@ namespace HP2.Infrastructure.Repositories
         {
             var entity = await _context.Tracks.FindAsync(model.Id);
             if (entity == null) return null;
-            // Validate foreign keys before updating
+
             if (!string.IsNullOrWhiteSpace(model.ProgramId))
             {
                 var programExists = await _context.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
@@ -91,6 +100,10 @@ namespace HP2.Infrastructure.Repositories
             entity.Name = model.Name;
             entity.TeacherId = model.TeacherId;
             entity.ProgramId = model.ProgramId;
+
+            // 🔥 FIX CRITIQUE
+            entity.Description = model.Description;
+            entity.Lieu = model.Lieu;
 
             await _context.SaveChangesAsync();
             return model;

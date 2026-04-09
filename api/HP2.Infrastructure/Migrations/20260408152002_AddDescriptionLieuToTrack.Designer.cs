@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260408152002_AddDescriptionLieuToTrack")]
+    partial class AddDescriptionLieuToTrack
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6181,16 +6184,6 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("building_id")
                         .HasDefaultValueSql("(newid())");
 
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime")
-                        .HasColumnName("deleted_at");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false)
-                        .HasColumnName("is_deleted");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -6210,13 +6203,11 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             BuildingId = "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1",
-                            IsDeleted = false,
                             Name = "Bâtiment A"
                         },
                         new
                         {
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
-                            IsDeleted = false,
                             Name = "IBGBI"
                         });
                 });
@@ -6600,22 +6591,12 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("capacity");
 
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime")
-                        .HasColumnName("deleted_at");
-
                     b.Property<bool?>("IsAvailable")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasColumnName("is_available")
                         .HasDefaultValueSql("((1))");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false)
-                        .HasColumnName("is_deleted");
 
                     b.Property<string>("RoomNumber")
                         .IsRequired()
@@ -6650,7 +6631,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1",
                             Capacity = 40,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "A-102",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6660,7 +6640,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-1",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6670,7 +6649,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-2",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6680,7 +6658,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-3",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6690,7 +6667,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-4",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6700,7 +6676,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-5",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6710,7 +6685,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-6",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6720,7 +6694,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-7",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6730,7 +6703,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-8",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6740,7 +6712,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-9",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6750,7 +6721,6 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
-                            IsDeleted = false,
                             RoomNumber = "IBGBI-10",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         });
@@ -21404,11 +21374,11 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("track_id")
                         .HasDefaultValueSql("(newid())");
 
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                    b.Property<string>("Lieu")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -21444,7 +21414,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
-                            IsDeleted = false,
                             Name = "M1 Informatique Décisionnelle - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21452,7 +21421,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
-                            IsDeleted = false,
                             Name = "M1 Ingénierie Logicielle pour la Science des Données - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21460,7 +21428,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
-                            IsDeleted = false,
                             Name = "M1 Ingénierie Logicielle pour la Science des Données",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21468,7 +21435,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
-                            IsDeleted = false,
                             Name = "M2 Informatique Décisionnelle - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21476,7 +21442,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
-                            IsDeleted = false,
                             Name = "M2 Ingénierie Logicielle pour la Science des Données - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21484,7 +21449,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
-                            IsDeleted = false,
                             Name = "M2 Ingénierie Logicielle pour la Science des Données",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21492,7 +21456,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
-                            IsDeleted = false,
                             Name = "M1 Artificial Intelligence",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21500,7 +21463,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
-                            IsDeleted = false,
                             Name = "M1 Computer and Network Systems",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21508,7 +21470,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
-                            IsDeleted = false,
                             Name = "M1 Master parisien de recherche en Informatique (MPRI)",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21516,7 +21477,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
-                            IsDeleted = false,
                             Name = "M2 Artificial Intelligence",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21524,7 +21484,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
-                            IsDeleted = false,
                             Name = "M2 Computer and Network Systems (CNS) - Systèmes Autonomiques",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -21532,7 +21491,6 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
-                            IsDeleted = false,
                             Name = "M2 Master parisien de recherche en Informatique (MPRI)",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"

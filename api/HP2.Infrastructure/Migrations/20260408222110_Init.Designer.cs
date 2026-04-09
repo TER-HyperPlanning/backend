@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    [Migration("20260407195010_Init")]
+    [Migration("20260408222110_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -6184,6 +6184,16 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("building_id")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("deleted_at");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_deleted");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -6203,11 +6213,13 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             BuildingId = "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1",
+                            IsDeleted = false,
                             Name = "Bâtiment A"
                         },
                         new
                         {
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
+                            IsDeleted = false,
                             Name = "IBGBI"
                         });
                 });
@@ -6591,12 +6603,22 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("capacity");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime")
+                        .HasColumnName("deleted_at");
+
                     b.Property<bool?>("IsAvailable")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasColumnName("is_available")
                         .HasDefaultValueSql("((1))");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_deleted");
 
                     b.Property<string>("RoomNumber")
                         .IsRequired()
@@ -6631,6 +6653,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1",
                             Capacity = 40,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "A-102",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6640,6 +6663,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-1",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6649,6 +6673,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-2",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6658,6 +6683,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-3",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6667,6 +6693,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-4",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6676,6 +6703,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 36,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-5",
                             RoomTypeId = "2ebbc802-19e3-1c66-7809-e0126364f9f3"
                         },
@@ -6685,6 +6713,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-6",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6694,6 +6723,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-7",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6703,6 +6733,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-8",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6712,6 +6743,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-9",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         },
@@ -6721,6 +6753,7 @@ namespace HP2.Infrastructure.Migrations
                             BuildingId = "c3372749-b5f6-f0e6-e628-e79b82b17dc7",
                             Capacity = 50,
                             IsAvailable = true,
+                            IsDeleted = false,
                             RoomNumber = "IBGBI-10",
                             RoomTypeId = "d1026790-e6d8-e5a5-d486-fcd720c78c6d"
                         });

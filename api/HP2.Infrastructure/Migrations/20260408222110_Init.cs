@@ -18,7 +18,9 @@ namespace HP2.Infrastructure.Migrations
                 columns: table => new
                 {
                     building_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
-                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    deleted_at = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -171,7 +173,9 @@ namespace HP2.Infrastructure.Migrations
                     is_available = table.Column<bool>(type: "bit", nullable: false, defaultValueSql: "((1))"),
                     capacity = table.Column<int>(type: "int", nullable: false),
                     building_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    room_type_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    room_type_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    deleted_at = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -534,11 +538,11 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Building",
-                columns: new[] { "building_id", "name" },
+                columns: new[] { "building_id", "deleted_at", "name" },
                 values: new object[,]
                 {
-                    { "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1", "Bâtiment A" },
-                    { "c3372749-b5f6-f0e6-e628-e79b82b17dc7", "IBGBI" }
+                    { "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1", null, "Bâtiment A" },
+                    { "c3372749-b5f6-f0e6-e628-e79b82b17dc7", null, "IBGBI" }
                 });
 
             migrationBuilder.InsertData(
@@ -648,20 +652,20 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Room",
-                columns: new[] { "room_id", "building_id", "capacity", "is_available", "room_number", "room_type_id" },
+                columns: new[] { "room_id", "building_id", "capacity", "deleted_at", "is_available", "room_number", "room_type_id" },
                 values: new object[,]
                 {
-                    { "02bcf600-5d44-cca7-8b68-e763b00a6339", "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1", 40, true, "A-102", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
-                    { "105f2e79-3a04-c9be-ebe1-241b17a81848", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, true, "IBGBI-5", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
-                    { "222025a7-66a4-9b58-2958-eb835bd75046", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, true, "IBGBI-8", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
-                    { "305290d1-3c50-8f7d-1f6a-898cc87f8f5c", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, true, "IBGBI-4", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
-                    { "5863a804-6ac2-3f05-38ed-472541726740", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, true, "IBGBI-1", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
-                    { "61eea842-d7b8-3f75-7a50-f17d467e2f82", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, true, "IBGBI-6", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
-                    { "694b7a35-1915-d0fb-02e2-562a6b6b3ad0", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, true, "IBGBI-3", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
-                    { "91263188-230c-ee00-ed2e-9eda780a61de", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, true, "IBGBI-9", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
-                    { "93a4338a-6691-98fc-6919-1f94663cd1ae", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, true, "IBGBI-10", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
-                    { "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, true, "IBGBI-2", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
-                    { "ba6e201b-edf9-7aea-a09f-4bb2fed50891", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, true, "IBGBI-7", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" }
+                    { "02bcf600-5d44-cca7-8b68-e763b00a6339", "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1", 40, null, true, "A-102", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
+                    { "105f2e79-3a04-c9be-ebe1-241b17a81848", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, null, true, "IBGBI-5", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
+                    { "222025a7-66a4-9b58-2958-eb835bd75046", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, null, true, "IBGBI-8", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
+                    { "305290d1-3c50-8f7d-1f6a-898cc87f8f5c", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, null, true, "IBGBI-4", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
+                    { "5863a804-6ac2-3f05-38ed-472541726740", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, null, true, "IBGBI-1", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
+                    { "61eea842-d7b8-3f75-7a50-f17d467e2f82", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, null, true, "IBGBI-6", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
+                    { "694b7a35-1915-d0fb-02e2-562a6b6b3ad0", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, null, true, "IBGBI-3", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
+                    { "91263188-230c-ee00-ed2e-9eda780a61de", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, null, true, "IBGBI-9", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
+                    { "93a4338a-6691-98fc-6919-1f94663cd1ae", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, null, true, "IBGBI-10", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" },
+                    { "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 36, null, true, "IBGBI-2", "2ebbc802-19e3-1c66-7809-e0126364f9f3" },
+                    { "ba6e201b-edf9-7aea-a09f-4bb2fed50891", "c3372749-b5f6-f0e6-e628-e79b82b17dc7", 50, null, true, "IBGBI-7", "d1026790-e6d8-e5a5-d486-fcd720c78c6d" }
                 });
 
             migrationBuilder.InsertData(

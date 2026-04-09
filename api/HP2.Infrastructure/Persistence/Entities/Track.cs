@@ -21,7 +21,7 @@ public partial class Track
 
     public virtual Teacher Teacher { get; set; } = null!;
 
-    public bool IsDeleted { get; set; } = false;
+    public string? Description { get; set; }
 
-    public DateTime? DeletedAt { get; set; }
+    public string? Lieu { get; set; }
 }

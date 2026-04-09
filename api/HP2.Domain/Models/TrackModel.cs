@@ -8,6 +8,6 @@ public class TrackModel : BaseModel, ISoftDeletable
     public string Name { get; set; } = string.Empty;
     public string TeacherId { get; set; } = string.Empty;
     public string ProgramId { get; set; } = string.Empty;
-    public bool IsDeleted { get; set; }
-    public DateTime? DeletedAt { get; set; }
+    public string? Description { get; set; }
+    public string? Lieu { get; set; }
 }

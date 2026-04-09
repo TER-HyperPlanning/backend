@@ -4,6 +4,7 @@ using HP2.Application.DTOs.Track;
 using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
@@ -21,6 +22,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<TrackResponse>>> Create([FromBody] CreateTrackRequest request)
     {
         if (request == null) return BadRequest();
@@ -51,6 +53,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "ADMIN,TEACHER,STUDENT")]
     public async Task<ActionResult<ApiResponse<TrackResponse>>> Get(string id)
     {
         var track = await _trackService.GetByIdAsync(id);
@@ -62,6 +65,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "ADMIN,TEACHER,STUDENT")]
     public async Task<ActionResult<ApiResponse<List<TrackResponse>>>> GetAll()
     {
         var tracks = await _trackService.GetAllAsync();
@@ -71,6 +75,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> Update(string id, [FromBody] UpdateTrackRequest request)
     {
         if (request == null) return BadRequest();
@@ -87,6 +92,8 @@ public class TracksController : ControllerBase
         existing.Name = request.Name;
         existing.TeacherId = request.TeacherId;
         existing.ProgramId = request.ProgramId;
+        existing.Description = request.Description;
+        existing.Lieu = request.Lieu;
         try
         {
             var updated = await _trackService.UpdateAsync(existing);
@@ -104,6 +111,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> Delete(string id)
     {
         var deleted = await _trackService.DeleteAsync(id);

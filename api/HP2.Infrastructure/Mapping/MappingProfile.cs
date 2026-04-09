@@ -88,10 +88,19 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProgramId))
                 .ReverseMap()
                 .ForMember(dest => dest.ProgramId, opt => opt.MapFrom(src => src.Id));
-            CreateMap<Track, TrackModel>().ReverseMap();
+            CreateMap<Track, TrackModel>()
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
+            .ForMember(dest => dest.Lieu, opt => opt.MapFrom(src => src.Lieu))
+            .ReverseMap();
             CreateMap<TrackModel, TrackResponse>().ReverseMap();
-            CreateMap<CreateTrackRequest, TrackModel>().ReverseMap();
-            CreateMap<UpdateTrackRequest, TrackModel>().ReverseMap();
+            CreateMap<CreateTrackRequest, TrackModel>()
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
+            .ForMember(dest => dest.Lieu, opt => opt.MapFrom(src => src.Lieu))
+            .ReverseMap();
+            CreateMap<UpdateTrackRequest, TrackModel>()
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
+            .ForMember(dest => dest.Lieu, opt => opt.MapFrom(src => src.Lieu))
+            .ReverseMap();
 
             CreateMap<Course, CourseModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.CourseId))
@@ -162,7 +171,9 @@ namespace HP2.Infrastructure.Mapping
             // ===== Room =====
             CreateMap<Building, BuildingModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BuildingId))
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.DeletedAt));
 
             CreateMap<Room, RoomModel>().ReverseMap();
             CreateMap<RoomType, RoomTypeModel>().ReverseMap();
