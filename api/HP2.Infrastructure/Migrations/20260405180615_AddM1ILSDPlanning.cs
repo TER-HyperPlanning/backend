@@ -68,6 +68,18 @@ namespace HP2.Infrastructure.Migrations
                 keyColumns: new[] { "session_id", "teacher_id" },
                 keyValues: new object[] { "e823715d-0a77-1379-9289-b44b55c10267", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" });
 
+            migrationBuilder.Sql(@"
+                DELETE FROM [SessionChange]
+                WHERE [session_id] IN (
+                    '3701bc4e-401e-f4f3-00aa-b37659789636',
+                    '54166d2e-0d4d-7e23-3a55-ecde2614bcfa',
+                    '5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f',
+                    '885f671e-9801-9aec-86eb-3fe1cb1db365',
+                    'a5129120-7dfa-797c-3e24-99056723ec39',
+                    'e823715d-0a77-1379-9289-b44b55c10267'
+                );
+            ");
+
             migrationBuilder.DeleteData(
                 table: "Session",
                 keyColumn: "session_id",

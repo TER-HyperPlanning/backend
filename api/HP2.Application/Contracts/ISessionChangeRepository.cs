@@ -1,19 +1,17 @@
-using HP2.Domain.Models;
+using HP2.Application.DTOs.SessionChange;
 
 namespace HP2.Application.Contracts;
 
-public interface ISessionChangeRepository : IAsyncRepository<SessionChangeModel>
+public interface ISessionChangeRepository
 {
-    Task<IReadOnlyList<SessionChangeModel>> GetAllDetailedAsync();
-    Task<SessionChangeModel?> GetDetailedByIdAsync(string id);
+    Task<IReadOnlyList<SessionChangeListResponse>> GetAllDetailedAsync();
+    Task<SessionChangeDetailsResponse?> GetDetailedByIdAsync(string id);
 
     Task<string?> GetChangeStatusIdByLabelAsync(string label);
     Task<bool> RoomExistsAsync(string roomId);
 
     Task ApproveRoomChangeAsync(string sessionChangeId, string roomId, string approvedStatusId);
-
     Task RejectAsync(string sessionChangeId, string rejectionReason, string rejectedStatusId);
-
     Task ApproveRecoveryAsync(string sessionChangeId, string approvedStatusId);
 
     Task CounterProposeAsync(

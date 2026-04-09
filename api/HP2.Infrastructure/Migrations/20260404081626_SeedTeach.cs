@@ -20,7 +20,6 @@ namespace HP2.Infrastructure.Migrations
                 {
                     { "3701bc4e-401e-f4f3-00aa-b37659789636", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
                     { "54166d2e-0d4d-7e23-3a55-ecde2614bcfa", "63d58b13-c957-6ee8-4ed6-303e20d09973" },
-                    { "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f", "455c6918-8f55-8171-e3b6-573e17977cfc" },
                     { "885f671e-9801-9aec-86eb-3fe1cb1db365", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
                     { "a5129120-7dfa-797c-3e24-99056723ec39", "14185a87-c07d-c0db-e37b-536e871528f2" },
                     { "e823715d-0a77-1379-9289-b44b55c10267", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
@@ -305,11 +304,6 @@ namespace HP2.Infrastructure.Migrations
                 table: "Teach",
                 keyColumns: new[] { "session_id", "teacher_id" },
                 keyValues: new object[] { "54166d2e-0d4d-7e23-3a55-ecde2614bcfa", "63d58b13-c957-6ee8-4ed6-303e20d09973" });
-
-            migrationBuilder.DeleteData(
-                table: "Teach",
-                keyColumns: new[] { "session_id", "teacher_id" },
-                keyValues: new object[] { "5b7d0dd2-a75d-475e-0f03-d4d2b7f3c55f", "455c6918-8f55-8171-e3b6-573e17977cfc" });
 
             migrationBuilder.DeleteData(
                 table: "Teach",

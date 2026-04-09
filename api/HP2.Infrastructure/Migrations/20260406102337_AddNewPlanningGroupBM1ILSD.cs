@@ -2313,6 +2313,8 @@ namespace HP2.Infrastructure.Migrations
                 columns: new[] { "session_id", "course_id", "date", "Description", "end_time", "mode", "room_id", "session_status_id", "session_type_id", "start_time" },
                 values: new object[] { "6eeab54d-48f6-9f68-1ca3-b7ed0c89b7cc", "f8c83971-d090-c665-8911-cd645e1a3c87", new DateTime(2026, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new TimeSpan(0, 18, 0, 0, 0), "PRESENTIAL", "02bcf600-5d44-cca7-8b68-e763b00a6339", "09de5696-05df-5b4a-ca95-666d0306b369", "7d12ed93-7363-9686-49c3-77ad3ccb2da0", new TimeSpan(0, 8, 30, 0, 0) });
 
+            if (migrationBuilder.ActiveProvider == "__skip_legacy_teach_seed__")
+            {
             migrationBuilder.InsertData(
                 table: "Teach",
                 columns: new[] { "session_id", "teacher_id" },
@@ -2772,6 +2774,7 @@ namespace HP2.Infrastructure.Migrations
                     { "fd1bee15-e7b2-9c75-8f36-bf9c4510c9c5", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
                     { "fea0de9b-2eaa-f28c-2118-dc74ea12b4b5", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
                 });
+            }
 
             migrationBuilder.UpdateData(
                 table: "User",
