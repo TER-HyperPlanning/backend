@@ -1,4 +1,5 @@
 using HP2.Domain.Models;
+using HP2.Application.DTOs.Assign;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,5 +14,6 @@ namespace HP2.Application.Contracts
         Task<TrackModel> UpdateAsync(TrackModel model);
         Task<bool> DeleteAsync(string id);
         Task<bool> ExistsAsync(string id);
+        Task<AssignResponse?> GetFirstAssignByTrackIdAsync(string trackId);
     }
 }

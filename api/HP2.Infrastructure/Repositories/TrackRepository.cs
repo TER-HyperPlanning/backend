@@ -1,5 +1,6 @@
 using AutoMapper;
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Assign;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -169,6 +170,21 @@ namespace HP2.Infrastructure.Repositories
                     DeletedAt = t.DeletedAt
                 })
                 .ToListAsync();
+        }
+
+        public async Task<AssignResponse?> GetFirstAssignByTrackIdAsync(string trackId)
+        {
+            return await _dbContext.Assigns
+                .AsNoTracking()
+                .Where(a => a.TrackId == trackId)
+                .OrderBy(a => a.CourseId)
+                .Select(a => new AssignResponse
+                {
+                    TrackId = a.TrackId,
+                    CourseId = a.CourseId,
+                    HourlyVolume = a.HourlyVolume
+                })
+                .FirstOrDefaultAsync();
         }
     }
 }

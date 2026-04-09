@@ -2,6 +2,7 @@ using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Track;
 using HP2.Application.DTOs.Common;
+using HP2.Application.Exceptions;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
@@ -114,10 +115,17 @@ public class TracksController : ControllerBase
     [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> Delete(string id)
     {
-        var deleted = await _trackService.DeleteAsync(id);
-        if (!deleted) return NotFound(ApiResponse<string>.Fail("Track not found"));
+        try
+        {
+            var deleted = await _trackService.DeleteAsync(id);
+            if (!deleted) return NotFound(ApiResponse<string>.Fail("Track not found"));
 
-        return Ok(ApiResponse<string>.Success(id, "Track deleted successfully"));
+            return Ok(ApiResponse<string>.Success(id, "Track deleted successfully"));
+        }
+        catch (DeleteConflictException ex)
+        {
+            return Conflict(ApiResponse<object>.Fail(ex.Message, ex.BlockingResource));
+        }
     }
 
     [HttpGet("deleted")]
