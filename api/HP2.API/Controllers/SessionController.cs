@@ -91,11 +91,18 @@ public class SessionsController : ControllerBase
             Description = request.Description
         };
 
-        var created = await _sessionService.CreateSessionAsync(model);
-        var createdFull = await _sessionService.GetSessionByIdAsync(created.Id);
+        try
+        {
+            var created = await _sessionService.CreateSessionAsync(model);
+            var createdFull = await _sessionService.GetSessionByIdAsync(created.Id);
 
-        return CreatedAtAction(nameof(Get), new { id = created.Id },
-            ApiResponse<SessionResponse>.Success(MapToResponse(createdFull!), "Session created successfully"));
+            return CreatedAtAction(nameof(Get), new { id = created.Id },
+                ApiResponse<SessionResponse>.Success(MapToResponse(createdFull!), "Session created successfully"));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(ApiResponse<SessionResponse>.Fail(ex.Message));
+        }
     }
 
     [HttpGet("{id}")]
@@ -114,6 +121,13 @@ public class SessionsController : ControllerBase
         var sessions = await _sessionService.GetAllSessionsAsync();
         var responses = sessions.Select(MapToResponse);
         return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(responses));
+    }
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedSessionResponse>>>> GetDeleted()
+    {
+        var sessions = await _sessionService.GetDeletedSessionsAsync();
+        var response = sessions.Select(MapToDeletedResponse);
+        return Ok(ApiResponse<IEnumerable<DeletedSessionResponse>>.Success(response));
     }
 
     [HttpPut("{id}")]
@@ -188,10 +202,17 @@ public class SessionsController : ControllerBase
         existing.RoomId = request.RoomId;
         existing.Description = request.Description;
 
-        await _sessionService.UpdateSessionAsync(existing);
-        var updatedFull = await _sessionService.GetSessionByIdAsync(id);
+        try
+        {
+            await _sessionService.UpdateSessionAsync(existing);
+            var updatedFull = await _sessionService.GetSessionByIdAsync(id);
 
-        return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(updatedFull!), "Session updated successfully"));
+            return Ok(ApiResponse<SessionResponse>.Success(MapToResponse(updatedFull!), "Session updated successfully"));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(ApiResponse<SessionResponse>.Fail(ex.Message));
+        }
     }
 
     [HttpDelete("{id}")]
@@ -218,6 +239,22 @@ public class SessionsController : ControllerBase
             Status = SessionReferenceMapper.ToSessionStatusEnum(s.SessionStatusLabel ?? ""),
             Room = s.RoomNumber ?? "",
             Course = s.CourseName ?? ""
+        };
+    }
+    private static DeletedSessionResponse MapToDeletedResponse(SessionModel s)
+    {
+        return new DeletedSessionResponse
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = s.Mode,
+            Description = s.Description,
+            SessionTypeId = s.SessionTypeId,
+            CourseId = s.CourseId,
+            SessionStatusId = s.SessionStatusId,
+            RoomId = s.RoomId,
+            DeletedAt = s.DeletedAt
         };
     }
 

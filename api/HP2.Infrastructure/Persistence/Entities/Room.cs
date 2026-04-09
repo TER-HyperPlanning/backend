@@ -17,6 +17,10 @@ public partial class Room
 
     public string RoomTypeId { get; set; } = null!;
 
+    public bool IsDeleted { get; set; }
+
+    public DateTime? DeletedAt { get; set; }
+
     public virtual Building Building { get; set; } = null!;
 
     public virtual RoomType RoomType { get; set; } = null!;

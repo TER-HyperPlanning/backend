@@ -16,6 +16,8 @@ public class TeachRepository : ITeachRepository
 
     public async Task<TeachModel> AddAsync(TeachModel model)
     {
+        await using var transaction = await _context.Database.BeginTransactionAsync(System.Data.IsolationLevel.Serializable);
+
         var session = await _context.Sessions
             .Include(s => s.Teachers)
             .FirstOrDefaultAsync(s => s.SessionId == model.SessionId);
@@ -38,14 +40,19 @@ public class TeachRepository : ITeachRepository
             throw new InvalidOperationException("This teacher is already assigned to this session.");
         }
 
+        await EnsureTeacherHasNoScheduleConflictAsync(session, model.TeacherId);
+
         session.Teachers.Add(teacher);
         await _context.SaveChangesAsync();
+        await transaction.CommitAsync();
 
         return model;
     }
 
     public async Task<TeachModel> UpdateAsync(string currentSessionId, string currentTeacherId, TeachModel model)
     {
+        await using var transaction = await _context.Database.BeginTransactionAsync(System.Data.IsolationLevel.Serializable);
+
         var currentSession = await _context.Sessions
             .Include(s => s.Teachers)
             .FirstOrDefaultAsync(s => s.SessionId == currentSessionId);
@@ -84,10 +91,15 @@ public class TeachRepository : ITeachRepository
             throw new InvalidOperationException("This teacher is already assigned to this session.");
         }
 
+        // If the same teacher is moved between sessions, ignore the current one during overlap check.
+        var sessionIdToIgnore = currentTeacherId == model.TeacherId ? currentSessionId : null;
+        await EnsureTeacherHasNoScheduleConflictAsync(targetSession, model.TeacherId, sessionIdToIgnore);
+
         currentSession.Teachers.Remove(currentTeacher);
         targetSession.Teachers.Add(targetTeacher);
 
         await _context.SaveChangesAsync();
+        await transaction.CommitAsync();
 
         return model;
     }
@@ -173,4 +185,31 @@ public class TeachRepository : ITeachRepository
 
     public Task<bool> TeacherExistsAsync(string teacherId)
         => _context.Teachers.AnyAsync(t => t.UserId == teacherId);
+
+    private async Task EnsureTeacherHasNoScheduleConflictAsync(Session targetSession, string teacherId, string? sessionIdToIgnore = null)
+    {
+        var conflict = await _context.Sessions
+            .AsNoTracking()
+            .Where(s => s.Date == targetSession.Date)
+            .Where(s => s.SessionId != targetSession.SessionId)
+            .Where(s => sessionIdToIgnore == null || s.SessionId != sessionIdToIgnore)
+            .Where(s => s.Teachers.Any(t => t.UserId == teacherId))
+            .Where(s => targetSession.StartTime <= s.EndTime && s.StartTime <= targetSession.EndTime)
+            .Select(s => new
+            {
+                s.SessionId,
+                s.StartTime,
+                s.EndTime,
+                CourseName = s.Course.Name
+            })
+            .FirstOrDefaultAsync();
+
+        if (conflict == null)
+        {
+            return;
+        }
+
+        throw new InvalidOperationException(
+            $"Teacher already has session '{conflict.SessionId}' ({conflict.CourseName}) on {targetSession.Date:yyyy-MM-dd} from {conflict.StartTime:hh\\:mm} to {conflict.EndTime:hh\\:mm}.");
+    }
 }

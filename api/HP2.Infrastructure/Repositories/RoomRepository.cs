@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.RoomDtos;
+using HP2.Application.DTOs.Session;
 using HP2.Domain.Enums;
 using HP2.Infrastructure.Persistence.Entities;
 using HP2.Infrastructure.Repositories;
@@ -13,9 +14,10 @@ namespace HP2.Infrastructure.Persistence.Repositories
 {
     public class RoomRepository : RepositoryBase<RoomModel>, IRoomRepository
     {
-        private const string SalleTdName = "Salle de TD";
-        private const string SalleCoursName = "Salle de Cours";
-        private const string AmphitheatreName = "Amphitheatre";
+        private const string TdName = "TD";
+        private const string CoursName = "COURS";
+        private const string InfoName = "INFO";
+        private const string AmphitheatreName = "AMPHITHEATRE";
 
         public RoomRepository(TerHyperplanningContext _dbContext, IMapper mapper) : base(_dbContext, mapper)
         {
@@ -23,18 +25,19 @@ namespace HP2.Infrastructure.Persistence.Repositories
 
         private static RoomTypeEnum MapRoomTypeNameToEnum(string roomTypeName)
         {
-            var normalized = roomTypeName.Trim();
+            var normalized = roomTypeName.Trim().ToUpperInvariant();
 
-            return normalized.ToLowerInvariant() switch
+            return normalized switch
             {
-                "salle de td" => RoomTypeEnum.SalleTD,
-                "salle td" => RoomTypeEnum.SalleTD,
-                "salletd" => RoomTypeEnum.SalleTD,
-                "salle de cours" => RoomTypeEnum.SalleCOURS,
-                "salle cours" => RoomTypeEnum.SalleCOURS,
-                "sallecours" => RoomTypeEnum.SalleCOURS,
-                "amphitheatre" => RoomTypeEnum.AMPHITHEATRE,
-                "amphitheater" => RoomTypeEnum.AMPHITHEATRE,
+                "TD" => RoomTypeEnum.TD,
+                "COURS" => RoomTypeEnum.COURS,
+                "INFO" => RoomTypeEnum.INFO,
+                "AMPHITHEATRE" => RoomTypeEnum.AMPHITHEATRE,
+                "AMPHITHEATER" => RoomTypeEnum.AMPHITHEATRE,
+                "SALLE DE TD" => RoomTypeEnum.TD,
+                "SALLE TD" => RoomTypeEnum.TD,
+                "SALLE DE COURS" => RoomTypeEnum.COURS,
+                "SALLE COURS" => RoomTypeEnum.COURS,
                 _ => throw new KeyNotFoundException($"Type de salle inconnu: '{roomTypeName}'.")
             };
         }
@@ -43,8 +46,9 @@ namespace HP2.Infrastructure.Persistence.Repositories
         {
             return roomType switch
             {
-                RoomTypeEnum.SalleTD => SalleTdName,
-                RoomTypeEnum.SalleCOURS => SalleCoursName,
+                RoomTypeEnum.TD => TdName,
+                RoomTypeEnum.COURS => CoursName,
+                RoomTypeEnum.INFO => InfoName,
                 RoomTypeEnum.AMPHITHEATRE => AmphitheatreName,
                 _ => throw new KeyNotFoundException($"Enum de type de salle inconnu: {roomType}.")
             };
@@ -74,7 +78,9 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 IsAvailable = roomModel.IsAvailable,
                 Capacity = roomModel.Capacity,
                 BuildingId = roomModel.BuildingId,
-                RoomTypeId = roomTypeId
+                RoomTypeId = roomTypeId,
+                IsDeleted = false,
+                DeletedAt = null
             };
 
             await _dbContext.Rooms.AddAsync(room);
@@ -87,18 +93,63 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
-                Type = roomModel.Type
+                Type = roomModel.Type,
+                IsDeleted = room.IsDeleted,
+                DeletedAt = room.DeletedAt
             };
         }
 
         public override async Task DeleteAsync(string id)
         {
-            var room = await _dbContext.Rooms.FindAsync(id);
-            if (room != null)
-            {
-                _dbContext.Rooms.Remove(room);
-                await _dbContext.SaveChangesAsync();
-            }
+            await base.DeleteAsync(id);
+        }
+
+        public async Task<IReadOnlyList<RoomModel>> GetDeletedAsync()
+        {
+            var rooms = await _dbContext.Rooms
+                .IgnoreQueryFilters()
+                .Where(r => r.IsDeleted)
+                .Include(r => r.RoomType)
+                .ToListAsync();
+
+            return rooms
+                .Select(r => new RoomModel
+                {
+                    RoomId = r.RoomId,
+                    RoomNumber = r.RoomNumber,
+                    IsAvailable = r.IsAvailable,
+                    Capacity = r.Capacity,
+                    BuildingId = r.BuildingId,
+                    Type = MapRoomTypeNameToEnum(r.RoomType.Name),
+                    IsDeleted = r.IsDeleted,
+                    DeletedAt = r.DeletedAt
+                })
+                .ToList();
+        }
+
+        public Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionAsync(string roomId, DateTime referenceDateTime)
+        {
+            var referenceDate = referenceDateTime.Date;
+            var referenceTime = referenceDateTime.TimeOfDay;
+
+            return _dbContext.Sessions
+                .AsNoTracking()
+                .Where(s => s.RoomId == roomId
+                            && (s.Date > referenceDate
+                                || (s.Date == referenceDate && s.EndTime > referenceTime)))
+                .OrderBy(s => s.Date)
+                .ThenBy(s => s.StartTime)
+                .Select(s => new BlockingSessionInfo
+                {
+                    SessionId = s.SessionId,
+                    StartDateTime = s.Date.Date + s.StartTime,
+                    EndDateTime = s.Date.Date + s.EndTime,
+                    RoomId = s.RoomId,
+                    RoomNumber = s.Room.RoomNumber,
+                    CourseId = s.CourseId,
+                    CourseName = s.Course.Name
+                })
+                .FirstOrDefaultAsync();
         }
 
         public override async Task<IReadOnlyList<RoomModel>> GetAllAsync()
@@ -115,18 +166,20 @@ namespace HP2.Infrastructure.Persistence.Repositories
                     IsAvailable = r.IsAvailable,
                     Capacity = r.Capacity,
                     BuildingId = r.BuildingId,
-                    Type = MapRoomTypeNameToEnum(r.RoomType.Name)
+                    Type = MapRoomTypeNameToEnum(r.RoomType.Name),
+                    IsDeleted = r.IsDeleted,
+                    DeletedAt = r.DeletedAt
                 })
                 .ToList();
         }
 
-        public override async Task<RoomModel> GetByIdAsync(string id)
+        public override async Task<RoomModel?> GetByIdAsync(string id)
         {
             var room = await _dbContext.Rooms
                 .Include(r => r.RoomType)
                 .FirstOrDefaultAsync(r => r.RoomId == id);
 
-            if (room == null) return null!;
+            if (room == null) return null;
 
             return new RoomModel
             {
@@ -134,7 +187,9 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
-                Type = MapRoomTypeNameToEnum(room.RoomType.Name)
+                Type = MapRoomTypeNameToEnum(room.RoomType.Name),
+                IsDeleted = room.IsDeleted,
+                DeletedAt = room.DeletedAt
             };
         }
 
@@ -152,7 +207,9 @@ namespace HP2.Infrastructure.Persistence.Repositories
                     IsAvailable = r.IsAvailable,
                     Capacity = r.Capacity,
                     BuildingId = r.BuildingId,
-                    Type = MapRoomTypeNameToEnum(r.RoomType.Name)
+                    Type = MapRoomTypeNameToEnum(r.RoomType.Name),
+                    IsDeleted = r.IsDeleted,
+                    DeletedAt = r.DeletedAt
                 })
                 .ToList();
         }
@@ -175,6 +232,8 @@ namespace HP2.Infrastructure.Persistence.Repositories
             room.Capacity = roomModel.Capacity;
             room.BuildingId = roomModel.BuildingId;
             room.RoomTypeId = roomTypeId;
+            room.IsDeleted = roomModel.IsDeleted;
+            room.DeletedAt = roomModel.DeletedAt;
 
             _dbContext.Rooms.Update(room);
             await _dbContext.SaveChangesAsync();
@@ -185,7 +244,9 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
-                Type = roomModel.Type
+                Type = roomModel.Type,
+                IsDeleted = room.IsDeleted,
+                DeletedAt = room.DeletedAt
             };
         }
     }

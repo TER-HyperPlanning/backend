@@ -1,7 +1,7 @@
 using HP2.Domain.Common;
 using HP2.Domain.Enums;
 
-public class RoomModel : BaseModel
+public class RoomModel : SoftDeletableModel
 {
 
     public string RoomId { get; set; } = null!;

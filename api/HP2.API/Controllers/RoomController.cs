@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.RoomDtos;
 using HP2.Application.DTOs.Common;
+using HP2.Application.Exceptions;
 using HP2.Domain.Enums;
 
 namespace HP2.API.Controllers
@@ -22,7 +23,7 @@ namespace HP2.API.Controllers
 
         private static readonly Dictionary<string, string> EnumAllowedValues = new(StringComparer.OrdinalIgnoreCase)
         {
-            ["roomTypeId"] = string.Join(", ", "SalleTD", "SalleCOURS", "AMPHITHEATRE", "Salle de TD", "Salle de Cours", "Amphitheatre")
+            ["roomTypeId"] = string.Join(", ", "TD", "COURS", "INFO", "AMPHITHEATRE")
         };
 
         private static string FormatFieldWithAllowedValues(string field)
@@ -50,12 +51,13 @@ namespace HP2.API.Controllers
 
             return normalized.ToLowerInvariant() switch
             {
-                "salle de td" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
-                "salle td" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
-                "salletd" => (roomType = RoomTypeEnum.SalleTD) == RoomTypeEnum.SalleTD,
-                "salle de cours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
-                "salle cours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
-                "sallecours" => (roomType = RoomTypeEnum.SalleCOURS) == RoomTypeEnum.SalleCOURS,
+                "salle de td" => (roomType = RoomTypeEnum.TD) == RoomTypeEnum.TD,
+                "salle td" => (roomType = RoomTypeEnum.TD) == RoomTypeEnum.TD,
+                "salletd" => (roomType = RoomTypeEnum.TD) == RoomTypeEnum.TD,
+                "salle de cours" => (roomType = RoomTypeEnum.COURS) == RoomTypeEnum.COURS,
+                "salle cours" => (roomType = RoomTypeEnum.COURS) == RoomTypeEnum.COURS,
+                "sallecours" => (roomType = RoomTypeEnum.COURS) == RoomTypeEnum.COURS,
+                "salle info" => (roomType = RoomTypeEnum.INFO) == RoomTypeEnum.INFO,
                 "amphitheatre" => (roomType = RoomTypeEnum.AMPHITHEATRE) == RoomTypeEnum.AMPHITHEATRE,
                 "amphitheater" => (roomType = RoomTypeEnum.AMPHITHEATRE) == RoomTypeEnum.AMPHITHEATRE,
                 _ => false
@@ -68,6 +70,14 @@ namespace HP2.API.Controllers
         {
             var rooms = await _roomService.GetAllRoomsAsync();
             return Ok(ApiResponse<IEnumerable<RoomModel>>.Success(rooms));
+        }
+
+        [HttpGet("deleted")]
+        public async Task<ActionResult<ApiResponse<IEnumerable<DeletedRoomResponse>>>> GetDeleted()
+        {
+            var rooms = await _roomService.GetDeletedRoomsAsync();
+            var response = rooms.Select(MapToDeletedResponse);
+            return Ok(ApiResponse<IEnumerable<DeletedRoomResponse>>.Success(response));
         }
 
         // GET: api/Room/5
@@ -168,16 +178,37 @@ namespace HP2.API.Controllers
 
         // DELETE: api/Room/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ApiResponse<string>>> DeleteRoom(string id)
+        public async Task<ActionResult<ApiResponse<object>>> DeleteRoom(string id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
             if (room == null)
             {
-                return NotFound(ApiResponse<string>.Fail($"Room with ID {id} not found"));
+                return NotFound(ApiResponse<object>.Fail($"Room with ID {id} not found"));
             }
 
-            await _roomService.DeleteRoomAsync(id);
-            return Ok(ApiResponse<string>.Success(id.ToString(), "Room deleted successfully"));
+            try
+            {
+                await _roomService.DeleteRoomAsync(id);
+                return Ok(ApiResponse<object>.Success(id.ToString(), "Room deleted successfully"));
+            }
+            catch (DeleteConflictException ex)
+            {
+                return Conflict(ApiResponse<object>.Fail(ex.Message, ex.BlockingSession));
+            }
+        }
+
+        private static DeletedRoomResponse MapToDeletedResponse(RoomModel room)
+        {
+            return new DeletedRoomResponse
+            {
+                RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
+                IsAvailable = room.IsAvailable,
+                Capacity = room.Capacity,
+                BuildingId = room.BuildingId,
+                Type = room.Type,
+                DeletedAt = room.DeletedAt
+            };
         }
     }
 }
