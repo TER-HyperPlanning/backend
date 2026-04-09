@@ -26,6 +26,7 @@ namespace HP2.Application
             services.AddScoped<ITrackService, TrackService>();
             services.AddScoped<IAssignService, AssignService>();
             services.AddScoped<IAvailabilityService, AvailabilityService>();
+            services.AddScoped<IAvailabilityGroupService, AvailabilityGroupService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IPlanningService, PlanningService>();
 

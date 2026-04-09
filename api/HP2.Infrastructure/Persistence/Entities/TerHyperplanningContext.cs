@@ -21,6 +21,8 @@ public partial class TerHyperplanningContext : DbContext
 
     public virtual DbSet<Availability> Availabilities { get; set; }
 
+    public virtual DbSet<AvailabilityGroup> AvailabilityGroups { get; set; }
+
     public virtual DbSet<Building> Buildings { get; set; }
 
     public virtual DbSet<ChangeStatus> ChangeStatuses { get; set; }
@@ -117,6 +119,30 @@ public partial class TerHyperplanningContext : DbContext
                 .HasConstraintName("FK_Assign_Track");
         });
 
+        modelBuilder.Entity<AvailabilityGroup>(entity =>
+        {
+            entity.HasKey(e => e.AvailabilityGroupId);
+
+            entity.ToTable("AvailabilityGroup");
+
+            entity.Property(e => e.AvailabilityGroupId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(newid())")
+                .HasColumnName("availability_group_id");
+            entity.Property(e => e.TeacherId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("teacher_id");
+            entity.Property(e => e.NumberOfAvailableDays)
+                .HasColumnName("number_of_available_days");
+
+            entity.HasOne(d => d.Teacher).WithMany()
+                .HasForeignKey(d => d.TeacherId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_AvailabilityGroup_Teacher");
+        });
+
         modelBuilder.Entity<Availability>(entity =>
         {
             entity.HasKey(e => e.AvailabilityId).HasName("PK__Availabi__86E3A8015B49D583");
@@ -144,6 +170,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("weekday_id");
+            entity.Property(e => e.AvailabilityGroupId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("availability_group_id")
+                .IsRequired(false);
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Availabilities)
                 .HasForeignKey(d => d.TeacherId)
@@ -154,6 +185,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.WeekdayId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Avail_Weekday");
+
+            entity.HasOne(d => d.AvailabilityGroup).WithMany(p => p.Availabilities)
+                .HasForeignKey(d => d.AvailabilityGroupId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_Avail_AvailabilityGroup");
         });
 
         modelBuilder.Entity<Building>(entity =>
