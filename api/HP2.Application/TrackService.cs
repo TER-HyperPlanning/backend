@@ -1,6 +1,5 @@
 using HP2.Application.Contracts;
 using HP2.Domain.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace HP2.Application
 {
@@ -24,7 +23,7 @@ namespace HP2.Application
             return await _repository.GetDeletedAsync();
         }
         
-        public async Task<TrackModel> GetByIdAsync(string id)
+        public async Task<TrackModel?> GetByIdAsync(string id)
         {
             return await _repository.GetByIdAsync(id);
         }

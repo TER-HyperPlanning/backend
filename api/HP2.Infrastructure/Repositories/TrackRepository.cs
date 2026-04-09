@@ -1,3 +1,4 @@
+using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
@@ -5,56 +6,69 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HP2.Infrastructure.Repositories
 {
-    public class TrackRepository : ITrackRepository
+    public class TrackRepository : RepositoryBase<TrackModel>, ITrackRepository
     {
-        private readonly TerHyperplanningContext _context;
-
-        public TrackRepository(TerHyperplanningContext context)
+        public TrackRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
-            _context = context;
         }
 
-        public async Task<List<TrackModel>> GetAllAsync()
+        public override async Task<IReadOnlyList<TrackModel>> GetAllAsync()
         {
-            return await _context.Tracks
-                .Select(t => new TrackModel {
+            return await _dbContext.Tracks
+                .Select(t => new TrackModel
+                {
                     Id = t.TrackId,
                     Name = t.Name,
                     TeacherId = t.TeacherId,
                     ProgramId = t.ProgramId,
-                    Description = t.Description,   // ✅ FIX
-                    Lieu = t.Lieu                  // ✅ FIX
+                    Description = t.Description,
+                    Lieu = t.Lieu,
+                    IsDeleted = t.IsDeleted,
+                    DeletedAt = t.DeletedAt
                 })
                 .ToListAsync();
         }
 
-        public async Task<TrackModel> GetByIdAsync(string id)
+        async Task<List<TrackModel>> ITrackRepository.GetAllAsync()
         {
-            var t = await _context.Tracks.FindAsync(id);
+            return (await GetAllAsync()).ToList();
+        }
+
+        public override async Task<TrackModel?> GetByIdAsync(string id)
+        {
+            var t = await _dbContext.Tracks.FirstOrDefaultAsync(x => x.TrackId == id);
             if (t == null) return null;
 
-            return new TrackModel {
+            return new TrackModel
+            {
                 Id = t.TrackId,
                 Name = t.Name,
                 TeacherId = t.TeacherId,
                 ProgramId = t.ProgramId,
-                Description = t.Description,   // ✅ FIX
-                Lieu = t.Lieu                  // ✅ FIX
+                Description = t.Description,
+                Lieu = t.Lieu,
+                IsDeleted = t.IsDeleted,
+                DeletedAt = t.DeletedAt
             };
         }
 
-        public async Task<TrackModel> AddAsync(TrackModel model)
+        async Task<TrackModel?> ITrackRepository.GetByIdAsync(string id)
+        {
+            return await GetByIdAsync(id);
+        }
+
+        public override async Task<TrackModel> AddAsync(TrackModel model)
         {
             if (!string.IsNullOrWhiteSpace(model.ProgramId))
             {
-                var programExists = await _context.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
+                var programExists = await _dbContext.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
                 if (!programExists)
                     throw new ArgumentException($"Program with ID {model.ProgramId} does not exist.");
             }
 
             if (!string.IsNullOrWhiteSpace(model.TeacherId))
             {
-                var teacherExists = await _context.Teachers.AnyAsync(t => t.UserId == model.TeacherId);
+                var teacherExists = await _dbContext.Teachers.AnyAsync(t => t.UserId == model.TeacherId);
                 if (!teacherExists)
                     throw new ArgumentException($"Teacher with ID {model.TeacherId} does not exist.");
             }
@@ -65,34 +79,36 @@ namespace HP2.Infrastructure.Repositories
                 Name = model.Name,
                 TeacherId = model.TeacherId,
                 ProgramId = model.ProgramId,
-
-                // 🔥 FIX CRITIQUE
                 Description = model.Description,
-                Lieu = model.Lieu
+                Lieu = model.Lieu,
+                IsDeleted = false,
+                DeletedAt = null
             };
 
-            _context.Tracks.Add(entity);
-            await _context.SaveChangesAsync();
+            _dbContext.Tracks.Add(entity);
+            await _dbContext.SaveChangesAsync();
 
             model.Id = entity.TrackId;
+            model.IsDeleted = entity.IsDeleted;
+            model.DeletedAt = entity.DeletedAt;
             return model;
         }
 
-        public async Task<TrackModel> UpdateAsync(TrackModel model)
+        public override async Task UpdateAsync(TrackModel model)
         {
-            var entity = await _context.Tracks.FindAsync(model.Id);
-            if (entity == null) return null;
+            var entity = await _dbContext.Tracks.FindAsync(model.Id);
+            if (entity == null) return;
 
             if (!string.IsNullOrWhiteSpace(model.ProgramId))
             {
-                var programExists = await _context.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
+                var programExists = await _dbContext.Programs.AnyAsync(p => p.ProgramId == model.ProgramId);
                 if (!programExists)
                     throw new ArgumentException($"Program with ID {model.ProgramId} does not exist.");
             }
 
             if (!string.IsNullOrWhiteSpace(model.TeacherId))
             {
-                var teacherExists = await _context.Teachers.AnyAsync(t => t.UserId == model.TeacherId);
+                var teacherExists = await _dbContext.Teachers.AnyAsync(t => t.UserId == model.TeacherId);
                 if (!teacherExists)
                     throw new ArgumentException($"Teacher with ID {model.TeacherId} does not exist.");
             }
@@ -100,46 +116,59 @@ namespace HP2.Infrastructure.Repositories
             entity.Name = model.Name;
             entity.TeacherId = model.TeacherId;
             entity.ProgramId = model.ProgramId;
-
-            // 🔥 FIX CRITIQUE
             entity.Description = model.Description;
             entity.Lieu = model.Lieu;
+            entity.IsDeleted = model.IsDeleted;
+            entity.DeletedAt = model.DeletedAt;
 
-            await _context.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
+        }
+
+        async Task<TrackModel> ITrackRepository.UpdateAsync(TrackModel model)
+        {
+            await UpdateAsync(model);
             return model;
         }
 
-        public async Task<bool> DeleteAsync(string id)
+        public override async Task DeleteAsync(string id)
         {
-            var entity = await _context.Tracks.FindAsync(id);
-            if (entity == null) return false;
+            await base.DeleteAsync(id);
+        }
 
-            entity.IsDeleted = true;
-            entity.DeletedAt = DateTime.UtcNow;
+        async Task<bool> ITrackRepository.DeleteAsync(string id)
+        {
+            var exists = await ExistsAsync(id);
+            if (!exists)
+            {
+                return false;
+            }
 
-            await _context.SaveChangesAsync();
+            await DeleteAsync(id);
             return true;
         }
 
         public async Task<bool> ExistsAsync(string id)
         {
-            return await _context.Tracks.AnyAsync(t => t.TrackId == id);
+            return await _dbContext.Tracks.AnyAsync(t => t.TrackId == id);
         }
 
         public async Task<List<TrackModel>> GetDeletedAsync()
         {
-            return await _context.Tracks
-            .Where(t => t.IsDeleted)
-            .Select(t => new TrackModel
-            {
-                Id = t.TrackId,
-                Name = t.Name,
-                TeacherId = t.TeacherId,
-                ProgramId = t.ProgramId,
-                IsDeleted = t.IsDeleted,
-                DeletedAt = t.DeletedAt
-            })
-            .ToListAsync();
+            return await _dbContext.Tracks
+                .IgnoreQueryFilters()
+                .Where(t => t.IsDeleted)
+                .Select(t => new TrackModel
+                {
+                    Id = t.TrackId,
+                    Name = t.Name,
+                    TeacherId = t.TeacherId,
+                    ProgramId = t.ProgramId,
+                    Description = t.Description,
+                    Lieu = t.Lieu,
+                    IsDeleted = t.IsDeleted,
+                    DeletedAt = t.DeletedAt
+                })
+                .ToListAsync();
         }
     }
 }
