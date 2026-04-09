@@ -5738,6 +5738,21 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
                             SessionId = "6eeab54d-48f6-9f68-1ca3-b7ed0c89b7cc"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4"
+                        },
+                        new
+                        {
+                            GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff"
                         });
                 });
 
@@ -21694,6 +21709,45 @@ namespace HP2.Infrastructure.Migrations
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7d12ed93-7363-9686-49c3-77ad3ccb2da0",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
+                            Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 8, 30, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
+                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 45, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 10, 15, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
+                            Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0)
                         });
                 });
 
@@ -21809,7 +21863,7 @@ namespace HP2.Infrastructure.Migrations
                             ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
                             ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
                             Reason = "Le cours a été annulé, il faut le rattraper.",
-                            SessionId = "bac650fc-e433-b6c8-ea8c-5897aaca3ec4",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         });
                 });
@@ -21890,7 +21944,7 @@ namespace HP2.Infrastructure.Migrations
                             ChangeDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
                             Reason = "La salle actuelle est trop petite pour accueillir tous les étudiants.",
-                            SessionId = "0a1e6c34-263b-19da-8f16-af1a8c36f35f",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
@@ -21900,7 +21954,7 @@ namespace HP2.Infrastructure.Migrations
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
                             Reason = "Équipement audiovisuel non disponible dans la salle actuelle.",
                             RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau.",
-                            SessionId = "13000bbc-8fd6-1578-7278-d709f023eed3",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         });
                 });
@@ -30407,6 +30461,21 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             SessionId = "be7e99bc-ba4d-f226-9d8f-03682d23bee1",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         });
                 });
