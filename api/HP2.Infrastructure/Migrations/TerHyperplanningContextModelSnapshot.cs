@@ -5738,6 +5738,21 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
                             SessionId = "6eeab54d-48f6-9f68-1ca3-b7ed0c89b7cc"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4"
+                        },
+                        new
+                        {
+                            GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff"
                         });
                 });
 
@@ -6245,6 +6260,23 @@ namespace HP2.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("ChangeStatus", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            Label = "En attente"
+                        },
+                        new
+                        {
+                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
+                            Label = "Approuvé"
+                        },
+                        new
+                        {
+                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
+                            Label = "Refusé"
+                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Course", b =>
@@ -21677,25 +21709,180 @@ namespace HP2.Infrastructure.Migrations
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7d12ed93-7363-9686-49c3-77ad3ccb2da0",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
+                            Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 8, 30, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
+                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 45, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 10, 15, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
+                            Date = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0)
                         });
                 });
 
-            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionChange", b =>
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionRecoveryChange", b =>
                 {
-                    b.Property<string>("SessionChangeId")
+                    b.Property<string>("SessionRecoveryChangeId")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
-                        .HasColumnName("session_change_id")
+                        .HasColumnName("session_recovery_change_id")
                         .HasDefaultValueSql("(newid())");
 
-                    b.Property<string>("AdminId")
+                    b.Property<DateTime>("ChangeDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasColumnName("change_date")
+                        .HasDefaultValueSql("(getdate())");
+
+                    b.Property<string>("ChangeStatusId")
                         .IsRequired()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
-                        .HasColumnName("admin_id");
+                        .HasColumnName("change_status_id");
+
+                    b.Property<DateTime?>("CounterProposalDate")
+                        .HasColumnType("date")
+                        .HasColumnName("counter_proposal_date");
+
+                    b.Property<TimeSpan?>("CounterProposalEndTime")
+                        .HasColumnType("time")
+                        .HasColumnName("counter_proposal_end_time");
+
+                    b.Property<string>("CounterProposalRoomId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("counter_proposal_room_id");
+
+                    b.Property<TimeSpan?>("CounterProposalStartTime")
+                        .HasColumnType("time")
+                        .HasColumnName("counter_proposal_start_time");
+
+                    b.Property<DateTime?>("ProposedDate")
+                        .HasColumnType("date")
+                        .HasColumnName("proposed_date");
+
+                    b.Property<TimeSpan?>("ProposedEndTime")
+                        .HasColumnType("time")
+                        .HasColumnName("proposed_end_time");
+
+                    b.Property<string>("ProposedRoomId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("proposed_room_id");
+
+                    b.Property<TimeSpan?>("ProposedStartTime")
+                        .HasColumnType("time")
+                        .HasColumnName("proposed_start_time");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("reason");
+
+                    b.Property<string>("RejectionReason")
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("rejection_reason");
+
+                    b.Property<string>("SessionId")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("session_id");
+
+                    b.Property<string>("TeacherId")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("teacher_id");
+
+                    b.HasKey("SessionRecoveryChangeId")
+                        .HasName("PK__SessionR__RecoveryChange");
+
+                    b.HasIndex("ChangeStatusId");
+
+                    b.HasIndex("CounterProposalRoomId");
+
+                    b.HasIndex("ProposedRoomId");
+
+                    b.HasIndex("SessionId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("SessionRecoveryChange", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            SessionRecoveryChangeId = "81b21082-3ff6-6699-2b66-67d6f6ead3e7",
+                            ChangeDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Reason = "Le cours a été annulé, il faut le rattraper.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        });
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionRoomChange", b =>
+                {
+                    b.Property<string>("SessionRoomChangeId")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("session_room_change_id")
+                        .HasDefaultValueSql("(newid())");
+
+                    b.Property<string>("ApprovedRoomId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("approved_room_id");
 
                     b.Property<DateTime>("ChangeDate")
                         .ValueGeneratedOnAdd()
@@ -21717,6 +21904,12 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(255)")
                         .HasColumnName("reason");
 
+                    b.Property<string>("RejectionReason")
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("rejection_reason");
+
                     b.Property<string>("SessionId")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -21731,10 +21924,10 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("teacher_id");
 
-                    b.HasKey("SessionChangeId")
-                        .HasName("PK__SessionC__D5E31D8F21E5A4A9");
+                    b.HasKey("SessionRoomChangeId")
+                        .HasName("PK__SessionR__RoomChange");
 
-                    b.HasIndex("AdminId");
+                    b.HasIndex("ApprovedRoomId");
 
                     b.HasIndex("ChangeStatusId");
 
@@ -21742,7 +21935,28 @@ namespace HP2.Infrastructure.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("SessionChange", (string)null);
+                    b.ToTable("SessionRoomChange", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            SessionRoomChangeId = "863cdc3c-e440-3359-c69c-777871286814",
+                            ChangeDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            Reason = "La salle actuelle est trop petite pour accueillir tous les étudiants.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionRoomChangeId = "e2f35a55-7db2-4df9-3bbc-17e566a55b03",
+                            ChangeDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
+                            Reason = "Équipement audiovisuel non disponible dans la salle actuelle.",
+                            RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionStatus", b =>
@@ -30248,6 +30462,21 @@ namespace HP2.Infrastructure.Migrations
                         {
                             SessionId = "be7e99bc-ba4d-f226-9d8f-03682d23bee1",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         });
                 });
 
@@ -30380,33 +30609,73 @@ namespace HP2.Infrastructure.Migrations
                     b.Navigation("SessionType");
                 });
 
-            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionChange", b =>
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionRecoveryChange", b =>
                 {
-                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Admin", "Admin")
-                        .WithMany("SessionChanges")
-                        .HasForeignKey("AdminId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Change_Admin");
-
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.ChangeStatus", "ChangeStatus")
-                        .WithMany("SessionChanges")
+                        .WithMany("SessionRecoveryChanges")
                         .HasForeignKey("ChangeStatusId")
                         .IsRequired()
-                        .HasConstraintName("FK_Change_Status");
+                        .HasConstraintName("FK_RecoveryChange_Status");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Room", "CounterProposalRoom")
+                        .WithMany()
+                        .HasForeignKey("CounterProposalRoomId")
+                        .HasConstraintName("FK_RecoveryChange_CounterProposalRoom");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Room", "ProposedRoom")
+                        .WithMany()
+                        .HasForeignKey("ProposedRoomId")
+                        .HasConstraintName("FK_RecoveryChange_ProposedRoom");
 
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Session", "Session")
-                        .WithMany("SessionChanges")
+                        .WithMany("SessionRecoveryChanges")
                         .HasForeignKey("SessionId")
                         .IsRequired()
-                        .HasConstraintName("FK_Change_Session");
+                        .HasConstraintName("FK_RecoveryChange_Session");
 
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Teacher", "Teacher")
-                        .WithMany("SessionChanges")
+                        .WithMany("SessionRecoveryChanges")
                         .HasForeignKey("TeacherId")
                         .IsRequired()
-                        .HasConstraintName("FK_Change_Teacher");
+                        .HasConstraintName("FK_RecoveryChange_Teacher");
 
-                    b.Navigation("Admin");
+                    b.Navigation("ChangeStatus");
+
+                    b.Navigation("CounterProposalRoom");
+
+                    b.Navigation("ProposedRoom");
+
+                    b.Navigation("Session");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionRoomChange", b =>
+                {
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Room", "ApprovedRoom")
+                        .WithMany()
+                        .HasForeignKey("ApprovedRoomId")
+                        .HasConstraintName("FK_RoomChange_ApprovedRoom");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.ChangeStatus", "ChangeStatus")
+                        .WithMany("SessionRoomChanges")
+                        .HasForeignKey("ChangeStatusId")
+                        .IsRequired()
+                        .HasConstraintName("FK_RoomChange_Status");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Session", "Session")
+                        .WithMany("SessionRoomChanges")
+                        .HasForeignKey("SessionId")
+                        .IsRequired()
+                        .HasConstraintName("FK_RoomChange_Session");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Teacher", "Teacher")
+                        .WithMany("SessionRoomChanges")
+                        .HasForeignKey("TeacherId")
+                        .IsRequired()
+                        .HasConstraintName("FK_RoomChange_Teacher");
+
+                    b.Navigation("ApprovedRoom");
 
                     b.Navigation("ChangeStatus");
 
@@ -30524,11 +30793,6 @@ namespace HP2.Infrastructure.Migrations
                         .HasConstraintName("FK_Teach_Teacher");
                 });
 
-            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Admin", b =>
-                {
-                    b.Navigation("SessionChanges");
-                });
-
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Building", b =>
                 {
                     b.Navigation("Rooms");
@@ -30536,7 +30800,9 @@ namespace HP2.Infrastructure.Migrations
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.ChangeStatus", b =>
                 {
-                    b.Navigation("SessionChanges");
+                    b.Navigation("SessionRecoveryChanges");
+
+                    b.Navigation("SessionRoomChanges");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Course", b =>
@@ -30568,7 +30834,9 @@ namespace HP2.Infrastructure.Migrations
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Session", b =>
                 {
-                    b.Navigation("SessionChanges");
+                    b.Navigation("SessionRecoveryChanges");
+
+                    b.Navigation("SessionRoomChanges");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.SessionStatus", b =>
@@ -30585,7 +30853,9 @@ namespace HP2.Infrastructure.Migrations
                 {
                     b.Navigation("Availabilities");
 
-                    b.Navigation("SessionChanges");
+                    b.Navigation("SessionRecoveryChanges");
+
+                    b.Navigation("SessionRoomChanges");
 
                     b.Navigation("Tracks");
                 });

@@ -370,37 +370,88 @@ namespace HP2.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SessionChange",
+                name: "SessionRecoveryChange",
                 columns: table => new
                 {
-                    session_change_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
+                    session_recovery_change_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
                     change_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     reason = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
                     teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    admin_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     session_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    change_status_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    change_status_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    proposed_date = table.Column<DateTime>(type: "date", nullable: true),
+                    proposed_start_time = table.Column<TimeSpan>(type: "time", nullable: true),
+                    proposed_end_time = table.Column<TimeSpan>(type: "time", nullable: true),
+                    proposed_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    counter_proposal_date = table.Column<DateTime>(type: "date", nullable: true),
+                    counter_proposal_start_time = table.Column<TimeSpan>(type: "time", nullable: true),
+                    counter_proposal_end_time = table.Column<TimeSpan>(type: "time", nullable: true),
+                    counter_proposal_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    rejection_reason = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__SessionC__D5E31D8F21E5A4A9", x => x.session_change_id);
+                    table.PrimaryKey("PK__SessionR__RecoveryChange", x => x.session_recovery_change_id);
                     table.ForeignKey(
-                        name: "FK_Change_Admin",
-                        column: x => x.admin_id,
-                        principalTable: "Admin",
-                        principalColumn: "user_id");
+                        name: "FK_RecoveryChange_CounterProposalRoom",
+                        column: x => x.counter_proposal_room_id,
+                        principalTable: "Room",
+                        principalColumn: "room_id");
                     table.ForeignKey(
-                        name: "FK_Change_Session",
+                        name: "FK_RecoveryChange_ProposedRoom",
+                        column: x => x.proposed_room_id,
+                        principalTable: "Room",
+                        principalColumn: "room_id");
+                    table.ForeignKey(
+                        name: "FK_RecoveryChange_Session",
                         column: x => x.session_id,
                         principalTable: "Session",
                         principalColumn: "session_id");
                     table.ForeignKey(
-                        name: "FK_Change_Status",
+                        name: "FK_RecoveryChange_Status",
                         column: x => x.change_status_id,
                         principalTable: "ChangeStatus",
                         principalColumn: "change_status_id");
                     table.ForeignKey(
-                        name: "FK_Change_Teacher",
+                        name: "FK_RecoveryChange_Teacher",
+                        column: x => x.teacher_id,
+                        principalTable: "Teacher",
+                        principalColumn: "user_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SessionRoomChange",
+                columns: table => new
+                {
+                    session_room_change_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
+                    change_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    reason = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
+                    teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    session_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    change_status_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    approved_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    rejection_reason = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__SessionR__RoomChange", x => x.session_room_change_id);
+                    table.ForeignKey(
+                        name: "FK_RoomChange_ApprovedRoom",
+                        column: x => x.approved_room_id,
+                        principalTable: "Room",
+                        principalColumn: "room_id");
+                    table.ForeignKey(
+                        name: "FK_RoomChange_Session",
+                        column: x => x.session_id,
+                        principalTable: "Session",
+                        principalColumn: "session_id");
+                    table.ForeignKey(
+                        name: "FK_RoomChange_Status",
+                        column: x => x.change_status_id,
+                        principalTable: "ChangeStatus",
+                        principalColumn: "change_status_id");
+                    table.ForeignKey(
+                        name: "FK_RoomChange_Teacher",
                         column: x => x.teacher_id,
                         principalTable: "Teacher",
                         principalColumn: "user_id");
@@ -549,6 +600,16 @@ namespace HP2.Infrastructure.Migrations
                 {
                     { "2e79e28c-e7d5-27ea-f06e-6c6bb037b3d1", null, "Bâtiment A" },
                     { "c3372749-b5f6-f0e6-e628-e79b82b17dc7", null, "IBGBI" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ChangeStatus",
+                columns: new[] { "change_status_id", "label" },
+                values: new object[,]
+                {
+                    { "6d1cab45-5c87-c373-3fd2-91f518c946bc", "En attente" },
+                    { "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", "Refusé" },
+                    { "df4c997e-2e20-921e-98e9-906a9ecf8813", "Approuvé" }
                 });
 
             migrationBuilder.InsertData(
@@ -911,6 +972,7 @@ namespace HP2.Infrastructure.Migrations
                     { "14a89b1a-19ff-ce17-300b-e17e3bd1077f", "731ac32d-6ea9-f15e-7ca2-34f99e840bd3", new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 11, 45, 0, 0), false, "PRESENTIAL", "694b7a35-1915-d0fb-02e2-562a6b6b3ad0", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 10, 15, 0, 0) },
                     { "14cf4c2a-44f5-3e25-70c5-a8ad8fd3e3b8", "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 11, 45, 0, 0), false, "PRESENTIAL", "222025a7-66a4-9b58-2958-eb835bd75046", "09de5696-05df-5b4a-ca95-666d0306b369", "7f2d1749-7a62-0b12-0f4e-3b943af03674", new TimeSpan(0, 10, 15, 0, 0) },
                     { "1541dee3-e76c-2918-1744-06067e21c1cd", "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d", new DateTime(2025, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 16, 15, 0, 0), false, "PRESENTIAL", "ba6e201b-edf9-7aea-a09f-4bb2fed50891", "09de5696-05df-5b4a-ca95-666d0306b369", "7f2d1749-7a62-0b12-0f4e-3b943af03674", new TimeSpan(0, 14, 45, 0, 0) },
+                    { "157d47fc-fd47-d6c6-b759-86b4049e4fff", "d059db13-ac91-760c-5bf7-6c442946e7bf", new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 16, 0, 0, 0), false, "PRESENTIAL", "93a4338a-6691-98fc-6919-1f94663cd1ae", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 14, 0, 0, 0) },
                     { "15ba8680-1073-bb6c-6f10-054644dff3ca", "2af630c1-de0d-944f-0b87-a73f1c90644f", new DateTime(2025, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 16, 15, 0, 0), false, "PRESENTIAL", "ba6e201b-edf9-7aea-a09f-4bb2fed50891", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 14, 45, 0, 0) },
                     { "15c2362e-1b5a-491d-5f6c-db02bc21d939", "24027d5d-e151-9a00-fd19-ac11d27b8189", new DateTime(2025, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 16, 15, 0, 0), false, "PRESENTIAL", "694b7a35-1915-d0fb-02e2-562a6b6b3ad0", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 14, 45, 0, 0) },
                     { "15cfd3d2-8bc4-c1bc-7fd9-d3de7f5d669b", "03241339-1186-a90f-33bd-a9850f603619", new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 10, 0, 0, 0), false, "PRESENTIAL", "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", "09de5696-05df-5b4a-ca95-666d0306b369", "7f2d1749-7a62-0b12-0f4e-3b943af03674", new TimeSpan(0, 8, 30, 0, 0) },
@@ -1697,6 +1759,7 @@ namespace HP2.Infrastructure.Migrations
                     { "c7a68e32-cda7-b864-e7f1-ba2ae5fab309", "02e0e667-183a-1225-d0ed-19fe4c25f963", new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 11, 45, 0, 0), false, "PRESENTIAL", "61eea842-d7b8-3f75-7a50-f17d467e2f82", "09de5696-05df-5b4a-ca95-666d0306b369", "7f2d1749-7a62-0b12-0f4e-3b943af03674", new TimeSpan(0, 10, 15, 0, 0) },
                     { "c7ab8857-b59a-c7dc-145b-8da6ed190264", "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 11, 45, 0, 0), false, "PRESENTIAL", "5863a804-6ac2-3f05-38ed-472541726740", "09de5696-05df-5b4a-ca95-666d0306b369", "7f2d1749-7a62-0b12-0f4e-3b943af03674", new TimeSpan(0, 10, 15, 0, 0) },
                     { "c7e266d7-3097-a994-1174-d3cf1608c41e", "2d4557a7-a48d-9926-3e2b-bc820396b11a", new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 10, 0, 0, 0), false, "PRESENTIAL", "5863a804-6ac2-3f05-38ed-472541726740", "09de5696-05df-5b4a-ca95-666d0306b369", "a51df269-a2de-07cb-14b1-e5c0f041928c", new TimeSpan(0, 8, 30, 0, 0) },
+                    { "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "2d4557a7-a48d-9926-3e2b-bc820396b11a", new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 10, 0, 0, 0), false, "PRESENTIAL", "222025a7-66a4-9b58-2958-eb835bd75046", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 8, 30, 0, 0) },
                     { "c8006108-d31d-3fc3-8118-4a00aa1228c8", "3448ddd0-694c-35d0-f117-7d5834e6ca81", new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 15, 0, 0, 0), false, "PRESENTIAL", "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", "09de5696-05df-5b4a-ca95-666d0306b369", "a51df269-a2de-07cb-14b1-e5c0f041928c", new TimeSpan(0, 13, 30, 0, 0) },
                     { "c8126fe8-b8d9-89f3-fefb-a1e84543f875", "24027d5d-e151-9a00-fd19-ac11d27b8189", new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 10, 0, 0, 0), false, "PRESENTIAL", "91263188-230c-ee00-ed2e-9eda780a61de", "09de5696-05df-5b4a-ca95-666d0306b369", "a51df269-a2de-07cb-14b1-e5c0f041928c", new TimeSpan(0, 8, 30, 0, 0) },
                     { "c83566fe-4da0-b680-43f1-aaa1880db549", "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0", new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 14, 30, 0, 0), false, "PRESENTIAL", "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 13, 0, 0, 0) },
@@ -1879,6 +1942,7 @@ namespace HP2.Infrastructure.Migrations
                     { "ef55d5ee-4787-d8c7-b1fc-0862746ac28a", "c0452911-4948-9cb2-aed9-7b949c0b6442", new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 14, 30, 0, 0), false, "PRESENTIAL", "694b7a35-1915-d0fb-02e2-562a6b6b3ad0", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 13, 0, 0, 0) },
                     { "efa6a2ea-b018-6b26-35e2-0f08ee59c252", "02e0e667-183a-1225-d0ed-19fe4c25f963", new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 12, 30, 0, 0), false, "PRESENTIAL", "222025a7-66a4-9b58-2958-eb835bd75046", "09de5696-05df-5b4a-ca95-666d0306b369", "b078845c-908b-88e0-b39f-65cac002c8e9", new TimeSpan(0, 8, 30, 0, 0) },
                     { "efcddc9c-0e5f-4f7d-4e5a-46ec6a58cf1d", "03241339-1186-a90f-33bd-a9850f603619", new DateTime(2025, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 10, 0, 0, 0), false, "PRESENTIAL", "694b7a35-1915-d0fb-02e2-562a6b6b3ad0", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 8, 30, 0, 0) },
+                    { "f00894af-9f60-232f-5012-c431bbcddee1", "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 11, 45, 0, 0), false, "PRESENTIAL", "91263188-230c-ee00-ed2e-9eda780a61de", "09de5696-05df-5b4a-ca95-666d0306b369", "bf7f6e65-68aa-07ec-c88a-06bc4b897a82", new TimeSpan(0, 10, 15, 0, 0) },
                     { "f03e93c5-dcf8-3a1e-2f1c-000716f66d54", "49ba4385-063d-7b8d-5f3f-aa1c7f573747", new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 11, 45, 0, 0), false, "PRESENTIAL", "105f2e79-3a04-c9be-ebe1-241b17a81848", "09de5696-05df-5b4a-ca95-666d0306b369", "7f2d1749-7a62-0b12-0f4e-3b943af03674", new TimeSpan(0, 10, 15, 0, 0) },
                     { "f0848734-7d3c-b628-05cd-7a6ca1c722d2", "083b85af-c2e8-d7eb-0cca-13cbad93f7df", new DateTime(2025, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 15, 0, 0, 0), false, "PRESENTIAL", "305290d1-3c50-8f7d-1f6a-898cc87f8f5c", "09de5696-05df-5b4a-ca95-666d0306b369", "7d12ed93-7363-9686-49c3-77ad3ccb2da0", new TimeSpan(0, 8, 30, 0, 0) },
                     { "f129bad2-788c-bc9e-89cf-60039b8e604a", "2d4557a7-a48d-9926-3e2b-bc820396b11a", new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, new TimeSpan(0, 10, 0, 0, 0), false, "PRESENTIAL", "5863a804-6ac2-3f05-38ed-472541726740", "09de5696-05df-5b4a-ca95-666d0306b369", "a51df269-a2de-07cb-14b1-e5c0f041928c", new TimeSpan(0, 8, 30, 0, 0) },
@@ -1999,6 +2063,20 @@ namespace HP2.Infrastructure.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "SessionRecoveryChange",
+                columns: new[] { "session_recovery_change_id", "change_date", "change_status_id", "counter_proposal_date", "counter_proposal_end_time", "counter_proposal_room_id", "counter_proposal_start_time", "proposed_date", "proposed_end_time", "proposed_room_id", "proposed_start_time", "reason", "rejection_reason", "session_id", "teacher_id" },
+                values: new object[] { "81b21082-3ff6-6699-2b66-67d6f6ead3e7", new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Le cours a été annulé, il faut le rattraper.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "455c6918-8f55-8171-e3b6-573e17977cfc" });
+
+            migrationBuilder.InsertData(
+                table: "SessionRoomChange",
+                columns: new[] { "session_room_change_id", "approved_room_id", "change_date", "change_status_id", "reason", "rejection_reason", "session_id", "teacher_id" },
+                values: new object[,]
+                {
+                    { "863cdc3c-e440-3359-c69c-777871286814", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", "La salle actuelle est trop petite pour accueillir tous les étudiants.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "e2f35a55-7db2-4df9-3bbc-17e566a55b03", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", "Équipement audiovisuel non disponible dans la salle actuelle.", "Aucune salle compatible n'est disponible sur ce créneau.", "f00894af-9f60-232f-5012-c431bbcddee1", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Teach",
                 columns: new[] { "session_id", "teacher_id" },
                 values: new object[,]
@@ -2096,6 +2174,7 @@ namespace HP2.Infrastructure.Migrations
                     { "14a89b1a-19ff-ce17-300b-e17e3bd1077f", "9ade6863-7e26-4864-6736-dc579f1c7a31" },
                     { "14cf4c2a-44f5-3e25-70c5-a8ad8fd3e3b8", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
                     { "1541dee3-e76c-2918-1744-06067e21c1cd", "d5ccafec-e254-50d8-39ec-9d9684f49b5e" },
+                    { "157d47fc-fd47-d6c6-b759-86b4049e4fff", "455c6918-8f55-8171-e3b6-573e17977cfc" },
                     { "15ba8680-1073-bb6c-6f10-054644dff3ca", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
                     { "15c2362e-1b5a-491d-5f6c-db02bc21d939", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
                     { "15cfd3d2-8bc4-c1bc-7fd9-d3de7f5d669b", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
@@ -2881,6 +2960,7 @@ namespace HP2.Infrastructure.Migrations
                     { "c7a68e32-cda7-b864-e7f1-ba2ae5fab309", "fc422d79-4d66-9bc0-c3be-19d5b2cba234" },
                     { "c7ab8857-b59a-c7dc-145b-8da6ed190264", "63d58b13-c957-6ee8-4ed6-303e20d09973" },
                     { "c7e266d7-3097-a994-1174-d3cf1608c41e", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "455c6918-8f55-8171-e3b6-573e17977cfc" },
                     { "c8006108-d31d-3fc3-8118-4a00aa1228c8", "14185a87-c07d-c0db-e37b-536e871528f2" },
                     { "c8126fe8-b8d9-89f3-fefb-a1e84543f875", "7ac11e50-5cbb-c818-9b31-5e91770eece0" },
                     { "c83566fe-4da0-b680-43f1-aaa1880db549", "455c6918-8f55-8171-e3b6-573e17977cfc" },
@@ -3063,6 +3143,7 @@ namespace HP2.Infrastructure.Migrations
                     { "ef55d5ee-4787-d8c7-b1fc-0862746ac28a", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
                     { "efa6a2ea-b018-6b26-35e2-0f08ee59c252", "1dbea3b9-23c2-3605-d494-ca1c7124c184" },
                     { "efcddc9c-0e5f-4f7d-4e5a-46ec6a58cf1d", "63d58b13-c957-6ee8-4ed6-303e20d09973" },
+                    { "f00894af-9f60-232f-5012-c431bbcddee1", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
                     { "f03e93c5-dcf8-3a1e-2f1c-000716f66d54", "f8360932-cad7-22ba-add7-d31883af9229" },
                     { "f0848734-7d3c-b628-05cd-7a6ca1c722d2", "7ac11e50-5cbb-c818-9b31-5e91770eece0" },
                     { "f129bad2-788c-bc9e-89cf-60039b8e604a", "f8360932-cad7-22ba-add7-d31883af9229" },
@@ -3266,6 +3347,7 @@ namespace HP2.Infrastructure.Migrations
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "1452a1c0-db9d-3a7a-f9e0-7f084ab80c38" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "14594ac9-3b25-cc82-e23a-685226c86538" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "1541dee3-e76c-2918-1744-06067e21c1cd" },
+                    { "57bf1149-8880-c27c-d603-3546214d03a8", "157d47fc-fd47-d6c6-b759-86b4049e4fff" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "15c2362e-1b5a-491d-5f6c-db02bc21d939" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "17a6c3f8-2b19-7397-ad33-b2feb16a9099" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "1938cefe-5dda-eac2-4a89-86d4cc2bbb41" },
@@ -3561,6 +3643,7 @@ namespace HP2.Infrastructure.Migrations
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "c757b477-07a8-d325-d4cf-a0a78e352f66" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "c76ae261-cb00-12d7-5c66-3d30e05f23d6" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "c7ab8857-b59a-c7dc-145b-8da6ed190264" },
+                    { "57bf1149-8880-c27c-d603-3546214d03a8", "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "c97ef879-1ae7-589a-9725-ef5fe4f47e85" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "ca104199-0e3b-a9a0-6541-971afcce8f96" },
                     { "57bf1149-8880-c27c-d603-3546214d03a8", "cb2ddc10-0f7b-7b6c-7e76-161e2e263da6" },
@@ -4085,6 +4168,7 @@ namespace HP2.Infrastructure.Migrations
                     { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "ed3daf70-fcb0-7b32-f292-becdb3eb3eb3" },
                     { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "ed67f473-5441-c705-b174-e26119a10316" },
                     { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "eef85155-102e-817b-0de0-1e2e035404d7" },
+                    { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "f00894af-9f60-232f-5012-c431bbcddee1" },
                     { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "f129bad2-788c-bc9e-89cf-60039b8e604a" },
                     { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "f14fc5c6-c061-1111-1e79-f268130aaa74" },
                     { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "f16f91c3-4de3-d09f-4071-921f313f15a8" },
@@ -4562,23 +4646,48 @@ namespace HP2.Infrastructure.Migrations
                 column: "session_type_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SessionChange_admin_id",
-                table: "SessionChange",
-                column: "admin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SessionChange_change_status_id",
-                table: "SessionChange",
+                name: "IX_SessionRecoveryChange_change_status_id",
+                table: "SessionRecoveryChange",
                 column: "change_status_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SessionChange_session_id",
-                table: "SessionChange",
+                name: "IX_SessionRecoveryChange_counter_proposal_room_id",
+                table: "SessionRecoveryChange",
+                column: "counter_proposal_room_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRecoveryChange_proposed_room_id",
+                table: "SessionRecoveryChange",
+                column: "proposed_room_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRecoveryChange_session_id",
+                table: "SessionRecoveryChange",
                 column: "session_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SessionChange_teacher_id",
-                table: "SessionChange",
+                name: "IX_SessionRecoveryChange_teacher_id",
+                table: "SessionRecoveryChange",
+                column: "teacher_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRoomChange_approved_room_id",
+                table: "SessionRoomChange",
+                column: "approved_room_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRoomChange_change_status_id",
+                table: "SessionRoomChange",
+                column: "change_status_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRoomChange_session_id",
+                table: "SessionRoomChange",
+                column: "session_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRoomChange_teacher_id",
+                table: "SessionRoomChange",
                 column: "teacher_id");
 
             migrationBuilder.CreateIndex(
@@ -4675,6 +4784,9 @@ namespace HP2.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Admin");
+
+            migrationBuilder.DropTable(
                 name: "Assign");
 
             migrationBuilder.DropTable(
@@ -4687,7 +4799,10 @@ namespace HP2.Infrastructure.Migrations
                 name: "Receive");
 
             migrationBuilder.DropTable(
-                name: "SessionChange");
+                name: "SessionRecoveryChange");
+
+            migrationBuilder.DropTable(
+                name: "SessionRoomChange");
 
             migrationBuilder.DropTable(
                 name: "Student");
@@ -4703,9 +4818,6 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Notification");
-
-            migrationBuilder.DropTable(
-                name: "Admin");
 
             migrationBuilder.DropTable(
                 name: "ChangeStatus");
