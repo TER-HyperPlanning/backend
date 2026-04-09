@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.RoomDtos;
 using HP2.Application.DTOs.Common;
+using HP2.Application.Exceptions;
 using HP2.Domain.Enums;
 
 namespace HP2.API.Controllers
@@ -69,6 +70,14 @@ namespace HP2.API.Controllers
         {
             var rooms = await _roomService.GetAllRoomsAsync();
             return Ok(ApiResponse<IEnumerable<RoomModel>>.Success(rooms));
+        }
+
+        [HttpGet("deleted")]
+        public async Task<ActionResult<ApiResponse<IEnumerable<DeletedRoomResponse>>>> GetDeleted()
+        {
+            var rooms = await _roomService.GetDeletedRoomsAsync();
+            var response = rooms.Select(MapToDeletedResponse);
+            return Ok(ApiResponse<IEnumerable<DeletedRoomResponse>>.Success(response));
         }
 
         // GET: api/Room/5
@@ -169,16 +178,37 @@ namespace HP2.API.Controllers
 
         // DELETE: api/Room/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ApiResponse<string>>> DeleteRoom(string id)
+        public async Task<ActionResult<ApiResponse<object>>> DeleteRoom(string id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
             if (room == null)
             {
-                return NotFound(ApiResponse<string>.Fail($"Room with ID {id} not found"));
+                return NotFound(ApiResponse<object>.Fail($"Room with ID {id} not found"));
             }
 
-            await _roomService.DeleteRoomAsync(id);
-            return Ok(ApiResponse<string>.Success(id.ToString(), "Room deleted successfully"));
+            try
+            {
+                await _roomService.DeleteRoomAsync(id);
+                return Ok(ApiResponse<object>.Success(id.ToString(), "Room deleted successfully"));
+            }
+            catch (DeleteConflictException ex)
+            {
+                return Conflict(ApiResponse<object>.Fail(ex.Message, ex.BlockingSession));
+            }
+        }
+
+        private static DeletedRoomResponse MapToDeletedResponse(RoomModel room)
+        {
+            return new DeletedRoomResponse
+            {
+                RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
+                IsAvailable = room.IsAvailable,
+                Capacity = room.Capacity,
+                BuildingId = room.BuildingId,
+                Type = room.Type,
+                DeletedAt = room.DeletedAt
+            };
         }
     }
 }

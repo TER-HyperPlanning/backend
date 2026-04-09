@@ -151,7 +151,6 @@ public class StudentsController : ControllerBase
             Role = student.Role,
             CreatedAt = student.CreatedAt,
             UpdatedAt = student.UpdatedAt,
-            IsDeleted = student.IsDeleted,
             DeletedAt = student.DeletedAt,
         };
     }

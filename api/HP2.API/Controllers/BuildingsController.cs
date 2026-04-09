@@ -1,6 +1,7 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Building;
 using HP2.Application.DTOs.Common;
+using HP2.Application.Exceptions;
 using HP2.Domain.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -83,6 +84,14 @@ public class BuildingsController : ControllerBase
         }
     }
 
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedBuildingResponse>>>> GetDeleted()
+    {
+        var buildings = await _buildingService.GetDeletedBuildingsAsync();
+        var response = buildings.Select(MapToDeletedResponse);
+        return Ok(ApiResponse<IEnumerable<DeletedBuildingResponse>>.Success(response));
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<BuildingModel>>> Update(string id, [FromBody] UpdateBuildingRequest request)
     {
@@ -111,25 +120,39 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
+    public async Task<ActionResult<ApiResponse<object>>> Delete(string id)
     {
         try
         {
             var existing = await _buildingService.GetBuildingByIdAsync(id);
             if (existing == null)
-                return NotFound(ApiResponse<BuildingModel>.Fail($"Building with id {id} not found"));
+                return NotFound(ApiResponse<object>.Fail($"Building with id {id} not found"));
 
             await _buildingService.DeleteBuildingAsync(id);
-            return Ok(ApiResponse<string>.Success(id, "Building deleted successfully"));
+            return Ok(ApiResponse<object>.Success(id, "Building deleted successfully"));
         }
         catch (ArgumentException ex)
         {
-            return BadRequest(ApiResponse<string>.Fail(ex.Message));
+            return BadRequest(ApiResponse<object>.Fail(ex.Message));
+        }
+        catch (DeleteConflictException ex)
+        {
+            return Conflict(ApiResponse<object>.Fail(ex.Message, ex.BlockingSession));
         }
         catch
         {
             return StatusCode(StatusCodes.Status500InternalServerError,
-                ApiResponse<string>.Fail("An internal error occurred"));
+                ApiResponse<object>.Fail("An internal error occurred"));
         }
+    }
+
+    private static DeletedBuildingResponse MapToDeletedResponse(BuildingModel building)
+    {
+        return new DeletedBuildingResponse
+        {
+            Id = building.Id,
+            Name = building.Name,
+            DeletedAt = building.DeletedAt
+        };
     }
 }

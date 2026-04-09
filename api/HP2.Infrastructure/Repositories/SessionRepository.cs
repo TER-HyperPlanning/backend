@@ -171,7 +171,8 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
         var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == id);
         if (entity == null) return;
 
-        _dbContext.Sessions.Remove(entity);
+        entity.IsDeleted = true;
+        entity.DeletedAt = DateTime.UtcNow;
         await _dbContext.SaveChangesAsync();
     }
 
@@ -278,5 +279,40 @@ SELECT @result;";
             throw new InvalidOperationException(
                 $"Unable to lock room '{roomId}' on {date:yyyy-MM-dd} to validate schedule conflict (sp_getapplock result: {lockResult}).");
         }
+    }
+
+    public async Task<IReadOnlyList<SessionModel>> GetDeletedAsync()
+    {
+        var rows = await _dbContext.Sessions
+            .IgnoreQueryFilters()
+            .Where(s => s.IsDeleted)
+            .Select(s => new
+            {
+                Id = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                Mode = s.Mode,
+                SessionTypeId = s.SessionTypeId,
+                CourseId = s.CourseId,
+                SessionStatusId = s.SessionStatusId,
+                RoomId = s.RoomId,
+                Description = s.Description,
+                IsDeleted = s.IsDeleted
+            })
+            .ToListAsync();
+
+        return rows.Select(s => new SessionModel
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = ParseSessionModeOrDefault(s.Mode),
+            SessionTypeId = s.SessionTypeId,
+            CourseId = s.CourseId,
+            SessionStatusId = s.SessionStatusId,
+            RoomId = s.RoomId,
+            Description = s.Description,
+            IsDeleted = s.IsDeleted
+        }).ToList();
     }
 }

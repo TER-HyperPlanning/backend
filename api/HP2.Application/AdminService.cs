@@ -27,6 +27,11 @@ public class AdminService : IAdminService
         return await _adminRepository.GetAllAsync();
     }
 
+    public async Task<IReadOnlyList<AdminModel>> GetDeletedAdminsAsync()
+    {
+        return await _adminRepository.GetDeletedAsync();
+    }
+
     public async Task UpdateAdminAsync(AdminModel admin)
     {
         await _adminRepository.UpdateAsync(admin);

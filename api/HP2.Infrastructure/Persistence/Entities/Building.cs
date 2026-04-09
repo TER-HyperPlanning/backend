@@ -9,5 +9,9 @@ public partial class Building
 
     public string Name { get; set; } = null!;
 
+    public bool IsDeleted { get; set; }
+
+    public DateTime? DeletedAt { get; set; }
+
     public virtual ICollection<Room> Rooms { get; set; } = new List<Room>();
 }

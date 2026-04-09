@@ -207,7 +207,9 @@ namespace HP2.Infrastructure.Mapping
             // ===== Room =====
             CreateMap<Building, BuildingModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BuildingId))
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.DeletedAt));
 
             CreateMap<Room, RoomModel>().ReverseMap();
             CreateMap<RoomType, RoomTypeModel>().ReverseMap();
