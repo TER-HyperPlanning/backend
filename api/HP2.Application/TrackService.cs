@@ -19,6 +19,11 @@ namespace HP2.Application
             return await _repository.GetAllAsync();
         }
 
+        public async Task<List<TrackModel>> GetDeletedAsync()
+        {
+            return await _repository.GetDeletedAsync();
+        }
+        
         public async Task<TrackModel> GetByIdAsync(string id)
         {
             return await _repository.GetByIdAsync(id);

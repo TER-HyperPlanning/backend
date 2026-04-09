@@ -111,4 +111,13 @@ public class TracksController : ControllerBase
 
         return Ok(ApiResponse<string>.Success(id, "Track deleted successfully"));
     }
+
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<List<TrackResponse>>>> GetDeleted()
+    {
+        var tracks = await _trackService.GetDeletedAsync();
+        var response = tracks.Select(t => _mapper.Map<TrackResponse>(t)).ToList();
+        
+        return Ok(ApiResponse<List<TrackResponse>>.Success(response, "Deleted tracks retrieved successfully"));
+    }
 }

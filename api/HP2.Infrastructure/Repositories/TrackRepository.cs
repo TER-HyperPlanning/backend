@@ -101,7 +101,9 @@ namespace HP2.Infrastructure.Repositories
             var entity = await _context.Tracks.FindAsync(id);
             if (entity == null) return false;
 
-            _context.Tracks.Remove(entity);
+            entity.IsDeleted = true;
+            entity.DeletedAt = DateTime.UtcNow;
+
             await _context.SaveChangesAsync();
             return true;
         }
@@ -109,6 +111,22 @@ namespace HP2.Infrastructure.Repositories
         public async Task<bool> ExistsAsync(string id)
         {
             return await _context.Tracks.AnyAsync(t => t.TrackId == id);
+        }
+
+        public async Task<List<TrackModel>> GetDeletedAsync()
+        {
+            return await _context.Tracks
+            .Where(t => t.IsDeleted)
+            .Select(t => new TrackModel
+            {
+                Id = t.TrackId,
+                Name = t.Name,
+                TeacherId = t.TeacherId,
+                ProgramId = t.ProgramId,
+                IsDeleted = t.IsDeleted,
+                DeletedAt = t.DeletedAt
+            })
+            .ToListAsync();
         }
     }
 }
