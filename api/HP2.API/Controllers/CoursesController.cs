@@ -5,6 +5,7 @@ using HP2.Application.DTOs.Course;
 using HP2.Application.DTOs.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers
 {
@@ -22,6 +23,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "ADMIN,TEACHER,STUDENT")]
         public async Task<ActionResult<ApiResponse<List<CourseResponse>>>> GetAll()
         {
             var courses = await _service.GetAllAsync();
@@ -31,6 +33,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "ADMIN,TEACHER,STUDENT")]
         public async Task<ActionResult<ApiResponse<CourseResponse>>> GetById(string id)
         {
             var course = await _service.GetByIdAsync(id);
@@ -44,6 +47,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<CourseResponse>>> Create([FromBody] CreateCourseRequest request)
         {
             if (!ModelState.IsValid)
@@ -77,6 +81,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<CourseResponse>>> Update(string id, [FromBody] UpdateCourseRequest request)
         {
             if (!ModelState.IsValid)
@@ -115,6 +120,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         {
             var deleted = await _service.DeleteAsync(id);
@@ -126,6 +132,7 @@ namespace HP2.API.Controllers
         }
 
         [HttpGet("deleted")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<List<CourseResponse>>>> GetDeleted()
         {
             var deletedCourses = await _service.GetDeletedAsync();
