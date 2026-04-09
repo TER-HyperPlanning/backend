@@ -21,7 +21,7 @@ namespace HP2.Infrastructure.Repositories
 
         public async Task<IEnumerable<CourseModel>> GetAllAsync()
         {
-            var courses = await _context.Courses.ToListAsync();
+            var courses = await _context.Courses.Where(c => !c.IsDeleted).ToListAsync();
             return _mapper.Map<IEnumerable<CourseModel>>(courses);
         }
 
@@ -52,12 +52,40 @@ namespace HP2.Infrastructure.Repositories
 
         public async Task<bool> DeleteAsync(string id)
         {
-            var entity = await _context.Courses.FindAsync(id);
-            if (entity == null) return false;
+            var course = await _context.Courses.FindAsync(id);
+            if (course == null) return false;
 
-            _context.Courses.Remove(entity);
+            var sessions = await _context.Sessions.Where(s => s.CourseId == id && !s.IsDeleted).ToListAsync();
+            foreach (var session in sessions)
+            {
+                session.IsDeleted = true;
+                session.DeletedAt = DateTime.UtcNow;
+            }
+
+            course.IsDeleted = true;
+            course.DeletedAt = DateTime.UtcNow;
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<List<CourseModel>> GetDeletedAsync()
+        {
+            return await _context.Courses
+                .Where(c => c.IsDeleted)
+                .Select(c => new CourseModel
+                {
+                    Id = c.CourseId,
+                    Name = c.Name,
+                    Code = c.Code,
+                    IsDeleted = c.IsDeleted,
+                    DeletedAt = c.DeletedAt
+                })
+                .ToListAsync();
+        }
+
+        public async Task<bool> ExistsAsync(string id)
+        {
+            return await _context.Courses.AnyAsync(c => c.CourseId == id);
         }
     }
 }

@@ -20,5 +20,6 @@ namespace HP2.Application
         public Task<CourseModel> AddAsync(CourseModel model) => _repository.AddAsync(model);
         public Task<CourseModel?> UpdateAsync(CourseModel model) => _repository.UpdateAsync(model);
         public Task<bool> DeleteAsync(string id) => _repository.DeleteAsync(id);
+        public Task<List<CourseModel>> GetDeletedAsync() => _repository.GetDeletedAsync();
     }
 }

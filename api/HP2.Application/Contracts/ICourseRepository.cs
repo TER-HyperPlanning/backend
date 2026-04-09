@@ -11,5 +11,7 @@ namespace HP2.Infrastructure.Repositories
         Task<CourseModel> AddAsync(CourseModel model);
         Task<CourseModel?> UpdateAsync(CourseModel model);
         Task<bool> DeleteAsync(string id);
+        Task<List<CourseModel>> GetDeletedAsync();
+        Task<bool> ExistsAsync(string id);
     }
 }

@@ -124,5 +124,13 @@ namespace HP2.API.Controllers
 
             return Ok(ApiResponse<string>.Success("", "Course deleted"));
         }
+
+        [HttpGet("deleted")]
+        public async Task<ActionResult<ApiResponse<List<CourseResponse>>>> GetDeleted()
+        {
+            var deletedCourses = await _service.GetDeletedAsync();
+            var response = deletedCourses.Select(c => _mapper.Map<CourseResponse>(c)).ToList();
+            return Ok(ApiResponse<List<CourseResponse>>.Success(response, "Deleted courses retrieved successfully."));
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace HP2.Application.Contracts
         Task<CourseModel> AddAsync(CourseModel model);
         Task<CourseModel?> UpdateAsync(CourseModel model);
         Task<bool> DeleteAsync(string id);
+        Task<List<CourseModel>> GetDeletedAsync();
     }
 }
