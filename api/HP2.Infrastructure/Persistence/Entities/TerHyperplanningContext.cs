@@ -688,6 +688,13 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("track_id");
+
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime2");
+
+            entity.Property(e => e.IsDeleted)
+                .HasColumnType("bit");
+
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -710,6 +717,8 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Track_Teacher");
+
+            entity.HasQueryFilter(t => !t.IsDeleted);
         });
 
         modelBuilder.Entity<UnavailableDay>(entity =>

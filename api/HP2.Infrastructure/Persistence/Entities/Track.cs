@@ -7,6 +7,10 @@ public partial class Track
 {
     public string TrackId { get; set; } = null!;
 
+    public DateTime? DeletedAt { get; set; }
+
+    public bool IsDeleted { get; set; }
+
     public string Name { get; set; } = null!;
 
     public string TeacherId { get; set; } = null!;
