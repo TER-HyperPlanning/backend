@@ -15,4 +15,6 @@ public class RoomResponse
     public string BuildingId { get; set; } = null!;
 
     public string RoomTypeId { get; set; } = null!;
+
+    public DateTime? DeletedAt { get; set; }
 }

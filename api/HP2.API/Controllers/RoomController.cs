@@ -66,10 +66,11 @@ namespace HP2.API.Controllers
 
         // GET: api/Room
         [HttpGet]
-        public async Task<ActionResult<ApiResponse<IEnumerable<RoomModel>>>> GetRooms()
+        public async Task<ActionResult<ApiResponse<IEnumerable<RoomResponse>>>> GetRooms()
         {
             var rooms = await _roomService.GetAllRoomsAsync();
-            return Ok(ApiResponse<IEnumerable<RoomModel>>.Success(rooms));
+            var response = rooms.Select(MapToResponse);
+            return Ok(ApiResponse<IEnumerable<RoomResponse>>.Success(response));
         }
 
         [HttpGet("deleted")]
@@ -82,21 +83,21 @@ namespace HP2.API.Controllers
 
         // GET: api/Room/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ApiResponse<RoomModel>>> GetRoom(string id)
+        public async Task<ActionResult<ApiResponse<RoomResponse>>> GetRoom(string id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
             if (room == null)
-                return NotFound(ApiResponse<RoomModel>.Fail($"Room with ID {id} not found"));
+                return NotFound(ApiResponse<RoomResponse>.Fail($"Room with ID {id} not found"));
 
-            return Ok(ApiResponse<RoomModel>.Success(room));
+            return Ok(ApiResponse<RoomResponse>.Success(MapToResponse(room)));
         }
 
         // POST: api/Room
         [HttpPost]
-        public async Task<ActionResult<ApiResponse<RoomModel>>> CreateRoom([FromBody] RoomRequest request)
+        public async Task<ActionResult<ApiResponse<RoomResponse>>> CreateRoom([FromBody] RoomRequest request)
         {
             if (request == null)
-                return BadRequest(ApiResponse<RoomModel>.Fail("Room payload is required"));
+            return BadRequest(ApiResponse<RoomResponse>.Fail("Room payload is required"));
 
             if (!ModelState.IsValid)
             {
@@ -110,14 +111,14 @@ namespace HP2.API.Controllers
                     .ToList();
 
                 if (invalidFields.Any())
-                    return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
+                    return BadRequest(ApiResponse<RoomResponse>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
             }
 
             var invalidRoomTypeFields = new List<string>();
             if (!TryParseRoomType(request.RoomTypeId, out var parsedRoomType))
             {
                 invalidRoomTypeFields.Add("roomTypeId");
-                return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidRoomTypeFields.Select(FormatFieldWithAllowedValues))}"));
+                return BadRequest(ApiResponse<RoomResponse>.Fail($"Invalid field values: {string.Join(", ", invalidRoomTypeFields.Select(FormatFieldWithAllowedValues))}"));
             }
 
             var room = new RoomModel
@@ -130,15 +131,15 @@ namespace HP2.API.Controllers
             };
             var createdRoom = await _roomService.CreateRoomAsync(room);
             return CreatedAtAction(nameof(GetRoom), new { id = createdRoom.RoomId },
-                ApiResponse<RoomModel>.Success(createdRoom, "Room created successfully"));
+                ApiResponse<RoomResponse>.Success(MapToResponse(createdRoom), "Room created successfully"));
         }
 
         // PUT: api/Room/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<ApiResponse<RoomModel>>> EditRoom(string id, [FromBody] RoomRequest roomDto)
+        public async Task<ActionResult<ApiResponse<RoomResponse>>> EditRoom(string id, [FromBody] RoomRequest roomDto)
         {
             if (roomDto == null)
-                return BadRequest(ApiResponse<RoomModel>.Fail("Room payload is required"));
+            return BadRequest(ApiResponse<RoomResponse>.Fail("Room payload is required"));
 
             if (!ModelState.IsValid)
             {
@@ -152,19 +153,19 @@ namespace HP2.API.Controllers
                     .ToList();
 
                 if (invalidFields.Any())
-                    return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
+                    return BadRequest(ApiResponse<RoomResponse>.Fail($"Invalid field values: {string.Join(", ", invalidFields.Select(FormatFieldWithAllowedValues))}"));
             }
 
             var invalidRoomTypeFields = new List<string>();
             if (!TryParseRoomType(roomDto.RoomTypeId, out var parsedRoomType))
             {
                 invalidRoomTypeFields.Add("roomTypeId");
-                return BadRequest(ApiResponse<RoomModel>.Fail($"Invalid field values: {string.Join(", ", invalidRoomTypeFields.Select(FormatFieldWithAllowedValues))}"));
+                return BadRequest(ApiResponse<RoomResponse>.Fail($"Invalid field values: {string.Join(", ", invalidRoomTypeFields.Select(FormatFieldWithAllowedValues))}"));
             }
 
             var existingRoom = await _roomService.GetRoomByIdAsync(id);
             if (existingRoom == null)
-                return NotFound(ApiResponse<RoomModel>.Fail($"Room with ID {id} not found"));
+                return NotFound(ApiResponse<RoomResponse>.Fail($"Room with ID {id} not found"));
             existingRoom.IsAvailable = roomDto.IsAvailable;
             existingRoom.Capacity = roomDto.Capacity;
             existingRoom.BuildingId = roomDto.BuildingId;
@@ -173,7 +174,7 @@ namespace HP2.API.Controllers
 
             await _roomService.UpdateRoomAsync(existingRoom);
 
-            return Ok(ApiResponse<RoomModel>.Success(existingRoom, "Room updated successfully"));
+            return Ok(ApiResponse<RoomResponse>.Success(MapToResponse(existingRoom), "Room updated successfully"));
         }
 
         // DELETE: api/Room/5
@@ -207,6 +208,20 @@ namespace HP2.API.Controllers
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
                 Type = room.Type,
+                DeletedAt = room.DeletedAt
+            };
+        }
+
+        private static RoomResponse MapToResponse(RoomModel room)
+        {
+            return new RoomResponse
+            {
+                RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
+                IsAvailable = room.IsAvailable,
+                Capacity = room.Capacity,
+                BuildingId = room.BuildingId,
+                RoomTypeId = room.Type.ToString(),
                 DeletedAt = room.DeletedAt
             };
         }
