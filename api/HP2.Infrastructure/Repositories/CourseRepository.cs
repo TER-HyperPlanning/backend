@@ -1,6 +1,7 @@
 using AutoMapper;
+using HP2.Application.Contracts;
+using HP2.Application.DTOs.Session;
 using HP2.Domain.Models;
-using HP2.Infrastructure.Persistence;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -8,84 +9,103 @@ using System.Threading.Tasks;
 
 namespace HP2.Infrastructure.Repositories
 {
-    public class CourseRepository : ICourseRepository
+    public class CourseRepository : RepositoryBase<CourseModel>, ICourseRepository
     {
-        private readonly TerHyperplanningContext _context;
-        private readonly IMapper _mapper;
-
         public CourseRepository(TerHyperplanningContext context, IMapper mapper)
+            : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CourseModel>> GetAllAsync()
+        public override async Task<IReadOnlyList<CourseModel>> GetAllAsync()
         {
-            var courses = await _context.Courses.Where(c => !c.IsDeleted).ToListAsync();
-            return _mapper.Map<IEnumerable<CourseModel>>(courses);
+            var courses = await _dbContext.Courses
+                .AsNoTracking()
+                .ToListAsync();
+
+            return _mapper.Map<List<CourseModel>>(courses);
         }
 
-        public async Task<CourseModel?> GetByIdAsync(string id)
+        public async Task<IReadOnlyList<CourseModel>> GetDeletedAsync()
         {
-            var course = await _context.Courses.FindAsync(id);
+            var courses = await _dbContext.Courses
+                .IgnoreQueryFilters()
+                .AsNoTracking()
+                .Where(c => c.IsDeleted)
+                .ToListAsync();
+
+            return _mapper.Map<List<CourseModel>>(courses);
+        }
+
+        public override async Task<CourseModel?> GetByIdAsync(string id)
+        {
+            var course = await _dbContext.Courses
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.CourseId == id);
+
             return course == null ? null : _mapper.Map<CourseModel>(course);
         }
 
-        public async Task<CourseModel> AddAsync(CourseModel model)
+        public override async Task<CourseModel> AddAsync(CourseModel model)
         {
             var entity = _mapper.Map<Course>(model);
             entity.CourseId = Guid.NewGuid().ToString();
-            await _context.Courses.AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<CourseModel>(entity);
+            entity.IsDeleted = false;
+            entity.DeletedAt = null;
+
+            await _dbContext.Courses.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
+
+            model.Id = entity.CourseId;
+            model.IsDeleted = entity.IsDeleted;
+            model.DeletedAt = entity.DeletedAt;
+            return model;
         }
 
-        public async Task<CourseModel?> UpdateAsync(CourseModel model)
+        public override async Task UpdateAsync(CourseModel model)
         {
-            var entity = await _context.Courses.FindAsync(model.Id);
-            if (entity == null) return null;
-
-            _mapper.Map(model, entity);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<CourseModel>(entity);
-        }
-
-        public async Task<bool> DeleteAsync(string id)
-        {
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null) return false;
-
-            var sessions = await _context.Sessions.Where(s => s.CourseId == id && !s.IsDeleted).ToListAsync();
-            foreach (var session in sessions)
+            var entity = await _dbContext.Courses
+                .FirstOrDefaultAsync(c => c.CourseId == model.Id);
+            if (entity == null)
             {
-                session.IsDeleted = true;
-                session.DeletedAt = DateTime.UtcNow;
+                return;
             }
 
-            course.IsDeleted = true;
-            course.DeletedAt = DateTime.UtcNow;
-            await _context.SaveChangesAsync();
-            return true;
+            entity.Name = model.Name;
+            entity.Code = model.Code;
+            entity.IsDeleted = model.IsDeleted;
+            entity.DeletedAt = model.DeletedAt;
+
+            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<CourseModel>> GetDeletedAsync()
+        public override async Task DeleteAsync(string id)
         {
-            return await _context.Courses
-                .Where(c => c.IsDeleted)
-                .Select(c => new CourseModel
+            await base.DeleteAsync(id);
+        }
+
+        public Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionUsingCourseAsync(string courseId, DateTime referenceDateTime)
+        {
+            var referenceDate = referenceDateTime.Date;
+            var referenceTime = referenceDateTime.TimeOfDay;
+
+            return _dbContext.Sessions
+                .AsNoTracking()
+                .Where(s => s.CourseId == courseId
+                            && (s.Date > referenceDate
+                                || (s.Date == referenceDate && s.EndTime > referenceTime)))
+                .OrderBy(s => s.Date)
+                .ThenBy(s => s.StartTime)
+                .Select(s => new BlockingSessionInfo
                 {
-                    Id = c.CourseId,
-                    Name = c.Name,
-                    Code = c.Code,
-                    IsDeleted = c.IsDeleted,
-                    DeletedAt = c.DeletedAt
+                    SessionId = s.SessionId,
+                    StartDateTime = s.Date.Date + s.StartTime,
+                    EndDateTime = s.Date.Date + s.EndTime,
+                    RoomId = s.RoomId,
+                    RoomNumber = s.Room.RoomNumber,
+                    CourseId = s.CourseId,
+                    CourseName = s.Course.Name
                 })
-                .ToListAsync();
-        }
-
-        public async Task<bool> ExistsAsync(string id)
-        {
-            return await _context.Courses.AnyAsync(c => c.CourseId == id);
+                .FirstOrDefaultAsync();
         }
     }
 }

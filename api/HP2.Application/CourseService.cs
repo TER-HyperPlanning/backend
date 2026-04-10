@@ -1,6 +1,6 @@
 using HP2.Application.Contracts;
+using HP2.Application.Exceptions;
 using HP2.Domain.Models;
-using HP2.Infrastructure.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,11 +15,24 @@ namespace HP2.Application
             _repository = repository;
         }
 
-        public Task<IEnumerable<CourseModel>> GetAllAsync() => _repository.GetAllAsync();
+        public async Task<IEnumerable<CourseModel>> GetAllAsync() => await _repository.GetAllAsync();
         public Task<CourseModel?> GetByIdAsync(string id) => _repository.GetByIdAsync(id);
+        public async Task<IEnumerable<CourseModel>> GetDeletedAsync() => await _repository.GetDeletedAsync();
         public Task<CourseModel> AddAsync(CourseModel model) => _repository.AddAsync(model);
-        public Task<CourseModel?> UpdateAsync(CourseModel model) => _repository.UpdateAsync(model);
-        public Task<bool> DeleteAsync(string id) => _repository.DeleteAsync(id);
-        public Task<List<CourseModel>> GetDeletedAsync() => _repository.GetDeletedAsync();
+
+        public Task UpdateAsync(CourseModel model) => _repository.UpdateAsync(model);
+
+        public async Task DeleteAsync(string id)
+        {
+            var blockingSession = await _repository.GetFirstNotYetPassedSessionUsingCourseAsync(id, DateTime.UtcNow);
+            if (blockingSession != null)
+            {
+                throw new DeleteConflictException(
+                    $"Cannot delete course '{id}' because session '{blockingSession.SessionId}' has not ended yet.",
+                    blockingSession);
+            }
+
+            await _repository.DeleteAsync(id);
+        }
     }
 }
