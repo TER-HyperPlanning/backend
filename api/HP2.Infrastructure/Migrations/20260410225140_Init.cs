@@ -45,7 +45,9 @@ namespace HP2.Infrastructure.Migrations
                 {
                     course_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    code = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    code = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -614,34 +616,34 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Course",
-                columns: new[] { "course_id", "code", "name" },
+                columns: new[] { "course_id", "code", "DeletedAt", "IsDeleted", "name" },
                 values: new object[,]
                 {
-                    { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "DATA_BDD", "Bases de Données Avancées" },
-                    { "02e0e667-183a-1225-d0ed-19fe4c25f963", "GEST_FIN", "Gestion Financière" },
-                    { "03241339-1186-a90f-33bd-a9850f603619", "LANG_ANG", "Anglais" },
-                    { "083b85af-c2e8-d7eb-0cca-13cbad93f7df", "UNIV_PRESENCE", "PRESENCE UNIVERSITAIRE" },
-                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "PRO_MEM", "Rapport d'activité / Mémoire" },
-                    { "24027d5d-e151-9a00-fd19-ac11d27b8189", "INFO_TECH", "Technologies Logicielles" },
-                    { "2af630c1-de0d-944f-0b87-a73f1c90644f", "CNS_INFOCOM", "Information et communication" },
-                    { "2d4557a7-a48d-9926-3e2b-bc820396b11a", "INFO_SAD", "Systèmes et Applications Distribués" },
-                    { "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", "INFO_COO", "Conception Orientée Objet de Logiciel" },
-                    { "3448ddd0-694c-35d0-f117-7d5834e6ca81", "DATA_INNOV", "Implémentation du Projet Innovation" },
-                    { "3aed7e82-31b6-d05a-3f46-f2ef085d313e", "CNS_SPEC_VERIF", "Spécification et vérification formelles" },
-                    { "3b835d91-4f08-07ef-d4d5-575947097601", "INFO_RO", "Recherche Opérationnelle" },
-                    { "49ba4385-063d-7b8d-5f3f-aa1c7f573747", "DATA_CRYPTO", "Cryptographie et Sécurité" },
-                    { "731ac32d-6ea9-f15e-7ca2-34f99e840bd3", "DATA_TER", "Travaux d'étude et de recherche (TER)" },
-                    { "93b97065-831b-a4dc-8179-be986f0772b8", "INFO_ICL", "Ingénierie des Composants Logiciels" },
-                    { "c0452911-4948-9cb2-aed9-7b949c0b6442", "CNS_MULTI_AGENTS", "Modèles et méthodes pour les systèmes multi-agents" },
-                    { "c3cd3947-214d-3130-b938-a5d19a0e8eaa", "CNS_MSED", "Modélisation des systèmes à événements discrets" },
-                    { "cf512e7a-117b-71d0-a07f-43e743dad7eb", "CNS_ML", "Machine Learning" },
-                    { "d059db13-ac91-760c-5bf7-6c442946e7bf", "DATA_ANALYSE", "Analyse de Données" },
-                    { "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d", "DATA_STATS", "Statistiques Appliquées aux Données" },
-                    { "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", "GEST_DEV", "Développement Soutenable" },
-                    { "e9cbe024-5789-9dca-e8c8-418b70f033cb", "CNS_HPC_INTRO", "Introduction à l'informatique haute performance" },
-                    { "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0", "DROIT_CONT", "Droit des Contrats" },
-                    { "f8c83971-d090-c665-8911-cd645e1a3c87", "PRO_STAGE", "Stage M1" },
-                    { "fb30b659-6817-4099-e7cb-d7c254532603", "CNS_ALGO_ADV", "Algorithmique avancée" }
+                    { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "DATA_BDD", null, false, "Bases de Données Avancées" },
+                    { "02e0e667-183a-1225-d0ed-19fe4c25f963", "GEST_FIN", null, false, "Gestion Financière" },
+                    { "03241339-1186-a90f-33bd-a9850f603619", "LANG_ANG", null, false, "Anglais" },
+                    { "083b85af-c2e8-d7eb-0cca-13cbad93f7df", "UNIV_PRESENCE", null, false, "PRESENCE UNIVERSITAIRE" },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "PRO_MEM", null, false, "Rapport d'activité / Mémoire" },
+                    { "24027d5d-e151-9a00-fd19-ac11d27b8189", "INFO_TECH", null, false, "Technologies Logicielles" },
+                    { "2af630c1-de0d-944f-0b87-a73f1c90644f", "CNS_INFOCOM", null, false, "Information et communication" },
+                    { "2d4557a7-a48d-9926-3e2b-bc820396b11a", "INFO_SAD", null, false, "Systèmes et Applications Distribués" },
+                    { "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", "INFO_COO", null, false, "Conception Orientée Objet de Logiciel" },
+                    { "3448ddd0-694c-35d0-f117-7d5834e6ca81", "DATA_INNOV", null, false, "Implémentation du Projet Innovation" },
+                    { "3aed7e82-31b6-d05a-3f46-f2ef085d313e", "CNS_SPEC_VERIF", null, false, "Spécification et vérification formelles" },
+                    { "3b835d91-4f08-07ef-d4d5-575947097601", "INFO_RO", null, false, "Recherche Opérationnelle" },
+                    { "49ba4385-063d-7b8d-5f3f-aa1c7f573747", "DATA_CRYPTO", null, false, "Cryptographie et Sécurité" },
+                    { "731ac32d-6ea9-f15e-7ca2-34f99e840bd3", "DATA_TER", null, false, "Travaux d'étude et de recherche (TER)" },
+                    { "93b97065-831b-a4dc-8179-be986f0772b8", "INFO_ICL", null, false, "Ingénierie des Composants Logiciels" },
+                    { "c0452911-4948-9cb2-aed9-7b949c0b6442", "CNS_MULTI_AGENTS", null, false, "Modèles et méthodes pour les systèmes multi-agents" },
+                    { "c3cd3947-214d-3130-b938-a5d19a0e8eaa", "CNS_MSED", null, false, "Modélisation des systèmes à événements discrets" },
+                    { "cf512e7a-117b-71d0-a07f-43e743dad7eb", "CNS_ML", null, false, "Machine Learning" },
+                    { "d059db13-ac91-760c-5bf7-6c442946e7bf", "DATA_ANALYSE", null, false, "Analyse de Données" },
+                    { "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d", "DATA_STATS", null, false, "Statistiques Appliquées aux Données" },
+                    { "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", "GEST_DEV", null, false, "Développement Soutenable" },
+                    { "e9cbe024-5789-9dca-e8c8-418b70f033cb", "CNS_HPC_INTRO", null, false, "Introduction à l'informatique haute performance" },
+                    { "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0", "DROIT_CONT", null, false, "Droit des Contrats" },
+                    { "f8c83971-d090-c665-8911-cd645e1a3c87", "PRO_STAGE", null, false, "Stage M1" },
+                    { "fb30b659-6817-4099-e7cb-d7c254532603", "CNS_ALGO_ADV", null, false, "Algorithmique avancée" }
                 });
 
             migrationBuilder.InsertData(

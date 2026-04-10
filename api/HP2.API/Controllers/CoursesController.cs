@@ -3,13 +3,16 @@ using HP2.Application.Contracts;
 using HP2.Domain.Models;
 using HP2.Application.DTOs.Course;
 using HP2.Application.DTOs.Common;
+using HP2.Application.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "ADMIN")]
     public class CoursesController : ControllerBase
     {
         private readonly ICourseService _service;
@@ -96,8 +99,8 @@ namespace HP2.API.Controllers
 
             try
             {
-                var updated = await _service.UpdateAsync(existing);
-                var response = _mapper.Map<CourseResponse>(updated);
+                await _service.UpdateAsync(existing);
+                var response = _mapper.Map<CourseResponse>(existing);
                 return Ok(ApiResponse<CourseResponse>.Success(response, "Course updated"));
             }
             catch (DbUpdateException dbEx)
@@ -115,14 +118,40 @@ namespace HP2.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
+        public async Task<ActionResult<ApiResponse<object>>> Delete(string id)
         {
-            var deleted = await _service.DeleteAsync(id);
+            var existing = await _service.GetByIdAsync(id);
+            if (existing == null)
+                return NotFound(ApiResponse<object>.Fail("Course not found"));
 
-            if (!deleted)
-                return NotFound(ApiResponse<string>.Fail("Course not found"));
+            try
+            {
+                await _service.DeleteAsync(id);
+                return Ok(ApiResponse<object>.Success(id, "Course deleted"));
+            }
+            catch (DeleteConflictException ex)
+            {
+                return Conflict(ApiResponse<object>.Fail(ex.Message, ex.BlockingSession));
+            }
+        }
 
-            return Ok(ApiResponse<string>.Success("", "Course deleted"));
+        [HttpGet("deleted")]
+        public async Task<ActionResult<ApiResponse<List<DeletedCourseResponse>>>> GetDeleted()
+        {
+            var deletedCourses = await _service.GetDeletedAsync();
+            var response = deletedCourses.Select(MapToDeletedResponse).ToList();
+            return Ok(ApiResponse<List<DeletedCourseResponse>>.Success(response, "Deleted courses retrieved successfully."));
+        }
+
+        private static DeletedCourseResponse MapToDeletedResponse(CourseModel course)
+        {
+            return new DeletedCourseResponse
+            {
+                Id = course.Id,
+                Name = course.Name,
+                Code = course.Code,
+                DeletedAt = course.DeletedAt
+            };
         }
     }
 }
