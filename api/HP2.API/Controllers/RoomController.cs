@@ -66,10 +66,11 @@ namespace HP2.API.Controllers
 
         // GET: api/Room
         [HttpGet]
-        public async Task<ActionResult<ApiResponse<IEnumerable<RoomModel>>>> GetRooms()
+        public async Task<ActionResult<ApiResponse<IEnumerable<RoomResponse>>>> GetRooms()
         {
             var rooms = await _roomService.GetAllRoomsAsync();
-            return Ok(ApiResponse<IEnumerable<RoomModel>>.Success(rooms));
+            var response = rooms.Select(MapToResponse);
+            return Ok(ApiResponse<IEnumerable<RoomResponse>>.Success(response));
         }
 
         [HttpGet("deleted")]
@@ -82,13 +83,13 @@ namespace HP2.API.Controllers
 
         // GET: api/Room/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ApiResponse<RoomModel>>> GetRoom(string id)
+        public async Task<ActionResult<ApiResponse<RoomResponse>>> GetRoom(string id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
             if (room == null)
-                return NotFound(ApiResponse<RoomModel>.Fail($"Room with ID {id} not found"));
+                return NotFound(ApiResponse<RoomResponse>.Fail($"Room with ID {id} not found"));
 
-            return Ok(ApiResponse<RoomModel>.Success(room));
+            return Ok(ApiResponse<RoomResponse>.Success(MapToResponse(room)));
         }
 
         // POST: api/Room
@@ -200,6 +201,20 @@ namespace HP2.API.Controllers
         private static DeletedRoomResponse MapToDeletedResponse(RoomModel room)
         {
             return new DeletedRoomResponse
+            {
+                RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
+                IsAvailable = room.IsAvailable,
+                Capacity = room.Capacity,
+                BuildingId = room.BuildingId,
+                Type = room.Type,
+                DeletedAt = room.DeletedAt
+            };
+        }
+
+        private static RoomResponse MapToResponse(RoomModel room)
+        {
+            return new RoomResponse
             {
                 RoomId = room.RoomId,
                 RoomNumber = room.RoomNumber,
