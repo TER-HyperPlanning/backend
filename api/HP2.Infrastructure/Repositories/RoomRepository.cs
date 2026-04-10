@@ -184,6 +184,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
             return new RoomModel
             {
                 RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
@@ -204,6 +205,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 .Select(r => new RoomModel
                 {
                     RoomId = r.RoomId,
+                    RoomNumber = r.RoomNumber,
                     IsAvailable = r.IsAvailable,
                     Capacity = r.Capacity,
                     BuildingId = r.BuildingId,

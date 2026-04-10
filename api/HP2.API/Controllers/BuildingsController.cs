@@ -48,39 +48,40 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ApiResponse<BuildingModel>>> Get(string id)
+    public async Task<ActionResult<ApiResponse<BuildingResponse>>> Get(string id)
     {
         try
         {
             var building = await _buildingService.GetBuildingByIdAsync(id);
             if (building == null)
-                return NotFound(ApiResponse<BuildingModel>.Fail($"Building with id {id} not found"));
+                return NotFound(ApiResponse<BuildingResponse>.Fail($"Building with id {id} not found"));
 
-            return Ok(ApiResponse<BuildingModel>.Success(building));
+            return Ok(ApiResponse<BuildingResponse>.Success(MapToResponse(building)));
         }
         catch (ArgumentException ex)
         {
-            return BadRequest(ApiResponse<BuildingModel>.Fail(ex.Message));
+            return BadRequest(ApiResponse<BuildingResponse>.Fail(ex.Message));
         }
         catch
         {
             return StatusCode(StatusCodes.Status500InternalServerError,
-                ApiResponse<BuildingModel>.Fail("An internal error occurred"));
+                ApiResponse<BuildingResponse>.Fail("An internal error occurred"));
         }
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<IEnumerable<BuildingModel>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<BuildingResponse>>>> GetAll()
     {
         try
         {
             var buildings = await _buildingService.GetAllBuildingsAsync();
-            return Ok(ApiResponse<IEnumerable<BuildingModel>>.Success(buildings));
+            var response = buildings.Select(MapToResponse);
+            return Ok(ApiResponse<IEnumerable<BuildingResponse>>.Success(response));
         }
         catch
         {
             return StatusCode(StatusCodes.Status500InternalServerError,
-                ApiResponse<IEnumerable<BuildingModel>>.Fail("An internal error occurred"));
+                ApiResponse<IEnumerable<BuildingResponse>>.Fail("An internal error occurred"));
         }
     }
 
@@ -149,6 +150,16 @@ public class BuildingsController : ControllerBase
     private static DeletedBuildingResponse MapToDeletedResponse(BuildingModel building)
     {
         return new DeletedBuildingResponse
+        {
+            Id = building.Id,
+            Name = building.Name,
+            DeletedAt = building.DeletedAt
+        };
+    }
+
+    private static BuildingResponse MapToResponse(BuildingModel building)
+    {
+        return new BuildingResponse
         {
             Id = building.Id,
             Name = building.Name,
