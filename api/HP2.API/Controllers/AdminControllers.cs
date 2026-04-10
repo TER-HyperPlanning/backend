@@ -3,10 +3,12 @@ using HP2.Application.DTOs.Admin;
 using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class AdminsController : ControllerBase
 {
     private readonly IAdminService _adminService;

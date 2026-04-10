@@ -71,7 +71,27 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
 
     public override async Task DeleteAsync(string id)
     {
+        await using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
         await base.DeleteAsync(id);
+
+        var roomsToDelete = await _dbContext.Rooms
+            .Where(r => r.BuildingId == id && !r.IsDeleted)
+            .ToListAsync();
+
+        if (roomsToDelete.Count > 0)
+        {
+            var deletedAt = DateTime.UtcNow;
+            foreach (var room in roomsToDelete)
+            {
+                room.IsDeleted = true;
+                room.DeletedAt = deletedAt;
+            }
+
+            await _dbContext.SaveChangesAsync();
+        }
+
+        await transaction.CommitAsync();
     }
 
     public Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionUsingBuildingRoomsAsync(string buildingId, DateTime referenceDateTime)
