@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace HP2.API.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class AdminsController : ControllerBase
 {
     private readonly IAdminService _adminService;
@@ -18,7 +19,6 @@ public class AdminsController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = "ADMNIN")]
     public async Task<ActionResult<ApiResponse<AdminResponse>>> Create([FromBody] CreateAdminRequest request)
     {
         if (!ModelState.IsValid)
@@ -64,7 +64,6 @@ public class AdminsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "ADMNIN,TEACHER,STUDENT")]
     public async Task<ActionResult<ApiResponse<AdminResponse>>> Get(string id)
     {
         try
@@ -95,7 +94,6 @@ public class AdminsController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "ADMNIN,TEACHER,STUDENT")]
     public async Task<ActionResult<ApiResponse<List<AdminResponse>>>> GetAll()
     {
         try
@@ -123,7 +121,6 @@ public class AdminsController : ControllerBase
     }
 
     [HttpGet("deleted")]
-    [Authorize(Roles = "ADMNIN")]
     public async Task<ActionResult<ApiResponse<List<DeletedAdminResponse>>>> GetDeleted()
     {
         try
@@ -139,7 +136,6 @@ public class AdminsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "ADMNIN")]
     public async Task<ActionResult<ApiResponse<AdminResponse>>> Update(string id, [FromBody] UpdateAdminRequest request)
     {
         if (!ModelState.IsValid)
@@ -185,7 +181,6 @@ public class AdminsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles = "ADMNIN")]
     public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
         try
