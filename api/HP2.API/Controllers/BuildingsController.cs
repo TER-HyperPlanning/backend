@@ -21,12 +21,12 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<BuildingModel>>> Create([FromBody] CreateBuildingRequest request)
+    public async Task<ActionResult<ApiResponse<BuildingResponse>>> Create([FromBody] CreateBuildingRequest request)
     {
         try
         {
             if (request == null)
-                return BadRequest(ApiResponse<BuildingModel>.Fail("Building content is required"));
+                return BadRequest(ApiResponse<BuildingResponse>.Fail("Building content is required"));
 
             var building = new BuildingModel
             {
@@ -35,15 +35,15 @@ public class BuildingsController : ControllerBase
 
             var createdBuilding = await _buildingService.CreateBuildingAsync(building);
             return CreatedAtAction(nameof(Get), new { id = createdBuilding.Id },
-                ApiResponse<BuildingModel>.Success(createdBuilding, "Building created successfully"));
+                ApiResponse<BuildingResponse>.Success(MapToResponse(createdBuilding), "Building created successfully"));
         }
         catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx && (sqlEx.Number == 2601 || sqlEx.Number == 2627))
         {
-            return Conflict(ApiResponse<BuildingModel>.Fail("Building already exists, choose another name"));
+            return Conflict(ApiResponse<BuildingResponse>.Fail("Building already exists, choose another name"));
         }
         catch (ArgumentException ex)
         {
-            return BadRequest(ApiResponse<BuildingModel>.Fail(ex.Message));
+            return BadRequest(ApiResponse<BuildingResponse>.Fail(ex.Message));
         }
     }
 
@@ -94,29 +94,29 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<BuildingModel>>> Update(string id, [FromBody] UpdateBuildingRequest request)
+    public async Task<ActionResult<ApiResponse<BuildingResponse>>> Update(string id, [FromBody] UpdateBuildingRequest request)
     {
         try
         {
             if (request == null)
-                return BadRequest(ApiResponse<BuildingModel>.Fail("Building content is required"));
+                return BadRequest(ApiResponse<BuildingResponse>.Fail("Building content is required"));
 
             var existing = await _buildingService.GetBuildingByIdAsync(id);
             if (existing == null)
-                return NotFound(ApiResponse<BuildingModel>.Fail($"Building with id {id} not found"));
+                return NotFound(ApiResponse<BuildingResponse>.Fail($"Building with id {id} not found"));
 
             existing.Name = request.Name;
 
             await _buildingService.UpdateBuildingAsync(existing);
-            return Ok(ApiResponse<BuildingModel>.Success(existing, "Building updated successfully"));
+            return Ok(ApiResponse<BuildingResponse>.Success(MapToResponse(existing), "Building updated successfully"));
         }
         catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx && (sqlEx.Number == 2601 || sqlEx.Number == 2627))
         {
-            return Conflict(ApiResponse<BuildingModel>.Fail("Building already exists, choose another name"));
+            return Conflict(ApiResponse<BuildingResponse>.Fail("Building already exists, choose another name"));
         }
         catch (ArgumentException ex)
         {
-            return BadRequest(ApiResponse<BuildingModel>.Fail(ex.Message));
+            return BadRequest(ApiResponse<BuildingResponse>.Fail(ex.Message));
         }
     }
 

@@ -113,6 +113,7 @@ public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         Role = m.Role,
         CreatedAt = m.CreatedAt,
         UpdatedAt = m.UpdatedAt,
+        DeletedAt = m.DeletedAt,
     };
 
     private static DeletedTeacherResponse ToDeletedResponse(TeacherModel m) => new()

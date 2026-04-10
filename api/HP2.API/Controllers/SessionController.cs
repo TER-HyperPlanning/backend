@@ -238,7 +238,8 @@ public class SessionsController : ControllerBase
             Type = SessionReferenceMapper.ToSessionTypeEnum(s.SessionTypeLabel ?? ""),
             Status = SessionReferenceMapper.ToSessionStatusEnum(s.SessionStatusLabel ?? ""),
             Room = s.RoomNumber ?? "",
-            Course = s.CourseName ?? ""
+            Course = s.CourseName ?? "",
+            DeletedAt = s.DeletedAt
         };
     }
     private static DeletedSessionResponse MapToDeletedResponse(SessionModel s)

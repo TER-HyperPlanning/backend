@@ -8,5 +8,6 @@ namespace HP2.Application.DTOs.Track
         public string ProgramId { get; set; }
         public string? Description { get; set; }
         public string? Lieu { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

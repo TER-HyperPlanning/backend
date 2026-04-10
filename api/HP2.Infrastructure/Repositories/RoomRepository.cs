@@ -243,6 +243,7 @@ namespace HP2.Infrastructure.Persistence.Repositories
             return new RoomModel
             {
                 RoomId = room.RoomId,
+                RoomNumber = room.RoomNumber,
                 IsAvailable = room.IsAvailable,
                 Capacity = room.Capacity,
                 BuildingId = room.BuildingId,
