@@ -2,6 +2,7 @@ using HP2.Application.Contracts;
 using HP2.Application.DTOs.Assign;
 using HP2.Application.DTOs.Common;
 using Microsoft.EntityFrameworkCore;
+using HP2.Domain.Models;
 
 namespace HP2.Application;
 
@@ -153,6 +154,19 @@ public class AssignService : IAssignService
         catch (Exception ex)
         {
             return ApiResponse<bool>.Fail(ex.Message);
+        }
+    }
+
+    public async Task<ApiResponse<List<AssignResponse>>> GetDeletedAsync()
+    {
+        try
+        {
+            var result = await _repository.GetDeletedAsync();
+            return ApiResponse<List<AssignResponse>>.Success(result, "Deleted assigns retrieved");
+        }
+        catch (Exception ex)
+        {
+            return ApiResponse<List<AssignResponse>>.Fail(ex.Message);
         }
     }
 }

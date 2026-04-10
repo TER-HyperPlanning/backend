@@ -2,6 +2,7 @@ using HP2.Application.Contracts;
 using HP2.Application.DTOs.Assign;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
+using HP2.Application.DTOs.Assign;
 
 namespace HP2.Infrastructure.Repositories;
 
@@ -17,6 +18,7 @@ public class AssignRepository : IAssignRepository
     public async Task<List<AssignResponse>> GetAllAsync()
     {
         return await _context.Assigns
+            .Where(a => !a.IsDeleted)
             .Select(a => new AssignResponse
             {
                 TrackId = a.TrackId,
@@ -72,8 +74,8 @@ public class AssignRepository : IAssignRepository
             .FirstOrDefaultAsync(a => a.TrackId == trackId && a.CourseId == courseId);
 
         if (assign == null) return false;
-
-        _context.Assigns.Remove(assign);
+        assign.IsDeleted = true;
+        assign.DeletedAt = DateTime.UtcNow;
         return await _context.SaveChangesAsync() > 0;
     }
 
@@ -86,4 +88,17 @@ public class AssignRepository : IAssignRepository
     {
         return await _context.Courses.AnyAsync(c => c.CourseId == courseId);
     }
+
+    public async Task<List<AssignResponse>> GetDeletedAsync()
+{
+    return await _context.Assigns
+        .Where(a => a.IsDeleted)
+        .Select(a => new AssignResponse
+        {
+            TrackId = a.TrackId,
+            CourseId = a.CourseId,
+            HourlyVolume = a.HourlyVolume
+        })
+        .ToListAsync();
+}
 }
