@@ -5814,7 +5814,9 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("hourly_volume");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.HasKey("TrackId", "CourseId")
                         .HasName("PK__Assign__DC1D2754232CB863");

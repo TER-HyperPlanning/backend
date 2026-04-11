@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    [Migration("20260410012949_AddSoftDeleteAssign")]
-    partial class AddSoftDeleteAssign
+    [Migration("20260411095700_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -5817,7 +5817,9 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("hourly_volume");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.HasKey("TrackId", "CourseId")
                         .HasName("PK__Assign__DC1D2754232CB863");

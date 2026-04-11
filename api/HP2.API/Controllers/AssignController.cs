@@ -8,6 +8,7 @@ namespace HP2.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class AssignController : ControllerBase
 {
     private readonly IAssignService _service;
@@ -18,7 +19,6 @@ public class AssignController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<List<AssignResponse>>>> GetAll()
     {
         var response = await _service.GetAllAsync();
@@ -33,7 +33,6 @@ public class AssignController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<bool>>> Create([FromBody] CreateAssignRequest request)
     {
         var response = await _service.CreateAsync(request);
@@ -41,7 +40,6 @@ public class AssignController : ControllerBase
     }
 
     [HttpPut("{trackId}/{courseId}")]
-    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<bool>>> Update(string trackId,string courseId,[FromBody] UpdateAssignRequest request)
     {
         var response = await _service.UpdateAsync(trackId, courseId, request);
@@ -49,7 +47,6 @@ public class AssignController : ControllerBase
     }
 
     [HttpDelete("{trackId}/{courseId}")]
-    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<bool>>> Delete(string trackId, string courseId)
     {
         var response = await _service.DeleteAsync(trackId, courseId);
@@ -57,7 +54,6 @@ public class AssignController : ControllerBase
     }
 
     [HttpGet("deleted")]
-    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<List<AssignResponse>>>> GetDeleted()
     {
         var response = await _service.GetDeletedAsync();

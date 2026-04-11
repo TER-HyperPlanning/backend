@@ -110,6 +110,12 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("course_id");
             entity.Property(e => e.HourlyVolume).HasColumnName("hourly_volume");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false);
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime2");
+
+            entity.HasQueryFilter(a => !a.IsDeleted);
 
             entity.HasOne(d => d.Course).WithMany(p => p.Assigns)
                 .HasForeignKey(d => d.CourseId)
