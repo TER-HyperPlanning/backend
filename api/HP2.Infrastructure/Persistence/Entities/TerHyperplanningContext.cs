@@ -2516,6 +2516,27 @@ public partial class TerHyperplanningContext : DbContext
             return null;
         }
 
+        DateTime? FindNextRegularTeachingDayDistinctFrom(DateTime date, DateTime maxDate, DateTime first, DateTime second)
+        {
+            for (var current = date.Date; current <= maxDate.Date; current = current.AddDays(1))
+            {
+                if (!IsRegularTeachingDay(current))
+                {
+                    continue;
+                }
+
+                // Keep recovery on a different weekday than cancelled and moved sessions.
+                if (current.DayOfWeek == first.DayOfWeek || current.DayOfWeek == second.DayOfWeek)
+                {
+                    continue;
+                }
+
+                return current;
+            }
+
+            return null;
+        }
+
         void SeedBiweeklySessionStatusChanges(
             string groupId,
             string groupKey,
@@ -2525,6 +2546,7 @@ public partial class TerHyperplanningContext : DbContext
             DateTime schoolEnd)
         {
             var seededCancelledDates = new HashSet<DateTime>();
+            var seededMovedDates = new HashSet<DateTime>();
             var seededRecoveryDates = new HashSet<DateTime>();
 
             for (var anchor = schoolStart.Date; anchor <= schoolEnd.Date; anchor = anchor.AddDays(14))
@@ -2552,10 +2574,21 @@ public partial class TerHyperplanningContext : DbContext
                     sessionStatusCancelledId,
                     "annule");
 
+                var movedDate = FindNextRegularTeachingDay(cancelledDate.Value.AddDays(1), schoolEnd);
+                if (!movedDate.HasValue)
+                {
+                    continue;
+                }
+
+                if (!seededMovedDates.Add(movedDate.Value.Date))
+                {
+                    continue;
+                }
+
                 AddSessionForGroupWithStatus(
                     groupId,
                     groupKey,
-                    cancelledDate.Value,
+                    movedDate.Value,
                     new TimeSpan(19, 15, 0),
                     new TimeSpan(20, 45, 0),
                     movedCourseId,
@@ -2564,7 +2597,11 @@ public partial class TerHyperplanningContext : DbContext
                     sessionStatusMovedId,
                     "deplace");
 
-                var recoveryDate = FindNextRegularTeachingDay(cancelledDate.Value.AddDays(14), schoolEnd);
+                var recoveryDate = FindNextRegularTeachingDayDistinctFrom(
+                    movedDate.Value.AddDays(14),
+                    schoolEnd,
+                    cancelledDate.Value,
+                    movedDate.Value);
                 if (!recoveryDate.HasValue)
                 {
                     continue;
