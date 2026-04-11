@@ -5,4 +5,5 @@ namespace HP2.Application.Contracts;
 public interface IGroupRepository : IAsyncRepository<GroupModel>
 {
     Task<GroupModel?> GetByNameAsync(string name);
+    Task<IEnumerable<GroupModel>> GetByTrackIdAsync(string trackId);
 }

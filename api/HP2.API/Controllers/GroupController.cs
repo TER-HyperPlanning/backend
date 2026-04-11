@@ -119,4 +119,20 @@ public class GroupsController : ControllerBase
         await _groupService.DeleteGroupAsync(id);
         return NoContent();
     }
+
+    // GET: api/groups/track/{trackId}
+    [HttpGet("track/{trackId}")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<GroupModel>>>> GetByTrackId(string trackId)
+    {
+        try
+        {
+            var groups = await _groupService.GetGroupsByTrackIdAsync(trackId);
+            return Ok(ApiResponse<IEnumerable<GroupModel>>.Success(groups, $"Groups for track ID {trackId} retrieved successfully"));
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ApiResponse<IEnumerable<GroupModel>>.Fail(ex.Message));
+        }
+    }
+
 }
