@@ -21,4 +21,6 @@ public class CreateAvailabilityRequest
 
     [Required]
     public string TeacherId { get; set; } = string.Empty;
+
+    public string? AvailabilityGroupId { get; set; }
 }

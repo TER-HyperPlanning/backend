@@ -6124,6 +6124,12 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnName("availability_id")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<string>("AvailabilityGroupId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("availability_group_id");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("date")
                         .HasColumnName("end_date");
@@ -6157,6 +6163,8 @@ namespace HP2.Infrastructure.Migrations
                     b.HasKey("AvailabilityId")
                         .HasName("PK__Availabi__86E3A8015B49D583");
 
+                    b.HasIndex("AvailabilityGroupId");
+
                     b.HasIndex("TeacherId");
 
                     b.HasIndex("WeekdayId");
@@ -6184,6 +6192,34 @@ namespace HP2.Infrastructure.Migrations
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
                             WeekdayId = "a1572cec-402d-a254-39ac-c88335d6d1d1"
                         });
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.AvailabilityGroup", b =>
+                {
+                    b.Property<string>("AvailabilityGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("availability_group_id")
+                        .HasDefaultValueSql("(newid())");
+
+                    b.Property<int>("NumberOfAvailableDays")
+                        .HasColumnType("int")
+                        .HasColumnName("number_of_available_days");
+
+                    b.Property<string>("TeacherId")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("teacher_id");
+
+                    b.HasKey("AvailabilityGroupId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("AvailabilityGroup", (string)null);
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Building", b =>
@@ -30558,6 +30594,12 @@ namespace HP2.Infrastructure.Migrations
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Availability", b =>
                 {
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.AvailabilityGroup", "AvailabilityGroup")
+                        .WithMany("Availabilities")
+                        .HasForeignKey("AvailabilityGroupId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .HasConstraintName("FK_Avail_AvailabilityGroup");
+
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Teacher", "Teacher")
                         .WithMany("Availabilities")
                         .HasForeignKey("TeacherId")
@@ -30570,9 +30612,22 @@ namespace HP2.Infrastructure.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_Avail_Weekday");
 
+                    b.Navigation("AvailabilityGroup");
+
                     b.Navigation("Teacher");
 
                     b.Navigation("Weekday");
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.AvailabilityGroup", b =>
+                {
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .IsRequired()
+                        .HasConstraintName("FK_AvailabilityGroup_Teacher");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Group", b =>
@@ -30822,6 +30877,11 @@ namespace HP2.Infrastructure.Migrations
                         .HasForeignKey("TeacherId")
                         .IsRequired()
                         .HasConstraintName("FK_Teach_Teacher");
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.AvailabilityGroup", b =>
+                {
+                    b.Navigation("Availabilities");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Building", b =>

@@ -345,30 +345,21 @@ namespace HP2.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Availability",
+                name: "AvailabilityGroup",
                 columns: table => new
                 {
-                    availability_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
-                    start_date = table.Column<DateTime>(type: "date", nullable: false),
-                    end_date = table.Column<DateTime>(type: "date", nullable: false),
-                    weekday_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    start_time = table.Column<TimeSpan>(type: "time", nullable: false),
-                    end_time = table.Column<TimeSpan>(type: "time", nullable: false),
-                    teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    availability_group_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
+                    teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    number_of_available_days = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Availabi__86E3A8015B49D583", x => x.availability_id);
+                    table.PrimaryKey("PK_AvailabilityGroup", x => x.availability_group_id);
                     table.ForeignKey(
-                        name: "FK_Avail_Teacher",
+                        name: "FK_AvailabilityGroup_Teacher",
                         column: x => x.teacher_id,
                         principalTable: "Teacher",
                         principalColumn: "user_id");
-                    table.ForeignKey(
-                        name: "FK_Avail_Weekday",
-                        column: x => x.weekday_id,
-                        principalTable: "WeekDay",
-                        principalColumn: "weekday_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -507,6 +498,40 @@ namespace HP2.Infrastructure.Migrations
                         column: x => x.teacher_id,
                         principalTable: "Teacher",
                         principalColumn: "user_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Availability",
+                columns: table => new
+                {
+                    availability_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
+                    start_date = table.Column<DateTime>(type: "date", nullable: false),
+                    end_date = table.Column<DateTime>(type: "date", nullable: false),
+                    weekday_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    start_time = table.Column<TimeSpan>(type: "time", nullable: false),
+                    end_time = table.Column<TimeSpan>(type: "time", nullable: false),
+                    teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    availability_group_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Availabi__86E3A8015B49D583", x => x.availability_id);
+                    table.ForeignKey(
+                        name: "FK_Avail_AvailabilityGroup",
+                        column: x => x.availability_group_id,
+                        principalTable: "AvailabilityGroup",
+                        principalColumn: "availability_group_id",
+                        onDelete: ReferentialAction.SetNull);
+                    table.ForeignKey(
+                        name: "FK_Avail_Teacher",
+                        column: x => x.teacher_id,
+                        principalTable: "Teacher",
+                        principalColumn: "user_id");
+                    table.ForeignKey(
+                        name: "FK_Avail_Weekday",
+                        column: x => x.weekday_id,
+                        principalTable: "WeekDay",
+                        principalColumn: "weekday_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -2057,11 +2082,11 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Availability",
-                columns: new[] { "availability_id", "end_date", "end_time", "start_date", "start_time", "teacher_id", "weekday_id" },
+                columns: new[] { "availability_id", "availability_group_id", "end_date", "end_time", "start_date", "start_time", "teacher_id", "weekday_id" },
                 values: new object[,]
                 {
-                    { "165a619b-6704-9577-6d05-311a0aed3321", new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 17, 0, 0, 0), new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 13, 0, 0, 0), "455c6918-8f55-8171-e3b6-573e17977cfc", "a1572cec-402d-a254-39ac-c88335d6d1d1" },
-                    { "44f1596b-900a-6743-2e95-a4e877064b0c", new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 8, 0, 0, 0), "455c6918-8f55-8171-e3b6-573e17977cfc", "a1572cec-402d-a254-39ac-c88335d6d1d1" }
+                    { "165a619b-6704-9577-6d05-311a0aed3321", null, new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 17, 0, 0, 0), new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 13, 0, 0, 0), "455c6918-8f55-8171-e3b6-573e17977cfc", "a1572cec-402d-a254-39ac-c88335d6d1d1" },
+                    { "44f1596b-900a-6743-2e95-a4e877064b0c", null, new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 8, 0, 0, 0), "455c6918-8f55-8171-e3b6-573e17977cfc", "a1572cec-402d-a254-39ac-c88335d6d1d1" }
                 });
 
             migrationBuilder.InsertData(
@@ -4568,6 +4593,11 @@ namespace HP2.Infrastructure.Migrations
                 column: "session_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Availability_availability_group_id",
+                table: "Availability",
+                column: "availability_group_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Availability_teacher_id",
                 table: "Availability",
                 column: "teacher_id");
@@ -4576,6 +4606,11 @@ namespace HP2.Infrastructure.Migrations
                 name: "IX_Availability_weekday_id",
                 table: "Availability",
                 column: "weekday_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AvailabilityGroup_teacher_id",
+                table: "AvailabilityGroup",
+                column: "teacher_id");
 
             migrationBuilder.CreateIndex(
                 name: "UQ__Building__72E12F1B5E0C81DB",
@@ -4814,6 +4849,9 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "UnavailableDay");
+
+            migrationBuilder.DropTable(
+                name: "AvailabilityGroup");
 
             migrationBuilder.DropTable(
                 name: "WeekDay");
