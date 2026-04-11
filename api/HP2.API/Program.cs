@@ -33,7 +33,7 @@ internal class Program
         builder.Services.AddControllers()
             .ConfigureApiBehaviorOptions(options =>
             {
-                options.SuppressModelStateInvalidFilter = true;
+                options.SuppressModelStateInvalidFilter = false;
             })
             .AddJsonOptions(options =>
             {
