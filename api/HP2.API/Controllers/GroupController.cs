@@ -52,6 +52,7 @@ public class GroupsController : ControllerBase
 
     // GET: api/groups/{id}
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<GroupModel>>> Get(string id)
     {
         var group = await _groupService.GetGroupByIdAsync(id);
@@ -64,6 +65,7 @@ public class GroupsController : ControllerBase
 
     // GET: api/groups
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<GroupModel>>>> GetAll()
     {
         var groups = await _groupService.GetAllGroupsAsync();

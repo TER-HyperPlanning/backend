@@ -58,6 +58,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<ProgramModel>>> Get(string id)
     {
         var program = await _programService.GetProgramByIdAsync(id);
@@ -68,6 +69,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<ProgramModel>>>> GetAll()
     {
         var programs = await _programService.GetAllProgramsAsync();
