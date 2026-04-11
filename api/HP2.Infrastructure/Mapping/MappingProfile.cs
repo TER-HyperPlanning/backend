@@ -88,8 +88,12 @@ namespace HP2.Infrastructure.Mapping
             // ===== Academic Structure =====
             CreateMap<Program, ProgramModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProgramId))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.DeletedAt))
                 .ReverseMap()
-                .ForMember(dest => dest.ProgramId, opt => opt.MapFrom(src => src.Id));
+                .ForMember(dest => dest.ProgramId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted))
+                .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.DeletedAt));
             CreateMap<Track, TrackModel>()
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
             .ForMember(dest => dest.Lieu, opt => opt.MapFrom(src => src.Lieu))

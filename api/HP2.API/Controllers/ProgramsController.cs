@@ -77,6 +77,14 @@ public class ProgramsController : ControllerBase
         return Ok(ApiResponse<IEnumerable<ProgramModel>>.Success(programs));
     }
 
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedProgramResponse>>>> GetDeleted()
+    {
+        var programs = await _programService.GetDeletedProgramsAsync();
+        var response = programs.Select(MapToDeletedResponse);
+        return Ok(ApiResponse<IEnumerable<DeletedProgramResponse>>.Success(response));
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<ProgramModel>>> Update(string id, [FromBody] UpdateProgramRequest request)
     {
@@ -127,5 +135,16 @@ public class ProgramsController : ControllerBase
 
         await _programService.DeleteProgramAsync(id);
         return Ok(ApiResponse<string>.Success(id, "Program deleted successfully"));
+    }
+
+    private static DeletedProgramResponse MapToDeletedResponse(ProgramModel program)
+    {
+        return new DeletedProgramResponse
+        {
+            Id = program.Id,
+            Name = program.Name,
+            Field = program.Field,
+            DeletedAt = program.DeletedAt
+        };
     }
 }
