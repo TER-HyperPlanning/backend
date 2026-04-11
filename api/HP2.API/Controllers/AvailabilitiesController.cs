@@ -57,7 +57,8 @@ public class AvailabilitiesController : ControllerBase
                 EndTime = request.EndTime,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
-                TeacherId = request.TeacherId
+                TeacherId = request.TeacherId,
+                AvailabilityGroupId = request.AvailabilityGroupId
             };
 
             var result = await _service.CreateAsync(model);
@@ -96,7 +97,8 @@ public class AvailabilitiesController : ControllerBase
                 EndTime = request.EndTime,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
-                TeacherId = request.TeacherId
+                TeacherId = request.TeacherId,
+                AvailabilityGroupId = request.AvailabilityGroupId
             };
 
             var result = await _service.UpdateAsync(id, model);

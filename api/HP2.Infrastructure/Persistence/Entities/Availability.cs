@@ -19,7 +19,11 @@ public partial class Availability
 
     public string TeacherId { get; set; } = null!;
 
+    public string? AvailabilityGroupId { get; set; }
+
     public virtual Teacher Teacher { get; set; } = null!;
 
     public virtual WeekDay Weekday { get; set; } = null!;
+
+    public virtual AvailabilityGroup? AvailabilityGroup { get; set; }
 }

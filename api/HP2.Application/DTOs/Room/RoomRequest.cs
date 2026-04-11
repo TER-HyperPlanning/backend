@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using HP2.Domain.Enums;
 
 namespace HP2.Application.DTOs.RoomDtos;
 
@@ -23,6 +24,5 @@ public class RoomRequest
     public string BuildingId { get; set; } = null!;
 
     [Required]
-    [MinLength(1)]
-    public string RoomTypeId { get; set; } = null!;
+    public RoomTypeEnum? Type { get; set; }
 }

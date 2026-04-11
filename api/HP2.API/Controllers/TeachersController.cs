@@ -58,6 +58,13 @@ public class TeachersController : ControllerBase
         return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
     }
 
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedTeacherResponse>>>> GetDeleted()
+    {
+        var teachers = await _teacherService.GetDeletedTeachersAsync();
+        return Ok(ApiResponse<IEnumerable<DeletedTeacherResponse>>.Success(teachers.Select(ToDeletedResponse)));
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<TeacherResponse>>> Update(string id, [FromBody] UpdateTeacherRequest request)
     {
@@ -106,6 +113,22 @@ public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         Role = m.Role,
         CreatedAt = m.CreatedAt,
         UpdatedAt = m.UpdatedAt,
+        DeletedAt = m.DeletedAt,
+    };
+
+    private static DeletedTeacherResponse ToDeletedResponse(TeacherModel m) => new()
+    {
+        Id = m.Id,
+        Email = m.Email,
+        FirstName = m.FirstName,
+        LastName = m.LastName,
+        Phone = m.Phone,
+        Matricule = m.Matricule,
+        Title = m.Title,
+        Role = m.Role,
+        CreatedAt = m.CreatedAt,
+        UpdatedAt = m.UpdatedAt,
+        DeletedAt = m.DeletedAt,
     };
 
     [HttpGet("search")]

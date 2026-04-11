@@ -11,4 +11,5 @@ public interface IAssignRepository
     Task<bool> DeleteAsync(string trackId, string courseId);
     Task<bool> TrackExistsAsync(string trackId);
     Task<bool> CourseExistsAsync(string courseId);
+    Task<List<AssignResponse>> GetDeletedAsync();
 }

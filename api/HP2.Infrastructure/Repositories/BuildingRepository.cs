@@ -1,5 +1,6 @@
 using AutoMapper;
 using HP2.Application.Contracts;
+using HP2.Application.DTOs.Session;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,17 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
         return _mapper.Map<List<BuildingModel>>(buildings);
     }
 
+    public async Task<IReadOnlyList<BuildingModel>> GetDeletedAsync()
+    {
+        var buildings = await _dbContext.Buildings
+            .IgnoreQueryFilters()
+            .AsNoTracking()
+            .Where(b => b.IsDeleted)
+            .ToListAsync();
+
+        return _mapper.Map<List<BuildingModel>>(buildings);
+    }
+
     public override async Task<BuildingModel?> GetByIdAsync(string id)
     {
         var building = await _dbContext.Buildings.AsNoTracking()
@@ -31,7 +43,9 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
         var entity = new Building
         {
             BuildingId = Guid.NewGuid().ToString(),
-            Name = buildingModel.Name
+            Name = buildingModel.Name,
+            IsDeleted = false,
+            DeletedAt = null
         };
 
         await _dbContext.Buildings.AddAsync(entity);
@@ -49,16 +63,59 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
         if (building == null) return;
 
         building.Name = buildingModel.Name;
+        building.IsDeleted = buildingModel.IsDeleted;
+        building.DeletedAt = buildingModel.DeletedAt;
 
         await _dbContext.SaveChangesAsync();
     }
 
     public override async Task DeleteAsync(string id)
     {
-        var building = await _dbContext.Buildings.FirstOrDefaultAsync(b => b.BuildingId == id);
-        if (building == null) return;
+        await using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
-        _dbContext.Buildings.Remove(building);
-        await _dbContext.SaveChangesAsync();
+        await base.DeleteAsync(id);
+
+        var roomsToDelete = await _dbContext.Rooms
+            .Where(r => r.BuildingId == id && !r.IsDeleted)
+            .ToListAsync();
+
+        if (roomsToDelete.Count > 0)
+        {
+            var deletedAt = DateTime.UtcNow;
+            foreach (var room in roomsToDelete)
+            {
+                room.IsDeleted = true;
+                room.DeletedAt = deletedAt;
+            }
+
+            await _dbContext.SaveChangesAsync();
+        }
+
+        await transaction.CommitAsync();
+    }
+
+    public Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionUsingBuildingRoomsAsync(string buildingId, DateTime referenceDateTime)
+    {
+        var referenceDate = referenceDateTime.Date;
+        var referenceTime = referenceDateTime.TimeOfDay;
+
+        return _dbContext.Sessions
+            .AsNoTracking()
+            .Where(s => s.Room.BuildingId == buildingId
+                        && (s.Date > referenceDate
+                            || (s.Date == referenceDate && s.EndTime > referenceTime)))
+            .OrderBy(s => s.Date)
+            .ThenBy(s => s.StartTime)
+            .Select(s => new BlockingSessionInfo
+            {
+                SessionId = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                RoomId = s.RoomId,
+                RoomNumber = s.Room.RoomNumber,
+                CourseId = s.CourseId,
+                CourseName = s.Course.Name
+            })
+            .FirstOrDefaultAsync();
     }
 }

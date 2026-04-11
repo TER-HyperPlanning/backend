@@ -2,6 +2,7 @@ using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Group;
 using HP2.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HP2.API.Controllers;
@@ -52,6 +53,7 @@ public class GroupsController : ControllerBase
 
     // GET: api/groups/{id}
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<GroupModel>>> Get(string id)
     {
         var group = await _groupService.GetGroupByIdAsync(id);
@@ -64,6 +66,7 @@ public class GroupsController : ControllerBase
 
     // GET: api/groups
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<GroupModel>>>> GetAll()
     {
         var groups = await _groupService.GetAllGroupsAsync();
