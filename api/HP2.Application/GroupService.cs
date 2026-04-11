@@ -16,7 +16,11 @@ public class GroupService : IGroupService
 
     public async Task<GroupModel> CreateGroupAsync(GroupModel group)
     {
-        // Validate if trackId exists
+        if (group.Place <= 0)
+        {
+            throw new ArgumentException("Place must be greater than 0");
+        }
+
         var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
         if (!trackExists)
         {
@@ -36,9 +40,13 @@ public class GroupService : IGroupService
         return await _groupRepository.GetAllAsync();
     }
 
-    public async Task UpdateGroupAsync(GroupModel group)
-    {
-        // Validate if trackId exists before updating
+   public async Task UpdateGroupAsync(GroupModel group)
+    {   
+        if (group.Place <= 0)
+        {
+            throw new ArgumentException("Place must be greater than 0");
+        }
+
         var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
         if (!trackExists)
         {
