@@ -16,6 +16,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
     public override async Task<IReadOnlyList<SessionModel>> GetAllAsync()
     {
         var rows = await _dbContext.Sessions
+            .Where(s => !s.IsDeleted)
             .Select(s => new
             {
                 Id = s.SessionId,
