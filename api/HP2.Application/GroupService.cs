@@ -52,4 +52,13 @@ public class GroupService : IGroupService
     {
         await _groupRepository.DeleteAsync(id);
     }
+
+    public async Task<IEnumerable<GroupModel>> GetGroupsByTrackIdAsync(string trackId)
+    {
+        var trackExists = await _trackRepository.ExistsAsync(trackId);
+        if (!trackExists)        {
+            throw new ArgumentException($"Track with ID {trackId} does not exist.");
+        }
+        return await _groupRepository.GetByTrackIdAsync(trackId);
+    }
 }
