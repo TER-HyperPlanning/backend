@@ -22,7 +22,7 @@ public class PlanningController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "ADMIN")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<PlanningWeekDto>>>> GetPlanning([FromQuery] PlanningRequest request)
     {
         var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

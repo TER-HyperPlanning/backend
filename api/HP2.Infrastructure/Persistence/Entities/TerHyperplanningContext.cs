@@ -24,6 +24,8 @@ public partial class TerHyperplanningContext : DbContext
 
     public virtual DbSet<Availability> Availabilities { get; set; }
 
+    public virtual DbSet<AvailabilityGroup> AvailabilityGroups { get; set; }
+
     public virtual DbSet<Building> Buildings { get; set; }
 
     public virtual DbSet<ChangeStatus> ChangeStatuses { get; set; }
@@ -110,6 +112,12 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("course_id");
             entity.Property(e => e.HourlyVolume).HasColumnName("hourly_volume");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false);
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime2");
+
+            entity.HasQueryFilter(a => !a.IsDeleted);
 
             entity.HasOne(d => d.Course).WithMany(p => p.Assigns)
                 .HasForeignKey(d => d.CourseId)
@@ -120,6 +128,30 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TrackId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Assign_Track");
+        });
+
+        modelBuilder.Entity<AvailabilityGroup>(entity =>
+        {
+            entity.HasKey(e => e.AvailabilityGroupId);
+
+            entity.ToTable("AvailabilityGroup");
+
+            entity.Property(e => e.AvailabilityGroupId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(newid())")
+                .HasColumnName("availability_group_id");
+            entity.Property(e => e.TeacherId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("teacher_id");
+            entity.Property(e => e.NumberOfAvailableDays)
+                .HasColumnName("number_of_available_days");
+
+            entity.HasOne(d => d.Teacher).WithMany()
+                .HasForeignKey(d => d.TeacherId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_AvailabilityGroup_Teacher");
         });
 
         modelBuilder.Entity<Availability>(entity =>
@@ -149,6 +181,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("weekday_id");
+            entity.Property(e => e.AvailabilityGroupId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("availability_group_id")
+                .IsRequired(false);
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Availabilities)
                 .HasForeignKey(d => d.TeacherId)
@@ -159,6 +196,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.WeekdayId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Avail_Weekday");
+
+            entity.HasOne(d => d.AvailabilityGroup).WithMany(p => p.Availabilities)
+                .HasForeignKey(d => d.AvailabilityGroupId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_Avail_AvailabilityGroup");
         });
 
         modelBuilder.Entity<Building>(entity =>
@@ -1178,6 +1220,9 @@ public partial class TerHyperplanningContext : DbContext
         var sessionTypeSoutenanceId = GetStableId("st-soutenance");
         var sessionTypeEvenementId = GetStableId("st-evenement");
         var sessionStatusId = GetStableId("ss-scheduled");
+        var sessionStatusCancelledId = GetStableId("ss-cancelled");
+        var sessionStatusMovedId = GetStableId("ss-moved");
+        var sessionStatusRecoveredId = GetStableId("ss-recovered");
 
         var teacherTitleId = GetStableId("tt-permanent");
 
@@ -1298,7 +1343,10 @@ public partial class TerHyperplanningContext : DbContext
 
         // SessionStatus (requis par Session)
         modelBuilder.Entity<SessionStatus>().HasData(
-            new SessionStatus { SessionStatusId = sessionStatusId, Label = "PROGRAMME" }
+            new SessionStatus { SessionStatusId = sessionStatusId, Label = "PROGRAMME" },
+            new SessionStatus { SessionStatusId = sessionStatusCancelledId, Label = "ANNULE" },
+            new SessionStatus { SessionStatusId = sessionStatusMovedId, Label = "DEPLACE" },
+            new SessionStatus { SessionStatusId = sessionStatusRecoveredId, Label = "RATTRAPE" }
         );
 
         // TeacherTitles (requis par Teacher)
@@ -2092,6 +2140,42 @@ public partial class TerHyperplanningContext : DbContext
             teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
         }
 
+        void AddSessionForGroupWithStatus(
+            string groupId,
+            string groupKey,
+            DateTime date,
+            TimeSpan startTime,
+            TimeSpan endTime,
+            string courseId,
+            string sessionType,
+            string mode,
+            string customStatusId,
+            string statusKey)
+        {
+            var sessionId = GetStableId($"session-{groupKey}-{statusKey}-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
+            var teacherId = PickAvailableTeacher(date, startTime, endTime);
+            var assignedRoomId = PickAvailableRoom(groupId, date, startTime, endTime);
+
+            RegisterTeacherAssignment(teacherId, date, startTime, endTime);
+            RegisterRoomAssignment(assignedRoomId, date, startTime, endTime);
+
+            sessions.Add(new Session
+            {
+                SessionId = sessionId,
+                Date = date,
+                StartTime = startTime,
+                EndTime = endTime,
+                Mode = mode,
+                CourseId = courseId,
+                SessionTypeId = sessionType,
+                SessionStatusId = customStatusId,
+                RoomId = assignedRoomId
+            });
+
+            attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
+        }
+
         void AddSessionForGroupWithTeacherPool(
             string groupId,
             string groupKey,
@@ -2419,13 +2503,101 @@ public partial class TerHyperplanningContext : DbContext
             AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ml, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
         }
 
+        DateTime? FindNextRegularTeachingDay(DateTime date, DateTime maxDate)
+        {
+            for (var current = date.Date; current <= maxDate.Date; current = current.AddDays(1))
+            {
+                if (IsRegularTeachingDay(current))
+                {
+                    return current;
+                }
+            }
+
+            return null;
+        }
+
+        void SeedBiweeklySessionStatusChanges(
+            string groupId,
+            string groupKey,
+            string cancelledCourseId,
+            string movedCourseId,
+            DateTime schoolStart,
+            DateTime schoolEnd)
+        {
+            var seededCancelledDates = new HashSet<DateTime>();
+            var seededRecoveryDates = new HashSet<DateTime>();
+
+            for (var anchor = schoolStart.Date; anchor <= schoolEnd.Date; anchor = anchor.AddDays(14))
+            {
+                var cancelledDate = FindNextRegularTeachingDay(anchor, schoolEnd);
+                if (!cancelledDate.HasValue)
+                {
+                    break;
+                }
+
+                if (!seededCancelledDates.Add(cancelledDate.Value.Date))
+                {
+                    continue;
+                }
+
+                AddSessionForGroupWithStatus(
+                    groupId,
+                    groupKey,
+                    cancelledDate.Value,
+                    new TimeSpan(17, 30, 0),
+                    new TimeSpan(19, 0, 0),
+                    cancelledCourseId,
+                    sessionTypeTdId,
+                    "PRESENTIAL",
+                    sessionStatusCancelledId,
+                    "annule");
+
+                AddSessionForGroupWithStatus(
+                    groupId,
+                    groupKey,
+                    cancelledDate.Value,
+                    new TimeSpan(19, 15, 0),
+                    new TimeSpan(20, 45, 0),
+                    movedCourseId,
+                    sessionTypeTdId,
+                    "PRESENTIAL",
+                    sessionStatusMovedId,
+                    "deplace");
+
+                var recoveryDate = FindNextRegularTeachingDay(cancelledDate.Value.AddDays(14), schoolEnd);
+                if (!recoveryDate.HasValue)
+                {
+                    continue;
+                }
+
+                if (!seededRecoveryDates.Add(recoveryDate.Value.Date))
+                {
+                    continue;
+                }
+
+                AddSessionForGroupWithStatus(
+                    groupId,
+                    groupKey,
+                    recoveryDate.Value,
+                    new TimeSpan(19, 15, 0),
+                    new TimeSpan(20, 45, 0),
+                    movedCourseId,
+                    sessionTypeTdId,
+                    "PRESENTIAL",
+                    sessionStatusRecoveredId,
+                    "rattrape");
+            }
+        }
+
         // 1) Génération du planning Groupe A
         GenerateRegularScheduleForGroup(groupId_M1_ILSD, "group-a");
         GenerateSpecialSessionsForGroup(groupId_M1_ILSD, "group-a");
+        SeedBiweeklySessionStatusChanges(groupId_M1_ILSD, "group-a", c_sad, c_coo, new DateTime(2025, 9, 8), new DateTime(2026, 5, 11));
 
         // 2) Génération du planning Groupe B avec garde anti-conflit prof déjà en cours
         GenerateRegularScheduleForGroup(groupId_M1_ILSD_B, "group-b");
         GenerateSpecialSessionsForGroup(groupId_M1_ILSD_B, "group-b");
+        SeedBiweeklySessionStatusChanges(groupId_M1_ILSD_B, "group-b", c_crypto, c_bdd, new DateTime(2025, 9, 8), new DateTime(2026, 5, 11));
 
         // 3) Génération du planning Groupe A - M1 CNS (sans évènement final de stage)
         GenerateRegularScheduleForGroupCustomCourses(
@@ -2447,6 +2619,7 @@ public partial class TerHyperplanningContext : DbContext
             ref teacherCursorCns);
 
         GenerateSpecialSessionsForCnsGroup(groupId_M1_CNS, "group-cns", teacherIdsCns, ref teacherCursorCns);
+        SeedBiweeklySessionStatusChanges(groupId_M1_CNS, "group-cns", c_msed, c_ml, new DateTime(2025, 9, 8), new DateTime(2026, 5, 11));
 
         // Evenement final commun aux deux groupes (sans enseignant affecte).
         var sharedFinalEventSessionId = GetStableId("session-shared-m1-ilsd-final-event-20260511");

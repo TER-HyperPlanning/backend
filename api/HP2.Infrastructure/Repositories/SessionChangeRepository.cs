@@ -193,6 +193,9 @@ public class SessionChangeRepository : ISessionChangeRepository
     {
         var entity = await _dbContext.SessionRecoveryChanges
             .Include(x => x.Session)
+            .ThenInclude(s => s.Groups)
+            .Include(x => x.Session)
+            .ThenInclude(s => s.Teachers)
             .FirstOrDefaultAsync(x => x.SessionRecoveryChangeId == sessionChangeId);
 
         if (entity == null)
@@ -204,12 +207,41 @@ public class SessionChangeRepository : ISessionChangeRepository
         if (!entity.ProposedDate.HasValue || !entity.ProposedStartTime.HasValue || !entity.ProposedEndTime.HasValue)
             throw new InvalidOperationException("No proposed schedule is defined for this request.");
 
-        entity.Session.Date = entity.ProposedDate.Value.Date;
-        entity.Session.StartTime = entity.ProposedStartTime.Value;
-        entity.Session.EndTime = entity.ProposedEndTime.Value;
+        var movedStatusId = await GetSessionStatusIdByLabelAsync("DEPLACE");
+        if (string.IsNullOrWhiteSpace(movedStatusId))
+            throw new InvalidOperationException("Moved session status was not found.");
 
-        if (!string.IsNullOrWhiteSpace(entity.ProposedRoomId))
-            entity.Session.RoomId = entity.ProposedRoomId;
+        var recoveredStatusId = await GetSessionStatusIdByLabelAsync("RATTRAPE");
+        if (string.IsNullOrWhiteSpace(recoveredStatusId))
+            throw new InvalidOperationException("Recovered session status was not found.");
+
+        var originalSession = entity.Session;
+        var recoveredSession = new Session
+        {
+            SessionId = Guid.NewGuid().ToString(),
+            Date = entity.ProposedDate.Value.Date,
+            StartTime = entity.ProposedStartTime.Value,
+            EndTime = entity.ProposedEndTime.Value,
+            Mode = originalSession.Mode,
+            SessionTypeId = originalSession.SessionTypeId,
+            CourseId = originalSession.CourseId,
+            SessionStatusId = recoveredStatusId,
+            RoomId = !string.IsNullOrWhiteSpace(entity.ProposedRoomId) ? entity.ProposedRoomId : originalSession.RoomId,
+            Description = originalSession.Description
+        };
+
+        foreach (var group in originalSession.Groups)
+        {
+            recoveredSession.Groups.Add(group);
+        }
+
+        foreach (var teacher in originalSession.Teachers)
+        {
+            recoveredSession.Teachers.Add(teacher);
+        }
+
+        originalSession.SessionStatusId = movedStatusId;
+        _dbContext.Sessions.Add(recoveredSession);
 
         entity.ChangeStatusId = approvedStatusId;
 
@@ -244,6 +276,14 @@ public class SessionChangeRepository : ISessionChangeRepository
         return await _dbContext.ChangeStatuses
             .Where(x => x.Label == label)
             .Select(x => x.ChangeStatusId)
+            .FirstOrDefaultAsync();
+    }
+
+    private async Task<string?> GetSessionStatusIdByLabelAsync(string label)
+    {
+        return await _dbContext.SessionStatuses
+            .Where(x => x.Label == label)
+            .Select(x => x.SessionStatusId)
             .FirstOrDefaultAsync();
     }
 

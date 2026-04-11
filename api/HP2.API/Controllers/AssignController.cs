@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Assign;
 using HP2.Application.DTOs.Common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class AssignController : ControllerBase
 {
     private readonly IAssignService _service;
@@ -48,6 +50,13 @@ public class AssignController : ControllerBase
     public async Task<ActionResult<ApiResponse<bool>>> Delete(string trackId, string courseId)
     {
         var response = await _service.DeleteAsync(trackId, courseId);
+        return Ok(response);
+    }
+
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<List<AssignResponse>>>> GetDeleted()
+    {
+        var response = await _service.GetDeletedAsync();
         return Ok(response);
     }
 }

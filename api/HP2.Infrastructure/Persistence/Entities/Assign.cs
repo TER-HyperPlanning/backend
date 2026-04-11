@@ -14,4 +14,7 @@ public partial class Assign
     public virtual Course Course { get; set; } = null!;
 
     public virtual Track Track { get; set; } = null!;
+
+    public bool IsDeleted { get; set; } = false;
+    public DateTime? DeletedAt { get; set; }
 }
