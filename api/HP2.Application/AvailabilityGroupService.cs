@@ -7,14 +7,28 @@ namespace HP2.Application;
 public class AvailabilityGroupService : IAvailabilityGroupService
 {
     private readonly IAvailabilityGroupRepository _repository;
+    private readonly ITeacherRepository _teacherRepository;
 
-    public AvailabilityGroupService(IAvailabilityGroupRepository repository)
+    public AvailabilityGroupService(
+        IAvailabilityGroupRepository repository,
+        ITeacherRepository teacherRepository)
     {
         _repository = repository;
+        _teacherRepository = teacherRepository;
     }
 
     public async Task<AvailabilityGroupResponse> CreateAsync(AvailabilityGroupModel model)
     {
+        if (string.IsNullOrWhiteSpace(model.TeacherId))
+            throw new InvalidOperationException("TeacherId is required.");
+
+        if (model.NumberOfAvailableDays <= 0)
+            throw new InvalidOperationException("NumberOfAvailableDays must be at least 1.");
+
+        var teacher = await _teacherRepository.GetByIdAsync(model.TeacherId);
+        if (teacher == null)
+            throw new KeyNotFoundException($"Teacher '{model.TeacherId}' was not found.");
+
         var created = await _repository.AddAsync(model);
         var response = await _repository.GetResponseByIdAsync(created.Id);
 

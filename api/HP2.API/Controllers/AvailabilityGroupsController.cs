@@ -72,6 +72,10 @@ public class AvailabilityGroupsController : ControllerBase
             var result = await _service.CreateAsync(model);
             return Ok(ApiResponse<AvailabilityGroupResponse>.Success(result, "Availability group created successfully."));
         }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ApiResponse<AvailabilityGroupResponse>.Fail(ex.Message));
+        }
         catch (InvalidOperationException ex)
         {
             return BadRequest(ApiResponse<AvailabilityGroupResponse>.Fail(ex.Message));
