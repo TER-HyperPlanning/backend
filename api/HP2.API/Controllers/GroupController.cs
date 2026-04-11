@@ -20,6 +20,7 @@ public class GroupsController : ControllerBase
 
     // POST: api/groups
     [HttpPost]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<GroupModel>>> Create([FromBody] CreateGroupRequest request)
     {
         if (request == null)
@@ -75,6 +76,7 @@ public class GroupsController : ControllerBase
 
     // PUT: api/groups/{id}
     [HttpPut("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<object>>> Update(string id, [FromBody] UpdateGroupRequest request)
     {
         if (request == null)
@@ -110,6 +112,7 @@ public class GroupsController : ControllerBase
 
     // DELETE: api/groups/{id}
     [HttpDelete("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> Delete(string id)
     {
         var existing = await _groupService.GetGroupByIdAsync(id);
@@ -117,7 +120,7 @@ public class GroupsController : ControllerBase
             return NotFound(ApiResponse<object>.Fail($"Group with ID {id} not found"));
 
         await _groupService.DeleteGroupAsync(id);
-        return NoContent();
+        return Ok(ApiResponse<object>.Success(null!, "Group deleted successfully"));
     }
 
     // GET: api/groups/track/{trackId}
@@ -135,4 +138,11 @@ public class GroupsController : ControllerBase
         }
     }
 
+    [HttpGet("deleted")]
+    [Authorize(Roles = "ADMIN")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<GroupModel>>>> GetDeletedGroups()
+    {
+        var deledtedGroups = await _groupService.GetDeletedGroupsAsync();
+        return Ok(ApiResponse<IEnumerable<GroupModel>>.Success(deledtedGroups, "Deleted groups retrieved successfully"));
+    }
 }
