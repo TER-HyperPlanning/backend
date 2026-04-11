@@ -5806,9 +5806,17 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("course_id");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("HourlyVolume")
                         .HasColumnType("int")
                         .HasColumnName("hourly_volume");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.HasKey("TrackId", "CourseId")
                         .HasName("PK__Assign__DC1D2754232CB863");
@@ -5822,295 +5830,344 @@ namespace HP2.Infrastructure.Migrations
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "93b97065-831b-a4dc-8179-be986f0772b8",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "3b835d91-4f08-07ef-d4d5-575947097601",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "02e0e667-183a-1225-d0ed-19fe4c25f963",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5",
-                            HourlyVolume = 20
+                            HourlyVolume = 20,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "03241339-1186-a90f-33bd-a9850f603619",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "f8c83971-d090-c665-8911-cd645e1a3c87",
-                            HourlyVolume = 0
+                            HourlyVolume = 0,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "49ba4385-063d-7b8d-5f3f-aa1c7f573747",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "731ac32d-6ea9-f15e-7ca2-34f99e840bd3",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
                             CourseId = "3448ddd0-694c-35d0-f117-7d5834e6ca81",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "93b97065-831b-a4dc-8179-be986f0772b8",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "3b835d91-4f08-07ef-d4d5-575947097601",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "02e0e667-183a-1225-d0ed-19fe4c25f963",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5",
-                            HourlyVolume = 12
+                            HourlyVolume = 12,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "03241339-1186-a90f-33bd-a9850f603619",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
-                            HourlyVolume = 0
+                            HourlyVolume = 0,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "49ba4385-063d-7b8d-5f3f-aa1c7f573747",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "731ac32d-6ea9-f15e-7ca2-34f99e840bd3",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
                             CourseId = "3448ddd0-694c-35d0-f117-7d5834e6ca81",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "03241339-1186-a90f-33bd-a9850f603619",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5",
-                            HourlyVolume = 20
+                            HourlyVolume = 20,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "d059db13-ac91-760c-5bf7-6c442946e7bf",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "3b835d91-4f08-07ef-d4d5-575947097601",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "c3cd3947-214d-3130-b938-a5d19a0e8eaa",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "2af630c1-de0d-944f-0b87-a73f1c90644f",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "fb30b659-6817-4099-e7cb-d7c254532603",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "e9cbe024-5789-9dca-e8c8-418b70f033cb",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "49ba4385-063d-7b8d-5f3f-aa1c7f573747",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "731ac32d-6ea9-f15e-7ca2-34f99e840bd3",
-                            HourlyVolume = 18
+                            HourlyVolume = 18,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "c0452911-4948-9cb2-aed9-7b949c0b6442",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "3aed7e82-31b6-d05a-3f46-f2ef085d313e",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            HourlyVolume = 36
+                            HourlyVolume = 36,
+                            IsDeleted = false
                         });
                 });
 
