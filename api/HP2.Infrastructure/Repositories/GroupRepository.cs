@@ -74,11 +74,9 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
 
         if (group != null)
         {
-            _dbContext.Groups.Remove(group);
-            if (group != null)
-            {
-                _dbContext.Groups.Remove(group);
-            }
+            group.IsDeleted = true;
+            group.DeletedAt = DateTime.UtcNow;
+            
             await _dbContext.SaveChangesAsync();
         }
     }
@@ -95,6 +93,16 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
     {
         var groups = await _dbContext.Groups
             .Where(g => g.TrackId == trackId)
+            .ToListAsync();
+        
+        return _mapper.Map<List<GroupModel>>(groups);
+    }
+
+    public async Task<IEnumerable<GroupModel>> GetDeletedAsync()
+    {
+        var groups = await _dbContext.Groups
+            .IgnoreQueryFilters()
+            .Where(g => g.IsDeleted)
             .ToListAsync();
         
         return _mapper.Map<List<GroupModel>>(groups);

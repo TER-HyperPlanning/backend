@@ -61,4 +61,9 @@ public class GroupService : IGroupService
         }
         return await _groupRepository.GetByTrackIdAsync(trackId);
     }
+
+    public async Task<IEnumerable<GroupModel>> GetDeletedGroupsAsync()
+    {
+        return await _groupRepository.GetDeletedAsync();
+    }
 }

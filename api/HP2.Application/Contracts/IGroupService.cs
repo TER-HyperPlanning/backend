@@ -10,4 +10,5 @@ public interface IGroupService
     Task UpdateGroupAsync(GroupModel group);
     Task DeleteGroupAsync(string id);
     Task<IEnumerable<GroupModel>> GetGroupsByTrackIdAsync(string trackId);
+    Task<IEnumerable<GroupModel>> GetDeletedGroupsAsync();
 }
