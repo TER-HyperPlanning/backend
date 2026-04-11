@@ -3,10 +3,12 @@ using HP2.Application.DTOs.Admin;
 using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class AdminsController : ControllerBase
 {
     private readonly IAdminService _adminService;
@@ -50,7 +52,8 @@ public class AdminsController : ControllerBase
                 Phone = createdAdmin.Phone,
                 Role = createdAdmin.Role,
                 CreatedAt = createdAdmin.CreatedAt,
-                UpdatedAt = createdAdmin.UpdatedAt
+                UpdatedAt = createdAdmin.UpdatedAt,
+                DeletedAt = createdAdmin.DeletedAt
             };
 
             return Ok(ApiResponse<AdminResponse>.Success(response, "Admin created"));
@@ -80,7 +83,8 @@ public class AdminsController : ControllerBase
                 Phone = admin.Phone,
                 Role = admin.Role,
                 CreatedAt = admin.CreatedAt,
-                UpdatedAt = admin.UpdatedAt
+                UpdatedAt = admin.UpdatedAt,
+                DeletedAt = admin.DeletedAt
             };
 
             return Ok(ApiResponse<AdminResponse>.Success(response, "Admin retrieved"));
@@ -107,7 +111,8 @@ public class AdminsController : ControllerBase
                 Phone = a.Phone,
                 Role = a.Role,
                 CreatedAt = a.CreatedAt,
-                UpdatedAt = a.UpdatedAt
+                UpdatedAt = a.UpdatedAt,
+                DeletedAt = a.DeletedAt
             }).ToList();
 
             return Ok(ApiResponse<List<AdminResponse>>.Success(response, "Admins retrieved"));
@@ -167,7 +172,8 @@ public class AdminsController : ControllerBase
                 Phone = existing.Phone,
                 Role = existing.Role,
                 CreatedAt = existing.CreatedAt,
-                UpdatedAt = existing.UpdatedAt
+                UpdatedAt = existing.UpdatedAt,
+                DeletedAt = existing.DeletedAt
             };
 
             return Ok(ApiResponse<AdminResponse>.Success(response, "Admin updated"));

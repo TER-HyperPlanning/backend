@@ -16,6 +16,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
     public override async Task<IReadOnlyList<SessionModel>> GetAllAsync()
     {
         var rows = await _dbContext.Sessions
+            .Where(s => !s.IsDeleted)
             .Select(s => new
             {
                 Id = s.SessionId,
@@ -137,6 +138,21 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
     public override async Task UpdateAsync(SessionModel model)
     {
+        var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == model.Id);
+        if (entity == null)
+        {
+            return;
+        }
+
+        // Soft-delete updates should not trigger schedule conflict validation.
+        if (model.IsDeleted)
+        {
+            entity.IsDeleted = model.IsDeleted;
+            entity.DeletedAt = model.DeletedAt;
+            await _dbContext.SaveChangesAsync();
+            return;
+        }
+
         await using var transaction = await _dbContext.Database.BeginTransactionAsync(IsolationLevel.Serializable);
         await AcquireRoomDateLockAsync(model.RoomId, model.StartDateTime.Date);
         await EnsureRoomHasNoScheduleConflictAsync(
@@ -145,12 +161,6 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
             model.EndDateTime.TimeOfDay,
             model.RoomId,
             model.Id);
-
-        var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == model.Id);
-        if (entity == null)
-        {
-            return;
-        }
 
         entity.Date = model.StartDateTime.Date;
         entity.StartTime = model.StartDateTime.TimeOfDay;
@@ -161,6 +171,8 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
         entity.SessionStatusId = model.SessionStatusId;
         entity.RoomId = model.RoomId;
         entity.Description = model.Description;
+        entity.IsDeleted = model.IsDeleted;
+        entity.DeletedAt = model.DeletedAt;
 
         await _dbContext.SaveChangesAsync();
         await transaction.CommitAsync();
@@ -168,12 +180,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
     public override async Task DeleteAsync(string id)
     {
-        var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == id);
-        if (entity == null) return;
-
-        entity.IsDeleted = true;
-        entity.DeletedAt = DateTime.UtcNow;
-        await _dbContext.SaveChangesAsync();
+        await base.DeleteAsync(id);
     }
 
     public async Task<string?> GetSessionTypeIdByLabelAsync(string label)
@@ -297,7 +304,8 @@ SELECT @result;";
                 SessionStatusId = s.SessionStatusId,
                 RoomId = s.RoomId,
                 Description = s.Description,
-                IsDeleted = s.IsDeleted
+                IsDeleted = s.IsDeleted,
+                DeletedAt = s.DeletedAt
             })
             .ToListAsync();
 
@@ -312,7 +320,8 @@ SELECT @result;";
             SessionStatusId = s.SessionStatusId,
             RoomId = s.RoomId,
             Description = s.Description,
-            IsDeleted = s.IsDeleted
+            IsDeleted = s.IsDeleted,
+            DeletedAt = s.DeletedAt
         }).ToList();
     }
 }

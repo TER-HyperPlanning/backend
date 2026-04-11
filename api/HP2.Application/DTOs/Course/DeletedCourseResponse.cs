@@ -1,6 +1,6 @@
 namespace HP2.Application.DTOs.Course;
 
-public class CourseResponse
+public class DeletedCourseResponse
 {
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;

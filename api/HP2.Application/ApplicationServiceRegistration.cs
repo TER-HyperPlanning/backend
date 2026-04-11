@@ -1,4 +1,4 @@
-using HP2.Application.Contracts;
+﻿using HP2.Application.Contracts;
 using HP2.Application.Security;
 using HP2.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,12 +13,14 @@ namespace HP2.Application
             services.AddScoped<IRoomService, RoomService>();
             services.AddScoped<IProgramService, ProgramService>();
             services.AddScoped<IWeekDayService, WeekDayService>();
+            
 
             services.AddScoped<IBuildingService, BuildingService>();
             services.AddScoped<IGroupService, GroupService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBCryptService, BCryptService>();
             services.AddScoped<ISessionService, SessionService>();
+            services.AddScoped<ISessionChangeService, SessionChangeService>();
             services.AddScoped<IAttendService, AttendService>();
             services.AddScoped<ITeachService, TeachService>();
             services.AddScoped<ITeacherService, TeacherService>();
