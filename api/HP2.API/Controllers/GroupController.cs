@@ -71,6 +71,7 @@ public class GroupsController : ControllerBase
             Name = group.Name,
             AcademicYear = group.AcademicYear,
             TrackId = group.TrackId,
+            StudentCount = students.Count,
             Students = students.Select(MapToStudentResponse).ToList()
         };
 

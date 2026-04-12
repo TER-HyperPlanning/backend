@@ -12,6 +12,7 @@ public class TrackWithGroupsResponse
     public string? Description { get; set; }
     public string? Lieu { get; set; }
     public DateTime? DeletedAt { get; set; }
+    public int StudentCount { get; set; }
     public IEnumerable<GroupWithStudentsResponse> Groups { get; set; } = new List<GroupWithStudentsResponse>();
     public IEnumerable<StudentResponse> Students { get; set; } = new List<StudentResponse>();
 }

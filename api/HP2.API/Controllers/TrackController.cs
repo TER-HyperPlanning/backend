@@ -83,6 +83,7 @@ public class TracksController : ControllerBase
                 Name = group.Name,
                 AcademicYear = group.AcademicYear,
                 TrackId = group.TrackId,
+                StudentCount = studentResponses.Count,
                 Students = studentResponses
             });
 
@@ -98,6 +99,7 @@ public class TracksController : ControllerBase
             Description = track.Description,
             Lieu = track.Lieu,
             DeletedAt = track.DeletedAt,
+            StudentCount = allStudents.Count,
             Groups = groupResponses,
             Students = allStudents
         };
