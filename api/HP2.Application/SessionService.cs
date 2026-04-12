@@ -21,6 +21,9 @@ public class SessionService : ISessionService
     public async Task<IEnumerable<SessionModel>> GetAllSessionsAsync()
         => await _sessionRepository.GetAllAsync();
 
+    public async Task<IEnumerable<SessionModel>> GetPlanningSessionsAsync(string? trackId, string? programId, string? niveau, string? groupId, string? teacherId)
+        => await _sessionRepository.GetPlanningSessionsAsync(trackId, programId, niveau, groupId, teacherId);
+
     public Task UpdateSessionAsync(SessionModel session)
         => _sessionRepository.UpdateAsync(session);
 
