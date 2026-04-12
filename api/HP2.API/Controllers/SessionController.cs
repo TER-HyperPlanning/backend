@@ -225,6 +225,17 @@ public class SessionsController : ControllerBase
         await _sessionService.DeleteSessionAsync(id);
         return Ok(ApiResponse<string>.Success(id, "Session deleted successfully"));
     }
+    [HttpGet("search")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<SessionResponse>>>> Search(
+        [FromQuery] string? groupId,
+        [FromQuery] string? type,
+        [FromQuery] string? search)
+    {
+        var sessions = await _sessionService.SearchSessionsAsync(groupId, type, search);
+        var response = sessions.Select(MapToResponse);
+
+        return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(response));
+    }
 
     private static SessionResponse MapToResponse(SessionModel s)
     {
