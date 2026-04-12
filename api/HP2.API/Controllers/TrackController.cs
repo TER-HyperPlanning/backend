@@ -67,9 +67,11 @@ public class TracksController : ControllerBase
 
     [HttpGet]
     [AllowAnonymous]
-    public async Task<ActionResult<ApiResponse<List<TrackResponse>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<List<TrackResponse>>>> GetAll(
+        [FromQuery] string? programId,
+        [FromQuery] string? name)
     {
-        var tracks = await _trackService.GetAllAsync();
+        var tracks = await _trackService.GetAllAsync(programId, name);
         var response = tracks.Select(t => _mapper.Map<TrackResponse>(t)).ToList();
 
         return Ok(ApiResponse<List<TrackResponse>>.Success(response, "Tracks retrieved successfully"));

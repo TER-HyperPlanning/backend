@@ -13,9 +13,9 @@ public class TrackService : ITrackService
         _repository = repository;
     }
 
-    public async Task<List<TrackModel>> GetAllAsync()
+    public async Task<List<TrackModel>> GetAllAsync(string? programId, string? name)
     {
-        return await _repository.GetAllAsync();
+        return await _repository.GetAllAsync(programId, name);
     }
 
     public async Task<List<TrackModel>> GetDeletedAsync()
