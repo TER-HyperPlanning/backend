@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.RoomDtos;
 using HP2.Application.Exceptions;
+using HP2.Domain.Enums;
 
 namespace HP2.Application.Services
 {
@@ -15,9 +16,9 @@ namespace HP2.Application.Services
             _roomRepository = roomRepository;
         }
 
-        public async Task<IEnumerable<RoomModel>> GetAllRoomsAsync()
+        public async Task<IEnumerable<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query)
         {
-            return await _roomRepository.GetAllAsync();
+            return await _roomRepository.GetRoomsAsync(types, query);
         }
 
         public async Task<IEnumerable<RoomModel>> GetDeletedRoomsAsync()

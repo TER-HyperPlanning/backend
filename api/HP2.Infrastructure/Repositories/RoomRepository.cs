@@ -173,6 +173,59 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 .ToList();
         }
 
+        public async Task<IReadOnlyList<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query)
+        {
+            var requestedTypes = types?.Distinct().ToArray() ?? Array.Empty<RoomTypeEnum>();
+            var normalizedQuery = query?.Trim();
+            var hasQueryFilter = !string.IsNullOrWhiteSpace(normalizedQuery);
+            var hasTypeFilter = requestedTypes.Length > 0;
+
+            var roomsQuery = _dbContext.Rooms
+                .AsNoTracking()
+                .Include(r => r.RoomType)
+                .Include(r => r.Building)
+                .AsQueryable();
+
+            if (hasTypeFilter)
+            {
+                var requestedTypeNames = requestedTypes
+                    .Select(MapEnumToRoomTypeName)
+                    .ToList();
+
+                roomsQuery = roomsQuery.Where(r => requestedTypeNames.Contains(r.RoomType.Name));
+            }
+
+            if (hasQueryFilter)
+            {
+                var uppercaseQuery = normalizedQuery!.ToUpperInvariant();
+                var isCapacityQuery = int.TryParse(normalizedQuery, out var capacityValue);
+
+                roomsQuery = roomsQuery.Where(r =>
+                    r.RoomNumber.ToUpper().Contains(uppercaseQuery)
+                    || r.RoomType.Name.ToUpper().Contains(uppercaseQuery)
+                    || r.Building.Name.ToUpper().Contains(uppercaseQuery)
+                    || (isCapacityQuery && r.Capacity == capacityValue));
+            }
+
+            var rooms = await roomsQuery
+                .OrderBy(r => r.RoomNumber)
+                .ToListAsync();
+
+            return rooms
+                .Select(r => new RoomModel
+                {
+                    RoomId = r.RoomId,
+                    RoomNumber = r.RoomNumber,
+                    IsAvailable = r.IsAvailable,
+                    Capacity = r.Capacity,
+                    BuildingId = r.BuildingId,
+                    Type = MapRoomTypeNameToEnum(r.RoomType.Name),
+                    IsDeleted = r.IsDeleted,
+                    DeletedAt = r.DeletedAt
+                })
+                .ToList();
+        }
+
         public override async Task<RoomModel?> GetByIdAsync(string id)
         {
             var room = await _dbContext.Rooms

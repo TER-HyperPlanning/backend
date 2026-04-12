@@ -35,9 +35,56 @@ namespace HP2.API.Controllers
 
         // GET: api/Room
         [HttpGet]
-        public async Task<ActionResult<ApiResponse<IEnumerable<RoomResponse>>>> GetRooms()
+        public async Task<ActionResult<ApiResponse<IEnumerable<RoomResponse>>>> GetRooms(
+            [FromQuery(Name = "types")] string[]? types,
+            [FromQuery(Name = "q")] string? query)
         {
-            var rooms = await _roomService.GetAllRoomsAsync();
+            var requestedTypes = (types ?? Array.Empty<string>())
+                .Where(t => !string.IsNullOrWhiteSpace(t))
+                .SelectMany(t => t.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                .Where(t => !string.IsNullOrWhiteSpace(t))
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            var normalizedQuery = query?.Trim();
+            if (!string.IsNullOrWhiteSpace(normalizedQuery) && normalizedQuery.Length > 100)
+            {
+                return BadRequest(ApiResponse<IEnumerable<RoomResponse>>.Fail("Query parameter 'q' must be 100 characters or fewer"));
+            }
+
+            var parsedTypes = new List<RoomTypeEnum>();
+            var invalidTypes = new List<string>();
+
+            foreach (var requestedType in requestedTypes)
+            {
+                // Numeric values like "1" or "102" are intentionally rejected.
+                if (int.TryParse(requestedType, out _))
+                {
+                    invalidTypes.Add(requestedType);
+                    continue;
+                }
+
+                if (!Enum.TryParse<RoomTypeEnum>(requestedType, true, out var parsed)
+                    || !Enum.IsDefined(typeof(RoomTypeEnum), parsed))
+                {
+                    invalidTypes.Add(requestedType);
+                    continue;
+                }
+
+                parsedTypes.Add(parsed);
+            }
+
+            if (invalidTypes.Any())
+            {
+                return BadRequest(ApiResponse<IEnumerable<RoomResponse>>.Fail(
+                    $"Invalid type values: {string.Join(", ", invalidTypes)}. Allowed values: {FormatFieldWithAllowedValues("type")}"));
+            }
+
+            parsedTypes = parsedTypes
+                .Distinct()
+                .ToList();
+
+            var rooms = await _roomService.GetRoomsAsync(parsedTypes, normalizedQuery);
             var response = rooms.Select(MapToResponse);
             return Ok(ApiResponse<IEnumerable<RoomResponse>>.Success(response));
         }
