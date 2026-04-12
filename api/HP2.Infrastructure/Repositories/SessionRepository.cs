@@ -324,7 +324,7 @@ SELECT @result;";
             DeletedAt = s.DeletedAt
         }).ToList();
     }
-    public async Task<IReadOnlyList<SessionModel>> SearchAsync(string? groupId, string? type, string? search)
+    public async Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
     {
         groupId = string.IsNullOrWhiteSpace(groupId) ? null : groupId;
         type = string.IsNullOrWhiteSpace(type) ? null : type;
