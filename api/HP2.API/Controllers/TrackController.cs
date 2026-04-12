@@ -1,6 +1,9 @@
 using AutoMapper;
+using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Track;
+using HP2.Application.DTOs.Group;
+using HP2.Application.DTOs.Student;
 using HP2.Application.DTOs.Common;
 using HP2.Application.Exceptions;
 using HP2.Domain.Models;
@@ -14,11 +17,15 @@ namespace HP2.API.Controllers;
 public class TracksController : ControllerBase
 {
     private readonly ITrackService _trackService;
+    private readonly IGroupService _groupService;
+    private readonly IStudentService _studentService;
     private readonly IMapper _mapper;
 
-    public TracksController(ITrackService trackService, IMapper mapper)
+    public TracksController(ITrackService trackService, IGroupService groupService, IStudentService studentService, IMapper mapper)
     {
         _trackService = trackService;
+        _groupService = groupService;
+        _studentService = studentService;
         _mapper = mapper;
     }
 
@@ -55,14 +62,64 @@ public class TracksController : ControllerBase
 
     [HttpGet("{id}")]
     [AllowAnonymous]
-    public async Task<ActionResult<ApiResponse<TrackResponse>>> Get(string id)
+    public async Task<ActionResult<ApiResponse<TrackWithGroupsResponse>>> Get(string id)
     {
         var track = await _trackService.GetByIdAsync(id);
         if (track == null)
             return NotFound(ApiResponse<string>.Fail("Track not found"));
 
-        var response = _mapper.Map<TrackResponse>(track);
-        return Ok(ApiResponse<TrackResponse>.Success(response, "Track retrieved successfully"));
+        var groups = (await _groupService.GetGroupsByTrackIdAsync(id)).ToList();
+        var groupResponses = new List<GroupWithStudentsResponse>();
+        var allStudents = new List<StudentResponse>();
+
+        foreach (var group in groups)
+        {
+            var students = (await _studentService.GetStudentsByGroupIdAsync(group.Id)).ToList();
+            var studentResponses = students.Select(MapToStudentResponse).ToList();
+
+            groupResponses.Add(new GroupWithStudentsResponse
+            {
+                Id = group.Id,
+                Name = group.Name,
+                AcademicYear = group.AcademicYear,
+                TrackId = group.TrackId,
+                Students = studentResponses
+            });
+
+            allStudents.AddRange(studentResponses);
+        }
+
+        var response = new TrackWithGroupsResponse
+        {
+            Id = track.Id,
+            Name = track.Name,
+            TeacherId = track.TeacherId,
+            ProgramId = track.ProgramId,
+            Description = track.Description,
+            Lieu = track.Lieu,
+            DeletedAt = track.DeletedAt,
+            Groups = groupResponses,
+            Students = allStudents
+        };
+
+        return Ok(ApiResponse<TrackWithGroupsResponse>.Success(response, "Track retrieved successfully"));
+    }
+
+    private static StudentResponse MapToStudentResponse(StudentModel student)
+    {
+        return new StudentResponse
+        {
+            Id = student.Id,
+            Email = student.Email,
+            FirstName = student.FirstName,
+            LastName = student.LastName,
+            Phone = student.Phone,
+            GroupId = student.GroupId,
+            Role = student.Role,
+            CreatedAt = student.CreatedAt,
+            UpdatedAt = student.UpdatedAt,
+            DeletedAt = student.DeletedAt,
+        };
     }
 
     [HttpGet]

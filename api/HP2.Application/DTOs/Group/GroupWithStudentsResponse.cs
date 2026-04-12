@@ -1,11 +1,12 @@
-using HP2.Domain.Common;
+using HP2.Application.DTOs.Student;
 
-namespace HP2.Domain.Models;
+namespace HP2.Application.DTOs.Group;
 
-public class GroupModel : BaseModel
+public class GroupWithStudentsResponse
 {
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public string AcademicYear { get; set; } = string.Empty;
     public string? TrackId { get; set; }
+    public IEnumerable<StudentResponse> Students { get; set; } = new List<StudentResponse>();
 }
