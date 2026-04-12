@@ -9,5 +9,7 @@ public partial class ChangeStatus
 
     public string Label { get; set; } = null!;
 
-    public virtual ICollection<SessionChange> SessionChanges { get; set; } = new List<SessionChange>();
+    public virtual ICollection<SessionRoomChange> SessionRoomChanges { get; set; } = new List<SessionRoomChange>();
+
+    public virtual ICollection<SessionRecoveryChange> SessionRecoveryChanges { get; set; } = new List<SessionRecoveryChange>();
 }

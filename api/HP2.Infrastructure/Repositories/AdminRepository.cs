@@ -43,6 +43,18 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
         return admin != null ? _mapper.Map<AdminModel>(admin) : null;
     }
 
+    public async Task<IReadOnlyList<AdminModel>> GetDeletedAsync()
+    {
+        var deletedAdmins = await _dbContext.Admins
+            .IgnoreQueryFilters()
+            .Include(a => a.User)
+            .ThenInclude(u => u.UserRole)
+            .Where(a => a.User != null && a.User.IsDeleted)
+            .ToListAsync();
+
+        return _mapper.Map<List<AdminModel>>(deletedAdmins);
+    }
+
     public override async Task<AdminModel> AddAsync(AdminModel adminModel)
     {
         var emailExists = await _dbContext.Users
@@ -64,7 +76,10 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
             LastName = adminModel.LastName,
             PhoneNumber = adminModel.Phone,
             UserRoleId = adminRole.UserRoleId,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
+            IsDeleted = false,
+            DeletedAt = null
         };
 
         var admin = new Admin
@@ -105,6 +120,9 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
             admin.User.FirstName = adminModel.FirstName;
             admin.User.LastName = adminModel.LastName;
             admin.User.PhoneNumber = adminModel.Phone;
+            admin.User.UpdatedAt = DateTime.UtcNow;
+            admin.User.IsDeleted = adminModel.IsDeleted;
+            admin.User.DeletedAt = adminModel.DeletedAt;
         }
 
         await _dbContext.SaveChangesAsync();
@@ -112,18 +130,6 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
 
     public override async Task DeleteAsync(string id)
     {
-        var admin = await _dbContext.Admins
-            .Include(a => a.User)
-            .FirstOrDefaultAsync(a => a.UserId == id);
-
-        if (admin != null)
-        {
-            _dbContext.Admins.Remove(admin);
-
-            if (admin.User != null)
-                _dbContext.Users.Remove(admin.User);
-
-            await _dbContext.SaveChangesAsync();
-        }
+        await base.DeleteAsync(id);
     }
 }

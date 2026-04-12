@@ -12,5 +12,7 @@ namespace HP2.Application.DTOs.Track
 
         [Required (ErrorMessage = "Program ID is required.")]
         public string ProgramId { get; set; } = string.Empty;
+        public string? Description { get; set; }
+        public string? Lieu { get; set; }
     }
 }

@@ -9,4 +9,5 @@ public interface ISessionRepository : IAsyncRepository<SessionModel>
     Task<bool> CourseExistsAsync(string courseId);
     Task<bool> RoomExistsAsync(string roomId);
     Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search);
+    Task<IReadOnlyList<SessionModel>> GetDeletedAsync();
 }

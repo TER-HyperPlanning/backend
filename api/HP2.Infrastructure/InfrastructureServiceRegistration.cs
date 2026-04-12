@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HP2.Infrastructure.Persistence.Entities;
@@ -38,6 +38,7 @@ namespace HP2.Infrastructure
             //services.AddScoped<ISignalementCommentaireRepository, SignalementCommentaireRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ISessionRepository, SessionRepository>();
+            services.AddScoped<ISessionChangeRepository, SessionChangeRepository>();
             services.AddScoped<IAttendRepository, AttendRepository>();
             services.AddScoped<ITeachRepository, TeachRepository>();
             
@@ -46,6 +47,7 @@ namespace HP2.Infrastructure
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IAssignRepository, AssignRepository>();
             services.AddScoped<IAvailabilityRepository, AvailabilityRepository>();
+            services.AddScoped<IAvailabilityGroupRepository, AvailabilityGroupRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IPlanningRepository, PlanningRepository>();
 

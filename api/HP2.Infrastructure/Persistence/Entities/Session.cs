@@ -29,7 +29,9 @@ public partial class Session
 
     public virtual Room Room { get; set; } = null!;
 
-    public virtual ICollection<SessionChange> SessionChanges { get; set; } = new List<SessionChange>();
+    public virtual ICollection<SessionRoomChange> SessionRoomChanges { get; set; } = new List<SessionRoomChange>();
+
+    public virtual ICollection<SessionRecoveryChange> SessionRecoveryChanges { get; set; } = new List<SessionRecoveryChange>();
 
     public virtual SessionStatus SessionStatus { get; set; } = null!;
 
@@ -38,4 +40,6 @@ public partial class Session
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 
     public virtual ICollection<Teacher> Teachers { get; set; } = new List<Teacher>();
+    public bool IsDeleted { get; set; } = false;
+    public DateTime? DeletedAt { get; set; }
 }

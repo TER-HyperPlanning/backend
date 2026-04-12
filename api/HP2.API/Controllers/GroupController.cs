@@ -2,6 +2,7 @@ using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Group;
 using HP2.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HP2.API.Controllers;
@@ -21,19 +22,21 @@ public class GroupsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ApiResponse<GroupModel>>> Create([FromBody] CreateGroupRequest request)
     {
-        if (request == null)
-            return BadRequest(ApiResponse<GroupModel>.Fail("Group data is required"));
-        var missing = new List<string>();
-        if (string.IsNullOrWhiteSpace(request.Name)) missing.Add("name");
-        if (string.IsNullOrWhiteSpace(request.AcademicYear)) missing.Add("academicYear");
-        if (string.IsNullOrWhiteSpace(request.TrackId)) missing.Add("trackId");
-        if (missing.Any())
-            return BadRequest(ApiResponse<GroupModel>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+        if (!ModelState.IsValid)
+            return BadRequest(ApiResponse<GroupModel>.Fail("Invalid data"));
 
-        var group = new GroupModel { Name = request.Name, AcademicYear = request.AcademicYear, TrackId = request.TrackId };
+        var group = new GroupModel
+        {
+            Name = request.Name,
+            AcademicYear = request.AcademicYear,
+            Capacity = request.Capacity,
+            TrackId = request.TrackId
+        };
+
         try
         {
             var createdGroup = await _groupService.CreateGroupAsync(group);
+
             return CreatedAtAction(
                 nameof(Get),
                 new { id = createdGroup.Id },
@@ -52,6 +55,7 @@ public class GroupsController : ControllerBase
 
     // GET: api/groups/{id}
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<GroupModel>>> Get(string id)
     {
         var group = await _groupService.GetGroupByIdAsync(id);
@@ -64,6 +68,7 @@ public class GroupsController : ControllerBase
 
     // GET: api/groups
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<GroupModel>>>> GetAll()
     {
         var groups = await _groupService.GetAllGroupsAsync();
@@ -74,22 +79,19 @@ public class GroupsController : ControllerBase
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<object>>> Update(string id, [FromBody] UpdateGroupRequest request)
     {
-        if (request == null)
-            return BadRequest(ApiResponse<object>.Fail("Group data is required"));
+        if (!ModelState.IsValid)
+            return BadRequest(ApiResponse<object>.Fail("Invalid data"));
 
         var existing = await _groupService.GetGroupByIdAsync(id);
+
         if (existing == null)
             return NotFound(ApiResponse<object>.Fail($"Group with ID {id} not found"));
-        var missing = new List<string>();
-        if (string.IsNullOrWhiteSpace(request.Name)) missing.Add("name");
-        if (string.IsNullOrWhiteSpace(request.AcademicYear)) missing.Add("academicYear");
-        if (string.IsNullOrWhiteSpace(request.TrackId)) missing.Add("trackId");
-        if (missing.Any())
-            return BadRequest(ApiResponse<object>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
 
         existing.Name = request.Name;
         existing.AcademicYear = request.AcademicYear;
+        existing.Capacity = request.Capacity;
         existing.TrackId = request.TrackId;
+
         try
         {
             await _groupService.UpdateGroupAsync(existing);
@@ -110,10 +112,27 @@ public class GroupsController : ControllerBase
     public async Task<IActionResult> Delete(string id)
     {
         var existing = await _groupService.GetGroupByIdAsync(id);
+
         if (existing == null)
             return NotFound(ApiResponse<object>.Fail($"Group with ID {id} not found"));
 
         await _groupService.DeleteGroupAsync(id);
         return NoContent();
     }
+
+    // GET: api/groups/track/{trackId}
+    [HttpGet("track/{trackId}")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<GroupModel>>>> GetByTrackId(string trackId)
+    {
+        try
+        {
+            var groups = await _groupService.GetGroupsByTrackIdAsync(trackId);
+            return Ok(ApiResponse<IEnumerable<GroupModel>>.Success(groups, $"Groups for track ID {trackId} retrieved successfully"));
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ApiResponse<IEnumerable<GroupModel>>.Fail(ex.Message));
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 using AutoMapper;
+using HP2.Application.Contracts;
+using HP2.Application.DTOs.Session;
 using HP2.Domain.Models;
-using HP2.Infrastructure.Persistence;
 using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -8,56 +9,103 @@ using System.Threading.Tasks;
 
 namespace HP2.Infrastructure.Repositories
 {
-    public class CourseRepository : ICourseRepository
+    public class CourseRepository : RepositoryBase<CourseModel>, ICourseRepository
     {
-        private readonly TerHyperplanningContext _context;
-        private readonly IMapper _mapper;
-
         public CourseRepository(TerHyperplanningContext context, IMapper mapper)
+            : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CourseModel>> GetAllAsync()
+        public override async Task<IReadOnlyList<CourseModel>> GetAllAsync()
         {
-            var courses = await _context.Courses.ToListAsync();
-            return _mapper.Map<IEnumerable<CourseModel>>(courses);
+            var courses = await _dbContext.Courses
+                .AsNoTracking()
+                .ToListAsync();
+
+            return _mapper.Map<List<CourseModel>>(courses);
         }
 
-        public async Task<CourseModel?> GetByIdAsync(string id)
+        public async Task<IReadOnlyList<CourseModel>> GetDeletedAsync()
         {
-            var course = await _context.Courses.FindAsync(id);
+            var courses = await _dbContext.Courses
+                .IgnoreQueryFilters()
+                .AsNoTracking()
+                .Where(c => c.IsDeleted)
+                .ToListAsync();
+
+            return _mapper.Map<List<CourseModel>>(courses);
+        }
+
+        public override async Task<CourseModel?> GetByIdAsync(string id)
+        {
+            var course = await _dbContext.Courses
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.CourseId == id);
+
             return course == null ? null : _mapper.Map<CourseModel>(course);
         }
 
-        public async Task<CourseModel> AddAsync(CourseModel model)
+        public override async Task<CourseModel> AddAsync(CourseModel model)
         {
             var entity = _mapper.Map<Course>(model);
             entity.CourseId = Guid.NewGuid().ToString();
-            await _context.Courses.AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<CourseModel>(entity);
+            entity.IsDeleted = false;
+            entity.DeletedAt = null;
+
+            await _dbContext.Courses.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
+
+            model.Id = entity.CourseId;
+            model.IsDeleted = entity.IsDeleted;
+            model.DeletedAt = entity.DeletedAt;
+            return model;
         }
 
-        public async Task<CourseModel?> UpdateAsync(CourseModel model)
+        public override async Task UpdateAsync(CourseModel model)
         {
-            var entity = await _context.Courses.FindAsync(model.Id);
-            if (entity == null) return null;
+            var entity = await _dbContext.Courses
+                .FirstOrDefaultAsync(c => c.CourseId == model.Id);
+            if (entity == null)
+            {
+                return;
+            }
 
-            _mapper.Map(model, entity);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<CourseModel>(entity);
+            entity.Name = model.Name;
+            entity.Code = model.Code;
+            entity.IsDeleted = model.IsDeleted;
+            entity.DeletedAt = model.DeletedAt;
+
+            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<bool> DeleteAsync(string id)
+        public override async Task DeleteAsync(string id)
         {
-            var entity = await _context.Courses.FindAsync(id);
-            if (entity == null) return false;
+            await base.DeleteAsync(id);
+        }
 
-            _context.Courses.Remove(entity);
-            await _context.SaveChangesAsync();
-            return true;
+        public Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionUsingCourseAsync(string courseId, DateTime referenceDateTime)
+        {
+            var referenceDate = referenceDateTime.Date;
+            var referenceTime = referenceDateTime.TimeOfDay;
+
+            return _dbContext.Sessions
+                .AsNoTracking()
+                .Where(s => s.CourseId == courseId
+                            && (s.Date > referenceDate
+                                || (s.Date == referenceDate && s.EndTime > referenceTime)))
+                .OrderBy(s => s.Date)
+                .ThenBy(s => s.StartTime)
+                .Select(s => new BlockingSessionInfo
+                {
+                    SessionId = s.SessionId,
+                    StartDateTime = s.Date.Date + s.StartTime,
+                    EndDateTime = s.Date.Date + s.EndTime,
+                    RoomId = s.RoomId,
+                    RoomNumber = s.Room.RoomNumber,
+                    CourseId = s.CourseId,
+                    CourseName = s.Course.Name
+                })
+                .FirstOrDefaultAsync();
         }
     }
 }

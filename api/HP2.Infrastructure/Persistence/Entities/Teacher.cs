@@ -13,7 +13,9 @@ public partial class Teacher
 
     public virtual ICollection<Availability> Availabilities { get; set; } = new List<Availability>();
 
-    public virtual ICollection<SessionChange> SessionChanges { get; set; } = new List<SessionChange>();
+    public virtual ICollection<SessionRoomChange> SessionRoomChanges { get; set; } = new List<SessionRoomChange>();
+
+    public virtual ICollection<SessionRecoveryChange> SessionRecoveryChanges { get; set; } = new List<SessionRecoveryChange>();
 
     public virtual TeacherTitle TeacherTitle { get; set; } = null!;
 

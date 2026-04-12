@@ -38,6 +38,9 @@ public class SessionService : ISessionService
 
     public Task<bool> RoomExistsAsync(string roomId)
         => _sessionRepository.RoomExistsAsync(roomId);
+
+    public async Task<IEnumerable<SessionModel>> GetDeletedSessionsAsync()
+        => await _sessionRepository.GetDeletedAsync();
     public Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
         => _sessionRepository.SearchSessionsAsync(groupId, type, search);
 }
