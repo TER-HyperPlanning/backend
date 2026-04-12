@@ -557,6 +557,13 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
+                    b.Property<int>("Capacity")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("int")
+                        .HasColumnName("Capacity");
+
                     b.Property<string>("TrackId")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -577,6 +584,7 @@ namespace HP2.Infrastructure.Migrations
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
                             AcademicYear = "2025-2026",
                             Name = "Groupe A - M1 ILSD",
+                            Capacity = 30,
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3"
                         });
                 });
