@@ -19,6 +19,28 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
         return _mapper.Map<List<BuildingModel>>(buildings);
     }
 
+    public async Task<IReadOnlyList<BuildingModel>> GetBuildingsAsync(string? query)
+    {
+        var normalizedQuery = query?.Trim();
+
+        var buildingsQuery = _dbContext.Buildings
+            .AsNoTracking()
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(normalizedQuery))
+        {
+            var uppercaseQuery = normalizedQuery.ToUpperInvariant();
+            buildingsQuery = buildingsQuery.Where(b =>
+                b.Name.ToUpper().Contains(uppercaseQuery));
+        }
+
+        var buildings = await buildingsQuery
+            .OrderBy(b => b.Name)
+            .ToListAsync();
+
+        return _mapper.Map<List<BuildingModel>>(buildings);
+    }
+
     public async Task<IReadOnlyList<BuildingModel>> GetDeletedAsync()
     {
         var buildings = await _dbContext.Buildings
