@@ -108,4 +108,64 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
     public Task<bool> CourseExistsAsync(string courseId) => _dbContext.Courses.AnyAsync(x => x.CourseId == courseId);
     public Task<bool> RoomExistsAsync(string roomId) => _dbContext.Rooms.AnyAsync(x => x.RoomId == roomId);
+    public async Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
+    {
+        groupId = string.IsNullOrWhiteSpace(groupId) ? null : groupId;
+        type = string.IsNullOrWhiteSpace(type) ? null : type;
+        search = string.IsNullOrWhiteSpace(search) ? null : search;
+
+        var query = _dbContext.Sessions
+            .Where(s => !s.IsDeleted)
+            .AsQueryable();
+
+        if (groupId != null)
+        {
+            query = query.Where(s => s.Groups.Any(g => g.GroupId == groupId));
+        }
+        if (type != null)
+        {
+            var lowerType = type.ToLower();
+            query = query.Where(s => s.SessionType.Label.ToLower() == lowerType);
+        }
+        if (search != null)
+        {
+            var lower = search.ToLower();
+
+            query = query.Where(s =>
+                s.Course.Name.ToLower().Contains(lower) ||
+                s.Room.RoomNumber.ToLower().Contains(lower) ||
+                s.SessionType.Label.ToLower().Contains(lower) ||
+                s.SessionStatus.Label.ToLower().Contains(lower) ||
+                (s.Description != null && s.Description.ToLower().Contains(lower))
+            );
+        }
+
+        var rows = await query
+            .Select(s => new
+            {
+                Id = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                Mode = s.Mode,
+                SessionTypeLabel = s.SessionType.Label,
+                SessionStatusLabel = s.SessionStatus.Label,
+                RoomNumber = s.Room.RoomNumber,
+                CourseName = s.Course.Name,
+                Description = s.Description
+            })
+            .ToListAsync();
+
+        return rows.Select(s => new SessionModel
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = ParseSessionModeOrDefault(s.Mode),
+            SessionTypeLabel = s.SessionTypeLabel,
+            SessionStatusLabel = s.SessionStatusLabel,
+            RoomNumber = s.RoomNumber,
+            CourseName = s.CourseName,
+            Description = s.Description
+        }).ToList();
+    }
 }

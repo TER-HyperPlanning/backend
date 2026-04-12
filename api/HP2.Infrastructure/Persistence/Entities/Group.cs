@@ -11,11 +11,13 @@ public partial class Group
 
     public string AcademicYear { get; set; } = null!;
 
-    public string? TrackId { get; set; }
+    public int Capacity { get; set; }
+
+    public string TrackId { get; set; } = null!;
 
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 
-    public virtual Track? Track { get; set; }
+    public virtual Track Track { get; set; } = null!;
 
     public virtual ICollection<Session> Sessions { get; set; } = new List<Session>();
 }
