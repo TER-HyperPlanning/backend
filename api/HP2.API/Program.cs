@@ -2,11 +2,14 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using HP2.Application;
 using HP2.Infrastructure;
+using HP2.Application.Exceptions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using System.Text.Json;
 using HP2.Application.DTOs.Common;
 using Microsoft.AspNetCore.Mvc;
 
@@ -151,6 +154,46 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseExceptionHandler(errorApp =>
+        {
+            errorApp.Run(async context =>
+            {
+                var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+
+                context.Response.ContentType = "application/json";
+
+                var (statusCode, errorResponse) = exception switch
+                {
+                    DeleteConflictException ex =>
+                        (StatusCodes.Status409Conflict, ApiResponse<object>.Fail(ex.Message, ex.BlockingSession)),
+
+                    ArgumentException ex =>
+                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
+
+                    FormatException ex =>
+                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
+
+                    KeyNotFoundException ex =>
+                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
+
+                    UnauthorizedAccessException ex =>
+                        (StatusCodes.Status403Forbidden, ApiResponse<object>.Fail(ex.Message)),
+
+                    _ =>
+                        (StatusCodes.Status500InternalServerError, ApiResponse<object>.Fail("An internal error occurred"))
+                };
+
+                context.Response.StatusCode = statusCode;
+
+                var jsonOptions = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+
+                await context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse, jsonOptions));
+            });
+        });
 
         app.UseCors(opt => opt.AllowAnyOrigin()
                               .AllowAnyMethod()

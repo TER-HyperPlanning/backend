@@ -23,6 +23,11 @@ public class BuildingService : IBuildingService
         return await _buildingRepository.GetByIdAsync(id);
     }
 
+    public async Task<IEnumerable<BuildingModel>> GetBuildingsAsync(string? query)
+    {
+        return await _buildingRepository.GetBuildingsAsync(query);
+    }
+
     public async Task<IEnumerable<BuildingModel>> GetAllBuildingsAsync()
     {
         return await _buildingRepository.GetAllAsync();

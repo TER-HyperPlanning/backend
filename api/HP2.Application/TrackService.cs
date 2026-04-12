@@ -1,5 +1,4 @@
 using HP2.Application.Contracts;
-using HP2.Application.Exceptions;
 using HP2.Domain.Models;
 
 namespace HP2.Application;
@@ -40,14 +39,6 @@ public class TrackService : ITrackService
 
     public async Task<bool> DeleteAsync(string id)
     {
-        var blockingAssign = await _repository.GetFirstAssignByTrackIdAsync(id);
-        if (blockingAssign != null)
-        {
-            throw new DeleteConflictException(
-                $"Cannot delete track '{id}' because it is still linked to one or more assign records. Remove those assign records first.",
-                blockingAssign);
-        }
-
         return await _repository.DeleteAsync(id);
     }
 }
