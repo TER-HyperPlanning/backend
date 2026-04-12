@@ -38,4 +38,6 @@ public class SessionService : ISessionService
 
     public Task<bool> RoomExistsAsync(string roomId)
         => _sessionRepository.RoomExistsAsync(roomId);
+    public Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
+        => _sessionRepository.SearchSessionsAsync(groupId, type, search);
 }
