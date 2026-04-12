@@ -70,11 +70,17 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<IEnumerable<BuildingResponse>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<BuildingResponse>>>> GetAll([FromQuery(Name = "q")] string? query)
     {
         try
         {
-            var buildings = await _buildingService.GetAllBuildingsAsync();
+            var normalizedQuery = query?.Trim();
+            if (!string.IsNullOrWhiteSpace(normalizedQuery) && normalizedQuery.Length > 100)
+            {
+                return BadRequest(ApiResponse<IEnumerable<BuildingResponse>>.Fail("Query parameter 'q' must be 100 characters or fewer"));
+            }
+
+            var buildings = await _buildingService.GetBuildingsAsync(normalizedQuery);
             var response = buildings.Select(MapToResponse);
             return Ok(ApiResponse<IEnumerable<BuildingResponse>>.Success(response));
         }
