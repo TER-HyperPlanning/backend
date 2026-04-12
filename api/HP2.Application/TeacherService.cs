@@ -36,6 +36,11 @@ public class TeacherService : ITeacherService
         return await _teacherRepository.GetAllAsync();
     }
 
+    public async Task<IEnumerable<TeacherModel>> GetDeletedTeachersAsync()
+    {
+        return await _teacherRepository.GetDeletedAsync();
+    }
+
     public async Task UpdateTeacherAsync(TeacherModel teacher)
     {
         teacher.UpdatedAt = DateTime.UtcNow;
@@ -48,7 +53,17 @@ public class TeacherService : ITeacherService
     }
 
     public async Task<bool> HasAvailabilitiesAsync(string id)
-{
-    return await _teacherRepository.HasAvailabilitiesAsync(id);
-}
+    {
+        return await _teacherRepository.HasAvailabilitiesAsync(id);
+    }
+
+    public async Task<IEnumerable<TeacherModel>> SearchAsync(string query)
+    {
+        return await _teacherRepository.SearchAsync(query);
+    }
+
+    public async Task<IEnumerable<TeacherModel>> FilterByTitleAsync(TeacherTitle title)
+    {
+        return await _teacherRepository.FilterByTitleAsync(title);
+    }
 }

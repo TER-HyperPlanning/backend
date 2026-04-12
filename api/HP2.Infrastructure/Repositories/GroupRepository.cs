@@ -92,4 +92,13 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         
         return group != null ? _mapper.Map<GroupModel>(group) : null;
     }
+
+    public async Task<IEnumerable<GroupModel>> GetByTrackIdAsync(string trackId)
+    {
+        var groups = await _dbContext.Groups
+            .Where(g => g.TrackId == trackId)
+            .ToListAsync();
+        
+        return _mapper.Map<List<GroupModel>>(groups);
+    }
 }

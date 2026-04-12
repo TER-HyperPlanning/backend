@@ -3,11 +3,13 @@ using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Student;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "ADMIN")]
 public class StudentsController : ControllerBase
 {
     private readonly IStudentService _studentService;
@@ -18,10 +20,23 @@ public class StudentsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<StudentModel>>> Create([FromBody] CreateStudentRequest request)
+    public async Task<ActionResult<ApiResponse<StudentResponse>>> Create([FromBody] CreateStudentRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<StudentModel>.Fail("Student payload is required"));
+            return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required"));
+
+        var missing = new List<string>();
+        if (string.IsNullOrWhiteSpace(request.Email)) missing.Add("email");
+        if (string.IsNullOrWhiteSpace(request.Password)) missing.Add("password");
+        if (string.IsNullOrWhiteSpace(request.FirstName)) missing.Add("firstName");
+        if (string.IsNullOrWhiteSpace(request.LastName)) missing.Add("lastName");
+        if (string.IsNullOrWhiteSpace(request.GroupId)) missing.Add("groupId");
+
+        if (missing.Any())
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+
+        if (!await _studentService.GroupExistsAsync(request.GroupId!))
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Group with ID '{request.GroupId}' not found"));
 
         var student = new StudentModel
         {
@@ -35,35 +50,56 @@ public class StudentsController : ControllerBase
 
         var createdStudent = await _studentService.CreateStudentAsync(student);
         return CreatedAtAction(nameof(Get), new { id = createdStudent.Id },
-            ApiResponse<StudentModel>.Success(createdStudent, "Student created successfully"));
+            ApiResponse<StudentResponse>.Success(MapToResponse(createdStudent), "Student created successfully"));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ApiResponse<StudentModel>>> Get(string id)
+    public async Task<ActionResult<ApiResponse<StudentResponse>>> Get(string id)
     {
         var student = await _studentService.GetStudentByIdAsync(id);
         if (student == null)
-            return NotFound(ApiResponse<StudentModel>.Fail($"Student with ID {id} not found"));
+            return NotFound(ApiResponse<StudentResponse>.Fail($"Student with ID {id} not found"));
 
-        return Ok(ApiResponse<StudentModel>.Success(student));
+        return Ok(ApiResponse<StudentResponse>.Success(MapToResponse(student)));
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<IEnumerable<StudentModel>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<StudentResponse>>>> GetAll()
     {
         var students = await _studentService.GetAllStudentsAsync();
-        return Ok(ApiResponse<IEnumerable<StudentModel>>.Success(students));
+        var response = students.Select(MapToResponse);
+        return Ok(ApiResponse<IEnumerable<StudentResponse>>.Success(response));
+    }
+
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedStudentResponse>>>> GetDeleted()
+    {
+        var students = await _studentService.GetDeletedStudentsAsync();
+        var response = students.Select(MapToDeletedResponse);
+        return Ok(ApiResponse<IEnumerable<DeletedStudentResponse>>.Success(response));
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<ApiResponse<StudentModel>>> Update(string id, [FromBody] UpdateStudentRequest request)
+    public async Task<ActionResult<ApiResponse<StudentResponse>>> Update(string id, [FromBody] UpdateStudentRequest request)
     {
         if (request == null)
-            return BadRequest(ApiResponse<StudentModel>.Fail("Student payload is required"));
+            return BadRequest(ApiResponse<StudentResponse>.Fail("Student payload is required"));
+
+        var missing = new List<string>();
+        if (string.IsNullOrWhiteSpace(request.Email)) missing.Add("email");
+        if (string.IsNullOrWhiteSpace(request.FirstName)) missing.Add("firstName");
+        if (string.IsNullOrWhiteSpace(request.LastName)) missing.Add("lastName");
+        if (string.IsNullOrWhiteSpace(request.GroupId)) missing.Add("groupId");
+
+        if (missing.Any())
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Missing required fields: {string.Join(", ", missing)}"));
+
+        if (!await _studentService.GroupExistsAsync(request.GroupId!))
+            return BadRequest(ApiResponse<StudentResponse>.Fail($"Group with ID {request.GroupId} not found"));
 
         var existing = await _studentService.GetStudentByIdAsync(id);
         if (existing == null)
-            return NotFound(ApiResponse<StudentModel>.Fail($"Student with ID {id} not found"));
+            return NotFound(ApiResponse<StudentResponse>.Fail($"Student with ID {id} not found"));
 
         existing.Email = request.Email;
         existing.FirstName = request.FirstName;
@@ -72,7 +108,7 @@ public class StudentsController : ControllerBase
         existing.GroupId = request.GroupId;
 
         await _studentService.UpdateStudentAsync(existing);
-        return Ok(ApiResponse<StudentModel>.Success(existing, "Student updated successfully"));
+        return Ok(ApiResponse<StudentResponse>.Success(MapToResponse(existing), "Student updated successfully"));
     }
 
     [HttpDelete("{id}")]
@@ -84,5 +120,39 @@ public class StudentsController : ControllerBase
 
         await _studentService.DeleteStudentAsync(id);
         return Ok(ApiResponse<string>.Success(id, "Student deleted successfully"));
+    }
+
+    private static StudentResponse MapToResponse(StudentModel student)
+    {
+        return new StudentResponse
+        {
+            Id = student.Id,
+            Email = student.Email,
+            FirstName = student.FirstName,
+            LastName = student.LastName,
+            Phone = student.Phone,
+            GroupId = student.GroupId,
+            Role = student.Role,
+            CreatedAt = student.CreatedAt,
+            UpdatedAt = student.UpdatedAt,
+            DeletedAt = student.DeletedAt,
+        };
+    }
+
+    private static DeletedStudentResponse MapToDeletedResponse(StudentModel student)
+    {
+        return new DeletedStudentResponse
+        {
+            Id = student.Id,
+            Email = student.Email,
+            FirstName = student.FirstName,
+            LastName = student.LastName,
+            Phone = student.Phone,
+            GroupId = student.GroupId,
+            Role = student.Role,
+            CreatedAt = student.CreatedAt,
+            UpdatedAt = student.UpdatedAt,
+            DeletedAt = student.DeletedAt,
+        };
     }
 }

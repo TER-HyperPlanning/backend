@@ -3,6 +3,7 @@ using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Teacher;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using HP2.Domain.Enums;
 
 namespace HP2.API.Controllers;
 
@@ -57,6 +58,13 @@ public class TeachersController : ControllerBase
         return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
     }
 
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedTeacherResponse>>>> GetDeleted()
+    {
+        var teachers = await _teacherService.GetDeletedTeachersAsync();
+        return Ok(ApiResponse<IEnumerable<DeletedTeacherResponse>>.Success(teachers.Select(ToDeletedResponse)));
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<TeacherResponse>>> Update(string id, [FromBody] UpdateTeacherRequest request)
     {
@@ -105,5 +113,38 @@ public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
         Role = m.Role,
         CreatedAt = m.CreatedAt,
         UpdatedAt = m.UpdatedAt,
+        DeletedAt = m.DeletedAt,
     };
+
+    private static DeletedTeacherResponse ToDeletedResponse(TeacherModel m) => new()
+    {
+        Id = m.Id,
+        Email = m.Email,
+        FirstName = m.FirstName,
+        LastName = m.LastName,
+        Phone = m.Phone,
+        Matricule = m.Matricule,
+        Title = m.Title,
+        Role = m.Role,
+        CreatedAt = m.CreatedAt,
+        UpdatedAt = m.UpdatedAt,
+        DeletedAt = m.DeletedAt,
+    };
+
+    [HttpGet("search")]
+public async Task<ActionResult<ApiResponse<IEnumerable<TeacherResponse>>>> Search([FromQuery] string query)
+{
+    if (string.IsNullOrWhiteSpace(query))
+        return BadRequest(ApiResponse<IEnumerable<TeacherResponse>>.Fail("Query parameter is required"));
+
+    var teachers = await _teacherService.SearchAsync(query);
+    return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
+}
+
+[HttpGet("filter")]
+public async Task<ActionResult<ApiResponse<IEnumerable<TeacherResponse>>>> Filter([FromQuery] TeacherTitle title)
+{
+    var teachers = await _teacherService.FilterByTitleAsync(title);
+    return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
+}
 }

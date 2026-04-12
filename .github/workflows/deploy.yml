@@ -16,7 +16,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             git config --global --add safe.directory /home/mohamed/backend
+            cd /home/mohamed/backend
+            git fetch origin
+            git checkout main
+            git reset --hard origin/main
+            echo "Deploying commit: $(git rev-parse --short HEAD)"
             cd /home/mohamed/backend/api
-            git pull origin main
-            cd api
+            docker-compose down -v
             docker-compose up --build -d

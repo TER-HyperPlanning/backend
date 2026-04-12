@@ -3,7 +3,7 @@ using HP2.Domain.Enums;
 
 namespace HP2.Domain.Models;
 
-public class UserModel : BaseModel
+public class UserModel : SoftDeletableModel
 {
     public string Id { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;

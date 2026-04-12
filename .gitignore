@@ -480,3 +480,7 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Project specific ignores
+git_workflow_guide.md
+test_students_api.ps1
