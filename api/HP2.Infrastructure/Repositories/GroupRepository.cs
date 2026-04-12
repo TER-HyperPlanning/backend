@@ -30,6 +30,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
             GroupId = Guid.NewGuid().ToString(),
             Name = groupModel.Name,
             AcademicYear = groupModel.AcademicYear,
+            Capacity = groupModel.Capacity,
             TrackId = groupModel.TrackId
         };
         
@@ -61,6 +62,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
             // update properties
             group.Name = groupModel.Name;
             group.AcademicYear = groupModel.AcademicYear;
+            Capacity = groupModel.Capacity,
             group.TrackId = groupModel.TrackId;
         }
 

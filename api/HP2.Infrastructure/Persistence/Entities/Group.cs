@@ -11,6 +11,8 @@ public partial class Group
 
     public string AcademicYear { get; set; } = null!;
 
+    public int Capacity { get; set; }
+
     public string TrackId { get; set; } = null!;
 
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();

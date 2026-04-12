@@ -16,9 +16,9 @@ public class GroupService : IGroupService
 
     public async Task<GroupModel> CreateGroupAsync(GroupModel group)
     {
-        if (group.Place <= 0)
+        if (group.Capacity <= 0)
         {
-            throw new ArgumentException("Place must be greater than 0");
+            throw new ArgumentException("Capacity must be greater than 0");
         }
 
         var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
@@ -42,9 +42,9 @@ public class GroupService : IGroupService
 
    public async Task UpdateGroupAsync(GroupModel group)
     {   
-        if (group.Place <= 0)
+        if (group.Capacity <= 0)
         {
-            throw new ArgumentException("Place must be greater than 0");
+            throw new ArgumentException("Capacity must be greater than 0");
         }
 
         var trackExists = await _trackRepository.ExistsAsync(group.TrackId);

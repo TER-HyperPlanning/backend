@@ -28,7 +28,7 @@ public class GroupsController : ControllerBase
         {
             Name = request.Name,
             AcademicYear = request.AcademicYear,
-            Place = request.Place,
+            Capacity = request.Capacity,
             TrackId = request.TrackId
         };
 
@@ -86,7 +86,7 @@ public class GroupsController : ControllerBase
 
         existing.Name = request.Name;
         existing.AcademicYear = request.AcademicYear;
-        existing.Place = request.Place;
+        existing.Capacity = request.Capacity;
         existing.TrackId = request.TrackId;
 
         try

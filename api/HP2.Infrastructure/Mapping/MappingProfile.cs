@@ -82,10 +82,12 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<Group, GroupModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.GroupId))
                 .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Capacity))
                 .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId))
                 .ReverseMap()
                 .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Capacity))
                 .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId));
             CreateMap<CreateGroupRequest, GroupModel>()
                 .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
