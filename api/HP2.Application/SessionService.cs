@@ -41,4 +41,6 @@ public class SessionService : ISessionService
 
     public async Task<IEnumerable<SessionModel>> GetDeletedSessionsAsync()
         => await _sessionRepository.GetDeletedAsync();
+    public Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
+        => _sessionRepository.SearchSessionsAsync(groupId, type, search);
 }
