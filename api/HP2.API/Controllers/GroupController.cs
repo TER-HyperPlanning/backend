@@ -1,6 +1,7 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Group;
+using HP2.Application.DTOs.Student;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,12 @@ namespace HP2.API.Controllers;
 public class GroupsController : ControllerBase
 {
     private readonly IGroupService _groupService;
+    private readonly IStudentService _studentService;
 
-    public GroupsController(IGroupService groupService)
+    public GroupsController(IGroupService groupService, IStudentService studentService)
     {
         _groupService = groupService;
+        _studentService = studentService;
     }
 
     // POST: api/groups
@@ -56,14 +59,42 @@ public class GroupsController : ControllerBase
     // GET: api/groups/{id}
     [HttpGet("{id}")]
     [AllowAnonymous]
-    public async Task<ActionResult<ApiResponse<GroupModel>>> Get(string id)
+    public async Task<ActionResult<ApiResponse<GroupWithStudentsResponse>>> Get(string id)
     {
         var group = await _groupService.GetGroupByIdAsync(id);
 
         if (group == null)
-            return NotFound(ApiResponse<GroupModel>.Fail($"Group with ID {id} not found"));
+            return NotFound(ApiResponse<GroupWithStudentsResponse>.Fail($"Group with ID {id} not found"));
 
-        return Ok(ApiResponse<GroupModel>.Success(group));
+        var students = (await _studentService.GetStudentsByGroupIdAsync(id)).ToList();
+        var response = new GroupWithStudentsResponse
+        {
+            Id = group.Id,
+            Name = group.Name,
+            AcademicYear = group.AcademicYear,
+            TrackId = group.TrackId,
+            StudentCount = students.Count,
+            Students = students.Select(MapToStudentResponse).ToList()
+        };
+
+        return Ok(ApiResponse<GroupWithStudentsResponse>.Success(response));
+    }
+
+    private static StudentResponse MapToStudentResponse(StudentModel student)
+    {
+        return new StudentResponse
+        {
+            Id = student.Id,
+            Email = student.Email,
+            FirstName = student.FirstName,
+            LastName = student.LastName,
+            Phone = student.Phone,
+            GroupId = student.GroupId,
+            Role = student.Role,
+            CreatedAt = student.CreatedAt,
+            UpdatedAt = student.UpdatedAt,
+            DeletedAt = student.DeletedAt,
+        };
     }
 
     // GET: api/groups

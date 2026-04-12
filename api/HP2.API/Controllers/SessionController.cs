@@ -284,4 +284,27 @@ public class SessionsController : ControllerBase
             : field;
     }
 
+      [HttpGet("filter")]
+public async Task<ActionResult<ApiResponse<IEnumerable<SessionResponse>>>> GetPlanning(
+    [FromQuery] string? trackId,
+    [FromQuery] string? programId,
+    [FromQuery] string? niveau,
+    [FromQuery] string? groupId,
+    [FromQuery] string? teacherId,
+    [FromQuery] DateTime? startDate,
+    [FromQuery] DateTime? endDate)
+{
+    var sessions = await _sessionService.GetPlanningSessionsAsync(trackId, programId, niveau, groupId, teacherId);
+    var query = sessions.AsQueryable();
+
+    if (startDate.HasValue)
+        query = query.Where(s => s.StartDateTime.Date >= startDate.Value.Date);
+    if (endDate.HasValue)
+        query = query.Where(s => s.EndDateTime.Date <= endDate.Value.Date);
+
+    var response = query.Select(MapToResponse).ToList();
+    return Ok(ApiResponse<IEnumerable<SessionResponse>>.Success(response, $"Trouvé : {response.Count} sessions."));
+}
+
+
 }

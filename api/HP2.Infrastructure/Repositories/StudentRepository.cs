@@ -44,6 +44,16 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
         return student != null ? _mapper.Map<StudentModel>(student) : null;
     }
 
+    public async Task<IReadOnlyList<StudentModel>> GetByGroupIdAsync(string groupId)
+    {
+        var students = await _dbContext.Students
+            .Include(s => s.User)
+            .Where(s => s.GroupId == groupId)
+            .ToListAsync();
+
+        return _mapper.Map<List<StudentModel>>(students);
+    }
+
     public async Task<IReadOnlyList<StudentModel>> GetDeletedAsync()
     {
         var deletedStudents = await _dbContext.Students
