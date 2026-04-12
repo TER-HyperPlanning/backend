@@ -3,7 +3,6 @@ using HP2.Application.Contracts;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 using HP2.Infrastructure.Persistence.Entities;
 
 namespace HP2.Infrastructure.Repositories;
@@ -57,14 +56,10 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
 
         if (group == null) return;
 
-        if (group != null)
-        {
-            // update properties
-            group.Name = groupModel.Name;
-            group.AcademicYear = groupModel.AcademicYear;
-            Capacity = groupModel.Capacity,
-            group.TrackId = groupModel.TrackId;
-        }
+        group.Name = groupModel.Name;
+        group.AcademicYear = groupModel.AcademicYear;
+        group.Capacity = groupModel.Capacity;
+        group.TrackId = groupModel.TrackId;
 
         await _dbContext.SaveChangesAsync();
     }
@@ -77,10 +72,6 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         if (group != null)
         {
             _dbContext.Groups.Remove(group);
-            if (group != null)
-            {
-                _dbContext.Groups.Remove(group);
-            }
             await _dbContext.SaveChangesAsync();
         }
     }
