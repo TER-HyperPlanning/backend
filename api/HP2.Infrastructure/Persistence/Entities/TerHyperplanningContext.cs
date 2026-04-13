@@ -808,6 +808,13 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("track_id");
+
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime2");
+
+            entity.Property(e => e.IsDeleted)
+                .HasColumnType("bit");
+
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -830,6 +837,8 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Track_Teacher");
+
+            entity.HasQueryFilter(t => !t.IsDeleted);
         });
 
         modelBuilder.Entity<UnavailableDay>(entity =>
@@ -2468,6 +2477,66 @@ public partial class TerHyperplanningContext : DbContext
 
         attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = sharedFinalEventSessionId });
         attendSeed.Add(new { GroupId = groupId_M1_ILSD_B, SessionId = sharedFinalEventSessionId });
+
+        // Sessions de reference stables pour les changements de seance/salle.
+        var seedSessionId1 = GetStableId("seed-session-room-change-001");
+        var seedSessionId2 = GetStableId("seed-session-room-change-002");
+        var seedSessionId3 = GetStableId("seed-session-recovery-change-001");
+
+        var seedSessionDate1 = new DateTime(2026, 4, 7);
+        var seedSessionDate2 = new DateTime(2026, 4, 8);
+        var seedSessionDate3 = new DateTime(2026, 4, 9);
+
+        var seedSessionRoom1 = PickAvailableRoom(groupId_M1_ILSD, seedSessionDate1, new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0));
+        RegisterRoomAssignment(seedSessionRoom1, seedSessionDate1, new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0));
+        sessions.Add(new Session
+        {
+            SessionId = seedSessionId1,
+            Date = seedSessionDate1,
+            StartTime = new TimeSpan(8, 30, 0),
+            EndTime = new TimeSpan(10, 0, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_sad,
+            SessionTypeId = sessionTypeTdId,
+            SessionStatusId = sessionStatusId,
+            RoomId = seedSessionRoom1
+        });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = seedSessionId1 });
+        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId1 });
+
+        var seedSessionRoom2 = PickAvailableRoom(groupId_M1_ILSD_B, seedSessionDate2, new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0));
+        RegisterRoomAssignment(seedSessionRoom2, seedSessionDate2, new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0));
+        sessions.Add(new Session
+        {
+            SessionId = seedSessionId2,
+            Date = seedSessionDate2,
+            StartTime = new TimeSpan(10, 15, 0),
+            EndTime = new TimeSpan(11, 45, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_coo,
+            SessionTypeId = sessionTypeTdId,
+            SessionStatusId = sessionStatusId,
+            RoomId = seedSessionRoom2
+        });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD_B, SessionId = seedSessionId2 });
+        teachSeed.Add(new { TeacherId = teacherUserId2, SessionId = seedSessionId2 });
+
+        var seedSessionRoom3 = PickAvailableRoom(groupId_M1_ILSD, seedSessionDate3, new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0));
+        RegisterRoomAssignment(seedSessionRoom3, seedSessionDate3, new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0));
+        sessions.Add(new Session
+        {
+            SessionId = seedSessionId3,
+            Date = seedSessionDate3,
+            StartTime = new TimeSpan(14, 0, 0),
+            EndTime = new TimeSpan(16, 0, 0),
+            Mode = "PRESENTIAL",
+            CourseId = c_data,
+            SessionTypeId = sessionTypeTdId,
+            SessionStatusId = sessionStatusId,
+            RoomId = seedSessionRoom3
+        });
+        attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = seedSessionId3 });
+        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId3 });
 
         modelBuilder.Entity<Session>().HasData(sessions.ToArray());
 
