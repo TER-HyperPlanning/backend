@@ -216,8 +216,10 @@ public class SessionChangeRepository : ISessionChangeRepository
     public async Task ApproveRecoveryAsync(string sessionChangeId, string approvedStatusId)
     {
         var entity = await _dbContext.SessionRecoveryChanges
-            .Include(x => x.Session).ThenInclude(s => s.Teachers)
-            .Include(x => x.Session).ThenInclude(s => s.Groups)
+            .Include(x => x.Session)
+            .ThenInclude(s => s.Groups)
+            .Include(x => x.Session)
+            .ThenInclude(s => s.Teachers)
             .FirstOrDefaultAsync(x => x.SessionRecoveryChangeId == sessionChangeId);
 
         if (entity == null)
@@ -229,36 +231,37 @@ public class SessionChangeRepository : ISessionChangeRepository
         if (!entity.ProposedDate.HasValue || !entity.ProposedStartTime.HasValue || !entity.ProposedEndTime.HasValue)
             throw new InvalidOperationException("Aucun créneau proposé n'est défini pour cette demande.");
 
-        var rattrapageStatusId = await _dbContext.SessionStatuses
-            .Where(s => s.Label == "RATTRAPAGE")
-            .Select(s => s.SessionStatusId)
-            .FirstOrDefaultAsync();
+        var movedStatusId = await GetSessionStatusIdByLabelAsync("DEPLACE");
+        if (string.IsNullOrWhiteSpace(movedStatusId))
+            throw new InvalidOperationException("Le statut de séance 'DEPLACE' est introuvable.");
 
-        if (rattrapageStatusId == null)
-            throw new InvalidOperationException("Le statut de séance 'RATTRAPAGE' est introuvable.");
+        var recoveredStatusId = await GetSessionStatusIdByLabelAsync("RATTRAPE");
+        if (string.IsNullOrWhiteSpace(recoveredStatusId))
+            throw new InvalidOperationException("Le statut de séance 'RATTRAPE' est introuvable.");
 
-        var newSession = new Session
+        var originalSession = entity.Session;
+        var recoveredSession = new Session
         {
             SessionId = Guid.NewGuid().ToString(),
             Date = entity.ProposedDate.Value.Date,
             StartTime = entity.ProposedStartTime.Value,
             EndTime = entity.ProposedEndTime.Value,
-            Mode = entity.Session.Mode,
-            CourseId = entity.Session.CourseId,
-            SessionTypeId = entity.Session.SessionTypeId,
-            SessionStatusId = rattrapageStatusId,
-            RoomId = !string.IsNullOrWhiteSpace(entity.ProposedRoomId)
-                ? entity.ProposedRoomId
-                : entity.Session.RoomId
+            Mode = originalSession.Mode,
+            SessionTypeId = originalSession.SessionTypeId,
+            CourseId = originalSession.CourseId,
+            SessionStatusId = recoveredStatusId,
+            RoomId = !string.IsNullOrWhiteSpace(entity.ProposedRoomId) ? entity.ProposedRoomId : originalSession.RoomId,
+            Description = originalSession.Description
         };
 
-        await _dbContext.Sessions.AddAsync(newSession);
+        foreach (var group in originalSession.Groups)
+            recoveredSession.Groups.Add(group);
 
-        foreach (var teacher in entity.Session.Teachers)
-            newSession.Teachers.Add(teacher);
+        foreach (var teacher in originalSession.Teachers)
+            recoveredSession.Teachers.Add(teacher);
 
-        foreach (var group in entity.Session.Groups)
-            newSession.Groups.Add(group);
+        originalSession.SessionStatusId = movedStatusId;
+        _dbContext.Sessions.Add(recoveredSession);
 
         entity.ChangeStatusId = approvedStatusId;
 
@@ -284,13 +287,10 @@ public class SessionChangeRepository : ISessionChangeRepository
         if (entity.Session == null)
             throw new InvalidOperationException("La séance liée à cette demande est introuvable.");
 
-        var rattrapageStatusId = await _dbContext.SessionStatuses
-            .Where(s => s.Label == "RATTRAPAGE")
-            .Select(s => s.SessionStatusId)
-            .FirstOrDefaultAsync();
+        var rattrapageStatusId = await GetSessionStatusIdByLabelAsync("RATTRAPE");
 
-        if (rattrapageStatusId == null)
-            throw new InvalidOperationException("Le statut de séance 'RATTRAPAGE' est introuvable.");
+        if (string.IsNullOrWhiteSpace(rattrapageStatusId))
+            throw new InvalidOperationException("Le statut de séance 'RATTRAPE' est introuvable.");
 
         var newSession = new Session
         {
@@ -327,6 +327,14 @@ public class SessionChangeRepository : ISessionChangeRepository
         return await _dbContext.ChangeStatuses
             .Where(x => x.Label == label)
             .Select(x => x.ChangeStatusId)
+            .FirstOrDefaultAsync();
+    }
+
+    private async Task<string?> GetSessionStatusIdByLabelAsync(string label)
+    {
+        return await _dbContext.SessionStatuses
+            .Where(x => x.Label == label)
+            .Select(x => x.SessionStatusId)
             .FirstOrDefaultAsync();
     }
 

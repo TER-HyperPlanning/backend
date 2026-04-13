@@ -16,7 +16,11 @@ public class GroupService : IGroupService
 
     public async Task<GroupModel> CreateGroupAsync(GroupModel group)
     {
-        // Validate if trackId exists
+        if (group.Capacity <= 0)
+        {
+            throw new ArgumentException("Capacity must be greater than 0");
+        }
+
         var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
         if (!trackExists)
         {
@@ -36,9 +40,13 @@ public class GroupService : IGroupService
         return await _groupRepository.GetAllAsync();
     }
 
-    public async Task UpdateGroupAsync(GroupModel group)
-    {
-        // Validate if trackId exists before updating
+   public async Task UpdateGroupAsync(GroupModel group)
+    {   
+        if (group.Capacity <= 0)
+        {
+            throw new ArgumentException("Capacity must be greater than 0");
+        }
+
         var trackExists = await _trackRepository.ExistsAsync(group.TrackId);
         if (!trackExists)
         {
@@ -51,5 +59,14 @@ public class GroupService : IGroupService
     public async Task DeleteGroupAsync(string id)
     {
         await _groupRepository.DeleteAsync(id);
+    }
+
+    public async Task<IEnumerable<GroupModel>> GetGroupsByTrackIdAsync(string trackId)
+    {
+        var trackExists = await _trackRepository.ExistsAsync(trackId);
+        if (!trackExists)        {
+            throw new ArgumentException($"Track with ID {trackId} does not exist.");
+        }
+        return await _groupRepository.GetByTrackIdAsync(trackId);
     }
 }

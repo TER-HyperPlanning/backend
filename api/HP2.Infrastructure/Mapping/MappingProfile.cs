@@ -116,10 +116,12 @@ namespace HP2.Infrastructure.Mapping
             CreateMap<Group, GroupModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.GroupId))
                 .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Capacity))
                 .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId))
                 .ReverseMap()
                 .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.AcademicYear, opt => opt.MapFrom(src => src.AcademicYear))
+                .ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Capacity))
                 .ForMember(dest => dest.TrackId, opt => opt.MapFrom(src => src.TrackId));
 
             CreateMap<CreateGroupRequest, GroupModel>()
@@ -241,7 +243,20 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime))
                 .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime))
                 .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
-                .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate));
+                .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate))
+                .ForMember(dest => dest.AvailabilityGroupId, opt => opt.MapFrom(src => src.AvailabilityGroupId));
+
+            // ===== AvailabilityGroup =====
+            CreateMap<AvailabilityGroup, AvailabilityGroupModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AvailabilityGroupId))
+                .ReverseMap()
+                .ForMember(dest => dest.AvailabilityGroupId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Availabilities, opt => opt.Ignore());
+
+            CreateMap<AvailabilityGroup, AvailabilityGroupResponse>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AvailabilityGroupId))
+                .ForMember(dest => dest.TeacherId, opt => opt.MapFrom(src => src.TeacherId))
+                .ForMember(dest => dest.NumberOfAvailableDays, opt => opt.MapFrom(src => src.NumberOfAvailableDays));
 
             // ===== Other =====
            // ===== Other =====

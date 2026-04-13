@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +24,8 @@ public partial class TerHyperplanningContext : DbContext
 
     public virtual DbSet<Availability> Availabilities { get; set; }
 
+    public virtual DbSet<AvailabilityGroup> AvailabilityGroups { get; set; }
+
     public virtual DbSet<Building> Buildings { get; set; }
 
     public virtual DbSet<ChangeStatus> ChangeStatuses { get; set; }
@@ -33,6 +35,8 @@ public partial class TerHyperplanningContext : DbContext
     public virtual DbSet<Group> Groups { get; set; }
 
     public virtual DbSet<Notification> Notifications { get; set; }
+
+    public virtual DbSet<UserNotification> UserNotifications { get; set; }
 
     public virtual DbSet<Program> Programs { get; set; }
 
@@ -110,6 +114,12 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("course_id");
             entity.Property(e => e.HourlyVolume).HasColumnName("hourly_volume");
+            entity.Property(e => e.IsDeleted)
+                .HasDefaultValue(false);
+            entity.Property(e => e.DeletedAt)
+                .HasColumnType("datetime2");
+
+            entity.HasQueryFilter(a => !a.IsDeleted);
 
             entity.HasOne(d => d.Course).WithMany(p => p.Assigns)
                 .HasForeignKey(d => d.CourseId)
@@ -120,6 +130,30 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TrackId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Assign_Track");
+        });
+
+        modelBuilder.Entity<AvailabilityGroup>(entity =>
+        {
+            entity.HasKey(e => e.AvailabilityGroupId);
+
+            entity.ToTable("AvailabilityGroup");
+
+            entity.Property(e => e.AvailabilityGroupId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(newid())")
+                .HasColumnName("availability_group_id");
+            entity.Property(e => e.TeacherId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("teacher_id");
+            entity.Property(e => e.NumberOfAvailableDays)
+                .HasColumnName("number_of_available_days");
+
+            entity.HasOne(d => d.Teacher).WithMany()
+                .HasForeignKey(d => d.TeacherId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_AvailabilityGroup_Teacher");
         });
 
         modelBuilder.Entity<Availability>(entity =>
@@ -149,6 +183,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("weekday_id");
+            entity.Property(e => e.AvailabilityGroupId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("availability_group_id")
+                .IsRequired(false);
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Availabilities)
                 .HasForeignKey(d => d.TeacherId)
@@ -159,6 +198,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.WeekdayId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Avail_Weekday");
+
+            entity.HasOne(d => d.AvailabilityGroup).WithMany(p => p.Availabilities)
+                .HasForeignKey(d => d.AvailabilityGroupId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_Avail_AvailabilityGroup");
         });
 
         modelBuilder.Entity<Building>(entity =>
@@ -228,6 +272,8 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name");
+
+            entity.HasQueryFilter(c => !c.IsDeleted);
         });
 
         modelBuilder.Entity<Group>(entity =>
@@ -249,6 +295,7 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name");
+            entity.Property(e => e.Capacity).HasColumnName("capacity");
             entity.Property(e => e.TrackId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -287,51 +334,74 @@ public partial class TerHyperplanningContext : DbContext
 
         modelBuilder.Entity<Notification>(entity =>
         {
-            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__E059842FEA1D001E");
+            entity.HasKey(e => e.NotificationId).HasName("PK_Notification");
 
             entity.ToTable("Notification");
 
             entity.Property(e => e.NotificationId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasDefaultValueSql("(newid())")
                 .HasColumnName("notification_id");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime")
-                .HasColumnName("created_at");
-            entity.Property(e => e.Message)
-                .IsUnicode(false)
-                .HasColumnName("message");
+
             entity.Property(e => e.Title)
-                .HasMaxLength(100)
-                .IsUnicode(false)
+                .HasMaxLength(200)
                 .HasColumnName("title");
 
-            entity.HasMany(d => d.Users).WithMany(p => p.Notifications)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Receive",
-                    r => r.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Receive_User"),
-                    l => l.HasOne<Notification>().WithMany()
-                        .HasForeignKey("NotificationId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Receive_Notif"),
-                    j =>
-                    {
-                        j.HasKey("NotificationId", "UserId").HasName("PK__Receive__0BC2675F6B31FA1F");
-                        j.ToTable("Receive");
-                        j.IndexerProperty<string>("NotificationId")
-                            .HasMaxLength(50)
-                            .IsUnicode(false)
-                            .HasColumnName("notification_id");
-                        j.IndexerProperty<string>("UserId")
-                            .HasMaxLength(50)
-                            .IsUnicode(false)
-                            .HasColumnName("user_id");
-                    });
+            entity.Property(e => e.Message)
+                .HasMaxLength(1000)
+                .HasColumnName("message");
+
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .HasDefaultValue("General")
+                .HasColumnName("type");
+
+            entity.Property(e => e.RelatedId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .IsRequired(false)
+                .HasColumnName("related_id");
+
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime2")
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnName("created_at");
+
+            // Pour la compatibilité ascendante, on peut garder HasMany(...).WithMany(...) 
+            // Mais pour IsRead, on utilise UserNotifications
+        });
+
+        modelBuilder.Entity<UserNotification>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.NotificationId }).HasName("PK_UserNotification");
+
+            entity.ToTable("UserNotification");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+
+            entity.Property(e => e.NotificationId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("notification_id");
+
+            entity.Property(e => e.IsRead)
+                .HasDefaultValue(false)
+                .HasColumnName("is_read");
+
+            entity.HasOne(d => d.User)
+                .WithMany()
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UserNotification_User");
+
+            entity.HasOne(d => d.Notification)
+                .WithMany(p => p.UserNotifications)
+                .HasForeignKey(d => d.NotificationId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UserNotification_Notification");
         });
 
         modelBuilder.Entity<Program>(entity =>
@@ -1186,6 +1256,9 @@ public partial class TerHyperplanningContext : DbContext
         var sessionTypeSoutenanceId = GetStableId("st-soutenance");
         var sessionTypeEvenementId = GetStableId("st-evenement");
         var sessionStatusId = GetStableId("ss-scheduled");
+        var sessionStatusCancelledId = GetStableId("ss-cancelled");
+        var sessionStatusMovedId = GetStableId("ss-moved");
+        var sessionStatusRecoveredId = GetStableId("ss-recovered");
 
         var teacherTitleId = GetStableId("tt-permanent");
 
@@ -1305,10 +1378,11 @@ public partial class TerHyperplanningContext : DbContext
         );
 
         // SessionStatus (requis par Session)
-        var sessionStatusRattrapageId = GetStableId("ss-rattrapage");
         modelBuilder.Entity<SessionStatus>().HasData(
             new SessionStatus { SessionStatusId = sessionStatusId, Label = "PROGRAMME" },
-            new SessionStatus { SessionStatusId = sessionStatusRattrapageId, Label = "RATTRAPAGE" }
+            new SessionStatus { SessionStatusId = sessionStatusCancelledId, Label = "ANNULE" },
+            new SessionStatus { SessionStatusId = sessionStatusMovedId, Label = "DEPLACE" },
+            new SessionStatus { SessionStatusId = sessionStatusRecoveredId, Label = "RATTRAPE" }
         );
 
         // TeacherTitles (requis par Teacher)
@@ -2102,6 +2176,42 @@ public partial class TerHyperplanningContext : DbContext
             teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
         }
 
+        void AddSessionForGroupWithStatus(
+            string groupId,
+            string groupKey,
+            DateTime date,
+            TimeSpan startTime,
+            TimeSpan endTime,
+            string courseId,
+            string sessionType,
+            string mode,
+            string customStatusId,
+            string statusKey)
+        {
+            var sessionId = GetStableId($"session-{groupKey}-{statusKey}-{date:yyyyMMdd}-{startTime:hh\\:mm}-{endTime:hh\\:mm}-{courseId}-{sessionType}");
+            var teacherId = PickAvailableTeacher(date, startTime, endTime);
+            var assignedRoomId = PickAvailableRoom(groupId, date, startTime, endTime);
+
+            RegisterTeacherAssignment(teacherId, date, startTime, endTime);
+            RegisterRoomAssignment(assignedRoomId, date, startTime, endTime);
+
+            sessions.Add(new Session
+            {
+                SessionId = sessionId,
+                Date = date,
+                StartTime = startTime,
+                EndTime = endTime,
+                Mode = mode,
+                CourseId = courseId,
+                SessionTypeId = sessionType,
+                SessionStatusId = customStatusId,
+                RoomId = assignedRoomId
+            });
+
+            attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
+        }
+
         void AddSessionForGroupWithTeacherPool(
             string groupId,
             string groupKey,
@@ -2429,13 +2539,138 @@ public partial class TerHyperplanningContext : DbContext
             AddSessionForGroupWithTeacherPool(groupId, groupKey, new DateTime(2026, 5, 7), new TimeSpan(14, 0, 0), new TimeSpan(17, 0, 0), c_ml, sessionTypeExamenId, "PRESENTIAL", teacherPool, ref teacherPoolCursor);
         }
 
+        DateTime? FindNextRegularTeachingDay(DateTime date, DateTime maxDate)
+        {
+            for (var current = date.Date; current <= maxDate.Date; current = current.AddDays(1))
+            {
+                if (IsRegularTeachingDay(current))
+                {
+                    return current;
+                }
+            }
+
+            return null;
+        }
+
+        DateTime? FindNextRegularTeachingDayDistinctFrom(DateTime date, DateTime maxDate, DateTime first, DateTime second)
+        {
+            for (var current = date.Date; current <= maxDate.Date; current = current.AddDays(1))
+            {
+                if (!IsRegularTeachingDay(current))
+                {
+                    continue;
+                }
+
+                // Keep recovery on a different weekday than cancelled and moved sessions.
+                if (current.DayOfWeek == first.DayOfWeek || current.DayOfWeek == second.DayOfWeek)
+                {
+                    continue;
+                }
+
+                return current;
+            }
+
+            return null;
+        }
+
+        void SeedBiweeklySessionStatusChanges(
+            string groupId,
+            string groupKey,
+            string cancelledCourseId,
+            string movedCourseId,
+            DateTime schoolStart,
+            DateTime schoolEnd)
+        {
+            var seededCancelledDates = new HashSet<DateTime>();
+            var seededMovedDates = new HashSet<DateTime>();
+            var seededRecoveryDates = new HashSet<DateTime>();
+
+            for (var anchor = schoolStart.Date; anchor <= schoolEnd.Date; anchor = anchor.AddDays(14))
+            {
+                var cancelledDate = FindNextRegularTeachingDay(anchor, schoolEnd);
+                if (!cancelledDate.HasValue)
+                {
+                    break;
+                }
+
+                if (!seededCancelledDates.Add(cancelledDate.Value.Date))
+                {
+                    continue;
+                }
+
+                AddSessionForGroupWithStatus(
+                    groupId,
+                    groupKey,
+                    cancelledDate.Value,
+                    new TimeSpan(17, 30, 0),
+                    new TimeSpan(19, 0, 0),
+                    cancelledCourseId,
+                    sessionTypeTdId,
+                    "PRESENTIAL",
+                    sessionStatusCancelledId,
+                    "annule");
+
+                var movedDate = FindNextRegularTeachingDay(cancelledDate.Value.AddDays(1), schoolEnd);
+                if (!movedDate.HasValue)
+                {
+                    continue;
+                }
+
+                if (!seededMovedDates.Add(movedDate.Value.Date))
+                {
+                    continue;
+                }
+
+                AddSessionForGroupWithStatus(
+                    groupId,
+                    groupKey,
+                    movedDate.Value,
+                    new TimeSpan(19, 15, 0),
+                    new TimeSpan(20, 45, 0),
+                    movedCourseId,
+                    sessionTypeTdId,
+                    "PRESENTIAL",
+                    sessionStatusMovedId,
+                    "deplace");
+
+                var recoveryDate = FindNextRegularTeachingDayDistinctFrom(
+                    movedDate.Value.AddDays(14),
+                    schoolEnd,
+                    cancelledDate.Value,
+                    movedDate.Value);
+                if (!recoveryDate.HasValue)
+                {
+                    continue;
+                }
+
+                if (!seededRecoveryDates.Add(recoveryDate.Value.Date))
+                {
+                    continue;
+                }
+
+                AddSessionForGroupWithStatus(
+                    groupId,
+                    groupKey,
+                    recoveryDate.Value,
+                    new TimeSpan(19, 15, 0),
+                    new TimeSpan(20, 45, 0),
+                    movedCourseId,
+                    sessionTypeTdId,
+                    "PRESENTIAL",
+                    sessionStatusRecoveredId,
+                    "rattrape");
+            }
+        }
+
         // 1) Génération du planning Groupe A
         GenerateRegularScheduleForGroup(groupId_M1_ILSD, "group-a");
         GenerateSpecialSessionsForGroup(groupId_M1_ILSD, "group-a");
+        SeedBiweeklySessionStatusChanges(groupId_M1_ILSD, "group-a", c_sad, c_coo, new DateTime(2025, 9, 8), new DateTime(2026, 5, 11));
 
         // 2) Génération du planning Groupe B avec garde anti-conflit prof déjà en cours
         GenerateRegularScheduleForGroup(groupId_M1_ILSD_B, "group-b");
         GenerateSpecialSessionsForGroup(groupId_M1_ILSD_B, "group-b");
+        SeedBiweeklySessionStatusChanges(groupId_M1_ILSD_B, "group-b", c_crypto, c_bdd, new DateTime(2025, 9, 8), new DateTime(2026, 5, 11));
 
         // 3) Génération du planning Groupe A - M1 CNS (sans évènement final de stage)
         GenerateRegularScheduleForGroupCustomCourses(
@@ -2457,6 +2692,7 @@ public partial class TerHyperplanningContext : DbContext
             ref teacherCursorCns);
 
         GenerateSpecialSessionsForCnsGroup(groupId_M1_CNS, "group-cns", teacherIdsCns, ref teacherCursorCns);
+        SeedBiweeklySessionStatusChanges(groupId_M1_CNS, "group-cns", c_msed, c_ml, new DateTime(2025, 9, 8), new DateTime(2026, 5, 11));
 
         // Evenement final commun aux deux groupes (sans enseignant affecte).
         var sharedFinalEventSessionId = GetStableId("session-shared-m1-ilsd-final-event-20260511");

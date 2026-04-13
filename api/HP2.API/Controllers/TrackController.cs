@@ -54,7 +54,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "ADMIN,TEACHER,STUDENT")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<TrackResponse>>> Get(string id)
     {
         var track = await _trackService.GetByIdAsync(id);
@@ -66,7 +66,7 @@ public class TracksController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "ADMIN,TEACHER,STUDENT")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<List<TrackResponse>>>> GetAll()
     {
         var tracks = await _trackService.GetAllAsync();

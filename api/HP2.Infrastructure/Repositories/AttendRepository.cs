@@ -173,4 +173,13 @@ public class AttendRepository : IAttendRepository
 
     public Task<bool> SessionExistsAsync(string sessionId)
         => _context.Sessions.AnyAsync(s => s.SessionId == sessionId);
+
+    public async Task<IEnumerable<string>> GetAffectedUserIdsAsync(string groupId)
+    {
+        return await _context.Students
+            .AsNoTracking()
+            .Where(s => s.GroupId == groupId)
+            .Select(s => s.UserId)
+            .ToListAsync();
+    }
 }

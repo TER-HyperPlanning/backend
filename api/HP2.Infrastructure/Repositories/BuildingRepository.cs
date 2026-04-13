@@ -19,6 +19,28 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
         return _mapper.Map<List<BuildingModel>>(buildings);
     }
 
+    public async Task<IReadOnlyList<BuildingModel>> GetBuildingsAsync(string? query)
+    {
+        var normalizedQuery = query?.Trim();
+
+        var buildingsQuery = _dbContext.Buildings
+            .AsNoTracking()
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(normalizedQuery))
+        {
+            var uppercaseQuery = normalizedQuery.ToUpperInvariant();
+            buildingsQuery = buildingsQuery.Where(b =>
+                b.Name.ToUpper().Contains(uppercaseQuery));
+        }
+
+        var buildings = await buildingsQuery
+            .OrderBy(b => b.Name)
+            .ToListAsync();
+
+        return _mapper.Map<List<BuildingModel>>(buildings);
+    }
+
     public async Task<IReadOnlyList<BuildingModel>> GetDeletedAsync()
     {
         var buildings = await _dbContext.Buildings
@@ -71,7 +93,27 @@ public class BuildingRepository : RepositoryBase<BuildingModel>, IBuildingReposi
 
     public override async Task DeleteAsync(string id)
     {
+        await using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
         await base.DeleteAsync(id);
+
+        var roomsToDelete = await _dbContext.Rooms
+            .Where(r => r.BuildingId == id && !r.IsDeleted)
+            .ToListAsync();
+
+        if (roomsToDelete.Count > 0)
+        {
+            var deletedAt = DateTime.UtcNow;
+            foreach (var room in roomsToDelete)
+            {
+                room.IsDeleted = true;
+                room.DeletedAt = deletedAt;
+            }
+
+            await _dbContext.SaveChangesAsync();
+        }
+
+        await transaction.CommitAsync();
     }
 
     public Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionUsingBuildingRoomsAsync(string buildingId, DateTime referenceDateTime)

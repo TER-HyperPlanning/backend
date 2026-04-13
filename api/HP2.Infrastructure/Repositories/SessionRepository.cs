@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Domain.Enums;
 using HP2.Domain.Models;
@@ -6,16 +6,22 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Data;
+using Microsoft.Extensions.Logging;
 
 namespace HP2.Infrastructure.Repositories;
-
 public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepository
 {
-    public SessionRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
+    private readonly ILogger<SessionRepository> _logger;
+
+    public SessionRepository(TerHyperplanningContext dbContext, IMapper mapper, ILogger<SessionRepository> logger) : base(dbContext, mapper) 
+    {
+        _logger = logger;
+    }
 
     public override async Task<IReadOnlyList<SessionModel>> GetAllAsync()
     {
         var rows = await _dbContext.Sessions
+            .Where(s => !s.IsDeleted)
             .Select(s => new
             {
                 Id = s.SessionId,
@@ -208,6 +214,50 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
         return _dbContext.Rooms.AnyAsync(x => x.RoomId == roomId);
     }
 
+    private static string SanitizeForLog(string? value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return string.Empty;
+            
+        return value.Replace("\r", string.Empty).Replace("\n", string.Empty);
+    }
+
+    public async Task<IEnumerable<string>> GetAffectedUserIdsAsync(string sessionId)
+    {
+        var safeSessionId = SanitizeForLog(sessionId);
+        _logger.LogInformation("[DEBUG] SessionRepository: Getting affected users for session {SessionId}", safeSessionId);
+        
+        try
+        {
+            // On utilise une projection directe sur la session pour laisser EF Core gÃ©rer les jointures de maniÃ¨re optimale
+            var data = await _dbContext.Sessions
+                .Where(s => s.SessionId == sessionId)
+                .Select(s => new
+                {
+                    TeacherIds = s.Teachers.Select(t => t.UserId).ToList(),
+                    StudentIds = s.Groups.SelectMany(g => g.Students).Select(st => st.UserId).ToList()
+                })
+                .FirstOrDefaultAsync();
+
+            if (data == null)
+            {
+                _logger.LogWarning("[DEBUG] SessionRepository: Session {SessionId} not found.", safeSessionId);
+                return Enumerable.Empty<string>();
+            }
+
+            var totalIds = data.TeacherIds.Concat(data.StudentIds).Distinct().ToList();
+            
+            _logger.LogInformation("[DEBUG] SessionRepository: Found {Count} unique users to notify for session {SessionId}: {UserIds}", 
+                totalIds.Count, safeSessionId, string.Join(", ", totalIds));
+            return totalIds;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "[DEBUG] SessionRepository: Error while getting affected users for session {SessionId}", safeSessionId);
+            return Enumerable.Empty<string>();
+        }
+    }
+
     private static SessionMode ParseSessionModeOrDefault(string? mode)
     {
         return Enum.TryParse<SessionMode>(mode, true, out var parsed)
@@ -321,6 +371,66 @@ SELECT @result;";
             Description = s.Description,
             IsDeleted = s.IsDeleted,
             DeletedAt = s.DeletedAt
+        }).ToList();
+    }
+    public async Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
+    {
+        groupId = string.IsNullOrWhiteSpace(groupId) ? null : groupId;
+        type = string.IsNullOrWhiteSpace(type) ? null : type;
+        search = string.IsNullOrWhiteSpace(search) ? null : search;
+
+        var query = _dbContext.Sessions
+            .Where(s => !s.IsDeleted)
+            .AsQueryable();
+
+        if (groupId != null)
+        {
+            query = query.Where(s => s.Groups.Any(g => g.GroupId == groupId));
+        }
+        if (type != null)
+        {
+            var lowerType = type.ToLower();
+            query = query.Where(s => s.SessionType.Label.ToLower() == lowerType);
+        }
+        if (search != null)
+        {
+            var lower = search.ToLower();
+
+            query = query.Where(s =>
+                s.Course.Name.ToLower().Contains(lower) ||
+                s.Room.RoomNumber.ToLower().Contains(lower) ||
+                s.SessionType.Label.ToLower().Contains(lower) ||
+                s.SessionStatus.Label.ToLower().Contains(lower) ||
+                (s.Description != null && s.Description.ToLower().Contains(lower))
+            );
+        }
+
+        var rows = await query
+            .Select(s => new
+            {
+                Id = s.SessionId,
+                StartDateTime = s.Date.Date + s.StartTime,
+                EndDateTime = s.Date.Date + s.EndTime,
+                Mode = s.Mode,
+                SessionTypeLabel = s.SessionType.Label,
+                SessionStatusLabel = s.SessionStatus.Label,
+                RoomNumber = s.Room.RoomNumber,
+                CourseName = s.Course.Name,
+                Description = s.Description
+            })
+            .ToListAsync();
+
+        return rows.Select(s => new SessionModel
+        {
+            Id = s.Id,
+            StartDateTime = s.StartDateTime,
+            EndDateTime = s.EndDateTime,
+            Mode = ParseSessionModeOrDefault(s.Mode),
+            SessionTypeLabel = s.SessionTypeLabel,
+            SessionStatusLabel = s.SessionStatusLabel,
+            RoomNumber = s.RoomNumber,
+            CourseName = s.CourseName,
+            Description = s.Description
         }).ToList();
     }
 }

@@ -2,6 +2,7 @@ using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
 using HP2.Application.DTOs.Program;
 using HP2.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HP2.API.Controllers;
@@ -58,6 +59,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<ProgramModel>>> Get(string id)
     {
         var program = await _programService.GetProgramByIdAsync(id);
@@ -68,6 +70,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<ProgramModel>>>> GetAll()
     {
         var programs = await _programService.GetAllProgramsAsync();
