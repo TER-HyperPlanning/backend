@@ -58,14 +58,16 @@ namespace HP2.Infrastructure.Migrations
                 name: "Notification",
                 columns: table => new
                 {
-                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
-                    title = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    message = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
+                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    title = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    message = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true, defaultValue: "General"),
+                    related_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Notifica__E059842FEA1D001E", x => x.notification_id);
+                    table.PrimaryKey("PK_Notification", x => x.notification_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -300,25 +302,27 @@ namespace HP2.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Receive",
+                name: "NotificationUser",
                 columns: table => new
                 {
-                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    user_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    NotificationsNotificationId = table.Column<string>(type: "varchar(50)", nullable: false),
+                    UsersUserId = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Receive__0BC2675F6B31FA1F", x => new { x.notification_id, x.user_id });
+                    table.PrimaryKey("PK_NotificationUser", x => new { x.NotificationsNotificationId, x.UsersUserId });
                     table.ForeignKey(
-                        name: "FK_Receive_Notif",
-                        column: x => x.notification_id,
+                        name: "FK_NotificationUser_Notification_NotificationsNotificationId",
+                        column: x => x.NotificationsNotificationId,
                         principalTable: "Notification",
-                        principalColumn: "notification_id");
+                        principalColumn: "notification_id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Receive_User",
-                        column: x => x.user_id,
+                        name: "FK_NotificationUser_User_UsersUserId",
+                        column: x => x.UsersUserId,
                         principalTable: "User",
-                        principalColumn: "user_id");
+                        principalColumn: "user_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -342,6 +346,31 @@ namespace HP2.Infrastructure.Migrations
                         column: x => x.user_id,
                         principalTable: "User",
                         principalColumn: "user_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserNotification",
+                columns: table => new
+                {
+                    user_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    is_read = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserNotification", x => new { x.user_id, x.notification_id });
+                    table.ForeignKey(
+                        name: "FK_UserNotification_Notification",
+                        column: x => x.notification_id,
+                        principalTable: "Notification",
+                        principalColumn: "notification_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserNotification_User",
+                        column: x => x.user_id,
+                        principalTable: "User",
+                        principalColumn: "user_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -422,6 +451,7 @@ namespace HP2.Infrastructure.Migrations
                     teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     session_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     change_status_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    old_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     approved_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     rejection_reason = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: true)
                 },
@@ -431,6 +461,11 @@ namespace HP2.Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_RoomChange_ApprovedRoom",
                         column: x => x.approved_room_id,
+                        principalTable: "Room",
+                        principalColumn: "room_id");
+                    table.ForeignKey(
+                        name: "FK_RoomChange_OldRoom",
+                        column: x => x.old_room_id,
                         principalTable: "Room",
                         principalColumn: "room_id");
                     table.ForeignKey(
@@ -566,6 +601,7 @@ namespace HP2.Infrastructure.Migrations
                     group_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     academic_year = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    capacity = table.Column<int>(type: "int", nullable: false),
                     track_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -2247,15 +2283,27 @@ namespace HP2.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "SessionRecoveryChange",
                 columns: new[] { "session_recovery_change_id", "change_date", "change_status_id", "counter_proposal_date", "counter_proposal_end_time", "counter_proposal_room_id", "counter_proposal_start_time", "proposed_date", "proposed_end_time", "proposed_room_id", "proposed_start_time", "reason", "rejection_reason", "session_id", "teacher_id" },
-                values: new object[] { "81b21082-3ff6-6699-2b66-67d6f6ead3e7", new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Le cours a été annulé, il faut le rattraper.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "455c6918-8f55-8171-e3b6-573e17977cfc" });
+                values: new object[,]
+                {
+                    { "33cecfa5-b149-cfc6-bb5d-597f81dbff5f", new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", null, null, null, null, new DateTime(2026, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Cours reporté en raison d'une réunion pédagogique.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "14185a87-c07d-c0db-e37b-536e871528f2" },
+                    { "3f8e497b-6213-d701-5cb4-c79f33d63206", new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", new TimeSpan(0, 10, 0, 0, 0), new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 18, 0, 0, 0), "5863a804-6ac2-3f05-38ed-472541726740", new TimeSpan(0, 16, 0, 0, 0), "Cours annulé pour cause de conférence externe.", "Le créneau proposé est déjà réservé. Une contre-proposition a été soumise.", "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
+                    { "7b8f94b3-7dfc-f396-54c8-1d716494c73b", new DateTime(2026, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", null, null, null, null, new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 10, 0, 0, 0), "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", new TimeSpan(0, 8, 0, 0, 0), "Absence de l'enseignant pour maladie, cours à récupérer.", null, "f00894af-9f60-232f-5012-c431bbcddee1", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
+                    { "7d523e68-1971-6f1c-971d-1b89e8681d48", new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", null, null, null, null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 10, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 8, 0, 0, 0), "Absence imprévue de l'enseignant.", "La date proposée est en dehors de la période académique autorisée.", "f00894af-9f60-232f-5012-c431bbcddee1", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "81b21082-3ff6-6699-2b66-67d6f6ead3e7", new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Le cours a été annulé, il faut le rattraper.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "adf8ad91-08a7-1c06-fd30-780a57b88a16", new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), "5863a804-6ac2-3f05-38ed-472541726740", new TimeSpan(0, 10, 0, 0, 0), "Cours manqué suite à une grève des transports.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
+                });
 
             migrationBuilder.InsertData(
                 table: "SessionRoomChange",
-                columns: new[] { "session_room_change_id", "approved_room_id", "change_date", "change_status_id", "reason", "rejection_reason", "session_id", "teacher_id" },
+                columns: new[] { "session_room_change_id", "approved_room_id", "change_date", "change_status_id", "old_room_id", "reason", "rejection_reason", "session_id", "teacher_id" },
                 values: new object[,]
                 {
-                    { "863cdc3c-e440-3359-c69c-777871286814", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", "La salle actuelle est trop petite pour accueillir tous les étudiants.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "e2f35a55-7db2-4df9-3bbc-17e566a55b03", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", "Équipement audiovisuel non disponible dans la salle actuelle.", "Aucune salle compatible n'est disponible sur ce créneau.", "f00894af-9f60-232f-5012-c431bbcddee1", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
+                    { "034731de-795a-931a-1236-11bc7d070e41", "5863a804-6ac2-3f05-38ed-472541726740", new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", "02bcf600-5d44-cca7-8b68-e763b00a6339", "Besoin d'une salle avec projecteur fonctionnel.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
+                    { "5e8aa4d3-a635-0032-b8b2-dcbd89ad3c80", null, new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", null, "Demande de salle plus grande pour un exposé.", "La demande ne respecte pas le délai minimum de 48h avant la séance.", "157d47fc-fd47-d6c6-b759-86b4049e4fff", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
+                    { "863cdc3c-e440-3359-c69c-777871286814", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, "La salle actuelle est trop petite pour accueillir tous les étudiants.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "a9b73b93-27ba-a3cf-67d9-bff2cb9bf0b9", null, new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, "Problème de climatisation dans la salle assignée.", null, "f00894af-9f60-232f-5012-c431bbcddee1", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
+                    { "e2f35a55-7db2-4df9-3bbc-17e566a55b03", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", null, "Équipement audiovisuel non disponible dans la salle actuelle.", "Aucune salle compatible n'est disponible sur ce créneau.", "f00894af-9f60-232f-5012-c431bbcddee1", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
+                    { "f8a45eb0-a74b-8cfb-a6b6-82cc91c3dcc0", "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", "5863a804-6ac2-3f05-38ed-472541726740", "La salle prévue est occupée par un autre cours.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "14185a87-c07d-c0db-e37b-536e871528f2" }
                 });
 
             migrationBuilder.InsertData(
@@ -3629,12 +3677,12 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Group",
-                columns: new[] { "group_id", "academic_year", "name", "track_id" },
+                columns: new[] { "group_id", "academic_year", "capacity", "name", "track_id" },
                 values: new object[,]
                 {
-                    { "57bf1149-8880-c27c-d603-3546214d03a8", "2025-2026", "Groupe A - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
-                    { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "2025-2026", "Groupe B - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
-                    { "e61277a9-9d07-5b53-e623-528bf88a6962", "2025-2026", "Groupe A - M1 CNS", "900f1499-bb04-690c-9394-eeafda3848a4" }
+                    { "57bf1149-8880-c27c-d603-3546214d03a8", "2025-2026", 0, "Groupe A - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
+                    { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "2025-2026", 0, "Groupe B - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
+                    { "e61277a9-9d07-5b53-e623-528bf88a6962", "2025-2026", 0, "Groupe A - M1 CNS", "900f1499-bb04-690c-9394-eeafda3848a4" }
                 });
 
             migrationBuilder.InsertData(
@@ -5085,9 +5133,9 @@ namespace HP2.Infrastructure.Migrations
                 column: "track_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Receive_user_id",
-                table: "Receive",
-                column: "user_id");
+                name: "IX_NotificationUser_UsersUserId",
+                table: "NotificationUser",
+                column: "UsersUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Room_building_id",
@@ -5165,6 +5213,11 @@ namespace HP2.Infrastructure.Migrations
                 name: "IX_SessionRoomChange_change_status_id",
                 table: "SessionRoomChange",
                 column: "change_status_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRoomChange_old_room_id",
+                table: "SessionRoomChange",
+                column: "old_room_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SessionRoomChange_session_id",
@@ -5248,6 +5301,11 @@ namespace HP2.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserNotification_notification_id",
+                table: "UserNotification",
+                column: "notification_id");
+
+            migrationBuilder.CreateIndex(
                 name: "UQ__UserRole__72E12F1B2D3E741A",
                 table: "UserRole",
                 column: "name",
@@ -5282,7 +5340,7 @@ namespace HP2.Infrastructure.Migrations
                 name: "Availability");
 
             migrationBuilder.DropTable(
-                name: "Receive");
+                name: "NotificationUser");
 
             migrationBuilder.DropTable(
                 name: "SessionRecoveryChange");
@@ -5300,13 +5358,13 @@ namespace HP2.Infrastructure.Migrations
                 name: "UnavailableDay");
 
             migrationBuilder.DropTable(
+                name: "UserNotification");
+
+            migrationBuilder.DropTable(
                 name: "AvailabilityGroup");
 
             migrationBuilder.DropTable(
                 name: "WeekDay");
-
-            migrationBuilder.DropTable(
-                name: "Notification");
 
             migrationBuilder.DropTable(
                 name: "ChangeStatus");
@@ -5319,6 +5377,9 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "UnavailableDayType");
+
+            migrationBuilder.DropTable(
+                name: "Notification");
 
             migrationBuilder.DropTable(
                 name: "Track");

@@ -7395,34 +7395,44 @@ namespace HP2.Infrastructure.Migrations
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Notification", b =>
                 {
                     b.Property<string>("NotificationId")
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
-                        .HasColumnName("notification_id")
-                        .HasDefaultValueSql("(newid())");
+                        .HasColumnName("notification_id");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at")
                         .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
                         .HasColumnName("message");
+
+                    b.Property<string>("RelatedId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("related_id");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)")
                         .HasColumnName("title");
 
+                    b.Property<string>("Type")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("General")
+                        .HasColumnName("type");
+
                     b.HasKey("NotificationId")
-                        .HasName("PK__Notifica__E059842FEA1D001E");
+                        .HasName("PK_Notification");
 
                     b.ToTable("Notification", (string)null);
                 });
@@ -24653,7 +24663,7 @@ namespace HP2.Infrastructure.Migrations
                             ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             ProposedStartTime = new TimeSpan(0, 10, 0, 0, 0),
                             Reason = "Cours manqué suite à une grève des transports.",
-                            SessionId = "0a1e6c34-263b-19da-8f16-af1a8c36f35f",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
@@ -24666,7 +24676,7 @@ namespace HP2.Infrastructure.Migrations
                             ProposedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
                             Reason = "Absence de l'enseignant pour maladie, cours à récupérer.",
-                            SessionId = "13000bbc-8fd6-1578-7278-d709f023eed3",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
@@ -24679,7 +24689,7 @@ namespace HP2.Infrastructure.Migrations
                             ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
                             ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
                             Reason = "Cours reporté en raison d'une réunion pédagogique.",
-                            SessionId = "bac650fc-e433-b6c8-ea8c-5897aaca3ec4",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
@@ -24697,7 +24707,7 @@ namespace HP2.Infrastructure.Migrations
                             ProposedStartTime = new TimeSpan(0, 16, 0, 0, 0),
                             Reason = "Cours annulé pour cause de conférence externe.",
                             RejectionReason = "Le créneau proposé est déjà réservé. Une contre-proposition a été soumise.",
-                            SessionId = "0a1e6c34-263b-19da-8f16-af1a8c36f35f",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
@@ -24711,7 +24721,7 @@ namespace HP2.Infrastructure.Migrations
                             ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
                             Reason = "Absence imprévue de l'enseignant.",
                             RejectionReason = "La date proposée est en dehors de la période académique autorisée.",
-                            SessionId = "13000bbc-8fd6-1578-7278-d709f023eed3",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         });
                 });
@@ -24809,7 +24819,7 @@ namespace HP2.Infrastructure.Migrations
                             ChangeDate = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
                             Reason = "Problème de climatisation dans la salle assignée.",
-                            SessionId = "13000bbc-8fd6-1578-7278-d709f023eed3",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
@@ -24820,7 +24830,7 @@ namespace HP2.Infrastructure.Migrations
                             ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
                             OldRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
                             Reason = "Besoin d'une salle avec projecteur fonctionnel.",
-                            SessionId = "bac650fc-e433-b6c8-ea8c-5897aaca3ec4",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
@@ -24831,7 +24841,7 @@ namespace HP2.Infrastructure.Migrations
                             ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
                             OldRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             Reason = "La salle prévue est occupée par un autre cours.",
-                            SessionId = "0a1e6c34-263b-19da-8f16-af1a8c36f35f",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
@@ -24851,7 +24861,7 @@ namespace HP2.Infrastructure.Migrations
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
                             Reason = "Demande de salle plus grande pour un exposé.",
                             RejectionReason = "La demande ne respecte pas le délai minimum de 48h avant la séance.",
-                            SessionId = "bac650fc-e433-b6c8-ea8c-5897aaca3ec4",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         });
                 });
@@ -27526,6 +27536,34 @@ namespace HP2.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserNotification", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("NotificationId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("notification_id");
+
+                    b.Property<bool>("IsRead")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_read");
+
+                    b.HasKey("UserId", "NotificationId")
+                        .HasName("PK_UserNotification");
+
+                    b.HasIndex("NotificationId");
+
+                    b.ToTable("UserNotification", (string)null);
+                });
+
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserRole", b =>
                 {
                     b.Property<string>("UserRoleId")
@@ -27646,26 +27684,19 @@ namespace HP2.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Receive", b =>
+            modelBuilder.Entity("NotificationUser", b =>
                 {
-                    b.Property<string>("NotificationId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("notification_id");
+                    b.Property<string>("NotificationsNotificationId")
+                        .HasColumnType("varchar(50)");
 
-                    b.Property<string>("UserId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("user_id");
+                    b.Property<string>("UsersUserId")
+                        .HasColumnType("varchar(50)");
 
-                    b.HasKey("NotificationId", "UserId")
-                        .HasName("PK__Receive__0BC2675F6B31FA1F");
+                    b.HasKey("NotificationsNotificationId", "UsersUserId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UsersUserId");
 
-                    b.ToTable("Receive", (string)null);
+                    b.ToTable("NotificationUser");
                 });
 
             modelBuilder.Entity("Teach", b =>
@@ -34436,19 +34467,40 @@ namespace HP2.Infrastructure.Migrations
                     b.Navigation("UserRole");
                 });
 
-            modelBuilder.Entity("Receive", b =>
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserNotification", b =>
+                {
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Notification", "Notification")
+                        .WithMany("UserNotifications")
+                        .HasForeignKey("NotificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_UserNotification_Notification");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_UserNotification_User");
+
+                    b.Navigation("Notification");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NotificationUser", b =>
                 {
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Notification", null)
                         .WithMany()
-                        .HasForeignKey("NotificationId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Receive_Notif");
+                        .HasForeignKey("NotificationsNotificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.User", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Receive_User");
+                        .HasForeignKey("UsersUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Teach", b =>
@@ -34493,6 +34545,11 @@ namespace HP2.Infrastructure.Migrations
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Group", b =>
                 {
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Notification", b =>
+                {
+                    b.Navigation("UserNotifications");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Program", b =>

@@ -2806,11 +2806,6 @@ public partial class TerHyperplanningContext : DbContext
     }
 );
 
-    // Sessions réelles issues du planning seedé
-    var seedSessionId1 = "0a1e6c34-263b-19da-8f16-af1a8c36f35f"; // Session marie-curie 08/09/2025
-    var seedSessionId2 = "13000bbc-8fd6-1578-7278-d709f023eed3"; // Session alain-durand 08/09/2025
-    var seedSessionId3 = "bac650fc-e433-b6c8-ea8c-5897aaca3ec4"; // Session marie-curie 15/09/2025
-
     var ibgbiRoom1Id = GetStableId("room-ibgbi-1");
     var ibgbiRoom2Id = GetStableId("room-ibgbi-2");
 
