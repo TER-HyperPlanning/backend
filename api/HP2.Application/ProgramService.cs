@@ -27,6 +27,11 @@ public class ProgramService : IProgramService
         return await _programRepository.GetAllAsync();
     }
 
+    public async Task<IEnumerable<ProgramModel>> GetFilteredProgramsAsync(string? name, string? field)
+    {
+        return await _programRepository.GetFilteredAsync(name, field);
+    }
+
     public async Task UpdateProgramAsync(ProgramModel program)
     {
         await _programRepository.UpdateAsync(program);

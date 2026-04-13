@@ -19,6 +19,26 @@ public class ProgramRepository : RepositoryBase<ProgramModel>, IProgramRepositor
         return _mapper.Map<List<ProgramModel>>(programs);
     }
 
+    public async Task<IEnumerable<ProgramModel>> GetFilteredAsync(string? name, string? field)
+    {
+        var query = _dbContext.Programs.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            var lowerName = name.Trim().ToLower();
+            query = query.Where(p => p.Name.ToLower().Contains(lowerName));
+        }
+
+        if (!string.IsNullOrWhiteSpace(field))
+        {
+            var lowerField = field.Trim().ToLower();
+            query = query.Where(p => p.Field.ToLower().Contains(lowerField));
+        }
+
+        var programs = await query.ToListAsync();
+        return _mapper.Map<List<ProgramModel>>(programs);
+    }
+
     public override async Task<ProgramModel?> GetByIdAsync(string id)
     {
         var program = await _dbContext.Programs.AsNoTracking()

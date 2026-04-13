@@ -71,9 +71,11 @@ public class ProgramsController : ControllerBase
 
     [HttpGet]
     [AllowAnonymous]
-    public async Task<ActionResult<ApiResponse<IEnumerable<ProgramModel>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<ProgramModel>>>> GetAll(
+        [FromQuery] string? name, 
+        [FromQuery] string? field)
     {
-        var programs = await _programService.GetAllProgramsAsync();
+        var programs = await _programService.GetFilteredProgramsAsync(name, field);
         return Ok(ApiResponse<IEnumerable<ProgramModel>>.Success(programs));
     }
 
