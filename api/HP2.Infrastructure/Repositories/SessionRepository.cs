@@ -214,9 +214,18 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
         return _dbContext.Rooms.AnyAsync(x => x.RoomId == roomId);
     }
 
+    private static string SanitizeForLog(string? value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return string.Empty;
+            
+        return value.Replace("\r", string.Empty).Replace("\n", string.Empty);
+    }
+
     public async Task<IEnumerable<string>> GetAffectedUserIdsAsync(string sessionId)
     {
-        _logger.LogInformation("[DEBUG] SessionRepository: Getting affected users for session {SessionId}", sessionId);
+        var safeSessionId = SanitizeForLog(sessionId);
+        _logger.LogInformation("[DEBUG] SessionRepository: Getting affected users for session {SessionId}", safeSessionId);
         
         try
         {
@@ -232,20 +241,19 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
 
             if (data == null)
             {
-                _logger.LogWarning("[DEBUG] SessionRepository: Session {SessionId} not found.", sessionId);
+                _logger.LogWarning("[DEBUG] SessionRepository: Session {SessionId} not found.", safeSessionId);
                 return Enumerable.Empty<string>();
             }
 
             var totalIds = data.TeacherIds.Concat(data.StudentIds).Distinct().ToList();
             
             _logger.LogInformation("[DEBUG] SessionRepository: Found {Count} unique users to notify for session {SessionId}: {UserIds}", 
-                totalIds.Count, sessionId, string.Join(", ", totalIds));
-            
+                totalIds.Count, safeSessionId, string.Join(", ", totalIds));
             return totalIds;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "[DEBUG] SessionRepository: Error while getting affected users for session {SessionId}", sessionId);
+            _logger.LogError(ex, "[DEBUG] SessionRepository: Error while getting affected users for session {SessionId}", safeSessionId);
             return Enumerable.Empty<string>();
         }
     }
