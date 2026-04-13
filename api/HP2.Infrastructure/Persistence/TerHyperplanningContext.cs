@@ -295,6 +295,7 @@ public partial class TerHyperplanningContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name");
+            entity.Property(e => e.Capacity).HasColumnName("capacity");
             entity.Property(e => e.TrackId)
                 .HasMaxLength(50)
                 .IsUnicode(false)

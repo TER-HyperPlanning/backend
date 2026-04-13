@@ -171,4 +171,6 @@ public class SessionService : ISessionService
         HP2.Domain.Enums.SessionMode.HYBRID => "Hybride",
         _ => mode.ToString()
     };
+    public Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
+        => _sessionRepository.SearchSessionsAsync(groupId, type, search);
 }

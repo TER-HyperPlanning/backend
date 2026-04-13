@@ -158,7 +158,7 @@ internal class Program
         using (var scope = app.Services.CreateScope())
         {
             var db = scope.ServiceProvider.GetRequiredService<HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>();
-// db.Database.Migrate();
+            db.Database.Migrate();
         }
 
         if (app.Environment.IsDevelopment())
