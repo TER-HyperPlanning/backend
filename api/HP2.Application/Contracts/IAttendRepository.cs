@@ -13,4 +13,5 @@ public interface IAttendRepository
     Task<bool> ExistsAsync(string groupId, string sessionId);
     Task<bool> GroupExistsAsync(string groupId);
     Task<bool> SessionExistsAsync(string sessionId);
+    Task<IEnumerable<string>> GetAffectedUserIdsAsync(string groupId);
 }
