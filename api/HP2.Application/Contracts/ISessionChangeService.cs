@@ -16,4 +16,7 @@ public interface ISessionChangeService
         TimeSpan startTime,
         TimeSpan endTime,
         string roomId);
+
+    Task<IEnumerable<AvailableRoomResponse>> GetAvailableRoomsAsync(string sessionId);
+    Task<IEnumerable<AvailableSlotResponse>> GetAvailableSlotsAsync(string recoveryChangeId, DateTime from, DateTime to);
 }

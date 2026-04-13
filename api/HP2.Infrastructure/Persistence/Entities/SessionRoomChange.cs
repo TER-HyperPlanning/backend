@@ -16,6 +16,8 @@ public partial class SessionRoomChange
 
     public string ChangeStatusId { get; set; } = null!;
 
+    public string? OldRoomId { get; set; }
+
     public string? ApprovedRoomId { get; set; }
 
     public string? RejectionReason { get; set; }
@@ -25,6 +27,8 @@ public partial class SessionRoomChange
     public virtual Session Session { get; set; } = null!;
 
     public virtual ChangeStatus ChangeStatus { get; set; } = null!;
+
+    public virtual Room? OldRoom { get; set; }
 
     public virtual Room? ApprovedRoom { get; set; }
 }
