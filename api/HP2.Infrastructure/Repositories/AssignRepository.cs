@@ -114,15 +114,33 @@ public class AssignRepository : RepositoryBase<AssignModel>, IAssignRepository
 
     public async Task<bool> CreateAsync(string trackId, string courseId, int hourlyVolume)
     {
-        var entity = new Assign
+        var existing = await _dbContext.Assigns
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(a => a.TrackId == trackId && a.CourseId == courseId);
+        
+        if (existing != null)
+        {
+            if (existing.IsDeleted)
+            {
+                existing.IsDeleted = false;
+                existing.DeletedAt = null;
+                existing.HourlyVolume = hourlyVolume;
+
+                return await _dbContext.SaveChangesAsync() > 0;
+            }
+            return false;
+        }
+
+        var assign = new Assign
         {
             TrackId = trackId,
             CourseId = courseId,
             HourlyVolume = hourlyVolume
         };
-
-        _dbContext.Assigns.Add(entity);
+        
+        _dbContext.Assigns.Add(assign);
         return await _dbContext.SaveChangesAsync() > 0;
+
     }
 
     public async Task<bool> UpdateAsync(string trackId, string courseId, int hourlyVolume)
