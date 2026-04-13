@@ -1,11 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+using HP2.Domain.Enums;
 
 namespace HP2.Application.DTOs.Availability;
 
 public class UpdateAvailabilityRequest
 {
     [Required]
-    public string WeekDayId { get; set; } = string.Empty;
+    [EnumDataType(typeof(WeekDay))]
+    public WeekDay WeekDay { get; set; }
 
     [Required]
     public TimeSpan StartTime { get; set; }

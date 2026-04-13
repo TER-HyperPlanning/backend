@@ -1,6 +1,7 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Availability;
 using HP2.Application.DTOs.Common;
+using HP2.Domain.Enums;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +12,12 @@ namespace HP2.API.Controllers;
 public class AvailabilitiesController : ControllerBase
 {
     private readonly IAvailabilityService _service;
+    private readonly IWeekDayService _weekDayService;
 
-    public AvailabilitiesController(IAvailabilityService service)
+    public AvailabilitiesController(IAvailabilityService service, IWeekDayService weekDayService)
     {
         _service = service;
+        _weekDayService = weekDayService;
     }
 
     [HttpGet("teacher/{teacherId}")]
@@ -42,6 +45,13 @@ public class AvailabilitiesController : ControllerBase
         {
             if (!ModelState.IsValid)
             {
+                var invalidEnumFields = GetInvalidEnumFieldsFromModelState();
+                if (invalidEnumFields.Any())
+                {
+                    return BadRequest(ApiResponse<AvailabilityResponse>.Fail(
+                        $"Invalid field values: {string.Join(", ", invalidEnumFields.Select(FormatFieldWithAllowedValues))}"));
+                }
+
                 var errors = ModelState.Values
                     .SelectMany(v => v.Errors)
                     .Select(e => string.IsNullOrWhiteSpace(e.ErrorMessage) ? "Invalid request payload." : e.ErrorMessage)
@@ -52,7 +62,7 @@ public class AvailabilitiesController : ControllerBase
 
             var model = new AvailabilityModel
             {
-                WeekDayId = request.WeekDayId,
+                WeekDayId = await ResolveWeekDayIdAsync(request.WeekDay),
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
                 StartDate = request.StartDate,
@@ -81,6 +91,13 @@ public class AvailabilitiesController : ControllerBase
         {
             if (!ModelState.IsValid)
             {
+                var invalidEnumFields = GetInvalidEnumFieldsFromModelState();
+                if (invalidEnumFields.Any())
+                {
+                    return BadRequest(ApiResponse<AvailabilityResponse>.Fail(
+                        $"Invalid field values: {string.Join(", ", invalidEnumFields.Select(FormatFieldWithAllowedValues))}"));
+                }
+
                 var errors = ModelState.Values
                     .SelectMany(v => v.Errors)
                     .Select(e => string.IsNullOrWhiteSpace(e.ErrorMessage) ? "Invalid request payload." : e.ErrorMessage)
@@ -92,7 +109,7 @@ public class AvailabilitiesController : ControllerBase
             var model = new AvailabilityModel
             {
                 Id = id,
-                WeekDayId = request.WeekDayId,
+                WeekDayId = await ResolveWeekDayIdAsync(request.WeekDay),
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
                 StartDate = request.StartDate,
@@ -130,5 +147,53 @@ public class AvailabilitiesController : ControllerBase
         {
             return StatusCode(500, ApiResponse<string>.Fail($"Internal server error: {ex.Message}"));
         }
+    }
+
+    private async Task<string> ResolveWeekDayIdAsync(WeekDay weekDay)
+    {
+        var weekDayName = weekDay.ToString();
+        var weekDays = await _weekDayService.GetAllAsync();
+
+        var matchedWeekDay = weekDays
+            .FirstOrDefault(w => w.Name.Equals(weekDayName, StringComparison.OrdinalIgnoreCase));
+
+        if (matchedWeekDay == null)
+            throw new InvalidOperationException($"Invalid field values: {FormatFieldWithAllowedValues("weekDay")}");
+
+        return matchedWeekDay.WeekdayId;
+    }
+
+    private static readonly Dictionary<string, string> EnumAllowedValues = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["weekDay"] = string.Join(", ", Enum.GetNames<WeekDay>())
+    };
+
+    private IEnumerable<string> GetInvalidEnumFieldsFromModelState()
+    {
+        return ModelState
+            .Where(x => x.Value != null && x.Value.Errors.Any(e =>
+                !string.IsNullOrWhiteSpace(e.ErrorMessage) &&
+                e.ErrorMessage.Contains("could not be converted", StringComparison.OrdinalIgnoreCase)))
+            .Select(x => NormalizeFieldName(x.Key))
+            .Where(x => !string.IsNullOrWhiteSpace(x) && EnumAllowedValues.ContainsKey(x))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
+    }
+
+    private static string NormalizeFieldName(string key)
+    {
+        var normalized = key.Replace("$.", string.Empty, StringComparison.OrdinalIgnoreCase);
+        var parts = normalized.Split('.', StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length == 0) return string.Empty;
+
+        var field = parts.Last();
+        return char.ToLowerInvariant(field[0]) + field[1..];
+    }
+
+    private static string FormatFieldWithAllowedValues(string field)
+    {
+        return EnumAllowedValues.TryGetValue(field, out var allowedValues)
+            ? $"{field}( {allowedValues} )"
+            : field;
     }
 }
