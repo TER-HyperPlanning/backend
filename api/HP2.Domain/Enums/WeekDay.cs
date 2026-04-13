@@ -1,12 +1,13 @@
-namespace HP2.Domain.Enums;
-
-public enum WeekDay
+namespace HP2.Domain.Enums
 {
-    Lundi = 1,
-    Mardi = 2,
-    Mercredi = 3,
-    Jeudi = 4,
-    Vendredi = 5,
-    Samedi = 6,
-    Dimanche = 7
+    public enum WeekDay : byte
+    {
+        Lundi = 1,
+        Mardi = 2,
+        Mercredi = 3,
+        Jeudi = 4,
+        Vendredi = 5,
+        Samedi = 6,
+        Dimanche = 7
+    }
 }
