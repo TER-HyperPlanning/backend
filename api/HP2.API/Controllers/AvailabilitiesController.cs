@@ -2,6 +2,7 @@ using HP2.Application.Contracts;
 using HP2.Application.DTOs.Availability;
 using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
+using HP2.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HP2.API.Controllers;
@@ -52,7 +53,7 @@ public class AvailabilitiesController : ControllerBase
 
             var model = new AvailabilityModel
             {
-                WeekDayId = request.WeekDayId,
+                WeekDayId = MapWeekDayToStableId(request.WeekDay),
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
                 StartDate = request.StartDate,
@@ -72,6 +73,20 @@ public class AvailabilitiesController : ControllerBase
             return StatusCode(500, ApiResponse<AvailabilityResponse>.Fail($"Internal server error: {ex.Message}"));
         }
     }
+    private static string MapWeekDayToStableId(WeekDay weekDay)
+{
+    return weekDay switch
+    {
+        WeekDay.Lundi => "wd-monday",
+        WeekDay.Mardi => "wd-tuesday",
+        WeekDay.Mercredi => "wd-wednesday",
+        WeekDay.Jeudi => "wd-thursday",
+        WeekDay.Vendredi => "wd-friday",
+        WeekDay.Samedi => "wd-saturday",
+        WeekDay.Dimanche => "wd-sunday",
+        _ => throw new ArgumentOutOfRangeException(nameof(weekDay), weekDay, null)
+    };
+}
 
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<AvailabilityResponse>>> Update(string id, [FromBody] UpdateAvailabilityRequest request)
@@ -91,7 +106,7 @@ public class AvailabilitiesController : ControllerBase
             var model = new AvailabilityModel
             {
                 Id = id,
-                WeekDayId = request.WeekDayId,
+                WeekDayId = ((byte)request.WeekDay).ToString(),
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
                 StartDate = request.StartDate,
