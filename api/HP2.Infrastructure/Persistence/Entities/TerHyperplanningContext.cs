@@ -541,6 +541,12 @@ public partial class TerHyperplanningContext : DbContext
                     {
                         j.HasKey("SessionId", "TeacherId").HasName("PK__Teach__998BD8AB8CF334DE");
                         j.ToTable("Teach");
+                        j.IndexerProperty<DateTime?>("DeletedAt")
+                            .HasColumnType("datetime2")
+                            .HasColumnName("deleted_at");
+                        j.IndexerProperty<bool>("IsDeleted")
+                            .HasColumnType("bit")
+                            .HasColumnName("is_deleted");
                         j.IndexerProperty<string>("SessionId")
                             .HasMaxLength(50)
                             .IsUnicode(false)
@@ -549,6 +555,7 @@ public partial class TerHyperplanningContext : DbContext
                             .HasMaxLength(50)
                             .IsUnicode(false)
                             .HasColumnName("teacher_id");
+                        j.HasQueryFilter(t => !EF.Property<bool>(t, "IsDeleted"));
                     });
         });
 
@@ -2138,7 +2145,7 @@ public partial class TerHyperplanningContext : DbContext
             });
 
             attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
-            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId, IsDeleted = false, DeletedAt = (DateTime?)null });
         }
 
         void AddSessionForGroupWithStatus(
@@ -2174,7 +2181,7 @@ public partial class TerHyperplanningContext : DbContext
             });
 
             attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
-            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId, IsDeleted = false, DeletedAt = (DateTime?)null });
         }
 
         void AddSessionForGroupWithTeacherPool(
@@ -2210,7 +2217,7 @@ public partial class TerHyperplanningContext : DbContext
             });
 
             attendSeed.Add(new { GroupId = groupId, SessionId = sessionId });
-            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId });
+            teachSeed.Add(new { TeacherId = teacherId, SessionId = sessionId, IsDeleted = false, DeletedAt = (DateTime?)null });
         }
 
         void GenerateRegularScheduleForGroup(string groupId, string groupKey)
@@ -2703,7 +2710,7 @@ public partial class TerHyperplanningContext : DbContext
             RoomId = seedSessionRoom1
         });
         attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = seedSessionId1 });
-        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId1 });
+        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId1, IsDeleted = false, DeletedAt = (DateTime?)null });
 
         var seedSessionRoom2 = PickAvailableRoom(groupId_M1_ILSD_B, seedSessionDate2, new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0));
         RegisterRoomAssignment(seedSessionRoom2, seedSessionDate2, new TimeSpan(10, 15, 0), new TimeSpan(11, 45, 0));
@@ -2720,7 +2727,7 @@ public partial class TerHyperplanningContext : DbContext
             RoomId = seedSessionRoom2
         });
         attendSeed.Add(new { GroupId = groupId_M1_ILSD_B, SessionId = seedSessionId2 });
-        teachSeed.Add(new { TeacherId = teacherUserId2, SessionId = seedSessionId2 });
+        teachSeed.Add(new { TeacherId = teacherUserId2, SessionId = seedSessionId2, IsDeleted = false, DeletedAt = (DateTime?)null });
 
         var seedSessionRoom3 = PickAvailableRoom(groupId_M1_ILSD, seedSessionDate3, new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0));
         RegisterRoomAssignment(seedSessionRoom3, seedSessionDate3, new TimeSpan(14, 0, 0), new TimeSpan(16, 0, 0));
@@ -2737,7 +2744,7 @@ public partial class TerHyperplanningContext : DbContext
             RoomId = seedSessionRoom3
         });
         attendSeed.Add(new { GroupId = groupId_M1_ILSD, SessionId = seedSessionId3 });
-        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId3 });
+        teachSeed.Add(new { TeacherId = teacherUserId, SessionId = seedSessionId3, IsDeleted = false, DeletedAt = (DateTime?)null });
 
         modelBuilder.Entity<Session>().HasData(sessions.ToArray());
 

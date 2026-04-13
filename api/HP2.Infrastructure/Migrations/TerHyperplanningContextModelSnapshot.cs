@@ -27562,6 +27562,14 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("teacher_id");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("deleted_at");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_deleted");
+
                     b.HasKey("SessionId", "TeacherId")
                         .HasName("PK__Teach__998BD8AB8CF334DE");
 
@@ -27573,6437 +27581,7724 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             SessionId = "c97ef879-1ae7-589a-9725-ef5fe4f47e85",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f2faa893-22a8-48ff-393f-8dfc73243f38",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "535ed2b9-1619-fa69-a7d6-d003ca7cc32d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dd7b1eba-70ca-c8a5-de20-f8c2047dadb8",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "002a1014-a1e2-26f4-5676-8024dd9afa89",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "24bcccd5-f382-001f-3b8b-a41142e49777",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "99c374fa-121a-7538-fd9f-bf18f9ea5cf7",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "95faa871-f826-133a-4557-00411db6d5e4",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e7f5a5c0-3320-133a-03ea-46152f54fcc5",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "023ec71a-737d-43c8-3e94-e93046aab748",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0ffbb5cb-67c7-7591-771c-7e61e0be9564",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "77c5543b-1580-7852-0a87-da9c7abcbbbd",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9f916438-7378-7ef4-3477-18e3cddb2269",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4c06ca35-0b79-9303-ec17-10272993b89d",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "30cfbc43-c39f-1c34-2f9b-6d3ba13b0491",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "25ca8467-94d9-d697-0db9-bb34a8898197",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d2844c21-9623-3690-da1c-07bedb8fd532",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "659905ce-facb-f42b-f4d6-ecd3d6706d97",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b6ca8d56-55ba-aa23-f316-c621e9fa525e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "20bc4068-6c4b-48cf-0ba4-b953363e5612",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "26e71ee0-59e5-f793-1413-af5ba2a87427",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "42731d85-ee9c-0bcb-db2a-ad4c0139f1c8",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d939689-22dd-f3e4-a21a-3c69ccfbf67b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "702ad6f4-0053-c792-b343-3b85849c4fdf",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0d323073-926c-387a-6b75-477f3b92ea32",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "50f1a91d-4f22-2c4d-0480-c8e86f8ab6ba",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1541dee3-e76c-2918-1744-06067e21c1cd",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa88e20b-3b6d-c95b-ee9e-10884cef9b2e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b626dd2e-0dd8-c1b3-7fde-7d858fef9eb3",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "14371330-5831-44bc-b927-34fc4f913bd8",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9f4ba66e-d795-ba79-1eeb-aeaf122bb208",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f9cc2ba2-445c-28f5-a52c-68f5d9e61374",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "943d07bf-bcbe-a81e-c8d4-d99669e31e47",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8766a212-9831-5865-4645-404c346353e0",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "72266131-6cd1-0f73-3a4d-fb15c51f80a2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8f187890-6338-7017-fcdb-cc73df76c12c",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0ca13d95-21d4-4344-4fdc-3f66b69dbcea",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c4a2bdcd-3c48-1161-a825-b48ae0fb9ac3",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "59c71829-01cb-a709-8f65-a8cf0f64dc53",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "517524cf-4d05-9889-8a60-d07b7a0f367e",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3f9e18bc-c609-f0d0-483b-5f0556b93e84",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eb78f89d-1cd7-e3c4-6b6f-df1c818c8923",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5ad840f7-830d-9cc3-11cd-89d244507f8e",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "80c3af1f-291c-f372-0d38-df362469d385",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4d9df844-c4f0-ce33-a95f-e2649dbd9854",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8c8d06a6-6fdd-1dc7-20a0-b47fab0ab94a",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "58f82817-6b56-5845-ddcd-66f0bd8d2507",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7d2fcf3c-c09c-4be8-846f-685bc9a41b10",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "35e71e41-a081-6192-0f17-52d5393f92b5",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cf215fc0-30a2-fdbb-17b9-a258935ddd43",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e18dbcea-eaac-9968-dad6-da60b8861e2f",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a863f7db-1c08-8196-e4aa-bcf376564646",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "54525cf0-f107-52d9-4701-d3383da2ebd4",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c4ad7e6d-a8dc-0bf8-e6a1-968fd7fdc033",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6ab02906-d2b9-2266-4136-3128f38d5164",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5957a8bc-301f-1380-2254-00291df2e665",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "00ab48c5-13f7-71a7-c1a4-2bac922ac15a",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cea089c4-c5e0-a538-e43e-7048c208f45a",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0db5aa4c-b64c-85d3-5b73-cd92292e43ea",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8158f792-971e-e8e6-ba64-89beee817448",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "659b5c09-04de-fbc5-5d98-c280c5e543fb",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e1ae903b-0fa1-0b1a-7c79-50c21c2fda45",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e328a9be-6a04-0357-bd9b-ca8071994c53",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d94c652d-8be7-8ec6-cdba-d641297dbc74",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9776757b-2364-91f1-48aa-936b7a307f23",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "67b95201-3952-6712-2715-889888ee7c95",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9e0619e1-68a6-7aa1-4f4e-dac1debb97f7",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0fc4bc8b-3404-5c3c-c5d7-09b74f410c03",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "976eb95f-a41f-94a7-82e2-873bf9bfc785",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0c1cbf11-dddf-ea21-7833-1a99cf78dca5",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f8b8d47a-0316-4cc5-a914-350faf2c957c",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f8e08047-e9c3-3ba5-8214-30b29b7ecef6",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "13a85b72-767a-1cfd-2772-a56d405675b9",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "09db97d8-0c10-1a21-a3b2-f3c20dfe9541",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9fb4b466-3355-d007-8bb4-c2e7e89e162b",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b6529d06-a4e4-da6f-c704-7b54408823c0",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "97fab13c-da56-de8c-5ef3-69bd1e7add0a",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4bb433c3-a8fa-e9a9-f04d-6d14ec42d99e",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "91484a1a-e66b-ea1c-e668-ebda717c8296",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "49ecaafc-2f2f-0847-81e7-c35e1457f586",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d508b9db-de89-6123-1deb-4b5f7249f988",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5ed55ffa-6d07-4409-9736-539634c6519e",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa49daba-9688-5282-f7cd-bfe0c428aeeb",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "85e9cab9-5ab3-16a3-f659-b25df501f9b6",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e8595792-3dcd-28dd-a32f-ee89cc5050d0",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1e3e3715-aa40-0575-a36e-ef450c9b5da9",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "da84b1ef-0ad9-c9b2-327a-56053940ceb8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1991eb73-cae3-7444-3c1a-3d87acba57be",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "52fbee5e-6035-a389-1fd4-f2baa360ea71",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c300e4b1-5f24-736a-923e-7115fe5334bc",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "89236d18-091b-053a-c75b-c954fd17ee0b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2bac5ce4-8231-3998-2ea3-87b0bde58d1e",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e49eb41a-61e5-1afa-fd1b-c583e74a569d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f7d79b48-ad63-002b-60ba-4123bbf5360d",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "615d8d49-decb-4eff-c9c9-de1e24273327",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "58a7df68-456d-7aa3-efad-177a80a25161",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cddca3c6-4ac5-3ec4-fdd8-d62cbe543812",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "be411d6d-d6d1-2bba-cdad-e1e26eb2fe26",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5f1d392b-0667-4d12-0a56-37baeeb0c07e",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "920e03ce-033c-892e-20e8-77ddbceea7f0",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "36be623a-fb8e-cd56-cde4-c36170c3cf97",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "50a492c3-36be-2556-07f7-c1fda62c78c4",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "223a8207-25d6-87ed-d8df-1f94d1643ea6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d127ff74-4b39-8bf8-4b33-1af8efd9efff",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c39afa7f-074f-a2f8-f8fc-90cc3e6a54ee",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "340655f6-6a9a-041d-d548-9f80b12ee00b",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "19861494-33f0-13d8-932c-2acfcf2fa18c",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "62938ab1-4fd0-e0fb-b4db-53f0c3b577bd",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a1727d12-0880-697a-bcde-439c0a59fdd3",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "87a71430-351f-537e-026b-c5b519494fd1",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb91b8eb-0efc-685a-ad59-fcfc7dfeaac5",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d831506a-6778-5bd4-2143-28c488fe9e7b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f4036de1-b230-f445-d572-9bec69e6a56e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b2019509-d822-c669-e919-c21274fa48df",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "feb625e2-f58f-10a5-c43f-6d3c4c346780",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e7ce4d59-52f1-7d88-511d-9ea255446f58",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6dd43e6c-86b7-54bf-9bdb-5e5ea47a9faa",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5e723d74-3882-b8f0-da81-d00da0032a50",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bee84641-bdce-70e8-0ace-d087d9da4db5",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d98440e4-8439-0fca-2b5b-30b2faeaba66",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bbd0e05f-b5c7-8e18-6176-871218610a2e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3314a49f-fc9c-d196-f080-0c1e65a5a038",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "64a414ca-6f58-a78e-c856-aba5693b7f85",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "15c2362e-1b5a-491d-5f6c-db02bc21d939",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "109e11b9-63ad-7b2a-f996-09c4ec8a2ddb",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec0e1add-4586-37c1-c972-fbf0ede0a017",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d83838d3-3621-3fda-ad42-8f16cec8bf79",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "977d8ebf-94c1-c3a2-81ce-59267542cbe8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3fabeb71-515f-89d9-ecf0-4d6b037af7ae",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ffaf6dcf-a818-b063-4229-9fa3525404e2",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "afa4b9cb-8ae5-b1b6-05c9-c43ea90ecc50",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "301879b0-e7b7-d685-5fdd-159039ab1c6e",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e8aa53f2-71ed-412c-f7d0-671d062a1adb",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6eefda18-8285-6969-b21e-451d7bd76697",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b7c2ed29-9ab4-253a-3902-2ea7f8883136",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "10d1bbd1-75e6-a8a3-c89e-ecba202d1271",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c1e277d7-04c2-6cc6-1b93-4ff3c54ddb94",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f38c5421-4043-dd86-739b-482957ece852",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ac0253b9-9c01-e7da-03cf-d4e1caf7b942",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "48f9091e-884f-1bab-5878-b6544c8c0ca7",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6bfdf32c-e8fe-bdea-51c7-38c5b5992127",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2bc5029e-ee0a-db1a-2963-e27f328bac06",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a641cfbd-2305-0897-a54f-d1a0e015567d",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5bd1054f-c06a-0ff4-2abd-fa8f91162e23",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0685daf3-3082-e3a4-9172-380bdece93e0",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a6b88a34-bff2-5a6e-e081-eb70e4b95923",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "93d0406d-f2df-c05b-dac7-dec3c4a393cf",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e9f13ccf-286c-0d42-6c91-e3359652d4cd",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "be61e608-afde-b945-5418-34c42cb5e6f4",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "34589856-41ec-1fe4-bead-01c2aabcc0be",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0ffa3237-44c6-cbc5-cbe1-753b3c1f3f53",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e7669321-e9ba-fae5-d9b9-0942e2f9593a",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9142fa69-f76a-2c3c-9edf-e1ea105e8777",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec3fb212-0f7b-d271-15be-97e7221bf8eb",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "691e9c06-10d6-afd3-febd-fe572554fe00",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3c122b19-bfc4-fb31-c031-d4b1358f661b",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3fdd2de5-bb97-965d-f358-ec57017062f4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "75d76d46-7571-e18b-fd80-49ee8d62880c",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "efcddc9c-0e5f-4f7d-4e5a-46ec6a58cf1d",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "649dd080-3292-2b16-97b7-60ecd19a904a",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "099762c5-ed02-bda8-408f-10c6f211f013",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7114d482-e272-ec02-9e73-d02be9daad85",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "37911dff-a5ea-8f4b-e8d4-4de521d88fab",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "30ee3b1a-608c-9029-ef9d-8dd126d7f341",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3466fafe-c40d-640d-c381-e20bff70199d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eb44ddfb-46e3-45d5-0bc5-a67ff08455e0",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7ce29b8b-2433-0bb3-0654-d50cd8f1c886",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7808c1db-a570-ab1d-bbf9-a18cb5faa033",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4d6e2979-5e0f-7179-fc23-21591767c6a0",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5dcdfe18-06f9-b671-59c0-c7e656362b2c",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1f8a6626-6c38-0826-4f7a-1fe34136607b",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d69d35f-822f-3f97-7cb7-b3d3e83a8517",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f73614e3-a6cb-cdc5-75a8-c08b2fe4c92a",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e9b49c47-9e7e-988a-005a-a02d777ea1f9",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7defdd5c-80d9-8643-cc16-c5adc0cc4c1b",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9929577e-537b-4402-8863-02367ce84100",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3acd0cbf-4f81-b141-b5a4-1deadee54db7",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "45677706-dac8-31fd-82ca-b5df09b381cb",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7efbbcae-7986-422f-1648-599c8cfe7a32",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e98c5f67-be73-b56b-ad1b-5fceac952155",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cd6145b8-b05b-310c-edc1-da36803950e4",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2d665373-ba63-11d2-7115-31a5237bae96",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "33f920d8-24ba-7fe2-fbe5-526c65aa2bdd",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "397f99a4-3024-f200-35b2-f51bb3d1cf79",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "343485f2-93dc-aaa9-691f-56d436492103",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2cac977d-cbd4-6830-a4c6-2736101a2a7d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ae34c999-ba3a-c1f3-e075-87b6f4725ded",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7bcf80e6-7fe2-ee24-8917-ba84ceac6c5a",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "706afcff-0cdb-6977-d5d9-770b0d8252dd",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b69ab90b-0cb8-a678-d160-a4290766c7a2",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8e772a62-3558-8178-332b-ef9bf71b93f9",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cd59ec50-30b7-b08d-51c9-6737e46ecec3",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa4ed2bf-8bc8-d627-2ea1-3ee37624ec07",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "605d659e-d34f-bd06-e1d2-4bbf5318d9a1",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7af052a9-7122-b61f-8b11-5da686e42f4e",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5c0ab620-2b3b-61a8-a149-bf9a95ed8c03",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d0800444-ea17-8385-2966-5647abb78f15",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "83a735ff-5494-6d25-e97e-1be7ce62985c",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1452a1c0-db9d-3a7a-f9e0-7f084ab80c38",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d1e7ae5b-ecf3-3ada-6070-e654f99464ad",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6ce3d657-e3d0-f6f4-b29a-e5144ca560bb",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f4eb2e87-4c7f-9905-8766-781d4216435d",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6c37f867-5e6f-aba4-91b9-2db24521f2f7",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bf6fb6f0-aad6-0f75-373b-ab2ab4178d70",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7bf67481-3314-0261-b2db-78df2fd64956",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bf65da75-e34e-5685-f57a-537b8330d101",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bc03355c-95ff-090e-9a1c-0d49a206877f",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "06798c1e-baee-3f07-8608-65bfd694a86c",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd7b5900-f38f-a528-65ab-0f8b01b90cb2",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d06748a1-c551-6392-95b4-d0e7a67383f6",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c754ff77-bd29-b62c-e3f4-7e929c78193d",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "619c84fd-6150-21b7-bd5f-a666274bf036",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e68df90b-de60-3d0b-5d70-a90a988ef8a4",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7b74c4aa-8c1c-1d43-85aa-3121fe4fe06a",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "790b09e5-5227-33d7-cef6-21f1a8781425",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ba37947b-1f2e-485d-f50c-42898aaa6e37",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "defe453a-4213-5afd-20dc-aefb4eeeb502",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6a4b6dc5-d135-c9c8-6a3f-fd8e21e92ecf",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d40ea291-f121-99ab-8c7c-e499118cd3a7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "abe48f70-3ab3-97c0-8f2d-1177d099731d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "636bc089-f22c-d241-d427-55e90deab83f",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "41642e34-9703-f9d5-55bd-7ac4c5079cd9",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "52d399ad-652e-4ce7-48e7-3fa9dd24c080",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f488335a-15f8-d88c-f1fc-d8ac3ededede",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "35e93169-58a9-c08d-87f1-0d1c042b0251",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3acb1297-0683-abbf-a79d-69f0b1ad4148",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c7ab8857-b59a-c7dc-145b-8da6ed190264",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec377fb2-efe2-8cb4-6918-92157e4f1d7e",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "981623f7-68c2-156e-a5d8-a788517c404b",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fccf2bf5-babb-d0ec-0d0b-e5f0b0d63701",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d61088ca-985d-c689-4c0c-2ce37f50a00c",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aaa7c802-aa97-7cc2-008c-ddd99d2619b6",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c28daec1-e191-6f96-c9e0-cdf380630667",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5b97e945-8f27-29fd-ec32-62918c44a2a1",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3ab9aedd-197d-0954-7869-508b7381ec26",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f5c88e5a-1efe-cb47-c7e0-bcfbc8aefd93",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ed370274-74ed-1323-4d72-4c21d1e54c40",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9be5709b-502b-5fd9-98fc-1c1603a3dfc6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "da0ad3cf-fc00-dadd-8d17-4fbe6f9aed62",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "77a22aa9-21ba-43c1-f6c1-a77408c21ec3",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "407db42d-79bc-62a6-64fb-a6ab14427749",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "650b7207-a5d4-bd7d-fe95-4a204c5e1f01",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1ad7828c-e3fc-0069-ba6d-6413bb488575",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4348c7b6-2fba-b089-89ea-ad326215028e",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9393cf6b-216f-c5f2-04d3-406717d50b39",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c1e8cee8-7fa3-ab3e-3d0f-19a001c7da9e",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4861c780-d273-deea-e35d-cf133bd5d84b",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b0c8310c-b20f-5bc3-0552-639e3266a07d",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "83518af5-9c7e-aad5-b0fb-0d174cb1a74e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e67311fd-9bd2-4e5f-8279-73123894a17a",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "52c0092b-3071-650e-6b40-8244f7ac1aef",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bac11962-0b4b-4272-9fdc-b90833ccc3d9",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3daa9c94-3bcc-6c93-feb2-3993755d253c",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f99189a8-8e1c-7ffe-37d4-46c412273281",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6c73b437-0d0e-1091-b034-f182d80f695a",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d79229ae-1dc6-e19a-a307-1c8215d7bdef",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3fd7aae0-706d-4df7-780b-8c5cfcb6ab66",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cb756fbc-e28a-18c4-0a8e-c104792fbada",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0040706-d0e4-ad04-5abf-740f695c492a",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "74547088-2cd4-0ff4-8bff-433423e5485a",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7b4684bc-9aaa-ec77-cfca-3e170f437cd5",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5ed13f71-f910-0a19-70e6-0faab831b589",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "02a38241-54e3-fc1c-a085-db7381eef5d9",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dfec1294-1db0-ea7b-c54a-a137d116774f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "704c020a-6dcb-018e-ce54-64db11060b68",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1e1026b2-758a-9beb-93e2-fcf2b936ed82",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0619bcc0-e7d2-f53d-c4e0-62615a60b730",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "24716457-7da0-153f-e697-5e69fd4f68a5",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eb74d34d-f692-9e7a-adfd-1de4eef6aba8",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e7aecb95-46e3-43fc-9a35-83a34ad22e20",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "41423551-0d9c-1b89-9f3c-278ac6132d5d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "65112f17-919e-e28a-43e8-66e00db57053",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d9891b95-d26a-cf80-2598-1080cbf310e2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f5577ba1-f957-c451-3959-13895ccf1ea2",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b1de73bb-c73a-7b74-9abb-430fa0a812a0",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0f3ee739-6e6d-b37c-3e2c-e659b8890a09",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "04231bab-5384-c392-08c9-c01c6bb0cabc",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f3d7ae6b-ddba-8629-83fc-ae8f9886be54",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ecd3fefe-805d-9d96-cdef-0e211ce2b325",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b9d4219c-8c1a-8d68-660a-7023a9845a4d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "66fa9dea-3125-099e-2915-800b6c650d6a",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f4f79db4-c716-dc61-8d96-d799e6eddb0b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e8ac214e-c699-744e-3b46-e21d641f0d18",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "47a84f5f-69f6-8c41-882a-0fff04c088e1",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cb92b727-b9cb-e73a-c23c-624b67d66994",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "68197b26-afb3-63db-fdc3-8ab2d84279f9",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4130b3b8-0f16-7f94-ecb6-b80ac3484799",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b6835bb5-93f3-8590-0e25-4aff27981c88",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9d166c70-6599-8896-04d0-2e1ba4a2d6f1",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7c202e76-1853-732e-dcdc-f6e289162c30",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9d3e3ff9-91de-1594-7dc2-e2f7a5061c3b",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa6a64b5-3b0b-91f4-304e-d1ed6e61b739",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0131722-ea70-562d-4144-e87cb9f0a371",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "da070f81-6d82-9edc-c029-7bd7b5d43338",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b469f60-28a6-bd81-827d-cb90da561d66",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d98cfb9e-8181-7920-8a9c-c2092b81eb58",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ff23d1fd-2e9a-7c35-f281-1467d5db28ee",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "14594ac9-3b25-cc82-e23a-685226c86538",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "33312525-f896-88de-5e90-c76df14354c5",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ce4dfd1e-ad1b-0639-3694-5546f628cf6e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cb2ddc10-0f7b-7b6c-7e76-161e2e263da6",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1bbc66ba-4b6b-7bf9-811a-aa8003d6db9c",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6aaafb5e-3b19-91f7-797c-e91862088611",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "242b487a-a475-5d9e-2a03-0165d13def70",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b8335c2e-5946-1e3c-cb33-6a72acf2ab96",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "62fdcdb2-318a-1eaa-c2de-ed7d5eb26b05",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "88e3cad7-af87-576b-bb83-de3ae351486f",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4a0b0ab1-e8fd-2434-c11b-1eaeb07577de",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "94979f01-8535-6f55-3aab-464911fb78c0",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d332aa9e-04b4-1dc0-9881-7194bbeda63a",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4800826f-b48f-aadb-b458-46bac3bc0611",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "42106e06-e42c-bd1e-46a0-67b8b2b6e778",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6310db55-a6fe-ae83-48e1-fc37011d4eee",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "247dc0f6-eef0-6e27-4369-628fd9529420",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "64890546-473f-78ec-18bf-42d299263657",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1938cefe-5dda-eac2-4a89-86d4cc2bbb41",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b18563a-1928-a0b5-9eda-0ef8fb473839",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7e4c29f7-67f4-b4c5-da5c-c943f154140f",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "24b13c0b-cd96-240d-8ff3-07cf4869adf6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6344f8e3-c5ea-1555-cbac-9e3b7119042d",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7c49616d-c28b-639c-b997-9247505f7659",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "61da36ee-00e0-0352-ec61-5f9548d15e87",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e40c1a85-5a5d-9c2a-9e5a-b2bbed317175",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6e049a5b-951d-3381-65f9-bc0fb565cf54",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "65e2490c-565c-d5f9-ec8e-2a2b48a9c11e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7faf4a2b-6a73-9282-20ba-8a3719341d59",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d5a8c03-1246-423a-3765-15c893dd78d0",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fa2ae8ae-2b5c-ccb1-c6a2-0177edcd92fa",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ad71caea-fef3-33df-80d7-ea9d6752f176",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5afcde0e-518b-b54d-5cbc-9d0ee6d09abc",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "931bb5b1-8d67-df23-2e78-3b0217c0f969",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0e69e155-7e89-ecf9-0898-eae3fde0a324",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d18e41b8-a3ed-9a53-f1f7-f4e1e0202350",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b44db07-ee64-2813-e9fa-ce30cebaf996",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "44800357-71fc-c57d-1016-c7b84070e5c2",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d4144d95-6eac-a753-921d-02e02afe2119",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "354a73fb-281a-99ef-71f4-9ad6a1e08a4c",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec052380-b3a0-1f11-1ad7-005fbf8520e7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ce26811b-de02-7e83-9dd1-d5b4e63396eb",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5fe273b4-6a9f-14d0-d400-f08ffd526565",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "96accc97-fd14-14a7-0273-6fc98af06c35",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "270e2f52-215b-943b-b615-1e38fb4c7556",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9fbe4a5d-79e8-a1d5-96bf-b6ae2b148923",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f35fc12e-5b3c-7ab7-e448-9886aecaf91f",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9a12324c-a9b6-7e20-cdf2-3558d46754ca",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "27716c75-581a-0d58-d5ab-87df37bf11e8",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "310d584e-ee15-57c7-df8f-f1c01f89f816",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "551de7b1-1efb-00d3-f4ff-d63b63ca6e0d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0dfce57e-1c19-b29b-f7ab-cd26312b81cd",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7c99bc64-53c3-b876-5543-b8721c0c8a16",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "40117d71-595a-6295-3368-573796c9d3d0",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f97fe6d6-e68f-132f-a21f-88b4705f83c3",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fe6057a4-b3fd-e417-393e-2376770b33da",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "06fbdd75-3178-994f-2bc4-64827db7e420",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f03e93c5-dcf8-3a1e-2f1c-000716f66d54",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a8f123f3-2c9d-cb4d-78c6-e2bb98db1086",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "facd8efd-669a-9b98-99a2-ddfd592532dd",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4f38e6b1-dfdf-7780-0780-cb4f8418ae41",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0cbe619e-67d3-8823-4c65-dec3ac8099dc",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c76ae261-cb00-12d7-5c66-3d30e05f23d6",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b31955f-a738-1fa4-4987-be8592ce1b8a",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f9b4af5d-0d8d-5c46-59aa-0b304f0f0af5",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c2d41dbc-aa10-040e-97a1-2860c38dbebb",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f924287c-92a5-420a-b3f5-7bde43c642f4",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bfbb1b2d-d452-df85-a892-80cd96cb1a40",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dd76ab4a-daa4-0ab8-7dcf-0ca198195586",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "33f0f8bf-b751-8c08-8a5b-e17c5202ed70",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eca547a0-40bb-5380-51c1-a0b8b2aae5cc",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cf463be9-848e-d83d-031a-db82bbcfed79",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "111c4df3-ceba-47aa-1a5d-c7d24b08f76d",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6f3d10e1-f4dc-ca79-50d4-821d2875c8ad",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e22fb966-0110-6a37-fc00-b5c46fd4578e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b8e523c8-720d-5eba-96c4-ae0d83ad93f3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "925fc124-3408-8dcd-0b80-2ad17a2218d2",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ca104199-0e3b-a9a0-6541-971afcce8f96",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "60262794-ee53-dba4-eb1b-246ed566d3fd",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d5b77a0d-04a0-3b51-f809-cfce6748812e",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "50385077-0e40-cb7c-79ec-81004f9f179d",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "98330ae1-f241-43dc-0ce5-867ab32eaa69",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "23e9499b-6128-466d-0897-a5ce91f4b27f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b4099952-0caf-5f86-08f7-1c232720eb99",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "17a6c3f8-2b19-7397-ad33-b2feb16a9099",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b7c7c612-25de-0378-1236-e22ea28f2392",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7cfb27d0-bb0c-81fc-f02b-7413a98009de",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a495bac9-3238-682a-599e-35d35bd1036b",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "000e4bd2-bf61-3b76-d413-c78ebd570ff6",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "11182c03-8ce7-41a0-f2c1-7ecfa75f99a7",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb69fb25-869d-236e-a158-a728d21dbd94",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "36cb5434-204a-2ad5-b1cf-9a6bd9ba6770",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dbeff87e-c0f9-b272-f6fd-f93bea7b83d9",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "40e36724-7177-87ba-60aa-341036c6b39b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f7600ea7-76bb-6fcd-502e-3d05ba22f7ba",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b0bec8c1-1cef-e9a5-e823-63e2e2ab1135",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "afcb9307-adeb-3d34-6fb9-8d01b5be2c0c",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b970a475-9dd6-744c-7ced-6d58019d3405",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d1190b2d-d5e9-c76b-ea3d-31e651790ee8",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b487ea0-27ba-1111-671a-8ccb8a808f19",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c6653eba-2cc3-e374-c025-ae329ebbf8d8",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c68eb13d-eb1e-60a6-afc5-9de883024f84",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "61aa8a00-ffc8-ba2a-7999-86e7ab9329be",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6fb07aea-339c-0332-ca91-4987f543bf5b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "70f7cb1f-f577-22e4-c388-755432d785ca",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a01d958e-0edf-8a1b-bc3e-145b9c05df56",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f3330572-03f4-2a9a-420d-89184937e983",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7354251b-296b-caf2-433f-8b6ba2905cbc",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e01ac753-8bdc-ade4-9669-938d4fadda18",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7418f241-6776-9e6d-a053-48ac126562e8",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b26a3004-88ee-88e6-1eb6-595becec2c64",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6e67b748-ff2b-dba8-5308-a0b92b14a1b8",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "48dee733-5e65-095e-5b98-ad2f3413f250",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "55c095c0-7bb3-4b1a-b7da-0ed8c7aae43d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "03ce2aa5-d5db-91db-2360-24f91d8fffae",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8c563a6c-a539-9b23-d004-3a0ef5546057",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5e5deff5-dce3-e6a2-8a29-aac24511322b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "517d614e-6c9e-a398-06b0-84ea43f5fbb1",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f92a4c83-bd81-146d-45f4-e2016cdd6977",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e3893a5c-c4c9-6ce1-3d22-7f941a507391",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "788469c6-d6ea-88f6-9d4d-2e8a0b8595cf",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "203aa879-6750-f0f8-e036-86cdd107e764",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7d00f71a-6a3c-8b68-5e9c-fcde4ffa7c54",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cdf74965-81e4-ec2d-fd36-05903f3fbe71",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6e46aee9-cbc0-b0ce-c256-31361c943394",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "93214a61-c357-cf55-06ef-5783ca945672",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa82c6fe-d9f7-88da-7fee-a67349427ee2",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f0848734-7d3c-b628-05cd-7a6ca1c722d2",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "edfda5e7-5084-880a-022d-29069aa5cbfa",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "73ef9028-ebb9-10e0-b568-0ab21799c6da",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3a67330d-23e1-7ead-b469-1adf44300612",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e29f5f7f-1c7a-cc69-3cb1-b84d99512a10",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0048393d-d5a2-01af-d913-bc890fe8b2ae",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ac61a898-07d6-ed31-0122-23756b48dd8b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "efa6a2ea-b018-6b26-35e2-0f08ee59c252",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7ed7d5ba-b85a-94dc-e41a-951452adfd76",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c65167ab-7aa0-3908-3e63-2698d06fa1b4",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9a87aa15-1dd8-4cbb-afbc-52337f77c2ff",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "33efd6cb-b6fa-3383-51f3-b5ce1564e043",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c757b477-07a8-d325-d4cf-a0a78e352f66",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4c74eddf-31df-3d9c-e01a-935aab29f802",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b79bbe9d-8926-288f-0bdc-9007eb0b656c",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a79bee45-03e9-ddf1-ef30-01d732d90d7f",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5fa19058-bf39-5202-eea8-d48717d65eb9",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5d238d7c-8fb0-4871-056a-65ec27c1072f",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ffa6c537-e6d5-ef50-d0dc-29d65f1949c6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0fd1423a-74b4-4509-3bbe-4d3e18071a3a",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d880c06f-47b5-e1c9-888b-2a45303ef854",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "801bb7b3-c5c9-9d52-2846-0d868bffb16f",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0d404c81-c127-9c3c-33df-a33a9f54b508",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d05e0c97-3318-278c-8bf0-4311dc95f6c2",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dbb7e20b-4a8c-b8f1-7df9-9f8e0b2c46dc",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a2ced630-3ec2-8093-ebc7-e91c959145e9",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ed27fa93-718c-88e4-8acb-85f2db2c283b",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "666770f6-fff0-1303-f4a1-b0a1ac622e3c",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0cfcb79-a015-c966-3230-5e7e86bdd4c8",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "68d2998b-87cb-a478-c88a-a51ca80145a5",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "688f87f4-c32a-d57c-f401-1e57548e1ad5",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3addefff-d8f6-8f8f-db48-69ec7b0a89cb",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e771afe4-4d64-cbcd-11ad-878b77752b53",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ad74712f-37c0-a459-7bd5-4fff71088601",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "29b668aa-18a0-0e8a-ae78-a420543df94e",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "290a7317-e5c9-ad05-e47d-caa6063ceb2c",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e2ad570f-dd62-7ece-b612-c0e2f32e62f5",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b3bae3b0-b37c-c8b7-d834-2ba21799d0ac",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a8f8d4a0-3f4e-c11c-d102-7f174818fdc4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2728d013-af47-f7c4-ed4e-ccfb942e855a",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "20ed4f3a-c175-821d-35be-2ee8929dae61",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1ede08cd-20f8-3e38-736b-f235acaa508e",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5669bcdf-ce6d-66be-0178-7d947f21e723",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e580eb5e-3b20-1821-dba0-5d8e776c7479",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8b5fdba4-07f4-dc55-3781-3203562ca7a3",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "03a446e2-fbcd-e5b9-baa9-0846b290108f",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4afa8504-a471-6140-ae11-de9e55f88184",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fbf79eb2-b304-60a0-c1a9-f735e3fcd077",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "21b8522f-c06a-ea93-401b-19ab3eaba0ba",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "70859917-364d-8f83-ae6f-e06f075f6291",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ef0391bc-4247-10b0-eabe-2fbf5c2fd7df",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8d8a9578-1a67-4b64-04b5-0a9e9f64d0e5",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b003721-f33c-4fb7-8eb7-f5c959519cfc",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "309b75a8-8f93-26c9-4cf8-75654e0f717e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ed1a1876-3a84-8d49-7350-0855c49df871",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e77cd186-dd72-e409-5a95-d8d37b9f67d9",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "657d7faf-485b-8f8b-56cf-4585b0231767",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f9457eab-6168-676b-2b05-c967c8be3d97",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d45f1962-e6bc-ba9a-4e9b-6a55fc7f543e",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f0352190-21e2-bd43-21a1-ee249d61f252",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5d0bd129-82ac-ab28-e695-37879a4574b4",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "93562bf6-d09a-3026-d079-9e9aed352fb5",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eeb5b555-c431-8b36-3702-2f9cb03a9b3b",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7e9cedb2-0627-1785-cb2c-6e53b8e2c517",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "657a5804-95d2-bbc9-e3a8-cb27991a4ff7",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1c9c63bf-825c-13f7-fa0e-9f0699f61ecb",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fcbeb7c4-fd9c-40cc-b15e-4ddf4d47233b",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8bd34289-d07c-921a-c6cd-bb4b146fdcc3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2592466e-b4d4-4655-9eb3-6de7071ccf75",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8e7a8865-e1aa-c65a-3f83-fb8382e84b73",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9fb457e2-45bd-9c59-9632-dd2b36d435f2",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a88474d9-7b40-75c4-103c-4756fefc5223",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a2e87a66-9129-c8b4-8f19-1a7b0003f9b4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3bd48e65-a546-53b8-11be-9168f9315439",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bb2fb4ac-48e3-3274-181a-669eb9886be5",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "176b9a55-95f2-70a6-0d8a-c46a6f228bea",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e5534c19-113d-4705-a9f8-5a5534f534bf",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0b13de7b-3a06-5d38-eccf-e9bb8db4be94",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6430ecc4-8bfd-8a62-c7ff-1a819c81ab12",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "02a2a3e4-b5c0-289c-5dfd-95324e623d49",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "45ddd76f-2146-20dd-4044-b056b0e89930",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "376435b2-4f87-d45c-9d3b-0f1a7fe26993",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa4fa9c2-81bc-294d-cb27-c2b5b55fab2b",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "18293f33-cf24-6dd0-fea8-750eb629c0de",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1edd5504-cbdd-721e-c3f8-b14406688ec9",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7b8b3263-39e1-5145-8a7c-922bed22cd08",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1497fba7-91b9-0f9e-413b-a1a7a9487f45",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "52337c23-7694-cbf4-76c9-3dd7f121c476",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f7502be8-0a9a-4d63-69fe-fba66d3fc191",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e9db33d6-c21d-844e-fbab-1988c3f1c501",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "573e2677-41f8-31b7-9951-eb1100b2132b",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "165b9f17-2130-1b34-da4c-1235fc6ec986",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "32b099e1-a3d1-4e0f-9e32-56ec913b08fa",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "42046a6e-e4b1-6bd2-f0ac-7fab8592bd81",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "29b71050-1d78-d4d7-0445-b899e17f1db0",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "856171a7-b9ac-4830-b2d8-9cee3fdcade6",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "abf10a27-3ac6-2e58-96f8-def34af99ffe",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b072eec-8afc-2975-cf37-acd3112a3d9b",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b9b9d22-41a9-95c7-6b24-f4c5298461af",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6db8b590-545c-5247-9e1a-c51a90a3b619",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3177b094-26b1-b068-a92e-12b1ea020c51",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4b3fa2e9-13d6-815a-1991-3379fa24d213",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4903fa5b-de46-5fc6-a28e-0f0cd0ba7c7d",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "77d7f16d-5ae4-b603-5a85-8890f1777158",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5a62f7f4-969e-0b36-2084-91de9f91eb34",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d051e973-698c-58dd-bda6-63d696077ad3",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9971fa58-a988-4a0b-0bde-87bf140e6b77",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "67ace8f4-0f30-1cd2-b6ca-071e23ec2cba",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2adde9fd-954c-932b-bf95-c574715ee59d",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "45af8d84-cfe9-7ed6-18a6-0d89016bac6d",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fa8863c0-67b0-85c7-5ff5-bf270e35170e",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c105f40c-b412-3a64-e00a-cb1f14df7cd8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0cf2cc5d-7bc0-f1d6-49b8-99c8e5afc22b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "882e9f04-341b-9074-4919-525657521655",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c7a68e32-cda7-b864-e7f1-ba2ae5fab309",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2d9a3c10-b1dd-f004-0f69-2e3a4bae5c5c",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "790b2537-789c-2d30-aa17-fddb3dcc7e87",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4acd9232-d4af-fc54-d001-272120ba0f3e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "50278dc0-3ccf-66c5-6639-d8cf2c3a45c3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d07bb88c-bdf7-0c6b-a371-44ce794f7d3e",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "895409e2-f453-7a65-bb3d-25c0b35987f2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d8a71bd-3b1b-2819-0f1c-7c6f1615f245",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4a1350c1-b7cd-0abf-d114-716504b16a7c",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3adb884d-00f4-7452-b153-172589985de0",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cbff8567-0725-b204-ba70-6b3ea17679a2",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "28cc2966-659a-7c43-550d-d3e856e6eb75",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bed3ffa9-e96c-f7e5-eb1b-e22f1ec71421",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "68043ff2-95b0-99fe-0120-ed51205672e6",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "78ecaeff-34c8-c97c-b69b-0c6690b4a848",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1c4cacfb-dee9-07de-5cbc-d5ab91b33773",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9d2229a0-0c0a-04e6-50eb-b3326b957e75",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1fef362a-d1da-0a5a-84f5-8ae89094daf4",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "844e7674-593d-adb3-1440-7f2a1fab57a4",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f8eda48e-36b2-3c80-2a8d-45ed824d3d02",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9e55967e-b361-b475-1d74-2da173a313ab",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "df7466ab-6cd7-323b-3000-734d0a87e629",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "98a8f4b6-5e8d-2f6c-8758-6666656e481a",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6a312723-378f-452f-ccee-cc8c2ce7a27a",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c8006108-d31d-3fc3-8118-4a00aa1228c8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2dd686c2-90fb-215c-484b-6abf33d7f0f2",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "60472859-d8c8-a48d-4c3f-0ac18643491a",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "be8499f8-c80d-6ecf-0314-d9a438061154",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "19f2fad4-a69b-5816-5671-7dca8e1f05c3",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "21ba83f0-c8cf-756e-d382-667683820599",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c0c452c8-6e09-202a-74cc-724212b93b85",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f81f9d3a-35d8-f873-8f95-45726a1387a3",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a2dc9424-44ed-80c3-e2bf-2fc537ce7c31",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "17ab550a-68a1-728d-c3c0-64c7bc72f3fe",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c437ad27-25ad-790e-ec14-e4cbb2c7d54f",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "532a40a7-77e5-d8ad-e9d1-5ac05b8f1fb5",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a7e8a312-e5ac-380e-64c0-58e134a0eb3a",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9499db5d-73f2-29e0-6699-6fee9b30efcc",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b138dcf7-c96a-95da-7950-ca0ebeca603b",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9dd52fbd-e3a2-3778-9def-1607fcba8a14",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5bd766de-0af8-d57c-839b-1f71e24d41df",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cce2ada9-2f2d-ce10-1509-2e3988f0040e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6a3a2ef3-ae9a-b881-f025-d9d175543545",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ad3ad1fb-e09d-f4dc-0ea3-acb109796d53",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec4fae02-dbe6-d8aa-4d3d-da1c38fb7f7c",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2ccff467-3ffe-b229-11db-213c0682008f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0f702402-059d-f301-63c5-f10eae2added",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fa95ca2d-6015-d738-9bbe-e8cba5195c60",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3aa7cd04-b4c2-cc6f-b69c-a73c4dc31b69",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f602e4c9-bc99-4d36-b8af-7f9dcb88d01c",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4b064eb6-10c3-39c3-883d-0424a8ea810b",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d39c0714-beb7-9fc0-1fba-437d66426189",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e4b69797-276b-44dc-f691-2839ccadbc59",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "37b5538d-83d9-db1e-c957-873f1f52b8e1",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e792e81e-cd41-7b11-d310-735b5b93ea00",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c7e266d7-3097-a994-1174-d3cf1608c41e",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b84325f-12c9-a783-29b9-032c0e6283aa",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0e09a6c4-a5a1-ce41-7427-98ad5a20a6e6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d6592817-12c5-1929-7656-0bc610ac5bb8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9d09c449-338c-e3e8-fc9f-e17d64f8f16e",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a6e15963-ccee-056e-b08a-7b411a5faed5",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "72a781ee-c6f9-c7a3-a6bb-dd39961e522e",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bdd09408-1595-3d9e-9ba2-750a734e3f90",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a0923ee7-dc84-4fb7-e960-64ba86e14501",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7d9ad1c8-2f22-2da1-d373-f6781481e17c",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "765a6d8c-c0fe-7187-2aa2-2346375627a4",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "288acd27-59ec-b9f5-160f-bf6e569dbf73",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "45f1ab9e-4cf6-ec9c-2b17-9c7adc6a6cc6",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "79c2c8a5-b015-8ddf-6df6-251e26904dd1",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f9f1b201-c78a-46fd-3f7d-701f0cb9d80b",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e7ac8242-2bdf-3ea8-34ed-376cd6d4cc6d",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3eb63cdb-d52f-72b1-555a-1bc3287a6e99",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0d5335ac-dc82-6607-9000-ce5fb7df023d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "02b8e933-beee-fd21-e81d-20c13cc2b9d9",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "73c7563d-39e9-4606-310e-2e3e31c378c6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e915fc4f-2425-c1b9-7448-6f93374f4d93",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f74652db-dc7b-535b-b335-595d87ad4277",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "564788db-7533-ad1d-c822-688c966ea182",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "91fc97eb-284d-bef1-4eaf-5747976f12d9",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "abc6b243-5588-2a14-659b-cd1c72698bf6",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3ad232de-dead-1de3-4ef2-1a7a1bcae815",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d7fdd83a-70db-66ab-6375-91cd319db355",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d887248e-7c1b-b541-76ce-6a1429625aa7",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9eceb91a-7f9b-fbe9-d071-540a01948571",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "235b3715-edf8-71b1-9850-c2f6c754d99d",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "597d6d71-d02d-d972-6906-47dd94af9989",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e992a0f0-7cfc-f1ea-667c-c308c7560737",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2bb47397-839a-9256-9cb2-7ca19bbe6f6d",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5949817d-4426-d92c-eda5-7bc93010d7e7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b1ce470-481f-5868-f4ac-26e876e4d79b",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5119b0f0-763d-45e9-dabe-2e015463004e",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e04a9235-6450-7289-01d9-1e0c6d60181e",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "81a26782-c24b-32fc-fb34-09efe90725d6",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "04ccea8a-4e53-42db-c31a-0e8f2c805783",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1d041991-5f0e-c23a-8999-aa6d5e5cec41",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "11065baf-e680-3a0f-0ba7-1eca5f0d5203",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "71f57d4d-faa9-0cc6-82c1-fd3dd9f6c1c7",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "00e55ffe-e77a-1041-83fe-f230819a98a6",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0423095-2fec-629c-28ab-8d15fc453cf0",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f3b3e51e-629c-d167-01db-a6540d350738",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "935c4906-2965-0faa-073b-4831ee9f3c48",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4dd2b11e-e285-eba7-7e11-217a1f1a5016",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "77f874fa-2a1f-f514-bfce-3249bea7bc6d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a9c039df-e5b6-5874-9c20-40b1c8c81a18",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3467ad0e-4caa-a9d4-ebe6-b07c78d758be",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4caafe08-88b8-f527-d617-30c43c95947c",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b1a95a03-38ca-ee92-017c-5209fe2a86e6",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f95addc7-9b43-8f11-22be-04c9b277bbbe",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3617723f-5fa3-13c5-747b-af12024e1739",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b585a522-6b7d-2bde-80fe-59857d64cf59",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2c5e7c40-eda0-861b-ff60-079cbd28d62b",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1828a070-068b-a95d-05bd-97d1aa5306cf",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1fb7b886-b13d-200f-7df6-7ebda0de9ccc",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a6df2aeb-dc33-065d-ecc9-bf2472024f34",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0f278cb7-49d5-fcc9-b743-6c6f611b8aac",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c025d9b6-56e5-4289-89de-69f2f2d1d013",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f7875753-a25c-5e48-6009-e5dbdd89d86e",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fc38688b-a5a5-0a3e-f73f-a130d3c1ade0",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8390a9f6-0a93-19fe-59e1-f9f55f5ddd6c",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d35848e-614b-c210-ba42-5c08c34d2f65",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "698fabe1-43b4-9c65-86f3-65500666149f",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "48bf7f82-1ca6-e351-83a6-20588e74f9d9",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8cc8c34e-a72a-148b-03b0-f8ee5fd74ca2",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c0028500-4cdc-8005-bb90-ed6399529b3f",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a2ebb53b-d53f-3243-6067-58d54306b7f3",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa5e6d3e-6879-9a9d-240a-c4b8d59d977d",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "43370ead-9fca-c16d-cee6-46c82788d337",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8e09b870-6631-2b58-4357-c8e2715354f3",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1aeee50c-ccc4-bda1-52a4-8d413ffe2055",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0a613941-9193-abf4-25ce-a79ed34acf0f",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8da9b865-ec75-e977-9c4c-609e2b0b4bbd",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5ae81cf8-1483-9145-cede-a1d072e27dfd",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0ca55a2b-4b81-c691-b83c-cb46471e0616",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8976f83c-4baf-c2f0-376f-a1e360cd7ef0",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a59870d1-3aa1-1ffd-b0b0-5f0eef5f14e4",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f1707df7-3aa5-d08c-ea15-5bd6269c6cd3",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3da16659-e34c-a32c-0e88-f464e813b606",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6f1680fa-747d-53dc-d2ab-105243a1b1cb",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eccdc834-73c7-adb9-9ff5-6255b7257146",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "36e83abd-b95b-2bff-8076-d432a0d126c1",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5c070507-4cfc-7437-9688-8a3fa0311229",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "764f2bb3-6cc5-14e4-6520-336d80427992",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "489eb465-3148-2790-459d-d37743bc1fc9",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a41f5899-263a-2ba5-d89f-83fcb8615004",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "52659ecb-a874-76cd-e727-9e93c72dd9e6",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5c440b1b-c528-b1b7-ea36-c8c51c52f6a9",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "96b814eb-178a-5fe2-b4a6-eb71b6006fa1",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd079d7b-b8ac-b648-0a0f-fa0d75c647d2",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b7ae36e0-29fa-4028-0fd4-b1091ee273e1",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4dfa6633-4102-2dee-0768-2c3ef94f351a",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5e21308f-4214-8f32-e85e-871599e6ea4f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "79a2515b-c784-5fe3-20cb-1548b67dc9d2",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "33629096-47e0-4ae4-df4f-b9b15bb01a06",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "90ef151a-2989-8953-bd19-90dd0821143c",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "44aaf7b1-791f-8f82-c0da-7ebb41fd7242",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "35adacf1-d9c3-d92e-2f59-fd496b6a14db",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d9396d48-fd20-a52d-70b5-3f2085f7cfec",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f3b1abe6-fc82-148f-0715-4d25554e7fa3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b1697a9-3a2d-fc57-4a13-6eb57d67f819",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9b05b001-4131-ed42-634c-10196745c2d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b648d7d6-c04b-1683-2bcc-c8232f2c923a",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b1c46032-68bc-da8b-5947-ff34f797a32a",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd2342ba-3dc5-ee86-3dfd-38ca414e3fca",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4e6ad58e-34f9-3aad-d394-6c22e98c28e6",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ab988871-3db3-91fd-fdc6-c24dc63b2ff3",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "628d5b85-fb1d-3be2-1666-dd4ae4465c58",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "45ef5fb7-f21c-293d-6e77-44f359cf722d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8e209ba0-d4c5-1bc4-1217-b046044b7cbd",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b5e54f3a-245f-7903-3b7d-8ef6772d70e7",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f24c8abc-3f83-5162-2e6c-56859c5c056b",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c888fa0e-3ba4-8446-ca99-35f2dd69819a",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "73aa21b6-6e89-d724-606a-ff4a561441d6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b20737f2-721e-1d65-17b2-417ab128a58f",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "55803d94-5a30-5537-708f-9a29af0bb608",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9af6f1ff-5c76-981f-16b1-cff0e00e7faa",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e291f668-1c34-8928-0af9-193ae7989012",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "27157c99-c60c-e69d-0cf7-6d49797717a7",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "91e6ee14-7d3d-ee2a-2bde-63a3eb189429",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aa1b61b5-90b5-7fd4-8e47-7cc758c171b3",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "64ae45c7-d78f-ee6d-73c9-f4f9332e8811",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "333a9e97-7b22-78cf-a2aa-054acbed29d6",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d810fb97-00e7-f2a0-0985-acffaf11b187",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7872c32e-8849-26d9-8279-dae0014cea81",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e44ff3f4-6ff9-8af0-f12a-63b3268c710c",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ba235bd2-9ad8-ed2e-d547-fbd573117230",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "399b3fe0-a8db-f30b-561a-3eb2fa5d587a",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "34dcfbf0-bd44-0123-ea20-2bd73d504f1a",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bf02e8ed-6ab9-9191-d50a-9c05cf34fcef",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "49cbfa48-c9a4-d8f0-1a8a-1191d3b61d23",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "63c687a3-67c0-9d3e-4bda-fc7d26ed4e96",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "22c1caa2-aa3b-3e37-6efb-8fb7c07f54ca",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a0670202-2854-2e50-8de5-c40c09ce45d4",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "faa58a8c-d950-2e5f-5a1e-2fb3331958ca",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "28b5dbc2-f5fe-d1df-1276-f0264e5fc36d",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0ab1812f-650e-a53a-7a38-d1191221716b",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0b0eee80-ebc9-0e27-a0d3-4124d340c71d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "77d8f4d1-c71b-c484-866c-ad2bbcee8d58",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "73532c4d-af3e-83d4-8425-4cc26ab37aba",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f14fc5c6-c061-1111-1e79-f268130aaa74",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "789d8ffd-898f-2aaf-f340-7783135e9a27",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a82312a1-29aa-9773-85f5-3a79b946447e",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd26c6ec-d165-4279-e832-a0635cb9a1e5",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3f839a52-c325-f2fb-b74a-c0f31808b557",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b646c1a0-6866-82ac-52d3-c26c028a197a",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "042bb7cc-acb9-432e-6025-f01f85edc241",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f129bad2-788c-bc9e-89cf-60039b8e604a",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c5a0b44d-30ce-829b-93a7-716afe1e5163",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "11a47728-c8f9-ee9b-363a-3a89d6c24797",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a37ff634-cd9b-ef97-1174-7895dac5142a",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1452324b-c53c-15c4-079f-4a2000e03019",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4a9e4b89-4361-e36c-5dbd-676385437cbf",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "61a2c1d3-96fb-71aa-55cf-33c674680627",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "07a3cd0f-fe14-505c-acdf-f777e37778f1",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0be92ebb-39d3-323f-c309-af2cbab9b45d",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4af77d70-a98f-9201-b485-970850a53a5c",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5de5e483-bf65-3751-6439-ad5bc91a890e",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7a29af3a-374b-0d68-6adc-9c128bf68f2c",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4f96e085-90db-e38e-531a-45f6abfbd4b5",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8d236de0-d974-e10a-d60c-6eb6d6ee45ba",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cd47af08-b065-d7f9-957b-4331cf499a84",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5928a75b-88dd-4a5d-ca54-6d5bfaeab6bc",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5c67d3c5-f64b-9042-df1c-37f8122fe8e8",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b5308f06-151e-ee1d-d1d9-567a5c3df214",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c3f29e56-c774-c1c8-366d-35e9ddfc64be",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "70fb017b-27b3-32f4-e15b-031807d3041f",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2a81166d-6b54-e987-5809-652afadd1182",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b4d3824a-cc8b-bf10-4c1a-b8023aea893f",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cfb44862-44a4-9cc9-5636-6fc938d47be3",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d0425968-0a5c-0a9f-3897-b55f4e22a274",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fcbbff35-ac21-d887-426b-fc0c5af9fa0d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd5c5e1b-5be8-03c6-a5e2-39063b12d65e",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd3a37e9-fe59-1c15-b82a-aecb60558898",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "da917375-989e-aa66-3705-7fb13adc13b7",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d2e5a5cc-7ca8-1bdd-b989-bd9c35ca0e88",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8c6aca27-a8a8-0c0f-1002-e52f6eb2561b",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "849b1616-601b-3dd9-557b-16d80403b1dc",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9c811b0b-75ce-1d6f-75bc-1c02b0f27f3c",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "05c1638f-8bd7-6101-ecb2-b86c4e36c561",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e3444b28-a5e6-7291-e9e2-d64fc228bdec",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "528cf0ef-0ad8-1440-1a6a-d89ca66b78ef",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "08859e7a-33b4-e98b-b9ef-f754da6f424b",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7a234537-baf1-3524-b7d5-0e086755bc47",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c4b97e73-7182-c9d9-9bf7-916db4bdf6b3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "053f68e1-2f0e-089c-76f7-de930e8668f9",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2cdc1759-9120-bd86-70c9-29940340600c",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1e95312c-bb54-5051-1d8b-87fa3be05371",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "20ce0656-3d5a-66ab-6bc6-0e90ad09655b",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "70ee2824-090e-3fe4-2794-10f0c7f3f893",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "10c6170d-a542-dc14-754f-794aa16ea0cf",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d83d4cf6-076e-8942-5a26-f3fb3c195bbf",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7ff81ee8-300d-ddc6-319d-7dfa7218fd58",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e91072de-8876-66b5-cceb-4cfa6eb00b82",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1e356af5-9fbd-d306-bbc5-eea3d0b204ad",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "63d0e165-8c30-09b2-576d-a0517c4317d8",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "384a335b-ead6-a595-1afa-792fa5f1d8fa",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9e3a1c36-c83f-de64-7a15-a427c2d53ea7",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c93aedf9-5f94-9dc3-c599-63c7235e54e4",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d4f123f5-ec66-2062-e7da-d35c3ee57eee",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e8e08ba6-7aaa-47b0-1ba8-5672399ddd9c",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "05bd8efd-7965-885a-712a-23b65c741a8d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f59455ff-4ce7-d960-dc83-0e9693fa47a6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8ffc693b-16b1-8101-db46-047a98051af7",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "03a99c53-fb54-e2d7-6a4a-3c27563d7b9c",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fd1bee15-e7b2-9c75-8f36-bf9c4510c9c5",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "75a4e70d-830c-2c84-3356-f012e00406b8",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "98f3fdc5-c2cd-f68b-96bd-732dd43c8529",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0993178d-8c63-8c40-84f9-5f0d8407806a",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2ef053bb-a426-74eb-6498-47e542671a5a",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0633fa76-26c4-bbb8-04b7-ac2dffc5035d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9419d91c-fb6e-946f-bacf-338bbfb69b57",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "57ab359d-3846-c2bb-ed46-058d12813eb3",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6c176ab9-ca29-361a-d27f-4b7f010acd63",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "165be93e-3f49-13b1-427e-af18f7d6db8f",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7ee8ecf2-a327-72a4-39a3-f550b848e994",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "abfa578c-1059-0e95-41fc-6b4a6cc5bd35",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0cd4c552-ef7a-3da8-74d3-a0393d836d30",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1f060a0e-833b-9361-4a59-0ffc6ca53af2",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d7752dd6-7176-d04e-be06-8422283faab2",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b3a8c3e6-2323-b55f-9c32-0b87693deb72",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "985812bb-b587-86fc-300c-964d20bb99fe",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "73b44f51-5601-290c-5594-135cc98de227",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "64232e02-58b1-49f9-ed14-4ed2bc2cca29",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6e9db836-8335-157d-2b66-184effda711e",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "36d84ce4-f349-afc4-6458-0cf8242cb742",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8a6cc122-2f10-d00a-54f5-d2ac0bc48657",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c8e06257-6008-61b4-4b53-278d79854078",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "57be9b47-7cba-8ebb-640f-e274971152ab",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9dcbb2e1-1288-8061-7552-95fc4a54127f",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5cb76838-2148-bb64-3c35-e732e56238c5",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1e5eea31-29c3-bc5d-2667-842eff3b544c",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "013a00ac-ac8b-5c01-8a57-5e3a952f41c6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "412ef48d-01be-55ef-5ebb-4a78431136ee",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "631019a5-52aa-5f92-b516-9f02ab27fd0e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "11ac6e88-a54d-0fb7-d0af-0368bd55f51f",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8364106c-5f3a-598b-2ac0-3ed214205fef",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e549f908-0b9f-bc96-93e7-a3debcc701cd",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b3a131b9-2c77-3894-f208-cb79d39faca2",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c054a00b-472b-2614-aac5-8337913cbe70",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a39e1659-d76f-b466-dcb4-6e403c08235e",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c49feb4a-a697-d42a-ade9-8a8f6028bbfc",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8d39f934-18e4-6144-1d94-ded1104d046b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cc89b80d-6432-18eb-4c1f-89d48642289d",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "733a7970-863f-19e0-960b-550ffd7ebfb6",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e1cc35de-1693-fdc6-8795-0119f8f61623",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8d189383-f0b2-811e-27a7-413d45d77bc7",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4557c67c-df81-999d-af4c-0c484bf21983",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a987acc4-6719-b547-a33c-941a36a8ac2d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "58ee5b4f-5255-02ce-b2d5-07a5c8ca7673",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0a5ac38-0109-c23b-cdf9-bfcc771a6956",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9c845855-86f5-5a7c-6a9a-ab196a2fc168",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b738fca4-5187-2cb8-fe64-bf110f27dc19",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd194d03-59f8-3e62-32e6-fe4f7a3b879b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9d3d2f6d-074a-0e8a-04a1-d64fad0a7ca5",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "de4618b3-b26c-8e28-0a99-ae5525670cd5",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a228ae2d-6872-3077-746d-e7caa9826050",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "27347831-35fb-67fa-ab30-fe2735abbbd8",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "978d0096-a189-7be1-55f4-a61ca61d2828",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "db8cd639-647a-8b58-26e1-09ded6668cba",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2310c342-bed5-4b9f-eba2-02e50ce02e57",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4655bd8a-abe0-ed09-0f95-f22d7f8c4bfb",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c9db2283-f63a-871f-3474-0b3644830bf8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9ad1b67e-6011-dbfc-53db-ddffab249a2d",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ed67f473-5441-c705-b174-e26119a10316",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d6004a9b-1c74-80de-a857-6060eaf7261d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4cd5f36a-93f7-1b54-cabe-8128f0dfd674",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a1f48c0f-fc61-d167-ac87-a547004aa023",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8aa6d384-bddc-d1af-b54c-f4cbd87e1b21",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "87e48982-f0da-a5f3-0b94-9ea581b65f84",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dfa77c24-d946-d3aa-8143-2d2980309d6b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3c4db87f-2c67-8431-5028-cc295a2e3087",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2605d9e6-c136-20c8-1831-a1f1ffd05ec7",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3c384aff-7c16-316e-ecdf-de092cb63839",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "015728e2-d208-f4cc-9b3c-b972b482801b",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "96b1462d-19ec-a38c-05a7-8c261b7ce639",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0bc8e3a7-1aed-9f32-20e8-ab95b541caba",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1f87bcd1-4567-9f7a-a2c7-c8251419643f",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "13665640-d5be-7545-5e75-b567631717d7",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b383ee88-a3d4-9a92-14b8-4ad063d05858",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8ff891c5-6be8-cf4d-c081-c3c877e21d1b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "af3d7485-acdb-8cea-67a2-6784f57fb5af",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "df6e2e51-1635-c552-c2e4-47c20b623af6",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "07f20e2d-9dba-3c0d-6168-ee83fdae9385",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c470d37a-a616-4624-0e1b-a3d600ba3c08",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "78aaeff9-5997-2b9e-dfff-14892277163a",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ca31003d-2c4d-41c8-9b9b-4c61347b3f44",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "248bcdbe-1d25-60a0-8656-ea43b2f22920",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb2537bc-4439-2071-55a0-b6407e36e5e0",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a5ad0348-d074-cc01-5380-d87b5fe5dc57",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1cd5ed06-8055-c77f-14d6-607ba085772a",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9b3bd5a9-f7ad-eece-81d5-eb1e34b3e9cc",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f16f91c3-4de3-d09f-4071-921f313f15a8",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eb190148-b365-1499-4bcf-34a8307d3ae5",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f7033651-e69a-4324-fbe2-d0182b44a808",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0c81ee88-383d-927c-6006-4e96a8d886ec",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8ff68495-91b6-7636-684d-e74d8db1cef3",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "40137d15-bd16-30bb-80eb-aaabd3357137",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0abc4d04-e557-58b6-e4bc-7e52cfede4f0",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9651c893-06d6-049d-48ea-4068fa9fe013",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec725cd5-16d9-76f8-27ad-d5aa62b86c1b",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3211d60a-a2cc-4aae-e597-0618dc72fd91",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9d1207eb-453a-4a13-6571-c8cfdaa7475e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c83566fe-4da0-b680-43f1-aaa1880db549",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3b42cda1-04cd-5377-70ca-5f9c09522015",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ddc05051-6ba0-9876-0a13-ebc3052d2b4e",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4c6b6e9f-a614-de54-097f-4c095f09b343",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "078427d0-9b6a-f123-fccb-8e5843a2e640",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "035596ea-77a5-4678-2440-1215400176b5",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cd4a2b32-4de8-cae4-d813-3a9c528bce84",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bf542d10-d3a3-6bc7-9bfc-b0462086ba9b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e02b7f77-b4c9-bc10-276e-685319e06cae",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f2ffd04c-6cf2-db85-a42a-bdb85851cef7",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a0f2d093-4ef8-8c6e-433d-875f5fae4ae6",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "abc1a019-0ef7-cbc6-fcf3-2c8326df2fe4",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ad086427-ad88-1b14-74dc-3c734d9f8fb0",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3188ef65-4dde-15ad-a99a-83fd6b6c05a2",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec46c0fe-0b44-80a4-27fb-211fc8190195",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "43dba54c-ac20-eaf1-aa78-e5651b270a61",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "eef85155-102e-817b-0de0-1e2e035404d7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "06db607d-9866-9b91-3737-5d793f448048",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fea0de9b-2eaa-f28c-2118-dc74ea12b4b5",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c10a0baa-1e4b-54ba-5d59-5c584d8ae3ec",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b73fb90a-f41a-0c50-2dd7-6d2cda329ea9",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "749b811e-fb13-4288-9280-1a0ac6ae1357",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ea01f8ea-b73e-be93-9a72-7db9fa21dd8c",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "945a3a2c-b742-5cf0-08ae-46eb85a20a36",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b9740ffe-3edf-4783-e5ad-69012f24a391",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1f0d2ada-0af7-a1a9-d34f-e43e47f0979e",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ed3daf70-fcb0-7b32-f292-becdb3eb3eb3",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a1f1d7a7-bddb-23c9-a786-8be00afca275",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bec6026f-535f-cf5a-5ae4-08eabf06a2ce",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "39fdf696-7837-e304-7697-b0857489cc13",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "94010f22-341b-ef11-b28e-580fa32dd1f8",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "87c84975-194b-70e9-69b9-0cb91d0b0c46",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e920fb68-dd63-e423-80ed-9d5fb1a490c1",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0437d03a-dfff-6bf0-e3a7-a841c9df202f",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0df42892-80ea-56e9-a873-68d992145b82",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5a4cc0c1-97d1-86ad-29ee-a1d65158f59d",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "04bd575a-4979-6362-a12b-698fd6386a0c",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0fce33ff-5688-cefc-4b0e-412ffb408770",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cf31bb54-62e9-7d58-8fef-f5b364c3aff8",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6ee623bd-61c4-24a1-58e9-930b652e80b2",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1646f5ca-3906-a4ad-a5ed-4cca5bc4e5f5",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5e2176fe-eeae-f192-d9ca-3a7c0c94cfbe",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "39a517f6-beab-c8f1-5db1-10ea11f5fa57",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "96306430-04e9-25ea-33da-89edfec32116",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1fa13b29-f524-640b-9235-fda098bc02ab",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2892e94a-b3cf-c62b-47ea-dbb25025480a",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cca7d13d-dd83-8303-1738-11fe4eb666bf",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b1a00a28-6169-2b1b-ea52-26d6df02c8b5",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "95421a97-7bab-a112-f449-606d54d8b7e8",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "61dd17ff-977c-8121-8fca-b66ef5d8406a",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3abc7801-2bfd-62d7-1ba5-2f7ec8cdbb62",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5061dc4e-33c1-ba27-1d46-e859ab526281",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0b8337cd-1978-3a41-f319-1cb7f93a3a05",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "919ddadf-3c17-210d-68cd-ff4750a1ffc4",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "835ab349-a491-9929-3aa6-953986822a4a",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cff91d76-ac33-331a-fbef-3ce3acad3ad1",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d064ff9a-b341-8dd9-031e-4f091d238351",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2fd8782d-cec3-8a42-48b7-3c43d1ed006f",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "65ca4d7d-4257-0343-a5ed-9e65778760dc",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7aca0701-d733-5065-a604-5d5b197502e6",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "29c49a20-5b64-9c2b-9013-f0f1488c342a",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fcce60be-68dc-2a12-5232-9073896298bf",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "96c8e341-2365-95b3-8a1e-529a89bcbea0",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "df7ab688-f273-92c5-d2d1-ded070202216",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bfce3477-1f80-f8ec-1d2d-fbe6d4d2207e",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a000bf30-49d4-72c3-c7df-88a6dd8c060c",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "729e3782-b424-9cb1-e84c-b54deb75f5fb",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bec53306-688d-8f63-25ac-19e1257ae799",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2fc386a6-ba3e-2813-3bd4-8f1d50b2d313",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8c6f4730-0cca-71fc-eb8e-77fc7eec8721",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c779b69d-6396-6eea-3358-ac780cb13ddf",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e114dc8b-e4d1-1f99-1062-fe144255f628",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c09306cd-0fbe-ecef-e79c-97ab2457cb15",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "edea0d3f-618d-181c-e333-fec2ce500fad",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0dd87cf9-8da6-dc14-9220-d561b0f02e8d",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cfca3c64-34ca-9c03-5419-95d5916701ed",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "03d8d93c-920e-cf77-b150-6033191af1b1",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "13000bbc-8fd6-1578-7278-d709f023eed3",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b259425c-b08a-20ea-60cc-b695e91844b7",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "565b9687-a776-3cef-8994-bc338c6f1895",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aafbf12b-4fbf-f7ed-baff-ddb60852ded3",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec341556-c367-708a-11c4-097536f47dcb",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0b8c5e9e-5f59-32f8-19a0-b9e05ef5e471",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3149b3f4-1518-8b57-abdb-7e08d36f7861",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9343be38-6a9c-9597-308b-b7a380d3341a",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "afc81f01-6ce3-5947-ba22-725ebff80699",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d0f8efdd-4c40-b515-a8d1-d855a962a852",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "193842d1-67f8-7b4a-04d4-8ad3f57b6cb5",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "32e0e5ec-8a8e-9958-11b8-3e1fdf2c9022",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d4a343e2-40d5-57a3-222d-bbcb5fa7a60c",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "29f09856-4a06-7009-67f4-1b47f3735322",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dc15a337-285f-ef85-0d15-e43c62677ee0",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1d551b56-0c89-92ea-bc4f-58b3b9bad9dc",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ed3dee0b-d891-bd85-2ec9-065516fcd123",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d007abb-5e1b-17af-b0f7-2c47514aa643",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "85e1b30b-426b-ad04-17fe-fc152cee3378",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e1738f37-9fc0-61b6-284f-5715db5ab025",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c2516a1f-5f3e-7e0f-7b86-9053846377c1",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d5e30992-c7fc-e449-6e8c-e9ba67574c4c",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e7d00346-218a-3d24-b03b-7d2cfa8d6d7d",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fe2403f2-62c7-83ab-fb2a-f4d6cb4cea82",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "15cfd3d2-8bc4-c1bc-7fd9-d3de7f5d669b",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4aff05b1-2e8c-eb11-a7d0-dc28213597fa",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "53bed5c3-f54e-2f3b-5ffb-c3d75fdef22e",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9bb332c5-28e6-8114-a6ad-33361e1c176b",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b1a62097-cc7c-9e22-017f-ade4e5e982e1",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2b56efe3-8b66-93ad-54b4-f5517a0c3cb5",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c3dd11cd-08a8-d8d0-60c4-add26094c881",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "289a7bd2-5839-a841-3c7a-6cd2cb327c1f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c35fb6be-96f6-0788-f95f-8449add9c5b2",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e260b095-b963-c13b-b5a2-d609ac8bd890",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "718c2d6c-578e-b7c9-1e8d-5bc67c063ea5",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7e81993e-6a54-b9ca-8ca1-a5dce75296d9",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b3918eb5-f713-95f5-c1c0-7675b7e0b333",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ad51b75b-94ba-2db3-71d6-9937a00564df",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a515b538-facb-a384-2fc0-09bd704b792b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "df815484-6a48-1b4e-a7ce-2b2a4a85d3f9",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dde5dca0-3459-b459-a095-94f8a5eb4711",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "55db5c7b-8e15-4375-cc5d-227a06438d38",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a5ba5432-532b-bdc1-4517-8f6657b06ccc",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "da5a50be-4892-2912-7d30-e020f44c2bf3",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c6a456ad-719f-6857-0f33-b79bec3aec14",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bca7d63d-cce4-43ac-f1ce-560fc47e3074",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3c94d190-986e-a736-87ca-6787d693212a",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "15ba8680-1073-bb6c-6f10-054644dff3ca",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c565c6ba-ecac-b786-5785-0744bdfcabc2",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "14cf4c2a-44f5-3e25-70c5-a8ad8fd3e3b8",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f13edc40-466a-6629-9715-d914984c3653",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "49a1f7aa-8859-4cc4-b546-4549f789bf3f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "857d4bd4-f8b9-a253-5f74-06ed5783b8cc",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4950a765-76b9-83b3-7de9-af0e949338d0",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bc3ad3db-d8c5-02d3-d06e-5f94d53d9f78",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "425b45c5-3bf2-b3cc-a8fd-011c300c5b6b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a86586f4-63ee-788f-6c4b-375c8c07cc46",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0bb8201-c45e-a7cc-9a4a-f0921c6fd86c",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ae09acad-eb08-db70-af74-adc1671104e2",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8b4e0e39-d22a-6b9e-f265-f1e56b32a5ac",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ccb09398-5ba5-01ed-ab10-93ede45a2ff4",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bf1e2694-409a-773f-6c59-a05a8af0527f",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3a184df7-7d52-f9c0-8fcf-d65d15495f27",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "68b4d308-be73-447a-aa01-94326f1d8573",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a9291ff8-90b2-be6e-9878-5cf2b98adf51",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c6e7c556-e76d-2b22-aced-041ba0d8cb09",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "594df6b5-390a-e031-8c8f-ec7beecf5380",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4d46411f-dba7-37ac-8814-c7da719f6e3b",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a1dcbe22-1a98-b101-6d9d-6a1e43eecad5",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c584e914-d15b-6c1e-b33b-e87707b1c8f0",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a4637bf4-ac5f-fc18-4f21-5d6060423cac",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5d8585f7-072c-3acc-02d3-036830d0eb38",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "042c2061-f2ce-afcc-e0c0-a7bbfcebeb13",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5614c18a-417b-4621-5dd4-a17203b6fd57",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "114acc04-a14d-ea71-5c54-bb541e5bb9af",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6421d373-2d22-5d19-eadb-7e134fb1514e",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ee921d29-66e1-c443-c162-df77ae566e01",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7600bbe0-0a15-349a-b9ec-c475880ecfda",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2599f89e-0977-b58a-0539-f65697c1c75f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb91193d-c432-36d3-5e89-59f7ac76cab2",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "82a38202-4f6b-41d9-11fc-0c59d2bdb4a2",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0d647b97-8742-6f60-67ee-364224b37cd3",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "98a3af77-666d-b843-1550-1654d066a91b",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dfe2714c-934c-ef19-fe94-6c4db509862a",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a6be719c-a6d5-4ec4-f3bc-079e2bc133f7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "aaf5124c-ec73-3718-9708-9cc8a153aa21",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f5bcb9ad-0454-f4d3-389a-3f1d78dc2a1c",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b916b170-861c-b14f-ad0a-9b5bccd2c0ca",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fef0fe5e-f84c-8548-71ef-b871756abbf6",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ac1087ea-7cca-ba5d-4716-69ede045aac3",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "42c4e64b-5f37-7428-68d0-ae73dd07c550",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9b04b38a-df80-4890-3b63-b52fc684befc",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "93acaa36-b84a-93e3-4ab8-bee3839813c8",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fc5fd85c-a36e-f72e-7eb2-0ae8930091c2",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c9ca3188-8a21-724a-23f6-5d9e402ab287",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "19f8d59a-321f-7873-3ea4-4c981946832d",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a8052858-a628-5c78-0ee5-886932034146",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5f1cbb5b-c8cc-7cb9-7692-cfff312ba139",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cc712312-dee1-743a-9da4-ee708f3d06e9",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "50a9ba02-e020-16d3-df51-fb9c4b19bd0c",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3c5a71ba-2254-b3ed-67ec-f64c0106c660",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6fee2eeb-59d2-0c00-9a1e-8a30811ae17f",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bd85547f-e0ea-e2db-db8d-c415c58afb06",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d6442191-6705-0a50-37ea-73d811f12b11",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8f6901a4-f5b5-e843-e991-5ecb27c6d119",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3eb203dd-c874-2718-a2a0-3fc6a3d7ceb8",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "490f3cf5-28f8-dece-4922-52671fb4a199",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3a0dc032-1305-74fb-e0eb-b5d26843dce0",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f509123c-dc8e-d71a-ddbf-4cfe70107308",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4c7ef4e4-6089-5b54-70cf-462a7594d3eb",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "15d70dbc-6c98-76b3-999c-21437cc800e5",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "363f0139-5ea9-5659-b4b6-d31f10c6e1f9",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bb5e6b6a-0c42-fdab-58c4-fef95fcdc49d",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "86096d2d-028a-2178-b93d-d09c58fb798a",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "77584882-18b2-c070-5e41-8b0e717367db",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bb543979-51da-e0a4-508a-34e41cd9c765",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6a26bb2b-10b3-d20b-576c-06ec7eb6881c",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "11219807-2307-1246-8bd9-cd76bf2b52ce",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e2513fbd-3f02-efb1-92e4-4d7524a0a9b4",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "767d2088-ae6e-01a3-af51-1f15e4010867",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6fd6173d-eb18-e8d7-405c-66721548558e",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "882637b6-a3e0-c6f0-5adc-323fbaf06469",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fab65069-a16f-8092-41b3-2dfadb5b84c2",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d8ee1684-8213-4b12-219c-66a273f8d1ec",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ef04b83f-9b1d-9814-3a9e-a3c0d292ac3b",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f8cd0d8c-907b-551d-6211-931279dc0942",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f4c16c8e-12ba-3b16-0555-dcebf1a93e21",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "db390cd5-f0eb-b466-37d6-608ce90540a5",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8a1b0119-fe28-9d70-3d44-4f08f1cc15dc",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb4dd0a9-4c1a-c15f-1c5c-83953364fcd2",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0307a4e5-0941-b6f9-6e98-e48ede3c5f57",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d01019f9-5218-71f9-d3a9-35cb7b04b12b",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "338ef414-55b6-57f8-6cbe-eba50b6858da",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "76c7b55e-03e5-9b52-34d3-5a7ffb9c90b6",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "74775c4f-426a-3783-b04f-ccac0b514278",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "96cf1edd-649d-c6e7-4f3f-63bb525f08b9",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d1ae562d-8ff5-04f9-e4f9-be70373beea0",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "09d5852e-c85d-b871-49a2-71c8d434e139",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "97732f97-a471-d97e-a1c9-5f1e65501cb8",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "db8d2ab6-946a-1502-426d-fcb21953e405",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7bccd9ff-6129-4373-38f5-54b69ffa2532",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8edbb040-f6b6-44c8-881c-6d2a3d8b7775",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fc730fac-20a9-8127-7fda-2bd0fbf14448",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6afd119d-e28e-92e8-9e89-1af6996f754c",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6eab02e7-1426-0881-1c74-99cbe1c2dabd",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "89af6c7f-eb9b-700a-1edf-c780be219657",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2faf2f20-145f-cd9c-fcfd-afbf11172030",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8e9adcb0-97f0-f605-d063-0d6f594f51ba",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5b638516-0759-9513-853d-bbb34b652783",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6e7e7ad1-76f0-2a98-4e52-aad698b8c7ad",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7094d547-fd86-a3c5-b337-839b1e5c317d",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "79e9a30f-cfe9-2f9d-cac4-f86e3962d70b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e9479010-3a2b-6354-2e0c-11b49b24fb5f",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ae9de472-6ed6-c56b-17f8-0802b30e0ead",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "691660f9-12b9-5e11-9261-206ceacd9e36",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "812aabb2-c7f8-2548-e7b2-c7c99cfa0b51",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f692a256-8b14-1f69-5d15-3c1942f5c5f5",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7d8f0718-91c6-2cab-268a-090d429358b3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d698f229-ec8e-a652-a33c-b1dfd62a38e6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "95280675-9478-c286-6e61-5eadb6e04ce7",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "31684066-8ff8-ec8d-d574-7994a009b471",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2a77192f-3516-2af5-1c2f-efb27ff44dff",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "35769633-5a71-b8f5-cd23-34959e70feef",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "895ad2cb-c1d9-f871-0b4f-6d588817d0a2",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "017daad5-244e-acd2-1ce4-07c75f5c9f04",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6d5ab6db-8f30-6091-2cd9-ea7f969fcbff",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ddd77ae8-2557-f2dc-0582-c2c104a0a18b",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "40ced4d1-1d5f-05f9-1ecc-008ece9bf6cf",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a6d90d38-fb40-67d3-9291-4dc9433685ab",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d2041949-1d00-ce16-fc7c-30c218a75f46",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8cabb15c-08a5-3226-7620-6b7fd82c0ec5",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1ef93c61-327d-3b0f-db94-04acd6213a5f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "74ace139-e992-d91f-4671-52f639972753",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "32508cd9-8a12-0bba-b62b-aa26d542bf43",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "16a954b2-61f0-b37a-7693-a0b61d5aa2e7",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "362f0228-aba7-6c24-8de6-b0f8e8f0fca2",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec071909-de0a-3e67-a7b9-4a4b07d9de99",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d50e4726-2991-977e-1e9d-ccae720f4778",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "94d53d90-c40d-2c7b-5b09-1fc3733efdde",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c8126fe8-b8d9-89f3-fefb-a1e84543f875",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "873dd793-925b-cf55-c4ed-19f5ea134c5e",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "978254e1-40d5-bc41-fd06-9909777893d6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bf51ec1a-fa3a-3c43-080e-494a6f7e3910",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "013253fd-915e-ae02-98e4-8f6204070217",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5582813a-cf75-d0bc-d6ea-164333b8f078",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b80b598-780b-bea4-5a24-19940d4a38e1",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ab9e93c1-9054-3de0-5468-8fef169e2733",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2593023d-cd4b-3a13-8456-8605799c009b",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d6285f6d-f25b-009c-7042-a47f4b244b68",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4f1f9725-101c-80f7-d008-fcc9271993df",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d3edfa54-1262-d190-899b-a472871c59f9",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9aec3604-2382-813d-dbe0-e829167d4d03",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5c094776-5acf-2f84-62b1-e51885ebdbbd",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5b05b08e-6f73-e22a-e582-c0117147df20",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dd9e690a-8f67-72b4-629b-15a9d4cdd73a",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bed021d1-ed16-adf0-c5b4-2953fa35048b",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1d78c887-7aa6-132d-0217-f7b43b77bdf8",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7b197240-8dc4-4b9a-bffc-03041ba80ac3",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "842306fb-458c-d097-eed8-909990df3d1b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "453afb2c-a5b5-3cf4-f188-1fa95fc15824",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7755d2e0-e594-43f6-6b2a-97e09a800704",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "25de3c2e-a93d-53f8-6982-c678ad47cc54",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "4cce25cb-d6a8-8892-ccc2-05059e6a6f16",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "8fce3dc3-2a8b-c124-f96f-6798c213bfc8",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6634a192-1867-c0b7-3d6a-f40e9451b92c",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1e6bec97-4c0e-5908-667d-688e7511f7c4",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "325dbc6b-3915-11ff-5664-566a43aedcce",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "798ddc1c-e359-941e-9460-c187af5e53f8",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f723976c-ee91-b770-e7cf-4c2ddd2e10cd",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ac148527-f1ee-3bb8-7a18-397adfdb9684",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7aa3c75d-1047-67fb-2ace-ac1a1a10d694",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "bb39bb03-38d6-cd02-b341-89e2a660da76",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "852e46ab-b00f-8054-4ee1-5649cb845174",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a609799e-8e05-578f-a027-ff94df7272f6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "5826bd17-eeda-6222-b4d0-8506d1ea4f1e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b0c902d-ad55-90ab-57d4-16427ad6c740",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fc3c2b4d-ee65-87b1-8670-116de9888753",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "249c0eaa-9905-1383-8fca-affda7f85f7b",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "43218475-c208-8bef-45bb-cead9439d8b2",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "dadf92d7-0a66-08ff-9067-d63a9ac831f9",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "80f54d52-7c1f-5ff2-d278-d08cb6fbe663",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "23a6ab3d-60bd-4148-2d32-cd648026c5e8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b1ab77c6-75e2-be65-fd4d-2216d7df9169",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb099bba-fa75-cc47-57ac-dc2ce717cf7e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9f1d52f5-5854-6344-7ee2-50b3aa2206aa",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ea06b88f-d8a1-ee08-bc3c-d84a42ccdacd",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0c68876d-2d68-d530-2757-956294ff1bed",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7f73fc92-af72-477b-9c37-49b6779a08db",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2be3fbb7-603a-37b8-9886-8cc179a60c00",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "52255222-934c-c40d-8d7f-7c438999b75b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "323b5584-bd42-9b8b-ca3b-7683360e02ad",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6381a78c-fcd6-d0a1-c4f5-09323d5ec98c",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7978f9e1-f848-3ea6-bd32-b7ed5c2ba948",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2db3f185-97dd-9f4e-3813-f595191b3ef8",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "14a89b1a-19ff-ce17-300b-e17e3bd1077f",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ef55d5ee-4787-d8c7-b1fc-0862746ac28a",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "82854779-bd50-0aaa-177b-dbe72002170a",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ec421852-921b-ebfc-d739-8212e4385e64",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a2eca7c6-6ded-0447-2d46-a31b5047bfb9",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "35e80a17-a920-4848-28dc-7e49a1b1d450",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d0486529-51fc-62a5-004c-ecd5002ccd41",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0d9f5e1b-8b16-6512-1aad-b6fc5bdbda7f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "33ff2701-91f8-d78b-7a7d-2e8699300904",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d96fcd78-c30b-080b-c92b-7d26c7dd221c",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "61a67da9-b7bd-4555-9cf8-c6341152be1e",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb99eb83-8abc-f0bf-d8d5-d3ea90a38837",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b7631fc1-9896-70c6-3e36-19135b902372",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0733286f-fa6c-43ea-5ca3-7184db85512d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "0cbff9d4-4613-2d77-f1a3-6e9f4238a87c",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c15c6cab-3590-2006-a628-67612870eb60",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1fd5f3c7-4c47-19c4-61f0-665a537bec8a",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1491b2d9-7dbd-4050-013b-0d4c38aeb869",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1133eac0-f2b9-5576-b0b6-bef1f79782c7",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6f546c47-26f1-7ec9-b641-fc447770b8d5",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "780e8022-e459-3d7f-a36b-47992b26ace5",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d32c9013-9fb5-9f83-708d-3e02f83631cd",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "53238bae-d873-e113-c07b-94f7384f2a4e",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1b37d5da-f4b6-cbc0-bbc2-8fee0570e9fb",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "be7e99bc-ba4d-f226-9d8f-03682d23bee1",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "068ae673-0ec4-4dba-6f21-0d68d472d82d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "de2bbc35-0ce8-a53f-dfc2-85ef9a028345",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7119f587-652a-8c1d-fc3c-d34ac4500cab",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9fbf8699-17b2-ffe1-591a-65da247b3c88",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "fb22e021-f9cb-947c-9a5b-298e70058967",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "71beb1f2-d47d-9148-9954-40c1bde425e4",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2059555e-1ab0-8ffd-a848-edd75d9a8903",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7b2371e2-3075-4b7c-b44f-9ceb84dd5a26",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6813892f-0280-fea7-888a-406b0079ad49",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "79c9d927-0051-6e82-89c1-b016a082bcc4",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e0eedadf-c67c-c589-6238-9ced6f25c17a",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "cb7e1504-f623-fc5b-b0fd-ea0e3e98a2ec",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "694cc714-d48a-7b1c-0489-bd02bf822400",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "ea6abd22-8ea0-e11e-0dd8-ea0f2bac92c4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "47f1b665-eb1d-be3f-0cfb-9e2fe7c44d7f",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9063e360-7673-166f-12c9-c2142eae61c0",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "65d9de91-9226-5383-0a53-917924356800",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a64513f0-d459-772b-f850-4791f535040a",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "67b20552-cea6-196f-51a3-dc3cf1bf052f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "a17cbf15-2914-7ac1-6db4-c9dd737472cc",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e5387510-d3a5-9981-7f42-ef7ed1bcb70e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1fd22586-65da-e3c0-4839-06bce0c90d83",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "67ce48b8-6079-cf5d-4124-86ce4269aee6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "21454181-a8cd-fc4e-82e3-209341d11696",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "b4002719-dc35-3603-0f28-8524075a6b05",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "224ea7c1-e25e-8530-119a-a38451bcdab1",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "3b794509-3f7c-a78c-71c8-7a765c3b0a6d",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "75f21cd0-41f6-18aa-d7dc-08de2ae54d60",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "1415a733-9c71-a9cc-d8a8-c5b2a950aff8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c0205ee8-4367-4450-a684-5ba6c73a6b54",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "76415e25-e069-5152-93a2-351abf5e87dc",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "85e9ea97-8190-b897-851d-b898d39ea3fd",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f03f4c0a-b739-df91-ee76-2c538c7ce5f0",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "e8bc104b-5224-5935-244d-28dc5330fc45",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "30c5b8b3-a13a-0827-5e5c-03926347caf1",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "7d3bb48b-1b9e-76f0-5983-297bd35cd5af",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "51507e09-654f-5e95-91bf-ba565d00c305",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "31b3fd28-b697-0fd0-1ab9-a126fd05c656",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "24a37b10-ea12-f8a6-4fea-bea1076c1766",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "2bceb0d8-b643-017d-5551-e7b79aec09b0",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "02de7ba9-5a00-13df-83b5-4372e7d252b0",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "d196eada-18ae-5f14-8562-a9a03abff8a6",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "06e00d4d-e7f9-4b0e-f680-e1661b51faed",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f00ae990-164b-5622-5543-9f1d0642b158",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9bc935a9-e336-16b3-02b0-0208eb76c193",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "46028c5d-80b3-2413-d279-30c297c64e94",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "9028896b-8615-c0a2-9e89-fe9fda728b5d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "6f7c3518-1c83-c904-5795-f01b07ffb3a1",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "451ddeb8-5b69-166d-d573-9843cc870442",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31",
+                            IsDeleted = false
                         },
                         new
                         {
                             SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc",
+                            IsDeleted = false
                         });
                 });
 

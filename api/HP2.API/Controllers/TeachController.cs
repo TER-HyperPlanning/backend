@@ -59,7 +59,8 @@ public class TeachesController : ControllerBase
             var response = new TeachResponse
             {
                 SessionId = created.SessionId,
-                TeacherId = created.TeacherId
+                TeacherId = created.TeacherId,
+                DeletedAt = created.DeletedAt
             };
 
             return Ok(ApiResponse<TeachResponse>.Success(response, "Teach created successfully"));
@@ -131,7 +132,8 @@ public class TeachesController : ControllerBase
             var response = new TeachResponse
             {
                 SessionId = updated.SessionId,
-                TeacherId = updated.TeacherId
+                TeacherId = updated.TeacherId,
+                DeletedAt = updated.DeletedAt
             };
 
             return Ok(ApiResponse<TeachResponse>.Success(response, "Teach updated successfully"));
@@ -161,10 +163,25 @@ public class TeachesController : ControllerBase
         var response = rows.Select(x => new TeachResponse
         {
             SessionId = x.SessionId,
-            TeacherId = x.TeacherId
+            TeacherId = x.TeacherId,
+            DeletedAt = x.DeletedAt
         });
 
         return Ok(ApiResponse<IEnumerable<TeachResponse>>.Success(response));
+    }
+
+    [HttpGet("deleted")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<DeletedTeachResponse>>>> GetDeleted()
+    {
+        var rows = await _teachService.GetDeletedAsync();
+        var response = rows.Select(x => new DeletedTeachResponse
+        {
+            SessionId = x.SessionId,
+            TeacherId = x.TeacherId,
+            DeletedAt = x.DeletedAt
+        });
+
+        return Ok(ApiResponse<IEnumerable<DeletedTeachResponse>>.Success(response));
     }
 
     [HttpGet("session/{sessionId}")]
@@ -184,7 +201,8 @@ public class TeachesController : ControllerBase
         var response = rows.Select(x => new TeachResponse
         {
             SessionId = x.SessionId,
-            TeacherId = x.TeacherId
+            TeacherId = x.TeacherId,
+            DeletedAt = x.DeletedAt
         });
 
         return Ok(ApiResponse<IEnumerable<TeachResponse>>.Success(response));
@@ -207,7 +225,8 @@ public class TeachesController : ControllerBase
         var response = rows.Select(x => new TeachResponse
         {
             SessionId = x.SessionId,
-            TeacherId = x.TeacherId
+            TeacherId = x.TeacherId,
+            DeletedAt = x.DeletedAt
         });
 
         return Ok(ApiResponse<IEnumerable<TeachResponse>>.Success(response));
