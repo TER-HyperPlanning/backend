@@ -27,24 +27,24 @@ public class SessionChangeService : ISessionChangeService
     {
         var sessionChange = await _sessionChangeRepository.GetDetailedByIdAsync(sessionChangeId);
         if (sessionChange == null)
-            throw new KeyNotFoundException("Request not found.");
+            throw new KeyNotFoundException("Demande introuvable.");
 
         if (!string.Equals(sessionChange.ChangeType, SessionChangeType.RoomChange.ToString(), StringComparison.OrdinalIgnoreCase))
-            throw new InvalidOperationException("This request is not a room change request.");
+            throw new InvalidOperationException("Cette demande n'est pas une demande de changement de salle.");
 
         if (string.IsNullOrWhiteSpace(roomId))
-            throw new InvalidOperationException("Room is required.");
+            throw new InvalidOperationException("La salle est obligatoire.");
 
         var roomExists = await _sessionChangeRepository.RoomExistsAsync(roomId);
         if (!roomExists)
-            throw new KeyNotFoundException("Selected room was not found.");
+            throw new KeyNotFoundException("La salle sélectionnée est introuvable.");
 
         var approvedStatusId = await _sessionChangeRepository.GetChangeStatusIdByLabelAsync("Approuvé");
         if (string.IsNullOrWhiteSpace(approvedStatusId))
-            throw new InvalidOperationException("Approved status was not found.");
+            throw new InvalidOperationException("Le statut 'Approuvé' est introuvable.");
 
         if (sessionChange.ChangeStatusId == approvedStatusId)
-            throw new InvalidOperationException("This request is already approved.");
+            throw new InvalidOperationException("Cette demande est déjà approuvée.");
 
         await _sessionChangeRepository.ApproveRoomChangeAsync(sessionChangeId, roomId, approvedStatusId);
     }
@@ -53,17 +53,17 @@ public class SessionChangeService : ISessionChangeService
     {
         var sessionChange = await _sessionChangeRepository.GetDetailedByIdAsync(sessionChangeId);
         if (sessionChange == null)
-            throw new KeyNotFoundException("Request not found.");
+            throw new KeyNotFoundException("Demande introuvable.");
 
         if (string.IsNullOrWhiteSpace(rejectionReason))
-            throw new InvalidOperationException("Rejection reason is required.");
+            throw new InvalidOperationException("Le motif de refus est obligatoire.");
 
         var rejectedStatusId = await _sessionChangeRepository.GetChangeStatusIdByLabelAsync("Refusé");
         if (string.IsNullOrWhiteSpace(rejectedStatusId))
-            throw new InvalidOperationException("Rejected status was not found.");
+            throw new InvalidOperationException("Le statut 'Refusé' est introuvable.");
 
         if (sessionChange.ChangeStatusId == rejectedStatusId)
-            throw new InvalidOperationException("This request is already rejected.");
+            throw new InvalidOperationException("Cette demande est déjà refusée.");
 
         await _sessionChangeRepository.RejectAsync(sessionChangeId, rejectionReason, rejectedStatusId);
     }
@@ -72,30 +72,30 @@ public class SessionChangeService : ISessionChangeService
     {
         var sessionChange = await _sessionChangeRepository.GetDetailedByIdAsync(sessionChangeId);
         if (sessionChange == null)
-            throw new KeyNotFoundException("Request not found.");
+            throw new KeyNotFoundException("Demande introuvable.");
 
         if (!string.Equals(sessionChange.ChangeType, SessionChangeType.SessionRecovery.ToString(), StringComparison.OrdinalIgnoreCase))
-            throw new InvalidOperationException("This request is not a recovery request.");
+            throw new InvalidOperationException("Cette demande n'est pas une demande de rattrapage.");
 
         var approvedStatusId = await _sessionChangeRepository.GetChangeStatusIdByLabelAsync("Approuvé");
         if (string.IsNullOrWhiteSpace(approvedStatusId))
-            throw new InvalidOperationException("Approved status was not found.");
+            throw new InvalidOperationException("Le statut 'Approuvé' est introuvable.");
 
         if (sessionChange.ChangeStatusId == approvedStatusId)
-            throw new InvalidOperationException("This request is already approved.");
+            throw new InvalidOperationException("Cette demande est déjà approuvée.");
 
         if (!sessionChange.ProposedDate.HasValue ||
             !sessionChange.ProposedStartTime.HasValue ||
             !sessionChange.ProposedEndTime.HasValue)
         {
-            throw new InvalidOperationException("No proposed schedule is defined for this request.");
+            throw new InvalidOperationException("Aucun créneau proposé n'est défini pour cette demande.");
         }
 
         if (!string.IsNullOrWhiteSpace(sessionChange.ProposedRoomId))
         {
             var roomExists = await _sessionChangeRepository.RoomExistsAsync(sessionChange.ProposedRoomId);
             if (!roomExists)
-                throw new KeyNotFoundException("The proposed recovery room was not found.");
+                throw new KeyNotFoundException("La salle proposée pour le rattrapage est introuvable.");
         }
 
         await _sessionChangeRepository.ApproveRecoveryAsync(sessionChangeId, approvedStatusId);
@@ -110,24 +110,24 @@ public class SessionChangeService : ISessionChangeService
     {
         var sessionChange = await _sessionChangeRepository.GetDetailedByIdAsync(sessionChangeId);
         if (sessionChange == null)
-            throw new KeyNotFoundException("Request not found.");
+            throw new KeyNotFoundException("Demande introuvable.");
 
         if (!string.Equals(sessionChange.ChangeType, SessionChangeType.SessionRecovery.ToString(), StringComparison.OrdinalIgnoreCase))
-            throw new InvalidOperationException("Counter proposal is only available for a recovery request.");
+            throw new InvalidOperationException("La contre-proposition n'est disponible que pour une demande de rattrapage.");
 
         if (startTime >= endTime)
-            throw new InvalidOperationException("Start time must be before end time.");
+            throw new InvalidOperationException("L'heure de début doit être antérieure à l'heure de fin.");
 
         if (string.IsNullOrWhiteSpace(roomId))
-            throw new InvalidOperationException("Counter proposal room is required.");
+            throw new InvalidOperationException("La salle de la contre-proposition est obligatoire.");
 
         var roomExists = await _sessionChangeRepository.RoomExistsAsync(roomId);
         if (!roomExists)
-            throw new KeyNotFoundException("Counter proposal room was not found.");
+            throw new KeyNotFoundException("La salle de la contre-proposition est introuvable.");
 
         var rejectedStatusId = await _sessionChangeRepository.GetChangeStatusIdByLabelAsync("Refusé");
         if (string.IsNullOrWhiteSpace(rejectedStatusId))
-            throw new InvalidOperationException("Rejected status was not found.");
+            throw new InvalidOperationException("Le statut 'Refusé' est introuvable.");
 
         await _sessionChangeRepository.CounterProposeAsync(
             sessionChangeId,
@@ -136,5 +136,18 @@ public class SessionChangeService : ISessionChangeService
             endTime,
             roomId,
             rejectedStatusId);
+    }
+
+    public async Task<IEnumerable<AvailableRoomResponse>> GetAvailableRoomsAsync(string sessionId)
+    {
+        return await _sessionChangeRepository.GetAvailableRoomsForSessionAsync(sessionId);
+    }
+
+    public async Task<IEnumerable<AvailableSlotResponse>> GetAvailableSlotsAsync(string recoveryChangeId, DateTime from, DateTime to)
+    {
+        if (from > to)
+            throw new InvalidOperationException("La date 'from' doit être antérieure à la date 'to'.");
+
+        return await _sessionChangeRepository.GetAvailableSlotsForRecoveryAsync(recoveryChangeId, from, to);
     }
 }

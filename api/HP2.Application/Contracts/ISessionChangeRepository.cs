@@ -10,6 +10,9 @@ public interface ISessionChangeRepository
     Task<string?> GetChangeStatusIdByLabelAsync(string label);
     Task<bool> RoomExistsAsync(string roomId);
 
+    Task<IReadOnlyList<AvailableRoomResponse>> GetAvailableRoomsForSessionAsync(string sessionId);
+    Task<IReadOnlyList<AvailableSlotResponse>> GetAvailableSlotsForRecoveryAsync(string recoveryChangeId, DateTime from, DateTime to);
+
     Task ApproveRoomChangeAsync(string sessionChangeId, string roomId, string approvedStatusId);
     Task RejectAsync(string sessionChangeId, string rejectionReason, string rejectedStatusId);
     Task ApproveRecoveryAsync(string sessionChangeId, string approvedStatusId);
