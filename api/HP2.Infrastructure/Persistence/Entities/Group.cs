@@ -17,5 +17,8 @@ public partial class Group
 
     public virtual Track Track { get; set; } = null!;
 
+
     public virtual ICollection<Session> Sessions { get; set; } = new List<Session>();
+    
+    public bool IsActive { get; set; } = true;
 }

@@ -1,6 +1,7 @@
 using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Domain.Models;
+using System.Linq;
 using HP2.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -18,7 +19,8 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
         public override async Task<IReadOnlyList<GroupModel>> GetAllAsync()
     {
         var groups = await _dbContext.Groups
-            .ToListAsync();
+          .Where(g => g.IsActive)
+          .ToListAsync();
             return _mapper.Map<List<GroupModel>>(groups);
     }
 
@@ -44,7 +46,7 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
     public override async Task<GroupModel?> GetByIdAsync(string id)
     {
         var group = await _dbContext.Groups
-            .FirstOrDefaultAsync(s => s.GroupId == id);
+    .FirstOrDefaultAsync(g => g.GroupId == id && g.IsActive);
         
         return group != null ? _mapper.Map<GroupModel>(group) : null;
     }
@@ -68,25 +70,18 @@ public class GroupRepository : RepositoryBase<GroupModel>, IGroupRepository
     }
 
     public override async Task DeleteAsync(string id)
-    {
-        var group = await _dbContext.Groups
-            .FirstOrDefaultAsync(s => s.GroupId == id);
+{
+    var group = await _dbContext.Groups.FirstOrDefaultAsync(g => g.GroupId == id);
+    if (group == null) return;
 
-        if (group != null)
-        {
-            _dbContext.Groups.Remove(group);
-            if (group != null)
-            {
-                _dbContext.Groups.Remove(group);
-            }
-            await _dbContext.SaveChangesAsync();
-        }
-    }
+    group.IsActive = false;
+    await _dbContext.SaveChangesAsync();
+}
 
     public async Task<GroupModel?> GetByNameAsync(string name)
     {
       var group = await _dbContext.Groups
-            .FirstOrDefaultAsync(s => s.Name == name);
+    .FirstOrDefaultAsync(g => g.Name == name && g.IsActive);
         
         return group != null ? _mapper.Map<GroupModel>(group) : null;
     }
