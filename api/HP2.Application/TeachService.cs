@@ -6,18 +6,60 @@ namespace HP2.Application;
 public class TeachService : ITeachService
 {
     private readonly ITeachRepository _repository;
+    private readonly INotificationService _notificationService;
+    private readonly ISessionRepository _sessionRepository;
 
-    public TeachService(ITeachRepository repository)
+    public TeachService(ITeachRepository repository, INotificationService notificationService, ISessionRepository sessionRepository)
     {
         _repository = repository;
+        _notificationService = notificationService;
+        _sessionRepository = sessionRepository;
     }
 
-    public Task<TeachModel> AddAsync(TeachModel model) => _repository.AddAsync(model);
+    public async Task<TeachModel> AddAsync(TeachModel model)
+    {
+        var result = await _repository.AddAsync(model);
+        
+        // --- Notification au professeur ---
+        var session = await _sessionRepository.GetByIdAsync(model.SessionId);
+        
+        if (session != null)
+        {
+            await _notificationService.NotifyUsersAsync(
+                new List<string> { model.TeacherId }, // Seulement le professeur concerné
+                "Nouvelle séance attribuée",
+                $"Vous avez été assigné(e) à une séance de {session.CourseName ?? "Cours"} prévue le {session.StartDateTime:dd/MM/yyyy HH:mm}.",
+                "SessionCreation",
+                session.Id
+            );
+        }
+        // ---------------------------------
+        
+        return result;
+    }
 
     public Task<TeachModel> UpdateAsync(string currentSessionId, string currentTeacherId, TeachModel model)
         => _repository.UpdateAsync(currentSessionId, currentTeacherId, model);
 
-    public Task<bool> DeleteAsync(string sessionId, string teacherId) => _repository.DeleteAsync(sessionId, teacherId);
+    public async Task<bool> DeleteAsync(string sessionId, string teacherId)
+    {
+        var session = await _sessionRepository.GetByIdAsync(sessionId);
+        
+        var result = await _repository.DeleteAsync(sessionId, teacherId);
+
+        if (result && session != null)
+        {
+            await _notificationService.NotifyUsersAsync(
+                new List<string> { teacherId },
+                "Séance annulée",
+                $"La séance de {session.CourseName ?? "Cours"} prévue le {session.StartDateTime:dd/MM/yyyy HH:mm} a été annulée.",
+                "SessionCancellation",
+                sessionId
+            );
+        }
+
+        return result;
+    }
 
     public Task<IReadOnlyList<TeachModel>> GetAllAsync() => _repository.GetAllAsync();
 

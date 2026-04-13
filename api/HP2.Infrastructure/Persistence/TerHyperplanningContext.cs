@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,6 +35,8 @@ public partial class TerHyperplanningContext : DbContext
     public virtual DbSet<Group> Groups { get; set; }
 
     public virtual DbSet<Notification> Notifications { get; set; }
+
+    public virtual DbSet<UserNotification> UserNotifications { get; set; }
 
     public virtual DbSet<Program> Programs { get; set; }
 
@@ -332,51 +334,74 @@ public partial class TerHyperplanningContext : DbContext
 
         modelBuilder.Entity<Notification>(entity =>
         {
-            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__E059842FEA1D001E");
+            entity.HasKey(e => e.NotificationId).HasName("PK_Notification");
 
             entity.ToTable("Notification");
 
             entity.Property(e => e.NotificationId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasDefaultValueSql("(newid())")
                 .HasColumnName("notification_id");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime")
-                .HasColumnName("created_at");
-            entity.Property(e => e.Message)
-                .IsUnicode(false)
-                .HasColumnName("message");
+
             entity.Property(e => e.Title)
-                .HasMaxLength(100)
-                .IsUnicode(false)
+                .HasMaxLength(200)
                 .HasColumnName("title");
 
-            entity.HasMany(d => d.Users).WithMany(p => p.Notifications)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Receive",
-                    r => r.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Receive_User"),
-                    l => l.HasOne<Notification>().WithMany()
-                        .HasForeignKey("NotificationId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Receive_Notif"),
-                    j =>
-                    {
-                        j.HasKey("NotificationId", "UserId").HasName("PK__Receive__0BC2675F6B31FA1F");
-                        j.ToTable("Receive");
-                        j.IndexerProperty<string>("NotificationId")
-                            .HasMaxLength(50)
-                            .IsUnicode(false)
-                            .HasColumnName("notification_id");
-                        j.IndexerProperty<string>("UserId")
-                            .HasMaxLength(50)
-                            .IsUnicode(false)
-                            .HasColumnName("user_id");
-                    });
+            entity.Property(e => e.Message)
+                .HasMaxLength(1000)
+                .HasColumnName("message");
+
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .HasDefaultValue("General")
+                .HasColumnName("type");
+
+            entity.Property(e => e.RelatedId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .IsRequired(false)
+                .HasColumnName("related_id");
+
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime2")
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnName("created_at");
+
+            // Pour la compatibilité ascendante, on peut garder HasMany(...).WithMany(...) 
+            // Mais pour IsRead, on utilise UserNotifications
+        });
+
+        modelBuilder.Entity<UserNotification>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.NotificationId }).HasName("PK_UserNotification");
+
+            entity.ToTable("UserNotification");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+
+            entity.Property(e => e.NotificationId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("notification_id");
+
+            entity.Property(e => e.IsRead)
+                .HasDefaultValue(false)
+                .HasColumnName("is_read");
+
+            entity.HasOne(d => d.User)
+                .WithMany()
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UserNotification_User");
+
+            entity.HasOne(d => d.Notification)
+                .WithMany(p => p.UserNotifications)
+                .HasForeignKey(d => d.NotificationId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UserNotification_Notification");
         });
 
         modelBuilder.Entity<Program>(entity =>
