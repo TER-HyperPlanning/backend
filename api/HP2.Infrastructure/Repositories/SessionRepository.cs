@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Domain.Enums;
 using HP2.Domain.Models;
@@ -229,7 +229,7 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
         
         try
         {
-            // On utilise une projection directe sur la session pour laisser EF Core gérer les jointures de manière optimale
+            // On utilise une projection directe sur la session pour laisser EF Core gÃ©rer les jointures de maniÃ¨re optimale
             var data = await _dbContext.Sessions
                 .Where(s => s.SessionId == sessionId)
                 .Select(s => new
@@ -374,3 +374,4 @@ SELECT @result;";
         }).ToList();
     }
 }
+
