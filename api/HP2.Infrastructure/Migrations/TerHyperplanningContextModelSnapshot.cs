@@ -7093,17 +7093,17 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Label = "En attente"
+                            Label = "ATTENTE"
                         },
                         new
                         {
                             ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
-                            Label = "Approuvé"
+                            Label = "APPROUVE"
                         },
                         new
                         {
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
-                            Label = "Refusé"
+                            Label = "REFUSE"
                         });
                 });
 

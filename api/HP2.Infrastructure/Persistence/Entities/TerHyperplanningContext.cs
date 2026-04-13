@@ -2792,17 +2792,17 @@ public partial class TerHyperplanningContext : DbContext
     new ChangeStatus
     {
         ChangeStatusId = changeStatusPendingId,
-        Label = "En attente"
+        Label = "ATTENTE"
     },
     new ChangeStatus
     {
         ChangeStatusId = changeStatusApprovedId,
-        Label = "Approuvé"
+        Label = "APPROUVE"
     },
     new ChangeStatus
     {
         ChangeStatusId = changeStatusRejectedId,
-        Label = "Refusé"
+        Label = "REFUSE"
     }
 );
 

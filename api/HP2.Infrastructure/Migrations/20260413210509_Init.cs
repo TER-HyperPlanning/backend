@@ -672,9 +672,9 @@ namespace HP2.Infrastructure.Migrations
                 columns: new[] { "change_status_id", "label" },
                 values: new object[,]
                 {
-                    { "6d1cab45-5c87-c373-3fd2-91f518c946bc", "En attente" },
-                    { "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", "Refusé" },
-                    { "df4c997e-2e20-921e-98e9-906a9ecf8813", "Approuvé" }
+                    { "6d1cab45-5c87-c373-3fd2-91f518c946bc", "ATTENTE" },
+                    { "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", "REFUSE" },
+                    { "df4c997e-2e20-921e-98e9-906a9ecf8813", "APPROUVE" }
                 });
 
             migrationBuilder.InsertData(
