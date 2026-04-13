@@ -2,14 +2,11 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using HP2.Application;
 using HP2.Infrastructure;
-using HP2.Application.Exceptions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using System.Text.Json;
 using HP2.Application.DTOs.Common;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +29,10 @@ internal class Program
         builder.Services.AddJwtService(issuer, audience, secretKey);
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+        // SignalR pour les notifications en temps réel
+        builder.Services.AddSignalR();
+        builder.Services.AddScoped<HP2.Application.Contracts.INotificationService, global::HP2.API.Services.NotificationService>();
 
         builder.Services.AddControllers()
             .ConfigureApiBehaviorOptions(options =>
@@ -115,6 +116,17 @@ internal class Program
 
             options.Events = new JwtBearerEvents
             {
+                OnMessageReceived = context =>
+                {
+                    var accessToken = context.Request.Query["access_token"];
+                    var path = context.HttpContext.Request.Path;
+                    if (!string.IsNullOrEmpty(accessToken) &&
+                        (path.StartsWithSegments("/hubs/notifications")))
+                    {
+                        context.Token = accessToken;
+                    }
+                    return Task.CompletedTask;
+                },
                 OnChallenge = context =>
                 {
                     context.HandleResponse();
@@ -146,7 +158,7 @@ internal class Program
         using (var scope = app.Services.CreateScope())
         {
             var db = scope.ServiceProvider.GetRequiredService<HP2.Infrastructure.Persistence.Entities.TerHyperplanningContext>();
-            db.Database.Migrate();
+// db.Database.Migrate();
         }
 
         if (app.Environment.IsDevelopment())
@@ -155,54 +167,17 @@ internal class Program
             app.UseSwaggerUI();
         }
 
-        app.UseExceptionHandler(errorApp =>
-        {
-            errorApp.Run(async context =>
-            {
-                var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
-
-                context.Response.ContentType = "application/json";
-
-                var (statusCode, errorResponse) = exception switch
-                {
-                    DeleteConflictException ex =>
-                        (StatusCodes.Status409Conflict, ApiResponse<object>.Fail(ex.Message, ex.BlockingSession)),
-
-                    ArgumentException ex =>
-                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
-
-                    FormatException ex =>
-                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
-
-                    KeyNotFoundException ex =>
-                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
-
-                    UnauthorizedAccessException ex =>
-                        (StatusCodes.Status403Forbidden, ApiResponse<object>.Fail(ex.Message)),
-
-                    _ =>
-                        (StatusCodes.Status500InternalServerError, ApiResponse<object>.Fail("An internal error occurred"))
-                };
-
-                context.Response.StatusCode = statusCode;
-
-                var jsonOptions = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                };
-
-                await context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse, jsonOptions));
-            });
-        });
-
-        app.UseCors(opt => opt.AllowAnyOrigin()
-                              .AllowAnyMethod()
-                              .AllowAnyHeader());
+        app.UseCors(opt => opt
+            .WithOrigins("http://localhost:3000", "http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()); // Requis pour SignalR WebSockets
 
         app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
+        app.MapHub<global::HP2.API.Hubs.NotificationHub>("/hubs/notifications");
 
         app.Run();
     }
