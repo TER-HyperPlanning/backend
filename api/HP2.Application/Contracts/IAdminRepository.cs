@@ -6,4 +6,5 @@ public interface IAdminRepository : IAsyncRepository<AdminModel>
 {
     Task<AdminModel?> GetByEmailAsync(string email);
     Task<IReadOnlyList<AdminModel>> GetDeletedAsync();
+    Task<IReadOnlyList<AdminModel>> GetAllFilteredAsync(string? firstName, string? lastName);
 }

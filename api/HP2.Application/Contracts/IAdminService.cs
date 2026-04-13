@@ -6,7 +6,7 @@ public interface IAdminService
 {
     Task<AdminModel> CreateAdminAsync(AdminModel admin);
     Task<AdminModel?> GetAdminByIdAsync(string id);
-    Task<IReadOnlyList<AdminModel>> GetAllAdminsAsync();
+    Task<IReadOnlyList<AdminModel>> GetAllAdminsAsync(string? firstName, string? lastName);
     Task<IReadOnlyList<AdminModel>> GetDeletedAdminsAsync();
     Task UpdateAdminAsync(AdminModel admin);
     Task DeleteAdminAsync(string id);
