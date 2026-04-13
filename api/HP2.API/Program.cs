@@ -9,6 +9,9 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using HP2.Application.DTOs.Common;
 using Microsoft.AspNetCore.Mvc;
+using HP2.Application.Exceptions;
+using Microsoft.AspNetCore.Diagnostics;
+using System.Text.Json;
 
 internal class Program
 {
@@ -166,6 +169,46 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseExceptionHandler(errorApp =>
+        {
+            errorApp.Run(async context =>
+            {
+                var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+
+                context.Response.ContentType = "application/json";
+
+                var (statusCode, errorResponse) = exception switch
+                {
+                    DeleteConflictException ex =>
+                        (StatusCodes.Status409Conflict, ApiResponse<object>.Fail(ex.Message, ex.BlockingSession)),
+
+                    ArgumentException ex =>
+                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
+
+                    FormatException ex =>
+                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
+
+                    KeyNotFoundException ex =>
+                        (StatusCodes.Status400BadRequest, ApiResponse<object>.Fail(ex.Message)),
+
+                    UnauthorizedAccessException ex =>
+                        (StatusCodes.Status403Forbidden, ApiResponse<object>.Fail(ex.Message)),
+
+                    _ =>
+                        (StatusCodes.Status500InternalServerError, ApiResponse<object>.Fail("An internal error occurred"))
+                };
+
+                context.Response.StatusCode = statusCode;
+
+                var jsonOptions = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+
+                await context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse, jsonOptions));
+            });
+        });
 
         app.UseCors(opt => opt
             .WithOrigins("http://localhost:3000", "http://localhost:5173")
