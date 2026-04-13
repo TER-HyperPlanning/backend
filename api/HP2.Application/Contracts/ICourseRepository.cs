@@ -9,5 +9,6 @@ namespace HP2.Application.Contracts
     {
         Task<IReadOnlyList<CourseModel>> GetDeletedAsync();
         Task<BlockingSessionInfo?> GetFirstNotYetPassedSessionUsingCourseAsync(string courseId, DateTime referenceDateTime);
+        Task<IReadOnlyList<CourseModel>> GetAllFilteredAsync(string? name, string? code);
     }
 }

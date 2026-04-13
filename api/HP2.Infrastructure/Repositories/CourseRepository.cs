@@ -16,12 +16,24 @@ namespace HP2.Infrastructure.Repositories
         {
         }
 
-        public override async Task<IReadOnlyList<CourseModel>> GetAllAsync()
+        public async Task<IReadOnlyList<CourseModel>> GetAllFilteredAsync(string? name, string? code)
         {
-            var courses = await _dbContext.Courses
-                .AsNoTracking()
-                .ToListAsync();
-
+            var query = _dbContext.Courses
+            .AsNoTracking()
+            .AsQueryable();
+            
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                query = query.Where(c => c.Name.Contains(name));
+            }
+            
+            if (!string.IsNullOrWhiteSpace(code))
+            {
+                query = query.Where(c => c.Code.Contains(code));
+            }
+            
+            var courses = await query.ToListAsync();
+            
             return _mapper.Map<List<CourseModel>>(courses);
         }
 
