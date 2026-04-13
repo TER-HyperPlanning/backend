@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260411155010_AllowNullGroupIdForStudents")]
+    partial class AllowNullGroupIdForStudents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2247,12 +2250,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "5fa19058-bf39-5202-eea8-d48717d65eb9"
+                            SessionId = "c988ef8a-905f-f272-7ac8-51e06c813d79"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "5d238d7c-8fb0-4871-056a-65ec27c1072f"
+                            SessionId = "7256ee0c-55f6-d5cb-c324-d686e3637c9b"
                         },
                         new
                         {
@@ -2262,12 +2265,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "0fd1423a-74b4-4509-3bbe-4d3e18071a3a"
+                            SessionId = "88f4571b-8378-770c-2aea-69dc6ce7ecf6"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "d880c06f-47b5-e1c9-888b-2a45303ef854"
+                            SessionId = "77e01eb8-afac-e4aa-af58-4c844bd83748"
                         },
                         new
                         {
@@ -2277,12 +2280,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "0d404c81-c127-9c3c-33df-a33a9f54b508"
+                            SessionId = "11934ac3-6b4c-1640-8eba-00ba02d5b86a"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "d05e0c97-3318-278c-8bf0-4311dc95f6c2"
+                            SessionId = "bf3cbc8d-f451-5b64-aaee-282d7c5ee38f"
                         },
                         new
                         {
@@ -2292,12 +2295,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "a2ced630-3ec2-8093-ebc7-e91c959145e9"
+                            SessionId = "bec69f55-a2a3-81ea-cf20-5f2d56b376b8"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "ed27fa93-718c-88e4-8acb-85f2db2c283b"
+                            SessionId = "9a38ad1d-d5c0-b94b-b944-8c0afe20c192"
                         },
                         new
                         {
@@ -2307,12 +2310,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "e0cfcb79-a015-c966-3230-5e7e86bdd4c8"
+                            SessionId = "c95e2491-8172-5fbc-a92a-87ad9c9181f8"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "68d2998b-87cb-a478-c88a-a51ca80145a5"
+                            SessionId = "399b2888-c0c5-ae26-5afe-f98ec7be5d8a"
                         },
                         new
                         {
@@ -2322,12 +2325,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "3addefff-d8f6-8f8f-db48-69ec7b0a89cb"
+                            SessionId = "c73b66a4-8ee3-0145-1eb4-30bf4dec84bc"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "e771afe4-4d64-cbcd-11ad-878b77752b53"
+                            SessionId = "5f0f21df-bbf9-7cd5-df3f-2561fb0dc114"
                         },
                         new
                         {
@@ -2337,12 +2340,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "29b668aa-18a0-0e8a-ae78-a420543df94e"
+                            SessionId = "9e6b1106-9873-1975-fb5c-b15561f6e3b4"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "290a7317-e5c9-ad05-e47d-caa6063ceb2c"
+                            SessionId = "aaad430c-5c54-db42-9a55-c61c5620d826"
                         },
                         new
                         {
@@ -2352,12 +2355,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "b3bae3b0-b37c-c8b7-d834-2ba21799d0ac"
+                            SessionId = "25e0df06-bbaa-37b8-2ac6-4eab678ab272"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "a8f8d4a0-3f4e-c11c-d102-7f174818fdc4"
+                            SessionId = "7142c7b1-d1a0-8ec3-fc91-4676fcfdf48f"
                         },
                         new
                         {
@@ -2367,12 +2370,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "20ed4f3a-c175-821d-35be-2ee8929dae61"
+                            SessionId = "11256d7c-1f5a-523b-7bbd-95a4e987f37b"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "1ede08cd-20f8-3e38-736b-f235acaa508e"
+                            SessionId = "84ad9b8f-99a8-78de-b492-83201e1f1c1c"
                         },
                         new
                         {
@@ -2382,12 +2385,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "e580eb5e-3b20-1821-dba0-5d8e776c7479"
+                            SessionId = "363b98ba-216c-aa41-0293-722df3956f15"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "8b5fdba4-07f4-dc55-3781-3203562ca7a3"
+                            SessionId = "8e5fe2d8-18b0-b8b8-5314-69577f4cc708"
                         },
                         new
                         {
@@ -2397,12 +2400,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "4afa8504-a471-6140-ae11-de9e55f88184"
+                            SessionId = "cce1c5fe-9119-05f8-3e8d-2c378c5d14c9"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "fbf79eb2-b304-60a0-c1a9-f735e3fcd077"
+                            SessionId = "e165bf79-d64d-46b7-b9ad-16400e834be2"
                         },
                         new
                         {
@@ -2412,12 +2415,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "70859917-364d-8f83-ae6f-e06f075f6291"
+                            SessionId = "cabc07dc-e3d5-9d56-1a0f-53d69775f4b5"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "ef0391bc-4247-10b0-eabe-2fbf5c2fd7df"
+                            SessionId = "f2d79b41-28fe-6b60-6aa7-bcfaceb9c9c3"
                         },
                         new
                         {
@@ -2427,12 +2430,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "2b003721-f33c-4fb7-8eb7-f5c959519cfc"
+                            SessionId = "950534f5-24b7-d4c1-08b5-cfbdf49a5561"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "309b75a8-8f93-26c9-4cf8-75654e0f717e"
+                            SessionId = "d1be13f7-4fb2-b710-6f8a-c8fc9e0e139f"
                         },
                         new
                         {
@@ -2442,12 +2445,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "e77cd186-dd72-e409-5a95-d8d37b9f67d9"
+                            SessionId = "768e3191-da48-9df5-048d-1e0c3c1d53a9"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "657d7faf-485b-8f8b-56cf-4585b0231767"
+                            SessionId = "64f30881-ea24-9de3-f214-87d209f58db8"
                         },
                         new
                         {
@@ -2457,12 +2460,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "d45f1962-e6bc-ba9a-4e9b-6a55fc7f543e"
+                            SessionId = "dbf91012-44be-cdc8-081b-5ddfe794ce4c"
                         },
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "f0352190-21e2-bd43-21a1-ee249d61f252"
+                            SessionId = "e0d73078-69a7-2356-d8b7-f14837e1ca8c"
                         },
                         new
                         {
@@ -2472,7 +2475,7 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
-                            SessionId = "93562bf6-d09a-3026-d079-9e9aed352fb5"
+                            SessionId = "7a1ae3aa-4be1-2c47-1c0b-e7c2765cd514"
                         },
                         new
                         {
@@ -2483,6 +2486,11 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
                             SessionId = "7e9cedb2-0627-1785-cb2c-6e53b8e2c517"
+                        },
+                        new
+                        {
+                            GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
+                            SessionId = "e4e6775e-6f26-21f7-11db-74bd6cddd1f8"
                         },
                         new
                         {
@@ -4687,12 +4695,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "39fdf696-7837-e304-7697-b0857489cc13"
+                            SessionId = "a4c1e1ca-1aed-4358-29ba-86f5969bcffc"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "94010f22-341b-ef11-b28e-580fa32dd1f8"
+                            SessionId = "ec6e503e-a6c5-f7f4-c7a8-6ebbf0e9364e"
                         },
                         new
                         {
@@ -4702,12 +4710,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "e920fb68-dd63-e423-80ed-9d5fb1a490c1"
+                            SessionId = "02ac742d-f835-8d91-fc5e-9f968bb4fff9"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "0437d03a-dfff-6bf0-e3a7-a841c9df202f"
+                            SessionId = "95192638-5e77-03f1-93f7-ec71fac6461d"
                         },
                         new
                         {
@@ -4717,12 +4725,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "5a4cc0c1-97d1-86ad-29ee-a1d65158f59d"
+                            SessionId = "99a99299-8ffb-a345-7deb-22c565c1cb0a"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "04bd575a-4979-6362-a12b-698fd6386a0c"
+                            SessionId = "422c1e49-67b5-acd2-b230-681a7b5f3f7c"
                         },
                         new
                         {
@@ -4732,12 +4740,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "cf31bb54-62e9-7d58-8fef-f5b364c3aff8"
+                            SessionId = "55a76eba-0077-c3ff-f1f7-18e9368c6232"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "6ee623bd-61c4-24a1-58e9-930b652e80b2"
+                            SessionId = "4e9c06a0-6069-c2d3-9f26-60b48f4868d5"
                         },
                         new
                         {
@@ -4747,12 +4755,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "5e2176fe-eeae-f192-d9ca-3a7c0c94cfbe"
+                            SessionId = "51642122-e60e-72f9-c360-f185fdb5f957"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "39a517f6-beab-c8f1-5db1-10ea11f5fa57"
+                            SessionId = "b2cf5b94-29b1-5935-44ac-225ba5b17377"
                         },
                         new
                         {
@@ -4762,12 +4770,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "1fa13b29-f524-640b-9235-fda098bc02ab"
+                            SessionId = "730e922c-6ca0-6b0f-fae6-42c1891a56c4"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "2892e94a-b3cf-c62b-47ea-dbb25025480a"
+                            SessionId = "0fb504d1-b0eb-3514-84c4-03820e11f563"
                         },
                         new
                         {
@@ -4777,12 +4785,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "b1a00a28-6169-2b1b-ea52-26d6df02c8b5"
+                            SessionId = "4ae0633d-1a4c-382c-75c0-60b10e1fdf14"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "95421a97-7bab-a112-f449-606d54d8b7e8"
+                            SessionId = "f7e88d0f-cfbd-60bc-3d91-c9fec7b57fff"
                         },
                         new
                         {
@@ -4792,12 +4800,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "3abc7801-2bfd-62d7-1ba5-2f7ec8cdbb62"
+                            SessionId = "888fe0f3-6c8d-2a33-f1a1-8ced33363a3c"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "5061dc4e-33c1-ba27-1d46-e859ab526281"
+                            SessionId = "b9ab674e-8139-c0f8-b699-e9670bc42dec"
                         },
                         new
                         {
@@ -4807,12 +4815,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "919ddadf-3c17-210d-68cd-ff4750a1ffc4"
+                            SessionId = "d0013ce7-489b-dc33-ad5e-2b78bff7091e"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "835ab349-a491-9929-3aa6-953986822a4a"
+                            SessionId = "8f655aa6-4375-bef6-1843-bbae1fcf0389"
                         },
                         new
                         {
@@ -4822,12 +4830,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "d064ff9a-b341-8dd9-031e-4f091d238351"
+                            SessionId = "9cc6d4ed-0bfe-4fc4-31cc-4428f0a35c04"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "2fd8782d-cec3-8a42-48b7-3c43d1ed006f"
+                            SessionId = "48254f64-7bbb-6aa1-abf8-a428d9892816"
                         },
                         new
                         {
@@ -4837,12 +4845,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "7aca0701-d733-5065-a604-5d5b197502e6"
+                            SessionId = "aec91e44-2289-df47-1826-7f0e10162538"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "29c49a20-5b64-9c2b-9013-f0f1488c342a"
+                            SessionId = "791cd5eb-2bdc-eda7-2208-c33377490aa6"
                         },
                         new
                         {
@@ -4852,12 +4860,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "96c8e341-2365-95b3-8a1e-529a89bcbea0"
+                            SessionId = "b88e4b7e-c8c8-af1d-523c-d8a4337a9420"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "df7ab688-f273-92c5-d2d1-ded070202216"
+                            SessionId = "2eb5c468-70f3-17c2-e078-a50f0d756fd8"
                         },
                         new
                         {
@@ -4867,12 +4875,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "a000bf30-49d4-72c3-c7df-88a6dd8c060c"
+                            SessionId = "a9328a36-bfdd-2d3b-191f-715249ed7620"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "729e3782-b424-9cb1-e84c-b54deb75f5fb"
+                            SessionId = "9e190347-c557-83f5-30a9-090c1b66a3da"
                         },
                         new
                         {
@@ -4882,12 +4890,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "2fc386a6-ba3e-2813-3bd4-8f1d50b2d313"
+                            SessionId = "eb9db0ba-97d4-e9cb-a64a-b3310e89a189"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "8c6f4730-0cca-71fc-eb8e-77fc7eec8721"
+                            SessionId = "1e50fc6c-bc91-ce21-c217-10bcd34cffd5"
                         },
                         new
                         {
@@ -4897,12 +4905,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "e114dc8b-e4d1-1f99-1062-fe144255f628"
+                            SessionId = "976d2c50-da8b-3404-00d1-b43e972cb93e"
                         },
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "c09306cd-0fbe-ecef-e79c-97ab2457cb15"
+                            SessionId = "d6b32f88-a8e0-4752-9b42-db4cbc188ec7"
                         },
                         new
                         {
@@ -4912,7 +4920,7 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
-                            SessionId = "0dd87cf9-8da6-dc14-9220-d561b0f02e8d"
+                            SessionId = "4967c7a7-fdec-8508-f875-59190ae21a6c"
                         },
                         new
                         {
@@ -4923,6 +4931,11 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
                             SessionId = "03d8d93c-920e-cf77-b150-6033191af1b1"
+                        },
+                        new
+                        {
+                            GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
+                            SessionId = "67cf8205-a840-1c62-8ef6-7d59d93acaa7"
                         },
                         new
                         {
@@ -6227,12 +6240,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "de2bbc35-0ce8-a53f-dfc2-85ef9a028345"
+                            SessionId = "c57c2d94-306f-533f-968f-70b09a063ab0"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "7119f587-652a-8c1d-fc3c-d34ac4500cab"
+                            SessionId = "923ddf04-73b9-03bb-ce24-3ec1954d3291"
                         },
                         new
                         {
@@ -6242,12 +6255,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "fb22e021-f9cb-947c-9a5b-298e70058967"
+                            SessionId = "78a588a9-6462-0d04-c7dc-1b3811c72888"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "71beb1f2-d47d-9148-9954-40c1bde425e4"
+                            SessionId = "14f5470a-44aa-7376-127e-96e5510e153a"
                         },
                         new
                         {
@@ -6257,12 +6270,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "7b2371e2-3075-4b7c-b44f-9ceb84dd5a26"
+                            SessionId = "ef860a7f-f419-096d-9f33-c1ed5f387a91"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "6813892f-0280-fea7-888a-406b0079ad49"
+                            SessionId = "39ce60ca-062f-7516-258f-ff72cd7997db"
                         },
                         new
                         {
@@ -6272,12 +6285,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "e0eedadf-c67c-c589-6238-9ced6f25c17a"
+                            SessionId = "024eff3b-b7a6-033e-e3a5-c233416af90f"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "cb7e1504-f623-fc5b-b0fd-ea0e3e98a2ec"
+                            SessionId = "e4c2ec00-1c7d-2c21-8e55-5028071366ec"
                         },
                         new
                         {
@@ -6287,12 +6300,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "ea6abd22-8ea0-e11e-0dd8-ea0f2bac92c4"
+                            SessionId = "0a794b53-2cc1-c57d-0b81-f826fbec33f4"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "47f1b665-eb1d-be3f-0cfb-9e2fe7c44d7f"
+                            SessionId = "b5baf26b-3a83-40db-c884-8eab15e4afaa"
                         },
                         new
                         {
@@ -6302,12 +6315,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "65d9de91-9226-5383-0a53-917924356800"
+                            SessionId = "0934606e-52d6-f0e8-0952-292935cc5122"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "a64513f0-d459-772b-f850-4791f535040a"
+                            SessionId = "4ee53283-9e0e-2a73-8ccb-977c961ba393"
                         },
                         new
                         {
@@ -6317,12 +6330,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "a17cbf15-2914-7ac1-6db4-c9dd737472cc"
+                            SessionId = "03cee3de-d07b-4669-7845-d9472ee9bc6b"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "e5387510-d3a5-9981-7f42-ef7ed1bcb70e"
+                            SessionId = "834a3bd4-f0c5-9ffc-0406-ee2901ceb06d"
                         },
                         new
                         {
@@ -6332,12 +6345,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "67ce48b8-6079-cf5d-4124-86ce4269aee6"
+                            SessionId = "83c90ca2-93d2-0480-b278-3a69c0f5e307"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "21454181-a8cd-fc4e-82e3-209341d11696"
+                            SessionId = "93743d4b-3c37-941a-2567-c9a6f670f738"
                         },
                         new
                         {
@@ -6347,12 +6360,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "224ea7c1-e25e-8530-119a-a38451bcdab1"
+                            SessionId = "a0747c7c-8770-b59b-cf99-3596fba880f0"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "3b794509-3f7c-a78c-71c8-7a765c3b0a6d"
+                            SessionId = "4baf1f52-55b1-7a01-d8ee-610ecd88cca7"
                         },
                         new
                         {
@@ -6362,12 +6375,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "1415a733-9c71-a9cc-d8a8-c5b2a950aff8"
+                            SessionId = "9631b695-4ba6-d93c-0e5a-5fbbad95e228"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "c0205ee8-4367-4450-a684-5ba6c73a6b54"
+                            SessionId = "6cb099d3-9a9b-5d8d-c5a1-ea96641f1e6f"
                         },
                         new
                         {
@@ -6377,12 +6390,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "85e9ea97-8190-b897-851d-b898d39ea3fd"
+                            SessionId = "01a6b07c-25ee-7c26-948f-9ac53cfeffab"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "f03f4c0a-b739-df91-ee76-2c538c7ce5f0"
+                            SessionId = "88039f9c-be52-08dc-a3f4-35b4f8efd760"
                         },
                         new
                         {
@@ -6392,12 +6405,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "30c5b8b3-a13a-0827-5e5c-03926347caf1"
+                            SessionId = "e983e4b6-aa91-078d-d8b7-27910c101451"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "7d3bb48b-1b9e-76f0-5983-297bd35cd5af"
+                            SessionId = "710bf368-ce50-8248-e7d3-9777dd237a0a"
                         },
                         new
                         {
@@ -6407,12 +6420,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "31b3fd28-b697-0fd0-1ab9-a126fd05c656"
+                            SessionId = "35c5e0c6-8772-9467-ca87-4b931c696246"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "24a37b10-ea12-f8a6-4fea-bea1076c1766"
+                            SessionId = "9758d254-ec0c-d5a6-c432-ddbe03235c75"
                         },
                         new
                         {
@@ -6422,12 +6435,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "02de7ba9-5a00-13df-83b5-4372e7d252b0"
+                            SessionId = "7776caad-16cd-740f-7f58-1bfb800e90bb"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "d196eada-18ae-5f14-8562-a9a03abff8a6"
+                            SessionId = "e6ab6de3-e742-0d4e-7470-3940bc1ea23a"
                         },
                         new
                         {
@@ -6437,12 +6450,12 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "f00ae990-164b-5622-5543-9f1d0642b158"
+                            SessionId = "2eb34317-ce87-488d-6d05-0f7cfa4989ce"
                         },
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "9bc935a9-e336-16b3-02b0-0208eb76c193"
+                            SessionId = "e7906fb2-bb87-cc9e-41d6-3324b527c41d"
                         },
                         new
                         {
@@ -6452,7 +6465,7 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
-                            SessionId = "9028896b-8615-c0a2-9e89-fe9fda728b5d"
+                            SessionId = "765cc302-e1df-83c3-2fe5-83299f45a706"
                         },
                         new
                         {
@@ -6463,6 +6476,11 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
                             SessionId = "451ddeb8-5b69-166d-d573-9843cc870442"
+                        },
+                        new
+                        {
+                            GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
+                            SessionId = "84072afa-f423-0eab-b0b6-c51939422484"
                         },
                         new
                         {
@@ -7093,17 +7111,17 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Label = "ATTENTE"
+                            Label = "En attente"
                         },
                         new
                         {
                             ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
-                            Label = "APPROUVE"
+                            Label = "Approuvé"
                         },
                         new
                         {
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
-                            Label = "REFUSE"
+                            Label = "Refusé"
                         });
                 });
 
@@ -7340,10 +7358,6 @@ namespace HP2.Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("academic_year");
 
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int")
-                        .HasColumnName("capacity");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -7370,7 +7384,6 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "57bf1149-8880-c27c-d603-3546214d03a8",
                             AcademicYear = "2025-2026",
-                            Capacity = 0,
                             Name = "Groupe A - M1 ILSD",
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3"
                         },
@@ -7378,7 +7391,6 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "64b93cdc-56f3-906f-6e4c-2adfe2184501",
                             AcademicYear = "2025-2026",
-                            Capacity = 0,
                             Name = "Groupe B - M1 ILSD",
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3"
                         },
@@ -7386,7 +7398,6 @@ namespace HP2.Infrastructure.Migrations
                         {
                             GroupId = "e61277a9-9d07-5b53-e623-528bf88a6962",
                             AcademicYear = "2025-2026",
-                            Capacity = 0,
                             Name = "Groupe A - M1 CNS",
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4"
                         });
@@ -7395,44 +7406,34 @@ namespace HP2.Infrastructure.Migrations
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Notification", b =>
                 {
                     b.Property<string>("NotificationId")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
-                        .HasColumnName("notification_id");
+                        .HasColumnName("notification_id")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
+                        .HasColumnType("datetime")
                         .HasColumnName("created_at")
                         .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)")
-                        .HasColumnName("message");
-
-                    b.Property<string>("RelatedId")
-                        .HasMaxLength(50)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("related_id");
+                        .HasColumnType("varchar(max)")
+                        .HasColumnName("message");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("title");
 
-                    b.Property<string>("Type")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasDefaultValue("General")
-                        .HasColumnName("type");
-
                     b.HasKey("NotificationId")
-                        .HasName("PK_Notification");
+                        .HasName("PK__Notifica__E059842FEA1D001E");
 
                     b.ToTable("Notification", (string)null);
                 });
@@ -13514,26 +13515,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "5fa19058-bf39-5202-eea8-d48717d65eb9",
+                            SessionId = "c988ef8a-905f-f272-7ac8-51e06c813d79",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "5d238d7c-8fb0-4871-056a-65ec27c1072f",
+                            SessionId = "7256ee0c-55f6-d5cb-c324-d686e3637c9b",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13553,26 +13554,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "0fd1423a-74b4-4509-3bbe-4d3e18071a3a",
+                            SessionId = "88f4571b-8378-770c-2aea-69dc6ce7ecf6",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "d880c06f-47b5-e1c9-888b-2a45303ef854",
+                            SessionId = "77e01eb8-afac-e4aa-af58-4c844bd83748",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13592,26 +13593,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "0d404c81-c127-9c3c-33df-a33a9f54b508",
+                            SessionId = "11934ac3-6b4c-1640-8eba-00ba02d5b86a",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "d05e0c97-3318-278c-8bf0-4311dc95f6c2",
+                            SessionId = "bf3cbc8d-f451-5b64-aaee-282d7c5ee38f",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13631,9 +13632,9 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "a2ced630-3ec2-8093-ebc7-e91c959145e9",
+                            SessionId = "bec69f55-a2a3-81ea-cf20-5f2d56b376b8",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -13644,13 +13645,13 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "ed27fa93-718c-88e4-8acb-85f2db2c283b",
+                            SessionId = "9a38ad1d-d5c0-b94b-b944-8c0afe20c192",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13670,26 +13671,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e0cfcb79-a015-c966-3230-5e7e86bdd4c8",
+                            SessionId = "c95e2491-8172-5fbc-a92a-87ad9c9181f8",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "68d2998b-87cb-a478-c88a-a51ca80145a5",
+                            SessionId = "399b2888-c0c5-ae26-5afe-f98ec7be5d8a",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13709,9 +13710,9 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "3addefff-d8f6-8f8f-db48-69ec7b0a89cb",
+                            SessionId = "c73b66a4-8ee3-0145-1eb4-30bf4dec84bc",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -13722,13 +13723,13 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e771afe4-4d64-cbcd-11ad-878b77752b53",
+                            SessionId = "5f0f21df-bbf9-7cd5-df3f-2561fb0dc114",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13748,26 +13749,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "29b668aa-18a0-0e8a-ae78-a420543df94e",
+                            SessionId = "9e6b1106-9873-1975-fb5c-b15561f6e3b4",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "290a7317-e5c9-ad05-e47d-caa6063ceb2c",
+                            SessionId = "aaad430c-5c54-db42-9a55-c61c5620d826",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13787,26 +13788,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "b3bae3b0-b37c-c8b7-d834-2ba21799d0ac",
+                            SessionId = "25e0df06-bbaa-37b8-2ac6-4eab678ab272",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "a8f8d4a0-3f4e-c11c-d102-7f174818fdc4",
+                            SessionId = "7142c7b1-d1a0-8ec3-fc91-4676fcfdf48f",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13826,26 +13827,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "20ed4f3a-c175-821d-35be-2ee8929dae61",
+                            SessionId = "11256d7c-1f5a-523b-7bbd-95a4e987f37b",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "1ede08cd-20f8-3e38-736b-f235acaa508e",
+                            SessionId = "84ad9b8f-99a8-78de-b492-83201e1f1c1c",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13865,26 +13866,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e580eb5e-3b20-1821-dba0-5d8e776c7479",
+                            SessionId = "363b98ba-216c-aa41-0293-722df3956f15",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "8b5fdba4-07f4-dc55-3781-3203562ca7a3",
+                            SessionId = "8e5fe2d8-18b0-b8b8-5314-69577f4cc708",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13904,9 +13905,9 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "4afa8504-a471-6140-ae11-de9e55f88184",
+                            SessionId = "cce1c5fe-9119-05f8-3e8d-2c378c5d14c9",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -13917,13 +13918,13 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "fbf79eb2-b304-60a0-c1a9-f735e3fcd077",
+                            SessionId = "e165bf79-d64d-46b7-b9ad-16400e834be2",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13943,26 +13944,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "70859917-364d-8f83-ae6f-e06f075f6291",
+                            SessionId = "cabc07dc-e3d5-9d56-1a0f-53d69775f4b5",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "ef0391bc-4247-10b0-eabe-2fbf5c2fd7df",
+                            SessionId = "f2d79b41-28fe-6b60-6aa7-bcfaceb9c9c3",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -13982,9 +13983,9 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "2b003721-f33c-4fb7-8eb7-f5c959519cfc",
+                            SessionId = "950534f5-24b7-d4c1-08b5-cfbdf49a5561",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -13995,13 +13996,13 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "309b75a8-8f93-26c9-4cf8-75654e0f717e",
+                            SessionId = "d1be13f7-4fb2-b710-6f8a-c8fc9e0e139f",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -14021,26 +14022,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e77cd186-dd72-e409-5a95-d8d37b9f67d9",
+                            SessionId = "768e3191-da48-9df5-048d-1e0c3c1d53a9",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "657d7faf-485b-8f8b-56cf-4585b0231767",
+                            SessionId = "64f30881-ea24-9de3-f214-87d209f58db8",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -14060,26 +14061,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "d45f1962-e6bc-ba9a-4e9b-6a55fc7f543e",
+                            SessionId = "dbf91012-44be-cdc8-081b-5ddfe794ce4c",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "f0352190-21e2-bd43-21a1-ee249d61f252",
+                            SessionId = "e0d73078-69a7-2356-d8b7-f14837e1ca8c",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -14099,9 +14100,9 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "93562bf6-d09a-3026-d079-9e9aed352fb5",
+                            SessionId = "7a1ae3aa-4be1-2c47-1c0b-e7c2765cd514",
                             CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
-                            Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -14138,13 +14139,26 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
+                            SessionId = "e4e6775e-6f26-21f7-11db-74bd6cddd1f8",
+                            CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
+                            Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 20, 45, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 19, 15, 0, 0)
+                        },
+                        new
+                        {
                             SessionId = "657a5804-95d2-bbc9-e3a8-cb27991a4ff7",
                             CourseId = "2d4557a7-a48d-9926-3e2b-bc820396b11a",
                             Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14157,7 +14171,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14170,7 +14184,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14183,7 +14197,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14196,7 +14210,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14209,7 +14223,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14222,7 +14236,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14235,7 +14249,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14248,7 +14262,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14261,7 +14275,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14274,7 +14288,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14287,7 +14301,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14300,7 +14314,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14313,7 +14327,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14326,7 +14340,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -14339,7 +14353,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14352,7 +14366,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14365,7 +14379,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14378,7 +14392,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14391,7 +14405,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14404,7 +14418,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14417,7 +14431,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14430,7 +14444,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14443,7 +14457,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14456,7 +14470,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14469,7 +14483,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14482,7 +14496,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14495,7 +14509,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14508,7 +14522,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14521,7 +14535,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14534,7 +14548,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14547,7 +14561,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14560,7 +14574,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14573,7 +14587,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14586,7 +14600,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14599,7 +14613,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14612,7 +14626,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14625,7 +14639,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14638,7 +14652,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14651,7 +14665,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14664,7 +14678,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14677,7 +14691,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14690,7 +14704,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14703,7 +14717,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14716,7 +14730,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14729,7 +14743,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14742,7 +14756,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14755,7 +14769,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14768,7 +14782,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14781,7 +14795,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14794,7 +14808,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14807,7 +14821,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14820,7 +14834,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14833,7 +14847,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14846,7 +14860,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14859,7 +14873,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14872,7 +14886,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14885,7 +14899,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14898,7 +14912,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14911,7 +14925,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14924,7 +14938,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14937,7 +14951,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -14950,7 +14964,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -14963,7 +14977,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -14976,7 +14990,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -14989,7 +15003,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15002,7 +15016,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15015,7 +15029,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15028,7 +15042,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15041,7 +15055,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15054,7 +15068,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15067,7 +15081,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15080,7 +15094,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15093,7 +15107,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15106,7 +15120,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -15119,7 +15133,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15132,7 +15146,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15145,7 +15159,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15158,7 +15172,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15171,7 +15185,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15184,7 +15198,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15197,7 +15211,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15210,7 +15224,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15223,7 +15237,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15236,7 +15250,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15249,7 +15263,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15262,7 +15276,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15275,7 +15289,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15288,7 +15302,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15301,7 +15315,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15314,7 +15328,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15327,7 +15341,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15340,7 +15354,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15353,7 +15367,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15366,7 +15380,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15379,7 +15393,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15392,7 +15406,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15405,7 +15419,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15418,7 +15432,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15431,7 +15445,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15444,7 +15458,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15457,7 +15471,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15470,7 +15484,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15483,7 +15497,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15496,7 +15510,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15509,7 +15523,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15522,7 +15536,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15535,7 +15549,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15548,7 +15562,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15561,7 +15575,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15574,7 +15588,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15587,7 +15601,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15600,7 +15614,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15613,7 +15627,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15626,7 +15640,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15639,7 +15653,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15652,7 +15666,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15665,7 +15679,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15678,7 +15692,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15691,7 +15705,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -15704,7 +15718,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15717,7 +15731,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15730,7 +15744,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15743,7 +15757,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15756,7 +15770,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15769,7 +15783,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15782,7 +15796,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15795,7 +15809,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15808,7 +15822,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15821,7 +15835,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15834,7 +15848,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15847,7 +15861,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15860,7 +15874,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15873,7 +15887,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15886,7 +15900,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15899,7 +15913,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15912,7 +15926,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15925,7 +15939,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15938,7 +15952,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -15951,7 +15965,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -15964,7 +15978,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -15977,7 +15991,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -15990,7 +16004,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16003,7 +16017,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16016,7 +16030,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16029,7 +16043,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16042,7 +16056,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16055,7 +16069,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16068,7 +16082,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16081,7 +16095,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16094,7 +16108,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16107,7 +16121,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16120,7 +16134,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16133,7 +16147,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16146,7 +16160,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16159,7 +16173,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16172,7 +16186,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16185,7 +16199,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16198,7 +16212,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16211,7 +16225,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16224,7 +16238,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16237,7 +16251,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16250,7 +16264,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16263,7 +16277,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16276,7 +16290,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16289,7 +16303,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16302,7 +16316,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16315,7 +16329,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16328,7 +16342,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16341,7 +16355,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16354,7 +16368,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16367,7 +16381,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16380,7 +16394,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16393,7 +16407,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16406,7 +16420,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16419,7 +16433,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16432,7 +16446,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16445,7 +16459,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16458,7 +16472,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16471,7 +16485,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -16484,7 +16498,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16497,7 +16511,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16510,7 +16524,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16523,7 +16537,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16536,7 +16550,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16549,7 +16563,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16562,7 +16576,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16575,7 +16589,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16588,7 +16602,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16601,7 +16615,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16614,7 +16628,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16627,7 +16641,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16640,7 +16654,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16653,7 +16667,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16666,7 +16680,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16679,7 +16693,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16692,7 +16706,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16705,7 +16719,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16718,7 +16732,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16731,7 +16745,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16744,7 +16758,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16757,7 +16771,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16770,7 +16784,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16783,7 +16797,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16796,7 +16810,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16809,7 +16823,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16822,7 +16836,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16835,7 +16849,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16848,7 +16862,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16861,7 +16875,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16874,7 +16888,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16887,7 +16901,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16900,7 +16914,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16913,7 +16927,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16926,7 +16940,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16939,7 +16953,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -16952,7 +16966,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -16965,7 +16979,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -16978,7 +16992,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -16991,7 +17005,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17004,7 +17018,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17017,7 +17031,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17030,7 +17044,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17043,7 +17057,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17056,7 +17070,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -17069,7 +17083,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17082,7 +17096,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17095,7 +17109,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17108,7 +17122,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17121,7 +17135,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17134,7 +17148,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17147,7 +17161,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17160,7 +17174,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17173,7 +17187,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17186,7 +17200,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17199,7 +17213,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17212,7 +17226,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17225,7 +17239,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17238,7 +17252,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17251,7 +17265,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17264,7 +17278,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17277,7 +17291,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17290,7 +17304,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17303,7 +17317,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17316,7 +17330,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17329,7 +17343,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17342,7 +17356,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17355,7 +17369,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17368,7 +17382,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17381,7 +17395,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17394,7 +17408,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17407,7 +17421,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17420,7 +17434,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17433,7 +17447,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17446,7 +17460,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17459,7 +17473,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17472,7 +17486,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17485,7 +17499,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17498,7 +17512,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17511,7 +17525,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17524,7 +17538,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17537,7 +17551,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17550,7 +17564,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17563,7 +17577,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17576,7 +17590,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17589,7 +17603,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17602,7 +17616,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17615,7 +17629,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17628,7 +17642,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17641,7 +17655,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -17654,7 +17668,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17667,7 +17681,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17680,7 +17694,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17693,7 +17707,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17706,7 +17720,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17719,7 +17733,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17732,7 +17746,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17745,7 +17759,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17758,7 +17772,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17771,7 +17785,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17784,7 +17798,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17797,7 +17811,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17810,7 +17824,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17823,7 +17837,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17836,7 +17850,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17849,7 +17863,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17862,7 +17876,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17875,7 +17889,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17888,7 +17902,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17901,7 +17915,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17914,7 +17928,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17927,7 +17941,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17940,7 +17954,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -17953,7 +17967,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -17966,7 +17980,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -17979,7 +17993,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -17992,7 +18006,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18005,7 +18019,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18018,7 +18032,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18031,7 +18045,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18044,7 +18058,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18057,7 +18071,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18070,7 +18084,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18083,7 +18097,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18096,7 +18110,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18109,7 +18123,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18122,7 +18136,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18135,7 +18149,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18148,7 +18162,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18161,7 +18175,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18174,7 +18188,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18187,7 +18201,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18200,7 +18214,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18213,7 +18227,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18226,7 +18240,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18239,7 +18253,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18252,7 +18266,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18265,7 +18279,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18278,7 +18292,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18291,7 +18305,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18304,7 +18318,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18317,7 +18331,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18330,7 +18344,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18343,7 +18357,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18356,7 +18370,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18369,7 +18383,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18382,7 +18396,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18395,7 +18409,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18408,7 +18422,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18421,7 +18435,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -18434,7 +18448,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18447,7 +18461,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18460,7 +18474,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18473,7 +18487,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18486,7 +18500,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18499,7 +18513,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18512,7 +18526,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18525,7 +18539,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18538,7 +18552,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18551,7 +18565,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18564,7 +18578,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18577,7 +18591,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18590,7 +18604,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18603,7 +18617,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18616,7 +18630,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18629,7 +18643,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18642,7 +18656,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18655,7 +18669,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18668,7 +18682,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18681,7 +18695,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18694,7 +18708,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18707,7 +18721,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18720,7 +18734,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18733,7 +18747,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18746,7 +18760,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18759,7 +18773,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18772,7 +18786,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18785,7 +18799,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18798,7 +18812,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18811,7 +18825,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18824,7 +18838,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18837,7 +18851,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18850,7 +18864,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18863,7 +18877,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18876,7 +18890,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18889,7 +18903,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18902,7 +18916,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18915,7 +18929,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18928,7 +18942,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18941,7 +18955,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -18954,7 +18968,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -18967,7 +18981,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -18980,7 +18994,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -18993,7 +19007,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19006,7 +19020,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19019,7 +19033,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19032,7 +19046,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19045,7 +19059,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19058,7 +19072,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19071,7 +19085,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19084,7 +19098,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19097,7 +19111,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19110,7 +19124,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19123,7 +19137,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19136,7 +19150,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19149,7 +19163,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19162,7 +19176,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19175,7 +19189,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19188,7 +19202,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19201,7 +19215,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -19214,7 +19228,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19227,7 +19241,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19240,7 +19254,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19253,7 +19267,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19266,7 +19280,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19279,7 +19293,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19292,7 +19306,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19305,7 +19319,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19318,7 +19332,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19331,7 +19345,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19344,7 +19358,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19357,7 +19371,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19370,7 +19384,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19383,7 +19397,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19396,7 +19410,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19409,7 +19423,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19422,7 +19436,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19435,7 +19449,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19448,7 +19462,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19461,7 +19475,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19474,7 +19488,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19487,7 +19501,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19500,7 +19514,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19513,7 +19527,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19526,7 +19540,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19539,7 +19553,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19552,7 +19566,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19565,7 +19579,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19578,7 +19592,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19591,7 +19605,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19604,7 +19618,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19617,7 +19631,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -19630,7 +19644,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -19643,7 +19657,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -19656,7 +19670,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 15, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7d12ed93-7363-9686-49c3-77ad3ccb2da0",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19669,7 +19683,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19682,7 +19696,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 17, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -19695,7 +19709,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19708,7 +19722,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "0fc6aed4-11a4-4bca-c1f3-c7060734aa3c",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -19721,7 +19735,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -19734,7 +19748,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -19747,7 +19761,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 12, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19760,7 +19774,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -19773,7 +19787,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19786,7 +19800,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 17, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -19799,7 +19813,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 13, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -19812,7 +19826,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -19825,7 +19839,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -19838,7 +19852,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -19851,33 +19865,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "39fdf696-7837-e304-7697-b0857489cc13",
+                            SessionId = "a4c1e1ca-1aed-4358-29ba-86f5969bcffc",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "94010f22-341b-ef11-b28e-580fa32dd1f8",
+                            SessionId = "ec6e503e-a6c5-f7f4-c7a8-6ebbf0e9364e",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -19890,33 +19904,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "e920fb68-dd63-e423-80ed-9d5fb1a490c1",
+                            SessionId = "02ac742d-f835-8d91-fc5e-9f968bb4fff9",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "0437d03a-dfff-6bf0-e3a7-a841c9df202f",
+                            SessionId = "95192638-5e77-03f1-93f7-ec71fac6461d",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -19929,33 +19943,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "5a4cc0c1-97d1-86ad-29ee-a1d65158f59d",
+                            SessionId = "99a99299-8ffb-a345-7deb-22c565c1cb0a",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "04bd575a-4979-6362-a12b-698fd6386a0c",
+                            SessionId = "422c1e49-67b5-acd2-b230-681a7b5f3f7c",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -19975,9 +19989,9 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "cf31bb54-62e9-7d58-8fef-f5b364c3aff8",
+                            SessionId = "55a76eba-0077-c3ff-f1f7-18e9368c6232",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -19988,13 +20002,13 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "6ee623bd-61c4-24a1-58e9-930b652e80b2",
+                            SessionId = "4e9c06a0-6069-c2d3-9f26-60b48f4868d5",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20007,33 +20021,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "5e2176fe-eeae-f192-d9ca-3a7c0c94cfbe",
+                            SessionId = "51642122-e60e-72f9-c360-f185fdb5f957",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "39a517f6-beab-c8f1-5db1-10ea11f5fa57",
+                            SessionId = "b2cf5b94-29b1-5935-44ac-225ba5b17377",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20046,33 +20060,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "1fa13b29-f524-640b-9235-fda098bc02ab",
+                            SessionId = "730e922c-6ca0-6b0f-fae6-42c1891a56c4",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "2892e94a-b3cf-c62b-47ea-dbb25025480a",
+                            SessionId = "0fb504d1-b0eb-3514-84c4-03820e11f563",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20085,33 +20099,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "b1a00a28-6169-2b1b-ea52-26d6df02c8b5",
+                            SessionId = "4ae0633d-1a4c-382c-75c0-60b10e1fdf14",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "95421a97-7bab-a112-f449-606d54d8b7e8",
+                            SessionId = "f7e88d0f-cfbd-60bc-3d91-c9fec7b57fff",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20124,33 +20138,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "3abc7801-2bfd-62d7-1ba5-2f7ec8cdbb62",
+                            SessionId = "888fe0f3-6c8d-2a33-f1a1-8ced33363a3c",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "5061dc4e-33c1-ba27-1d46-e859ab526281",
+                            SessionId = "b9ab674e-8139-c0f8-b699-e9670bc42dec",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20163,33 +20177,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "919ddadf-3c17-210d-68cd-ff4750a1ffc4",
+                            SessionId = "d0013ce7-489b-dc33-ad5e-2b78bff7091e",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "835ab349-a491-9929-3aa6-953986822a4a",
+                            SessionId = "8f655aa6-4375-bef6-1843-bbae1fcf0389",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20202,33 +20216,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "d064ff9a-b341-8dd9-031e-4f091d238351",
+                            SessionId = "9cc6d4ed-0bfe-4fc4-31cc-4428f0a35c04",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "2fd8782d-cec3-8a42-48b7-3c43d1ed006f",
+                            SessionId = "48254f64-7bbb-6aa1-abf8-a428d9892816",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20241,33 +20255,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "7aca0701-d733-5065-a604-5d5b197502e6",
+                            SessionId = "aec91e44-2289-df47-1826-7f0e10162538",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "29c49a20-5b64-9c2b-9013-f0f1488c342a",
+                            SessionId = "791cd5eb-2bdc-eda7-2208-c33377490aa6",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20280,33 +20294,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "96c8e341-2365-95b3-8a1e-529a89bcbea0",
+                            SessionId = "b88e4b7e-c8c8-af1d-523c-d8a4337a9420",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "df7ab688-f273-92c5-d2d1-ded070202216",
+                            SessionId = "2eb5c468-70f3-17c2-e078-a50f0d756fd8",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20319,33 +20333,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "a000bf30-49d4-72c3-c7df-88a6dd8c060c",
+                            SessionId = "a9328a36-bfdd-2d3b-191f-715249ed7620",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "729e3782-b424-9cb1-e84c-b54deb75f5fb",
+                            SessionId = "9e190347-c557-83f5-30a9-090c1b66a3da",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20358,33 +20372,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "2fc386a6-ba3e-2813-3bd4-8f1d50b2d313",
+                            SessionId = "eb9db0ba-97d4-e9cb-a64a-b3310e89a189",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "8c6f4730-0cca-71fc-eb8e-77fc7eec8721",
+                            SessionId = "1e50fc6c-bc91-ce21-c217-10bcd34cffd5",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20397,33 +20411,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "e114dc8b-e4d1-1f99-1062-fe144255f628",
+                            SessionId = "976d2c50-da8b-3404-00d1-b43e972cb93e",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "c09306cd-0fbe-ecef-e79c-97ab2457cb15",
+                            SessionId = "d6b32f88-a8e0-4752-9b42-db4cbc188ec7",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20436,20 +20450,20 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "0dd87cf9-8da6-dc14-9220-d561b0f02e8d",
+                            SessionId = "4967c7a7-fdec-8508-f875-59190ae21a6c",
                             CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
-                            Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20462,7 +20476,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -20475,10 +20489,23 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "67cf8205-a840-1c62-8ef6-7d59d93acaa7",
+                            CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
+                            Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 20, 45, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
@@ -20488,7 +20515,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20501,7 +20528,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20514,7 +20541,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20527,7 +20554,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20540,7 +20567,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20553,7 +20580,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20566,7 +20593,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20579,7 +20606,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20592,7 +20619,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20605,7 +20632,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20618,7 +20645,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20631,7 +20658,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20644,7 +20671,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20657,7 +20684,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20670,7 +20697,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20683,7 +20710,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20696,7 +20723,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20709,7 +20736,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20722,7 +20749,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20735,7 +20762,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20748,7 +20775,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20761,7 +20788,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20774,7 +20801,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20787,7 +20814,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20800,7 +20827,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20813,7 +20840,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20826,7 +20853,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20839,7 +20866,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20852,7 +20879,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20865,7 +20892,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20878,7 +20905,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20891,7 +20918,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20904,7 +20931,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20917,7 +20944,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20930,7 +20957,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20943,7 +20970,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -20956,7 +20983,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -20969,7 +20996,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -20982,7 +21009,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -20995,7 +21022,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21008,7 +21035,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21021,7 +21048,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21034,7 +21061,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21047,7 +21074,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21060,7 +21087,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21073,7 +21100,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21086,7 +21113,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21099,7 +21126,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21112,7 +21139,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21125,7 +21152,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21138,7 +21165,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21151,7 +21178,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21164,7 +21191,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21177,7 +21204,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21190,7 +21217,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21203,7 +21230,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21216,7 +21243,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21229,7 +21256,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21242,7 +21269,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21255,7 +21282,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21268,7 +21295,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21281,7 +21308,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21294,7 +21321,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21307,7 +21334,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21320,7 +21347,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21333,7 +21360,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21346,7 +21373,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21359,7 +21386,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21372,7 +21399,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21385,7 +21412,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21398,7 +21425,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21411,7 +21438,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21424,7 +21451,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21437,7 +21464,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21450,7 +21477,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21463,7 +21490,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21476,7 +21503,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21489,7 +21516,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21502,7 +21529,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21515,7 +21542,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21528,7 +21555,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21541,7 +21568,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21554,7 +21581,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21567,7 +21594,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21580,7 +21607,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21593,7 +21620,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21606,7 +21633,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21619,7 +21646,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21632,7 +21659,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21645,7 +21672,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21658,7 +21685,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21671,7 +21698,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21684,7 +21711,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21697,7 +21724,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21710,7 +21737,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21723,7 +21750,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21736,7 +21763,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21749,7 +21776,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21762,7 +21789,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21775,7 +21802,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21788,7 +21815,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21801,7 +21828,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21814,7 +21841,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21827,7 +21854,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21840,7 +21867,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21853,7 +21880,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21866,7 +21893,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21879,7 +21906,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21892,7 +21919,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21905,7 +21932,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21918,7 +21945,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21931,7 +21958,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21944,7 +21971,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -21957,7 +21984,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -21970,7 +21997,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -21983,7 +22010,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -21996,7 +22023,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22009,7 +22036,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22022,7 +22049,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22035,7 +22062,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22048,7 +22075,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22061,7 +22088,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22074,7 +22101,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22087,7 +22114,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22100,7 +22127,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22113,7 +22140,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22126,7 +22153,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22139,7 +22166,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22152,7 +22179,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22165,7 +22192,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22178,7 +22205,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22191,7 +22218,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22204,7 +22231,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22217,7 +22244,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22230,7 +22257,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22243,7 +22270,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22256,7 +22283,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22269,7 +22296,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22282,7 +22309,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22295,7 +22322,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22308,7 +22335,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22321,7 +22348,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22334,7 +22361,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22347,7 +22374,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22360,7 +22387,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22373,7 +22400,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22386,7 +22413,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22399,7 +22426,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22412,7 +22439,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22425,7 +22452,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22438,7 +22465,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22451,7 +22478,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22464,7 +22491,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22477,7 +22504,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22490,7 +22517,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22503,7 +22530,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22516,7 +22543,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22529,7 +22556,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22542,7 +22569,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22555,7 +22582,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22568,7 +22595,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22581,7 +22608,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22594,7 +22621,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22607,7 +22634,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22620,7 +22647,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22633,7 +22660,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22646,7 +22673,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22659,7 +22686,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22672,7 +22699,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22685,7 +22712,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22698,7 +22725,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22711,7 +22738,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22724,7 +22751,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22737,7 +22764,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22750,7 +22777,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22763,7 +22790,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22776,7 +22803,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22789,7 +22816,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22802,7 +22829,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22815,7 +22842,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22828,7 +22855,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22841,7 +22868,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22854,7 +22881,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22867,7 +22894,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22880,7 +22907,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22893,7 +22920,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22906,7 +22933,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22919,7 +22946,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22932,7 +22959,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22945,7 +22972,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -22958,7 +22985,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -22971,7 +22998,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -22984,7 +23011,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -22997,7 +23024,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23010,7 +23037,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23023,7 +23050,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23036,7 +23063,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23049,7 +23076,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23062,7 +23089,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23075,7 +23102,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23088,7 +23115,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23101,7 +23128,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23114,7 +23141,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23127,7 +23154,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23140,7 +23167,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23153,7 +23180,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23166,7 +23193,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23179,7 +23206,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23192,7 +23219,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23205,7 +23232,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23218,7 +23245,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23231,7 +23258,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23244,7 +23271,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23257,7 +23284,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23270,7 +23297,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23283,7 +23310,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23296,7 +23323,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23309,7 +23336,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23322,7 +23349,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23335,7 +23362,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23348,7 +23375,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23361,7 +23388,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23374,7 +23401,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23387,7 +23414,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23400,7 +23427,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23413,7 +23440,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23426,7 +23453,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23439,7 +23466,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23452,7 +23479,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "7f2d1749-7a62-0b12-0f4e-3b943af03674",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23465,7 +23492,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23478,7 +23505,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23491,7 +23518,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23504,7 +23531,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23517,7 +23544,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23530,7 +23557,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23543,7 +23570,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23556,7 +23583,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23569,7 +23596,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23582,7 +23609,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23595,7 +23622,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 10, 15, 0, 0)
@@ -23608,7 +23635,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
@@ -23621,7 +23648,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 15, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "a51df269-a2de-07cb-14b1-e5c0f041928c",
                             StartTime = new TimeSpan(0, 14, 45, 0, 0)
@@ -23634,7 +23661,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23647,7 +23674,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -23660,7 +23687,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23673,7 +23700,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -23686,7 +23713,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23699,7 +23726,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -23712,7 +23739,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -23725,7 +23752,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 12, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
@@ -23738,7 +23765,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23751,7 +23778,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -23764,7 +23791,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23777,7 +23804,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -23790,7 +23817,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 30, 0, 0)
@@ -23803,7 +23830,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 16, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "0fc6aed4-11a4-4bca-c1f3-c7060734aa3c",
                             StartTime = new TimeSpan(0, 13, 30, 0, 0)
@@ -23816,7 +23843,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 8, 0, 0, 0)
@@ -23829,7 +23856,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 12, 30, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 10, 30, 0, 0)
@@ -23842,7 +23869,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 17, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "09de5696-05df-5b4a-ca95-666d0306b369",
                             SessionTypeId = "b078845c-908b-88e0-b39f-65cac002c8e9",
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
@@ -23855,33 +23882,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "de2bbc35-0ce8-a53f-dfc2-85ef9a028345",
+                            SessionId = "c57c2d94-306f-533f-968f-70b09a063ab0",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "7119f587-652a-8c1d-fc3c-d34ac4500cab",
+                            SessionId = "923ddf04-73b9-03bb-ce24-3ec1954d3291",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -23894,33 +23921,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "fb22e021-f9cb-947c-9a5b-298e70058967",
+                            SessionId = "78a588a9-6462-0d04-c7dc-1b3811c72888",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "71beb1f2-d47d-9148-9954-40c1bde425e4",
+                            SessionId = "14f5470a-44aa-7376-127e-96e5510e153a",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -23933,33 +23960,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "7b2371e2-3075-4b7c-b44f-9ceb84dd5a26",
+                            SessionId = "ef860a7f-f419-096d-9f33-c1ed5f387a91",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "6813892f-0280-fea7-888a-406b0079ad49",
+                            SessionId = "39ce60ca-062f-7516-258f-ff72cd7997db",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -23972,33 +23999,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "e0eedadf-c67c-c589-6238-9ced6f25c17a",
+                            SessionId = "024eff3b-b7a6-033e-e3a5-c233416af90f",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "cb7e1504-f623-fc5b-b0fd-ea0e3e98a2ec",
+                            SessionId = "e4c2ec00-1c7d-2c21-8e55-5028071366ec",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24011,33 +24038,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "ea6abd22-8ea0-e11e-0dd8-ea0f2bac92c4",
+                            SessionId = "0a794b53-2cc1-c57d-0b81-f826fbec33f4",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "47f1b665-eb1d-be3f-0cfb-9e2fe7c44d7f",
+                            SessionId = "b5baf26b-3a83-40db-c884-8eab15e4afaa",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24050,16 +24077,16 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "65d9de91-9226-5383-0a53-917924356800",
+                            SessionId = "0934606e-52d6-f0e8-0952-292935cc5122",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
@@ -24070,13 +24097,13 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "a64513f0-d459-772b-f850-4791f535040a",
+                            SessionId = "4ee53283-9e0e-2a73-8ccb-977c961ba393",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24089,33 +24116,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "a17cbf15-2914-7ac1-6db4-c9dd737472cc",
+                            SessionId = "03cee3de-d07b-4669-7845-d9472ee9bc6b",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "e5387510-d3a5-9981-7f42-ef7ed1bcb70e",
+                            SessionId = "834a3bd4-f0c5-9ffc-0406-ee2901ceb06d",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24128,33 +24155,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "67ce48b8-6079-cf5d-4124-86ce4269aee6",
+                            SessionId = "83c90ca2-93d2-0480-b278-3a69c0f5e307",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2025, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "21454181-a8cd-fc4e-82e3-209341d11696",
+                            SessionId = "93743d4b-3c37-941a-2567-c9a6f670f738",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24167,33 +24194,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "224ea7c1-e25e-8530-119a-a38451bcdab1",
+                            SessionId = "a0747c7c-8770-b59b-cf99-3596fba880f0",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "3b794509-3f7c-a78c-71c8-7a765c3b0a6d",
+                            SessionId = "4baf1f52-55b1-7a01-d8ee-610ecd88cca7",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24206,33 +24233,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "1415a733-9c71-a9cc-d8a8-c5b2a950aff8",
+                            SessionId = "9631b695-4ba6-d93c-0e5a-5fbbad95e228",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "c0205ee8-4367-4450-a684-5ba6c73a6b54",
+                            SessionId = "6cb099d3-9a9b-5d8d-c5a1-ea96641f1e6f",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24245,33 +24272,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "85e9ea97-8190-b897-851d-b898d39ea3fd",
+                            SessionId = "01a6b07c-25ee-7c26-948f-9ac53cfeffab",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "f03f4c0a-b739-df91-ee76-2c538c7ce5f0",
+                            SessionId = "88039f9c-be52-08dc-a3f4-35b4f8efd760",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24284,33 +24311,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "30c5b8b3-a13a-0827-5e5c-03926347caf1",
+                            SessionId = "e983e4b6-aa91-078d-d8b7-27910c101451",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "7d3bb48b-1b9e-76f0-5983-297bd35cd5af",
+                            SessionId = "710bf368-ce50-8248-e7d3-9777dd237a0a",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24323,33 +24350,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "31b3fd28-b697-0fd0-1ab9-a126fd05c656",
+                            SessionId = "35c5e0c6-8772-9467-ca87-4b931c696246",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
+                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "24a37b10-ea12-f8a6-4fea-bea1076c1766",
+                            SessionId = "9758d254-ec0c-d5a6-c432-ddbe03235c75",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "222025a7-66a4-9b58-2958-eb835bd75046",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24362,33 +24389,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "91263188-230c-ee00-ed2e-9eda780a61de",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "02de7ba9-5a00-13df-83b5-4372e7d252b0",
+                            SessionId = "7776caad-16cd-740f-7f58-1bfb800e90bb",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "ba6e201b-edf9-7aea-a09f-4bb2fed50891",
+                            RoomId = "93a4338a-6691-98fc-6919-1f94663cd1ae",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "d196eada-18ae-5f14-8562-a9a03abff8a6",
+                            SessionId = "e6ab6de3-e742-0d4e-7470-3940bc1ea23a",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24401,33 +24428,33 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "f00ae990-164b-5622-5543-9f1d0642b158",
+                            SessionId = "2eb34317-ce87-488d-6d05-0f7cfa4989ce",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
+                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
-                            SessionId = "9bc935a9-e336-16b3-02b0-0208eb76c193",
+                            SessionId = "e7906fb2-bb87-cc9e-41d6-3324b527c41d",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "305290d1-3c50-8f7d-1f6a-898cc87f8f5c",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24440,20 +24467,20 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            RoomId = "5863a804-6ac2-3f05-38ed-472541726740",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
                         },
                         new
                         {
-                            SessionId = "9028896b-8615-c0a2-9e89-fe9fda728b5d",
+                            SessionId = "765cc302-e1df-83c3-2fe5-83299f45a706",
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
-                            Date = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "694b7a35-1915-d0fb-02e2-562a6b6b3ad0",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24466,7 +24493,7 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 20, 45, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "f06a7095-da30-d74b-27fd-5f42f5552c55",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 19, 15, 0, 0)
@@ -24479,10 +24506,23 @@ namespace HP2.Infrastructure.Migrations
                             EndTime = new TimeSpan(0, 19, 0, 0, 0),
                             IsDeleted = false,
                             Mode = "PRESENTIAL",
-                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            RoomId = "105f2e79-3a04-c9be-ebe1-241b17a81848",
                             SessionStatusId = "90a20561-d8fc-78c1-3395-1b03ff5dca94",
                             SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
                             StartTime = new TimeSpan(0, 17, 30, 0, 0)
+                        },
+                        new
+                        {
+                            SessionId = "84072afa-f423-0eab-b0b6-c51939422484",
+                            CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
+                            Date = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 20, 45, 0, 0),
+                            IsDeleted = false,
+                            Mode = "PRESENTIAL",
+                            RoomId = "61eea842-d7b8-3f75-7a50-f17d467e2f82",
+                            SessionStatusId = "9949d839-eba9-d16b-3ceb-e0969566d9c1",
+                            SessionTypeId = "bf7f6e65-68aa-07ec-c88a-06bc4b897a82",
+                            StartTime = new TimeSpan(0, 19, 15, 0, 0)
                         },
                         new
                         {
@@ -24652,77 +24692,6 @@ namespace HP2.Infrastructure.Migrations
                             Reason = "Le cours a été annulé, il faut le rattraper.",
                             SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
-                        },
-                        new
-                        {
-                            SessionRecoveryChangeId = "adf8ad91-08a7-1c06-fd30-780a57b88a16",
-                            ChangeDate = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            ProposedDate = new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ProposedEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
-                            ProposedStartTime = new TimeSpan(0, 10, 0, 0, 0),
-                            Reason = "Cours manqué suite à une grève des transports.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
-                        },
-                        new
-                        {
-                            SessionRecoveryChangeId = "7b8f94b3-7dfc-f396-54c8-1d716494c73b",
-                            ChangeDate = new DateTime(2026, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
-                            ProposedDate = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
-                            ProposedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
-                            ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
-                            Reason = "Absence de l'enseignant pour maladie, cours à récupérer.",
-                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
-                        },
-                        new
-                        {
-                            SessionRecoveryChangeId = "33cecfa5-b149-cfc6-bb5d-597f81dbff5f",
-                            ChangeDate = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
-                            ProposedDate = new DateTime(2026, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ProposedEndTime = new TimeSpan(0, 16, 0, 0, 0),
-                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
-                            ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
-                            Reason = "Cours reporté en raison d'une réunion pédagogique.",
-                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
-                        },
-                        new
-                        {
-                            SessionRecoveryChangeId = "3f8e497b-6213-d701-5cb4-c79f33d63206",
-                            ChangeDate = new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
-                            CounterProposalDate = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CounterProposalEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            CounterProposalRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
-                            CounterProposalStartTime = new TimeSpan(0, 10, 0, 0, 0),
-                            ProposedDate = new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ProposedEndTime = new TimeSpan(0, 18, 0, 0, 0),
-                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
-                            ProposedStartTime = new TimeSpan(0, 16, 0, 0, 0),
-                            Reason = "Cours annulé pour cause de conférence externe.",
-                            RejectionReason = "Le créneau proposé est déjà réservé. Une contre-proposition a été soumise.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
-                        },
-                        new
-                        {
-                            SessionRecoveryChangeId = "7d523e68-1971-6f1c-971d-1b89e8681d48",
-                            ChangeDate = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
-                            ProposedDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
-                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
-                            ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
-                            Reason = "Absence imprévue de l'enseignant.",
-                            RejectionReason = "La date proposée est en dehors de la période académique autorisée.",
-                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         });
                 });
 
@@ -24754,12 +24723,6 @@ namespace HP2.Infrastructure.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("change_status_id");
-
-                    b.Property<string>("OldRoomId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("old_room_id");
 
                     b.Property<string>("Reason")
                         .IsRequired()
@@ -24795,8 +24758,6 @@ namespace HP2.Infrastructure.Migrations
 
                     b.HasIndex("ChangeStatusId");
 
-                    b.HasIndex("OldRoomId");
-
                     b.HasIndex("SessionId");
 
                     b.HasIndex("TeacherId");
@@ -24815,37 +24776,6 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionRoomChangeId = "a9b73b93-27ba-a3cf-67d9-bff2cb9bf0b9",
-                            ChangeDate = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "Problème de climatisation dans la salle assignée.",
-                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "034731de-795a-931a-1236-11bc7d070e41",
-                            ApprovedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
-                            ChangeDate = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
-                            OldRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
-                            Reason = "Besoin d'une salle avec projecteur fonctionnel.",
-                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "f8a45eb0-a74b-8cfb-a6b6-82cc91c3dcc0",
-                            ApprovedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
-                            ChangeDate = new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
-                            OldRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
-                            Reason = "La salle prévue est occupée par un autre cours.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
-                        },
-                        new
-                        {
                             SessionRoomChangeId = "e2f35a55-7db2-4df9-3bbc-17e566a55b03",
                             ChangeDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
@@ -24853,16 +24783,6 @@ namespace HP2.Infrastructure.Migrations
                             RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau.",
                             SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "5e8aa4d3-a635-0032-b8b2-dcbd89ad3c80",
-                            ChangeDate = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
-                            Reason = "Demande de salle plus grande pour un exposé.",
-                            RejectionReason = "La demande ne respecte pas le délai minimum de 48h avant la séance.",
-                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         });
                 });
 
@@ -27535,34 +27455,6 @@ namespace HP2.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserNotification", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("user_id");
-
-                    b.Property<string>("NotificationId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("notification_id");
-
-                    b.Property<bool>("IsRead")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false)
-                        .HasColumnName("is_read");
-
-                    b.HasKey("UserId", "NotificationId")
-                        .HasName("PK_UserNotification");
-
-                    b.HasIndex("NotificationId");
-
-                    b.ToTable("UserNotification", (string)null);
-                });
-
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserRole", b =>
                 {
                     b.Property<string>("UserRoleId")
@@ -27683,19 +27575,26 @@ namespace HP2.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("NotificationUser", b =>
+            modelBuilder.Entity("Receive", b =>
                 {
-                    b.Property<string>("NotificationsNotificationId")
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("NotificationId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("notification_id");
 
-                    b.Property<string>("UsersUserId")
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("UserId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("user_id");
 
-                    b.HasKey("NotificationsNotificationId", "UsersUserId");
+                    b.HasKey("NotificationId", "UserId")
+                        .HasName("PK__Receive__0BC2675F6B31FA1F");
 
-                    b.HasIndex("UsersUserId");
+                    b.HasIndex("UserId");
 
-                    b.ToTable("NotificationUser");
+                    b.ToTable("Receive", (string)null);
                 });
 
             modelBuilder.Entity("Teach", b =>
@@ -29922,12 +29821,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "5fa19058-bf39-5202-eea8-d48717d65eb9",
+                            SessionId = "c988ef8a-905f-f272-7ac8-51e06c813d79",
                             TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
-                            SessionId = "5d238d7c-8fb0-4871-056a-65ec27c1072f",
+                            SessionId = "7256ee0c-55f6-d5cb-c324-d686e3637c9b",
                             TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
@@ -29937,12 +29836,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "0fd1423a-74b4-4509-3bbe-4d3e18071a3a",
+                            SessionId = "88f4571b-8378-770c-2aea-69dc6ce7ecf6",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
-                            SessionId = "d880c06f-47b5-e1c9-888b-2a45303ef854",
+                            SessionId = "77e01eb8-afac-e4aa-af58-4c844bd83748",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
@@ -29952,12 +29851,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "0d404c81-c127-9c3c-33df-a33a9f54b508",
+                            SessionId = "11934ac3-6b4c-1640-8eba-00ba02d5b86a",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
-                            SessionId = "d05e0c97-3318-278c-8bf0-4311dc95f6c2",
+                            SessionId = "bf3cbc8d-f451-5b64-aaee-282d7c5ee38f",
                             TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
@@ -29967,12 +29866,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "a2ced630-3ec2-8093-ebc7-e91c959145e9",
+                            SessionId = "bec69f55-a2a3-81ea-cf20-5f2d56b376b8",
                             TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
-                            SessionId = "ed27fa93-718c-88e4-8acb-85f2db2c283b",
+                            SessionId = "9a38ad1d-d5c0-b94b-b944-8c0afe20c192",
                             TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
@@ -29982,12 +29881,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e0cfcb79-a015-c966-3230-5e7e86bdd4c8",
+                            SessionId = "c95e2491-8172-5fbc-a92a-87ad9c9181f8",
                             TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
-                            SessionId = "68d2998b-87cb-a478-c88a-a51ca80145a5",
+                            SessionId = "399b2888-c0c5-ae26-5afe-f98ec7be5d8a",
                             TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
@@ -29997,12 +29896,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "3addefff-d8f6-8f8f-db48-69ec7b0a89cb",
+                            SessionId = "c73b66a4-8ee3-0145-1eb4-30bf4dec84bc",
                             TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
-                            SessionId = "e771afe4-4d64-cbcd-11ad-878b77752b53",
+                            SessionId = "5f0f21df-bbf9-7cd5-df3f-2561fb0dc114",
                             TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
@@ -30012,12 +29911,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "29b668aa-18a0-0e8a-ae78-a420543df94e",
+                            SessionId = "9e6b1106-9873-1975-fb5c-b15561f6e3b4",
                             TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
-                            SessionId = "290a7317-e5c9-ad05-e47d-caa6063ceb2c",
+                            SessionId = "aaad430c-5c54-db42-9a55-c61c5620d826",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
@@ -30027,12 +29926,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "b3bae3b0-b37c-c8b7-d834-2ba21799d0ac",
+                            SessionId = "25e0df06-bbaa-37b8-2ac6-4eab678ab272",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
-                            SessionId = "a8f8d4a0-3f4e-c11c-d102-7f174818fdc4",
+                            SessionId = "7142c7b1-d1a0-8ec3-fc91-4676fcfdf48f",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
@@ -30042,12 +29941,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "20ed4f3a-c175-821d-35be-2ee8929dae61",
+                            SessionId = "11256d7c-1f5a-523b-7bbd-95a4e987f37b",
                             TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
-                            SessionId = "1ede08cd-20f8-3e38-736b-f235acaa508e",
+                            SessionId = "84ad9b8f-99a8-78de-b492-83201e1f1c1c",
                             TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
@@ -30057,12 +29956,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e580eb5e-3b20-1821-dba0-5d8e776c7479",
+                            SessionId = "363b98ba-216c-aa41-0293-722df3956f15",
                             TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
-                            SessionId = "8b5fdba4-07f4-dc55-3781-3203562ca7a3",
+                            SessionId = "8e5fe2d8-18b0-b8b8-5314-69577f4cc708",
                             TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
@@ -30072,12 +29971,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "4afa8504-a471-6140-ae11-de9e55f88184",
+                            SessionId = "cce1c5fe-9119-05f8-3e8d-2c378c5d14c9",
                             TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
-                            SessionId = "fbf79eb2-b304-60a0-c1a9-f735e3fcd077",
+                            SessionId = "e165bf79-d64d-46b7-b9ad-16400e834be2",
                             TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
@@ -30087,12 +29986,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "70859917-364d-8f83-ae6f-e06f075f6291",
+                            SessionId = "cabc07dc-e3d5-9d56-1a0f-53d69775f4b5",
                             TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
-                            SessionId = "ef0391bc-4247-10b0-eabe-2fbf5c2fd7df",
+                            SessionId = "f2d79b41-28fe-6b60-6aa7-bcfaceb9c9c3",
                             TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
@@ -30102,12 +30001,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "2b003721-f33c-4fb7-8eb7-f5c959519cfc",
+                            SessionId = "950534f5-24b7-d4c1-08b5-cfbdf49a5561",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
-                            SessionId = "309b75a8-8f93-26c9-4cf8-75654e0f717e",
+                            SessionId = "d1be13f7-4fb2-b710-6f8a-c8fc9e0e139f",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
@@ -30117,12 +30016,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "e77cd186-dd72-e409-5a95-d8d37b9f67d9",
+                            SessionId = "768e3191-da48-9df5-048d-1e0c3c1d53a9",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
-                            SessionId = "657d7faf-485b-8f8b-56cf-4585b0231767",
+                            SessionId = "64f30881-ea24-9de3-f214-87d209f58db8",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
@@ -30132,12 +30031,12 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "d45f1962-e6bc-ba9a-4e9b-6a55fc7f543e",
+                            SessionId = "dbf91012-44be-cdc8-081b-5ddfe794ce4c",
                             TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
-                            SessionId = "f0352190-21e2-bd43-21a1-ee249d61f252",
+                            SessionId = "e0d73078-69a7-2356-d8b7-f14837e1ca8c",
                             TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
@@ -30147,7 +30046,7 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "93562bf6-d09a-3026-d079-9e9aed352fb5",
+                            SessionId = "7a1ae3aa-4be1-2c47-1c0b-e7c2765cd514",
                             TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
@@ -30162,2443 +30061,2453 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
-                            SessionId = "657a5804-95d2-bbc9-e3a8-cb27991a4ff7",
+                            SessionId = "e4e6775e-6f26-21f7-11db-74bd6cddd1f8",
                             TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                        },
+                        new
+                        {
+                            SessionId = "657a5804-95d2-bbc9-e3a8-cb27991a4ff7",
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "1c9c63bf-825c-13f7-fa0e-9f0699f61ecb",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "fcbeb7c4-fd9c-40cc-b15e-4ddf4d47233b",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "8bd34289-d07c-921a-c6cd-bb4b146fdcc3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "2592466e-b4d4-4655-9eb3-6de7071ccf75",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "8e7a8865-e1aa-c65a-3f83-fb8382e84b73",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "9fb457e2-45bd-9c59-9632-dd2b36d435f2",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "a88474d9-7b40-75c4-103c-4756fefc5223",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "a2e87a66-9129-c8b4-8f19-1a7b0003f9b4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "3bd48e65-a546-53b8-11be-9168f9315439",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "bb2fb4ac-48e3-3274-181a-669eb9886be5",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "176b9a55-95f2-70a6-0d8a-c46a6f228bea",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "e5534c19-113d-4705-a9f8-5a5534f534bf",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "0b13de7b-3a06-5d38-eccf-e9bb8db4be94",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "6430ecc4-8bfd-8a62-c7ff-1a819c81ab12",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "02a2a3e4-b5c0-289c-5dfd-95324e623d49",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "45ddd76f-2146-20dd-4044-b056b0e89930",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "376435b2-4f87-d45c-9d3b-0f1a7fe26993",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "aa4fa9c2-81bc-294d-cb27-c2b5b55fab2b",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "18293f33-cf24-6dd0-fea8-750eb629c0de",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "1edd5504-cbdd-721e-c3f8-b14406688ec9",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "7b8b3263-39e1-5145-8a7c-922bed22cd08",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "1497fba7-91b9-0f9e-413b-a1a7a9487f45",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "52337c23-7694-cbf4-76c9-3dd7f121c476",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "f7502be8-0a9a-4d63-69fe-fba66d3fc191",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "e9db33d6-c21d-844e-fbab-1988c3f1c501",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "573e2677-41f8-31b7-9951-eb1100b2132b",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "165b9f17-2130-1b34-da4c-1235fc6ec986",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "32b099e1-a3d1-4e0f-9e32-56ec913b08fa",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "42046a6e-e4b1-6bd2-f0ac-7fab8592bd81",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "29b71050-1d78-d4d7-0445-b899e17f1db0",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "856171a7-b9ac-4830-b2d8-9cee3fdcade6",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "abf10a27-3ac6-2e58-96f8-def34af99ffe",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "2b072eec-8afc-2975-cf37-acd3112a3d9b",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "2b9b9d22-41a9-95c7-6b24-f4c5298461af",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "6db8b590-545c-5247-9e1a-c51a90a3b619",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "3177b094-26b1-b068-a92e-12b1ea020c51",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "4b3fa2e9-13d6-815a-1991-3379fa24d213",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "4903fa5b-de46-5fc6-a28e-0f0cd0ba7c7d",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "77d7f16d-5ae4-b603-5a85-8890f1777158",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "5a62f7f4-969e-0b36-2084-91de9f91eb34",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "d051e973-698c-58dd-bda6-63d696077ad3",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "9971fa58-a988-4a0b-0bde-87bf140e6b77",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "67ace8f4-0f30-1cd2-b6ca-071e23ec2cba",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "2adde9fd-954c-932b-bf95-c574715ee59d",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "45af8d84-cfe9-7ed6-18a6-0d89016bac6d",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "fa8863c0-67b0-85c7-5ff5-bf270e35170e",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "c105f40c-b412-3a64-e00a-cb1f14df7cd8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "0cf2cc5d-7bc0-f1d6-49b8-99c8e5afc22b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "882e9f04-341b-9074-4919-525657521655",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "c7a68e32-cda7-b864-e7f1-ba2ae5fab309",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "2d9a3c10-b1dd-f004-0f69-2e3a4bae5c5c",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "790b2537-789c-2d30-aa17-fddb3dcc7e87",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "4acd9232-d4af-fc54-d001-272120ba0f3e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "50278dc0-3ccf-66c5-6639-d8cf2c3a45c3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "d07bb88c-bdf7-0c6b-a371-44ce794f7d3e",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "895409e2-f453-7a65-bb3d-25c0b35987f2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "6d8a71bd-3b1b-2819-0f1c-7c6f1615f245",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "4a1350c1-b7cd-0abf-d114-716504b16a7c",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "3adb884d-00f4-7452-b153-172589985de0",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "cbff8567-0725-b204-ba70-6b3ea17679a2",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "28cc2966-659a-7c43-550d-d3e856e6eb75",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "bed3ffa9-e96c-f7e5-eb1b-e22f1ec71421",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "68043ff2-95b0-99fe-0120-ed51205672e6",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "78ecaeff-34c8-c97c-b69b-0c6690b4a848",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "1c4cacfb-dee9-07de-5cbc-d5ab91b33773",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "9d2229a0-0c0a-04e6-50eb-b3326b957e75",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "1fef362a-d1da-0a5a-84f5-8ae89094daf4",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "844e7674-593d-adb3-1440-7f2a1fab57a4",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "f8eda48e-36b2-3c80-2a8d-45ed824d3d02",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "9e55967e-b361-b475-1d74-2da173a313ab",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "df7466ab-6cd7-323b-3000-734d0a87e629",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "98a8f4b6-5e8d-2f6c-8758-6666656e481a",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "6a312723-378f-452f-ccee-cc8c2ce7a27a",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "c8006108-d31d-3fc3-8118-4a00aa1228c8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "2dd686c2-90fb-215c-484b-6abf33d7f0f2",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "60472859-d8c8-a48d-4c3f-0ac18643491a",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "be8499f8-c80d-6ecf-0314-d9a438061154",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "19f2fad4-a69b-5816-5671-7dca8e1f05c3",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "21ba83f0-c8cf-756e-d382-667683820599",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "c0c452c8-6e09-202a-74cc-724212b93b85",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "f81f9d3a-35d8-f873-8f95-45726a1387a3",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "a2dc9424-44ed-80c3-e2bf-2fc537ce7c31",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "17ab550a-68a1-728d-c3c0-64c7bc72f3fe",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "c437ad27-25ad-790e-ec14-e4cbb2c7d54f",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "532a40a7-77e5-d8ad-e9d1-5ac05b8f1fb5",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "a7e8a312-e5ac-380e-64c0-58e134a0eb3a",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "9499db5d-73f2-29e0-6699-6fee9b30efcc",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "b138dcf7-c96a-95da-7950-ca0ebeca603b",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "9dd52fbd-e3a2-3778-9def-1607fcba8a14",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "5bd766de-0af8-d57c-839b-1f71e24d41df",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "cce2ada9-2f2d-ce10-1509-2e3988f0040e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "6a3a2ef3-ae9a-b881-f025-d9d175543545",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "ad3ad1fb-e09d-f4dc-0ea3-acb109796d53",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "ec4fae02-dbe6-d8aa-4d3d-da1c38fb7f7c",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "2ccff467-3ffe-b229-11db-213c0682008f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "0f702402-059d-f301-63c5-f10eae2added",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "fa95ca2d-6015-d738-9bbe-e8cba5195c60",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "3aa7cd04-b4c2-cc6f-b69c-a73c4dc31b69",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "f602e4c9-bc99-4d36-b8af-7f9dcb88d01c",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "4b064eb6-10c3-39c3-883d-0424a8ea810b",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "d39c0714-beb7-9fc0-1fba-437d66426189",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "e4b69797-276b-44dc-f691-2839ccadbc59",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "37b5538d-83d9-db1e-c957-873f1f52b8e1",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "e792e81e-cd41-7b11-d310-735b5b93ea00",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "c7e266d7-3097-a994-1174-d3cf1608c41e",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "1b84325f-12c9-a783-29b9-032c0e6283aa",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "0e09a6c4-a5a1-ce41-7427-98ad5a20a6e6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "d6592817-12c5-1929-7656-0bc610ac5bb8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "9d09c449-338c-e3e8-fc9f-e17d64f8f16e",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "a6e15963-ccee-056e-b08a-7b411a5faed5",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "72a781ee-c6f9-c7a3-a6bb-dd39961e522e",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "bdd09408-1595-3d9e-9ba2-750a734e3f90",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "a0923ee7-dc84-4fb7-e960-64ba86e14501",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "7d9ad1c8-2f22-2da1-d373-f6781481e17c",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "765a6d8c-c0fe-7187-2aa2-2346375627a4",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "288acd27-59ec-b9f5-160f-bf6e569dbf73",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "45f1ab9e-4cf6-ec9c-2b17-9c7adc6a6cc6",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "79c2c8a5-b015-8ddf-6df6-251e26904dd1",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "f9f1b201-c78a-46fd-3f7d-701f0cb9d80b",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "e7ac8242-2bdf-3ea8-34ed-376cd6d4cc6d",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "3eb63cdb-d52f-72b1-555a-1bc3287a6e99",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "0d5335ac-dc82-6607-9000-ce5fb7df023d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "02b8e933-beee-fd21-e81d-20c13cc2b9d9",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "73c7563d-39e9-4606-310e-2e3e31c378c6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "e915fc4f-2425-c1b9-7448-6f93374f4d93",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "f74652db-dc7b-535b-b335-595d87ad4277",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "564788db-7533-ad1d-c822-688c966ea182",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "91fc97eb-284d-bef1-4eaf-5747976f12d9",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "abc6b243-5588-2a14-659b-cd1c72698bf6",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "3ad232de-dead-1de3-4ef2-1a7a1bcae815",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "d7fdd83a-70db-66ab-6375-91cd319db355",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "d887248e-7c1b-b541-76ce-6a1429625aa7",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "9eceb91a-7f9b-fbe9-d071-540a01948571",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "235b3715-edf8-71b1-9850-c2f6c754d99d",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "597d6d71-d02d-d972-6906-47dd94af9989",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "e992a0f0-7cfc-f1ea-667c-c308c7560737",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "2bb47397-839a-9256-9cb2-7ca19bbe6f6d",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "5949817d-4426-d92c-eda5-7bc93010d7e7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "2b1ce470-481f-5868-f4ac-26e876e4d79b",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "5119b0f0-763d-45e9-dabe-2e015463004e",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "e04a9235-6450-7289-01d9-1e0c6d60181e",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "81a26782-c24b-32fc-fb34-09efe90725d6",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "04ccea8a-4e53-42db-c31a-0e8f2c805783",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "1d041991-5f0e-c23a-8999-aa6d5e5cec41",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "11065baf-e680-3a0f-0ba7-1eca5f0d5203",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "71f57d4d-faa9-0cc6-82c1-fd3dd9f6c1c7",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "00e55ffe-e77a-1041-83fe-f230819a98a6",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "e0423095-2fec-629c-28ab-8d15fc453cf0",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "f3b3e51e-629c-d167-01db-a6540d350738",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "935c4906-2965-0faa-073b-4831ee9f3c48",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "4dd2b11e-e285-eba7-7e11-217a1f1a5016",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "77f874fa-2a1f-f514-bfce-3249bea7bc6d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "a9c039df-e5b6-5874-9c20-40b1c8c81a18",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "3467ad0e-4caa-a9d4-ebe6-b07c78d758be",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "4caafe08-88b8-f527-d617-30c43c95947c",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "b1a95a03-38ca-ee92-017c-5209fe2a86e6",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "f95addc7-9b43-8f11-22be-04c9b277bbbe",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "3617723f-5fa3-13c5-747b-af12024e1739",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "b585a522-6b7d-2bde-80fe-59857d64cf59",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "2c5e7c40-eda0-861b-ff60-079cbd28d62b",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "1828a070-068b-a95d-05bd-97d1aa5306cf",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "1fb7b886-b13d-200f-7df6-7ebda0de9ccc",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "a6df2aeb-dc33-065d-ecc9-bf2472024f34",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "0f278cb7-49d5-fcc9-b743-6c6f611b8aac",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "c025d9b6-56e5-4289-89de-69f2f2d1d013",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "f7875753-a25c-5e48-6009-e5dbdd89d86e",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "fc38688b-a5a5-0a3e-f73f-a130d3c1ade0",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "8390a9f6-0a93-19fe-59e1-f9f55f5ddd6c",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "6d35848e-614b-c210-ba42-5c08c34d2f65",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "698fabe1-43b4-9c65-86f3-65500666149f",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "48bf7f82-1ca6-e351-83a6-20588e74f9d9",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "8cc8c34e-a72a-148b-03b0-f8ee5fd74ca2",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "c0028500-4cdc-8005-bb90-ed6399529b3f",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "a2ebb53b-d53f-3243-6067-58d54306b7f3",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "aa5e6d3e-6879-9a9d-240a-c4b8d59d977d",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "43370ead-9fca-c16d-cee6-46c82788d337",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "8e09b870-6631-2b58-4357-c8e2715354f3",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "1aeee50c-ccc4-bda1-52a4-8d413ffe2055",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "0a613941-9193-abf4-25ce-a79ed34acf0f",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "8da9b865-ec75-e977-9c4c-609e2b0b4bbd",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "5ae81cf8-1483-9145-cede-a1d072e27dfd",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "0ca55a2b-4b81-c691-b83c-cb46471e0616",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "8976f83c-4baf-c2f0-376f-a1e360cd7ef0",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "a59870d1-3aa1-1ffd-b0b0-5f0eef5f14e4",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "f1707df7-3aa5-d08c-ea15-5bd6269c6cd3",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "3da16659-e34c-a32c-0e88-f464e813b606",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "6f1680fa-747d-53dc-d2ab-105243a1b1cb",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "eccdc834-73c7-adb9-9ff5-6255b7257146",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "36e83abd-b95b-2bff-8076-d432a0d126c1",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "5c070507-4cfc-7437-9688-8a3fa0311229",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "764f2bb3-6cc5-14e4-6520-336d80427992",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "489eb465-3148-2790-459d-d37743bc1fc9",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "a41f5899-263a-2ba5-d89f-83fcb8615004",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "52659ecb-a874-76cd-e727-9e93c72dd9e6",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "5c440b1b-c528-b1b7-ea36-c8c51c52f6a9",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "96b814eb-178a-5fe2-b4a6-eb71b6006fa1",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "bd079d7b-b8ac-b648-0a0f-fa0d75c647d2",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "b7ae36e0-29fa-4028-0fd4-b1091ee273e1",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "4dfa6633-4102-2dee-0768-2c3ef94f351a",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "5e21308f-4214-8f32-e85e-871599e6ea4f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "79a2515b-c784-5fe3-20cb-1548b67dc9d2",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "33629096-47e0-4ae4-df4f-b9b15bb01a06",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "90ef151a-2989-8953-bd19-90dd0821143c",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "44aaf7b1-791f-8f82-c0da-7ebb41fd7242",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "35adacf1-d9c3-d92e-2f59-fd496b6a14db",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "d9396d48-fd20-a52d-70b5-3f2085f7cfec",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "f3b1abe6-fc82-148f-0715-4d25554e7fa3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "1b1697a9-3a2d-fc57-4a13-6eb57d67f819",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "9b05b001-4131-ed42-634c-10196745c2d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "b648d7d6-c04b-1683-2bcc-c8232f2c923a",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "b1c46032-68bc-da8b-5947-ff34f797a32a",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "bd2342ba-3dc5-ee86-3dfd-38ca414e3fca",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "4e6ad58e-34f9-3aad-d394-6c22e98c28e6",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "ab988871-3db3-91fd-fdc6-c24dc63b2ff3",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "628d5b85-fb1d-3be2-1666-dd4ae4465c58",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "45ef5fb7-f21c-293d-6e77-44f359cf722d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "8e209ba0-d4c5-1bc4-1217-b046044b7cbd",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "b5e54f3a-245f-7903-3b7d-8ef6772d70e7",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "f24c8abc-3f83-5162-2e6c-56859c5c056b",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "c888fa0e-3ba4-8446-ca99-35f2dd69819a",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "73aa21b6-6e89-d724-606a-ff4a561441d6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "b20737f2-721e-1d65-17b2-417ab128a58f",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "55803d94-5a30-5537-708f-9a29af0bb608",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "9af6f1ff-5c76-981f-16b1-cff0e00e7faa",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "e291f668-1c34-8928-0af9-193ae7989012",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "27157c99-c60c-e69d-0cf7-6d49797717a7",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "91e6ee14-7d3d-ee2a-2bde-63a3eb189429",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "aa1b61b5-90b5-7fd4-8e47-7cc758c171b3",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "64ae45c7-d78f-ee6d-73c9-f4f9332e8811",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "333a9e97-7b22-78cf-a2aa-054acbed29d6",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "d810fb97-00e7-f2a0-0985-acffaf11b187",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "7872c32e-8849-26d9-8279-dae0014cea81",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "e44ff3f4-6ff9-8af0-f12a-63b3268c710c",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "ba235bd2-9ad8-ed2e-d547-fbd573117230",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "399b3fe0-a8db-f30b-561a-3eb2fa5d587a",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "34dcfbf0-bd44-0123-ea20-2bd73d504f1a",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "bf02e8ed-6ab9-9191-d50a-9c05cf34fcef",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "49cbfa48-c9a4-d8f0-1a8a-1191d3b61d23",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "63c687a3-67c0-9d3e-4bda-fc7d26ed4e96",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "22c1caa2-aa3b-3e37-6efb-8fb7c07f54ca",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "a0670202-2854-2e50-8de5-c40c09ce45d4",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "faa58a8c-d950-2e5f-5a1e-2fb3331958ca",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "28b5dbc2-f5fe-d1df-1276-f0264e5fc36d",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "0ab1812f-650e-a53a-7a38-d1191221716b",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "0b0eee80-ebc9-0e27-a0d3-4124d340c71d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "77d8f4d1-c71b-c484-866c-ad2bbcee8d58",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "73532c4d-af3e-83d4-8425-4cc26ab37aba",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "f14fc5c6-c061-1111-1e79-f268130aaa74",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "789d8ffd-898f-2aaf-f340-7783135e9a27",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "a82312a1-29aa-9773-85f5-3a79b946447e",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "bd26c6ec-d165-4279-e832-a0635cb9a1e5",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "3f839a52-c325-f2fb-b74a-c0f31808b557",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "b646c1a0-6866-82ac-52d3-c26c028a197a",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "042bb7cc-acb9-432e-6025-f01f85edc241",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "f129bad2-788c-bc9e-89cf-60039b8e604a",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "c5a0b44d-30ce-829b-93a7-716afe1e5163",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "11a47728-c8f9-ee9b-363a-3a89d6c24797",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "a37ff634-cd9b-ef97-1174-7895dac5142a",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "1452324b-c53c-15c4-079f-4a2000e03019",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "4a9e4b89-4361-e36c-5dbd-676385437cbf",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "61a2c1d3-96fb-71aa-55cf-33c674680627",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "07a3cd0f-fe14-505c-acdf-f777e37778f1",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "0be92ebb-39d3-323f-c309-af2cbab9b45d",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "4af77d70-a98f-9201-b485-970850a53a5c",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "5de5e483-bf65-3751-6439-ad5bc91a890e",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "7a29af3a-374b-0d68-6adc-9c128bf68f2c",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "4f96e085-90db-e38e-531a-45f6abfbd4b5",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "8d236de0-d974-e10a-d60c-6eb6d6ee45ba",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "cd47af08-b065-d7f9-957b-4331cf499a84",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "5928a75b-88dd-4a5d-ca54-6d5bfaeab6bc",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "5c67d3c5-f64b-9042-df1c-37f8122fe8e8",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "b5308f06-151e-ee1d-d1d9-567a5c3df214",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "c3f29e56-c774-c1c8-366d-35e9ddfc64be",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "70fb017b-27b3-32f4-e15b-031807d3041f",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "2a81166d-6b54-e987-5809-652afadd1182",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "b4d3824a-cc8b-bf10-4c1a-b8023aea893f",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "cfb44862-44a4-9cc9-5636-6fc938d47be3",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "d0425968-0a5c-0a9f-3897-b55f4e22a274",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "fcbbff35-ac21-d887-426b-fc0c5af9fa0d",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "bd5c5e1b-5be8-03c6-a5e2-39063b12d65e",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "bd3a37e9-fe59-1c15-b82a-aecb60558898",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "da917375-989e-aa66-3705-7fb13adc13b7",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "d2e5a5cc-7ca8-1bdd-b989-bd9c35ca0e88",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "8c6aca27-a8a8-0c0f-1002-e52f6eb2561b",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "849b1616-601b-3dd9-557b-16d80403b1dc",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "9c811b0b-75ce-1d6f-75bc-1c02b0f27f3c",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "05c1638f-8bd7-6101-ecb2-b86c4e36c561",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "e3444b28-a5e6-7291-e9e2-d64fc228bdec",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "528cf0ef-0ad8-1440-1a6a-d89ca66b78ef",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "08859e7a-33b4-e98b-b9ef-f754da6f424b",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "7a234537-baf1-3524-b7d5-0e086755bc47",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "c4b97e73-7182-c9d9-9bf7-916db4bdf6b3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "053f68e1-2f0e-089c-76f7-de930e8668f9",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "2cdc1759-9120-bd86-70c9-29940340600c",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "1e95312c-bb54-5051-1d8b-87fa3be05371",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "20ce0656-3d5a-66ab-6bc6-0e90ad09655b",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "70ee2824-090e-3fe4-2794-10f0c7f3f893",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "10c6170d-a542-dc14-754f-794aa16ea0cf",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "d83d4cf6-076e-8942-5a26-f3fb3c195bbf",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "7ff81ee8-300d-ddc6-319d-7dfa7218fd58",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "e91072de-8876-66b5-cceb-4cfa6eb00b82",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "1e356af5-9fbd-d306-bbc5-eea3d0b204ad",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "63d0e165-8c30-09b2-576d-a0517c4317d8",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "384a335b-ead6-a595-1afa-792fa5f1d8fa",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "9e3a1c36-c83f-de64-7a15-a427c2d53ea7",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "c93aedf9-5f94-9dc3-c599-63c7235e54e4",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "d4f123f5-ec66-2062-e7da-d35c3ee57eee",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "e8e08ba6-7aaa-47b0-1ba8-5672399ddd9c",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "05bd8efd-7965-885a-712a-23b65c741a8d",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "f59455ff-4ce7-d960-dc83-0e9693fa47a6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "8ffc693b-16b1-8101-db46-047a98051af7",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "03a99c53-fb54-e2d7-6a4a-3c27563d7b9c",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "fd1bee15-e7b2-9c75-8f36-bf9c4510c9c5",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "75a4e70d-830c-2c84-3356-f012e00406b8",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "98f3fdc5-c2cd-f68b-96bd-732dd43c8529",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "0993178d-8c63-8c40-84f9-5f0d8407806a",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "2ef053bb-a426-74eb-6498-47e542671a5a",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "0633fa76-26c4-bbb8-04b7-ac2dffc5035d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "9419d91c-fb6e-946f-bacf-338bbfb69b57",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "57ab359d-3846-c2bb-ed46-058d12813eb3",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "6c176ab9-ca29-361a-d27f-4b7f010acd63",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "165be93e-3f49-13b1-427e-af18f7d6db8f",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "7ee8ecf2-a327-72a4-39a3-f550b848e994",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "abfa578c-1059-0e95-41fc-6b4a6cc5bd35",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "0cd4c552-ef7a-3da8-74d3-a0393d836d30",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "1f060a0e-833b-9361-4a59-0ffc6ca53af2",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "d7752dd6-7176-d04e-be06-8422283faab2",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "b3a8c3e6-2323-b55f-9c32-0b87693deb72",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "985812bb-b587-86fc-300c-964d20bb99fe",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "73b44f51-5601-290c-5594-135cc98de227",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "64232e02-58b1-49f9-ed14-4ed2bc2cca29",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "6e9db836-8335-157d-2b66-184effda711e",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "36d84ce4-f349-afc4-6458-0cf8242cb742",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "8a6cc122-2f10-d00a-54f5-d2ac0bc48657",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "c8e06257-6008-61b4-4b53-278d79854078",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "57be9b47-7cba-8ebb-640f-e274971152ab",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "9dcbb2e1-1288-8061-7552-95fc4a54127f",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "5cb76838-2148-bb64-3c35-e732e56238c5",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "1e5eea31-29c3-bc5d-2667-842eff3b544c",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "013a00ac-ac8b-5c01-8a57-5e3a952f41c6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "412ef48d-01be-55ef-5ebb-4a78431136ee",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "631019a5-52aa-5f92-b516-9f02ab27fd0e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "11ac6e88-a54d-0fb7-d0af-0368bd55f51f",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "8364106c-5f3a-598b-2ac0-3ed214205fef",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "e549f908-0b9f-bc96-93e7-a3debcc701cd",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "b3a131b9-2c77-3894-f208-cb79d39faca2",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "c054a00b-472b-2614-aac5-8337913cbe70",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "a39e1659-d76f-b466-dcb4-6e403c08235e",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "c49feb4a-a697-d42a-ade9-8a8f6028bbfc",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "8d39f934-18e4-6144-1d94-ded1104d046b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "cc89b80d-6432-18eb-4c1f-89d48642289d",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "733a7970-863f-19e0-960b-550ffd7ebfb6",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "e1cc35de-1693-fdc6-8795-0119f8f61623",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "8d189383-f0b2-811e-27a7-413d45d77bc7",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "4557c67c-df81-999d-af4c-0c484bf21983",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "a987acc4-6719-b547-a33c-941a36a8ac2d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "58ee5b4f-5255-02ce-b2d5-07a5c8ca7673",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "e0a5ac38-0109-c23b-cdf9-bfcc771a6956",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "9c845855-86f5-5a7c-6a9a-ab196a2fc168",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "b738fca4-5187-2cb8-fe64-bf110f27dc19",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "bd194d03-59f8-3e62-32e6-fe4f7a3b879b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "9d3d2f6d-074a-0e8a-04a1-d64fad0a7ca5",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "de4618b3-b26c-8e28-0a99-ae5525670cd5",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "a228ae2d-6872-3077-746d-e7caa9826050",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "27347831-35fb-67fa-ab30-fe2735abbbd8",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "978d0096-a189-7be1-55f4-a61ca61d2828",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "db8cd639-647a-8b58-26e1-09ded6668cba",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "2310c342-bed5-4b9f-eba2-02e50ce02e57",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "4655bd8a-abe0-ed09-0f95-f22d7f8c4bfb",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "c9db2283-f63a-871f-3474-0b3644830bf8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "9ad1b67e-6011-dbfc-53db-ddffab249a2d",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "ed67f473-5441-c705-b174-e26119a10316",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "d6004a9b-1c74-80de-a857-6060eaf7261d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "4cd5f36a-93f7-1b54-cabe-8128f0dfd674",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "a1f48c0f-fc61-d167-ac87-a547004aa023",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "8aa6d384-bddc-d1af-b54c-f4cbd87e1b21",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "87e48982-f0da-a5f3-0b94-9ea581b65f84",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "dfa77c24-d946-d3aa-8143-2d2980309d6b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "3c4db87f-2c67-8431-5028-cc295a2e3087",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "2605d9e6-c136-20c8-1831-a1f1ffd05ec7",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "3c384aff-7c16-316e-ecdf-de092cb63839",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "015728e2-d208-f4cc-9b3c-b972b482801b",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "96b1462d-19ec-a38c-05a7-8c261b7ce639",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "0bc8e3a7-1aed-9f32-20e8-ab95b541caba",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "1f87bcd1-4567-9f7a-a2c7-c8251419643f",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "13665640-d5be-7545-5e75-b567631717d7",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "b383ee88-a3d4-9a92-14b8-4ad063d05858",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "8ff891c5-6be8-cf4d-c081-c3c877e21d1b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "af3d7485-acdb-8cea-67a2-6784f57fb5af",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "df6e2e51-1635-c552-c2e4-47c20b623af6",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "07f20e2d-9dba-3c0d-6168-ee83fdae9385",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "c470d37a-a616-4624-0e1b-a3d600ba3c08",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "78aaeff9-5997-2b9e-dfff-14892277163a",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "ca31003d-2c4d-41c8-9b9b-4c61347b3f44",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "248bcdbe-1d25-60a0-8656-ea43b2f22920",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "fb2537bc-4439-2071-55a0-b6407e36e5e0",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "a5ad0348-d074-cc01-5380-d87b5fe5dc57",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "1cd5ed06-8055-c77f-14d6-607ba085772a",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "9b3bd5a9-f7ad-eece-81d5-eb1e34b3e9cc",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "f16f91c3-4de3-d09f-4071-921f313f15a8",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "eb190148-b365-1499-4bcf-34a8307d3ae5",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "f7033651-e69a-4324-fbe2-d0182b44a808",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "0c81ee88-383d-927c-6006-4e96a8d886ec",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "8ff68495-91b6-7636-684d-e74d8db1cef3",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "40137d15-bd16-30bb-80eb-aaabd3357137",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "0abc4d04-e557-58b6-e4bc-7e52cfede4f0",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "9651c893-06d6-049d-48ea-4068fa9fe013",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "ec725cd5-16d9-76f8-27ad-d5aa62b86c1b",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "3211d60a-a2cc-4aae-e597-0618dc72fd91",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "9d1207eb-453a-4a13-6571-c8cfdaa7475e",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "c83566fe-4da0-b680-43f1-aaa1880db549",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "3b42cda1-04cd-5377-70ca-5f9c09522015",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "ddc05051-6ba0-9876-0a13-ebc3052d2b4e",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "4c6b6e9f-a614-de54-097f-4c095f09b343",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "078427d0-9b6a-f123-fccb-8e5843a2e640",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "035596ea-77a5-4678-2440-1215400176b5",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "cd4a2b32-4de8-cae4-d813-3a9c528bce84",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "bf542d10-d3a3-6bc7-9bfc-b0462086ba9b",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "e02b7f77-b4c9-bc10-276e-685319e06cae",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "f2ffd04c-6cf2-db85-a42a-bdb85851cef7",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "a0f2d093-4ef8-8c6e-433d-875f5fae4ae6",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "abc1a019-0ef7-cbc6-fcf3-2c8326df2fe4",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "ad086427-ad88-1b14-74dc-3c734d9f8fb0",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "3188ef65-4dde-15ad-a99a-83fd6b6c05a2",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "ec46c0fe-0b44-80a4-27fb-211fc8190195",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "43dba54c-ac20-eaf1-aa78-e5651b270a61",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "eef85155-102e-817b-0de0-1e2e035404d7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "06db607d-9866-9b91-3737-5d793f448048",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "fea0de9b-2eaa-f28c-2118-dc74ea12b4b5",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "c10a0baa-1e4b-54ba-5d59-5c584d8ae3ec",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "b73fb90a-f41a-0c50-2dd7-6d2cda329ea9",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "749b811e-fb13-4288-9280-1a0ac6ae1357",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "ea01f8ea-b73e-be93-9a72-7db9fa21dd8c",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "945a3a2c-b742-5cf0-08ae-46eb85a20a36",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "b9740ffe-3edf-4783-e5ad-69012f24a391",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "1f0d2ada-0af7-a1a9-d34f-e43e47f0979e",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "ed3daf70-fcb0-7b32-f292-becdb3eb3eb3",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "a1f1d7a7-bddb-23c9-a786-8be00afca275",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "bec6026f-535f-cf5a-5ae4-08eabf06a2ce",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
-                        },
-                        new
-                        {
-                            SessionId = "39fdf696-7837-e304-7697-b0857489cc13",
                             TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
-                            SessionId = "94010f22-341b-ef11-b28e-580fa32dd1f8",
+                            SessionId = "a4c1e1ca-1aed-4358-29ba-86f5969bcffc",
                             TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                        },
+                        new
+                        {
+                            SessionId = "ec6e503e-a6c5-f7f4-c7a8-6ebbf0e9364e",
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "87c84975-194b-70e9-69b9-0cb91d0b0c46",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
-                        },
-                        new
-                        {
-                            SessionId = "e920fb68-dd63-e423-80ed-9d5fb1a490c1",
                             TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
-                            SessionId = "0437d03a-dfff-6bf0-e3a7-a841c9df202f",
+                            SessionId = "02ac742d-f835-8d91-fc5e-9f968bb4fff9",
                             TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                        },
+                        new
+                        {
+                            SessionId = "95192638-5e77-03f1-93f7-ec71fac6461d",
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "0df42892-80ea-56e9-a873-68d992145b82",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
-                        },
-                        new
-                        {
-                            SessionId = "5a4cc0c1-97d1-86ad-29ee-a1d65158f59d",
                             TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
-                            SessionId = "04bd575a-4979-6362-a12b-698fd6386a0c",
+                            SessionId = "99a99299-8ffb-a345-7deb-22c565c1cb0a",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "422c1e49-67b5-acd2-b230-681a7b5f3f7c",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "0fce33ff-5688-cefc-4b0e-412ffb408770",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
-                        },
-                        new
-                        {
-                            SessionId = "cf31bb54-62e9-7d58-8fef-f5b364c3aff8",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
-                            SessionId = "6ee623bd-61c4-24a1-58e9-930b652e80b2",
+                            SessionId = "55a76eba-0077-c3ff-f1f7-18e9368c6232",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                        },
+                        new
+                        {
+                            SessionId = "4e9c06a0-6069-c2d3-9f26-60b48f4868d5",
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "1646f5ca-3906-a4ad-a5ed-4cca5bc4e5f5",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
-                        },
-                        new
-                        {
-                            SessionId = "5e2176fe-eeae-f192-d9ca-3a7c0c94cfbe",
                             TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
-                            SessionId = "39a517f6-beab-c8f1-5db1-10ea11f5fa57",
+                            SessionId = "51642122-e60e-72f9-c360-f185fdb5f957",
                             TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                        },
+                        new
+                        {
+                            SessionId = "b2cf5b94-29b1-5935-44ac-225ba5b17377",
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "96306430-04e9-25ea-33da-89edfec32116",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
-                        },
-                        new
-                        {
-                            SessionId = "1fa13b29-f524-640b-9235-fda098bc02ab",
                             TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
-                            SessionId = "2892e94a-b3cf-c62b-47ea-dbb25025480a",
+                            SessionId = "730e922c-6ca0-6b0f-fae6-42c1891a56c4",
                             TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                        },
+                        new
+                        {
+                            SessionId = "0fb504d1-b0eb-3514-84c4-03820e11f563",
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "cca7d13d-dd83-8303-1738-11fe4eb666bf",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
-                        },
-                        new
-                        {
-                            SessionId = "b1a00a28-6169-2b1b-ea52-26d6df02c8b5",
                             TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
-                            SessionId = "95421a97-7bab-a112-f449-606d54d8b7e8",
+                            SessionId = "4ae0633d-1a4c-382c-75c0-60b10e1fdf14",
                             TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                        },
+                        new
+                        {
+                            SessionId = "f7e88d0f-cfbd-60bc-3d91-c9fec7b57fff",
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "61dd17ff-977c-8121-8fca-b66ef5d8406a",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
-                        },
-                        new
-                        {
-                            SessionId = "3abc7801-2bfd-62d7-1ba5-2f7ec8cdbb62",
                             TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
-                            SessionId = "5061dc4e-33c1-ba27-1d46-e859ab526281",
+                            SessionId = "888fe0f3-6c8d-2a33-f1a1-8ced33363a3c",
                             TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                        },
+                        new
+                        {
+                            SessionId = "b9ab674e-8139-c0f8-b699-e9670bc42dec",
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "0b8337cd-1978-3a41-f319-1cb7f93a3a05",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
-                        },
-                        new
-                        {
-                            SessionId = "919ddadf-3c17-210d-68cd-ff4750a1ffc4",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
-                            SessionId = "835ab349-a491-9929-3aa6-953986822a4a",
+                            SessionId = "d0013ce7-489b-dc33-ad5e-2b78bff7091e",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionId = "8f655aa6-4375-bef6-1843-bbae1fcf0389",
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "cff91d76-ac33-331a-fbef-3ce3acad3ad1",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
-                        },
-                        new
-                        {
-                            SessionId = "d064ff9a-b341-8dd9-031e-4f091d238351",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
-                            SessionId = "2fd8782d-cec3-8a42-48b7-3c43d1ed006f",
+                            SessionId = "9cc6d4ed-0bfe-4fc4-31cc-4428f0a35c04",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                        },
+                        new
+                        {
+                            SessionId = "48254f64-7bbb-6aa1-abf8-a428d9892816",
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "65ca4d7d-4257-0343-a5ed-9e65778760dc",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
-                        },
-                        new
-                        {
-                            SessionId = "7aca0701-d733-5065-a604-5d5b197502e6",
                             TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
-                            SessionId = "29c49a20-5b64-9c2b-9013-f0f1488c342a",
+                            SessionId = "aec91e44-2289-df47-1826-7f0e10162538",
                             TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
-                            SessionId = "fcce60be-68dc-2a12-5232-9073896298bf",
+                            SessionId = "791cd5eb-2bdc-eda7-2208-c33377490aa6",
                             TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
-                            SessionId = "96c8e341-2365-95b3-8a1e-529a89bcbea0",
+                            SessionId = "fcce60be-68dc-2a12-5232-9073896298bf",
                             TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
-                            SessionId = "df7ab688-f273-92c5-d2d1-ded070202216",
+                            SessionId = "b88e4b7e-c8c8-af1d-523c-d8a4337a9420",
                             TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
-                            SessionId = "bfce3477-1f80-f8ec-1d2d-fbe6d4d2207e",
+                            SessionId = "2eb5c468-70f3-17c2-e078-a50f0d756fd8",
                             TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
-                            SessionId = "a000bf30-49d4-72c3-c7df-88a6dd8c060c",
+                            SessionId = "bfce3477-1f80-f8ec-1d2d-fbe6d4d2207e",
                             TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
-                            SessionId = "729e3782-b424-9cb1-e84c-b54deb75f5fb",
+                            SessionId = "a9328a36-bfdd-2d3b-191f-715249ed7620",
                             TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
-                            SessionId = "bec53306-688d-8f63-25ac-19e1257ae799",
+                            SessionId = "9e190347-c557-83f5-30a9-090c1b66a3da",
                             TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
-                            SessionId = "2fc386a6-ba3e-2813-3bd4-8f1d50b2d313",
+                            SessionId = "bec53306-688d-8f63-25ac-19e1257ae799",
                             TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
-                            SessionId = "8c6f4730-0cca-71fc-eb8e-77fc7eec8721",
+                            SessionId = "eb9db0ba-97d4-e9cb-a64a-b3310e89a189",
                             TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
-                            SessionId = "c779b69d-6396-6eea-3358-ac780cb13ddf",
+                            SessionId = "1e50fc6c-bc91-ce21-c217-10bcd34cffd5",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
-                            SessionId = "e114dc8b-e4d1-1f99-1062-fe144255f628",
+                            SessionId = "c779b69d-6396-6eea-3358-ac780cb13ddf",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
-                            SessionId = "c09306cd-0fbe-ecef-e79c-97ab2457cb15",
+                            SessionId = "976d2c50-da8b-3404-00d1-b43e972cb93e",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
-                            SessionId = "edea0d3f-618d-181c-e333-fec2ce500fad",
+                            SessionId = "d6b32f88-a8e0-4752-9b42-db4cbc188ec7",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
-                            SessionId = "0dd87cf9-8da6-dc14-9220-d561b0f02e8d",
+                            SessionId = "edea0d3f-618d-181c-e333-fec2ce500fad",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
-                            SessionId = "cfca3c64-34ca-9c03-5419-95d5916701ed",
+                            SessionId = "4967c7a7-fdec-8508-f875-59190ae21a6c",
                             TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
-                            SessionId = "03d8d93c-920e-cf77-b150-6033191af1b1",
+                            SessionId = "cfca3c64-34ca-9c03-5419-95d5916701ed",
                             TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                        },
+                        new
+                        {
+                            SessionId = "03d8d93c-920e-cf77-b150-6033191af1b1",
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                        },
+                        new
+                        {
+                            SessionId = "67cf8205-a840-1c62-8ef6-7d59d93acaa7",
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
@@ -33003,1142 +32912,1147 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             SessionId = "82a38202-4f6b-41d9-11fc-0c59d2bdb4a2",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "0d647b97-8742-6f60-67ee-364224b37cd3",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "98a3af77-666d-b843-1550-1654d066a91b",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "dfe2714c-934c-ef19-fe94-6c4db509862a",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "a6be719c-a6d5-4ec4-f3bc-079e2bc133f7",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "aaf5124c-ec73-3718-9708-9cc8a153aa21",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "f5bcb9ad-0454-f4d3-389a-3f1d78dc2a1c",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "b916b170-861c-b14f-ad0a-9b5bccd2c0ca",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "fef0fe5e-f84c-8548-71ef-b871756abbf6",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "ac1087ea-7cca-ba5d-4716-69ede045aac3",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "42c4e64b-5f37-7428-68d0-ae73dd07c550",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "9b04b38a-df80-4890-3b63-b52fc684befc",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "93acaa36-b84a-93e3-4ab8-bee3839813c8",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
                             SessionId = "fc5fd85c-a36e-f72e-7eb2-0ae8930091c2",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "c9ca3188-8a21-724a-23f6-5d9e402ab287",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "19f8d59a-321f-7873-3ea4-4c981946832d",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "a8052858-a628-5c78-0ee5-886932034146",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "5f1cbb5b-c8cc-7cb9-7692-cfff312ba139",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "cc712312-dee1-743a-9da4-ee708f3d06e9",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "50a9ba02-e020-16d3-df51-fb9c4b19bd0c",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "3c5a71ba-2254-b3ed-67ec-f64c0106c660",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "6fee2eeb-59d2-0c00-9a1e-8a30811ae17f",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "bd85547f-e0ea-e2db-db8d-c415c58afb06",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "d6442191-6705-0a50-37ea-73d811f12b11",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "8f6901a4-f5b5-e843-e991-5ecb27c6d119",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "3eb203dd-c874-2718-a2a0-3fc6a3d7ceb8",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "490f3cf5-28f8-dece-4922-52671fb4a199",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "3a0dc032-1305-74fb-e0eb-b5d26843dce0",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "f509123c-dc8e-d71a-ddbf-4cfe70107308",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "4c7ef4e4-6089-5b54-70cf-462a7594d3eb",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "15d70dbc-6c98-76b3-999c-21437cc800e5",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "363f0139-5ea9-5659-b4b6-d31f10c6e1f9",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "bb5e6b6a-0c42-fdab-58c4-fef95fcdc49d",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "86096d2d-028a-2178-b93d-d09c58fb798a",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "77584882-18b2-c070-5e41-8b0e717367db",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "bb543979-51da-e0a4-508a-34e41cd9c765",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
                             SessionId = "6a26bb2b-10b3-d20b-576c-06ec7eb6881c",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "11219807-2307-1246-8bd9-cd76bf2b52ce",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "e2513fbd-3f02-efb1-92e4-4d7524a0a9b4",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "767d2088-ae6e-01a3-af51-1f15e4010867",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "6fd6173d-eb18-e8d7-405c-66721548558e",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "882637b6-a3e0-c6f0-5adc-323fbaf06469",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "fab65069-a16f-8092-41b3-2dfadb5b84c2",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "d8ee1684-8213-4b12-219c-66a273f8d1ec",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "ef04b83f-9b1d-9814-3a9e-a3c0d292ac3b",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "f8cd0d8c-907b-551d-6211-931279dc0942",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "f4c16c8e-12ba-3b16-0555-dcebf1a93e21",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "db390cd5-f0eb-b466-37d6-608ce90540a5",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "8a1b0119-fe28-9d70-3d44-4f08f1cc15dc",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "fb4dd0a9-4c1a-c15f-1c5c-83953364fcd2",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "0307a4e5-0941-b6f9-6e98-e48ede3c5f57",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "d01019f9-5218-71f9-d3a9-35cb7b04b12b",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "338ef414-55b6-57f8-6cbe-eba50b6858da",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "76c7b55e-03e5-9b52-34d3-5a7ffb9c90b6",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "74775c4f-426a-3783-b04f-ccac0b514278",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "96cf1edd-649d-c6e7-4f3f-63bb525f08b9",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "d1ae562d-8ff5-04f9-e4f9-be70373beea0",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "09d5852e-c85d-b871-49a2-71c8d434e139",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "97732f97-a471-d97e-a1c9-5f1e65501cb8",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "db8d2ab6-946a-1502-426d-fcb21953e405",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
                             SessionId = "7bccd9ff-6129-4373-38f5-54b69ffa2532",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "8edbb040-f6b6-44c8-881c-6d2a3d8b7775",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "fc730fac-20a9-8127-7fda-2bd0fbf14448",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "6afd119d-e28e-92e8-9e89-1af6996f754c",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "6eab02e7-1426-0881-1c74-99cbe1c2dabd",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "89af6c7f-eb9b-700a-1edf-c780be219657",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "2faf2f20-145f-cd9c-fcfd-afbf11172030",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "8e9adcb0-97f0-f605-d063-0d6f594f51ba",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "5b638516-0759-9513-853d-bbb34b652783",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "6e7e7ad1-76f0-2a98-4e52-aad698b8c7ad",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "7094d547-fd86-a3c5-b337-839b1e5c317d",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "79e9a30f-cfe9-2f9d-cac4-f86e3962d70b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "e9479010-3a2b-6354-2e0c-11b49b24fb5f",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "ae9de472-6ed6-c56b-17f8-0802b30e0ead",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "691660f9-12b9-5e11-9261-206ceacd9e36",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "812aabb2-c7f8-2548-e7b2-c7c99cfa0b51",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "f692a256-8b14-1f69-5d15-3c1942f5c5f5",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "7d8f0718-91c6-2cab-268a-090d429358b3",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "d698f229-ec8e-a652-a33c-b1dfd62a38e6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "95280675-9478-c286-6e61-5eadb6e04ce7",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "31684066-8ff8-ec8d-d574-7994a009b471",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "2a77192f-3516-2af5-1c2f-efb27ff44dff",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "35769633-5a71-b8f5-cd23-34959e70feef",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "895ad2cb-c1d9-f871-0b4f-6d588817d0a2",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
                             SessionId = "017daad5-244e-acd2-1ce4-07c75f5c9f04",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "6d5ab6db-8f30-6091-2cd9-ea7f969fcbff",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "ddd77ae8-2557-f2dc-0582-c2c104a0a18b",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "40ced4d1-1d5f-05f9-1ecc-008ece9bf6cf",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "a6d90d38-fb40-67d3-9291-4dc9433685ab",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "d2041949-1d00-ce16-fc7c-30c218a75f46",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "8cabb15c-08a5-3226-7620-6b7fd82c0ec5",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "1ef93c61-327d-3b0f-db94-04acd6213a5f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "74ace139-e992-d91f-4671-52f639972753",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "32508cd9-8a12-0bba-b62b-aa26d542bf43",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "16a954b2-61f0-b37a-7693-a0b61d5aa2e7",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "362f0228-aba7-6c24-8de6-b0f8e8f0fca2",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "ec071909-de0a-3e67-a7b9-4a4b07d9de99",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "d50e4726-2991-977e-1e9d-ccae720f4778",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "94d53d90-c40d-2c7b-5b09-1fc3733efdde",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "c8126fe8-b8d9-89f3-fefb-a1e84543f875",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "873dd793-925b-cf55-c4ed-19f5ea134c5e",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "978254e1-40d5-bc41-fd06-9909777893d6",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "bf51ec1a-fa3a-3c43-080e-494a6f7e3910",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "013253fd-915e-ae02-98e4-8f6204070217",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "5582813a-cf75-d0bc-d6ea-164333b8f078",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "1b80b598-780b-bea4-5a24-19940d4a38e1",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "ab9e93c1-9054-3de0-5468-8fef169e2733",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "2593023d-cd4b-3a13-8456-8605799c009b",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
                             SessionId = "d6285f6d-f25b-009c-7042-a47f4b244b68",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "4f1f9725-101c-80f7-d008-fcc9271993df",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "d3edfa54-1262-d190-899b-a472871c59f9",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "9aec3604-2382-813d-dbe0-e829167d4d03",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "5c094776-5acf-2f84-62b1-e51885ebdbbd",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "5b05b08e-6f73-e22a-e582-c0117147df20",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "dd9e690a-8f67-72b4-629b-15a9d4cdd73a",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "bed021d1-ed16-adf0-c5b4-2953fa35048b",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "1d78c887-7aa6-132d-0217-f7b43b77bdf8",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "7b197240-8dc4-4b9a-bffc-03041ba80ac3",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "842306fb-458c-d097-eed8-909990df3d1b",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "453afb2c-a5b5-3cf4-f188-1fa95fc15824",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "7755d2e0-e594-43f6-6b2a-97e09a800704",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "25de3c2e-a93d-53f8-6982-c678ad47cc54",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "4cce25cb-d6a8-8892-ccc2-05059e6a6f16",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "8fce3dc3-2a8b-c124-f96f-6798c213bfc8",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "6634a192-1867-c0b7-3d6a-f40e9451b92c",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "1e6bec97-4c0e-5908-667d-688e7511f7c4",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "325dbc6b-3915-11ff-5664-566a43aedcce",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "798ddc1c-e359-941e-9460-c187af5e53f8",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "f723976c-ee91-b770-e7cf-4c2ddd2e10cd",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "ac148527-f1ee-3bb8-7a18-397adfdb9684",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "7aa3c75d-1047-67fb-2ace-ac1a1a10d694",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
                             SessionId = "bb39bb03-38d6-cd02-b341-89e2a660da76",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "852e46ab-b00f-8054-4ee1-5649cb845174",
-                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "a609799e-8e05-578f-a027-ff94df7272f6",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "5826bd17-eeda-6222-b4d0-8506d1ea4f1e",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "1b0c902d-ad55-90ab-57d4-16427ad6c740",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "fc3c2b4d-ee65-87b1-8670-116de9888753",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "249c0eaa-9905-1383-8fca-affda7f85f7b",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "43218475-c208-8bef-45bb-cead9439d8b2",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "dadf92d7-0a66-08ff-9067-d63a9ac831f9",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "80f54d52-7c1f-5ff2-d278-d08cb6fbe663",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "23a6ab3d-60bd-4148-2d32-cd648026c5e8",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "b1ab77c6-75e2-be65-fd4d-2216d7df9169",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "fb099bba-fa75-cc47-57ac-dc2ce717cf7e",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "9f1d52f5-5854-6344-7ee2-50b3aa2206aa",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "ea06b88f-d8a1-ee08-bc3c-d84a42ccdacd",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "0c68876d-2d68-d530-2757-956294ff1bed",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "7f73fc92-af72-477b-9c37-49b6779a08db",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "2be3fbb7-603a-37b8-9886-8cc179a60c00",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
                             SessionId = "52255222-934c-c40d-8d7f-7c438999b75b",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
                             SessionId = "323b5584-bd42-9b8b-ca3b-7683360e02ad",
-                            TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
+                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
                             SessionId = "6381a78c-fcd6-d0a1-c4f5-09323d5ec98c",
-                            TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
+                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
                             SessionId = "7978f9e1-f848-3ea6-bd32-b7ed5c2ba948",
-                            TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
+                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
                             SessionId = "2db3f185-97dd-9f4e-3813-f595191b3ef8",
-                            TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
+                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
                             SessionId = "14a89b1a-19ff-ce17-300b-e17e3bd1077f",
-                            TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
-                        },
-                        new
-                        {
-                            SessionId = "ef55d5ee-4787-d8c7-b1fc-0862746ac28a",
-                            TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
-                        },
-                        new
-                        {
-                            SessionId = "82854779-bd50-0aaa-177b-dbe72002170a",
                             TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
                         },
                         new
                         {
-                            SessionId = "ec421852-921b-ebfc-d739-8212e4385e64",
+                            SessionId = "ef55d5ee-4787-d8c7-b1fc-0862746ac28a",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "82854779-bd50-0aaa-177b-dbe72002170a",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionId = "ec421852-921b-ebfc-d739-8212e4385e64",
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             SessionId = "a2eca7c6-6ded-0447-2d46-a31b5047bfb9",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "35e80a17-a920-4848-28dc-7e49a1b1d450",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "d0486529-51fc-62a5-004c-ecd5002ccd41",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             SessionId = "0d9f5e1b-8b16-6512-1aad-b6fc5bdbda7f",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "33ff2701-91f8-d78b-7a7d-2e8699300904",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             SessionId = "d96fcd78-c30b-080b-c92b-7d26c7dd221c",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             SessionId = "61a67da9-b7bd-4555-9cf8-c6341152be1e",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "fb99eb83-8abc-f0bf-d8d5-d3ea90a38837",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             SessionId = "b7631fc1-9896-70c6-3e36-19135b902372",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "0733286f-fa6c-43ea-5ca3-7184db85512d",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "0cbff9d4-4613-2d77-f1a3-6e9f4238a87c",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
                             SessionId = "c15c6cab-3590-2006-a628-67612870eb60",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "1fd5f3c7-4c47-19c4-61f0-665a537bec8a",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "1491b2d9-7dbd-4050-013b-0d4c38aeb869",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
                             SessionId = "1133eac0-f2b9-5576-b0b6-bef1f79782c7",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
-                        },
-                        new
-                        {
-                            SessionId = "6f546c47-26f1-7ec9-b641-fc447770b8d5",
                             TeacherId = "d3f7232a-7eb6-649e-c1fc-ad010f705d7a"
                         },
                         new
                         {
-                            SessionId = "780e8022-e459-3d7f-a36b-47992b26ace5",
+                            SessionId = "6f546c47-26f1-7ec9-b641-fc447770b8d5",
                             TeacherId = "015a9397-c5c4-4b03-eb4f-86048ec621f6"
                         },
                         new
                         {
-                            SessionId = "d32c9013-9fb5-9f83-708d-3e02f83631cd",
+                            SessionId = "780e8022-e459-3d7f-a36b-47992b26ace5",
                             TeacherId = "8c62f6c8-d791-e825-bdef-5c14bf5ce951"
                         },
                         new
                         {
-                            SessionId = "53238bae-d873-e113-c07b-94f7384f2a4e",
+                            SessionId = "d32c9013-9fb5-9f83-708d-3e02f83631cd",
                             TeacherId = "296e74bd-c209-7f7c-d030-28e85a1aad75"
                         },
                         new
                         {
-                            SessionId = "1b37d5da-f4b6-cbc0-bbc2-8fee0570e9fb",
+                            SessionId = "53238bae-d873-e113-c07b-94f7384f2a4e",
                             TeacherId = "7f2e2223-eda8-2785-2b9f-2f6cbfecc012"
                         },
                         new
                         {
-                            SessionId = "be7e99bc-ba4d-f226-9d8f-03682d23bee1",
+                            SessionId = "1b37d5da-f4b6-cbc0-bbc2-8fee0570e9fb",
                             TeacherId = "8e1a2182-9af2-5229-2104-66051e4b6220"
                         },
                         new
                         {
+                            SessionId = "be7e99bc-ba4d-f226-9d8f-03682d23bee1",
+                            TeacherId = "9ade6863-7e26-4864-6736-dc579f1c7a31"
+                        },
+                        new
+                        {
                             SessionId = "068ae673-0ec4-4dba-6f21-0d68d472d82d",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
-                        },
-                        new
-                        {
-                            SessionId = "de2bbc35-0ce8-a53f-dfc2-85ef9a028345",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
-                        },
-                        new
-                        {
-                            SessionId = "7119f587-652a-8c1d-fc3c-d34ac4500cab",
                             TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                        },
+                        new
+                        {
+                            SessionId = "c57c2d94-306f-533f-968f-70b09a063ab0",
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                        },
+                        new
+                        {
+                            SessionId = "923ddf04-73b9-03bb-ce24-3ec1954d3291",
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
                             SessionId = "9fbf8699-17b2-ffe1-591a-65da247b3c88",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
-                        },
-                        new
-                        {
-                            SessionId = "fb22e021-f9cb-947c-9a5b-298e70058967",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
-                        },
-                        new
-                        {
-                            SessionId = "71beb1f2-d47d-9148-9954-40c1bde425e4",
                             TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                        },
+                        new
+                        {
+                            SessionId = "78a588a9-6462-0d04-c7dc-1b3811c72888",
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                        },
+                        new
+                        {
+                            SessionId = "14f5470a-44aa-7376-127e-96e5510e153a",
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
                             SessionId = "2059555e-1ab0-8ffd-a848-edd75d9a8903",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
-                        },
-                        new
-                        {
-                            SessionId = "7b2371e2-3075-4b7c-b44f-9ceb84dd5a26",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
-                        },
-                        new
-                        {
-                            SessionId = "6813892f-0280-fea7-888a-406b0079ad49",
                             TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
+                        },
+                        new
+                        {
+                            SessionId = "ef860a7f-f419-096d-9f33-c1ed5f387a91",
+                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                        },
+                        new
+                        {
+                            SessionId = "39ce60ca-062f-7516-258f-ff72cd7997db",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
                             SessionId = "79c9d927-0051-6e82-89c1-b016a082bcc4",
-                            TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
-                        },
-                        new
-                        {
-                            SessionId = "e0eedadf-c67c-c589-6238-9ced6f25c17a",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
-                        },
-                        new
-                        {
-                            SessionId = "cb7e1504-f623-fc5b-b0fd-ea0e3e98a2ec",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionId = "024eff3b-b7a6-033e-e3a5-c233416af90f",
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                        },
+                        new
+                        {
+                            SessionId = "e4c2ec00-1c7d-2c21-8e55-5028071366ec",
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             SessionId = "694cc714-d48a-7b1c-0489-bd02bf822400",
-                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
-                        },
-                        new
-                        {
-                            SessionId = "ea6abd22-8ea0-e11e-0dd8-ea0f2bac92c4",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
-                        },
-                        new
-                        {
-                            SessionId = "47f1b665-eb1d-be3f-0cfb-9e2fe7c44d7f",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                        },
+                        new
+                        {
+                            SessionId = "0a794b53-2cc1-c57d-0b81-f826fbec33f4",
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                        },
+                        new
+                        {
+                            SessionId = "b5baf26b-3a83-40db-c884-8eab15e4afaa",
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             SessionId = "9063e360-7673-166f-12c9-c2142eae61c0",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
-                        },
-                        new
-                        {
-                            SessionId = "65d9de91-9226-5383-0a53-917924356800",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
-                        },
-                        new
-                        {
-                            SessionId = "a64513f0-d459-772b-f850-4791f535040a",
                             TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                        },
+                        new
+                        {
+                            SessionId = "0934606e-52d6-f0e8-0952-292935cc5122",
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                        },
+                        new
+                        {
+                            SessionId = "4ee53283-9e0e-2a73-8ccb-977c961ba393",
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             SessionId = "67b20552-cea6-196f-51a3-dc3cf1bf052f",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
-                        },
-                        new
-                        {
-                            SessionId = "a17cbf15-2914-7ac1-6db4-c9dd737472cc",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
-                        },
-                        new
-                        {
-                            SessionId = "e5387510-d3a5-9981-7f42-ef7ed1bcb70e",
                             TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                        },
+                        new
+                        {
+                            SessionId = "03cee3de-d07b-4669-7845-d9472ee9bc6b",
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                        },
+                        new
+                        {
+                            SessionId = "834a3bd4-f0c5-9ffc-0406-ee2901ceb06d",
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
                             SessionId = "1fd22586-65da-e3c0-4839-06bce0c90d83",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
-                        },
-                        new
-                        {
-                            SessionId = "67ce48b8-6079-cf5d-4124-86ce4269aee6",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
-                        },
-                        new
-                        {
-                            SessionId = "21454181-a8cd-fc4e-82e3-209341d11696",
                             TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                        },
+                        new
+                        {
+                            SessionId = "83c90ca2-93d2-0480-b278-3a69c0f5e307",
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                        },
+                        new
+                        {
+                            SessionId = "93743d4b-3c37-941a-2567-c9a6f670f738",
+                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
                             SessionId = "b4002719-dc35-3603-0f28-8524075a6b05",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
-                        },
-                        new
-                        {
-                            SessionId = "224ea7c1-e25e-8530-119a-a38451bcdab1",
-                            TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
-                        },
-                        new
-                        {
-                            SessionId = "3b794509-3f7c-a78c-71c8-7a765c3b0a6d",
                             TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
+                        },
+                        new
+                        {
+                            SessionId = "a0747c7c-8770-b59b-cf99-3596fba880f0",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionId = "4baf1f52-55b1-7a01-d8ee-610ecd88cca7",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             SessionId = "75f21cd0-41f6-18aa-d7dc-08de2ae54d60",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
-                        },
-                        new
-                        {
-                            SessionId = "1415a733-9c71-a9cc-d8a8-c5b2a950aff8",
-                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
-                        },
-                        new
-                        {
-                            SessionId = "c0205ee8-4367-4450-a684-5ba6c73a6b54",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                        },
+                        new
+                        {
+                            SessionId = "9631b695-4ba6-d93c-0e5a-5fbbad95e228",
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                        },
+                        new
+                        {
+                            SessionId = "6cb099d3-9a9b-5d8d-c5a1-ea96641f1e6f",
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             SessionId = "76415e25-e069-5152-93a2-351abf5e87dc",
-                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
-                        },
-                        new
-                        {
-                            SessionId = "85e9ea97-8190-b897-851d-b898d39ea3fd",
-                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
-                        },
-                        new
-                        {
-                            SessionId = "f03f4c0a-b739-df91-ee76-2c538c7ce5f0",
                             TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
-                            SessionId = "e8bc104b-5224-5935-244d-28dc5330fc45",
+                            SessionId = "01a6b07c-25ee-7c26-948f-9ac53cfeffab",
                             TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
-                            SessionId = "30c5b8b3-a13a-0827-5e5c-03926347caf1",
+                            SessionId = "88039f9c-be52-08dc-a3f4-35b4f8efd760",
                             TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
-                            SessionId = "7d3bb48b-1b9e-76f0-5983-297bd35cd5af",
+                            SessionId = "e8bc104b-5224-5935-244d-28dc5330fc45",
                             TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
-                            SessionId = "51507e09-654f-5e95-91bf-ba565d00c305",
+                            SessionId = "e983e4b6-aa91-078d-d8b7-27910c101451",
                             TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
-                            SessionId = "31b3fd28-b697-0fd0-1ab9-a126fd05c656",
+                            SessionId = "710bf368-ce50-8248-e7d3-9777dd237a0a",
                             TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
-                            SessionId = "24a37b10-ea12-f8a6-4fea-bea1076c1766",
+                            SessionId = "51507e09-654f-5e95-91bf-ba565d00c305",
                             TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         },
                         new
                         {
-                            SessionId = "2bceb0d8-b643-017d-5551-e7b79aec09b0",
+                            SessionId = "35c5e0c6-8772-9467-ca87-4b931c696246",
                             TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
                         },
                         new
                         {
-                            SessionId = "02de7ba9-5a00-13df-83b5-4372e7d252b0",
+                            SessionId = "9758d254-ec0c-d5a6-c432-ddbe03235c75",
                             TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
                         },
                         new
                         {
-                            SessionId = "d196eada-18ae-5f14-8562-a9a03abff8a6",
+                            SessionId = "2bceb0d8-b643-017d-5551-e7b79aec09b0",
                             TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         },
                         new
                         {
-                            SessionId = "06e00d4d-e7f9-4b0e-f680-e1661b51faed",
+                            SessionId = "7776caad-16cd-740f-7f58-1bfb800e90bb",
                             TeacherId = "606137a2-9de4-e505-00ba-117bc0f24b82"
                         },
                         new
                         {
-                            SessionId = "f00ae990-164b-5622-5543-9f1d0642b158",
+                            SessionId = "e6ab6de3-e742-0d4e-7470-3940bc1ea23a",
                             TeacherId = "7ac11e50-5cbb-c818-9b31-5e91770eece0"
                         },
                         new
                         {
-                            SessionId = "9bc935a9-e336-16b3-02b0-0208eb76c193",
+                            SessionId = "06e00d4d-e7f9-4b0e-f680-e1661b51faed",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         },
                         new
                         {
-                            SessionId = "46028c5d-80b3-2413-d279-30c297c64e94",
+                            SessionId = "2eb34317-ce87-488d-6d05-0f7cfa4989ce",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
-                            SessionId = "9028896b-8615-c0a2-9e89-fe9fda728b5d",
+                            SessionId = "e7906fb2-bb87-cc9e-41d6-3324b527c41d",
                             TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
-                            SessionId = "6f7c3518-1c83-c904-5795-f01b07ffb3a1",
+                            SessionId = "46028c5d-80b3-2413-d279-30c297c64e94",
                             TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
-                            SessionId = "451ddeb8-5b69-166d-d573-9843cc870442",
+                            SessionId = "765cc302-e1df-83c3-2fe5-83299f45a706",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                        },
+                        new
+                        {
+                            SessionId = "6f7c3518-1c83-c904-5795-f01b07ffb3a1",
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                        },
+                        new
+                        {
+                            SessionId = "451ddeb8-5b69-166d-d573-9843cc870442",
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                        },
+                        new
+                        {
+                            SessionId = "84072afa-f423-0eab-b0b6-c51939422484",
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
@@ -34359,11 +34273,6 @@ namespace HP2.Infrastructure.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_RoomChange_Status");
 
-                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Room", "OldRoom")
-                        .WithMany()
-                        .HasForeignKey("OldRoomId")
-                        .HasConstraintName("FK_RoomChange_OldRoom");
-
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Session", "Session")
                         .WithMany("SessionRoomChanges")
                         .HasForeignKey("SessionId")
@@ -34379,8 +34288,6 @@ namespace HP2.Infrastructure.Migrations
                     b.Navigation("ApprovedRoom");
 
                     b.Navigation("ChangeStatus");
-
-                    b.Navigation("OldRoom");
 
                     b.Navigation("Session");
 
@@ -34465,40 +34372,19 @@ namespace HP2.Infrastructure.Migrations
                     b.Navigation("UserRole");
                 });
 
-            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserNotification", b =>
-                {
-                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Notification", "Notification")
-                        .WithMany("UserNotifications")
-                        .HasForeignKey("NotificationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_UserNotification_Notification");
-
-                    b.HasOne("HP2.Infrastructure.Persistence.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_UserNotification_User");
-
-                    b.Navigation("Notification");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("NotificationUser", b =>
+            modelBuilder.Entity("Receive", b =>
                 {
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Notification", null)
                         .WithMany()
-                        .HasForeignKey("NotificationsNotificationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("NotificationId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Receive_Notif");
 
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.User", null)
                         .WithMany()
-                        .HasForeignKey("UsersUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Receive_User");
                 });
 
             modelBuilder.Entity("Teach", b =>
@@ -34543,11 +34429,6 @@ namespace HP2.Infrastructure.Migrations
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Group", b =>
                 {
                     b.Navigation("Students");
-                });
-
-            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Notification", b =>
-                {
-                    b.Navigation("UserNotifications");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Program", b =>
