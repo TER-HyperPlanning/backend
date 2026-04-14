@@ -75,6 +75,15 @@ public class SessionChangeRepository : ISessionChangeRepository
                 ChangeStatusId = x.ChangeStatusId,
                 ChangeStatusLabel = x.ChangeStatus.Label,
                 ChangeType = "SessionRecovery",
+                ProposedDate = x.ProposedDate,
+                ProposedStartTime = x.ProposedStartTime,
+                ProposedEndTime = x.ProposedEndTime,
+                ProposedRoomId = x.ProposedRoomId,
+                CounterProposalDate = x.CounterProposalDate,
+                CounterProposalStartTime = x.CounterProposalStartTime,
+                CounterProposalEndTime = x.CounterProposalEndTime,
+                CounterProposalRoomId = x.CounterProposalRoomId,
+                RejectionReason = x.RejectionReason,
                 Reason = x.Reason,
                 RequestDate = x.ChangeDate
             })

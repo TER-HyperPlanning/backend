@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260414134706_FixChangeStatusLabelsAndProposedDates")]
+    partial class FixChangeStatusLabelsAndProposedDates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24715,10 +24718,6 @@ namespace HP2.Infrastructure.Migrations
                             SessionRecoveryChangeId = "7d523e68-1971-6f1c-971d-1b89e8681d48",
                             ChangeDate = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
-                            CounterProposalDate = new DateTime(2026, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CounterProposalEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            CounterProposalRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
-                            CounterProposalStartTime = new TimeSpan(0, 10, 0, 0, 0),
                             ProposedDate = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
                             ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
