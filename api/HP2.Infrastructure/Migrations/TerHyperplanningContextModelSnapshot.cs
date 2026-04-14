@@ -6903,6 +6903,636 @@ namespace HP2.Infrastructure.Migrations
                             CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
                             HourlyVolume = 36,
                             IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "a69040c4-9274-b7b9-0dac-9e074a10b498",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "677d60f2-235f-3807-ab76-925a568d26aa",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "17d3c464-b968-6e0a-611f-f1c73a654a42",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "0dd9b509-338b-9cc0-520a-83f63afab2ad",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "a6786ef9-97e2-d884-7eaa-0494161fe58b",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "37772dd0-6cb5-abe3-f68f-603aeff4e9cc",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "b1849be5-841f-4061-ac53-cf159bd2c5ee",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "03241339-1186-a90f-33bd-a9850f603619",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "6f542ec3-1145-1afd-feac-eead669f4c7f",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "e6c511cb-a666-7fc3-606f-171f3d3cf2bd",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "37772dd0-6cb5-abe3-f68f-603aeff4e9cc",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "390875be-f499-3e3c-ee0b-a23eae042ef5",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "b1849be5-841f-4061-ac53-cf159bd2c5ee",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "3b835d91-4f08-07ef-d4d5-575947097601",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "3448ddd0-694c-35d0-f117-7d5834e6ca81",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "93b97065-831b-a4dc-8179-be986f0772b8",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "390875be-f499-3e3c-ee0b-a23eae042ef5",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "6f542ec3-1145-1afd-feac-eead669f4c7f",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "49ba4385-063d-7b8d-5f3f-aa1c7f573747",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "24027d5d-e151-9a00-fd19-ac11d27b8189",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "93b97065-831b-a4dc-8179-be986f0772b8",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "390875be-f499-3e3c-ee0b-a23eae042ef5",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "6f542ec3-1145-1afd-feac-eead669f4c7f",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "49ba4385-063d-7b8d-5f3f-aa1c7f573747",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "014c457e-a48a-d25e-7781-d5e483cb3dd9",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            CourseId = "f8c83971-d090-c665-8911-cd645e1a3c87",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "ee460e09-467d-3e85-ecf3-ac884b2a8d64",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "00fc454a-2b50-14df-3a8d-ab6e9c6e5db3",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "4872c0a4-ac98-30d3-447c-8abc544c04e4",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "d95c6860-d43c-00e1-2de0-30aa7a7bd3d5",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "07595105-930f-4d59-d0fa-d85188478354",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "1971bafc-4681-fb29-95f8-a4867be4a148",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "c3a28216-3d8a-bbb5-7582-948cb19aea55",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "c979f8f8-0b46-844f-8df2-d15ff4723cb1",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "03241339-1186-a90f-33bd-a9850f603619",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            CourseId = "f8c83971-d090-c665-8911-cd645e1a3c87",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "00fc454a-2b50-14df-3a8d-ab6e9c6e5db3",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "07595105-930f-4d59-d0fa-d85188478354",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "d95c6860-d43c-00e1-2de0-30aa7a7bd3d5",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "c979f8f8-0b46-844f-8df2-d15ff4723cb1",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "c3a28216-3d8a-bbb5-7582-948cb19aea55",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "390875be-f499-3e3c-ee0b-a23eae042ef5",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "1971bafc-4681-fb29-95f8-a4867be4a148",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "8c4acefa-d830-e46c-24d4-efd8cb6b5e6d",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "817257f0-a360-d2b9-5b5a-2dff98f7dfc1",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "717888c0-9648-4fdd-5755-fcbd360bf01a",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "b78c08e8-350c-50e9-b24c-e4703814b926",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "3515843a-8ef1-a67b-f131-d7a06ebf4ea9",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "fe021916-971e-c41a-ca7f-f5a34ea01d65",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "d04bacfe-0515-8b72-d4c1-8d9e121cb9dc",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "93c12fec-accc-f001-a0f4-5cad8826e3e3",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "03241339-1186-a90f-33bd-a9850f603619",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            CourseId = "f8c83971-d090-c665-8911-cd645e1a3c87",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "d5e74651-cc17-5b46-1c04-3dcaa3b3b3ef",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "8312c651-0fee-4575-e7d8-e33c140eb181",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "5c8b656d-c5a6-224e-422e-33389e0484d8",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "ffa9b692-95c1-3ca9-efc6-0dba54b978b2",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "17e5b39c-0518-7e5a-e4f8-eed255ecad07",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "0b419404-e100-c72b-18c7-099a0f2edb6b",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "7b492dd9-5842-ec5e-ac91-33f190f056f4",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "409a987c-9e4f-c656-c841-33c2142ee3c6",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "c0452911-4948-9cb2-aed9-7b949c0b6442",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "cf512e7a-117b-71d0-a07f-43e743dad7eb",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
+                            HourlyVolume = 0,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "8c4acefa-d830-e46c-24d4-efd8cb6b5e6d",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "d04bacfe-0515-8b72-d4c1-8d9e121cb9dc",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "3515843a-8ef1-a67b-f131-d7a06ebf4ea9",
+                            HourlyVolume = 36,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "b78c08e8-350c-50e9-b24c-e4703814b926",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "93c12fec-accc-f001-a0f4-5cad8826e3e3",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "fe021916-971e-c41a-ca7f-f5a34ea01d65",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "3aed7e82-31b6-d05a-3f46-f2ef085d313e",
+                            HourlyVolume = 24,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "731ac32d-6ea9-f15e-7ca2-34f99e840bd3",
+                            HourlyVolume = 18,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            CourseId = "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0",
+                            HourlyVolume = 0,
+                            IsDeleted = false
                         });
                 });
 
@@ -7320,6 +7950,258 @@ namespace HP2.Infrastructure.Migrations
                             Code = "CNS_ML",
                             IsDeleted = false,
                             Name = "Machine Learning"
+                        },
+                        new
+                        {
+                            CourseId = "a69040c4-9274-b7b9-0dac-9e074a10b498",
+                            Code = "ID_DW",
+                            IsDeleted = false,
+                            Name = "Entrepots de donnees"
+                        },
+                        new
+                        {
+                            CourseId = "677d60f2-235f-3807-ab76-925a568d26aa",
+                            Code = "ID_BI",
+                            IsDeleted = false,
+                            Name = "Business Intelligence"
+                        },
+                        new
+                        {
+                            CourseId = "17d3c464-b968-6e0a-611f-f1c73a654a42",
+                            Code = "ID_DM",
+                            IsDeleted = false,
+                            Name = "Fouille de donnees"
+                        },
+                        new
+                        {
+                            CourseId = "0dd9b509-338b-9cc0-520a-83f63afab2ad",
+                            Code = "ID_ETL",
+                            IsDeleted = false,
+                            Name = "Processus ETL"
+                        },
+                        new
+                        {
+                            CourseId = "a6786ef9-97e2-d884-7eaa-0494161fe58b",
+                            Code = "ID_MODEL",
+                            IsDeleted = false,
+                            Name = "Modelisation decisionnelle"
+                        },
+                        new
+                        {
+                            CourseId = "37772dd0-6cb5-abe3-f68f-603aeff4e9cc",
+                            Code = "ID_VIZ",
+                            IsDeleted = false,
+                            Name = "Visualisation de donnees"
+                        },
+                        new
+                        {
+                            CourseId = "6f542ec3-1145-1afd-feac-eead669f4c7f",
+                            Code = "ID_BIGDATA",
+                            IsDeleted = false,
+                            Name = "Architectures Big Data"
+                        },
+                        new
+                        {
+                            CourseId = "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b",
+                            Code = "ID_MLOPS",
+                            IsDeleted = false,
+                            Name = "MLOps et industrialisation IA"
+                        },
+                        new
+                        {
+                            CourseId = "390875be-f499-3e3c-ee0b-a23eae042ef5",
+                            Code = "ID_DATAENG",
+                            IsDeleted = false,
+                            Name = "Data Engineering"
+                        },
+                        new
+                        {
+                            CourseId = "b1849be5-841f-4061-ac53-cf159bd2c5ee",
+                            Code = "ID_GOUV",
+                            IsDeleted = false,
+                            Name = "Gouvernance des donnees"
+                        },
+                        new
+                        {
+                            CourseId = "e6c511cb-a666-7fc3-606f-171f3d3cf2bd",
+                            Code = "ID_IADEC",
+                            IsDeleted = false,
+                            Name = "IA pour la decision"
+                        },
+                        new
+                        {
+                            CourseId = "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b",
+                            Code = "ID_PROJ",
+                            IsDeleted = false,
+                            Name = "Projet data et BI"
+                        },
+                        new
+                        {
+                            CourseId = "ee460e09-467d-3e85-ecf3-ac884b2a8d64",
+                            Code = "AI_STAT",
+                            IsDeleted = false,
+                            Name = "Apprentissage statistique"
+                        },
+                        new
+                        {
+                            CourseId = "00fc454a-2b50-14df-3a8d-ab6e9c6e5db3",
+                            Code = "AI_DL",
+                            IsDeleted = false,
+                            Name = "Deep Learning"
+                        },
+                        new
+                        {
+                            CourseId = "4872c0a4-ac98-30d3-447c-8abc544c04e4",
+                            Code = "AI_NLP",
+                            IsDeleted = false,
+                            Name = "Traitement du langage naturel"
+                        },
+                        new
+                        {
+                            CourseId = "d95c6860-d43c-00e1-2de0-30aa7a7bd3d5",
+                            Code = "AI_RL",
+                            IsDeleted = false,
+                            Name = "Apprentissage par renforcement"
+                        },
+                        new
+                        {
+                            CourseId = "07595105-930f-4d59-d0fa-d85188478354",
+                            Code = "AI_GEN",
+                            IsDeleted = false,
+                            Name = "Modeles generatifs"
+                        },
+                        new
+                        {
+                            CourseId = "1971bafc-4681-fb29-95f8-a4867be4a148",
+                            Code = "AI_ETH",
+                            IsDeleted = false,
+                            Name = "IA ethique et biais"
+                        },
+                        new
+                        {
+                            CourseId = "c3a28216-3d8a-bbb5-7582-948cb19aea55",
+                            Code = "AI_SCIML",
+                            IsDeleted = false,
+                            Name = "Apprentissage scientifique"
+                        },
+                        new
+                        {
+                            CourseId = "c979f8f8-0b46-844f-8df2-d15ff4723cb1",
+                            Code = "AI_XAI",
+                            IsDeleted = false,
+                            Name = "Explicabilite des modeles IA"
+                        },
+                        new
+                        {
+                            CourseId = "8c4acefa-d830-e46c-24d4-efd8cb6b5e6d",
+                            Code = "MPRI_COMP",
+                            IsDeleted = false,
+                            Name = "Calculabilite et complexite"
+                        },
+                        new
+                        {
+                            CourseId = "817257f0-a360-d2b9-5b5a-2dff98f7dfc1",
+                            Code = "MPRI_AUTO",
+                            IsDeleted = false,
+                            Name = "Theorie des automates"
+                        },
+                        new
+                        {
+                            CourseId = "717888c0-9648-4fdd-5755-fcbd360bf01a",
+                            Code = "MPRI_LOG",
+                            IsDeleted = false,
+                            Name = "Logique et preuves"
+                        },
+                        new
+                        {
+                            CourseId = "b78c08e8-350c-50e9-b24c-e4703814b926",
+                            Code = "MPRI_SEM",
+                            IsDeleted = false,
+                            Name = "Semantique des langages"
+                        },
+                        new
+                        {
+                            CourseId = "3515843a-8ef1-a67b-f131-d7a06ebf4ea9",
+                            Code = "MPRI_PROOF",
+                            IsDeleted = false,
+                            Name = "Preuve automatique"
+                        },
+                        new
+                        {
+                            CourseId = "fe021916-971e-c41a-ca7f-f5a34ea01d65",
+                            Code = "MPRI_CRYPT",
+                            IsDeleted = false,
+                            Name = "Cryptologie fondamentale"
+                        },
+                        new
+                        {
+                            CourseId = "d04bacfe-0515-8b72-d4c1-8d9e121cb9dc",
+                            Code = "MPRI_TYPE",
+                            IsDeleted = false,
+                            Name = "Theorie des types"
+                        },
+                        new
+                        {
+                            CourseId = "93c12fec-accc-f001-a0f4-5cad8826e3e3",
+                            Code = "MPRI_QUANT",
+                            IsDeleted = false,
+                            Name = "Algorithmique quantique"
+                        },
+                        new
+                        {
+                            CourseId = "d5e74651-cc17-5b46-1c04-3dcaa3b3b3ef",
+                            Code = "CNS_AUTO",
+                            IsDeleted = false,
+                            Name = "Systemes autonomiques"
+                        },
+                        new
+                        {
+                            CourseId = "8312c651-0fee-4575-e7d8-e33c140eb181",
+                            Code = "CNS_PERF",
+                            IsDeleted = false,
+                            Name = "Modeles de performance"
+                        },
+                        new
+                        {
+                            CourseId = "5c8b656d-c5a6-224e-422e-33389e0484d8",
+                            Code = "CNS_PETRI",
+                            IsDeleted = false,
+                            Name = "Reseaux de Petri"
+                        },
+                        new
+                        {
+                            CourseId = "ffa9b692-95c1-3ca9-efc6-0dba54b978b2",
+                            Code = "CNS_GAME",
+                            IsDeleted = false,
+                            Name = "Theorie des jeux"
+                        },
+                        new
+                        {
+                            CourseId = "17e5b39c-0518-7e5a-e4f8-eed255ecad07",
+                            Code = "CNS_MOPT",
+                            IsDeleted = false,
+                            Name = "Optimisation multicritere"
+                        },
+                        new
+                        {
+                            CourseId = "0b419404-e100-c72b-18c7-099a0f2edb6b",
+                            Code = "CNS_FORMAL",
+                            IsDeleted = false,
+                            Name = "Methodes formelles avancees"
+                        },
+                        new
+                        {
+                            CourseId = "7b492dd9-5842-ec5e-ac91-33f190f056f4",
+                            Code = "CNS_RL",
+                            IsDeleted = false,
+                            Name = "RL pour systemes autonomes"
+                        },
+                        new
+                        {
+                            CourseId = "409a987c-9e4f-c656-c841-33c2142ee3c6",
+                            Code = "CNS_ENERGY",
+                            IsDeleted = false,
+                            Name = "Energie et eco-conception"
                         });
                 });
 
@@ -25734,7 +26616,9 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91",
+                            Description = "Formation M1 orientee pilotage de la decision et analytique des donnees en alternance.",
                             IsDeleted = false,
+                            Lieu = "Campus Saint-Charles",
                             Name = "M1 Informatique Décisionnelle - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
@@ -25742,90 +26626,112 @@ namespace HP2.Infrastructure.Migrations
                         new
                         {
                             TrackId = "34d303a1-eecd-13ed-de46-36c8efe0f0d5",
+                            Description = "Parcours M1 en apprentissage centre sur l ingenierie logicielle et la valorisation des donnees.",
                             IsDeleted = false,
+                            Lieu = "Campus Saint-Charles",
                             Name = "M1 Ingénierie Logicielle pour la Science des Données - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
                         },
                         new
                         {
                             TrackId = "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3",
+                            Description = "Parcours M1 en initiale visant les fondamentaux de l ingenierie logicielle data-driven.",
                             IsDeleted = false,
+                            Lieu = "Campus Luminy",
                             Name = "M1 Ingénierie Logicielle pour la Science des Données",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
                         },
                         new
                         {
                             TrackId = "86de5246-d552-d203-3cfb-450e00d82845",
+                            Description = "Specialisation M2 en alternance sur la modelisation, la BI et les systemes d aide a la decision.",
                             IsDeleted = false,
+                            Lieu = "Campus Saint-Charles",
                             Name = "M2 Informatique Décisionnelle - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
                         },
                         new
                         {
                             TrackId = "ce0e0c1e-322e-f894-4476-dc9682a4bdea",
+                            Description = "M2 en apprentissage focalise sur l architecture logicielle, la qualite et les pipelines data.",
                             IsDeleted = false,
+                            Lieu = "Campus Luminy",
                             Name = "M2 Ingénierie Logicielle pour la Science des Données - Apprentissage",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         },
                         new
                         {
                             TrackId = "16e8879d-d190-3771-1b74-ca91c2f021fe",
+                            Description = "M2 en initiale preparant a la conception de plateformes logicielles pour la science des donnees.",
                             IsDeleted = false,
+                            Lieu = "Campus Luminy",
                             Name = "M2 Ingénierie Logicielle pour la Science des Données",
                             ProgramId = "1c6c23e0-16b5-6208-2733-cf363a81e9d2",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
                         },
                         new
                         {
                             TrackId = "5942bd81-7485-6e92-c7e6-66ad363c6bee",
+                            Description = "M1 dedie aux bases de l intelligence artificielle, de l apprentissage automatique et de l optimisation.",
                             IsDeleted = false,
+                            Lieu = "Campus Etoile",
                             Name = "M1 Artificial Intelligence",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
                         },
                         new
                         {
                             TrackId = "900f1499-bb04-690c-9394-eeafda3848a4",
+                            Description = "M1 axe sur les reseaux, systemes distribues et infrastructures de calcul.",
                             IsDeleted = false,
+                            Lieu = "Campus Etoile",
                             Name = "M1 Computer and Network Systems",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
                         },
                         new
                         {
                             TrackId = "4defa7f6-3ce5-c643-a522-861cf94ee2e7",
+                            Description = "M1 de recherche en informatique oriente methodes formelles, algorithmique et modelisation avancee.",
                             IsDeleted = false,
+                            Lieu = "Campus Cinq Avenues",
                             Name = "M1 Master parisien de recherche en Informatique (MPRI)",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
                         },
                         new
                         {
                             TrackId = "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6",
+                            Description = "M2 specialise en IA appliquee, deep learning et ingenierie des systemes intelligents.",
                             IsDeleted = false,
+                            Lieu = "Campus Etoile",
                             Name = "M2 Artificial Intelligence",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
                         },
                         new
                         {
                             TrackId = "e06ac778-10f0-5ca0-04e6-0df679676eb3",
+                            Description = "M2 sur les systemes autonomiques, l orchestration de services et la supervision distribuee.",
                             IsDeleted = false,
+                            Lieu = "Campus Cinq Avenues",
                             Name = "M2 Computer and Network Systems (CNS) - Systèmes Autonomiques",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
                         },
                         new
                         {
                             TrackId = "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf",
+                            Description = "M2 recherche pour approfondir les thematiques scientifiques en informatique theorique et appliquee.",
                             IsDeleted = false,
+                            Lieu = "Campus Cinq Avenues",
                             Name = "M2 Master parisien de recherche en Informatique (MPRI)",
                             ProgramId = "64cb6778-fd4f-ba09-1402-010a1e0e30ce",
-                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
                         });
                 });
 

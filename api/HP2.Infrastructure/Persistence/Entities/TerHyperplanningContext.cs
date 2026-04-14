@@ -1241,6 +1241,47 @@ public partial class TerHyperplanningContext : DbContext
         var c_specverif = GetStableId("c-spec-verif"); // Spécification et vérification formelles
         var c_ml = GetStableId("c-machine-learning"); // Machine Learning
 
+        // --- COURS SUPPLEMENTAIRES POUR LES PARCOURS SANS CURSUS ---
+        var c_dw = GetStableId("c-data-warehouse");
+        var c_bi = GetStableId("c-business-intelligence");
+        var c_datamining = GetStableId("c-data-mining");
+        var c_etl = GetStableId("c-etl");
+        var c_modeldec = GetStableId("c-modelisation-decisionnelle");
+        var c_dataviz = GetStableId("c-data-visualisation");
+        var c_bigdataarch = GetStableId("c-big-data-architectures");
+        var c_mlops = GetStableId("c-mlops");
+        var c_dataeng = GetStableId("c-data-engineering");
+        var c_gouvdata = GetStableId("c-gouvernance-donnees");
+        var c_ia_decision = GetStableId("c-ia-pour-decision");
+        var c_projdata = GetStableId("c-projet-data-bi");
+
+        var c_ai_statlearn = GetStableId("c-ai-statistical-learning");
+        var c_ai_deeplearn = GetStableId("c-ai-deep-learning");
+        var c_ai_nlp = GetStableId("c-ai-nlp");
+        var c_ai_rl = GetStableId("c-ai-reinforcement-learning");
+        var c_ai_gen = GetStableId("c-ai-generative-models");
+        var c_ai_ethics = GetStableId("c-ai-ethics");
+        var c_ai_sciml = GetStableId("c-ai-scientific-ml");
+        var c_ai_xai = GetStableId("c-ai-explainability");
+
+        var c_mpri_complexity = GetStableId("c-mpri-complexity");
+        var c_mpri_automata = GetStableId("c-mpri-automata");
+        var c_mpri_logic = GetStableId("c-mpri-logic");
+        var c_mpri_semantics = GetStableId("c-mpri-semantics");
+        var c_mpri_proof = GetStableId("c-mpri-automated-proof");
+        var c_mpri_crypto = GetStableId("c-mpri-cryptology");
+        var c_mpri_type = GetStableId("c-mpri-type-theory");
+        var c_mpri_quantum = GetStableId("c-mpri-quantum-algorithms");
+
+        var c_cns_autonomic = GetStableId("c-cns-autonomic-systems");
+        var c_cns_perfmodels = GetStableId("c-cns-performance-models");
+        var c_cns_petri = GetStableId("c-cns-petri-nets");
+        var c_cns_game = GetStableId("c-cns-game-theory");
+        var c_cns_multiopt = GetStableId("c-cns-multicriteria-optimization");
+        var c_cns_formaladv = GetStableId("c-cns-advanced-formal-methods");
+        var c_cns_rl = GetStableId("c-cns-reinforcement-learning");
+        var c_cns_energy = GetStableId("c-cns-energy-aware-systems");
+
         var buildingId = GetStableId("bld-A");
         var buildingIdIbgbi = GetStableId("bld-ibgbi");
         var roomTypeTdId = GetStableId("rt-td");
@@ -1364,7 +1405,47 @@ public partial class TerHyperplanningContext : DbContext
             new Course { CourseId = c_hpc, Name = "Introduction à l'informatique haute performance", Code = "CNS_HPC_INTRO" },
             new Course { CourseId = c_multiagents, Name = "Modèles et méthodes pour les systèmes multi-agents", Code = "CNS_MULTI_AGENTS" },
             new Course { CourseId = c_specverif, Name = "Spécification et vérification formelles", Code = "CNS_SPEC_VERIF" },
-            new Course { CourseId = c_ml, Name = "Machine Learning", Code = "CNS_ML" }
+            new Course { CourseId = c_ml, Name = "Machine Learning", Code = "CNS_ML" },
+
+            new Course { CourseId = c_dw, Name = "Entrepots de donnees", Code = "ID_DW" },
+            new Course { CourseId = c_bi, Name = "Business Intelligence", Code = "ID_BI" },
+            new Course { CourseId = c_datamining, Name = "Fouille de donnees", Code = "ID_DM" },
+            new Course { CourseId = c_etl, Name = "Processus ETL", Code = "ID_ETL" },
+            new Course { CourseId = c_modeldec, Name = "Modelisation decisionnelle", Code = "ID_MODEL" },
+            new Course { CourseId = c_dataviz, Name = "Visualisation de donnees", Code = "ID_VIZ" },
+            new Course { CourseId = c_bigdataarch, Name = "Architectures Big Data", Code = "ID_BIGDATA" },
+            new Course { CourseId = c_mlops, Name = "MLOps et industrialisation IA", Code = "ID_MLOPS" },
+            new Course { CourseId = c_dataeng, Name = "Data Engineering", Code = "ID_DATAENG" },
+            new Course { CourseId = c_gouvdata, Name = "Gouvernance des donnees", Code = "ID_GOUV" },
+            new Course { CourseId = c_ia_decision, Name = "IA pour la decision", Code = "ID_IADEC" },
+            new Course { CourseId = c_projdata, Name = "Projet data et BI", Code = "ID_PROJ" },
+
+            new Course { CourseId = c_ai_statlearn, Name = "Apprentissage statistique", Code = "AI_STAT" },
+            new Course { CourseId = c_ai_deeplearn, Name = "Deep Learning", Code = "AI_DL" },
+            new Course { CourseId = c_ai_nlp, Name = "Traitement du langage naturel", Code = "AI_NLP" },
+            new Course { CourseId = c_ai_rl, Name = "Apprentissage par renforcement", Code = "AI_RL" },
+            new Course { CourseId = c_ai_gen, Name = "Modeles generatifs", Code = "AI_GEN" },
+            new Course { CourseId = c_ai_ethics, Name = "IA ethique et biais", Code = "AI_ETH" },
+            new Course { CourseId = c_ai_sciml, Name = "Apprentissage scientifique", Code = "AI_SCIML" },
+            new Course { CourseId = c_ai_xai, Name = "Explicabilite des modeles IA", Code = "AI_XAI" },
+
+            new Course { CourseId = c_mpri_complexity, Name = "Calculabilite et complexite", Code = "MPRI_COMP" },
+            new Course { CourseId = c_mpri_automata, Name = "Theorie des automates", Code = "MPRI_AUTO" },
+            new Course { CourseId = c_mpri_logic, Name = "Logique et preuves", Code = "MPRI_LOG" },
+            new Course { CourseId = c_mpri_semantics, Name = "Semantique des langages", Code = "MPRI_SEM" },
+            new Course { CourseId = c_mpri_proof, Name = "Preuve automatique", Code = "MPRI_PROOF" },
+            new Course { CourseId = c_mpri_crypto, Name = "Cryptologie fondamentale", Code = "MPRI_CRYPT" },
+            new Course { CourseId = c_mpri_type, Name = "Theorie des types", Code = "MPRI_TYPE" },
+            new Course { CourseId = c_mpri_quantum, Name = "Algorithmique quantique", Code = "MPRI_QUANT" },
+
+            new Course { CourseId = c_cns_autonomic, Name = "Systemes autonomiques", Code = "CNS_AUTO" },
+            new Course { CourseId = c_cns_perfmodels, Name = "Modeles de performance", Code = "CNS_PERF" },
+            new Course { CourseId = c_cns_petri, Name = "Reseaux de Petri", Code = "CNS_PETRI" },
+            new Course { CourseId = c_cns_game, Name = "Theorie des jeux", Code = "CNS_GAME" },
+            new Course { CourseId = c_cns_multiopt, Name = "Optimisation multicritere", Code = "CNS_MOPT" },
+            new Course { CourseId = c_cns_formaladv, Name = "Methodes formelles avancees", Code = "CNS_FORMAL" },
+            new Course { CourseId = c_cns_rl, Name = "RL pour systemes autonomes", Code = "CNS_RL" },
+            new Course { CourseId = c_cns_energy, Name = "Energie et eco-conception", Code = "CNS_ENERGY" }
         );
 
         // SessionTypes (requis par Session)
@@ -1536,18 +1617,114 @@ public partial class TerHyperplanningContext : DbContext
 
         // Tracks (Parcours)
         modelBuilder.Entity<Track>().HasData(
-            new Track { TrackId = trackM1_ID_App, Name = "M1 Informatique Décisionnelle - Apprentissage", ProgramId = programId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM1_ILSD_App, Name = "M1 Ingénierie Logicielle pour la Science des Données - Apprentissage", ProgramId = programId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM1_ILSD_Init, Name = "M1 Ingénierie Logicielle pour la Science des Données", ProgramId = programId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM2_ID_App, Name = "M2 Informatique Décisionnelle - Apprentissage", ProgramId = programId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM2_ILSD_App, Name = "M2 Ingénierie Logicielle pour la Science des Données - Apprentissage", ProgramId = programId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM2_ILSD_Init, Name = "M2 Ingénierie Logicielle pour la Science des Données", ProgramId = programId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM1_AI, Name = "M1 Artificial Intelligence", ProgramId = programInfoId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM1_CNS, Name = "M1 Computer and Network Systems", ProgramId = programInfoId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM1_MPRI, Name = "M1 Master parisien de recherche en Informatique (MPRI)", ProgramId = programInfoId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM2_AI, Name = "M2 Artificial Intelligence", ProgramId = programInfoId, TeacherId = teacherUserId },
-            new Track { TrackId = trackM2_CNS, Name = "M2 Computer and Network Systems (CNS) - Systèmes Autonomiques", ProgramId = programInfoId, TeacherId = teacherUserId },
-            new Track { TrackId = GetStableId("track-m2-mpri"), Name = "M2 Master parisien de recherche en Informatique (MPRI)", ProgramId = programInfoId, TeacherId = teacherUserId }
+            new Track
+            {
+                TrackId = trackM1_ID_App,
+                Name = "M1 Informatique Décisionnelle - Apprentissage",
+                ProgramId = programId,
+                TeacherId = teacherUserId,
+                Lieu = "Campus Saint-Charles",
+                Description = "Formation M1 orientee pilotage de la decision et analytique des donnees en alternance."
+            },
+            new Track
+            {
+                TrackId = trackM1_ILSD_App,
+                Name = "M1 Ingénierie Logicielle pour la Science des Données - Apprentissage",
+                ProgramId = programId,
+                TeacherId = teacherUserId2,
+                Lieu = "Campus Saint-Charles",
+                Description = "Parcours M1 en apprentissage centre sur l ingenierie logicielle et la valorisation des donnees."
+            },
+            new Track
+            {
+                TrackId = trackM1_ILSD_Init,
+                Name = "M1 Ingénierie Logicielle pour la Science des Données",
+                ProgramId = programId,
+                TeacherId = teacherUserId3,
+                Lieu = "Campus Luminy",
+                Description = "Parcours M1 en initiale visant les fondamentaux de l ingenierie logicielle data-driven."
+            },
+            new Track
+            {
+                TrackId = trackM2_ID_App,
+                Name = "M2 Informatique Décisionnelle - Apprentissage",
+                ProgramId = programId,
+                TeacherId = teacherUserId4,
+                Lieu = "Campus Saint-Charles",
+                Description = "Specialisation M2 en alternance sur la modelisation, la BI et les systemes d aide a la decision."
+            },
+            new Track
+            {
+                TrackId = trackM2_ILSD_App,
+                Name = "M2 Ingénierie Logicielle pour la Science des Données - Apprentissage",
+                ProgramId = programId,
+                TeacherId = teacherUserId5,
+                Lieu = "Campus Luminy",
+                Description = "M2 en apprentissage focalise sur l architecture logicielle, la qualite et les pipelines data."
+            },
+            new Track
+            {
+                TrackId = trackM2_ILSD_Init,
+                Name = "M2 Ingénierie Logicielle pour la Science des Données",
+                ProgramId = programId,
+                TeacherId = teacherUserId6,
+                Lieu = "Campus Luminy",
+                Description = "M2 en initiale preparant a la conception de plateformes logicielles pour la science des donnees."
+            },
+            new Track
+            {
+                TrackId = trackM1_AI,
+                Name = "M1 Artificial Intelligence",
+                ProgramId = programInfoId,
+                TeacherId = teacherUserId7,
+                Lieu = "Campus Etoile",
+                Description = "M1 dedie aux bases de l intelligence artificielle, de l apprentissage automatique et de l optimisation."
+            },
+            new Track
+            {
+                TrackId = trackM1_CNS,
+                Name = "M1 Computer and Network Systems",
+                ProgramId = programInfoId,
+                TeacherId = teacherUserId8,
+                Lieu = "Campus Etoile",
+                Description = "M1 axe sur les reseaux, systemes distribues et infrastructures de calcul."
+            },
+            new Track
+            {
+                TrackId = trackM1_MPRI,
+                Name = "M1 Master parisien de recherche en Informatique (MPRI)",
+                ProgramId = programInfoId,
+                TeacherId = teacherUserId9,
+                Lieu = "Campus Cinq Avenues",
+                Description = "M1 de recherche en informatique oriente methodes formelles, algorithmique et modelisation avancee."
+            },
+            new Track
+            {
+                TrackId = trackM2_AI,
+                Name = "M2 Artificial Intelligence",
+                ProgramId = programInfoId,
+                TeacherId = teacherUserId10,
+                Lieu = "Campus Etoile",
+                Description = "M2 specialise en IA appliquee, deep learning et ingenierie des systemes intelligents."
+            },
+            new Track
+            {
+                TrackId = trackM2_CNS,
+                Name = "M2 Computer and Network Systems (CNS) - Systèmes Autonomiques",
+                ProgramId = programInfoId,
+                TeacherId = teacherUserId11,
+                Lieu = "Campus Cinq Avenues",
+                Description = "M2 sur les systemes autonomiques, l orchestration de services et la supervision distribuee."
+            },
+            new Track
+            {
+                TrackId = GetStableId("track-m2-mpri"),
+                Name = "M2 Master parisien de recherche en Informatique (MPRI)",
+                ProgramId = programInfoId,
+                TeacherId = teacherUserId12,
+                Lieu = "Campus Cinq Avenues",
+                Description = "M2 recherche pour approfondir les thematiques scientifiques en informatique theorique et appliquee."
+            }
         );
 
         // ========================================
@@ -1614,6 +1791,132 @@ public partial class TerHyperplanningContext : DbContext
             new Assign { TrackId = trackM1_CNS, CourseId = c_multiagents, HourlyVolume = 36 },
             new Assign { TrackId = trackM1_CNS, CourseId = c_specverif, HourlyVolume = 36 },
             new Assign { TrackId = trackM1_CNS, CourseId = c_ml, HourlyVolume = 36 }
+        );
+
+        // --- CURSUS M1 ID - APPRENTISSAGE ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_dw, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_bi, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_datamining, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_etl, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_modeldec, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_dataviz, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_gouvdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_ang, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_projdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_ID_App, CourseId = c_mem, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M2 ID - APPRENTISSAGE ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_bigdataarch, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_ia_decision, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_dataviz, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_mlops, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_dataeng, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_gouvdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_ro, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_innov, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_projdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_ID_App, CourseId = c_mem, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M2 ILSD - APPRENTISSAGE ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_tech, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_icl, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_coo, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_mlops, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_dataeng, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_bigdataarch, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_crypto, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_bdd, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_projdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_ILSD_App, CourseId = c_mem, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M2 ILSD - INITIALE ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_tech, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_icl, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_coo, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_mlops, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_dataeng, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_bigdataarch, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_crypto, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_bdd, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_projdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_ILSD_Init, CourseId = c_stage, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M1 AI ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_statlearn, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_deeplearn, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_nlp, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_rl, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_gen, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_ethics, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_sciml, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ai_xai, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_ang, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_AI, CourseId = c_stage, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M2 AI ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM2_AI, CourseId = c_ai_deeplearn, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_ai_gen, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_ai_rl, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_ai_xai, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_ai_sciml, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_mlops, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_dataeng, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_ai_ethics, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_projdata, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_AI, CourseId = c_mem, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M1 MPRI ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_complexity, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_automata, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_logic, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_semantics, HourlyVolume = 36 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_proof, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_crypto, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_type, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_mpri_quantum, HourlyVolume = 24 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_ang, HourlyVolume = 18 },
+            new Assign { TrackId = trackM1_MPRI, CourseId = c_stage, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M2 CNS - SYSTEMES AUTONOMIQUES ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_autonomic, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_perfmodels, HourlyVolume = 36 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_petri, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_game, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_multiopt, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_formaladv, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_rl, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_cns_energy, HourlyVolume = 18 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_multiagents, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_ml, HourlyVolume = 24 },
+            new Assign { TrackId = trackM2_CNS, CourseId = c_mem, HourlyVolume = 0 }
+        );
+
+        // --- CURSUS M2 MPRI ---
+        modelBuilder.Entity<Assign>().HasData(
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mpri_complexity, HourlyVolume = 24 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mpri_type, HourlyVolume = 36 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mpri_proof, HourlyVolume = 36 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mpri_semantics, HourlyVolume = 24 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mpri_quantum, HourlyVolume = 24 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mpri_crypto, HourlyVolume = 24 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_specverif, HourlyVolume = 24 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_ter, HourlyVolume = 18 },
+            new Assign { TrackId = GetStableId("track-m2-mpri"), CourseId = c_mem, HourlyVolume = 0 }
         );
 
         // ========================================
