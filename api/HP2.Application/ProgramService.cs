@@ -27,6 +27,11 @@ public class ProgramService : IProgramService
         return await _programRepository.GetAllAsync();
     }
 
+    public async Task<IEnumerable<ProgramModel>> GetDeletedProgramsAsync()
+    {
+        return await _programRepository.GetDeletedAsync();
+    }
+
     public async Task UpdateProgramAsync(ProgramModel program)
     {
         await _programRepository.UpdateAsync(program);
