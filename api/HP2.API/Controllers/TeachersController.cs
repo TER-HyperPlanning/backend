@@ -58,12 +58,12 @@ public class TeachersController : ControllerBase
         return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(teachers.Select(ToResponse)));
     }
 
-    [HttpGet("deleted")]
+    /*[HttpGet("deleted")]
     public async Task<ActionResult<ApiResponse<IEnumerable<DeletedTeacherResponse>>>> GetDeleted()
     {
         var teachers = await _teacherService.GetDeletedTeachersAsync();
         return Ok(ApiResponse<IEnumerable<DeletedTeacherResponse>>.Success(teachers.Select(ToDeletedResponse)));
-    }
+    }*/
 
     [HttpPut("{id}")]
     public async Task<ActionResult<ApiResponse<TeacherResponse>>> Update(string id, [FromBody] UpdateTeacherRequest request)
@@ -86,7 +86,7 @@ public class TeachersController : ControllerBase
         return Ok(ApiResponse<TeacherResponse>.Success(ToResponse(existing), "Teacher updated successfully"));
     }
 
-    [HttpDelete("{id}")]
+    /*[HttpDelete("{id}")]
 public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
 {
     var existing = await _teacherService.GetTeacherByIdAsync(id);
@@ -99,6 +99,26 @@ public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
 
     await _teacherService.DeleteTeacherAsync(id);
     return Ok(ApiResponse<string>.Success(id, "Teacher deleted successfully"));
+}*/
+
+[HttpDelete("{id}")]
+public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
+{
+    var existing = await _teacherService.GetTeacherByIdAsync(id);
+    if (existing == null)
+        return NotFound(ApiResponse<string>.Fail($"Teacher with ID {id} not found"));
+
+    await _teacherService.DeleteTeacherAsync(id);
+    return Ok(ApiResponse<string>.Success(id, "Teacher deleted successfully"));
+}
+
+[HttpGet("deleted")]
+public async Task<ActionResult<ApiResponse<IEnumerable<TeacherResponse>>>> GetDeletedTeachers()
+{
+    var teachers = await _teacherService.GetDeletedTeachersAsync();
+    return Ok(ApiResponse<IEnumerable<TeacherResponse>>.Success(
+        teachers.Select(ToResponse),
+        "Deleted teachers retrieved successfully"));
 }
 
     private static TeacherResponse ToResponse(TeacherModel m) => new()
