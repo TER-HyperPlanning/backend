@@ -2,16 +2,16 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using HP2.Application;
 using HP2.Infrastructure;
-using HP2.Application.Exceptions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using System.Text.Json;
 using HP2.Application.DTOs.Common;
 using Microsoft.AspNetCore.Mvc;
+using HP2.Application.Exceptions;
+using Microsoft.AspNetCore.Diagnostics;
+using System.Text.Json;
 
 internal class Program
 {
@@ -32,6 +32,10 @@ internal class Program
         builder.Services.AddJwtService(issuer, audience, secretKey);
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+        // SignalR pour les notifications en temps réel
+        builder.Services.AddSignalR();
+        builder.Services.AddScoped<HP2.Application.Contracts.INotificationService, global::HP2.API.Services.NotificationService>();
 
         builder.Services.AddControllers()
             .ConfigureApiBehaviorOptions(options =>
@@ -115,6 +119,17 @@ internal class Program
 
             options.Events = new JwtBearerEvents
             {
+                OnMessageReceived = context =>
+                {
+                    var accessToken = context.Request.Query["access_token"];
+                    var path = context.HttpContext.Request.Path;
+                    if (!string.IsNullOrEmpty(accessToken) &&
+                        (path.StartsWithSegments("/hubs/notifications")))
+                    {
+                        context.Token = accessToken;
+                    }
+                    return Task.CompletedTask;
+                },
                 OnChallenge = context =>
                 {
                     context.HandleResponse();
@@ -195,14 +210,17 @@ internal class Program
             });
         });
 
-        app.UseCors(opt => opt.AllowAnyOrigin()
-                              .AllowAnyMethod()
-                              .AllowAnyHeader());
+        app.UseCors(opt => opt
+            .WithOrigins("http://localhost:3000", "http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()); // Requis pour SignalR WebSockets
 
         app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
+        app.MapHub<global::HP2.API.Hubs.NotificationHub>("/hubs/notifications");
 
         app.Run();
     }

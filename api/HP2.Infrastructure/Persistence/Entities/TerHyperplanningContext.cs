@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,6 +35,8 @@ public partial class TerHyperplanningContext : DbContext
     public virtual DbSet<Group> Groups { get; set; }
 
     public virtual DbSet<Notification> Notifications { get; set; }
+
+    public virtual DbSet<UserNotification> UserNotifications { get; set; }
 
     public virtual DbSet<Program> Programs { get; set; }
 
@@ -332,51 +334,74 @@ public partial class TerHyperplanningContext : DbContext
 
         modelBuilder.Entity<Notification>(entity =>
         {
-            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__E059842FEA1D001E");
+            entity.HasKey(e => e.NotificationId).HasName("PK_Notification");
 
             entity.ToTable("Notification");
 
             entity.Property(e => e.NotificationId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasDefaultValueSql("(newid())")
                 .HasColumnName("notification_id");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime")
-                .HasColumnName("created_at");
-            entity.Property(e => e.Message)
-                .IsUnicode(false)
-                .HasColumnName("message");
+
             entity.Property(e => e.Title)
-                .HasMaxLength(100)
-                .IsUnicode(false)
+                .HasMaxLength(200)
                 .HasColumnName("title");
 
-            entity.HasMany(d => d.Users).WithMany(p => p.Notifications)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Receive",
-                    r => r.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Receive_User"),
-                    l => l.HasOne<Notification>().WithMany()
-                        .HasForeignKey("NotificationId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Receive_Notif"),
-                    j =>
-                    {
-                        j.HasKey("NotificationId", "UserId").HasName("PK__Receive__0BC2675F6B31FA1F");
-                        j.ToTable("Receive");
-                        j.IndexerProperty<string>("NotificationId")
-                            .HasMaxLength(50)
-                            .IsUnicode(false)
-                            .HasColumnName("notification_id");
-                        j.IndexerProperty<string>("UserId")
-                            .HasMaxLength(50)
-                            .IsUnicode(false)
-                            .HasColumnName("user_id");
-                    });
+            entity.Property(e => e.Message)
+                .HasMaxLength(1000)
+                .HasColumnName("message");
+
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .HasDefaultValue("General")
+                .HasColumnName("type");
+
+            entity.Property(e => e.RelatedId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .IsRequired(false)
+                .HasColumnName("related_id");
+
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime2")
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnName("created_at");
+
+            // Pour la compatibilité ascendante, on peut garder HasMany(...).WithMany(...) 
+            // Mais pour IsRead, on utilise UserNotifications
+        });
+
+        modelBuilder.Entity<UserNotification>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.NotificationId }).HasName("PK_UserNotification");
+
+            entity.ToTable("UserNotification");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+
+            entity.Property(e => e.NotificationId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("notification_id");
+
+            entity.Property(e => e.IsRead)
+                .HasDefaultValue(false)
+                .HasColumnName("is_read");
+
+            entity.HasOne(d => d.User)
+                .WithMany()
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UserNotification_User");
+
+            entity.HasOne(d => d.Notification)
+                .WithMany(p => p.UserNotifications)
+                .HasForeignKey(d => d.NotificationId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UserNotification_Notification");
         });
 
         modelBuilder.Entity<Program>(entity =>
@@ -589,6 +614,11 @@ public partial class TerHyperplanningContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("teacher_id");
 
+            entity.Property(e => e.OldRoomId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("old_room_id");
+
             entity.Property(e => e.ApprovedRoomId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -613,6 +643,11 @@ public partial class TerHyperplanningContext : DbContext
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_RoomChange_Teacher");
+
+            entity.HasOne(d => d.OldRoom)
+                .WithMany()
+                .HasForeignKey(d => d.OldRoomId)
+                .HasConstraintName("FK_RoomChange_OldRoom");
 
             entity.HasOne(d => d.ApprovedRoom)
                 .WithMany()
@@ -2757,21 +2792,26 @@ public partial class TerHyperplanningContext : DbContext
     new ChangeStatus
     {
         ChangeStatusId = changeStatusPendingId,
-        Label = "En attente"
+        Label = "ATTENTE"
     },
     new ChangeStatus
     {
         ChangeStatusId = changeStatusApprovedId,
-        Label = "Approuvé"
+        Label = "APPROUVE"
     },
     new ChangeStatus
     {
         ChangeStatusId = changeStatusRejectedId,
-        Label = "Refusé"
+        Label = "REFUSE"
     }
 );
 
+    var ibgbiRoom1Id = GetStableId("room-ibgbi-1");
+    var ibgbiRoom2Id = GetStableId("room-ibgbi-2");
+
+    // SessionRoomChange : 2 En attente, 2 Approuvé, 2 Refusé
     modelBuilder.Entity<SessionRoomChange>().HasData(
+        // --- En attente (2) ---
         new SessionRoomChange
         {
             SessionRoomChangeId = GetStableId("seed-room-change-001"),
@@ -2780,9 +2820,48 @@ public partial class TerHyperplanningContext : DbContext
             TeacherId = teacherUserId,
             SessionId = seedSessionId1,
             ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
             ApprovedRoomId = null,
             RejectionReason = null
         },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-003"),
+            ChangeDate = new DateTime(2026, 4, 6),
+            Reason = "Problème de climatisation dans la salle assignée.",
+            TeacherId = teacherUserId3,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        // --- Approuvé (2) ---
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-004"),
+            ChangeDate = new DateTime(2026, 3, 10),
+            Reason = "Besoin d'une salle avec projecteur fonctionnel.",
+            TeacherId = teacherUserId2,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusApprovedId,
+            OldRoomId = roomId,
+            ApprovedRoomId = ibgbiRoom1Id,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-005"),
+            ChangeDate = new DateTime(2026, 3, 15),
+            Reason = "La salle prévue est occupée par un autre cours.",
+            TeacherId = teacherUserId4,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusApprovedId,
+            OldRoomId = ibgbiRoom1Id,
+            ApprovedRoomId = ibgbiRoom2Id,
+            RejectionReason = null
+        },
+        // --- Refusé (2) ---
         new SessionRoomChange
         {
             SessionRoomChangeId = GetStableId("seed-room-change-002"),
@@ -2791,12 +2870,27 @@ public partial class TerHyperplanningContext : DbContext
             TeacherId = teacherUserId2,
             SessionId = seedSessionId2,
             ChangeStatusId = changeStatusRejectedId,
+            OldRoomId = null,
             ApprovedRoomId = null,
             RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau."
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-006"),
+            ChangeDate = new DateTime(2026, 3, 20),
+            Reason = "Demande de salle plus grande pour un exposé.",
+            TeacherId = teacherUserId5,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusRejectedId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = "La demande ne respecte pas le délai minimum de 48h avant la séance."
         }
     );
 
+    // SessionRecoveryChange : 2 En attente, 2 Approuvé, 2 Refusé
     modelBuilder.Entity<SessionRecoveryChange>().HasData(
+        // --- En attente (2) ---
         new SessionRecoveryChange
         {
             SessionRecoveryChangeId = GetStableId("seed-recovery-change-001"),
@@ -2814,6 +2908,98 @@ public partial class TerHyperplanningContext : DbContext
             CounterProposalEndTime = null,
             CounterProposalRoomId = null,
             RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-002"),
+            ChangeDate = new DateTime(2026, 4, 7),
+            Reason = "Cours manqué suite à une grève des transports.",
+            TeacherId = teacherUserId2,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 25),
+            ProposedStartTime = new TimeSpan(10, 0, 0),
+            ProposedEndTime = new TimeSpan(12, 0, 0),
+            ProposedRoomId = ibgbiRoom1Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        // --- Approuvé (2) ---
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-003"),
+            ChangeDate = new DateTime(2026, 3, 5),
+            Reason = "Absence de l'enseignant pour maladie, cours à récupérer.",
+            TeacherId = teacherUserId3,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusApprovedId,
+            ProposedDate = new DateTime(2026, 3, 18),
+            ProposedStartTime = new TimeSpan(8, 0, 0),
+            ProposedEndTime = new TimeSpan(10, 0, 0),
+            ProposedRoomId = ibgbiRoom2Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-004"),
+            ChangeDate = new DateTime(2026, 3, 10),
+            Reason = "Cours reporté en raison d'une réunion pédagogique.",
+            TeacherId = teacherUserId4,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusApprovedId,
+            ProposedDate = new DateTime(2026, 3, 22),
+            ProposedStartTime = new TimeSpan(14, 0, 0),
+            ProposedEndTime = new TimeSpan(16, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        // --- Refusé (2) ---
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-005"),
+            ChangeDate = new DateTime(2026, 3, 15),
+            Reason = "Cours annulé pour cause de conférence externe.",
+            TeacherId = teacherUserId5,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusRejectedId,
+            ProposedDate = new DateTime(2026, 3, 28),
+            ProposedStartTime = new TimeSpan(16, 0, 0),
+            ProposedEndTime = new TimeSpan(18, 0, 0),
+            ProposedRoomId = ibgbiRoom1Id,
+            CounterProposalDate = new DateTime(2026, 4, 2),
+            CounterProposalStartTime = new TimeSpan(10, 0, 0),
+            CounterProposalEndTime = new TimeSpan(12, 0, 0),
+            CounterProposalRoomId = ibgbiRoom2Id,
+            RejectionReason = "Le créneau proposé est déjà réservé. Une contre-proposition a été soumise."
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-006"),
+            ChangeDate = new DateTime(2026, 3, 20),
+            Reason = "Absence imprévue de l'enseignant.",
+            TeacherId = teacherUserId,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusRejectedId,
+            ProposedDate = new DateTime(2026, 4, 5),
+            ProposedStartTime = new TimeSpan(8, 0, 0),
+            ProposedEndTime = new TimeSpan(10, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = "La date proposée est en dehors de la période académique autorisée."
         }
     );
 

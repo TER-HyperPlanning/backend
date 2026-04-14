@@ -6,18 +6,62 @@ namespace HP2.Application;
 public class AttendService : IAttendService
 {
     private readonly IAttendRepository _repository;
+    private readonly INotificationService _notificationService;
+    private readonly ISessionRepository _sessionRepository;
 
-    public AttendService(IAttendRepository repository)
+    public AttendService(IAttendRepository repository, INotificationService notificationService, ISessionRepository sessionRepository)
     {
         _repository = repository;
+        _notificationService = notificationService;
+        _sessionRepository = sessionRepository;
     }
 
-    public Task<AttendModel> AddAsync(AttendModel model) => _repository.AddAsync(model);
+    public async Task<AttendModel> AddAsync(AttendModel model)
+    {
+        var result = await _repository.AddAsync(model);
+        
+        // --- Notification ---
+        var session = await _sessionRepository.GetByIdAsync(model.SessionId);
+        var userIds = await _sessionRepository.GetAffectedUserIdsAsync(model.SessionId);
+        
+        if (session != null && userIds.Any())
+        {
+            await _notificationService.NotifyUsersAsync(
+                userIds.ToList(),
+                "Nouvelle séance attribuée",
+                $"Une séance de {session.CourseName ?? "Cours"} vous a été attribuée le {session.StartDateTime:dd/MM/yyyy HH:mm}.",
+                "SessionCreation",
+                session.Id
+            );
+        }
+        // --------------------
+
+        return result;
+    }
 
     public Task<AttendModel> UpdateAsync(string currentGroupId, string currentSessionId, AttendModel model)
         => _repository.UpdateAsync(currentGroupId, currentSessionId, model);
 
-    public Task<bool> DeleteAsync(string groupId, string sessionId) => _repository.DeleteAsync(groupId, sessionId);
+    public async Task<bool> DeleteAsync(string groupId, string sessionId)
+    {
+        var session = await _sessionRepository.GetByIdAsync(sessionId);
+        var userIds = await _repository.GetAffectedUserIdsAsync(groupId);
+        
+        var result = await _repository.DeleteAsync(groupId, sessionId);
+
+        if (result && session != null && userIds.Any())
+        {
+            await _notificationService.NotifyUsersAsync(
+                userIds.ToList(),
+                "Séance supprimée",
+                $"La séance de {session.CourseName ?? "Cours"} prévue le {session.StartDateTime:dd/MM/yyyy HH:mm} a été supprimée de votre emploi du temps.",
+                "SessionCancellation",
+                sessionId
+            );
+        }
+        
+        return result;
+    }
 
     public Task<IReadOnlyList<AttendModel>> GetAllAsync() => _repository.GetAllAsync();
 
