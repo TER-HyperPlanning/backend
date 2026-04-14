@@ -4,7 +4,7 @@ namespace HP2.Application.Contracts
 {
     public interface ITrackService
     {
-        Task<List<TrackModel>> GetAllAsync();
+        Task<List<TrackModel>> GetAllAsync(string? programId, string? name);
         Task<List<TrackModel>>GetDeletedAsync();
         Task<TrackModel?> GetByIdAsync(string id);
         Task<TrackModel> AddAsync(TrackModel model);
