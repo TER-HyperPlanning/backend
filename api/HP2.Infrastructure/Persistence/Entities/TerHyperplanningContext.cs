@@ -2792,17 +2792,17 @@ public partial class TerHyperplanningContext : DbContext
     new ChangeStatus
     {
         ChangeStatusId = changeStatusPendingId,
-        Label = "ATTENTE"
+        Label = "En attente"
     },
     new ChangeStatus
     {
         ChangeStatusId = changeStatusApprovedId,
-        Label = "APPROUVE"
+        Label = "Approuvé"
     },
     new ChangeStatus
     {
         ChangeStatusId = changeStatusRejectedId,
-        Label = "REFUSE"
+        Label = "Refusé"
     }
 );
 
@@ -2936,7 +2936,7 @@ public partial class TerHyperplanningContext : DbContext
             TeacherId = teacherUserId3,
             SessionId = seedSessionId2,
             ChangeStatusId = changeStatusApprovedId,
-            ProposedDate = new DateTime(2026, 3, 18),
+            ProposedDate = new DateTime(2026, 4, 22),
             ProposedStartTime = new TimeSpan(8, 0, 0),
             ProposedEndTime = new TimeSpan(10, 0, 0),
             ProposedRoomId = ibgbiRoom2Id,
@@ -2954,7 +2954,7 @@ public partial class TerHyperplanningContext : DbContext
             TeacherId = teacherUserId4,
             SessionId = seedSessionId3,
             ChangeStatusId = changeStatusApprovedId,
-            ProposedDate = new DateTime(2026, 3, 22),
+            ProposedDate = new DateTime(2026, 4, 24),
             ProposedStartTime = new TimeSpan(14, 0, 0),
             ProposedEndTime = new TimeSpan(16, 0, 0),
             ProposedRoomId = roomId,
@@ -2973,11 +2973,11 @@ public partial class TerHyperplanningContext : DbContext
             TeacherId = teacherUserId5,
             SessionId = seedSessionId1,
             ChangeStatusId = changeStatusRejectedId,
-            ProposedDate = new DateTime(2026, 3, 28),
+            ProposedDate = new DateTime(2026, 4, 28),
             ProposedStartTime = new TimeSpan(16, 0, 0),
             ProposedEndTime = new TimeSpan(18, 0, 0),
             ProposedRoomId = ibgbiRoom1Id,
-            CounterProposalDate = new DateTime(2026, 4, 2),
+            CounterProposalDate = new DateTime(2026, 5, 5),
             CounterProposalStartTime = new TimeSpan(10, 0, 0),
             CounterProposalEndTime = new TimeSpan(12, 0, 0),
             CounterProposalRoomId = ibgbiRoom2Id,
@@ -2991,14 +2991,14 @@ public partial class TerHyperplanningContext : DbContext
             TeacherId = teacherUserId,
             SessionId = seedSessionId2,
             ChangeStatusId = changeStatusRejectedId,
-            ProposedDate = new DateTime(2026, 4, 5),
+            ProposedDate = new DateTime(2026, 4, 20),
             ProposedStartTime = new TimeSpan(8, 0, 0),
             ProposedEndTime = new TimeSpan(10, 0, 0),
             ProposedRoomId = roomId,
-            CounterProposalDate = null,
-            CounterProposalStartTime = null,
-            CounterProposalEndTime = null,
-            CounterProposalRoomId = null,
+            CounterProposalDate = new DateTime(2026, 5, 10),
+            CounterProposalStartTime = new TimeSpan(10, 0, 0),
+            CounterProposalEndTime = new TimeSpan(12, 0, 0),
+            CounterProposalRoomId = ibgbiRoom1Id,
             RejectionReason = "La date proposée est en dehors de la période académique autorisée."
         }
     );
