@@ -58,7 +58,7 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
         return teacher != null ? _mapper.Map<TeacherModel>(teacher) : null;
     }
 
-    public async Task<IReadOnlyList<TeacherModel>> GetDeletedAsync()
+    /*public async Task<IReadOnlyList<TeacherModel>> GetDeletedAsync()
     {
         var deletedTeachers = await _dbContext.Teachers
             .IgnoreQueryFilters()
@@ -69,7 +69,7 @@ public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepositor
             .ToListAsync();
 
         return _mapper.Map<List<TeacherModel>>(deletedTeachers);
-    }
+    }*/
 
 public override async Task<TeacherModel> AddAsync(TeacherModel teacherModel)
 {
@@ -170,9 +170,36 @@ else if (string.IsNullOrEmpty(teacher.TeacherTitleId))
     await _dbContext.SaveChangesAsync();
 }
 
-public override async Task DeleteAsync(string id)
+/*public override async Task DeleteAsync(string id)
 {
     await base.DeleteAsync(id);
+}*/
+
+public override async Task DeleteAsync(string id)
+{
+    var teacher = await _dbContext.Teachers
+        .Include(t => t.User)
+        .FirstOrDefaultAsync(t => t.UserId == id);
+
+    if (teacher?.User != null)
+    {
+        teacher.User.IsDeleted = true;
+        teacher.User.DeletedAt = DateTime.UtcNow;
+        await _dbContext.SaveChangesAsync();
+    }
+}
+
+public async Task<IEnumerable<TeacherModel>> GetDeletedAsync()
+{
+    var teachers = await _dbContext.Teachers
+        .IgnoreQueryFilters()
+        .Include(t => t.User)
+        .ThenInclude(u => u.UserRole)
+        .Include(t => t.TeacherTitle)
+        .Where(t => t.User != null && t.User.IsDeleted)
+        .ToListAsync();
+
+    return _mapper.Map<List<TeacherModel>>(teachers);
 }
 
 public async Task<bool> HasAvailabilitiesAsync(string id)
