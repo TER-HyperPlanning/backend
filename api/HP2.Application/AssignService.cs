@@ -87,9 +87,9 @@ public class AssignService : IAssignService
             return ApiResponse<bool>.Fail("An error occurred while creating the assign.");
             return ApiResponse<bool>.Success(true, "Assign created successfully");
         }
-        catch
+        catch (Exception ex)
         {
-            return ApiResponse<bool>.Fail("An internal error occurred.");
+            return ApiResponse<bool>.Fail(ex.Message);
         }
     }
 

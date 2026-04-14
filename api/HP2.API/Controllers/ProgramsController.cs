@@ -19,6 +19,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<ProgramModel>>> Create([FromBody] CreateProgramRequest request)
     {
         if (request == null)
@@ -78,6 +79,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<ProgramModel>>> Update(string id, [FromBody] UpdateProgramRequest request)
     {
         if (request == null)
@@ -119,6 +121,7 @@ public class ProgramsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
         var existing = await _programService.GetProgramByIdAsync(id);
