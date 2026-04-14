@@ -32,6 +32,20 @@ public class SessionChangeListResponse
     public string? OldRoomId { get; set; }
     public string? ApprovedRoomId { get; set; }
 
+    // Proposition de créneau (uniquement pour SessionRecovery)
+    public DateTime? ProposedDate { get; set; }
+    public TimeSpan? ProposedStartTime { get; set; }
+    public TimeSpan? ProposedEndTime { get; set; }
+    public string? ProposedRoomId { get; set; }
+
+    // Contre-proposition (uniquement pour SessionRecovery)
+    public DateTime? CounterProposalDate { get; set; }
+    public TimeSpan? CounterProposalStartTime { get; set; }
+    public TimeSpan? CounterProposalEndTime { get; set; }
+    public string? CounterProposalRoomId { get; set; }
+
+    public string? RejectionReason { get; set; }
+
     public string Reason { get; set; } = string.Empty;
     public DateTime RequestDate { get; set; }
 }
