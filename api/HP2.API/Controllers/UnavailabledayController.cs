@@ -23,12 +23,18 @@ namespace HP2.API.Controllers
             if (request == null)
                 return BadRequest(ApiResponse<UnavailableDayModel>.Fail("UnavailableDay payload is required"));
 
+            // Validate time format
+            if (!TimeSpan.TryParse(request.StartTime, out _))
+                return BadRequest(ApiResponse<UnavailableDayModel>.Fail("Invalid StartTime format. Use HH:mm:ss"));
+            if (!TimeSpan.TryParse(request.EndTime, out _))
+                return BadRequest(ApiResponse<UnavailableDayModel>.Fail("Invalid EndTime format. Use HH:mm:ss"));
+
             var unavailableDay = new UnavailableDayModel
             {
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
-                StartTime = request.StartTime,
-                EndTime = request.EndTime,
+                StartTime = TimeSpan.Parse(request.StartTime),
+                EndTime = TimeSpan.Parse(request.EndTime),
                 Type = request.Type
             };
 
@@ -60,14 +66,20 @@ namespace HP2.API.Controllers
             if (request == null)
                 return BadRequest(ApiResponse<UnavailableDayModel>.Fail("UnavailableDay payload is required"));
 
+            // Validate time format
+            if (!TimeSpan.TryParse(request.StartTime, out _))
+                return BadRequest(ApiResponse<UnavailableDayModel>.Fail("Invalid StartTime format. Use HH:mm:ss"));
+            if (!TimeSpan.TryParse(request.EndTime, out _))
+                return BadRequest(ApiResponse<UnavailableDayModel>.Fail("Invalid EndTime format. Use HH:mm:ss"));
+
             var existing = await _unavailabledayService.GetUnavailabledayByIdAsync(id);
             if (existing == null)
                 return NotFound(ApiResponse<UnavailableDayModel>.Fail($"UnavailableDay with ID {id} not found"));
 
             existing.StartDate = request.StartDate;
             existing.EndDate = request.EndDate;
-            existing.StartTime = request.StartTime;
-            existing.EndTime = request.EndTime;
+            existing.StartTime = TimeSpan.Parse(request.StartTime);
+            existing.EndTime = TimeSpan.Parse(request.EndTime);
             existing.Type = request.Type;
 
             await _unavailabledayService.UpdateUnavailabledayAsync(existing);
