@@ -7,6 +7,7 @@ using HP2.Application.DTOs.RoomDtos;
 using HP2.Application.DTOs.Common;
 using HP2.Application.Exceptions;
 using HP2.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers
 {
@@ -35,9 +36,11 @@ namespace HP2.API.Controllers
 
         // GET: api/Room
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<ApiResponse<IEnumerable<RoomResponse>>>> GetRooms(
             [FromQuery(Name = "types")] string[]? types,
-            [FromQuery(Name = "q")] string? query)
+            [FromQuery(Name = "q")] string? query,
+            [FromQuery(Name = "buildingId")] string? buildingId)
         {
             var requestedTypes = (types ?? Array.Empty<string>())
                 .Where(t => !string.IsNullOrWhiteSpace(t))
@@ -84,12 +87,13 @@ namespace HP2.API.Controllers
                 .Distinct()
                 .ToList();
 
-            var rooms = await _roomService.GetRoomsAsync(parsedTypes, normalizedQuery);
+            var rooms = await _roomService.GetRoomsAsync(parsedTypes, normalizedQuery, buildingId);
             var response = rooms.Select(MapToResponse);
             return Ok(ApiResponse<IEnumerable<RoomResponse>>.Success(response));
         }
 
         [HttpGet("deleted")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<IEnumerable<DeletedRoomResponse>>>> GetDeleted()
         {
             var rooms = await _roomService.GetDeletedRoomsAsync();
@@ -99,6 +103,7 @@ namespace HP2.API.Controllers
 
         // GET: api/Room/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ApiResponse<RoomResponse>>> GetRoom(string id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
@@ -110,6 +115,7 @@ namespace HP2.API.Controllers
 
         // POST: api/Room
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<RoomResponse>>> CreateRoom([FromBody] RoomRequest request)
         {
             if (request == null)
@@ -167,6 +173,7 @@ namespace HP2.API.Controllers
 
         // PUT: api/Room/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<RoomResponse>>> EditRoom(string id, [FromBody] RoomRequest roomDto)
         {
             if (roomDto == null)
@@ -225,6 +232,7 @@ namespace HP2.API.Controllers
 
         // DELETE: api/Room/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ApiResponse<object>>> DeleteRoom(string id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);

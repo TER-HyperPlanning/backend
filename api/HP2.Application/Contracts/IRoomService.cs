@@ -7,7 +7,7 @@ namespace HP2.Application.Contracts
 {
     public interface IRoomService
     {
-        Task<IEnumerable<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query);
+        Task<IEnumerable<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query, string? buildingId);
         Task<IEnumerable<RoomModel>> GetDeletedRoomsAsync();
         Task<RoomModel?> GetRoomByIdAsync(string id);
         Task<IEnumerable<RoomModel>> GetRoomsByBuildingIdAsync(string buildingId);

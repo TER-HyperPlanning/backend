@@ -16,9 +16,9 @@ namespace HP2.Application.Services
             _roomRepository = roomRepository;
         }
 
-        public async Task<IEnumerable<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query)
+        public async Task<IEnumerable<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query, string? buildingId)
         {
-            return await _roomRepository.GetRoomsAsync(types, query);
+            return await _roomRepository.GetRoomsAsync(types, query, buildingId);
         }
 
         public async Task<IEnumerable<RoomModel>> GetDeletedRoomsAsync()

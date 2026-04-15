@@ -173,12 +173,13 @@ namespace HP2.Infrastructure.Persistence.Repositories
                 .ToList();
         }
 
-        public async Task<IReadOnlyList<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query)
+        public async Task<IReadOnlyList<RoomModel>> GetRoomsAsync(IEnumerable<RoomTypeEnum> types, string? query, string? buildingId)
         {
             var requestedTypes = types?.Distinct().ToArray() ?? Array.Empty<RoomTypeEnum>();
             var normalizedQuery = query?.Trim();
             var hasQueryFilter = !string.IsNullOrWhiteSpace(normalizedQuery);
             var hasTypeFilter = requestedTypes.Length > 0;
+            var hasBuildingFilter = !string.IsNullOrWhiteSpace(buildingId);
 
             var roomsQuery = _dbContext.Rooms
                 .AsNoTracking()
@@ -205,6 +206,11 @@ namespace HP2.Infrastructure.Persistence.Repositories
                     || r.RoomType.Name.ToUpper().Contains(uppercaseQuery)
                     || r.Building.Name.ToUpper().Contains(uppercaseQuery)
                     || (isCapacityQuery && r.Capacity == capacityValue));
+            }
+
+            if (hasBuildingFilter)
+            {
+                roomsQuery = roomsQuery.Where(r => r.BuildingId == buildingId);
             }
 
             var rooms = await roomsQuery
