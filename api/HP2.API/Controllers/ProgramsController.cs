@@ -4,6 +4,7 @@ using HP2.Application.DTOs.Program;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using HP2.Application.Exceptions;
 
 namespace HP2.API.Controllers;
 
@@ -128,7 +129,18 @@ public class ProgramsController : ControllerBase
         if (existing == null)
             return NotFound(ApiResponse<string>.Fail($"Program with ID {id} not found"));
 
-        await _programService.DeleteProgramAsync(id);
-        return Ok(ApiResponse<string>.Success(id, "Program deleted successfully"));
+        try
+        {
+            await _programService.DeleteProgramAsync(id);
+            return Ok(ApiResponse<string>.Success(null, "Program deleted successfully"));
+        }
+        catch (DeleteConflictException ex)
+        {
+            return Conflict(ApiResponse<string>.Fail(ex.Message));
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, ApiResponse<string>.Fail("Cannot delete program with active tracks."));
+        }
     }
 }
