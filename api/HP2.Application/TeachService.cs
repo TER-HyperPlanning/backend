@@ -63,6 +63,8 @@ public class TeachService : ITeachService
 
     public Task<IReadOnlyList<TeachModel>> GetAllAsync() => _repository.GetAllAsync();
 
+    public Task<IReadOnlyList<TeachModel>> GetDeletedAsync() => _repository.GetDeletedAsync();
+
     public Task<IReadOnlyList<TeachModel>> GetBySessionIdAsync(string sessionId) => _repository.GetBySessionIdAsync(sessionId);
 
     public Task<IReadOnlyList<TeachModel>> GetByTeacherIdAsync(string teacherId) => _repository.GetByTeacherIdAsync(teacherId);

@@ -7,6 +7,7 @@ namespace HP2.Infrastructure.Repositories;
 
 public class TeachRepository : ITeachRepository
 {
+    private const string TeachEntityName = "Teach";
     private readonly TerHyperplanningContext _context;
 
     public TeachRepository(TerHyperplanningContext context)
@@ -19,7 +20,6 @@ public class TeachRepository : ITeachRepository
         await using var transaction = await _context.Database.BeginTransactionAsync(System.Data.IsolationLevel.Serializable);
 
         var session = await _context.Sessions
-            .Include(s => s.Teachers)
             .FirstOrDefaultAsync(s => s.SessionId == model.SessionId);
 
         if (session == null)
@@ -27,22 +27,38 @@ public class TeachRepository : ITeachRepository
             throw new ArgumentException($"Session with ID {model.SessionId} does not exist.");
         }
 
-        var teacher = await _context.Teachers
-            .FirstOrDefaultAsync(t => t.UserId == model.TeacherId);
+        var teacherExists = await _context.Teachers
+            .AnyAsync(t => t.UserId == model.TeacherId);
 
-        if (teacher == null)
+        if (!teacherExists)
         {
             throw new ArgumentException($"Teacher with ID {model.TeacherId} does not exist.");
         }
 
-        if (session.Teachers.Any(t => t.UserId == model.TeacherId))
+        var teachRow = await GetTeachRowAsync(model.SessionId, model.TeacherId, includeDeleted: true);
+
+        if (teachRow != null && !GetTeachIsDeleted(teachRow))
         {
             throw new InvalidOperationException("This teacher is already assigned to this session.");
         }
 
         await EnsureTeacherHasNoScheduleConflictAsync(session, model.TeacherId);
 
-        session.Teachers.Add(teacher);
+        if (teachRow == null)
+        {
+            _context.Set<Dictionary<string, object>>(TeachEntityName).Add(new Dictionary<string, object>
+            {
+                ["SessionId"] = model.SessionId,
+                ["TeacherId"] = model.TeacherId,
+                ["IsDeleted"] = false
+            });
+        }
+        else
+        {
+            teachRow["IsDeleted"] = false;
+            _context.Entry(teachRow).Property("DeletedAt").CurrentValue = null;
+        }
+
         await _context.SaveChangesAsync();
         await transaction.CommitAsync();
 
@@ -53,23 +69,13 @@ public class TeachRepository : ITeachRepository
     {
         await using var transaction = await _context.Database.BeginTransactionAsync(System.Data.IsolationLevel.Serializable);
 
-        var currentSession = await _context.Sessions
-            .Include(s => s.Teachers)
-            .FirstOrDefaultAsync(s => s.SessionId == currentSessionId);
-
-        if (currentSession == null)
-        {
-            throw new KeyNotFoundException("Teach relation not found.");
-        }
-
-        var currentTeacher = currentSession.Teachers.FirstOrDefault(t => t.UserId == currentTeacherId);
-        if (currentTeacher == null)
+        var currentTeach = await GetTeachRowAsync(currentSessionId, currentTeacherId, includeDeleted: true);
+        if (currentTeach == null || GetTeachIsDeleted(currentTeach))
         {
             throw new KeyNotFoundException("Teach relation not found.");
         }
 
         var targetSession = await _context.Sessions
-            .Include(s => s.Teachers)
             .FirstOrDefaultAsync(s => s.SessionId == model.SessionId);
 
         if (targetSession == null)
@@ -77,16 +83,17 @@ public class TeachRepository : ITeachRepository
             throw new ArgumentException($"Session with ID {model.SessionId} does not exist.");
         }
 
-        var targetTeacher = await _context.Teachers
-            .FirstOrDefaultAsync(t => t.UserId == model.TeacherId);
+        var targetTeacherExists = await _context.Teachers
+            .AnyAsync(t => t.UserId == model.TeacherId);
 
-        if (targetTeacher == null)
+        if (!targetTeacherExists)
         {
             throw new ArgumentException($"Teacher with ID {model.TeacherId} does not exist.");
         }
 
-        if (targetSession.Teachers.Any(t => t.UserId == model.TeacherId)
-            && (currentSessionId != model.SessionId || currentTeacherId != model.TeacherId))
+        var isSameRelation = currentSessionId == model.SessionId && currentTeacherId == model.TeacherId;
+        var targetTeach = await GetTeachRowAsync(model.SessionId, model.TeacherId, includeDeleted: true);
+        if (!isSameRelation && targetTeach != null && !GetTeachIsDeleted(targetTeach))
         {
             throw new InvalidOperationException("This teacher is already assigned to this session.");
         }
@@ -95,8 +102,27 @@ public class TeachRepository : ITeachRepository
         var sessionIdToIgnore = currentTeacherId == model.TeacherId ? currentSessionId : null;
         await EnsureTeacherHasNoScheduleConflictAsync(targetSession, model.TeacherId, sessionIdToIgnore);
 
-        currentSession.Teachers.Remove(currentTeacher);
-        targetSession.Teachers.Add(targetTeacher);
+        if (!isSameRelation)
+        {
+            var deletedAt = DateTime.UtcNow;
+            currentTeach["IsDeleted"] = true;
+            currentTeach["DeletedAt"] = deletedAt;
+
+            if (targetTeach == null)
+            {
+                _context.Set<Dictionary<string, object>>(TeachEntityName).Add(new Dictionary<string, object>
+                {
+                    ["SessionId"] = model.SessionId,
+                    ["TeacherId"] = model.TeacherId,
+                    ["IsDeleted"] = false
+                });
+            }
+            else
+            {
+                targetTeach["IsDeleted"] = false;
+                _context.Entry(targetTeach).Property("DeletedAt").CurrentValue = null;
+            }
+        }
 
         await _context.SaveChangesAsync();
         await transaction.CommitAsync();
@@ -106,22 +132,15 @@ public class TeachRepository : ITeachRepository
 
     public async Task<bool> DeleteAsync(string sessionId, string teacherId)
     {
-        var session = await _context.Sessions
-            .Include(s => s.Teachers)
-            .FirstOrDefaultAsync(s => s.SessionId == sessionId);
-
-        if (session == null)
+        var teachRow = await GetTeachRowAsync(sessionId, teacherId, includeDeleted: true);
+        if (teachRow == null || GetTeachIsDeleted(teachRow))
         {
             return false;
         }
 
-        var teacher = session.Teachers.FirstOrDefault(t => t.UserId == teacherId);
-        if (teacher == null)
-        {
-            return false;
-        }
+        teachRow["IsDeleted"] = true;
+        teachRow["DeletedAt"] = DateTime.UtcNow;
 
-        session.Teachers.Remove(teacher);
         await _context.SaveChangesAsync();
 
         return true;
@@ -129,15 +148,33 @@ public class TeachRepository : ITeachRepository
 
     public async Task<IReadOnlyList<TeachModel>> GetAllAsync()
     {
-        var rows = await _context.Sessions
+        var rows = await _context.Set<Dictionary<string, object>>(TeachEntityName)
             .AsNoTracking()
-            .SelectMany(
-                s => s.Teachers,
-                (s, t) => new TeachModel
-                {
-                    SessionId = s.SessionId,
-                    TeacherId = t.UserId
-                })
+            .Select(r => new TeachModel
+            {
+                SessionId = EF.Property<string>(r, "SessionId"),
+                TeacherId = EF.Property<string>(r, "TeacherId"),
+                IsDeleted = EF.Property<bool>(r, "IsDeleted"),
+                DeletedAt = EF.Property<DateTime?>(r, "DeletedAt")
+            })
+            .ToListAsync();
+
+        return rows;
+    }
+
+    public async Task<IReadOnlyList<TeachModel>> GetDeletedAsync()
+    {
+        var rows = await _context.Set<Dictionary<string, object>>(TeachEntityName)
+            .IgnoreQueryFilters()
+            .AsNoTracking()
+            .Where(r => EF.Property<bool>(r, "IsDeleted"))
+            .Select(r => new TeachModel
+            {
+                SessionId = EF.Property<string>(r, "SessionId"),
+                TeacherId = EF.Property<string>(r, "TeacherId"),
+                IsDeleted = EF.Property<bool>(r, "IsDeleted"),
+                DeletedAt = EF.Property<DateTime?>(r, "DeletedAt")
+            })
             .ToListAsync();
 
         return rows;
@@ -145,16 +182,16 @@ public class TeachRepository : ITeachRepository
 
     public async Task<IReadOnlyList<TeachModel>> GetBySessionIdAsync(string sessionId)
     {
-        var rows = await _context.Sessions
+        var rows = await _context.Set<Dictionary<string, object>>(TeachEntityName)
             .AsNoTracking()
-            .Where(s => s.SessionId == sessionId)
-            .SelectMany(
-                s => s.Teachers,
-                (s, t) => new TeachModel
-                {
-                    SessionId = s.SessionId,
-                    TeacherId = t.UserId
-                })
+            .Where(r => EF.Property<string>(r, "SessionId") == sessionId)
+            .Select(r => new TeachModel
+            {
+                SessionId = EF.Property<string>(r, "SessionId"),
+                TeacherId = EF.Property<string>(r, "TeacherId"),
+                IsDeleted = EF.Property<bool>(r, "IsDeleted"),
+                DeletedAt = EF.Property<DateTime?>(r, "DeletedAt")
+            })
             .ToListAsync();
 
         return rows;
@@ -162,29 +199,46 @@ public class TeachRepository : ITeachRepository
 
     public async Task<IReadOnlyList<TeachModel>> GetByTeacherIdAsync(string teacherId)
     {
-        var rows = await _context.Teachers
+        var rows = await _context.Set<Dictionary<string, object>>(TeachEntityName)
             .AsNoTracking()
-            .Where(t => t.UserId == teacherId)
-            .SelectMany(
-                t => t.Sessions,
-                (t, s) => new TeachModel
-                {
-                    SessionId = s.SessionId,
-                    TeacherId = t.UserId
-                })
+            .Where(r => EF.Property<string>(r, "TeacherId") == teacherId)
+            .Select(r => new TeachModel
+            {
+                SessionId = EF.Property<string>(r, "SessionId"),
+                TeacherId = EF.Property<string>(r, "TeacherId"),
+                IsDeleted = EF.Property<bool>(r, "IsDeleted"),
+                DeletedAt = EF.Property<DateTime?>(r, "DeletedAt")
+            })
             .ToListAsync();
 
         return rows;
     }
 
     public Task<bool> ExistsAsync(string sessionId, string teacherId)
-        => _context.Sessions.AnyAsync(s => s.SessionId == sessionId && s.Teachers.Any(t => t.UserId == teacherId));
+        => _context.Set<Dictionary<string, object>>(TeachEntityName)
+            .AnyAsync(r => EF.Property<string>(r, "SessionId") == sessionId
+                && EF.Property<string>(r, "TeacherId") == teacherId);
 
     public Task<bool> SessionExistsAsync(string sessionId)
         => _context.Sessions.AnyAsync(s => s.SessionId == sessionId);
 
     public Task<bool> TeacherExistsAsync(string teacherId)
         => _context.Teachers.AnyAsync(t => t.UserId == teacherId);
+
+    private async Task<Dictionary<string, object>?> GetTeachRowAsync(string sessionId, string teacherId, bool includeDeleted)
+    {
+        var query = _context.Set<Dictionary<string, object>>(TeachEntityName).AsQueryable();
+        if (includeDeleted)
+        {
+            query = query.IgnoreQueryFilters();
+        }
+
+        return await query.FirstOrDefaultAsync(r => EF.Property<string>(r, "SessionId") == sessionId
+            && EF.Property<string>(r, "TeacherId") == teacherId);
+    }
+
+    private static bool GetTeachIsDeleted(IReadOnlyDictionary<string, object> row)
+        => row.TryGetValue("IsDeleted", out var value) && value is bool b && b;
 
     private async Task EnsureTeacherHasNoScheduleConflictAsync(Session targetSession, string teacherId, string? sessionIdToIgnore = null)
     {

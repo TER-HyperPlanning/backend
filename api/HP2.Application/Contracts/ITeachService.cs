@@ -8,6 +8,7 @@ public interface ITeachService
     Task<TeachModel> UpdateAsync(string currentSessionId, string currentTeacherId, TeachModel model);
     Task<bool> DeleteAsync(string sessionId, string teacherId);
     Task<IReadOnlyList<TeachModel>> GetAllAsync();
+    Task<IReadOnlyList<TeachModel>> GetDeletedAsync();
     Task<IReadOnlyList<TeachModel>> GetBySessionIdAsync(string sessionId);
     Task<IReadOnlyList<TeachModel>> GetByTeacherIdAsync(string teacherId);
     Task<bool> ExistsAsync(string sessionId, string teacherId);
