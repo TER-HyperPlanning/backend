@@ -4,10 +4,11 @@ namespace HP2.Application.Contracts;
 
 public interface IRoomRepository
 {
-    Task<List<RoomModel>> GetAllAsync();
+    Task<IReadOnlyList<RoomModel>> GetAllAsync();
     Task<RoomModel?> GetByIdAsync(string id);
-    Task<RoomModel?> GetByRoomNumberAsync(string roomNumber);
-    Task AddAsync(RoomModel room);
+    Task<bool> RoomNumberExistsAsync(string roomNumber, string? excludeRoomId = null);
+    Task<int> GetMinCapacityRequiredAsync(string roomId);
+    Task<RoomModel> AddAsync(RoomModel room);
     Task UpdateAsync(RoomModel room);
-    Task DeleteAsync(string roomId);
+    Task DeleteAsync(string id);
 }

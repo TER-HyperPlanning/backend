@@ -7,5 +7,7 @@ public class RoomResponse
     public int Capacity { get; set; }
     public bool IsAvailable { get; set; }
     public string BuildingId { get; set; } = string.Empty;
+    public string BuildingName { get; set; } = string.Empty;
     public string RoomTypeId { get; set; } = string.Empty;
+    public string RoomTypeName { get; set; } = string.Empty;
 }

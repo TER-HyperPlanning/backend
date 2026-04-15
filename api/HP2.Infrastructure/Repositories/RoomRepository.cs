@@ -1,3 +1,4 @@
+using AutoMapper;
 using HP2.Application.Contracts;
 using HP2.Domain.Models;
 using HP2.Infrastructure.Persistence.Entities;
@@ -5,104 +6,108 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HP2.Infrastructure.Repositories;
 
-public class RoomRepository : IRoomRepository
+public class RoomRepository : RepositoryBase<RoomModel>, IRoomRepository
 {
-    private readonly TerHyperplanningContext _context;
-
-    public RoomRepository(TerHyperplanningContext context)
+    public RoomRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper)
     {
-        _context = context;
     }
 
-    public async Task<List<RoomModel>> GetAllAsync()
+    public override async Task<IReadOnlyList<RoomModel>> GetAllAsync()
     {
-        return await _context.Rooms
-            .Select(r => new RoomModel
-            {
-                RoomId = r.RoomId,
-                RoomNumber = r.RoomNumber,
-                IsAvailable = r.IsAvailable ?? true,
-                Capacity = r.Capacity,
-                BuildingId = r.BuildingId,
-                RoomTypeId = r.RoomTypeId
-            })
+        var rooms = await _dbContext.Rooms
+            .Include(r => r.Building)
+            .Include(r => r.RoomType)
+            .AsNoTracking()
             .ToListAsync();
+
+        return rooms.Select(r => new RoomModel
+        {
+            RoomId = r.RoomId,
+            RoomNumber = r.RoomNumber,
+            Capacity = r.Capacity,
+            IsAvailable = r.IsAvailable ?? true,
+            BuildingId = r.BuildingId,
+            RoomTypeId = r.RoomTypeId
+        }).ToList();
     }
 
-    public async Task<RoomModel?> GetByIdAsync(string id)
+    public override async Task<RoomModel?> GetByIdAsync(string id)
     {
-        return await _context.Rooms
-            .Where(r => r.RoomId == id)
-            .Select(r => new RoomModel
-            {
-                RoomId = r.RoomId,
-                RoomNumber = r.RoomNumber,
-                IsAvailable = r.IsAvailable ?? true,
-                Capacity = r.Capacity,
-                BuildingId = r.BuildingId,
-                RoomTypeId = r.RoomTypeId
-            })
-            .FirstOrDefaultAsync();
+        var r = await _dbContext.Rooms
+            .Include(r => r.Building)
+            .Include(r => r.RoomType)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(r => r.RoomId == id);
+
+        if (r == null) return null;
+
+        return new RoomModel
+        {
+            RoomId = r.RoomId,
+            RoomNumber = r.RoomNumber,
+            Capacity = r.Capacity,
+            IsAvailable = r.IsAvailable ?? true,
+            BuildingId = r.BuildingId,
+            RoomTypeId = r.RoomTypeId
+        };
     }
 
-    public async Task<RoomModel?> GetByRoomNumberAsync(string roomNumber)
+    public async Task<bool> RoomNumberExistsAsync(string roomNumber, string? excludeRoomId = null)
+        => await _dbContext.Rooms.AnyAsync(r =>
+            r.RoomNumber == roomNumber &&
+            (excludeRoomId == null || r.RoomId != excludeRoomId));
+
+    public async Task<int> GetMinCapacityRequiredAsync(string roomId)
     {
-        return await _context.Rooms
-            .Where(r => r.RoomNumber == roomNumber)
-            .Select(r => new RoomModel
-            {
-                RoomId = r.RoomId,
-                RoomNumber = r.RoomNumber,
-                IsAvailable = r.IsAvailable ?? true,
-                Capacity = r.Capacity,
-                BuildingId = r.BuildingId,
-                RoomTypeId = r.RoomTypeId
-            })
-            .FirstOrDefaultAsync();
+        // Nombre d'étudiants dans les groupes des sessions déjà planifiées dans cette salle
+        return await _dbContext.Sessions
+            .Where(s => s.RoomId == roomId)
+            .SelectMany(s => s.Groups)
+            .SelectMany(g => g.Students)
+            .CountAsync();
     }
 
-    public async Task AddAsync(RoomModel room)
+    public override async Task<RoomModel> AddAsync(RoomModel roomModel)
     {
         var entity = new Room
         {
-            RoomId = room.RoomId,
-            RoomNumber = room.RoomNumber,
-            IsAvailable = room.IsAvailable,
-            Capacity = room.Capacity,
-            BuildingId = room.BuildingId,
-            RoomTypeId = room.RoomTypeId
+            RoomId = Guid.NewGuid().ToString(),
+            RoomNumber = roomModel.RoomNumber,
+            Capacity = roomModel.Capacity,
+            IsAvailable = roomModel.IsAvailable,
+            BuildingId = roomModel.BuildingId,
+            RoomTypeId = roomModel.RoomTypeId
         };
 
-        await _context.Rooms.AddAsync(entity);
-        await _context.SaveChangesAsync();
+        await _dbContext.Rooms.AddAsync(entity);
+        await _dbContext.SaveChangesAsync();
+
+        roomModel.RoomId = entity.RoomId;
+        return roomModel;
     }
 
-    public async Task UpdateAsync(RoomModel room)
+    public override async Task UpdateAsync(RoomModel roomModel)
     {
-        var entity = await _context.Rooms
-            .FirstOrDefaultAsync(r => r.RoomId == room.RoomId);
+        var entity = await _dbContext.Rooms
+            .FirstOrDefaultAsync(r => r.RoomId == roomModel.RoomId);
 
         if (entity == null) return;
 
-        entity.RoomNumber = room.RoomNumber;
-        entity.IsAvailable = room.IsAvailable;
-        entity.Capacity = room.Capacity;
-        entity.BuildingId = room.BuildingId;
-        entity.RoomTypeId = room.RoomTypeId;
+        entity.RoomNumber = roomModel.RoomNumber;
+        entity.Capacity = roomModel.Capacity;
+        entity.IsAvailable = roomModel.IsAvailable;
+        entity.BuildingId = roomModel.BuildingId;
+        entity.RoomTypeId = roomModel.RoomTypeId;
 
-        _context.Rooms.Update(entity);
-        await _context.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(string roomId)
+    public override async Task DeleteAsync(string id)
     {
-        var entity = await _context.Rooms
-            .FirstOrDefaultAsync(r => r.RoomId == roomId);
+        var entity = await _dbContext.Rooms.FirstOrDefaultAsync(r => r.RoomId == id);
+        if (entity == null) return;
 
-        if (entity != null)
-        {
-            _context.Rooms.Remove(entity);
-            await _context.SaveChangesAsync();
-        }
+        _dbContext.Rooms.Remove(entity);
+        await _dbContext.SaveChangesAsync();
     }
 }

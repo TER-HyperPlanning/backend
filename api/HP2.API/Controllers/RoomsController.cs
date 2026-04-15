@@ -1,6 +1,6 @@
 using HP2.Application.Contracts;
 using HP2.Application.DTOs.Common;
-using HP2.Domain.Models;
+using HP2.Application.DTOs.Room;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HP2.API.Controllers;
@@ -17,62 +17,143 @@ public class RoomsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<ActionResult<ApiResponse<IEnumerable<RoomResponse>>>> GetAll()
     {
-        var rooms = await _roomService.GetAllAsync();
-
-        return Ok(ApiResponse<List<RoomModel>>.Success(rooms, "Rooms retrieved successfully"));
+        try
+        {
+            var result = await _roomService.GetAllAsync();
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<IEnumerable<RoomResponse>>.Fail($"Erreur serveur : {ex.Message}"));
+        }
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(string id)
+    public async Task<ActionResult<ApiResponse<RoomResponse>>> Get(string id)
     {
-        var room = await _roomService.GetByIdAsync(id);
-
-        if (room == null)
-            return NotFound(ApiResponse<string>.Fail("Room not found"));
-
-        return Ok(ApiResponse<RoomModel>.Success(room, "Room retrieved successfully"));
-    }
-
-    [HttpGet("number/{roomNumber}")]
-    public async Task<IActionResult> GetByRoomNumber(string roomNumber)
-    {
-        var room = await _roomService.GetByRoomNumberAsync(roomNumber);
-
-        if (room == null)
-            return NotFound(ApiResponse<string>.Fail("Room not found"));
-
-        return Ok(ApiResponse<RoomModel>.Success(room,"Room retrieved successfully"));
+        try
+        {
+            var result = await _roomService.GetByIdAsync(id);
+            if (result.Status == "failed")
+                return NotFound(result);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<RoomResponse>.Fail($"Erreur serveur : {ex.Message}"));
+        }
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] RoomModel room)
+    public async Task<ActionResult> Create([FromBody] CreateRoomRequest request)
     {
-        if (room == null)
-            return BadRequest(ApiResponse<string>.Fail("Invalid data"));
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .ToDictionary(
+                        k => k.Key,
+                        v => v.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
+                    );
+                return BadRequest(new { status = "failed", errors });
+            }
 
-        await _roomService.CreateAsync(room);
+            var result = await _roomService.CreateAsync(request);
+            if (result.Status == "failed")
+                return BadRequest(result);
 
-        return Ok(ApiResponse<string>.Success("Created successfully"));
+            return CreatedAtAction(nameof(Get), new { id = result.Result!.RoomId }, result);
+        }
+        catch (Microsoft.EntityFrameworkCore.DbUpdateException ex)
+        {
+            var inner = ex.InnerException?.Message ?? ex.Message;
+
+            if (inner.Contains("FK_Room_Building"))
+                return BadRequest(ApiResponse<RoomResponse>.Fail("Le bâtiment spécifié n'existe pas."));
+
+            if (inner.Contains("RoomType") || inner.Contains("room_type_id"))
+                return BadRequest(ApiResponse<RoomResponse>.Fail("Le type de salle spécifié n'existe pas."));
+
+            if (inner.Contains("UNIQUE") || inner.Contains("UQ_") || inner.Contains("unique"))
+                return BadRequest(ApiResponse<RoomResponse>.Fail("Ce numéro de salle existe déjà."));
+
+            return StatusCode(500, ApiResponse<RoomResponse>.Fail($"Erreur base de données : {inner}"));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<RoomResponse>.Fail($"Erreur serveur : {ex.Message}"));
+        }
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update([FromBody] RoomModel room)
+    [HttpPut("{id}")]
+    public async Task<ActionResult> Update(string id, [FromBody] UpdateRoomRequest request)
     {
-        if (room == null)
-            return BadRequest(ApiResponse<string>.Fail("Invalid data"));
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .ToDictionary(
+                        k => k.Key,
+                        v => v.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
+                    );
+                return BadRequest(new { status = "failed", errors });
+            }
 
-        await _roomService.UpdateAsync(room);
+            var result = await _roomService.UpdateAsync(id, request);
+            if (result.Status == "failed")
+                return result.Message.Contains("introuvable") ? NotFound(result) : BadRequest(result);
 
-        return Ok(ApiResponse<string>.Success("Updated successfully"));
+            return Ok(result);
+        }
+        catch (Microsoft.EntityFrameworkCore.DbUpdateException ex)
+        {
+            var inner = ex.InnerException?.Message ?? ex.Message;
+
+            if (inner.Contains("FK_Room_Building"))
+                return BadRequest(ApiResponse<RoomResponse>.Fail("Le bâtiment spécifié n'existe pas."));
+
+            if (inner.Contains("RoomType") || inner.Contains("room_type_id"))
+                return BadRequest(ApiResponse<RoomResponse>.Fail("Le type de salle spécifié n'existe pas."));
+
+            if (inner.Contains("UNIQUE") || inner.Contains("UQ_") || inner.Contains("unique"))
+                return BadRequest(ApiResponse<RoomResponse>.Fail("Ce numéro de salle existe déjà."));
+
+            return StatusCode(500, ApiResponse<RoomResponse>.Fail($"Erreur base de données : {inner}"));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<RoomResponse>.Fail($"Erreur serveur : {ex.Message}"));
+        }
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<ActionResult<ApiResponse<string>>> Delete(string id)
     {
-        await _roomService.DeleteAsync(id);
+        try
+        {
+            var result = await _roomService.DeleteAsync(id);
+            if (result.Status == "failed")
+                return NotFound(result);
+            return Ok(result);
+        }
+        catch (Microsoft.EntityFrameworkCore.DbUpdateException ex)
+        {
+            var inner = ex.InnerException?.Message ?? ex.Message;
 
-        return Ok(ApiResponse<string>.Success("Deleted successfully"));
+            if (inner.Contains("FK_") || inner.Contains("REFERENCE"))
+                return BadRequest(ApiResponse<string>.Fail("Impossible de supprimer cette salle car elle est utilisée par des sessions."));
+
+            return StatusCode(500, ApiResponse<string>.Fail($"Erreur base de données : {inner}"));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<string>.Fail($"Erreur serveur : {ex.Message}"));
+        }
     }
 }
