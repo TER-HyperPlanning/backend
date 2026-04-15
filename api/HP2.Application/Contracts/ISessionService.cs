@@ -16,4 +16,5 @@ public interface ISessionService
     Task<bool> RoomExistsAsync(string roomId);
     Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search);
     Task<IEnumerable<SessionModel>> GetDeletedSessionsAsync();
+    Task<bool> HasGroupConflictAsync(List<string> groupIds, DateTime start, DateTime end, string? excludeSessionId = null);
 }
