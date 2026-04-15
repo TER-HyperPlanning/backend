@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260415065804_AddPendingRecoveryChanges")]
+    partial class AddPendingRecoveryChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24997,96 +25000,6 @@ namespace HP2.Infrastructure.Migrations
                             RejectionReason = "La demande ne respecte pas le délai minimum de 48h avant la séance.",
                             SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "39ece48f-ff2f-2b8d-18f5-9d1bcf9b9654",
-                            ChangeDate = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "La salle assignée manque d'équipement audiovisuel.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "6f631751-7092-f7a4-67a3-3f5fee207348",
-                            ChangeDate = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "Besoin d'une salle avec tableau numérique interactif.",
-                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "13fa738a-c876-a862-f6a6-b1abbaa39a10",
-                            ChangeDate = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "La salle prévue est trop bruyante pour un examen.",
-                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "30c8a480-a8a7-25c1-5e80-8520af130fe7",
-                            ChangeDate = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "Capacité insuffisante pour accueillir tous les étudiants du groupe.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "a195ccc6-c3f9-6286-299f-33aa8528d5a0",
-                            ChangeDate = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "La salle actuelle est inaccessible aux personnes à mobilité réduite.",
-                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "86d8738b-dc5f-6a2b-d615-a78cae1b7f8b",
-                            ChangeDate = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "Problème de ventilation dans la salle assignée.",
-                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "b36193ff-c266-86a0-a313-f04de96c3af1",
-                            ChangeDate = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "La salle est occupée par un autre événement non planifié.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "7662b4f1-01a8-88c8-269b-7debe3ffdf1a",
-                            ChangeDate = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "Besoin d'une salle avec connexion réseau filaire pour les TPs.",
-                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
-                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "c3d1e14b-b538-9489-411c-eead5180746f",
-                            ChangeDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "La salle prévue est en cours de rénovation.",
-                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
-                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
-                        },
-                        new
-                        {
-                            SessionRoomChangeId = "9d8e08ea-d574-71ba-dce2-c94b903863b7",
-                            ChangeDate = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
-                            Reason = "Besoin d'une salle plus grande pour accueillir des invités extérieurs.",
-                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
-                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
                         });
                 });
 

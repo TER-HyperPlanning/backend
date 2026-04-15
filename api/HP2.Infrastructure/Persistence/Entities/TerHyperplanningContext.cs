@@ -2885,6 +2885,127 @@ public partial class TerHyperplanningContext : DbContext
             OldRoomId = null,
             ApprovedRoomId = null,
             RejectionReason = "La demande ne respecte pas le délai minimum de 48h avant la séance."
+        },
+        // --- En attente supplémentaires (10) ---
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-007"),
+            ChangeDate = new DateTime(2026, 4, 10),
+            Reason = "La salle assignée manque d'équipement audiovisuel.",
+            TeacherId = teacherUserId6,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-008"),
+            ChangeDate = new DateTime(2026, 4, 10),
+            Reason = "Besoin d'une salle avec tableau numérique interactif.",
+            TeacherId = teacherUserId7,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-009"),
+            ChangeDate = new DateTime(2026, 4, 11),
+            Reason = "La salle prévue est trop bruyante pour un examen.",
+            TeacherId = teacherUserId8,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-010"),
+            ChangeDate = new DateTime(2026, 4, 11),
+            Reason = "Capacité insuffisante pour accueillir tous les étudiants du groupe.",
+            TeacherId = teacherUserId9,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-011"),
+            ChangeDate = new DateTime(2026, 4, 12),
+            Reason = "La salle actuelle est inaccessible aux personnes à mobilité réduite.",
+            TeacherId = teacherUserId10,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-012"),
+            ChangeDate = new DateTime(2026, 4, 12),
+            Reason = "Problème de ventilation dans la salle assignée.",
+            TeacherId = teacherUserId11,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-013"),
+            ChangeDate = new DateTime(2026, 4, 13),
+            Reason = "La salle est occupée par un autre événement non planifié.",
+            TeacherId = teacherUserId12,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-014"),
+            ChangeDate = new DateTime(2026, 4, 13),
+            Reason = "Besoin d'une salle avec connexion réseau filaire pour les TPs.",
+            TeacherId = teacherUserId13,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-015"),
+            ChangeDate = new DateTime(2026, 4, 14),
+            Reason = "La salle prévue est en cours de rénovation.",
+            TeacherId = teacherUserId14,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRoomChange
+        {
+            SessionRoomChangeId = GetStableId("seed-room-change-016"),
+            ChangeDate = new DateTime(2026, 4, 15),
+            Reason = "Besoin d'une salle plus grande pour accueillir des invités extérieurs.",
+            TeacherId = teacherUserId15,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            OldRoomId = null,
+            ApprovedRoomId = null,
+            RejectionReason = null
         }
     );
 
@@ -2957,6 +3078,187 @@ public partial class TerHyperplanningContext : DbContext
             ProposedDate = new DateTime(2026, 4, 24),
             ProposedStartTime = new TimeSpan(14, 0, 0),
             ProposedEndTime = new TimeSpan(16, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        // --- En attente supplémentaires (10) ---
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-007"),
+            ChangeDate = new DateTime(2026, 4, 10),
+            Reason = "Cours annulé en raison d'une panne informatique.",
+            TeacherId = teacherUserId6,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 21),
+            ProposedStartTime = new TimeSpan(14, 0, 0),
+            ProposedEndTime = new TimeSpan(16, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-008"),
+            ChangeDate = new DateTime(2026, 4, 11),
+            Reason = "Absence pour participation à un jury de thèse.",
+            TeacherId = teacherUserId7,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 23),
+            ProposedStartTime = new TimeSpan(10, 0, 0),
+            ProposedEndTime = new TimeSpan(12, 0, 0),
+            ProposedRoomId = ibgbiRoom1Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-009"),
+            ChangeDate = new DateTime(2026, 4, 11),
+            Reason = "Cours interrompu suite à une alerte incendie.",
+            TeacherId = teacherUserId8,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 25),
+            ProposedStartTime = new TimeSpan(14, 0, 0),
+            ProposedEndTime = new TimeSpan(16, 0, 0),
+            ProposedRoomId = ibgbiRoom2Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-010"),
+            ChangeDate = new DateTime(2026, 4, 12),
+            Reason = "Absence imprévue pour raison médicale.",
+            TeacherId = teacherUserId9,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 26),
+            ProposedStartTime = new TimeSpan(8, 0, 0),
+            ProposedEndTime = new TimeSpan(10, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-011"),
+            ChangeDate = new DateTime(2026, 4, 12),
+            Reason = "Séance annulée suite à une réunion de département imprévue.",
+            TeacherId = teacherUserId10,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 27),
+            ProposedStartTime = new TimeSpan(16, 0, 0),
+            ProposedEndTime = new TimeSpan(18, 0, 0),
+            ProposedRoomId = ibgbiRoom1Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-012"),
+            ChangeDate = new DateTime(2026, 4, 13),
+            Reason = "Cours manqué en raison d'un déplacement professionnel.",
+            TeacherId = teacherUserId11,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 4, 29),
+            ProposedStartTime = new TimeSpan(10, 0, 0),
+            ProposedEndTime = new TimeSpan(12, 0, 0),
+            ProposedRoomId = ibgbiRoom2Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-013"),
+            ChangeDate = new DateTime(2026, 4, 13),
+            Reason = "Séance annulée en raison de travaux dans le bâtiment.",
+            TeacherId = teacherUserId12,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 5, 2),
+            ProposedStartTime = new TimeSpan(14, 0, 0),
+            ProposedEndTime = new TimeSpan(16, 0, 0),
+            ProposedRoomId = roomId,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-014"),
+            ChangeDate = new DateTime(2026, 4, 14),
+            Reason = "Cours annulé suite à un problème de chauffage dans la salle.",
+            TeacherId = teacherUserId13,
+            SessionId = seedSessionId2,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 5, 4),
+            ProposedStartTime = new TimeSpan(8, 0, 0),
+            ProposedEndTime = new TimeSpan(10, 0, 0),
+            ProposedRoomId = ibgbiRoom1Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-015"),
+            ChangeDate = new DateTime(2026, 4, 14),
+            Reason = "Absence pour formation pédagogique obligatoire.",
+            TeacherId = teacherUserId14,
+            SessionId = seedSessionId3,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 5, 6),
+            ProposedStartTime = new TimeSpan(16, 0, 0),
+            ProposedEndTime = new TimeSpan(18, 0, 0),
+            ProposedRoomId = ibgbiRoom2Id,
+            CounterProposalDate = null,
+            CounterProposalStartTime = null,
+            CounterProposalEndTime = null,
+            CounterProposalRoomId = null,
+            RejectionReason = null
+        },
+        new SessionRecoveryChange
+        {
+            SessionRecoveryChangeId = GetStableId("seed-recovery-change-016"),
+            ChangeDate = new DateTime(2026, 4, 15),
+            Reason = "Séance annulée pour participation à une conférence internationale.",
+            TeacherId = teacherUserId15,
+            SessionId = seedSessionId1,
+            ChangeStatusId = changeStatusPendingId,
+            ProposedDate = new DateTime(2026, 5, 8),
+            ProposedStartTime = new TimeSpan(10, 0, 0),
+            ProposedEndTime = new TimeSpan(12, 0, 0),
             ProposedRoomId = roomId,
             CounterProposalDate = null,
             CounterProposalStartTime = null,
