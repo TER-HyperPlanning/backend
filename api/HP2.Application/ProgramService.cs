@@ -1,5 +1,7 @@
 using HP2.Application.Contracts;
 using HP2.Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using HP2.Application.Exceptions;
 
 namespace HP2.Application;
 
@@ -34,6 +36,6 @@ public class ProgramService : IProgramService
 
     public async Task DeleteProgramAsync(string id)
     {
-        await _programRepository.DeleteAsync(id);
+            await _programRepository.DeleteAsync(id);
     }
 }

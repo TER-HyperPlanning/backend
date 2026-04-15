@@ -211,7 +211,7 @@ internal class Program
         });
 
         app.UseCors(opt => opt
-            .WithOrigins("http://localhost:3000", "http://localhost:5173")
+            .WithOrigins("http://localhost","http://localhost:3000", "http://localhost:5173", "https://hyper-planning.fr")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials()); // Requis pour SignalR WebSockets
