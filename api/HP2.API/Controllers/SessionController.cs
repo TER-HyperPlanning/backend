@@ -78,7 +78,18 @@ public class SessionsController : ControllerBase
 
         if (sessionStatusId == null)
             return BadRequest(ApiResponse<SessionResponse>.Fail($"SessionStatus '{sessionStatusLabel}' not found"));
+        if (request.GroupIds != null && request.GroupIds.Any())
+        {
+            var hasConflict = await _sessionService.HasGroupConflictAsync(
+                request.GroupIds,
+                request.StartDateTime.Value,
+                request.EndDateTime.Value
+            );
 
+            if (hasConflict)
+                return Conflict(ApiResponse<SessionResponse>.Fail(
+                    "A group already has a session during this time slot"));
+        }
         var model = new SessionModel
         {
             StartDateTime = request.StartDateTime.Value,
@@ -88,7 +99,8 @@ public class SessionsController : ControllerBase
             CourseId = request.CourseId,
             SessionStatusId = sessionStatusId,
             RoomId = request.RoomId,
-            Description = request.Description
+            Description = request.Description,
+            GroupIds = request.GroupIds ?? new List<string>()
         };
 
         try
