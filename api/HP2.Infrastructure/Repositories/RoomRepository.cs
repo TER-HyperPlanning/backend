@@ -55,17 +55,19 @@ namespace HP2.Infrastructure.Persistence.Repositories
 
         public override async Task<IReadOnlyList<RoomModel>> GetAllAsync()
         {
-            return await _dbContext.Rooms
-                .Select(r => new RoomModel
-                {
-                    RoomId = r.RoomId,
-                    RoomNumber = r.RoomNumber,
-                    IsAvailable = r.IsAvailable,
-                    Capacity = r.Capacity,
-                    BuildingId = r.BuildingId,
-                    Type = Enum.Parse<RoomTypeEnum>(r.RoomTypeId)
-                })
-                .ToListAsync();
+            var rooms = await _dbContext.Rooms.ToListAsync();
+
+            return rooms.Select(r => new RoomModel
+            {
+                RoomId = r.RoomId,
+                RoomNumber = r.RoomNumber,
+                IsAvailable = r.IsAvailable,
+                Capacity = r.Capacity,
+                BuildingId = r.BuildingId,
+                Type = Enum.TryParse<RoomTypeEnum>(r.RoomTypeId, true, out var type)
+                    ? type
+                    : RoomTypeEnum.SalleTD
+            }).ToList();
         }
 
         public override async Task<RoomModel> GetByIdAsync(string id)
