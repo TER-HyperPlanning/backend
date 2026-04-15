@@ -15,7 +15,7 @@ public class ProgramRepository : RepositoryBase<ProgramModel>, IProgramRepositor
 
     public override async Task<IReadOnlyList<ProgramModel>> GetAllAsync()
     {
-        var programs = await _dbContext.Programs.AsNoTracking().ToListAsync();
+        var programs = await _dbContext.Programs.Where(p => !p.IsDeleted).AsNoTracking().ToListAsync();
         return _mapper.Map<List<ProgramModel>>(programs);
     }
 
@@ -61,7 +61,15 @@ public class ProgramRepository : RepositoryBase<ProgramModel>, IProgramRepositor
         var program = await _dbContext.Programs.FirstOrDefaultAsync(p => p.ProgramId == id);
         if (program == null) return;
 
-        _dbContext.Programs.Remove(program);
+        var tracks = await _dbContext.Tracks.Where(t => t.ProgramId == id && !t.IsDeleted).ToListAsync();
+        if (tracks.Any())
+        {
+            throw new InvalidOperationException("Cannot delete program with active tracks.");
+        }
+
+        program.IsDeleted = true;
+        program.DeletedAt = DateTime.UtcNow;
+
         await _dbContext.SaveChangesAsync();
     }
 }

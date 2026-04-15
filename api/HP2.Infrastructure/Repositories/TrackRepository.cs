@@ -133,23 +133,25 @@ namespace HP2.Infrastructure.Repositories
 
         public override async Task DeleteAsync(string id)
         {
+            var Track = await _dbContext.Tracks.FirstOrDefaultAsync(t=> t.TrackId == id);
+
+            if (Track == null) return;
+            
             var assigns = await _dbContext.Assigns
                 .Where(a => a.TrackId == id && !a.IsDeleted)
                 .ToListAsync();
 
-            if (assigns.Count > 0)
+            var delededAt = DateTime.UtcNow;
+            foreach (var assign in assigns)
             {
-                var deletedAt = DateTime.UtcNow;
-                foreach (var assign in assigns)
-                {
-                    assign.IsDeleted = true;
-                    assign.DeletedAt = deletedAt;
-                }
-
-                await _dbContext.SaveChangesAsync();
+                assign.IsDeleted = true;
+                assign.DeletedAt = delededAt;
             }
 
-            await base.DeleteAsync(id);
+            Track.IsDeleted = true;
+            Track.DeletedAt = delededAt;
+
+            await _dbContext.SaveChangesAsync();
         }
 
         async Task<bool> ITrackRepository.DeleteAsync(string id)
