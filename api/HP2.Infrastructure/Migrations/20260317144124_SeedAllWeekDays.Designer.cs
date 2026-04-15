@@ -4,6 +4,7 @@ using HP2.Infrastructure.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    partial class TerHyperplanningContextModelSnapshot : ModelSnapshot
+    [Migration("20260317144124_SeedAllWeekDays")]
+    partial class SeedAllWeekDays
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1248,26 +1251,6 @@ namespace HP2.Infrastructure.Migrations
                     b.HasIndex("UnavailableDayTypeId");
 
                     b.ToTable("UnavailableDay", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UnavailableDayId = "UD1",
-                            EndDate = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
-                            StartDate = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
-                            UnavailableDayTypeId = "TYPE1"
-                        },
-                        new
-                        {
-                            UnavailableDayId = "UD2",
-                            EndDate = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 18, 0, 0, 0),
-                            StartDate = new DateTime(2026, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 14, 0, 0, 0),
-                            UnavailableDayTypeId = "TYPE2"
-                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UnavailableDayType", b =>
@@ -1294,18 +1277,6 @@ namespace HP2.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("UnavailableDayType", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UnavailableDayTypeId = "TYPE1",
-                            Name = "Congé"
-                        },
-                        new
-                        {
-                            UnavailableDayTypeId = "TYPE2",
-                            Name = "Maladie"
-                        });
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.User", b =>

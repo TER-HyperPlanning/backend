@@ -931,7 +931,13 @@ public partial class TerHyperplanningContext : DbContext
         var teacherTitleId = GetStableId("tt-prof");
         var sessionId = GetStableId("session-001");
 
-        var weekdayId = GetStableId("wd-monday");
+        var wdMondayId = GetStableId("wd-monday");
+        var wdTuesdayId = GetStableId("wd-tuesday");
+        var wdWednesdayId = GetStableId("wd-wednesday");
+        var wdThursdayId = GetStableId("wd-thursday");
+        var wdFridayId = GetStableId("wd-friday");
+        var wdSaturdayId = GetStableId("wd-saturday");
+        var wdSundayId = GetStableId("wd-sunday");
 
         // User Role IDs
         var roleAdminId = GetStableId("role-admin");
@@ -1010,9 +1016,14 @@ public partial class TerHyperplanningContext : DbContext
 
         // WeekDays (requis par Availability)
         modelBuilder.Entity<WeekDay>().HasData(
-            new WeekDay { WeekdayId = weekdayId, OrderIndex = 1, Name = "Lundi" }
-        );
-
+           new WeekDay { WeekdayId = wdMondayId,    OrderIndex = 1, Name = "Lundi" },
+           new WeekDay { WeekdayId = wdTuesdayId,   OrderIndex = 2, Name = "Mardi" },
+           new WeekDay { WeekdayId = wdWednesdayId, OrderIndex = 3, Name = "Mercredi" },
+           new WeekDay { WeekdayId = wdThursdayId,  OrderIndex = 4, Name = "Jeudi" },
+           new WeekDay { WeekdayId = wdFridayId,    OrderIndex = 5, Name = "Vendredi" },
+           new WeekDay { WeekdayId = wdSaturdayId,  OrderIndex = 6, Name = "Samedi" },
+           new WeekDay { WeekdayId = wdSundayId,    OrderIndex = 7, Name = "Dimanche" }
+       );
         // ========================================
         // 2. USERS ET RÔLES SPÉCIFIQUES
         // ========================================
