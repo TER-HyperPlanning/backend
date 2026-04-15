@@ -10,8 +10,11 @@ namespace HP2.Infrastructure.Repositories;
 
 public class TeacherRepository : RepositoryBase<TeacherModel>, ITeacherRepository
 {
-    public TeacherRepository(TerHyperplanningContext dbContext, IMapper mapper) : base(dbContext, mapper)
+    private readonly IBCryptService _bcryptService;
+
+    public TeacherRepository(TerHyperplanningContext dbContext, IMapper mapper, IBCryptService bcryptService) : base(dbContext, mapper)
     {
+        _bcryptService = bcryptService;
     }
 
     public override async Task<IReadOnlyList<TeacherModel>> GetAllAsync()
@@ -96,12 +99,14 @@ else
         ?? throw new InvalidOperationException("No TeacherTitle found in database.");
 }
 
+    var hashedPassword = _bcryptService.HashPassword(teacherModel.Password);
+
     // Create User entity from TeacherModel
     var user = new Infrastructure.Persistence.Entities.User
     {
         UserId = Guid.NewGuid().ToString(),
         Email = teacherModel.Email,
-        Password = teacherModel.Password,
+        Password = hashedPassword,
         FirstName = teacherModel.FirstName,
         LastName = teacherModel.LastName,
         PhoneNumber = teacherModel.Phone ?? string.Empty,
