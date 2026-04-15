@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -47,11 +48,12 @@ namespace HP2.API.Controllers
 
             var room = new RoomModel
             {
+                RoomId = Guid.NewGuid().ToString(),
                 IsAvailable = request.IsAvailable,
                 Capacity = request.Capacity,
                 RoomNumber = request.RoomNumber,
                 BuildingId = request.BuildingId,
-                Type = Enum.Parse<RoomTypeEnum>(request.RoomTypeId)
+                Type = RoomTypeEnumExtensions.ParseRoomType(request.RoomTypeId)
             };
             var createdRoom = await _roomService.CreateRoomAsync(room);
             return CreatedAtAction(nameof(GetRoom), new { id = createdRoom.RoomId }, createdRoom);
@@ -66,10 +68,11 @@ namespace HP2.API.Controllers
             var existingRoom = await _roomService.GetRoomByIdAsync(id);
             if (existingRoom == null)
                 return NotFound(ApiResponse<RoomModel>.Fail($"Room with ID {id} not found"));
+            existingRoom.RoomNumber = roomDto.RoomNumber;
             existingRoom.IsAvailable = roomDto.IsAvailable;
             existingRoom.Capacity = roomDto.Capacity;
             existingRoom.BuildingId = roomDto.BuildingId;
-            existingRoom.Type = Enum.Parse<RoomTypeEnum>(roomDto.RoomTypeId);
+            existingRoom.Type = RoomTypeEnumExtensions.ParseRoomType(roomDto.RoomTypeId);
 
             await _roomService.UpdateRoomAsync(existingRoom);
 
@@ -86,8 +89,15 @@ namespace HP2.API.Controllers
                 return NotFound(ApiResponse<string>.Fail($"Room with ID {id} not found"));
             }
 
-            await _roomService.DeleteRoomAsync(id);
-            return Ok(ApiResponse<string>.Success(id.ToString(), "Room deleted successfully"));
+            try
+            {
+                await _roomService.DeleteRoomAsync(id);
+                return Ok(ApiResponse<string>.Success(id.ToString(), "Room deleted successfully"));
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ApiResponse<string>.Fail(ex.Message));
+            }
         }
     }
 }
