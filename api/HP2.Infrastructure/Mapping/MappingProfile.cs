@@ -47,7 +47,11 @@ namespace HP2.Infrastructure.Mapping
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.CreatedAt : DateTime.UtcNow))
                 .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.User != null && src.User.IsDeleted))
                 .ForMember(dest => dest.DeletedAt, opt => opt.MapFrom(src => src.User != null ? src.User.DeletedAt : null))
-                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow));
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.User != null ? src.User.UpdatedAt : DateTime.UtcNow)) 
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src =>
+                    src.User != null
+                        ? Enum.Parse<HP2.Domain.Enums.UserRole>(src.User.UserRole.Name, true)
+                        : HP2.Domain.Enums.UserRole.ADMIN));
 
             // ===== Teacher Mapping =====
             CreateMap<Teacher, TeacherModel>()

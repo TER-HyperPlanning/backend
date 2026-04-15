@@ -58,14 +58,16 @@ namespace HP2.Infrastructure.Migrations
                 name: "Notification",
                 columns: table => new
                 {
-                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
-                    title = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    message = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
+                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    title = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    message = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true, defaultValue: "General"),
+                    related_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Notifica__E059842FEA1D001E", x => x.notification_id);
+                    table.PrimaryKey("PK_Notification", x => x.notification_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -300,25 +302,27 @@ namespace HP2.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Receive",
+                name: "NotificationUser",
                 columns: table => new
                 {
-                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    user_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    NotificationsNotificationId = table.Column<string>(type: "varchar(50)", nullable: false),
+                    UsersUserId = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Receive__0BC2675F6B31FA1F", x => new { x.notification_id, x.user_id });
+                    table.PrimaryKey("PK_NotificationUser", x => new { x.NotificationsNotificationId, x.UsersUserId });
                     table.ForeignKey(
-                        name: "FK_Receive_Notif",
-                        column: x => x.notification_id,
+                        name: "FK_NotificationUser_Notification_NotificationsNotificationId",
+                        column: x => x.NotificationsNotificationId,
                         principalTable: "Notification",
-                        principalColumn: "notification_id");
+                        principalColumn: "notification_id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Receive_User",
-                        column: x => x.user_id,
+                        name: "FK_NotificationUser_User_UsersUserId",
+                        column: x => x.UsersUserId,
                         principalTable: "User",
-                        principalColumn: "user_id");
+                        principalColumn: "user_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -342,6 +346,31 @@ namespace HP2.Infrastructure.Migrations
                         column: x => x.user_id,
                         principalTable: "User",
                         principalColumn: "user_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserNotification",
+                columns: table => new
+                {
+                    user_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    notification_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    is_read = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserNotification", x => new { x.user_id, x.notification_id });
+                    table.ForeignKey(
+                        name: "FK_UserNotification_Notification",
+                        column: x => x.notification_id,
+                        principalTable: "Notification",
+                        principalColumn: "notification_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserNotification_User",
+                        column: x => x.user_id,
+                        principalTable: "User",
+                        principalColumn: "user_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -422,6 +451,7 @@ namespace HP2.Infrastructure.Migrations
                     teacher_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     session_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     change_status_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    old_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     approved_room_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     rejection_reason = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: true)
                 },
@@ -431,6 +461,11 @@ namespace HP2.Infrastructure.Migrations
                     table.ForeignKey(
                         name: "FK_RoomChange_ApprovedRoom",
                         column: x => x.approved_room_id,
+                        principalTable: "Room",
+                        principalColumn: "room_id");
+                    table.ForeignKey(
+                        name: "FK_RoomChange_OldRoom",
+                        column: x => x.old_room_id,
                         principalTable: "Room",
                         principalColumn: "room_id");
                     table.ForeignKey(
@@ -566,6 +601,7 @@ namespace HP2.Infrastructure.Migrations
                     group_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "(newid())"),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     academic_year = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    capacity = table.Column<int>(type: "int", nullable: false),
                     track_id = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -646,31 +682,67 @@ namespace HP2.Infrastructure.Migrations
                 columns: new[] { "course_id", "code", "DeletedAt", "IsDeleted", "name" },
                 values: new object[,]
                 {
+                    { "00fc454a-2b50-14df-3a8d-ab6e9c6e5db3", "AI_DL", null, false, "Deep Learning" },
                     { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "DATA_BDD", null, false, "Bases de Données Avancées" },
                     { "02e0e667-183a-1225-d0ed-19fe4c25f963", "GEST_FIN", null, false, "Gestion Financière" },
                     { "03241339-1186-a90f-33bd-a9850f603619", "LANG_ANG", null, false, "Anglais" },
+                    { "07595105-930f-4d59-d0fa-d85188478354", "AI_GEN", null, false, "Modeles generatifs" },
                     { "083b85af-c2e8-d7eb-0cca-13cbad93f7df", "UNIV_PRESENCE", null, false, "PRESENCE UNIVERSITAIRE" },
+                    { "0b419404-e100-c72b-18c7-099a0f2edb6b", "CNS_FORMAL", null, false, "Methodes formelles avancees" },
+                    { "0dd9b509-338b-9cc0-520a-83f63afab2ad", "ID_ETL", null, false, "Processus ETL" },
+                    { "17d3c464-b968-6e0a-611f-f1c73a654a42", "ID_DM", null, false, "Fouille de donnees" },
+                    { "17e5b39c-0518-7e5a-e4f8-eed255ecad07", "CNS_MOPT", null, false, "Optimisation multicritere" },
+                    { "1971bafc-4681-fb29-95f8-a4867be4a148", "AI_ETH", null, false, "IA ethique et biais" },
                     { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "PRO_MEM", null, false, "Rapport d'activité / Mémoire" },
                     { "24027d5d-e151-9a00-fd19-ac11d27b8189", "INFO_TECH", null, false, "Technologies Logicielles" },
                     { "2af630c1-de0d-944f-0b87-a73f1c90644f", "CNS_INFOCOM", null, false, "Information et communication" },
                     { "2d4557a7-a48d-9926-3e2b-bc820396b11a", "INFO_SAD", null, false, "Systèmes et Applications Distribués" },
                     { "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", "INFO_COO", null, false, "Conception Orientée Objet de Logiciel" },
                     { "3448ddd0-694c-35d0-f117-7d5834e6ca81", "DATA_INNOV", null, false, "Implémentation du Projet Innovation" },
+                    { "3515843a-8ef1-a67b-f131-d7a06ebf4ea9", "MPRI_PROOF", null, false, "Preuve automatique" },
+                    { "37772dd0-6cb5-abe3-f68f-603aeff4e9cc", "ID_VIZ", null, false, "Visualisation de donnees" },
+                    { "390875be-f499-3e3c-ee0b-a23eae042ef5", "ID_DATAENG", null, false, "Data Engineering" },
                     { "3aed7e82-31b6-d05a-3f46-f2ef085d313e", "CNS_SPEC_VERIF", null, false, "Spécification et vérification formelles" },
                     { "3b835d91-4f08-07ef-d4d5-575947097601", "INFO_RO", null, false, "Recherche Opérationnelle" },
+                    { "409a987c-9e4f-c656-c841-33c2142ee3c6", "CNS_ENERGY", null, false, "Energie et eco-conception" },
+                    { "4872c0a4-ac98-30d3-447c-8abc544c04e4", "AI_NLP", null, false, "Traitement du langage naturel" },
                     { "49ba4385-063d-7b8d-5f3f-aa1c7f573747", "DATA_CRYPTO", null, false, "Cryptographie et Sécurité" },
+                    { "5c8b656d-c5a6-224e-422e-33389e0484d8", "CNS_PETRI", null, false, "Reseaux de Petri" },
+                    { "677d60f2-235f-3807-ab76-925a568d26aa", "ID_BI", null, false, "Business Intelligence" },
+                    { "6f542ec3-1145-1afd-feac-eead669f4c7f", "ID_BIGDATA", null, false, "Architectures Big Data" },
+                    { "717888c0-9648-4fdd-5755-fcbd360bf01a", "MPRI_LOG", null, false, "Logique et preuves" },
                     { "731ac32d-6ea9-f15e-7ca2-34f99e840bd3", "DATA_TER", null, false, "Travaux d'étude et de recherche (TER)" },
+                    { "7b492dd9-5842-ec5e-ac91-33f190f056f4", "CNS_RL", null, false, "RL pour systemes autonomes" },
+                    { "817257f0-a360-d2b9-5b5a-2dff98f7dfc1", "MPRI_AUTO", null, false, "Theorie des automates" },
+                    { "8312c651-0fee-4575-e7d8-e33c140eb181", "CNS_PERF", null, false, "Modeles de performance" },
+                    { "8c4acefa-d830-e46c-24d4-efd8cb6b5e6d", "MPRI_COMP", null, false, "Calculabilite et complexite" },
                     { "93b97065-831b-a4dc-8179-be986f0772b8", "INFO_ICL", null, false, "Ingénierie des Composants Logiciels" },
+                    { "93c12fec-accc-f001-a0f4-5cad8826e3e3", "MPRI_QUANT", null, false, "Algorithmique quantique" },
+                    { "a6786ef9-97e2-d884-7eaa-0494161fe58b", "ID_MODEL", null, false, "Modelisation decisionnelle" },
+                    { "a69040c4-9274-b7b9-0dac-9e074a10b498", "ID_DW", null, false, "Entrepots de donnees" },
+                    { "b1849be5-841f-4061-ac53-cf159bd2c5ee", "ID_GOUV", null, false, "Gouvernance des donnees" },
+                    { "b78c08e8-350c-50e9-b24c-e4703814b926", "MPRI_SEM", null, false, "Semantique des langages" },
+                    { "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b", "ID_PROJ", null, false, "Projet data et BI" },
                     { "c0452911-4948-9cb2-aed9-7b949c0b6442", "CNS_MULTI_AGENTS", null, false, "Modèles et méthodes pour les systèmes multi-agents" },
+                    { "c3a28216-3d8a-bbb5-7582-948cb19aea55", "AI_SCIML", null, false, "Apprentissage scientifique" },
                     { "c3cd3947-214d-3130-b938-a5d19a0e8eaa", "CNS_MSED", null, false, "Modélisation des systèmes à événements discrets" },
+                    { "c979f8f8-0b46-844f-8df2-d15ff4723cb1", "AI_XAI", null, false, "Explicabilite des modeles IA" },
                     { "cf512e7a-117b-71d0-a07f-43e743dad7eb", "CNS_ML", null, false, "Machine Learning" },
+                    { "d04bacfe-0515-8b72-d4c1-8d9e121cb9dc", "MPRI_TYPE", null, false, "Theorie des types" },
                     { "d059db13-ac91-760c-5bf7-6c442946e7bf", "DATA_ANALYSE", null, false, "Analyse de Données" },
+                    { "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b", "ID_MLOPS", null, false, "MLOps et industrialisation IA" },
+                    { "d5e74651-cc17-5b46-1c04-3dcaa3b3b3ef", "CNS_AUTO", null, false, "Systemes autonomiques" },
+                    { "d95c6860-d43c-00e1-2de0-30aa7a7bd3d5", "AI_RL", null, false, "Apprentissage par renforcement" },
                     { "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d", "DATA_STATS", null, false, "Statistiques Appliquées aux Données" },
+                    { "e6c511cb-a666-7fc3-606f-171f3d3cf2bd", "ID_IADEC", null, false, "IA pour la decision" },
                     { "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", "GEST_DEV", null, false, "Développement Soutenable" },
                     { "e9cbe024-5789-9dca-e8c8-418b70f033cb", "CNS_HPC_INTRO", null, false, "Introduction à l'informatique haute performance" },
+                    { "ee460e09-467d-3e85-ecf3-ac884b2a8d64", "AI_STAT", null, false, "Apprentissage statistique" },
                     { "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0", "DROIT_CONT", null, false, "Droit des Contrats" },
                     { "f8c83971-d090-c665-8911-cd645e1a3c87", "PRO_STAGE", null, false, "Stage M1" },
-                    { "fb30b659-6817-4099-e7cb-d7c254532603", "CNS_ALGO_ADV", null, false, "Algorithmique avancée" }
+                    { "fb30b659-6817-4099-e7cb-d7c254532603", "CNS_ALGO_ADV", null, false, "Algorithmique avancée" },
+                    { "fe021916-971e-c41a-ca7f-f5a34ea01d65", "MPRI_CRYPT", null, false, "Cryptologie fondamentale" },
+                    { "ffa9b692-95c1-3ca9-efc6-0dba54b978b2", "CNS_GAME", null, false, "Theorie des jeux" }
                 });
 
             migrationBuilder.InsertData(
@@ -2247,15 +2319,27 @@ namespace HP2.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "SessionRecoveryChange",
                 columns: new[] { "session_recovery_change_id", "change_date", "change_status_id", "counter_proposal_date", "counter_proposal_end_time", "counter_proposal_room_id", "counter_proposal_start_time", "proposed_date", "proposed_end_time", "proposed_room_id", "proposed_start_time", "reason", "rejection_reason", "session_id", "teacher_id" },
-                values: new object[] { "81b21082-3ff6-6699-2b66-67d6f6ead3e7", new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Le cours a été annulé, il faut le rattraper.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "455c6918-8f55-8171-e3b6-573e17977cfc" });
+                values: new object[,]
+                {
+                    { "33cecfa5-b149-cfc6-bb5d-597f81dbff5f", new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", null, null, null, null, new DateTime(2026, 4, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Cours reporté en raison d'une réunion pédagogique.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "14185a87-c07d-c0db-e37b-536e871528f2" },
+                    { "3f8e497b-6213-d701-5cb4-c79f33d63206", new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", new TimeSpan(0, 10, 0, 0, 0), new DateTime(2026, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 18, 0, 0, 0), "5863a804-6ac2-3f05-38ed-472541726740", new TimeSpan(0, 16, 0, 0, 0), "Cours annulé pour cause de conférence externe.", "Le créneau proposé est déjà réservé. Une contre-proposition a été soumise.", "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
+                    { "7b8f94b3-7dfc-f396-54c8-1d716494c73b", new DateTime(2026, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", null, null, null, null, new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 10, 0, 0, 0), "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", new TimeSpan(0, 8, 0, 0, 0), "Absence de l'enseignant pour maladie, cours à récupérer.", null, "f00894af-9f60-232f-5012-c431bbcddee1", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
+                    { "7d523e68-1971-6f1c-971d-1b89e8681d48", new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", new DateTime(2026, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), "5863a804-6ac2-3f05-38ed-472541726740", new TimeSpan(0, 10, 0, 0, 0), new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 10, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 8, 0, 0, 0), "Absence imprévue de l'enseignant.", "La date proposée est en dehors de la période académique autorisée.", "f00894af-9f60-232f-5012-c431bbcddee1", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "81b21082-3ff6-6699-2b66-67d6f6ead3e7", new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 16, 0, 0, 0), "02bcf600-5d44-cca7-8b68-e763b00a6339", new TimeSpan(0, 14, 0, 0, 0), "Le cours a été annulé, il faut le rattraper.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "adf8ad91-08a7-1c06-fd30-780a57b88a16", new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, null, null, null, new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 12, 0, 0, 0), "5863a804-6ac2-3f05-38ed-472541726740", new TimeSpan(0, 10, 0, 0, 0), "Cours manqué suite à une grève des transports.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
+                });
 
             migrationBuilder.InsertData(
                 table: "SessionRoomChange",
-                columns: new[] { "session_room_change_id", "approved_room_id", "change_date", "change_status_id", "reason", "rejection_reason", "session_id", "teacher_id" },
+                columns: new[] { "session_room_change_id", "approved_room_id", "change_date", "change_status_id", "old_room_id", "reason", "rejection_reason", "session_id", "teacher_id" },
                 values: new object[,]
                 {
-                    { "863cdc3c-e440-3359-c69c-777871286814", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", "La salle actuelle est trop petite pour accueillir tous les étudiants.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "e2f35a55-7db2-4df9-3bbc-17e566a55b03", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", "Équipement audiovisuel non disponible dans la salle actuelle.", "Aucune salle compatible n'est disponible sur ce créneau.", "f00894af-9f60-232f-5012-c431bbcddee1", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" }
+                    { "034731de-795a-931a-1236-11bc7d070e41", "5863a804-6ac2-3f05-38ed-472541726740", new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", "02bcf600-5d44-cca7-8b68-e763b00a6339", "Besoin d'une salle avec projecteur fonctionnel.", null, "157d47fc-fd47-d6c6-b759-86b4049e4fff", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
+                    { "5e8aa4d3-a635-0032-b8b2-dcbd89ad3c80", null, new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", null, "Demande de salle plus grande pour un exposé.", "La demande ne respecte pas le délai minimum de 48h avant la séance.", "157d47fc-fd47-d6c6-b759-86b4049e4fff", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
+                    { "863cdc3c-e440-3359-c69c-777871286814", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, "La salle actuelle est trop petite pour accueillir tous les étudiants.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "a9b73b93-27ba-a3cf-67d9-bff2cb9bf0b9", null, new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "6d1cab45-5c87-c373-3fd2-91f518c946bc", null, "Problème de climatisation dans la salle assignée.", null, "f00894af-9f60-232f-5012-c431bbcddee1", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
+                    { "e2f35a55-7db2-4df9-3bbc-17e566a55b03", null, new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "d16d1a05-a70b-a5f5-6d3a-8013b24626d7", null, "Équipement audiovisuel non disponible dans la salle actuelle.", "Aucune salle compatible n'est disponible sur ce créneau.", "f00894af-9f60-232f-5012-c431bbcddee1", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
+                    { "f8a45eb0-a74b-8cfb-a6b6-82cc91c3dcc0", "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9", new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "df4c997e-2e20-921e-98e9-906a9ecf8813", "5863a804-6ac2-3f05-38ed-472541726740", "La salle prévue est occupée par un autre cours.", null, "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4", "14185a87-c07d-c0db-e37b-536e871528f2" }
                 });
 
             migrationBuilder.InsertData(
@@ -3557,18 +3641,18 @@ namespace HP2.Infrastructure.Migrations
                 columns: new[] { "track_id", "DeletedAt", "Description", "IsDeleted", "Lieu", "name", "program_id", "teacher_id" },
                 values: new object[,]
                 {
-                    { "16e8879d-d190-3771-1b74-ca91c2f021fe", null, null, false, null, "M2 Ingénierie Logicielle pour la Science des Données", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, null, false, null, "M1 Ingénierie Logicielle pour la Science des Données - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, null, false, null, "M2 Artificial Intelligence", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, null, false, null, "M1 Master parisien de recherche en Informatique (MPRI)", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, null, false, null, "M1 Artificial Intelligence", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, null, false, null, "M1 Ingénierie Logicielle pour la Science des Données", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "86de5246-d552-d203-3cfb-450e00d82845", null, null, false, null, "M2 Informatique Décisionnelle - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "900f1499-bb04-690c-9394-eeafda3848a4", null, null, false, null, "M1 Computer and Network Systems", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, null, false, null, "M1 Informatique Décisionnelle - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, null, false, null, "M2 Ingénierie Logicielle pour la Science des Données - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, null, false, null, "M2 Computer and Network Systems (CNS) - Systèmes Autonomiques", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "455c6918-8f55-8171-e3b6-573e17977cfc" },
-                    { "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, null, false, null, "M2 Master parisien de recherche en Informatique (MPRI)", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "455c6918-8f55-8171-e3b6-573e17977cfc" }
+                    { "16e8879d-d190-3771-1b74-ca91c2f021fe", null, "M2 en initiale preparant a la conception de plateformes logicielles pour la science des donnees.", false, "Campus Luminy", "M2 Ingénierie Logicielle pour la Science des Données", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "63d58b13-c957-6ee8-4ed6-303e20d09973" },
+                    { "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, "Parcours M1 en apprentissage centre sur l ingenierie logicielle et la valorisation des donnees.", false, "Campus Saint-Charles", "M1 Ingénierie Logicielle pour la Science des Données - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31" },
+                    { "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, "M2 specialise en IA appliquee, deep learning et ingenierie des systemes intelligents.", false, "Campus Etoile", "M2 Artificial Intelligence", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "d5ccafec-e254-50d8-39ec-9d9684f49b5e" },
+                    { "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, "M1 de recherche en informatique oriente methodes formelles, algorithmique et modelisation avancee.", false, "Campus Cinq Avenues", "M1 Master parisien de recherche en Informatique (MPRI)", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "26d3840f-0826-0efe-7045-e23034efc8cd" },
+                    { "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, "M1 dedie aux bases de l intelligence artificielle, de l apprentissage automatique et de l optimisation.", false, "Campus Etoile", "M1 Artificial Intelligence", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "1dbea3b9-23c2-3605-d494-ca1c7124c184" },
+                    { "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, "Parcours M1 en initiale visant les fondamentaux de l ingenierie logicielle data-driven.", false, "Campus Luminy", "M1 Ingénierie Logicielle pour la Science des Données", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "ff7eb421-56b5-3bbe-779c-355ceed7246b" },
+                    { "86de5246-d552-d203-3cfb-450e00d82845", null, "Specialisation M2 en alternance sur la modelisation, la BI et les systemes d aide a la decision.", false, "Campus Saint-Charles", "M2 Informatique Décisionnelle - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "14185a87-c07d-c0db-e37b-536e871528f2" },
+                    { "900f1499-bb04-690c-9394-eeafda3848a4", null, "M1 axe sur les reseaux, systemes distribues et infrastructures de calcul.", false, "Campus Etoile", "M1 Computer and Network Systems", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "bde95391-58fe-5b55-3f3a-b92d9fdcc75d" },
+                    { "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, "Formation M1 orientee pilotage de la decision et analytique des donnees en alternance.", false, "Campus Saint-Charles", "M1 Informatique Décisionnelle - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "455c6918-8f55-8171-e3b6-573e17977cfc" },
+                    { "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, "M2 en apprentissage focalise sur l architecture logicielle, la qualite et les pipelines data.", false, "Campus Luminy", "M2 Ingénierie Logicielle pour la Science des Données - Apprentissage", "1c6c23e0-16b5-6208-2733-cf363a81e9d2", "d6b75c65-0e4e-21d2-1215-b541eb0ebef5" },
+                    { "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, "M2 sur les systemes autonomiques, l orchestration de services et la supervision distribuee.", false, "Campus Cinq Avenues", "M2 Computer and Network Systems (CNS) - Systèmes Autonomiques", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "59bf4bd2-f6ce-9fa2-7070-b362983f9148" },
+                    { "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, "M2 recherche pour approfondir les thematiques scientifiques en informatique theorique et appliquee.", false, "Campus Cinq Avenues", "M2 Master parisien de recherche en Informatique (MPRI)", "64cb6778-fd4f-ba09-1402-010a1e0e30ce", "de87aa7f-ad79-cfc9-2c65-6648889c76fd" }
                 });
 
             migrationBuilder.InsertData(
@@ -3576,6 +3660,16 @@ namespace HP2.Infrastructure.Migrations
                 columns: new[] { "course_id", "track_id", "DeletedAt", "hourly_volume" },
                 values: new object[,]
                 {
+                    { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 36 },
+                    { "24027d5d-e151-9a00-fd19-ac11d27b8189", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 36 },
+                    { "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 24 },
+                    { "390875be-f499-3e3c-ee0b-a23eae042ef5", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 36 },
+                    { "49ba4385-063d-7b8d-5f3f-aa1c7f573747", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 24 },
+                    { "6f542ec3-1145-1afd-feac-eead669f4c7f", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 24 },
+                    { "93b97065-831b-a4dc-8179-be986f0772b8", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 36 },
+                    { "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 18 },
+                    { "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 24 },
+                    { "f8c83971-d090-c665-8911-cd645e1a3c87", "16e8879d-d190-3771-1b74-ca91c2f021fe", null, 0 },
                     { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, 36 },
                     { "02e0e667-183a-1225-d0ed-19fe4c25f963", "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, 36 },
                     { "03241339-1186-a90f-33bd-a9850f603619", "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, 18 },
@@ -3592,6 +3686,36 @@ namespace HP2.Infrastructure.Migrations
                     { "dd9ec16b-bbf2-e937-3ef4-059bf6b9091d", "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, 36 },
                     { "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, 12 },
                     { "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0", "34d303a1-eecd-13ed-de46-36c8efe0f0d5", null, 36 },
+                    { "00fc454a-2b50-14df-3a8d-ab6e9c6e5db3", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 36 },
+                    { "07595105-930f-4d59-d0fa-d85188478354", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 36 },
+                    { "1971bafc-4681-fb29-95f8-a4867be4a148", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 18 },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 0 },
+                    { "390875be-f499-3e3c-ee0b-a23eae042ef5", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 24 },
+                    { "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 18 },
+                    { "c3a28216-3d8a-bbb5-7582-948cb19aea55", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 24 },
+                    { "c979f8f8-0b46-844f-8df2-d15ff4723cb1", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 24 },
+                    { "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 24 },
+                    { "d95c6860-d43c-00e1-2de0-30aa7a7bd3d5", "4a9d5b23-9f25-3816-a32e-0f206d9b4bb6", null, 24 },
+                    { "03241339-1186-a90f-33bd-a9850f603619", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 18 },
+                    { "3515843a-8ef1-a67b-f131-d7a06ebf4ea9", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 24 },
+                    { "717888c0-9648-4fdd-5755-fcbd360bf01a", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 36 },
+                    { "817257f0-a360-d2b9-5b5a-2dff98f7dfc1", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 36 },
+                    { "8c4acefa-d830-e46c-24d4-efd8cb6b5e6d", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 36 },
+                    { "93c12fec-accc-f001-a0f4-5cad8826e3e3", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 24 },
+                    { "b78c08e8-350c-50e9-b24c-e4703814b926", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 36 },
+                    { "d04bacfe-0515-8b72-d4c1-8d9e121cb9dc", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 24 },
+                    { "f8c83971-d090-c665-8911-cd645e1a3c87", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 0 },
+                    { "fe021916-971e-c41a-ca7f-f5a34ea01d65", "4defa7f6-3ce5-c643-a522-861cf94ee2e7", null, 24 },
+                    { "00fc454a-2b50-14df-3a8d-ab6e9c6e5db3", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 36 },
+                    { "03241339-1186-a90f-33bd-a9850f603619", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 18 },
+                    { "07595105-930f-4d59-d0fa-d85188478354", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 24 },
+                    { "1971bafc-4681-fb29-95f8-a4867be4a148", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 18 },
+                    { "4872c0a4-ac98-30d3-447c-8abc544c04e4", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 24 },
+                    { "c3a28216-3d8a-bbb5-7582-948cb19aea55", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 24 },
+                    { "c979f8f8-0b46-844f-8df2-d15ff4723cb1", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 18 },
+                    { "d95c6860-d43c-00e1-2de0-30aa7a7bd3d5", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 24 },
+                    { "ee460e09-467d-3e85-ecf3-ac884b2a8d64", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 36 },
+                    { "f8c83971-d090-c665-8911-cd645e1a3c87", "5942bd81-7485-6e92-c7e6-66ad363c6bee", null, 0 },
                     { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, 36 },
                     { "02e0e667-183a-1225-d0ed-19fe4c25f963", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, 36 },
                     { "03241339-1186-a90f-33bd-a9850f603619", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, 18 },
@@ -3608,6 +3732,16 @@ namespace HP2.Infrastructure.Migrations
                     { "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, 20 },
                     { "f4bf5287-38ea-e0ad-d6de-8c9aa20888a0", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, 36 },
                     { "f8c83971-d090-c665-8911-cd645e1a3c87", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3", null, 0 },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "86de5246-d552-d203-3cfb-450e00d82845", null, 0 },
+                    { "3448ddd0-694c-35d0-f117-7d5834e6ca81", "86de5246-d552-d203-3cfb-450e00d82845", null, 18 },
+                    { "37772dd0-6cb5-abe3-f68f-603aeff4e9cc", "86de5246-d552-d203-3cfb-450e00d82845", null, 24 },
+                    { "390875be-f499-3e3c-ee0b-a23eae042ef5", "86de5246-d552-d203-3cfb-450e00d82845", null, 36 },
+                    { "3b835d91-4f08-07ef-d4d5-575947097601", "86de5246-d552-d203-3cfb-450e00d82845", null, 24 },
+                    { "6f542ec3-1145-1afd-feac-eead669f4c7f", "86de5246-d552-d203-3cfb-450e00d82845", null, 36 },
+                    { "b1849be5-841f-4061-ac53-cf159bd2c5ee", "86de5246-d552-d203-3cfb-450e00d82845", null, 18 },
+                    { "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b", "86de5246-d552-d203-3cfb-450e00d82845", null, 18 },
+                    { "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b", "86de5246-d552-d203-3cfb-450e00d82845", null, 24 },
+                    { "e6c511cb-a666-7fc3-606f-171f3d3cf2bd", "86de5246-d552-d203-3cfb-450e00d82845", null, 36 },
                     { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "900f1499-bb04-690c-9394-eeafda3848a4", null, 36 },
                     { "03241339-1186-a90f-33bd-a9850f603619", "900f1499-bb04-690c-9394-eeafda3848a4", null, 18 },
                     { "24027d5d-e151-9a00-fd19-ac11d27b8189", "900f1499-bb04-690c-9394-eeafda3848a4", null, 36 },
@@ -3624,17 +3758,57 @@ namespace HP2.Infrastructure.Migrations
                     { "d059db13-ac91-760c-5bf7-6c442946e7bf", "900f1499-bb04-690c-9394-eeafda3848a4", null, 36 },
                     { "e7d426e1-99eb-6a9f-b9b5-99d9b853e3f5", "900f1499-bb04-690c-9394-eeafda3848a4", null, 20 },
                     { "e9cbe024-5789-9dca-e8c8-418b70f033cb", "900f1499-bb04-690c-9394-eeafda3848a4", null, 36 },
-                    { "fb30b659-6817-4099-e7cb-d7c254532603", "900f1499-bb04-690c-9394-eeafda3848a4", null, 36 }
+                    { "fb30b659-6817-4099-e7cb-d7c254532603", "900f1499-bb04-690c-9394-eeafda3848a4", null, 36 },
+                    { "03241339-1186-a90f-33bd-a9850f603619", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 18 },
+                    { "0dd9b509-338b-9cc0-520a-83f63afab2ad", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 24 },
+                    { "17d3c464-b968-6e0a-611f-f1c73a654a42", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 36 },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 0 },
+                    { "37772dd0-6cb5-abe3-f68f-603aeff4e9cc", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 24 },
+                    { "677d60f2-235f-3807-ab76-925a568d26aa", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 36 },
+                    { "a6786ef9-97e2-d884-7eaa-0494161fe58b", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 36 },
+                    { "a69040c4-9274-b7b9-0dac-9e074a10b498", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 36 },
+                    { "b1849be5-841f-4061-ac53-cf159bd2c5ee", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 18 },
+                    { "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b", "b4f9989d-1aa6-eb1c-b68d-f02b595a4e91", null, 18 },
+                    { "014c457e-a48a-d25e-7781-d5e483cb3dd9", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 36 },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 0 },
+                    { "24027d5d-e151-9a00-fd19-ac11d27b8189", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 36 },
+                    { "2f451339-dd0d-df32-93e6-c6e1eeb5e5ba", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 24 },
+                    { "390875be-f499-3e3c-ee0b-a23eae042ef5", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 36 },
+                    { "49ba4385-063d-7b8d-5f3f-aa1c7f573747", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 24 },
+                    { "6f542ec3-1145-1afd-feac-eead669f4c7f", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 24 },
+                    { "93b97065-831b-a4dc-8179-be986f0772b8", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 36 },
+                    { "ba7bbdb3-2cbd-3666-d94a-1e531af6b85b", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 18 },
+                    { "d28f7931-615e-25d2-5fa2-a6e6e9f21f3b", "ce0e0c1e-322e-f894-4476-dc9682a4bdea", null, 24 },
+                    { "0b419404-e100-c72b-18c7-099a0f2edb6b", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "17e5b39c-0518-7e5a-e4f8-eed255ecad07", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 0 },
+                    { "409a987c-9e4f-c656-c841-33c2142ee3c6", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 18 },
+                    { "5c8b656d-c5a6-224e-422e-33389e0484d8", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "7b492dd9-5842-ec5e-ac91-33f190f056f4", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "8312c651-0fee-4575-e7d8-e33c140eb181", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 36 },
+                    { "c0452911-4948-9cb2-aed9-7b949c0b6442", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "cf512e7a-117b-71d0-a07f-43e743dad7eb", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "d5e74651-cc17-5b46-1c04-3dcaa3b3b3ef", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 36 },
+                    { "ffa9b692-95c1-3ca9-efc6-0dba54b978b2", "e06ac778-10f0-5ca0-04e6-0df679676eb3", null, 24 },
+                    { "1cb2dee1-fb12-6e48-69ea-2be4c527cbf0", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 0 },
+                    { "3515843a-8ef1-a67b-f131-d7a06ebf4ea9", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 36 },
+                    { "3aed7e82-31b6-d05a-3f46-f2ef085d313e", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 24 },
+                    { "731ac32d-6ea9-f15e-7ca2-34f99e840bd3", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 18 },
+                    { "8c4acefa-d830-e46c-24d4-efd8cb6b5e6d", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 24 },
+                    { "93c12fec-accc-f001-a0f4-5cad8826e3e3", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 24 },
+                    { "b78c08e8-350c-50e9-b24c-e4703814b926", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 24 },
+                    { "d04bacfe-0515-8b72-d4c1-8d9e121cb9dc", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 36 },
+                    { "fe021916-971e-c41a-ca7f-f5a34ea01d65", "ec7f0b9a-dbe5-a250-41e3-d2857ef80ccf", null, 24 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Group",
-                columns: new[] { "group_id", "academic_year", "name", "track_id" },
+                columns: new[] { "group_id", "academic_year", "capacity", "name", "track_id" },
                 values: new object[,]
                 {
-                    { "57bf1149-8880-c27c-d603-3546214d03a8", "2025-2026", "Groupe A - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
-                    { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "2025-2026", "Groupe B - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
-                    { "e61277a9-9d07-5b53-e623-528bf88a6962", "2025-2026", "Groupe A - M1 CNS", "900f1499-bb04-690c-9394-eeafda3848a4" }
+                    { "57bf1149-8880-c27c-d603-3546214d03a8", "2025-2026", 0, "Groupe A - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
+                    { "64b93cdc-56f3-906f-6e4c-2adfe2184501", "2025-2026", 0, "Groupe B - M1 ILSD", "7e30cfbb-d683-d9c0-bbd0-e7bf86f6bcd3" },
+                    { "e61277a9-9d07-5b53-e623-528bf88a6962", "2025-2026", 0, "Groupe A - M1 CNS", "900f1499-bb04-690c-9394-eeafda3848a4" }
                 });
 
             migrationBuilder.InsertData(
@@ -5085,9 +5259,9 @@ namespace HP2.Infrastructure.Migrations
                 column: "track_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Receive_user_id",
-                table: "Receive",
-                column: "user_id");
+                name: "IX_NotificationUser_UsersUserId",
+                table: "NotificationUser",
+                column: "UsersUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Room_building_id",
@@ -5165,6 +5339,11 @@ namespace HP2.Infrastructure.Migrations
                 name: "IX_SessionRoomChange_change_status_id",
                 table: "SessionRoomChange",
                 column: "change_status_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SessionRoomChange_old_room_id",
+                table: "SessionRoomChange",
+                column: "old_room_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SessionRoomChange_session_id",
@@ -5248,6 +5427,11 @@ namespace HP2.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserNotification_notification_id",
+                table: "UserNotification",
+                column: "notification_id");
+
+            migrationBuilder.CreateIndex(
                 name: "UQ__UserRole__72E12F1B2D3E741A",
                 table: "UserRole",
                 column: "name",
@@ -5282,7 +5466,7 @@ namespace HP2.Infrastructure.Migrations
                 name: "Availability");
 
             migrationBuilder.DropTable(
-                name: "Receive");
+                name: "NotificationUser");
 
             migrationBuilder.DropTable(
                 name: "SessionRecoveryChange");
@@ -5300,13 +5484,13 @@ namespace HP2.Infrastructure.Migrations
                 name: "UnavailableDay");
 
             migrationBuilder.DropTable(
+                name: "UserNotification");
+
+            migrationBuilder.DropTable(
                 name: "AvailabilityGroup");
 
             migrationBuilder.DropTable(
                 name: "WeekDay");
-
-            migrationBuilder.DropTable(
-                name: "Notification");
 
             migrationBuilder.DropTable(
                 name: "ChangeStatus");
@@ -5319,6 +5503,9 @@ namespace HP2.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "UnavailableDayType");
+
+            migrationBuilder.DropTable(
+                name: "Notification");
 
             migrationBuilder.DropTable(
                 name: "Track");

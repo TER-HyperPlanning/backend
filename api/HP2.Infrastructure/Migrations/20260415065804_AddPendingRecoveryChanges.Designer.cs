@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP2.Infrastructure.Migrations
 {
     [DbContext(typeof(TerHyperplanningContext))]
-    [Migration("20260412195240_AddCapacityFieldToGroup")]
-    partial class AddCapacityFieldToGroup
+    [Migration("20260415065804_AddPendingRecoveryChanges")]
+    partial class AddPendingRecoveryChanges
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -7398,34 +7398,44 @@ namespace HP2.Infrastructure.Migrations
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Notification", b =>
                 {
                     b.Property<string>("NotificationId")
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
-                        .HasColumnName("notification_id")
-                        .HasDefaultValueSql("(newid())");
+                        .HasColumnName("notification_id");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at")
                         .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
                         .HasColumnName("message");
+
+                    b.Property<string>("RelatedId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("related_id");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)")
                         .HasColumnName("title");
 
+                    b.Property<string>("Type")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("General")
+                        .HasColumnName("type");
+
                     b.HasKey("NotificationId")
-                        .HasName("PK__Notifica__E059842FEA1D001E");
+                        .HasName("PK_Notification");
 
                     b.ToTable("Notification", (string)null);
                 });
@@ -24645,6 +24655,211 @@ namespace HP2.Infrastructure.Migrations
                             Reason = "Le cours a été annulé, il faut le rattraper.",
                             SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
                             TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "adf8ad91-08a7-1c06-fd30-780a57b88a16",
+                            ChangeDate = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            ProposedStartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Reason = "Cours manqué suite à une grève des transports.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "7b8f94b3-7dfc-f396-54c8-1d716494c73b",
+                            ChangeDate = new DateTime(2026, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
+                            ProposedDate = new DateTime(2026, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            ProposedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Reason = "Absence de l'enseignant pour maladie, cours à récupérer.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "33cecfa5-b149-cfc6-bb5d-597f81dbff5f",
+                            ChangeDate = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
+                            ProposedDate = new DateTime(2026, 4, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Reason = "Cours reporté en raison d'une réunion pédagogique.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "2094bf3b-43b9-5ba4-be7a-e41dccb472d3",
+                            ChangeDate = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Reason = "Cours annulé en raison d'une panne informatique.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "63d58b13-c957-6ee8-4ed6-303e20d09973"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "13cbeb74-0d1a-3748-93e6-df6266a81952",
+                            ChangeDate = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            ProposedStartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Reason = "Absence pour participation à un jury de thèse.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "1dbea3b9-23c2-3605-d494-ca1c7124c184"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "8e6fe33d-7b31-dcc9-153f-1b918148e8b4",
+                            ChangeDate = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            ProposedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Reason = "Cours interrompu suite à une alerte incendie.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "bde95391-58fe-5b55-3f3a-b92d9fdcc75d"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "83937ad0-dba1-ba1f-7efd-0a56482244e6",
+                            ChangeDate = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Reason = "Absence imprévue pour raison médicale.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "26d3840f-0826-0efe-7045-e23034efc8cd"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "baef5bd0-85de-8684-4b8b-4be6af478d7d",
+                            ChangeDate = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 18, 0, 0, 0),
+                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            ProposedStartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Reason = "Séance annulée suite à une réunion de département imprévue.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "d5ccafec-e254-50d8-39ec-9d9684f49b5e"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "218f42fb-3230-2aea-827b-8723163953d2",
+                            ChangeDate = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            ProposedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            ProposedStartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Reason = "Cours manqué en raison d'un déplacement professionnel.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "59bf4bd2-f6ce-9fa2-7070-b362983f9148"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "bd8de704-c14e-19fc-42ca-dd7fcb2baa3d",
+                            ChangeDate = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Reason = "Séance annulée en raison de travaux dans le bâtiment.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "de87aa7f-ad79-cfc9-2c65-6648889c76fd"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "80172530-bb8b-cc50-2f53-dfa3b0f29b0b",
+                            ChangeDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Reason = "Cours annulé suite à un problème de chauffage dans la salle.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "041d01e0-b34f-4331-85d9-9453132f67b6"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "e3236962-8cf5-f55c-078b-4bd141ddba2a",
+                            ChangeDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 18, 0, 0, 0),
+                            ProposedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            ProposedStartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Reason = "Absence pour formation pédagogique obligatoire.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "fc422d79-4d66-9bc0-c3be-19d5b2cba234"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "eaa567ec-8ad4-3c30-af35-ed6d21520bca",
+                            ChangeDate = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            ProposedDate = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Reason = "Séance annulée pour participation à une conférence internationale.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "f8360932-cad7-22ba-add7-d31883af9229"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "3f8e497b-6213-d701-5cb4-c79f33d63206",
+                            ChangeDate = new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
+                            CounterProposalDate = new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CounterProposalEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            CounterProposalRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            CounterProposalStartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            ProposedDate = new DateTime(2026, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 18, 0, 0, 0),
+                            ProposedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            ProposedStartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Reason = "Cours annulé pour cause de conférence externe.",
+                            RejectionReason = "Le créneau proposé est déjà réservé. Une contre-proposition a été soumise.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
+                        },
+                        new
+                        {
+                            SessionRecoveryChangeId = "7d523e68-1971-6f1c-971d-1b89e8681d48",
+                            ChangeDate = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
+                            CounterProposalDate = new DateTime(2026, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CounterProposalEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            CounterProposalRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            CounterProposalStartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            ProposedDate = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProposedEndTime = new TimeSpan(0, 10, 0, 0, 0),
+                            ProposedRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            ProposedStartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Reason = "Absence imprévue de l'enseignant.",
+                            RejectionReason = "La date proposée est en dehors de la période académique autorisée.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "455c6918-8f55-8171-e3b6-573e17977cfc"
                         });
                 });
 
@@ -24676,6 +24891,12 @@ namespace HP2.Infrastructure.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("change_status_id");
+
+                    b.Property<string>("OldRoomId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("old_room_id");
 
                     b.Property<string>("Reason")
                         .IsRequired()
@@ -24711,6 +24932,8 @@ namespace HP2.Infrastructure.Migrations
 
                     b.HasIndex("ChangeStatusId");
 
+                    b.HasIndex("OldRoomId");
+
                     b.HasIndex("SessionId");
 
                     b.HasIndex("TeacherId");
@@ -24729,6 +24952,37 @@ namespace HP2.Infrastructure.Migrations
                         },
                         new
                         {
+                            SessionRoomChangeId = "a9b73b93-27ba-a3cf-67d9-bff2cb9bf0b9",
+                            ChangeDate = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "6d1cab45-5c87-c373-3fd2-91f518c946bc",
+                            Reason = "Problème de climatisation dans la salle assignée.",
+                            SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
+                            TeacherId = "ff7eb421-56b5-3bbe-779c-355ceed7246b"
+                        },
+                        new
+                        {
+                            SessionRoomChangeId = "034731de-795a-931a-1236-11bc7d070e41",
+                            ApprovedRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            ChangeDate = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
+                            OldRoomId = "02bcf600-5d44-cca7-8b68-e763b00a6339",
+                            Reason = "Besoin d'une salle avec projecteur fonctionnel.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionRoomChangeId = "f8a45eb0-a74b-8cfb-a6b6-82cc91c3dcc0",
+                            ApprovedRoomId = "9ec3581b-fe27-3e4a-2d4e-98c4abb15ae9",
+                            ChangeDate = new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "df4c997e-2e20-921e-98e9-906a9ecf8813",
+                            OldRoomId = "5863a804-6ac2-3f05-38ed-472541726740",
+                            Reason = "La salle prévue est occupée par un autre cours.",
+                            SessionId = "c7e69e7d-d218-7f39-2087-c2c4f1ba0fb4",
+                            TeacherId = "14185a87-c07d-c0db-e37b-536e871528f2"
+                        },
+                        new
+                        {
                             SessionRoomChangeId = "e2f35a55-7db2-4df9-3bbc-17e566a55b03",
                             ChangeDate = new DateTime(2026, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
@@ -24736,6 +24990,16 @@ namespace HP2.Infrastructure.Migrations
                             RejectionReason = "Aucune salle compatible n'est disponible sur ce créneau.",
                             SessionId = "f00894af-9f60-232f-5012-c431bbcddee1",
                             TeacherId = "5e94eeee-73d3-1bdb-0a7d-4499ede8fb31"
+                        },
+                        new
+                        {
+                            SessionRoomChangeId = "5e8aa4d3-a635-0032-b8b2-dcbd89ad3c80",
+                            ChangeDate = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ChangeStatusId = "d16d1a05-a70b-a5f5-6d3a-8013b24626d7",
+                            Reason = "Demande de salle plus grande pour un exposé.",
+                            RejectionReason = "La demande ne respecte pas le délai minimum de 48h avant la séance.",
+                            SessionId = "157d47fc-fd47-d6c6-b759-86b4049e4fff",
+                            TeacherId = "d6b75c65-0e4e-21d2-1215-b541eb0ebef5"
                         });
                 });
 
@@ -27409,6 +27673,34 @@ namespace HP2.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserNotification", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("NotificationId")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("notification_id");
+
+                    b.Property<bool>("IsRead")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_read");
+
+                    b.HasKey("UserId", "NotificationId")
+                        .HasName("PK_UserNotification");
+
+                    b.HasIndex("NotificationId");
+
+                    b.ToTable("UserNotification", (string)null);
+                });
+
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserRole", b =>
                 {
                     b.Property<string>("UserRoleId")
@@ -27529,26 +27821,19 @@ namespace HP2.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Receive", b =>
+            modelBuilder.Entity("NotificationUser", b =>
                 {
-                    b.Property<string>("NotificationId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("notification_id");
+                    b.Property<string>("NotificationsNotificationId")
+                        .HasColumnType("varchar(50)");
 
-                    b.Property<string>("UserId")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("user_id");
+                    b.Property<string>("UsersUserId")
+                        .HasColumnType("varchar(50)");
 
-                    b.HasKey("NotificationId", "UserId")
-                        .HasName("PK__Receive__0BC2675F6B31FA1F");
+                    b.HasKey("NotificationsNotificationId", "UsersUserId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UsersUserId");
 
-                    b.ToTable("Receive", (string)null);
+                    b.ToTable("NotificationUser");
                 });
 
             modelBuilder.Entity("Teach", b =>
@@ -34212,6 +34497,11 @@ namespace HP2.Infrastructure.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_RoomChange_Status");
 
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Room", "OldRoom")
+                        .WithMany()
+                        .HasForeignKey("OldRoomId")
+                        .HasConstraintName("FK_RoomChange_OldRoom");
+
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Session", "Session")
                         .WithMany("SessionRoomChanges")
                         .HasForeignKey("SessionId")
@@ -34227,6 +34517,8 @@ namespace HP2.Infrastructure.Migrations
                     b.Navigation("ApprovedRoom");
 
                     b.Navigation("ChangeStatus");
+
+                    b.Navigation("OldRoom");
 
                     b.Navigation("Session");
 
@@ -34312,19 +34604,40 @@ namespace HP2.Infrastructure.Migrations
                     b.Navigation("UserRole");
                 });
 
-            modelBuilder.Entity("Receive", b =>
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.UserNotification", b =>
+                {
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.Notification", "Notification")
+                        .WithMany("UserNotifications")
+                        .HasForeignKey("NotificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_UserNotification_Notification");
+
+                    b.HasOne("HP2.Infrastructure.Persistence.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_UserNotification_User");
+
+                    b.Navigation("Notification");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NotificationUser", b =>
                 {
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.Notification", null)
                         .WithMany()
-                        .HasForeignKey("NotificationId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Receive_Notif");
+                        .HasForeignKey("NotificationsNotificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HP2.Infrastructure.Persistence.Entities.User", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Receive_User");
+                        .HasForeignKey("UsersUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Teach", b =>
@@ -34369,6 +34682,11 @@ namespace HP2.Infrastructure.Migrations
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Group", b =>
                 {
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Notification", b =>
+                {
+                    b.Navigation("UserNotifications");
                 });
 
             modelBuilder.Entity("HP2.Infrastructure.Persistence.Entities.Program", b =>

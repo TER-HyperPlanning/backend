@@ -22,11 +22,11 @@ public class SessionChangesController : ControllerBase
         try
         {
             var data = await _sessionChangeService.GetAllAsync();
-            return Ok(ApiResponse<IEnumerable<SessionChangeListResponse>>.Success(data, "Session change requests retrieved successfully."));
+            return Ok(ApiResponse<IEnumerable<SessionChangeListResponse>>.Success(data, "Demandes de modification récupérées avec succès."));
         }
         catch (Exception ex)
         {
-            return StatusCode(500, ApiResponse<IEnumerable<SessionChangeListResponse>>.Fail($"Server error: {ex.Message}"));
+            return StatusCode(500, ApiResponse<IEnumerable<SessionChangeListResponse>>.Fail($"Erreur serveur : {ex.Message}"));
         }
     }
 
@@ -38,13 +38,13 @@ public class SessionChangesController : ControllerBase
             var item = await _sessionChangeService.GetByIdAsync(id);
 
             if (item == null)
-                return NotFound(ApiResponse<SessionChangeDetailsResponse>.Fail("Session change request not found."));
+                return NotFound(ApiResponse<SessionChangeDetailsResponse>.Fail("Demande de modification introuvable."));
 
-            return Ok(ApiResponse<SessionChangeDetailsResponse>.Success(item, "Session change request retrieved successfully."));
+            return Ok(ApiResponse<SessionChangeDetailsResponse>.Success(item, "Demande de modification récupérée avec succès."));
         }
         catch (Exception ex)
         {
-            return StatusCode(500, ApiResponse<SessionChangeDetailsResponse>.Fail($"Server error: {ex.Message}"));
+            return StatusCode(500, ApiResponse<SessionChangeDetailsResponse>.Fail($"Erreur serveur : {ex.Message}"));
         }
     }
 
@@ -54,7 +54,7 @@ public class SessionChangesController : ControllerBase
         try
         {
             await _sessionChangeService.ApproveRoomChangeAsync(id, request.RoomId);
-            return Ok(ApiResponse<string>.Success(id, "Room change approved successfully."));
+            return Ok(ApiResponse<string>.Success(id, "Changement de salle approuvé avec succès."));
         }
         catch (InvalidOperationException ex)
         {
@@ -66,7 +66,7 @@ public class SessionChangesController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, ApiResponse<string>.Fail($"Server error: {ex.Message}"));
+            return StatusCode(500, ApiResponse<string>.Fail($"Erreur serveur : {ex.Message}"));
         }
     }
 
@@ -76,7 +76,7 @@ public class SessionChangesController : ControllerBase
         try
         {
             await _sessionChangeService.ApproveRecoveryAsync(id);
-            return Ok(ApiResponse<string>.Success(id, "Recovery request approved successfully."));
+            return Ok(ApiResponse<string>.Success(id, "Proposition de rattrapage approuvée avec succès."));
         }
         catch (InvalidOperationException ex)
         {
@@ -88,7 +88,7 @@ public class SessionChangesController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, ApiResponse<string>.Fail($"Server error: {ex.Message}"));
+            return StatusCode(500, ApiResponse<string>.Fail($"Erreur serveur : {ex.Message}"));
         }
     }
 
@@ -98,7 +98,7 @@ public class SessionChangesController : ControllerBase
         try
         {
             await _sessionChangeService.RejectAsync(id, request.RejectionReason);
-            return Ok(ApiResponse<string>.Success(id, "Session change request rejected successfully."));
+            return Ok(ApiResponse<string>.Success(id, "Demande de modification refusée avec succès."));
         }
         catch (InvalidOperationException ex)
         {
@@ -110,7 +110,7 @@ public class SessionChangesController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, ApiResponse<string>.Fail($"Server error: {ex.Message}"));
+            return StatusCode(500, ApiResponse<string>.Fail($"Erreur serveur : {ex.Message}"));
         }
     }
 
@@ -126,7 +126,7 @@ public class SessionChangesController : ControllerBase
                 request.EndTime,
                 request.RoomId);
 
-            return Ok(ApiResponse<string>.Success(id, "Counter proposal submitted successfully."));
+            return Ok(ApiResponse<string>.Success(id, "Contre-proposition soumise avec succès."));
         }
         catch (InvalidOperationException ex)
         {
@@ -138,7 +138,50 @@ public class SessionChangesController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, ApiResponse<string>.Fail($"Server error: {ex.Message}"));
+            return StatusCode(500, ApiResponse<string>.Fail($"Erreur serveur : {ex.Message}"));
+        }
+    }
+
+    [HttpGet("{sessionId}/available-rooms")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<AvailableRoomResponse>>>> GetAvailableRooms(string sessionId)
+    {
+        try
+        {
+            var rooms = await _sessionChangeService.GetAvailableRoomsAsync(sessionId);
+            return Ok(ApiResponse<IEnumerable<AvailableRoomResponse>>.Success(rooms, "Salles disponibles récupérées avec succès."));
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ApiResponse<IEnumerable<AvailableRoomResponse>>.Fail(ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<IEnumerable<AvailableRoomResponse>>.Fail($"Erreur serveur : {ex.Message}"));
+        }
+    }
+
+    [HttpGet("{recoveryChangeId}/available-slots")]
+    public async Task<ActionResult<ApiResponse<IEnumerable<AvailableSlotResponse>>>> GetAvailableSlots(
+        string recoveryChangeId,
+        [FromQuery] DateTime from,
+        [FromQuery] DateTime to)
+    {
+        try
+        {
+            var slots = await _sessionChangeService.GetAvailableSlotsAsync(recoveryChangeId, from, to);
+            return Ok(ApiResponse<IEnumerable<AvailableSlotResponse>>.Success(slots, "Créneaux disponibles récupérés avec succès."));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<IEnumerable<AvailableSlotResponse>>.Fail(ex.Message));
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ApiResponse<IEnumerable<AvailableSlotResponse>>.Fail(ex.Message));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ApiResponse<IEnumerable<AvailableSlotResponse>>.Fail($"Erreur serveur : {ex.Message}"));
         }
     }
 }
