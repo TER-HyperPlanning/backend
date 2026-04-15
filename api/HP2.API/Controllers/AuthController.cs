@@ -40,9 +40,9 @@ namespace HP2.API.Controllers
             {
                 return Unauthorized(ApiResponse<LoginResponse>.Fail("Invalid email or password"));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, ApiResponse<LoginResponse>.Fail("An internal error occurred. Please try again later"));
+                return StatusCode(500, ApiResponse<LoginResponse>.Fail(ex.Message));
             }
         }
 
