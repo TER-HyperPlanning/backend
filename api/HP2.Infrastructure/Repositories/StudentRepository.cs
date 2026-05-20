@@ -17,6 +17,32 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
         _bcryptService = bcryptService;
     }
 
+    private async Task<string> GenerateStudentIdAsync()
+    {
+        var year = DateTime.UtcNow.Year.ToString();
+        
+        // On cherche le dernier ID qui commence par l'année en cours et fait 8 caractères
+        var lastUserId = await _dbContext.Users
+            .Where(u => u.UserId.StartsWith(year) && u.UserId.Length == 8)
+            .OrderByDescending(u => u.UserId)
+            .Select(u => u.UserId)
+            .FirstOrDefaultAsync();
+
+        if (string.IsNullOrEmpty(lastUserId))
+        {
+            // Premier étudiant de l'année
+            return $"{year}0001";
+        }
+
+        if (long.TryParse(lastUserId, out long lastIdNumeric))
+        {
+            return (lastIdNumeric + 1).ToString();
+        }
+
+        // Cas de secours si le parse échoue (peu probable avec le filtre Length == 8)
+        return $"{year}0001";
+    }
+
     public override async Task<IReadOnlyList<StudentModel>> GetAllAsync()
     {
         var students = await _dbContext.Students
@@ -70,10 +96,13 @@ public class StudentRepository : RepositoryBase<StudentModel>, IStudentRepositor
         // Hash the password with BCrypt
         var hashedPassword = _bcryptService.HashPassword(studentModel.Password);
 
+        // Generate unique Student ID (YYYYXXXX)
+        var customUserId = await GenerateStudentIdAsync();
+
         // Create User entity from StudentModel (which inherits UserModel)
         var user = new Infrastructure.Persistence.Entities.User
         {
-            UserId = Guid.NewGuid().ToString(),
+            UserId = customUserId,
             Email = studentModel.Email,
             Password = hashedPassword,
             FirstName = studentModel.FirstName,
