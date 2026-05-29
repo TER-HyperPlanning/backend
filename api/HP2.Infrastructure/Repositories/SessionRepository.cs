@@ -112,12 +112,26 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
     public override async Task<SessionModel> AddAsync(SessionModel model)
     {
         await using var transaction = await _dbContext.Database.BeginTransactionAsync(IsolationLevel.Serializable);
+
         await AcquireRoomDateLockAsync(model.RoomId, model.StartDateTime.Date);
+
         await EnsureRoomHasNoScheduleConflictAsync(
             model.StartDateTime.Date,
             model.StartDateTime.TimeOfDay,
             model.EndDateTime.TimeOfDay,
             model.RoomId);
+        if (model.GroupIds != null && model.GroupIds.Any())
+        {
+            var hasConflict = await HasGroupConflictAsync(
+                model.GroupIds,
+                model.StartDateTime.Date,
+                model.StartDateTime.TimeOfDay,
+                model.EndDateTime.TimeOfDay
+            );
+
+            if (hasConflict)
+                throw new InvalidOperationException("A group already has a session during this time slot");
+        }
 
         var entity = new Session
         {
@@ -133,14 +147,21 @@ public class SessionRepository : RepositoryBase<SessionModel>, ISessionRepositor
             Description = model.Description
         };
 
+        if (model.GroupIds != null && model.GroupIds.Any())
+        {
+            entity.Groups = await _dbContext.Groups
+                .Where(g => model.GroupIds.Contains(g.GroupId))
+                .ToListAsync();
+        }
+
         await _dbContext.Sessions.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
+
         await transaction.CommitAsync();
 
         model.Id = entity.SessionId;
         return model;
     }
-
     public override async Task UpdateAsync(SessionModel model)
     {
         var entity = await _dbContext.Sessions.FirstOrDefaultAsync(s => s.SessionId == model.Id);
@@ -432,5 +453,16 @@ SELECT @result;";
             CourseName = s.CourseName,
             Description = s.Description
         }).ToList();
+    }
+    public async Task<bool> HasGroupConflictAsync(List<string> groupIds, DateTime date, TimeSpan start, TimeSpan end, string? excludeSessionId = null)
+    {
+        return await _dbContext.Sessions
+            .Where(s => !s.IsDeleted
+                        && s.Date == date
+                        && (excludeSessionId == null || s.SessionId != excludeSessionId))
+            .Where(s => s.Groups.Any(g => groupIds.Contains(g.GroupId)))
+            .AnyAsync(s =>
+                start < s.EndTime && end > s.StartTime
+            );
     }
 }

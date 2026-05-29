@@ -173,4 +173,6 @@ public class SessionService : ISessionService
     };
     public Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search)
         => _sessionRepository.SearchSessionsAsync(groupId, type, search);
+    public Task<bool> HasGroupConflictAsync(List<string> groupIds, DateTime start, DateTime end, string? excludeSessionId = null)
+        => _sessionRepository.HasGroupConflictAsync(groupIds, start.Date, start.TimeOfDay, end.TimeOfDay, excludeSessionId);
 }

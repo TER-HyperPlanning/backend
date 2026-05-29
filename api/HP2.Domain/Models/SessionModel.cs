@@ -19,4 +19,5 @@ public class SessionModel : SoftDeletableModel
     public string? SessionStatusLabel { get; set; }
     public string? RoomNumber { get; set; }
     public string? CourseName { get; set; }
+    public List<string> GroupIds { get; set; } = new List<string>();
 }

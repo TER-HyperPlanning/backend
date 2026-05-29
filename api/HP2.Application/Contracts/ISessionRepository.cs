@@ -11,4 +11,5 @@ public interface ISessionRepository : IAsyncRepository<SessionModel>
     Task<IEnumerable<string>> GetAffectedUserIdsAsync(string sessionId);
     Task<IEnumerable<SessionModel>> SearchSessionsAsync(string? groupId, string? type, string? search);
     Task<IReadOnlyList<SessionModel>> GetDeletedAsync();
+    Task<bool> HasGroupConflictAsync(List<string> groupIds, DateTime date, TimeSpan start, TimeSpan end, string? excludeSessionId = null);
 }

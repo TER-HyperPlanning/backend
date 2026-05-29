@@ -19,4 +19,6 @@ public class CreateSessionRequest
     public string? RoomId { get; set; }
 
     public string? Description { get; set; }
+
+    public List<string>? GroupIds { get; set; }
 }
