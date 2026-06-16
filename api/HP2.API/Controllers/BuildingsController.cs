@@ -6,6 +6,7 @@ using HP2.Domain.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
@@ -21,6 +22,7 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<BuildingResponse>>> Create([FromBody] CreateBuildingRequest request)
     {
         try
@@ -48,6 +50,7 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<BuildingResponse>>> Get(string id)
     {
         try
@@ -56,7 +59,7 @@ public class BuildingsController : ControllerBase
             if (building == null)
                 return NotFound(ApiResponse<BuildingResponse>.Fail($"Building with id {id} not found"));
 
-            return Ok(ApiResponse<BuildingResponse>.Success(MapToResponse(building)));
+            return Ok(ApiResponse<BuildingResponse>.Success(MapToResponse(building), "Building retrieved successfully"));
         }
         catch (ArgumentException ex)
         {
@@ -70,6 +73,7 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ApiResponse<IEnumerable<BuildingResponse>>>> GetAll([FromQuery(Name = "q")] string? query)
     {
         try
@@ -82,7 +86,7 @@ public class BuildingsController : ControllerBase
 
             var buildings = await _buildingService.GetBuildingsAsync(normalizedQuery);
             var response = buildings.Select(MapToResponse);
-            return Ok(ApiResponse<IEnumerable<BuildingResponse>>.Success(response));
+            return Ok(ApiResponse<IEnumerable<BuildingResponse>>.Success(response, "Buildings retrieved successfully"));
         }
         catch
         {
@@ -92,14 +96,16 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpGet("deleted")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<IEnumerable<DeletedBuildingResponse>>>> GetDeleted()
     {
         var buildings = await _buildingService.GetDeletedBuildingsAsync();
         var response = buildings.Select(MapToDeletedResponse);
-        return Ok(ApiResponse<IEnumerable<DeletedBuildingResponse>>.Success(response));
+        return Ok(ApiResponse<IEnumerable<DeletedBuildingResponse>>.Success(response, "Deleted buildings retrieved successfully"));
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<BuildingResponse>>> Update(string id, [FromBody] UpdateBuildingRequest request)
     {
         try
@@ -127,6 +133,7 @@ public class BuildingsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<object>>> Delete(string id)
     {
         try
