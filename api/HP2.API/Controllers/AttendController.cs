@@ -3,6 +3,7 @@ using HP2.Application.DTOs.Attend;
 using HP2.Application.DTOs.Common;
 using HP2.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HP2.API.Controllers;
 
@@ -18,6 +19,7 @@ public class AttendsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<AttendResponse>>> Create([FromBody] CreateAttendRequest request)
     {
         if (request == null)
@@ -79,6 +81,7 @@ public class AttendsController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<AttendResponse>>> Update([FromBody] UpdateAttendRequest request)
     {
         if (request == null)
@@ -155,6 +158,7 @@ public class AttendsController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<IEnumerable<AttendResponse>>>> GetAll()
     {
         var rows = await _attendService.GetAllAsync();
@@ -168,6 +172,7 @@ public class AttendsController : ControllerBase
     }
 
     [HttpGet("group/{groupId}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<IEnumerable<AttendResponse>>>> GetByGroupId(string groupId)
     {
         if (string.IsNullOrWhiteSpace(groupId))
@@ -191,6 +196,7 @@ public class AttendsController : ControllerBase
     }
 
     [HttpGet("session/{sessionId}")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<IEnumerable<AttendResponse>>>> GetBySessionId(string sessionId)
     {
         if (string.IsNullOrWhiteSpace(sessionId))
@@ -214,6 +220,7 @@ public class AttendsController : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<ApiResponse<string>>> Delete([FromQuery] string groupId, [FromQuery] string sessionId)
     {
         if (string.IsNullOrWhiteSpace(groupId) || string.IsNullOrWhiteSpace(sessionId))
