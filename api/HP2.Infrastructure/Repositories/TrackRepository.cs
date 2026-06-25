@@ -30,9 +30,30 @@ namespace HP2.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        async Task<List<TrackModel>> ITrackRepository.GetAllAsync()
+        async Task<List<TrackModel>> ITrackRepository.GetAllAsync(string? programId, string? name)
         {
-            return (await GetAllAsync()).ToList();
+            var query = _dbContext.Tracks.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(programId))
+            {
+                query = query.Where(t => t.ProgramId == programId);
+            }
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                query = query.Where(t => t.Name.Contains(name));
+            }
+            return (await query
+            .Select(t => new TrackModel
+            {
+                Id = t.TrackId,
+                Name = t.Name,
+                TeacherId = t.TeacherId,
+                ProgramId = t.ProgramId,
+                Description = t.Description,
+                Lieu = t.Lieu,
+                IsDeleted = t.IsDeleted,
+                DeletedAt = t.DeletedAt
+            })
+            .ToListAsync());
         }
 
         public override async Task<TrackModel?> GetByIdAsync(string id)
