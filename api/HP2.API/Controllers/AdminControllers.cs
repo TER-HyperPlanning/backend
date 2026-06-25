@@ -96,11 +96,13 @@ public class AdminsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<List<AdminResponse>>>> GetAll()
+    public async Task<ActionResult<ApiResponse<List<AdminResponse>>>> GetAll(
+        [FromQuery] string? firstName, 
+        [FromQuery] string? lastName)
     {
         try
         {
-            var admins = await _adminService.GetAllAdminsAsync();
+            var admins = await _adminService.GetAllAdminsAsync(firstName, lastName);
 
             var response = admins.Select(a => new AdminResponse
             {

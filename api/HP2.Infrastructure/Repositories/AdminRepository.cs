@@ -13,13 +13,23 @@ public class AdminRepository : RepositoryBase<AdminModel>, IAdminRepository
     {
     }
 
-    public override async Task<IReadOnlyList<AdminModel>> GetAllAsync()
+    public async Task<IReadOnlyList<AdminModel>> GetAllFilteredAsync(string? firstName, string? lastName)
     {
-        var admins = await _dbContext.Admins
+        var query = _dbContext.Admins
             .Include(a => a.User)
             .ThenInclude(u => u.UserRole)
-            .ToListAsync();
+            .AsQueryable();
 
+        if (!string.IsNullOrEmpty(firstName))
+        {
+            query = query.Where(a => a.User != null && a.User.FirstName.Contains(firstName));
+        }
+
+        if (!string.IsNullOrEmpty(lastName))
+        {
+            query = query.Where(a => a.User != null && a.User.LastName.Contains(lastName));
+        }
+        var admins = await query.ToListAsync();
         return _mapper.Map<List<AdminModel>>(admins);
     }
 
