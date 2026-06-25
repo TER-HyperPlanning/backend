@@ -6,7 +6,7 @@ namespace HP2.Application.Contracts
 {
     public interface ICourseService
     {
-        Task<IEnumerable<CourseModel>> GetAllAsync();
+        Task<IEnumerable<CourseModel>> GetAllAsync(string? name, string? code);
         Task<IEnumerable<CourseModel>> GetDeletedAsync();
         Task<CourseModel?> GetByIdAsync(string id);
         Task<CourseModel> AddAsync(CourseModel model);

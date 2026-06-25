@@ -25,9 +25,11 @@ namespace HP2.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ApiResponse<List<CourseResponse>>>> GetAll()
+        public async Task<ActionResult<ApiResponse<List<CourseResponse>>>> GetAll(
+            [FromQuery] string? name,
+            [FromQuery] string? code)
         {
-            var courses = await _service.GetAllAsync();
+            var courses = await _service.GetAllAsync(name, code);
             var response = _mapper.Map<List<CourseResponse>>(courses);
 
             return Ok(ApiResponse<List<CourseResponse>>.Success(response, "Courses retrieved successfully."));

@@ -15,7 +15,10 @@ namespace HP2.Application
             _repository = repository;
         }
 
-        public async Task<IEnumerable<CourseModel>> GetAllAsync() => await _repository.GetAllAsync();
+        public async Task<IEnumerable<CourseModel>> GetAllAsync(string? name, string? code)
+        {
+            return await _repository.GetAllFilteredAsync(name, code);
+        }
         public Task<CourseModel?> GetByIdAsync(string id) => _repository.GetByIdAsync(id);
         public async Task<IEnumerable<CourseModel>> GetDeletedAsync() => await _repository.GetDeletedAsync();
         public Task<CourseModel> AddAsync(CourseModel model) => _repository.AddAsync(model);
